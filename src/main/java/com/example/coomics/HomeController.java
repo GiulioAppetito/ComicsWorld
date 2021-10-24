@@ -104,13 +104,6 @@ public class HomeController {
     }
 
 
-    public void openCategories() {
-        System.out.println("Clicked btn1");
-        FxmlLoader object = new FxmlLoader();
-        Pane view = object.getPage("categoriespane");
-        mainPane.setCenter(view);
-    }
-
     public void openProfile() {
         System.out.println("Clicked profile");
         FxmlLoader object = new FxmlLoader();
@@ -118,12 +111,13 @@ public class HomeController {
         mainPane.setCenter(view);
     }
 
-    public void action2() {
-        System.out.println("Clicked btn2");
+    public void openCategories() {
+        System.out.println("Clicked btn1");
         FxmlLoader object = new FxmlLoader();
-        Pane view = object.getPage("test2");
+        Pane view = object.getPage("categoriespane");
         mainPane.setCenter(view);
     }
+
     public void openFavourites() {
         System.out.println("Clicked btn3");
         FxmlLoader object = new FxmlLoader();
