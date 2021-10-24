@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane fx:id="mainPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.coomics.HelloController">
+   <top>
+      <HBox prefHeight="60.0" prefWidth="1100.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label alignment="CENTER" prefHeight="70.0" prefWidth="218.0" text="ComicsWorld" textAlignment="CENTER">
+               <font>
+                  <Font name="Berlin Sans FB Demi Bold" size="36.0" />
+               </font>
+            </Label>
+            <Separator maxHeight="-Infinity" orientation="VERTICAL" prefHeight="50.0">
+               <HBox.margin>
+                  <Insets top="10.0" />
+               </HBox.margin></Separator>
+            <HBox alignment="CENTER" maxHeight="-Infinity" prefHeight="0.0" prefWidth="250.0" HBox.hgrow="ALWAYS">
+               <HBox.margin>
+                  <Insets left="20.0" top="10.0" />
+               </HBox.margin>
+               <children>
+                  <TextField alignment="TOP_LEFT" prefHeight="25.0" prefWidth="261.0" promptText="Search" HBox.hgrow="ALWAYS">
+                     <HBox.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </HBox.margin>
+                  </TextField>
+
+               </children>
+            </HBox>
+            <Pane prefHeight="60.0" prefWidth="330.0" HBox.hgrow="ALWAYS">
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+               <children>
+                  <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="6.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../../../../../Desktop/Comics/trunk/Comics/img/icons8-classificare-96.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
+            <HBox onMouseClicked="#click" prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <Label alignment="CENTER" prefHeight="68.0" prefWidth="115.0" text="Anastasia Brinati">
+                     <font>
+                        <Font size="14.0" />
+                     </font></Label>
+                  <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../../../../../Desktop/Comics/trunk/Comics/img/business_woman.jpg" />
+                     </image>
+                     <HBox.margin>
+                        <Insets left="20.0" top="5.0" />
+                     </HBox.margin>
+                  </ImageView>
+
+               </children>
+            </HBox>
+         </children>
+      </HBox>
+   </top>
+   <left>
+      <VBox prefHeight="820.0" prefWidth="220.0" spacing="15.0" BorderPane.alignment="CENTER">
+         <children>
+            <VBox prefHeight="200.0" prefWidth="100.0" spacing="5.0">
+               <children>
+                  <Label prefHeight="47.0" prefWidth="221.0" text="Browse">
+                     <VBox.margin>
+                        <Insets left="10.0" />
+                     </VBox.margin>
+                  </Label>
+                  <HBox fx:id="categoriesBox" prefHeight="43.0" prefWidth="220.0" spacing="15.0">
+                     <children>
+                        <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../../../../../../Desktop/Comics/trunk/Comics/img/icons8-classificare-96.png" />
+                           </image>
+                           <HBox.margin>
+                              <Insets left="10.0" />
+                           </HBox.margin>
+                        </ImageView>
+
+                        <Label prefHeight="47.0" prefWidth="220.0" text="Categories">
+                           <font>
+                              <Font name="Berlin Sans FB" size="18.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="43.0" prefWidth="220.0" spacing="15.0">
+                     <children>
+                        <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../../../../../../Desktop/Comics/trunk/Comics/img/icons8-classificare-96.png" />
+                           </image>
+                           <HBox.margin>
+                              <Insets left="10.0" />
+                           </HBox.margin>
+                        </ImageView>
+
+                        <Label prefHeight="47.0" prefWidth="220.0" text="Top Comics">
+                           <font>
+                              <Font name="Berlin Sans FB" size="18.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <Separator prefHeight="7.0" prefWidth="100.0">
+                     <VBox.margin>
+                        <Insets left="10.0" right="10.0" />
+                     </VBox.margin>
+                  </Separator>
+                  <Label prefHeight="47.0" prefWidth="220.0" text="Your lists">
+                     <VBox.margin>
+                        <Insets left="10.0" />
+                     </VBox.margin>
+                  </Label>
+               </children>
+            </VBox>
+            <VBox prefHeight="366.0" prefWidth="220.0" spacing="15.0">
+               <children>
+                  <VBox prefHeight="200.0" prefWidth="100.0" spacing="5.0">
+                     <children>
+                        <HBox prefHeight="43.0" prefWidth="220.0" spacing="15.0">
+                           <children>
+                              <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../../../../../../Desktop/Comics/trunk/Comics/img/icons8-classificare-96.png" />
+                                 </image>
+                              </ImageView>
+
+                              <Label prefHeight="47.0" prefWidth="220.0" text="Favourites">
+                                 <font>
+                                    <Font name="Berlin Sans FB" size="18.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="43.0" prefWidth="220.0" spacing="15.0">
+                           <children>
+                              <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../../../../../../Desktop/Comics/trunk/Comics/img/icons8-classificare-96.png" />
+                                 </image>
+                              </ImageView>
+
+                              <Label prefHeight="47.0" prefWidth="220.0" text="Reading">
+                                 <font>
+                                    <Font name="Berlin Sans FB" size="18.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="43.0" prefWidth="220.0" spacing="15.0">
+                           <children>
+                              <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../../../../../../Desktop/Comics/trunk/Comics/img/icons8-classificare-96.png" />
+                                 </image>
+                              </ImageView>
+
+                              <Label prefHeight="47.0" prefWidth="220.0" text="To read">
+                                 <font>
+                                    <Font name="Berlin Sans FB" size="18.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+                  <VBox prefHeight="820.0" prefWidth="220.0" spacing="15.0">
+                     <children>
+                        <VBox prefHeight="184.0" prefWidth="220.0" spacing="5.0">
+                           <children>
+                              <Separator prefHeight="7.0" prefWidth="100.0" />
+                              <HBox prefHeight="43.0" prefWidth="220.0" spacing="15.0">
+                                 <children>
+                                    <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../../../../../../../Desktop/Comics/trunk/Comics/img/icons8-classificare-96.png" />
+                                       </image>
+                                    </ImageView>
+
+                                    <Label prefHeight="43.0" prefWidth="220.0" text="Settings">
+                                       <font>
+                                          <Font name="Berlin Sans FB" size="18.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </HBox>
+                              <HBox prefHeight="43.0" prefWidth="220.0" spacing="15.0" />
+                           </children>
+                        </VBox>
+                     </children>
+                  </VBox>
+               </children>
+            </VBox>
+            <Pane prefHeight="200.0" prefWidth="220.0" VBox.vgrow="ALWAYS" />
+         </children>
+      </VBox>
+   </left>
+   <right>
+      <Pane prefHeight="740.0" prefWidth="14.0" BorderPane.alignment="CENTER" />
+   </right>
+   <center>
+      <ScrollPane prefHeight="740.0" prefWidth="960.0" BorderPane.alignment="CENTER">
+         <content>
+            <GridPane fx:id="homeGrid" hgap="10.0" prefHeight="700.0" prefWidth="940.0" vgap="10.0">
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding>
+               <children>
+                  <Pane prefHeight="200.0" prefWidth="200.0" />
+               </children>
+            </GridPane>
+         </content>
+      </ScrollPane>
+   </center>
+</BorderPane>

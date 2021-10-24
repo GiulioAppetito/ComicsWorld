@@ -2,13 +2,19 @@ package com.example.coomics;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
+import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.GridPane;
 
 public class HelloController {
-    @FXML
-    private Label welcomeText;
 
     @FXML
-    protected void onHelloButtonClick() {
-        welcomeText.setText("Ciao Giulio!");
+    private GridPane homeGrid;
+    @FXML
+    private BorderPane mainPane;
+
+    @FXML
+    protected void click() {
+
+        //welcomeText.setText("Ciao Giulio!");
     }
 }
