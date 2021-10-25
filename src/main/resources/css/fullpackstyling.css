@@ -150,3 +150,35 @@
 {
     -fx-background-color: linear-gradient(to bottom left, #A868A0, #2D75E8);
 }
+
+.white-background{
+    -fx-background-color: #fff;
+}
+
+
+.highlighted-background{
+    -fx-background-color: #ACACE6;
+}
+
+
+.default-background{
+    -fx-background-color: #D7D7D7;
+}
+
+.transparent{
+    -fx-background-color: rgba(0,0,0,0);
+}
+
+.round-layout{
+    -fx-border-radius:50;
+    -fx-border-color:#D7D7D7;
+}
+
+.oval-layout{
+    -fx-border-radius:25;
+    -fx-border-color:#D7D7D7;
+}
+
+.selected{
+    -fx-background-color:#F3F3F3;
+}

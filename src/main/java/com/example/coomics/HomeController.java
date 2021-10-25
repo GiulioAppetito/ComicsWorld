@@ -12,10 +12,12 @@ import java.util.List;
 
 public class HomeController {
 
-    public HBox userBox;
+    @FXML
+    private HBox userBox;
+    @FXML
+    private HBox settingsBox;
     @FXML
     private BorderPane mainPane;
-
     @FXML
     private GridPane homeGrid;
 
@@ -111,6 +113,13 @@ public class HomeController {
         mainPane.setCenter(view);
     }
 
+    public void openSettings() {
+        System.out.println("Clicked settings");
+        FxmlLoader object = new FxmlLoader();
+        Pane view = object.getPage("settings");
+        mainPane.setCenter(view);
+    }
+
     public void openCategories() {
         System.out.println("Clicked btn1");
         FxmlLoader object = new FxmlLoader();
@@ -122,13 +131,6 @@ public class HomeController {
         System.out.println("Clicked btn3");
         FxmlLoader object = new FxmlLoader();
         Pane view = object.getPage("favouritespane");
-        mainPane.setCenter(view);
-    }
-
-    public void openSettings() {
-        System.out.println("Clicked settings");
-        FxmlLoader object = new FxmlLoader();
-        Pane view = object.getPage("settings");
         mainPane.setCenter(view);
     }
 }
