@@ -16,7 +16,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane fx:id="mainPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.coomics.HomeController">
+<BorderPane fx:id="mainPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.coomics.HomeController">
    <top>
       <HBox prefHeight="60.0" prefWidth="1100.0" BorderPane.alignment="CENTER">
          <Label alignment="CENTER" prefHeight="70.0" prefWidth="218.0" text="ComicsWorld" textAlignment="CENTER">
@@ -37,23 +37,23 @@
 
          <Pane prefHeight="60.0" prefWidth="330.0" HBox.hgrow="ALWAYS">
             <HBox.margin>
-               <Insets/>
+               <Insets />
             </HBox.margin>
             <ImageView fitHeight="50.0" fitWidth="50.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
-               <Image url="@../../../../../../../../Desktop/Comics/trunk/Comics/img/icons8-classificare-96.png"/>
+               <Image url="@../../../img/icons8-home-page-96.png" />
             </ImageView>
          </Pane>
          <HBox fx:id="userBox" onMouseClicked="#openProfile" prefHeight="100.0" prefWidth="200.0">
             <Label alignment="CENTER" prefHeight="68.0" prefWidth="115.0" text="Anastasia Brinati">
                <font>
-                  <Font size="14.0"/>
+                  <Font size="14.0" />
                </font>
             </Label>
             <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
                <HBox.margin>
-                  <Insets left="20.0" top="5.0"/>
+                  <Insets left="20.0" top="5.0" />
                </HBox.margin>
-               <Image url="@../../../../../../../../Desktop/Comics/trunk/Comics/img/business_woman.jpg"/>
+               <Image url="@../../../img/business_man.jpg" />
             </ImageView>
          </HBox>
          <HBox.margin>
@@ -70,24 +70,31 @@
                   <Insets left="10.0" />
                </VBox.margin>
             </Label>
-            <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+            <HBox>
                <HBox.margin>
                   <Insets left="10.0" />
                </HBox.margin>
-               <Image url="@../../../../../../../../Desktop/Comics/trunk/Comics/img/icons8-classificare-96.png" />
-            </ImageView>
-
-            <Label prefHeight="47.0" prefWidth="220.0" text="Categories">
-               <font>
-                  <Font name="Berlin Sans FB" size="18.0" />
-               </font>
-            </Label>
+               <children>
+                  <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <Image url="@../../../img/icons8-classificare-96.png" />
+                     <HBox.margin>
+                        <Insets left="10.0" />
+                     </HBox.margin>
+                  </ImageView>
+      
+                  <Label prefHeight="47.0" prefWidth="220.0" text="Categories">
+                     <font>
+                        <Font name="Berlin Sans FB" size="18.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
             <HBox prefHeight="43.0" prefWidth="220.0" spacing="15.0">
                <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
                   <HBox.margin>
                      <Insets left="10.0" />
                   </HBox.margin>
-                  <Image url="@../../../../../../../../Desktop/Comics/trunk/Comics/img/icons8-classificare-96.png" />
+                  <Image url="@../../../img/icons8-classifica-96.png" />
                </ImageView>
 
                <Label prefHeight="47.0" prefWidth="220.0" text="Top Comics">
@@ -111,7 +118,7 @@
             <VBox prefHeight="200.0" prefWidth="100.0" spacing="5.0">
                <HBox prefHeight="43.0" prefWidth="220.0" spacing="15.0">
                   <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
-                     <Image url="@../../../../../../../../Desktop/Comics/trunk/Comics/img/icons8-classificare-96.png" />
+                     <Image url="@../../../img/icons8-cartella-preferiti-96.png" />
                   </ImageView>
 
                   <Label prefHeight="47.0" prefWidth="220.0" text="Favourites">
@@ -122,7 +129,7 @@
                </HBox>
                <HBox prefHeight="43.0" prefWidth="220.0" spacing="15.0">
                   <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
-                     <Image url="@../../../../../../../../Desktop/Comics/trunk/Comics/img/icons8-classificare-96.png" />
+                     <Image url="@../../../img/icons8-book-reading-96.png" />
                   </ImageView>
 
                   <Label prefHeight="47.0" prefWidth="220.0" text="Reading">
@@ -133,7 +140,7 @@
                </HBox>
                <HBox prefHeight="43.0" prefWidth="220.0" spacing="15.0">
                   <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
-                     <Image url="@../../../../../../../../Desktop/Comics/trunk/Comics/img/icons8-classificare-96.png" />
+                     <Image url="@../../../img/icons8-libro-96.png" />
                   </ImageView>
 
                   <Label prefHeight="47.0" prefWidth="220.0" text="To read">
@@ -148,7 +155,7 @@
                   <Separator prefHeight="7.0" prefWidth="100.0" />
                   <HBox prefHeight="43.0" prefWidth="220.0" spacing="15.0">
                      <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
-                        <Image url="@../../../../../../../../Desktop/Comics/trunk/Comics/img/icons8-classificare-96.png" />
+                        <Image url="@../../../img/icons8-impostazioni-96.png" />
                      </ImageView>
 
                      <Label prefHeight="43.0" prefWidth="220.0" text="Settings">
