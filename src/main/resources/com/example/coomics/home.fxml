@@ -72,18 +72,18 @@
             </Label>
             <HBox>
                <HBox.margin>
-                  <Insets left="10.0"/>
+                  <Insets left="10.0" />
                </HBox.margin>
                <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
-                  <Image url="@../../../img/icons8-classificare-96.png"/>
+                  <Image url="@../../../img/icons8-classificare-96.png" />
                   <HBox.margin>
-                     <Insets left="10.0"/>
+                     <Insets left="10.0" />
                   </HBox.margin>
                </ImageView>
 
                <Label prefHeight="47.0" prefWidth="220.0" text="Categories">
                   <font>
-                     <Font name="Berlin Sans FB" size="18.0"/>
+                     <Font name="Berlin Sans FB" size="18.0" />
                   </font>
                </Label>
             </HBox>
