@@ -16,7 +16,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane fx:id="mainPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.coomics.HomeController">
+<BorderPane fx:id="mainPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.coomics.HomeController">
    <top>
       <HBox prefHeight="60.0" prefWidth="1100.0" BorderPane.alignment="CENTER">
          <Label alignment="CENTER" prefHeight="70.0" prefWidth="218.0" text="ComicsWorld" textAlignment="CENTER">
@@ -70,12 +70,15 @@
                   <Insets left="10.0" />
                </VBox.margin>
             </Label>
-            <HBox prefHeight="43.0" prefWidth="220.0" spacing="15.0">
+            <HBox styleClass="lateral" stylesheets="@../../../css/fullpackstyling.css">
+               <HBox.margin>
+                  <Insets left="10.0" />
+               </HBox.margin>
                <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                  <Image url="@../../../img/icons8-classificare-96.png" />
                   <HBox.margin>
                      <Insets left="10.0" />
                   </HBox.margin>
-                  <Image url="@../../../img/icons8-classificare-96.png" />
                </ImageView>
 
                <Label prefHeight="47.0" prefWidth="220.0" text="Categories">
@@ -84,16 +87,17 @@
                   </font>
                </Label>
             </HBox>
-            <HBox prefHeight="43.0" prefWidth="220.0" spacing="15.0">
+            <HBox prefHeight="43.0" prefWidth="220.0" spacing="15.0" styleClass="lateral" stylesheets="@../../../css/fullpackstyling.css">
                <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
                   <HBox.margin>
-                     <Insets left="10.0"/>
+                     <Insets left="10.0" />
                   </HBox.margin>
-                  <Image url="@../../../img/icons8-classifica-96.png"/>
+                  <Image url="@../../../img/icons8-classifica-96.png" />
                </ImageView>
+
                <Label prefHeight="47.0" prefWidth="220.0" text="Top Comics">
                   <font>
-                     <Font name="Berlin Sans FB" size="18.0"/>
+                     <Font name="Berlin Sans FB" size="18.0" />
                   </font>
                </Label>
             </HBox>
@@ -110,12 +114,9 @@
          </VBox>
          <VBox prefHeight="366.0" prefWidth="220.0" spacing="15.0">
             <VBox prefHeight="200.0" prefWidth="100.0" spacing="5.0">
-               <HBox prefHeight="43.0" prefWidth="220.0" spacing="15.0">
+               <HBox prefHeight="43.0" prefWidth="220.0" spacing="15.0" styleClass="lateral" stylesheets="@../../../css/fullpackstyling.css">
                   <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
                      <Image url="@../../../img/icons8-cartella-preferiti-96.png" />
-                     <HBox.margin>
-                        <Insets left="10.0" />
-                     </HBox.margin>
                   </ImageView>
 
                   <Label prefHeight="47.0" prefWidth="220.0" text="Favourites">
@@ -124,12 +125,9 @@
                      </font>
                   </Label>
                </HBox>
-               <HBox prefHeight="43.0" prefWidth="220.0" spacing="15.0">
+               <HBox prefHeight="43.0" prefWidth="220.0" spacing="15.0" styleClass="lateral" stylesheets="@../../../css/fullpackstyling.css">
                   <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
                      <Image url="@../../../img/icons8-book-reading-96.png" />
-                     <HBox.margin>
-                        <Insets left="10.0" />
-                     </HBox.margin>
                   </ImageView>
 
                   <Label prefHeight="47.0" prefWidth="220.0" text="Reading">
@@ -138,12 +136,9 @@
                      </font>
                   </Label>
                </HBox>
-               <HBox prefHeight="43.0" prefWidth="220.0" spacing="15.0">
+               <HBox prefHeight="43.0" prefWidth="220.0" spacing="15.0" styleClass="lateral" stylesheets="@../../../css/fullpackstyling.css">
                   <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
                      <Image url="@../../../img/icons8-libro-96.png" />
-                     <HBox.margin>
-                        <Insets left="10.0" />
-                     </HBox.margin>
                   </ImageView>
 
                   <Label prefHeight="47.0" prefWidth="220.0" text="To read">
@@ -156,12 +151,9 @@
             <VBox prefHeight="820.0" prefWidth="220.0" spacing="15.0">
                <VBox prefHeight="184.0" prefWidth="220.0" spacing="5.0">
                   <Separator prefHeight="7.0" prefWidth="100.0" />
-                  <HBox fx:id="settingsBox" onMouseClicked="#openSettings" prefHeight="43.0" prefWidth="220.0" spacing="15.0">
+                  <HBox onMouseClicked="#openSettings" prefHeight="43.0" prefWidth="220.0" spacing="15.0" styleClass="lateral" stylesheets="@../../../css/fullpackstyling.css">
                      <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
                         <Image url="@../../../img/icons8-impostazioni-96.png" />
-                        <HBox.margin>
-                           <Insets left="10.0" />
-                        </HBox.margin>
                      </ImageView>
 
                      <Label prefHeight="43.0" prefWidth="220.0" text="Settings">
