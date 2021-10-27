@@ -1,9 +1,15 @@
 package com.example.coomics;
 
-import javafx.scene.control.ScrollPane;
-import javafx.scene.layout.GridPane;
+import javafx.fxml.FXML;
+import javafx.scene.control.Button;
+import javafx.scene.layout.Pane;
+import tools.FxmlLoader;
 
 public class ProfileController {
-    public GridPane badgesGrid;
-    public ScrollPane spMyBadges;
+
+    //HomeController home = HomeController.getInstance();
+    public void edit(){
+
+    }
+
 }
