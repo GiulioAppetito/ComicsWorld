@@ -11,102 +11,96 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="729.0"
-      prefWidth="980.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
-   <Pane layoutX="148.0" layoutY="147.0" prefHeight="430.0" prefWidth="694.0" rotate="-150.3"
-         style="-fx-background-color: #FA2C56; -fx-background-radius: 100;"/>
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="729.0" prefWidth="980.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
+   <Pane layoutX="148.0" layoutY="147.0" prefHeight="430.0" prefWidth="694.0" rotate="-150.3" style="-fx-background-color: #5DADE2; -fx-background-radius: 100;" />
    <HBox prefHeight="729.0" prefWidth="980.0">
       <Pane opacity="0.7" prefHeight="649.0" prefWidth="457.0" stylesheets="@../../../css/fullpackstyling.css">
          <HBox.margin>
-            <Insets bottom="40.0" left="40.0" right="40.0" top="40.0"/>
+            <Insets bottom="40.0" left="40.0" right="40.0" top="40.0" />
          </HBox.margin>
          <styleClass>
-            <String fx:value="button2"/>
-            <String fx:value="oval-layout"/>
+            <String fx:value="button2" />
+            <String fx:value="oval-layout" />
          </styleClass>
          <VBox prefHeight="649.0" prefWidth="452.0">
             <ImageView fitHeight="261.0" fitWidth="254.0" pickOnBounds="true" preserveRatio="true">
                <VBox.margin>
-                  <Insets left="90.0" top="20.0"/>
+                  <Insets left="90.0" top="20.0" />
                </VBox.margin>
-               <Image url="@../../../img/business_man.jpg"/>
+               <Image url="@../../../img/business_man.jpg" />
             </ImageView>
             <Label alignment="CENTER" prefHeight="74.0" prefWidth="615.0" text="username">
                <font>
-                  <Font name="Berlin Sans FB" size="24.0"/>
+                  <Font name="Berlin Sans FB" size="24.0" />
                </font>
             </Label>
             <Label alignment="CENTER" prefHeight="74.0" prefWidth="615.0" text="username">
                <font>
-                  <Font name="Berlin Sans FB" size="24.0"/>
+                  <Font name="Berlin Sans FB" size="24.0" />
                </font>
             </Label>
             <Label alignment="CENTER" prefHeight="74.0" prefWidth="615.0" text="username">
                <font>
-                  <Font name="Berlin Sans FB" size="24.0"/>
+                  <Font name="Berlin Sans FB" size="24.0" />
                </font>
             </Label>
             <Label alignment="CENTER" prefHeight="74.0" prefWidth="615.0" text="username">
                <font>
-                  <Font name="Berlin Sans FB" size="24.0"/>
+                  <Font name="Berlin Sans FB" size="24.0" />
                </font>
             </Label>
             <Label alignment="CENTER" prefHeight="74.0" prefWidth="615.0" text="username">
                <font>
-                  <Font name="Berlin Sans FB" size="24.0"/>
+                  <Font name="Berlin Sans FB" size="24.0" />
                </font>
             </Label>
-            <Button mnemonicParsing="false" prefHeight="84.0" prefWidth="157.0"
-                    stylesheets="@../../../css/fullpackstyling.css" text="Edit">
+            <Button mnemonicParsing="false" prefHeight="84.0" prefWidth="157.0" stylesheets="@../../../css/fullpackstyling.css" text="Edit">
                <VBox.margin>
-                  <Insets bottom="20.0" left="150.0"/>
+                  <Insets bottom="20.0" left="150.0" />
                </VBox.margin>
                <font>
-                  <Font name="Berlin Sans FB" size="24.0"/>
+                  <Font name="Berlin Sans FB" size="24.0" />
                </font>
                <styleClass>
-                  <String fx:value="oval-layout"/>
-                  <String fx:value="transparent"/>
-                  <String fx:value="button1"/>
+                  <String fx:value="oval-layout" />
+                  <String fx:value="transparent" />
+                  <String fx:value="button1" />
                </styleClass>
                <graphic>
                   <ImageView fitHeight="45.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true">
-                     <Image url="@../../../img/icons8-modificare-96.png"/>
+                     <Image url="@../../../img/icons8-modificare-96.png" />
                   </ImageView>
                </graphic>
             </Button>
          </VBox>
       </Pane>
       <VBox prefHeight="729.0" prefWidth="453.0">
-         <Pane opacity="0.7" prefHeight="208.0" prefWidth="369.0" styleClass="button2"
-               stylesheets="@../../../css/fullpackstyling.css">
+         <Pane opacity="0.7" prefHeight="208.0" prefWidth="369.0" styleClass="button2" stylesheets="@../../../css/fullpackstyling.css">
             <VBox.margin>
-               <Insets bottom="40.0" left="40.0" right="40.0" top="40.0"/>
+               <Insets bottom="40.0" left="40.0" right="40.0" top="40.0" />
             </VBox.margin>
             <VBox prefHeight="200.0" prefWidth="368.0">
                <Label prefHeight="74.0" prefWidth="615.0" text="My favourite character">
                   <font>
-                     <Font name="Berlin Sans FB" size="24.0"/>
+                     <Font name="Berlin Sans FB" size="24.0" />
                   </font>
                   <VBox.margin>
-                     <Insets left="20.0"/>
+                     <Insets left="20.0" />
                   </VBox.margin>
                </Label>
             </VBox>
          </Pane>
-         <Pane opacity="0.7" prefHeight="377.0" prefWidth="308.0" styleClass="button2"
-               stylesheets="@../../../css/fullpackstyling.css">
+         <Pane opacity="0.7" prefHeight="377.0" prefWidth="308.0" styleClass="button2" stylesheets="@../../../css/fullpackstyling.css">
             <VBox.margin>
-               <Insets bottom="40.0" left="40.0" right="40.0" top="40.0"/>
+               <Insets bottom="40.0" left="40.0" right="40.0" top="40.0" />
             </VBox.margin>
             <VBox prefHeight="369.0" prefWidth="368.0">
                <Label prefHeight="74.0" prefWidth="615.0" text="My badges">
                   <font>
-                     <Font name="Berlin Sans FB" size="24.0"/>
+                     <Font name="Berlin Sans FB" size="24.0" />
                   </font>
                   <padding>
-                     <Insets left="20.0"/>
+                     <Insets left="20.0" />
                   </padding>
                </Label>
             </VBox>

@@ -8,7 +8,6 @@ module com.example.coomics {
     requires validatorfx;
     requires org.kordamp.ikonli.javafx;
     requires org.kordamp.bootstrapfx.core;
-    requires eu.hansolo.tilesfx;
 
     opens com.example.coomics to javafx.fxml;
     exports com.example.coomics;
