@@ -1,7 +1,7 @@
 package com.example.coomics;
 
 
-import com.example.coomics.model.Category;
+import com.example.coomics.model.ComicsCategory;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
@@ -21,7 +21,7 @@ public class CategoryController {
     @FXML
     private Label letterLabel;
 
-    public void setData(Category category) {
+    public void setData(ComicsCategory category) {
 
         categoryName.setText(category.getName());
         letterLabel.setText(category.getInitial());
@@ -30,7 +30,7 @@ public class CategoryController {
 
     public void dummy() {
 
-        System.out.println("Category selected on click : " + categoryName.getText());
+        System.out.println("ComicsCategory selected on click : " + categoryName.getText());
 
     }
 }

@@ -1,6 +1,6 @@
 package com.example.coomics.model;
 
-public class Category {
+public class ComicsCategory {
 	
 	private String name;
 	private String ImageSrc;

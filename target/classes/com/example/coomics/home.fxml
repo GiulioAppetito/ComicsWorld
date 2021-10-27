@@ -74,9 +74,7 @@
             <Button mnemonicParsing="false" onAction="#openCategories" prefHeight="39.0" prefWidth="220.0" styleClass="button2" stylesheets="@../../../css/fullpackstyling.css" text="Categories">
                <graphic>
                   <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../../../img/icons8-classificare-96.png" />
-                     </image>
+                     <Image url="@../../../img/icons8-classificare-96.png"/>
                   </ImageView>
                </graphic>
                <font>
@@ -86,9 +84,7 @@
             <Button mnemonicParsing="false" prefHeight="39.0" prefWidth="220.0" styleClass="button2" stylesheets="@../../../css/fullpackstyling.css" text="Top Comics">
                <graphic>
                   <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../../../img/icons8-classifica-96.png" />
-                     </image>
+                     <Image url="@../../../img/icons8-classifica-96.png"/>
                   </ImageView>
                </graphic>
                <font>
@@ -103,49 +99,44 @@
          </VBox>
          <VBox prefHeight="220.0" prefWidth="220.0" spacing="15.0">
             <VBox prefHeight="200.0" prefWidth="100.0" spacing="5.0">
-               <children>
-                  <Label prefHeight="28.0" prefWidth="210.0" text="Your lists">
-                     <VBox.margin>
-                        <Insets left="10.0" />
-                     </VBox.margin>
-                  </Label>
-                  <Button mnemonicParsing="false" prefHeight="39.0" prefWidth="220.0" styleClass="button2" stylesheets="@../../../css/fullpackstyling.css" text="Favourites">
-                     <graphic>
-                        <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../../../img/icons8-cartella-preferiti-96.png" />
-                           </image>
-                        </ImageView>
-                     </graphic>
-                     <font>
-                        <Font name="Berlin Sans FB" size="18.0" />
-                     </font>
-                  </Button>
-                  <Button mnemonicParsing="false" prefHeight="39.0" prefWidth="220.0" styleClass="button2" stylesheets="@../../../css/fullpackstyling.css" text="Reading">
-                     <graphic>
-                        <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../../../img/icons8-book-reading-96.png" />
-                           </image>
-                        </ImageView>
-                     </graphic>
-                     <font>
-                        <Font name="Berlin Sans FB" size="18.0" />
-                     </font>
-                  </Button>
-                  <Button mnemonicParsing="false" prefHeight="39.0" prefWidth="220.0" styleClass="button2" stylesheets="@../../../css/fullpackstyling.css" text="To read">
-                     <graphic>
-                        <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../../../img/icons8-libro-96.png" />
-                           </image>
-                        </ImageView>
-                     </graphic>
-                     <font>
-                        <Font name="Berlin Sans FB" size="18.0" />
-                     </font>
-                  </Button>
-               </children>
+               <Label prefHeight="28.0" prefWidth="210.0" text="Your lists">
+                  <VBox.margin>
+                     <Insets left="10.0"/>
+                  </VBox.margin>
+               </Label>
+               <Button mnemonicParsing="false" prefHeight="39.0" prefWidth="220.0" styleClass="button2"
+                       stylesheets="@../../../css/fullpackstyling.css" text="Favourites">
+                  <graphic>
+                     <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                        <Image url="@../../../img/icons8-cartella-preferiti-96.png"/>
+                     </ImageView>
+                  </graphic>
+                  <font>
+                     <Font name="Berlin Sans FB" size="18.0"/>
+                  </font>
+               </Button>
+               <Button mnemonicParsing="false" prefHeight="39.0" prefWidth="220.0" styleClass="button2"
+                       stylesheets="@../../../css/fullpackstyling.css" text="Reading">
+                  <graphic>
+                     <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                        <Image url="@../../../img/icons8-book-reading-96.png"/>
+                     </ImageView>
+                  </graphic>
+                  <font>
+                     <Font name="Berlin Sans FB" size="18.0"/>
+                  </font>
+               </Button>
+               <Button mnemonicParsing="false" prefHeight="39.0" prefWidth="220.0" styleClass="button2"
+                       stylesheets="@../../../css/fullpackstyling.css" text="To read">
+                  <graphic>
+                     <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                        <Image url="@../../../img/icons8-libro-96.png"/>
+                     </ImageView>
+                  </graphic>
+                  <font>
+                     <Font name="Berlin Sans FB" size="18.0"/>
+                  </font>
+               </Button>
             </VBox>
             <Separator prefHeight="7.0" prefWidth="100.0">
                <VBox.margin>
@@ -162,9 +153,7 @@
             <Button mnemonicParsing="false" onAction="#openSettings" prefHeight="39.0" prefWidth="220.0" styleClass="button2" stylesheets="@../../../css/fullpackstyling.css" text="Settings">
                <graphic>
                   <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../../../img/icons8-impostazioni-96.png" />
-                     </image>
+                     <Image url="@../../../img/icons8-impostazioni-96.png"/>
                   </ImageView>
                </graphic>
                <font>
