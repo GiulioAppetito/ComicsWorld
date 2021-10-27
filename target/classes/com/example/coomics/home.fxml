@@ -87,13 +87,13 @@
             <HBox prefHeight="43.0" prefWidth="220.0" spacing="15.0">
                <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
                   <HBox.margin>
-                     <Insets left="10.0"/>
+                     <Insets left="10.0" />
                   </HBox.margin>
-                  <Image url="@../../../img/icons8-classifica-96.png"/>
+                  <Image url="@../../../img/icons8-classifica-96.png" />
                </ImageView>
                <Label prefHeight="47.0" prefWidth="220.0" text="Top Comics">
                   <font>
-                     <Font name="Berlin Sans FB" size="18.0"/>
+                     <Font name="Berlin Sans FB" size="18.0" />
                   </font>
                </Label>
             </HBox>

@@ -23,9 +23,9 @@ public class SettingsController {
     @FXML
     private Button aboutussettings;
 
-    public void openProfile(MouseEvent mouseEvent) {
+    public void openProfile() {
     }
 
-    public void openAccount(MouseEvent mouseEvent) {
+    public void openAccount() {
     }
 }
