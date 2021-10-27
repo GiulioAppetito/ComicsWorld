@@ -32,19 +32,19 @@
                <String fx:value="transparent" />
             </styleClass></Button>
          <Separator prefWidth="200.0" />
-         <Button fx:id="preferencessettings" mnemonicParsing="false" prefHeight="58.0" prefWidth="185.0" stylesheets="@../../../css/fullpackstyling.css" text="Preferences">
+         <Button fx:id="preferencessettings" mnemonicParsing="false" onAction="#openPreferencesSettings" prefHeight="58.0" prefWidth="185.0" stylesheets="@../../../css/fullpackstyling.css" text="Preferences">
             <styleClass>
                <String fx:value="button2" />
                <String fx:value="transparent" />
             </styleClass></Button>
          <Separator prefWidth="200.0" />
-         <Button fx:id="badgessettings" mnemonicParsing="false" prefHeight="58.0" prefWidth="185.0" text="My Badges">
+         <Button fx:id="badgessettings" mnemonicParsing="false" onAction="#openMyBadgesSettings" prefHeight="58.0" prefWidth="185.0" text="My Badges">
             <styleClass>
                <String fx:value="button2" />
                <String fx:value="transparent" />
             </styleClass></Button>
          <Separator prefWidth="200.0" />
-         <Button fx:id="aboutussettings" mnemonicParsing="false" prefHeight="58.0" prefWidth="185.0" text="About Us">
+         <Button fx:id="aboutussettings" mnemonicParsing="false" onAction="#openAboutUsSettings" prefHeight="58.0" prefWidth="185.0" text="About Us">
             <styleClass>
                <String fx:value="button2" />
                <String fx:value="transparent" />
