@@ -11,8 +11,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="729.0" prefWidth="980.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
-   <Pane layoutX="148.0" layoutY="147.0" prefHeight="430.0" prefWidth="694.0" rotate="-150.3" style="-fx-background-color: #5DADE2; -fx-background-radius: 100;" />
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="729.0" prefWidth="980.0" styleClass="transparent" stylesheets="@../../../css/fullpackstyling.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
    <HBox prefHeight="729.0" prefWidth="980.0">
       <Pane opacity="0.7" prefHeight="649.0" prefWidth="457.0" stylesheets="@../../../css/fullpackstyling.css">
          <HBox.margin>
@@ -64,7 +63,7 @@
                <styleClass>
                   <String fx:value="oval-layout" />
                   <String fx:value="transparent" />
-                  <String fx:value="button1" />
+                  <String fx:value="buttonEdit" />
                </styleClass>
                <graphic>
                   <ImageView fitHeight="45.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true">

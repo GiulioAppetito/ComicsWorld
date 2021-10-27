@@ -48,8 +48,7 @@
 }
 .button2:pressed
 {
-    -fx-background-color : #C2C2C2 ;
-    -fx-background-radius :  20;
+
 }
 .button2:focused
 {
@@ -57,6 +56,20 @@
     -fx-background-radius :  20;
 
 }
+
+.buttonEdit {
+}
+.buttonEdit:hover
+{
+    -fx-background-color : #8ec7ff;
+    -fx-background-radius :  20;
+}
+.buttonEdit:pressed
+{
+    -fx-background-color : #2c92ff;
+    -fx-background-radius :  20;
+}
+
 
 .lateral
 {
@@ -212,4 +225,9 @@
 
 .selected{
     -fx-background-color:#F3F3F3;
+}
+
+.wallpaper{
+    -fx-background-image: url('purple2.png');
+    -fx-background-size: 1300;
 }
