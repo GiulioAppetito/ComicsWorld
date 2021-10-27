@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.String?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
@@ -17,7 +18,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane fx:id="mainPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.coomics.HomeController">
+<BorderPane fx:id="mainPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.coomics.HomeController">
    <top>
       <HBox prefHeight="60.0" prefWidth="1100.0" BorderPane.alignment="CENTER">
          <Label alignment="CENTER" prefHeight="70.0" prefWidth="218.0" text="ComicsWorld" textAlignment="CENTER">
@@ -30,17 +31,37 @@
                <Insets top="10.0" />
             </HBox.margin>
          </Separator>
-         <TextField alignment="TOP_LEFT" prefHeight="25.0" prefWidth="261.0" promptText="Search" HBox.hgrow="ALWAYS">
+         <TextField fx:id="tfSearch" alignment="TOP_LEFT" prefHeight="25.0" prefWidth="261.0" promptText="Search" HBox.hgrow="ALWAYS">
             <HBox.margin>
-               <Insets bottom="10.0" left="10.0" right="10.0" top="20.0" />
+               <Insets bottom="10.0" left="10.0" top="20.0" />
             </HBox.margin>
+            <font>
+               <Font name="Berlin Sans FB" size="18.0" />
+            </font>
          </TextField>
+         <Button fx:id="btnSearch" mnemonicParsing="false" onAction="#search" prefHeight="34.0" prefWidth="35.0" stylesheets="@../../../css/fullpackstyling.css">
+            <HBox.margin>
+               <Insets right="30.0" top="20.0" />
+            </HBox.margin>
+            <styleClass>
+               <String fx:value="round-layout" />
+               <String fx:value="transparent" />
+               <String fx:value="buttonEdit" />
+            </styleClass>
+            <graphic>
+               <ImageView fitHeight="22.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
+                  <image>
+                     <Image url="@../../../img/icons8-ricerca-96.png" />
+                  </image>
+               </ImageView>
+            </graphic>
+         </Button>
 
          <Pane prefHeight="60.0" prefWidth="330.0" HBox.hgrow="ALWAYS">
             <HBox.margin>
                <Insets />
             </HBox.margin>
-            <ImageView fitHeight="50.0" fitWidth="50.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="ivHome" fitHeight="50.0" fitWidth="50.0" layoutY="5.0" onMouseClicked="#openHomepage" pickOnBounds="true" preserveRatio="true">
                <Image url="@../../../img/icons8-home-page-96.png" />
             </ImageView>
          </Pane>
@@ -74,7 +95,7 @@
             <Button mnemonicParsing="false" onAction="#openCategories" prefHeight="39.0" prefWidth="220.0" styleClass="button2" stylesheets="@../../../css/fullpackstyling.css" text="Categories">
                <graphic>
                   <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
-                     <Image url="@../../../img/icons8-classificare-96.png"/>
+                     <Image url="@../../../img/icons8-classificare-96.png" />
                   </ImageView>
                </graphic>
                <font>
@@ -84,7 +105,7 @@
             <Button mnemonicParsing="false" prefHeight="39.0" prefWidth="220.0" styleClass="button2" stylesheets="@../../../css/fullpackstyling.css" text="Top Comics">
                <graphic>
                   <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
-                     <Image url="@../../../img/icons8-classifica-96.png"/>
+                     <Image url="@../../../img/icons8-classifica-96.png" />
                   </ImageView>
                </graphic>
                <font>
@@ -101,40 +122,37 @@
             <VBox prefHeight="200.0" prefWidth="100.0" spacing="5.0">
                <Label prefHeight="28.0" prefWidth="210.0" text="Your lists">
                   <VBox.margin>
-                     <Insets left="10.0"/>
+                     <Insets left="10.0" />
                   </VBox.margin>
                </Label>
-               <Button mnemonicParsing="false" prefHeight="39.0" prefWidth="220.0" styleClass="button2"
-                       stylesheets="@../../../css/fullpackstyling.css" text="Favourites">
+               <Button mnemonicParsing="false" prefHeight="39.0" prefWidth="220.0" styleClass="button2" stylesheets="@../../../css/fullpackstyling.css" text="Favourites">
                   <graphic>
                      <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
-                        <Image url="@../../../img/icons8-cartella-preferiti-96.png"/>
+                        <Image url="@../../../img/icons8-cartella-preferiti-96.png" />
                      </ImageView>
                   </graphic>
                   <font>
-                     <Font name="Berlin Sans FB" size="18.0"/>
+                     <Font name="Berlin Sans FB" size="18.0" />
                   </font>
                </Button>
-               <Button mnemonicParsing="false" prefHeight="39.0" prefWidth="220.0" styleClass="button2"
-                       stylesheets="@../../../css/fullpackstyling.css" text="Reading">
+               <Button mnemonicParsing="false" prefHeight="39.0" prefWidth="220.0" styleClass="button2" stylesheets="@../../../css/fullpackstyling.css" text="Reading">
                   <graphic>
                      <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
-                        <Image url="@../../../img/icons8-book-reading-96.png"/>
+                        <Image url="@../../../img/icons8-book-reading-96.png" />
                      </ImageView>
                   </graphic>
                   <font>
-                     <Font name="Berlin Sans FB" size="18.0"/>
+                     <Font name="Berlin Sans FB" size="18.0" />
                   </font>
                </Button>
-               <Button mnemonicParsing="false" prefHeight="39.0" prefWidth="220.0" styleClass="button2"
-                       stylesheets="@../../../css/fullpackstyling.css" text="To read">
+               <Button mnemonicParsing="false" prefHeight="39.0" prefWidth="220.0" styleClass="button2" stylesheets="@../../../css/fullpackstyling.css" text="To read">
                   <graphic>
                      <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
-                        <Image url="@../../../img/icons8-libro-96.png"/>
+                        <Image url="@../../../img/icons8-libro-96.png" />
                      </ImageView>
                   </graphic>
                   <font>
-                     <Font name="Berlin Sans FB" size="18.0"/>
+                     <Font name="Berlin Sans FB" size="18.0" />
                   </font>
                </Button>
             </VBox>
@@ -153,7 +171,7 @@
             <Button mnemonicParsing="false" onAction="#openSettings" prefHeight="39.0" prefWidth="220.0" styleClass="button2" stylesheets="@../../../css/fullpackstyling.css" text="Settings">
                <graphic>
                   <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
-                     <Image url="@../../../img/icons8-impostazioni-96.png"/>
+                     <Image url="@../../../img/icons8-impostazioni-96.png" />
                   </ImageView>
                </graphic>
                <font>

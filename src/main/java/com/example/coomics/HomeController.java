@@ -2,6 +2,9 @@ package com.example.coomics;
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.control.Button;
+import javafx.scene.control.TextField;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
 import com.example.coomics.model.Comic;
 import tools.FxmlLoader;
@@ -20,6 +23,14 @@ public class HomeController {
     private BorderPane mainPane;
     @FXML
     private GridPane homeGrid;
+    @FXML
+    private TextField tfSearch;
+    @FXML
+    private Button btnSearch;
+    @FXML
+    private ImageView ivHome;
+
+
 
     private List<Comic> listOfCards;
 
@@ -132,5 +143,17 @@ public class HomeController {
         FxmlLoader object = new FxmlLoader();
         Pane view = object.getPage("favourites");
         mainPane.setCenter(view);
+    }
+
+    public void openHomepage() {
+        System.out.println("Clicked homepage");
+        FxmlLoader object = new FxmlLoader();
+        Pane view = object.getPage("home");
+        mainPane.setCenter(view);
+    }
+
+    public void search() {
+        System.out.println("Clicked search");
+        tfSearch.setText("");
     }
 }
