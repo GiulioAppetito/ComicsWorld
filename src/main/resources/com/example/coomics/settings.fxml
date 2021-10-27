@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
 
-<BorderPane fx:id="mainPane" prefHeight="500.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.coomics.SettingsController">
+<BorderPane fx:id="mainPane" prefHeight="729.0" prefWidth="980.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.coomics.SettingsController">
    <left>
       <VBox fx:id="settingsBox" opacity="0.7" prefHeight="400" prefWidth="185.0" styleClass="transparent" stylesheets="@../../../css/fullpackstyling.css" BorderPane.alignment="CENTER">
 

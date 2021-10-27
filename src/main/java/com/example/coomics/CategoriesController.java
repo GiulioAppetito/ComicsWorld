@@ -13,8 +13,84 @@ import java.util.List;
 public class CategoriesController {
 
 
+
     @FXML
-    VBox categoryLayout;
+    private VBox boxA;
+
+    @FXML
+    private VBox boxB;
+
+    @FXML
+    private VBox boxC;
+
+    @FXML
+    private VBox boxD;
+
+    @FXML
+    private VBox boxE;
+
+    @FXML
+    private VBox boxF;
+
+    @FXML
+    private VBox boxG;
+
+    @FXML
+    private VBox boxH;
+
+    @FXML
+    private VBox boxI;
+    @FXML
+    private VBox boxJ;
+
+    @FXML
+    private VBox boxK;
+
+    @FXML
+    private VBox boxL;
+
+    @FXML
+    private VBox boxM;
+
+    @FXML
+    private VBox boxN;
+
+    @FXML
+    private VBox boxO;
+
+    @FXML
+    private VBox boxP;
+
+    @FXML
+    private VBox boxQ;
+
+    @FXML
+    private VBox boxR;
+
+    @FXML
+    private VBox boxS;
+
+    @FXML
+    private VBox boxT;
+
+    @FXML
+    private VBox boxU;
+
+    @FXML
+    private VBox boxV;
+
+    @FXML
+    private VBox boxW;
+
+    @FXML
+    private VBox boxX;
+
+    @FXML
+    private VBox boxY;
+
+    @FXML
+    private VBox boxZ;
+
 
     public void initialize() {
 
@@ -29,7 +105,35 @@ public class CategoriesController {
                 HBox categoryBox = fxmlLoader.load();
                 CategoryController categoryController = fxmlLoader.getController();
                 categoryController.setData(category);
-                categoryLayout.getChildren().add(categoryBox);
+                switch(category.getInitial()){
+                    case "A":
+                                boxA.getChildren().add(categoryBox);
+                                break;
+                    case "B":
+                        boxB.getChildren().add(categoryBox);
+                        break;
+                    case "C":
+                        boxC.getChildren().add(categoryBox);
+                        break;
+                    case "D":
+                        boxD.getChildren().add(categoryBox);
+                        break;
+                    case "E":
+                        boxE.getChildren().add(categoryBox);
+                        break;
+                    case "F":
+                        boxF.getChildren().add(categoryBox);
+                        break;
+                    case "G":
+                        boxG.getChildren().add(categoryBox);
+                        break;
+
+                    default:
+                        break;
+
+
+                }
+
             } catch (IOException e) {
                 e.printStackTrace();
             }
