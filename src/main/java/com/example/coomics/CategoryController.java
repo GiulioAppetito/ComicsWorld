@@ -28,7 +28,4 @@ public class CategoryController {
 
     }
 
-    public void ciao(){}
-
-
 }
