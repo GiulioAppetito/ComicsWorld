@@ -4,7 +4,9 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
+import tools.FxmlLoader;
 
 public class SettingsController {
 
@@ -23,9 +25,17 @@ public class SettingsController {
     @FXML
     private Button aboutussettings;
 
-    public void openProfile() {
+    public void openProfileSettings() {
+        System.out.println("Clicked profile settings");
+        FxmlLoader object = new FxmlLoader();
+        Pane view = object.getPage("profilesettings");
+        mainPane.setCenter(view);
     }
 
-    public void openAccount() {
+    public void openAccountSettings() {
+        System.out.println("Clicked account settings");
+        FxmlLoader object = new FxmlLoader();
+        Pane view = object.getPage("accountsettings");
+        mainPane.setCenter(view);
     }
 }

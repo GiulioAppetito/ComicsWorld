@@ -123,14 +123,14 @@ public class HomeController {
     public void openCategories() {
         System.out.println("Clicked btn1");
         FxmlLoader object = new FxmlLoader();
-        Pane view = object.getPage("categoriespane");
+        Pane view = object.getPage("categories");
         mainPane.setCenter(view);
     }
 
     public void openFavourites() {
         System.out.println("Clicked btn3");
         FxmlLoader object = new FxmlLoader();
-        Pane view = object.getPage("favouritespane");
+        Pane view = object.getPage("favourites");
         mainPane.setCenter(view);
     }
 }
