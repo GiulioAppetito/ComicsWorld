@@ -12,8 +12,6 @@ import java.util.List;
 
 public class CategoriesController {
 
-
-
     @FXML
     private VBox boxA;
 
@@ -40,6 +38,7 @@ public class CategoriesController {
 
     @FXML
     private VBox boxI;
+
     @FXML
     private VBox boxJ;
 
@@ -90,8 +89,22 @@ public class CategoriesController {
 
     @FXML
     private VBox boxZ;
+/*
+    private static CategoriesController instance;
 
+    private CategoriesController(){
+    }
 
+    public static synchronized CategoriesController getInstance(){
+
+        if(instance==null){
+            instance = new CategoriesController();
+        }
+        return instance;
+
+    }
+
+*/
     public void initialize() {
 
         //System.out.println("Initialize categories");
@@ -105,33 +118,35 @@ public class CategoriesController {
                 HBox categoryBox = fxmlLoader.load();
                 CategoryController categoryController = fxmlLoader.getController();
                 categoryController.setData(category);
-                switch(category.getInitial()){
-                    case "A":
-                                boxA.getChildren().add(categoryBox);
-                                break;
-                    case "B":
-                        boxB.getChildren().add(categoryBox);
-                        break;
-                    case "C":
-                        boxC.getChildren().add(categoryBox);
-                        break;
-                    case "D":
-                        boxD.getChildren().add(categoryBox);
-                        break;
-                    case "E":
-                        boxE.getChildren().add(categoryBox);
-                        break;
-                    case "F":
-                        boxF.getChildren().add(categoryBox);
-                        break;
-                    case "G":
-                        boxG.getChildren().add(categoryBox);
-                        break;
-
-                    default:
-                        break;
-
-
+                switch (category.getInitial()) {
+                    case "A" -> boxA.getChildren().add(categoryBox);
+                    case "B" -> boxB.getChildren().add(categoryBox);
+                    case "C" -> boxC.getChildren().add(categoryBox);
+                    case "D" -> boxD.getChildren().add(categoryBox);
+                    case "E" -> boxE.getChildren().add(categoryBox);
+                    case "F" -> boxF.getChildren().add(categoryBox);
+                    case "G" -> boxG.getChildren().add(categoryBox);
+                    case "H" -> boxH.getChildren().add(categoryBox);
+                    case "I" -> boxI.getChildren().add(categoryBox);
+                    case "J" -> boxJ.getChildren().add(categoryBox);
+                    case "K" -> boxK.getChildren().add(categoryBox);
+                    case "L" -> boxL.getChildren().add(categoryBox);
+                    case "M" -> boxM.getChildren().add(categoryBox);
+                    case "N" -> boxN.getChildren().add(categoryBox);
+                    case "O" -> boxO.getChildren().add(categoryBox);
+                    case "P" -> boxP.getChildren().add(categoryBox);
+                    case "Q" -> boxQ.getChildren().add(categoryBox);
+                    case "R" -> boxR.getChildren().add(categoryBox);
+                    case "S" -> boxS.getChildren().add(categoryBox);
+                    case "T" -> boxT.getChildren().add(categoryBox);
+                    case "U" -> boxU.getChildren().add(categoryBox);
+                    case "V" -> boxV.getChildren().add(categoryBox);
+                    case "W" -> boxW.getChildren().add(categoryBox);
+                    case "X" -> boxX.getChildren().add(categoryBox);
+                    case "Y" -> boxY.getChildren().add(categoryBox);
+                    case "Z" -> boxZ.getChildren().add(categoryBox);
+                    default -> {
+                    }
                 }
 
             } catch (IOException e) {
