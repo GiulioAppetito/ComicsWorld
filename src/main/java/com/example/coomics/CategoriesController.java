@@ -47,7 +47,7 @@ public class CategoriesController {
         ComicsCategory category = new ComicsCategory();
         category.setName("Action");
         category.setIntial("A");
-        category.setImageSrc(null);
+        //category.setImageSrc(null);
         ls.add(category);
 
         ComicsCategory category2 = new ComicsCategory();
@@ -59,7 +59,7 @@ public class CategoriesController {
         ComicsCategory category3 = new ComicsCategory();
         category3.setName("Biography");
         category3.setIntial("B");
-        category3.setImageSrc(null);
+        //category3.setImageSrc(null);
         ls.add(category3);
 
         ComicsCategory category9 = new ComicsCategory();
@@ -95,7 +95,7 @@ public class CategoriesController {
         ComicsCategory category5= new ComicsCategory();
         category5.setName("Martial Arts");
         category5.setIntial("M");
-        category5.setImageSrc(null);
+        //category5.setImageSrc(null);
         ls.add(category5);
 
         ComicsCategory category6 = new ComicsCategory();
@@ -107,7 +107,7 @@ public class CategoriesController {
         ComicsCategory category7 = new ComicsCategory();
         category7.setName("Slice of life");
         category7.setIntial("S");
-        category7.setImageSrc(null);
+        //category7.setImageSrc(null);
         ls.add(category7);
 
         ComicsCategory category8 = new ComicsCategory();

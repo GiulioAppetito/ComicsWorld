@@ -28,9 +28,5 @@ public class CategoryController {
 
     }
 
-    public void dummy() {
 
-        System.out.println("ComicsCategory selected on click : " + categoryName.getText());
-
-    }
 }
