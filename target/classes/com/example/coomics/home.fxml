@@ -1,25 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.ScrollPane?>
-<?import javafx.scene.control.Separator?>
-<?import javafx.scene.control.TextField?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.BorderPane?>
-<?import javafx.scene.layout.ColumnConstraints?>
-<?import javafx.scene.layout.GridPane?>
-<?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.Pane?>
-<?import javafx.scene.layout.RowConstraints?>
-<?import javafx.scene.layout.VBox?>
-<?import javafx.scene.text.Font?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<BorderPane fx:id="mainPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.coomics.HomeController">
+<BorderPane fx:id="mainPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.coomics.HomeController">
    <top>
-      <HBox prefHeight="60.0" prefWidth="1100.0" BorderPane.alignment="CENTER">
+      <HBox prefHeight="60.0" prefWidth="1100.0" styleClass="white-background" stylesheets="@../../../css/fullpackstyling.css" BorderPane.alignment="CENTER">
          <Label alignment="CENTER" prefHeight="70.0" prefWidth="218.0" text="ComicsWorld" textAlignment="CENTER">
             <font>
                <Font name="Berlin Sans FB Demi Bold" size="36.0" />
@@ -74,7 +63,7 @@
             <Button mnemonicParsing="false" onAction="#openCategories" prefHeight="39.0" prefWidth="220.0" styleClass="button2" stylesheets="@../../../css/fullpackstyling.css" text="Categories">
                <graphic>
                   <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
-                     <Image url="@../../../img/icons8-classificare-96.png"/>
+                     <Image url="@../../../img/icons8-classificare-96.png" />
                   </ImageView>
                </graphic>
                <font>
@@ -84,7 +73,7 @@
             <Button mnemonicParsing="false" prefHeight="39.0" prefWidth="220.0" styleClass="button2" stylesheets="@../../../css/fullpackstyling.css" text="Top Comics">
                <graphic>
                   <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
-                     <Image url="@../../../img/icons8-classifica-96.png"/>
+                     <Image url="@../../../img/icons8-classifica-96.png" />
                   </ImageView>
                </graphic>
                <font>
@@ -101,40 +90,37 @@
             <VBox prefHeight="200.0" prefWidth="100.0" spacing="5.0">
                <Label prefHeight="28.0" prefWidth="210.0" text="Your lists">
                   <VBox.margin>
-                     <Insets left="10.0"/>
+                     <Insets left="10.0" />
                   </VBox.margin>
                </Label>
-               <Button mnemonicParsing="false" prefHeight="39.0" prefWidth="220.0" styleClass="button2"
-                       stylesheets="@../../../css/fullpackstyling.css" text="Favourites">
+               <Button mnemonicParsing="false" prefHeight="39.0" prefWidth="220.0" styleClass="button2" stylesheets="@../../../css/fullpackstyling.css" text="Favourites">
                   <graphic>
                      <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
-                        <Image url="@../../../img/icons8-cartella-preferiti-96.png"/>
+                        <Image url="@../../../img/icons8-cartella-preferiti-96.png" />
                      </ImageView>
                   </graphic>
                   <font>
-                     <Font name="Berlin Sans FB" size="18.0"/>
+                     <Font name="Berlin Sans FB" size="18.0" />
                   </font>
                </Button>
-               <Button mnemonicParsing="false" prefHeight="39.0" prefWidth="220.0" styleClass="button2"
-                       stylesheets="@../../../css/fullpackstyling.css" text="Reading">
+               <Button mnemonicParsing="false" prefHeight="39.0" prefWidth="220.0" styleClass="button2" stylesheets="@../../../css/fullpackstyling.css" text="Reading">
                   <graphic>
                      <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
-                        <Image url="@../../../img/icons8-book-reading-96.png"/>
+                        <Image url="@../../../img/icons8-book-reading-96.png" />
                      </ImageView>
                   </graphic>
                   <font>
-                     <Font name="Berlin Sans FB" size="18.0"/>
+                     <Font name="Berlin Sans FB" size="18.0" />
                   </font>
                </Button>
-               <Button mnemonicParsing="false" prefHeight="39.0" prefWidth="220.0" styleClass="button2"
-                       stylesheets="@../../../css/fullpackstyling.css" text="To read">
+               <Button mnemonicParsing="false" prefHeight="39.0" prefWidth="220.0" styleClass="button2" stylesheets="@../../../css/fullpackstyling.css" text="To read">
                   <graphic>
                      <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
-                        <Image url="@../../../img/icons8-libro-96.png"/>
+                        <Image url="@../../../img/icons8-libro-96.png" />
                      </ImageView>
                   </graphic>
                   <font>
-                     <Font name="Berlin Sans FB" size="18.0"/>
+                     <Font name="Berlin Sans FB" size="18.0" />
                   </font>
                </Button>
             </VBox>
@@ -153,7 +139,7 @@
             <Button mnemonicParsing="false" onAction="#openSettings" prefHeight="39.0" prefWidth="220.0" styleClass="button2" stylesheets="@../../../css/fullpackstyling.css" text="Settings">
                <graphic>
                   <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
-                     <Image url="@../../../img/icons8-impostazioni-96.png"/>
+                     <Image url="@../../../img/icons8-impostazioni-96.png" />
                   </ImageView>
                </graphic>
                <font>
@@ -168,26 +154,6 @@
       <Pane prefHeight="740.0" prefWidth="14.0" BorderPane.alignment="CENTER" />
    </right>
    <center>
-      <ScrollPane prefHeight="740.0" prefWidth="960.0" BorderPane.alignment="CENTER">
-         <GridPane fx:id="homeGrid" hgap="10.0" prefHeight="700.0" prefWidth="940.0" vgap="10.0">
-            <columnConstraints>
-               <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-               <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-               <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-               <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-               <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-               <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-            </columnConstraints>
-            <rowConstraints>
-               <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-               <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-               <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-            </rowConstraints>
-            <padding>
-               <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-            </padding>
-            <Pane prefHeight="200.0" prefWidth="200.0" />
-         </GridPane>
-      </ScrollPane>
+      <ScrollPane prefHeight="700.0" prefWidth="940.0" BorderPane.alignment="CENTER" />
    </center>
 </BorderPane>

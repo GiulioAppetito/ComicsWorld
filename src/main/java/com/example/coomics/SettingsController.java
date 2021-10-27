@@ -38,4 +38,25 @@ public class SettingsController {
         Pane view = object.getPage("accountsettings");
         mainPane.setCenter(view);
     }
+
+    public void openPreferencesSettings() {
+        System.out.println("Clicked on preferences settings");
+        FxmlLoader object = new FxmlLoader();
+        Pane view = object.getPage("preferencessettings");
+        mainPane.setCenter(view);
+    }
+
+    public void openMyBadgesSettings() {
+        System.out.println("Clicked on my badges settings");
+        FxmlLoader object = new FxmlLoader();
+        Pane view = object.getPage("badgessettings");
+        mainPane.setCenter(view);
+    }
+
+    public void openAboutUsSettings() {
+        System.out.println("Clicked on about us settings");
+        FxmlLoader object = new FxmlLoader();
+        Pane view = object.getPage("aboutussettings");
+        mainPane.setCenter(view);
+    }
 }

@@ -13,15 +13,13 @@ import java.util.List;
 public class CategoriesController {
 
 
-    private List<ComicsCategory> categories;
-
     @FXML
     VBox categoryLayout;
 
     public void initialize() {
 
         //System.out.println("Initialize categories");
-        categories = new ArrayList<>(add());
+        List<ComicsCategory> categories = new ArrayList<>(add());
 
         for (ComicsCategory category : categories) {
 
