@@ -141,9 +141,11 @@ public class HomeController {
     }
 
     public void openFavourites() {
-        System.out.println("Clicked btn3");
+        System.out.println("Clicked favourites");
         FxmlLoader object = new FxmlLoader();
         Pane view = object.getPage("favourites");
         mainPane.setCenter(view);
     }
+
+
 }
