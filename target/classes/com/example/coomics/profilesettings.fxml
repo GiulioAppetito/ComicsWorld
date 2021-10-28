@@ -25,24 +25,23 @@
                <font>
                   <Font name="Berlin Sans FB" size="24.0" />
                </font>
+               <VBox.margin>
+                  <Insets top="20.0" />
+               </VBox.margin>
             </Label>
             <HBox alignment="CENTER" prefHeight="227.0" prefWidth="440.0">
                <VBox.margin>
                   <Insets />
                </VBox.margin>
-               <children>
-                  <ImageView fitHeight="221.0" fitWidth="220.0" pickOnBounds="true" preserveRatio="true">
-                     <Image url="@../../../img/business_man.jpg" />
-                     <HBox.margin>
-                        <Insets left="25.0" />
-                     </HBox.margin>
-                  </ImageView>
-                  <ImageView fitHeight="33.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../../../img/icons8-modificare-96.png" />
-                     </image>
-                  </ImageView>
-               </children>
+               <ImageView fitHeight="221.0" fitWidth="220.0" pickOnBounds="true" preserveRatio="true">
+                  <Image url="@../../../img/business_man.jpg" />
+                  <HBox.margin>
+                     <Insets left="25.0" />
+                  </HBox.margin>
+               </ImageView>
+               <ImageView fitHeight="33.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true">
+                  <Image url="@../../../img/icons8-modificare-96.png" />
+               </ImageView>
             </HBox>
             <Label alignment="CENTER" prefHeight="52.0" prefWidth="520.0" text="Username" textAlignment="CENTER" textFill="#0b0404">
                <font>
@@ -53,21 +52,17 @@
                </VBox.margin>
             </Label>
             <HBox alignment="CENTER">
-               <children>
-                  <Label alignment="CENTER" prefHeight="51.0" prefWidth="164.0" text="pinkiepiex" textAlignment="CENTER">
-                     <font>
-                        <Font name="Berlin Sans FB" size="24.0" />
-                     </font>
-                     <HBox.margin>
-                        <Insets left="25.0" />
-                     </HBox.margin>
-                  </Label>
-                  <ImageView fitHeight="33.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../../../img/icons8-modificare-96.png" />
-                     </image>
-                  </ImageView>
-               </children>
+               <Label alignment="CENTER" prefHeight="51.0" prefWidth="164.0" text="pinkiepiex" textAlignment="CENTER">
+                  <font>
+                     <Font name="Berlin Sans FB" size="24.0" />
+                  </font>
+                  <HBox.margin>
+                     <Insets left="25.0" />
+                  </HBox.margin>
+               </Label>
+               <ImageView fitHeight="33.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true">
+                  <Image url="@../../../img/icons8-modificare-96.png" />
+               </ImageView>
             </HBox>
             <padding>
                <Insets bottom="40.0" top="40.0" />
