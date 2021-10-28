@@ -6,7 +6,6 @@ import javafx.scene.layout.*;
 import com.example.coomics.model.Comic;
 import tools.FxmlLoader;
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -17,14 +16,14 @@ public class HomeController {
     @FXML
     private HBox settingsBox;
     @FXML
-    private static BorderPane mainPane;
+    private BorderPane mainPane;
     @FXML
     private GridPane homeGrid;
 
     private List<Comic> listOfCards;
 
-    /*
-    private static HomeController instance;
+/*
+    public static HomeController instance;
 
 
     private HomeController(){

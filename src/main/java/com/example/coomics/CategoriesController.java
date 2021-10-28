@@ -89,8 +89,8 @@ public class CategoriesController {
 
     @FXML
     private VBox boxZ;
-/*
-    private static CategoriesController instance;
+
+    public static CategoriesController instance;
 
     private CategoriesController(){
     }
@@ -104,7 +104,7 @@ public class CategoriesController {
 
     }
 
-*/
+
     public void initialize() {
 
         //System.out.println("Initialize categories");
