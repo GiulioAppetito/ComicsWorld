@@ -14,7 +14,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane fx:id="mainPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.coomics.HomeController">
+<BorderPane fx:id="mainPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" styleClass="wallpaper" stylesheets="@../../../css/fullpackstyling.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.coomics.HomeController">
    <top>
       <HBox prefHeight="60.0" prefWidth="1100.0" styleClass="white-background" stylesheets="@../../../css/fullpackstyling.css" BorderPane.alignment="CENTER">
          <Label alignment="CENTER" prefHeight="70.0" prefWidth="218.0" text="ComicsWorld" textAlignment="CENTER">
@@ -162,6 +162,6 @@
       <Pane prefHeight="740.0" prefWidth="14.0" BorderPane.alignment="CENTER" />
    </right>
    <center>
-      <ScrollPane prefHeight="700.0" prefWidth="940.0" BorderPane.alignment="CENTER" />
+      <ScrollPane opacity="0.0" prefHeight="700.0" prefWidth="940.0" BorderPane.alignment="CENTER" />
    </center>
 </BorderPane>

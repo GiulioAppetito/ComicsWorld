@@ -223,11 +223,19 @@
     -fx-border-color:#D7D7D7;
 }
 
+.round-corners{
+    -fx-border-radius: 200;
+
+
+}
+
+
 .selected{
     -fx-background-color:#F3F3F3;
 }
 
 .wallpaper{
-    -fx-background-image: url('purple2.png');
-    -fx-background-size: 1300;
+    -fx-background-image: url('bubble2.png');
+    -fx-background-size: 1900;
+
 }

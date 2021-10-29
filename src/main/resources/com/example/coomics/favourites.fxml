@@ -30,7 +30,7 @@
                <Font name="Berlin Sans FB" size="18.0" />
             </font></Button>
             <Separator prefWidth="200.0" />
-            <Button fx:id="btnAuthors" alignment="CENTER" mnemonicParsing="false" prefHeight="58.0" prefWidth="214.0" stylesheets="@../../../css/fullpackstyling.css" text="Authors">
+            <Button fx:id="btnAuthors" alignment="CENTER" mnemonicParsing="false" onAction="#switchToAuthors" prefHeight="58.0" prefWidth="214.0" stylesheets="@../../../css/fullpackstyling.css" text="Authors">
                 <styleClass>
                     <String fx:value="button2" />
                     <String fx:value="transparent" />
@@ -39,7 +39,7 @@
                <Font name="Berlin Sans FB" size="18.0" />
             </font></Button>
             <Separator prefWidth="200.0" />
-            <Button fx:id="btnCharacters" alignment="CENTER" mnemonicParsing="false" prefHeight="58.0" prefWidth="233.0" stylesheets="@../../../css/fullpackstyling.css" text="Characters">
+            <Button fx:id="btnCharacters" alignment="CENTER" mnemonicParsing="false" onAction="#switchToCharacters" prefHeight="58.0" prefWidth="233.0" stylesheets="@../../../css/fullpackstyling.css" text="Characters">
                 <styleClass>
                     <String fx:value="button2" />
                     <String fx:value="transparent" />

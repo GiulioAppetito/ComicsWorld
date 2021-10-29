@@ -25,8 +25,7 @@ public class FavouritesController {
     @FXML
     private Button btnCharacters;
 
-    @FXML
-    private Pane basePane;
+
 
     @FXML
     void switchToComics(ActionEvent event) {
@@ -35,9 +34,24 @@ public class FavouritesController {
         FxmlLoader object = new FxmlLoader();
         Pane view = object.getPage("favouritecomics");
         mainPane.setCenter(view);
+    }
 
+    @FXML
+    void switchToAuthors(ActionEvent event) {
 
+        System.out.println("Clicked comics");
+        FxmlLoader object = new FxmlLoader();
+        Pane view = object.getPage("favouriteauthors");
+        mainPane.setCenter(view);
+    }
 
+    @FXML
+    void switchToCharacters(ActionEvent event) {
+
+        System.out.println("Clicked comics");
+        FxmlLoader object = new FxmlLoader();
+        Pane view = object.getPage("favouritecharacters");
+        mainPane.setCenter(view);
     }
 
 
