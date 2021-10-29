@@ -37,7 +37,7 @@
             <HBox.margin>
                <Insets />
             </HBox.margin>
-            <ImageView fitHeight="50.0" fitWidth="50.0" layoutY="5.0" onMouseClicked="#openHome" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="50.0" fitWidth="50.0" layoutY="5.0" onMouseClicked="#openFeed" pickOnBounds="true" preserveRatio="true">
                <Image url="@../../../img/icons8-home-page-96.png" />
             </ImageView>
          </Pane>
