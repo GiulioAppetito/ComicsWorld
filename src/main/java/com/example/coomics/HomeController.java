@@ -147,5 +147,12 @@ public class HomeController {
         mainPane.setCenter(view);
     }
 
+    public void openHome() {
+        System.out.println("Clicked feed");
+        FxmlLoader object = new FxmlLoader();
+        Pane view = object.getPage("feed");
+        mainPane.setCenter(view);
+    }
+
 
 }

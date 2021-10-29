@@ -11,7 +11,7 @@
 
 <BorderPane fx:id="mainPane" prefHeight="729.0" prefWidth="980.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.coomics.FavouritesController">
     <left>
-        <VBox fx:id="settingsBox" opacity="0.7" prefHeight="709.0" prefWidth="204.0" styleClass="transparent" stylesheets="@../../../css/fullpackstyling.css" BorderPane.alignment="CENTER">
+        <VBox fx:id="settingsBox" prefHeight="709.0" prefWidth="204.0" styleClass="glass" stylesheets="@../../../css/fullpackstyling.css" BorderPane.alignment="CENTER">
 
             <padding>
                 <Insets bottom="20.0" top="20.0" />

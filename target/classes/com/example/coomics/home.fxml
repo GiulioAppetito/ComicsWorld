@@ -37,19 +37,19 @@
             <HBox.margin>
                <Insets />
             </HBox.margin>
-            <ImageView fitHeight="50.0" fitWidth="50.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="50.0" fitWidth="50.0" layoutY="5.0" onMouseClicked="#openHome" pickOnBounds="true" preserveRatio="true">
                <Image url="@../../../img/icons8-home-page-96.png" />
             </ImageView>
          </Pane>
          <HBox fx:id="userBox" onMouseClicked="#openProfile" prefHeight="100.0" prefWidth="200.0">
-            <Label alignment="CENTER" prefHeight="68.0" prefWidth="115.0" text="Anastasia Brinati">
+            <Label alignment="CENTER" prefHeight="60.0" prefWidth="146.0" text="Anastasia Brinati">
                <font>
-                  <Font size="14.0" />
+                  <Font name="Berlin Sans FB" size="18.0" />
                </font>
             </Label>
             <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
                <HBox.margin>
-                  <Insets left="20.0" top="5.0" />
+                  <Insets top="5.0" />
                </HBox.margin>
                <Image url="@../../../img/business_man.jpg" />
             </ImageView>

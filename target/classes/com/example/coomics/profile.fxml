@@ -20,6 +20,7 @@
          <styleClass>
             <String fx:value="button2" />
             <String fx:value="oval-layout" />
+            <String fx:value="glass" />
          </styleClass>
          <VBox prefHeight="649.0" prefWidth="452.0">
             <ImageView fitHeight="261.0" fitWidth="254.0" pickOnBounds="true" preserveRatio="true">
@@ -74,7 +75,7 @@
          </VBox>
       </Pane>
       <VBox prefHeight="729.0" prefWidth="453.0">
-         <Pane opacity="0.7" prefHeight="208.0" prefWidth="369.0" styleClass="button2" stylesheets="@../../../css/fullpackstyling.css">
+         <Pane opacity="0.7" prefHeight="208.0" prefWidth="369.0" stylesheets="@../../../css/fullpackstyling.css">
             <VBox.margin>
                <Insets bottom="40.0" left="40.0" right="40.0" top="40.0" />
             </VBox.margin>
@@ -88,8 +89,12 @@
                   </VBox.margin>
                </Label>
             </VBox>
+            <styleClass>
+               <String fx:value="button2" />
+               <String fx:value="glass" />
+            </styleClass>
          </Pane>
-         <Pane opacity="0.7" prefHeight="377.0" prefWidth="308.0" styleClass="button2" stylesheets="@../../../css/fullpackstyling.css">
+         <Pane opacity="0.7" prefHeight="377.0" prefWidth="308.0" stylesheets="@../../../css/fullpackstyling.css">
             <VBox.margin>
                <Insets bottom="40.0" left="40.0" right="40.0" top="40.0" />
             </VBox.margin>
@@ -103,6 +108,10 @@
                   </padding>
                </Label>
             </VBox>
+            <styleClass>
+               <String fx:value="button2" />
+               <String fx:value="glass" />
+            </styleClass>
          </Pane>
       </VBox>
    </HBox>
