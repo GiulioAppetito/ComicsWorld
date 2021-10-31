@@ -248,8 +248,34 @@
     -fx-effect: dropshadow(one-pass-box,white,10,10,0,0);
 }
 
-.buttonCancel {
+.buttonCancel
+{
+    -fx-background-color : #E2E2E2;
+    -fx-background-radius :  20;
+}
+.buttonCancel:hover
+{
+    -fx-background-color : #D2D2D2 ;
+    -fx-background-radius :  20;
+}
+.buttonCancel:pressed
+{
+    -fx-background-color : #d25b5b;
+    -fx-background-radius :  20;
 }
 
-.buttonLog {
+.buttonLogin
+{
+    -fx-background-color : #E2E2E2;
+    -fx-background-radius :  20;
+}
+.buttonLogin:hover
+{
+    -fx-background-color : #D2D2D2 ;
+    -fx-background-radius :  20;
+}
+.buttonLogin:pressed
+{
+    -fx-background-color : #2c92ff;
+    -fx-background-radius :  20;
 }

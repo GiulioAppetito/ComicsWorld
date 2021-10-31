@@ -19,7 +19,7 @@
       <HBox prefHeight="60.0" prefWidth="1100.0" styleClass="white-background" stylesheets="@../../../css/fullpackstyling.css" BorderPane.alignment="CENTER">
          <Label alignment="CENTER" prefHeight="70.0" prefWidth="218.0" text="ComicsWorld" textAlignment="CENTER">
             <font>
-               <Font name="Berlin Sans FB Demi Bold" size="36.0" />
+               <Font name="Mistral" size="45.0" />
             </font>
          </Label>
          <Separator maxHeight="-Infinity" orientation="VERTICAL" prefHeight="50.0">

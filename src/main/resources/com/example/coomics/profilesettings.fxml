@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="729.0" prefWidth="600.0" styleClass="transparent" stylesheets="@../../../css/fullpackstyling.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="729.0" prefWidth="600.0" styleClass="transparent" stylesheets="@../../../css/fullpackstyling.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
    <HBox prefHeight="729.0" prefWidth="600.0">
       <Pane opacity="0.7" prefHeight="650.0" prefWidth="520.0" stylesheets="@../../../css/fullpackstyling.css">
          <HBox.margin>
@@ -43,7 +43,7 @@
                   <Image url="@../../../img/icons8-modificare-96.png" />
                </ImageView>
             </HBox>
-            <Label alignment="CENTER" prefHeight="52.0" prefWidth="520.0" text="Username" textAlignment="CENTER" textFill="#0b0404">
+            <Label alignment="CENTER" prefHeight="52.0" prefWidth="520.0" text="Username" textAlignment="CENTER" textFill="#110303">
                <font>
                   <Font name="Berlin Sans FB" size="24.0" />
                </font>
@@ -52,7 +52,7 @@
                </VBox.margin>
             </Label>
             <HBox alignment="CENTER">
-               <Label alignment="CENTER" prefHeight="51.0" prefWidth="164.0" text="pinkiepiex" textAlignment="CENTER">
+               <Label alignment="CENTER" prefHeight="51.0" prefWidth="164.0" text="pinkiepiex" textAlignment="CENTER" textFill="#110303">
                   <font>
                      <Font name="Berlin Sans FB" size="24.0" />
                   </font>

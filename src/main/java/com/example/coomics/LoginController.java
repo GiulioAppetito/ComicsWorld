@@ -1,21 +1,30 @@
 package com.example.coomics;
 
 import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Scene;
+import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.Pane;
+import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
+import tools.FxmlLoader;
 
 import java.io.IOException;
 
 public class LoginController {
 
-    public TextField tfEmail;
+    @FXML
+    private VBox vbLogin;
 
-    public void initialize(){
+    @FXML
+    private TextField tfEmail;
 
-    }
+    @FXML
+    private PasswordField tfPassword;
 
     public void clickLogin(ActionEvent event) throws IOException {
 
@@ -29,4 +38,13 @@ public class LoginController {
         ((Stage)((Node)event.getSource()).getScene().getWindow()).close();
 
     }
+
+    public void clickCancel(){
+        tfEmail.setText("");
+        tfPassword.setText("");
+    }
+
+
+
+
 }
