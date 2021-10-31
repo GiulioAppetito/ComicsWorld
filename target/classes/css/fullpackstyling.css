@@ -239,6 +239,17 @@
     -fx-background-size: 1900;
 
 }
+.wallpaperlogin{
+    -fx-background-image: url('bubble2.png');
+    -fx-background-size: 1000;
+
+}
 .glass{
     -fx-effect: dropshadow(one-pass-box,white,10,10,0,0);
+}
+
+.buttonCancel {
+}
+
+.buttonLog {
 }
