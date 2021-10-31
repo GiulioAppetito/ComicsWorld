@@ -147,7 +147,7 @@ public class HomeController {
         mainPane.setCenter(view);
     }
 
-    public void openHome() {
+    public void openFeed() {
         System.out.println("Clicked feed");
         FxmlLoader object = new FxmlLoader();
         Pane view = object.getPage("feed");
