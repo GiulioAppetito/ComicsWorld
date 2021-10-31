@@ -39,7 +39,11 @@ public class HomeController {
 */
     public void initialize() {
 
-        listOfCards = new ArrayList<>(add());
+
+    }
+
+    /* ex initizialize:
+    listOfCards = new ArrayList<>(add());
 
         for(int i=0;i<6;i++) {
 
@@ -56,11 +60,11 @@ public class HomeController {
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
-                */
+
 
             }
         }
-    }
+     */
 
     private List<Comic> add(){
 
