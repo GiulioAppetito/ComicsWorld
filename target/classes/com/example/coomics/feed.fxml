@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.Pane?>
+
+<ScrollPane prefHeight="700.0" prefWidth="940.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.coomics.FeedController">
+   <Pane prefHeight="698.0" prefWidth="937.0">
+      <Label fx:id="lblHome" prefHeight="161.0" prefWidth="300.0" text="HOME" />
+   </Pane>
+</ScrollPane>
