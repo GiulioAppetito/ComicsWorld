@@ -1,4 +1,4 @@
-package com.example.coomics.model.fagioli;
+package com.example.coomics.fagioli;
 
 import com.example.coomics.model.LoginController;
 
@@ -27,13 +27,11 @@ public class LoginBean {
 
     public boolean validate() {
         // controllo sintattico
-        if (email == null || email == "" || password == null || password == "") {
+        if (email == null || email.equals("") || password == null || password.equals("")) {
             return false;
         }
 
-        boolean utenteTrovato = LoginController.getInstance().login(email, password);
-        return utenteTrovato;
-
+        return LoginController.getInstance().login(email, password);
     }
 
 }

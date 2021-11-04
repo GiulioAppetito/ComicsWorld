@@ -1,7 +1,5 @@
 package com.example.coomics.model;
 
-import com.example.coomics.model.fagioli.LoginBean;
-
 public class LoginController {
     public static LoginController INSTANCE;
 

@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane  xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.coomics.RegistrationController">
+<BorderPane xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.coomics.RegistrationController">
    <center>
       <VBox prefHeight="632.0" prefWidth="450.0" styleClass="wallpaperlogin" stylesheets="@../../../css/fullpackstyling.css">
          <Label text="Registration">
@@ -48,6 +48,7 @@
             </VBox.margin>
          </PasswordField>
           <HBox prefHeight="380.0" prefWidth="450.0" translateZ="300.0">
+                
               <Button mnemonicParsing="false" onAction="#cancelForm" opacity="0.6" prefHeight="76.0" prefWidth="186.0" stylesheets="@../../../css/fullpackstyling.css" text="Cancel">
                   <font>
                       <Font name="Berlin Sans FB" size="24.0" />
