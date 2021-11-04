@@ -1,6 +1,7 @@
 package com.example.comics;
 
 import javafx.fxml.FXML;
+import javafx.scene.control.Button;
 import javafx.scene.layout.*;
 import com.example.comics.model.Comic;
 import tools.FxmlLoader;
@@ -8,7 +9,7 @@ import tools.FxmlLoader;
 import java.util.ArrayList;
 import java.util.List;
 
-public class HomeController {
+public class HomeControllerG {
 
     @FXML
     private HBox userBox;
@@ -19,19 +20,37 @@ public class HomeController {
     @FXML
     private GridPane homeGrid;
 
+    @FXML
+    private Button btnCategories;
+
+    @FXML
+    private Button btnFav;
+
+    @FXML
+    private Button btnReading;
+
+    @FXML
+    private Button btnSettings;
+
+    @FXML
+    private Button btnToRead;
+
+    @FXML
+    private Button btnTop;
+
     private List<Comic> listOfCards;
 
 /*
-    public static HomeController instance;
+    public static HomeControllerG instance;
 
 
-    private HomeController(){
+    private HomeControllerG(){
 
     }
 
-    public static HomeController getInstance(){
+    public static HomeControllerG getInstance(){
         if(instance==null){
-            instance = new HomeController();
+            instance = new HomeControllerG();
         }
         return instance;
     }
@@ -127,6 +146,13 @@ public class HomeController {
         FxmlLoader object = new FxmlLoader();
         Pane view = object.getPage("profile");
         mainPane.setCenter(view);
+
+        btnSettings.setStyle("-fx-background-color: #E2E2E2; ");
+        btnCategories.setStyle("-fx-background-color: #E2E2E2; ");
+        btnFav.setStyle("-fx-background-color: #E2E2E2; ");
+        btnReading.setStyle("-fx-background-color: #E2E2E2; ");
+        btnTop.setStyle("-fx-background-color: #E2E2E2; ");
+        btnToRead.setStyle("-fx-background-color: #E2E2E2; ");
     }
 
     public void openSettings() {
@@ -134,6 +160,14 @@ public class HomeController {
         FxmlLoader object = new FxmlLoader();
         Pane view = object.getPage("settings");
         mainPane.setCenter(view);
+
+        btnSettings.setStyle("-fx-background-color: #5DADE2; ");
+        btnCategories.setStyle("-fx-background-color: #E2E2E2; ");
+        btnFav.setStyle("-fx-background-color: #E2E2E2; ");
+        btnReading.setStyle("-fx-background-color: #E2E2E2; ");
+        btnTop.setStyle("-fx-background-color: #E2E2E2; ");
+        btnToRead.setStyle("-fx-background-color: #E2E2E2; ");
+
     }
 
     public void openCategories() {
@@ -141,6 +175,13 @@ public class HomeController {
         FxmlLoader object = new FxmlLoader();
         Pane view = object.getPage("categories");
         mainPane.setCenter(view);
+
+        btnSettings.setStyle("-fx-background-color: #E2E2E2; ");
+        btnCategories.setStyle("-fx-background-color: #5DADE2; ");
+        btnFav.setStyle("-fx-background-color: #E2E2E2; ");
+        btnReading.setStyle("-fx-background-color: #E2E2E2; ");
+        btnTop.setStyle("-fx-background-color: #E2E2E2; ");
+        btnToRead.setStyle("-fx-background-color: #E2E2E2; ");
     }
 
     public void openFavourites() {
@@ -148,6 +189,13 @@ public class HomeController {
         FxmlLoader object = new FxmlLoader();
         Pane view = object.getPage("favourites");
         mainPane.setCenter(view);
+
+        btnSettings.setStyle("-fx-background-color: #E2E2E2; ");
+        btnCategories.setStyle("-fx-background-color: #E2E2E2; ");
+        btnFav.setStyle("-fx-background-color: #5DADE2; ");
+        btnReading.setStyle("-fx-background-color: #E2E2E2; ");
+        btnTop.setStyle("-fx-background-color: #E2E2E2; ");
+        btnToRead.setStyle("-fx-background-color: #E2E2E2; ");
     }
 
     public void openFeed() {
@@ -155,6 +203,13 @@ public class HomeController {
         FxmlLoader object = new FxmlLoader();
         Pane view = object.getPage("feed");
         mainPane.setCenter(view);
+
+        btnSettings.setStyle("-fx-background-color: #E2E2E2; ");
+        btnCategories.setStyle("-fx-background-color: #E2E2E2; ");
+        btnFav.setStyle("-fx-background-color: #E2E2E2; ");
+        btnReading.setStyle("-fx-background-color: #E2E2E2; ");
+        btnTop.setStyle("-fx-background-color: #E2E2E2; ");
+        btnToRead.setStyle("-fx-background-color: #E2E2E2; ");
     }
 
 

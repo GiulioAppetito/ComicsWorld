@@ -2,7 +2,7 @@ package com.example.comics;
 
 public class ProfileController {
 
-    //HomeController home = HomeController.getInstance();
+    //HomeControllerG home = HomeControllerG.getInstance();
     public void edit(){
 
     }

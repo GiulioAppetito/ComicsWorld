@@ -3,7 +3,7 @@ package tools;
 import java.net.URL;
 
 
-import com.example.comics.HomeController;
+import com.example.comics.HomeControllerG;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.layout.Pane;
 
@@ -15,7 +15,7 @@ public class FxmlLoader {
 		
 		
 		try{
-			URL fileUrl = HomeController.class.getResource(fileName + ".fxml");
+			URL fileUrl = HomeControllerG.class.getResource(fileName + ".fxml");
 			if(fileUrl == null) {
 				throw new java.io.FileNotFoundException("FXML not found");
 			}
