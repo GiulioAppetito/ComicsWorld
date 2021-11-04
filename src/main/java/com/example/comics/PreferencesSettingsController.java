@@ -1,4 +1,4 @@
-package com.example.comics.graphiccontroller;
+package com.example.comics;
 
 public class PreferencesSettingsController {
 }

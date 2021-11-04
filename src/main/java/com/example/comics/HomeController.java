@@ -1,4 +1,4 @@
-package com.example.comics.graphiccontroller;
+package com.example.comics;
 
 import javafx.fxml.FXML;
 import javafx.scene.layout.*;

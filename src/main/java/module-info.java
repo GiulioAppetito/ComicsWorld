@@ -12,6 +12,4 @@ module com.example.coomics {
     opens com.example.comics to javafx.fxml;
     exports com.example.comics;
     exports com.example.comics.model;
-    exports com.example.comics.graphiccontroller;
-    opens com.example.comics.graphiccontroller to javafx.fxml;
 }

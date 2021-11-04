@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.text.Font?>
 
-<HBox prefHeight="90.0" prefWidth="800.0" spacing="15.0" stylesheets="@../../../css/fullpackstyling.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.comics.graphiccontroller.CategoryController">
+<HBox prefHeight="90.0" prefWidth="800.0" spacing="15.0" stylesheets="@../../../css/fullpackstyling.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.comics.CategoryController">
     <styleClass>
         <String fx:value="oval-layout" />
         <String fx:value="transparent" />

@@ -3,7 +3,7 @@ package tools;
 import java.net.URL;
 
 
-import com.example.comics.graphiccontroller.HomeController;
+import com.example.comics.HomeController;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.layout.Pane;
 

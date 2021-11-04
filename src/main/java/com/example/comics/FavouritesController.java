@@ -1,4 +1,4 @@
-package com.example.comics.graphiccontroller;
+package com.example.comics;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;

@@ -36,7 +36,7 @@ public class FormControllerG {
 
     public void switchToRegistration(){
         FxmlLoader object = new FxmlLoader();
-        Pane view = object.getPage("registration");
+        Pane view = object.getPage("home");
         bpLogin.setCenter(view);
         btnBack.setVisible(true);
         vbRegistration.setVisible(false);
