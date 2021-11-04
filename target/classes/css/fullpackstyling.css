@@ -48,7 +48,8 @@
 }
 .button2:pressed
 {
-
+    -fx-background-color : #5DADE2 ;
+    -fx-background-radius :  20;
 }
 .button2:focused
 {
