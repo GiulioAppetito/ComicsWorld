@@ -3,7 +3,7 @@ package tools;
 import java.net.URL;
 
 
-import com.example.coomics.HomeController;
+import com.example.coomics.graphiccontroller.HomeController;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.layout.Pane;
 

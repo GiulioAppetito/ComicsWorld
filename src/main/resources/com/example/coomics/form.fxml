@@ -14,7 +14,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane fx:id="bpLogin" styleClass="wallpaperlogin" stylesheets="@../../../css/fullpackstyling.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.coomics.FormController">
+<BorderPane fx:id="bpLogin" styleClass="wallpaperlogin" stylesheets="@../../../css/fullpackstyling.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.coomics.graphiccontroller.FormController">
     <center>
         <VBox fx:id="vbLogin" prefHeight="632.0" prefWidth="450.0" styleClass="wallpaperlogin" stylesheets="@../../../css/fullpackstyling.css">
             <HBox prefHeight="632.0" prefWidth="425.0" />

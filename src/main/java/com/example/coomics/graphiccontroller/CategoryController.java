@@ -1,4 +1,4 @@
-package com.example.coomics;
+package com.example.coomics.graphiccontroller;
 
 
 import com.example.coomics.model.ComicsCategory;
