@@ -16,7 +16,7 @@
             <padding>
                 <Insets right="10.0" top="10.0" />
             </padding>
-            <Label text="A">
+            <Label text="A" translateZ="-400.0">
                 <font>
                     <Font size="24.0" />
                 </font>

@@ -1,15 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.String?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Separator?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-<BorderPane fx:id="mainPane" prefHeight="729.0" prefWidth="980.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.coomics.SettingsController">
+<BorderPane fx:id="mainPane" prefHeight="729.0" prefWidth="980.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.coomics.SettingsController">
    <left>
-      <VBox fx:id="settingsBox" opacity="0.7" prefHeight="400" prefWidth="185.0" styleClass="transparent" stylesheets="@../../../css/fullpackstyling.css" BorderPane.alignment="CENTER">
+      <VBox fx:id="settingsBox" prefHeight="400" prefWidth="185.0" styleClass="transparent" stylesheets="@../../../css/fullpackstyling.css" BorderPane.alignment="CENTER">
 
          <padding>
             <Insets bottom="20.0" top="20.0" />
@@ -19,15 +21,50 @@
             <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
          </BorderPane.margin>
 
-         <Button fx:id="profile" mnemonicParsing="false" onAction="#openProfileSettings" prefHeight="58.0" prefWidth="185.0" styleClass="button2" stylesheets="@../../../css/fullpackstyling.css" text="Profile" />
+         <Button fx:id="profile" mnemonicParsing="false" onAction="#openProfileSettings" prefHeight="58.0" prefWidth="185.0" stylesheets="@../../../css/fullpackstyling.css" text="Profile">
+            <styleClass>
+               <String fx:value="button2" />
+               <String fx:value="transparent" />
+            </styleClass>
+            <font>
+               <Font name="Berlin Sans FB" size="18.0" />
+            </font></Button>
          <Separator prefWidth="200.0" />
-         <Button fx:id="accountsettings" mnemonicParsing="false" onAction="#openAccountSettings" prefHeight="58.0" prefWidth="185.0" styleClass="button2" stylesheets="@../../../css/fullpackstyling.css" text="Account" />
+         <Button fx:id="accountsettings" mnemonicParsing="false" onAction="#openAccountSettings" prefHeight="58.0" prefWidth="185.0" stylesheets="@../../../css/fullpackstyling.css" text="Account">
+            <styleClass>
+               <String fx:value="button2" />
+               <String fx:value="transparent" />
+            </styleClass>
+            <font>
+               <Font name="Berlin Sans FB" size="18.0" />
+            </font></Button>
          <Separator prefWidth="200.0" />
-         <Button fx:id="preferencessettings" mnemonicParsing="false" onAction="#openPreferencesSettings" prefHeight="58.0" prefWidth="185.0" styleClass="button2" stylesheets="@../../../css/fullpackstyling.css" text="Preferences" />
+         <Button fx:id="preferencessettings" mnemonicParsing="false" onAction="#openPreferencesSettings" prefHeight="58.0" prefWidth="185.0" stylesheets="@../../../css/fullpackstyling.css" text="Preferences">
+            <styleClass>
+               <String fx:value="button2" />
+               <String fx:value="transparent" />
+            </styleClass>
+            <font>
+               <Font name="Berlin Sans FB" size="18.0" />
+            </font></Button>
          <Separator prefWidth="200.0" />
-         <Button fx:id="badgessettings" mnemonicParsing="false" onAction="#openMyBadgesSettings" prefHeight="58.0" prefWidth="185.0" styleClass="button2" text="My Badges" />
+         <Button fx:id="badgessettings" mnemonicParsing="false" onAction="#openMyBadgesSettings" prefHeight="58.0" prefWidth="185.0" text="My Badges">
+            <styleClass>
+               <String fx:value="button2" />
+               <String fx:value="transparent" />
+            </styleClass>
+            <font>
+               <Font name="Berlin Sans FB" size="18.0" />
+            </font></Button>
          <Separator prefWidth="200.0" />
-         <Button fx:id="aboutussettings" mnemonicParsing="false" onAction="#openAboutUsSettings" prefHeight="58.0" prefWidth="185.0" styleClass="button2" text="About Us" />
+         <Button fx:id="aboutussettings" mnemonicParsing="false" onAction="#openAboutUsSettings" prefHeight="58.0" prefWidth="185.0" text="About Us">
+            <styleClass>
+               <String fx:value="button2" />
+               <String fx:value="transparent" />
+            </styleClass>
+            <font>
+               <Font name="Berlin Sans FB" size="18.0" />
+            </font></Button>
       </VBox>
    </left>
    <center>
