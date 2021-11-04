@@ -12,81 +12,75 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
-<StackPane xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
-           fx:controller="com.example.comics.LoginControllerG">
+<StackPane xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.comics.LoginControllerG">
     <BorderPane fx:id="registrationPane">
         <center>
-            <VBox prefHeight="630.0" prefWidth="450.0" styleClass="wallpaperlogin"
-                  stylesheets="@../../../css/fullpackstyling.css">
+            <VBox prefHeight="630.0" prefWidth="450.0" styleClass="wallpaperlogin" stylesheets="@../../../css/fullpackstyling.css">
                 <Label text="Registration">
                     <font>
-                        <Font name="Berlin Sans FB" size="36.0"/>
+                        <Font name="Berlin Sans FB" size="36.0" />
                     </font>
                     <VBox.margin>
-                        <Insets left="50.0" top="50.0"/>
+                        <Insets left="50.0" top="50.0" />
                     </VBox.margin>
                 </Label>
                 <TextField fx:id="textFieldName" opacity="0.75" promptText="name">
                     <VBox.margin>
-                        <Insets bottom="40.0" left="50.0" right="50.0" top="60.0"/>
+                        <Insets bottom="40.0" left="50.0" right="50.0" top="60.0" />
                     </VBox.margin>
                 </TextField>
                 <TextField fx:id="textFieldSurname" opacity="0.75" promptText="surname">
                     <VBox.margin>
-                        <Insets bottom="50.0" left="50.0" right="50.0"/>
+                        <Insets bottom="50.0" left="50.0" right="50.0" />
                     </VBox.margin>
                 </TextField>
                 <TextField fx:id="textFieldUsername" opacity="0.75" promptText="username">
                     <VBox.margin>
-                        <Insets bottom="50.0" left="50.0" right="50.0"/>
+                        <Insets bottom="50.0" left="50.0" right="50.0" />
                     </VBox.margin>
                 </TextField>
                 <TextField fx:id="textFieldEmail" opacity="0.75" promptText="e-mail">
                     <VBox.margin>
-                        <Insets bottom="50.0" left="50.0" right="50.0"/>
+                        <Insets bottom="50.0" left="50.0" right="50.0" />
                     </VBox.margin>
                 </TextField>
                 <PasswordField fx:id="textFieldPassword" opacity="0.75" promptText="password">
                     <VBox.margin>
-                        <Insets bottom="20.0" left="50.0" right="50.0"/>
+                        <Insets bottom="20.0" left="50.0" right="50.0" />
                     </VBox.margin>
                 </PasswordField>
                 <HBox prefHeight="97.0" prefWidth="450.0" translateZ="300.0">
                     <VBox.margin>
-                        <Insets/>
+                        <Insets />
                     </VBox.margin>
-                    <Button mnemonicParsing="false" onAction="#cancelForm" opacity="0.6" prefHeight="76.0"
-                            prefWidth="186.0" stylesheets="@../../../css/fullpackstyling.css" text="Cancel">
+                    <Button mnemonicParsing="false" onAction="#cancelForm" opacity="0.6" prefHeight="76.0" prefWidth="186.0" stylesheets="@../../../css/fullpackstyling.css" text="Cancel">
                         <font>
-                            <Font name="Berlin Sans FB" size="24.0"/>
+                            <Font name="Berlin Sans FB" size="24.0" />
                         </font>
                         <HBox.margin>
-                            <Insets bottom="50.0" left="50.0" right="50.0" top="30.0"/>
+                            <Insets bottom="50.0" left="50.0" right="50.0" top="30.0" />
                         </HBox.margin>
                         <styleClass>
-                            <String fx:value="glass"/>
-                            <String fx:value="buttonCancel"/>
+                            <String fx:value="glass" />
+                            <String fx:value="buttonCancel" />
                         </styleClass>
                     </Button>
-                    <Button mnemonicParsing="false" opacity="0.6" prefHeight="76.0" prefWidth="186.0"
-                            stylesheets="@../../../css/fullpackstyling.css" text="Register">
+                    <Button mnemonicParsing="false" opacity="0.6" prefHeight="76.0" prefWidth="186.0" stylesheets="@../../../css/fullpackstyling.css" text="Register">
                         <font>
-                            <Font name="Berlin Sans FB" size="24.0"/>
+                            <Font name="Berlin Sans FB" size="24.0" />
                         </font>
                         <styleClass>
-                            <String fx:value="glass"/>
-                            <String fx:value="buttonLogin"/>
+                            <String fx:value="glass" />
+                            <String fx:value="buttonLogin" />
                         </styleClass>
                         <HBox.margin>
-                            <Insets bottom="50.0" right="50.0" top="30.0"/>
+                            <Insets bottom="50.0" right="50.0" top="30.0" />
                         </HBox.margin>
                     </Button>
                 </HBox>
-                <Button fx:id="btnLogin" mnemonicParsing="false" onAction="#clickLogin" prefHeight="27.0"
-                        prefWidth="450.0" styleClass="transparent" text="L͟o͟g͟i͟n͟">
+                <Button fx:id="btnLogin" mnemonicParsing="false" onAction="#clickLogin" prefHeight="27.0" prefWidth="450.0" styleClass="transparent" text="L͟o͟g͟i͟n͟">
                     <VBox.margin>
-                        <Insets top="-30.0"/>
+                        <Insets top="-30.0" />
                     </VBox.margin>
                 </Button>
             </VBox>
@@ -94,59 +88,55 @@
     </BorderPane>
     <BorderPane fx:id="loginPane">
         <center>
-          <VBox prefHeight="630.0" prefWidth="450.0" styleClass="wallpaperlogin"
-                stylesheets="@../../../css/fullpackstyling.css">
-              <Label text="Login ">
+          <VBox prefHeight="630.0" prefWidth="450.0" styleClass="wallpaperlogin" stylesheets="@../../../css/fullpackstyling.css">
+              <Label alignment="CENTER" prefHeight="111.0" prefWidth="358.0" text="ComicsWorld" textAlignment="CENTER">
                   <font>
-                      <Font name="Berlin Sans FB" size="36.0"/>
+                      <Font name="Berlin Sans FB Demi Bold" size="50.0" />
                   </font>
                   <VBox.margin>
-                      <Insets left="50.0" top="50.0"/>
+                      <Insets left="50.0" right="50.0" top="50.0" />
                   </VBox.margin>
               </Label>
               <TextField fx:id="tfEmail" opacity="0.75" promptText="e-mail / username">
                   <VBox.margin>
-                      <Insets bottom="50.0" left="50.0" right="50.0" top="110.0"/>
+                      <Insets bottom="50.0" left="50.0" right="50.0" top="60.0" />
                   </VBox.margin>
               </TextField>
               <PasswordField fx:id="tfPassword" opacity="0.75" promptText="password">
                   <VBox.margin>
-                      <Insets bottom="50.0" left="50.0" right="50.0"/>
+                      <Insets bottom="45.0" left="50.0" right="50.0" />
                   </VBox.margin>
               </PasswordField>
               <HBox prefHeight="121.0" prefWidth="450.0" translateZ="300.0">
-                  <Button mnemonicParsing="false" onAction="#clickCancel" opacity="0.6" prefHeight="76.0"
-                          prefWidth="186.0" stylesheets="@../../../css/fullpackstyling.css" text="Cancel">
+                  <Button mnemonicParsing="false" onAction="#clickCancel" opacity="0.6" prefHeight="76.0" prefWidth="186.0" stylesheets="@../../../css/fullpackstyling.css" text="Cancel">
                       <font>
-                          <Font name="Berlin Sans FB" size="24.0"/>
+                          <Font name="Berlin Sans FB" size="24.0" />
                       </font>
                       <HBox.margin>
-                          <Insets left="50.0" right="50.0" top="30.0"/>
+                          <Insets left="50.0" right="50.0" top="30.0" />
                       </HBox.margin>
                       <styleClass>
-                          <String fx:value="glass"/>
-                          <String fx:value="buttonCancel"/>
+                          <String fx:value="glass" />
+                          <String fx:value="buttonCancel" />
                       </styleClass>
                   </Button>
-                  <Button mnemonicParsing="false" onAction="#login" opacity="0.6" prefHeight="76.0" prefWidth="186.0"
-                          stylesheets="@../../../css/fullpackstyling.css" text="Login">
+                  <Button mnemonicParsing="false" onAction="#login" opacity="0.6" prefHeight="76.0" prefWidth="186.0" stylesheets="@../../../css/fullpackstyling.css" text="Login">
                       <font>
-                          <Font name="Berlin Sans FB" size="24.0"/>
+                          <Font name="Berlin Sans FB" size="24.0" />
                       </font>
                       <styleClass>
-                          <String fx:value="glass"/>
-                          <String fx:value="buttonLogin"/>
+                          <String fx:value="glass" />
+                          <String fx:value="buttonLogin" />
                       </styleClass>
                       <HBox.margin>
-                          <Insets right="50.0" top="30.0"/>
+                          <Insets right="50.0" top="30.0" />
                       </HBox.margin>
                   </Button>
                   <VBox.margin>
-                      <Insets bottom="20.0" top="70.0"/>
+                      <Insets bottom="20.0" top="70.0" />
                   </VBox.margin>
               </HBox>
-              <Button fx:id="btnRegister" mnemonicParsing="false" onAction="#clickRegister" prefHeight="40.0"
-                      prefWidth="450.0" styleClass="transparent" text="R͟e͟g͟i͟s͟t͟e͟r͟"/>
+              <Button fx:id="btnRegister" mnemonicParsing="false" onAction="#clickRegister" prefHeight="40.0" prefWidth="450.0" styleClass="transparent" text="R͟e͟g͟i͟s͟t͟e͟r͟" />
           </VBox>
         </center>
     </BorderPane>
