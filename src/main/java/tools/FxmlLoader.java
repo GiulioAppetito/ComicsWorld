@@ -3,7 +3,7 @@ package tools;
 import java.net.URL;
 
 
-import com.example.coomics.graphiccontroller.HomeController;
+import com.example.comics.graphiccontroller.HomeController;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.layout.Pane;
 
@@ -23,7 +23,7 @@ public class FxmlLoader {
 		view = FXMLLoader.load(fileUrl);
 			
 		}catch(Exception e){
-			System.out.println("No page found with that fxml");
+			System.out.println("No page found with fxml: " + fileName);
 		}
 		
 		return view;
