@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="729.0" prefWidth="980.0" stylesheets="@../../../css/fullpackstyling.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.comics.CategoriesController">
+<AnchorPane prefHeight="729.0" prefWidth="980.0" stylesheets="@../../../css/fullpackstyling.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.comics.CategoriesController">
     <ScrollPane prefHeight="706.0" prefWidth="969.0" styleClass="transparent" stylesheets="@../../../css/fullpackstyling.css">
         <padding>
             <Insets left="20.0" top="20.0" />
@@ -34,7 +34,7 @@
                     <Font size="24.0" />
                 </font>
             </Label>
-            <VBox fx:id="boxC" prefHeight="150.0" prefWidth="900.0" />
+            <VBox fx:id="boxC" prefHeight="150.0" prefWidth="900.0" spacing="5.0" />
             <Label text="D">
                 <font>
                     <Font size="24.0" />

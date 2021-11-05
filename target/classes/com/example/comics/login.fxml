@@ -12,7 +12,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<StackPane xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.comics.LoginControllerG">
+<StackPane xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" >
     <BorderPane fx:id="registrationPane">
         <center>
             <VBox prefHeight="630.0" prefWidth="450.0" styleClass="wallpaperlogin" stylesheets="@../../../css/fullpackstyling.css">
