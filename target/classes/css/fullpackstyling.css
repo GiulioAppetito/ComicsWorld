@@ -287,11 +287,11 @@
 
 .panes
 {
-    -fx-background-color : #f1f1f1;
+    -fx-background-color : #eaeaea;
     -fx-background-radius :  20;
 }
 .panes:hover
 {
-    -fx-background-color : #e3e3e3;
+    -fx-background-color : #dadada;
     -fx-background-radius :  20;
 }

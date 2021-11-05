@@ -30,7 +30,7 @@
                   </Label>
                </children>
             </Pane>
-            <Pane prefHeight="710.0" prefWidth="929.0" stylesheets="@../../../css/fullpackstyling.css">
+            <Pane onMouseClicked="#openSeries" prefHeight="710.0" prefWidth="929.0" stylesheets="@../../../css/fullpackstyling.css">
                <styleClass>
                   <String fx:value="panes" />
                   <String fx:value="oval-layout" />

@@ -212,5 +212,21 @@ public class HomeControllerG {
         btnToRead.setStyle("-fx-background-color: #E2E2E2; ");
     }
 
+    public void openSeries() {
+        System.out.println("Clicked series");
+        FxmlLoader object = new FxmlLoader();
+        Pane view = object.getPage("comicseries");
+        mainPane.setCenter(view);
+
+        btnSettings.setStyle("-fx-background-color: #E2E2E2; ");
+        btnCategories.setStyle("-fx-background-color: #E2E2E2; ");
+        btnFav.setStyle("-fx-background-color: #E2E2E2; ");
+        btnReading.setStyle("-fx-background-color: #E2E2E2; ");
+        btnTop.setStyle("-fx-background-color: #E2E2E2; ");
+        btnToRead.setStyle("-fx-background-color: #E2E2E2; ");
+    }
+
+
+
 
 }
