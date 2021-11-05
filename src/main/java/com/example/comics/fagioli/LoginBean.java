@@ -27,10 +27,11 @@ public class LoginBean {
 
     public boolean validate() {
         // controllo sintattico
+        /*
         if (email == null || email.equals("") || password == null || password.equals("")) {
             return false;
         }
-
+        */
         return LoginController.getInstance().login(email, password);
     }
 
