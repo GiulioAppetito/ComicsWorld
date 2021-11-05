@@ -13,12 +13,12 @@
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="729.0" prefWidth="980.0" styleClass="transparent" stylesheets="@../../../css/fullpackstyling.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.comics.ProfileController">
    <HBox prefHeight="729.0" prefWidth="980.0">
-      <Pane opacity="0.7" prefHeight="649.0" prefWidth="457.0" stylesheets="@../../../css/fullpackstyling.css">
+      <Pane prefHeight="649.0" prefWidth="457.0" stylesheets="@../../../css/fullpackstyling.css">
          <HBox.margin>
             <Insets bottom="40.0" left="40.0" right="40.0" top="40.0" />
          </HBox.margin>
          <styleClass>
-            <String fx:value="button2" />
+            <String fx:value="panes" />
             <String fx:value="oval-layout" />
             <String fx:value="glass" />
          </styleClass>
@@ -75,7 +75,7 @@
          </VBox>
       </Pane>
       <VBox prefHeight="729.0" prefWidth="453.0">
-         <Pane opacity="0.7" prefHeight="208.0" prefWidth="369.0" stylesheets="@../../../css/fullpackstyling.css">
+         <Pane prefHeight="208.0" prefWidth="369.0" stylesheets="@../../../css/fullpackstyling.css">
             <VBox.margin>
                <Insets bottom="40.0" left="40.0" right="40.0" top="40.0" />
             </VBox.margin>
@@ -90,11 +90,11 @@
                </Label>
             </VBox>
             <styleClass>
-               <String fx:value="button2" />
+               <String fx:value="panes" />
                <String fx:value="glass" />
             </styleClass>
          </Pane>
-         <Pane opacity="0.7" prefHeight="377.0" prefWidth="308.0" stylesheets="@../../../css/fullpackstyling.css">
+         <Pane prefHeight="377.0" prefWidth="308.0" stylesheets="@../../../css/fullpackstyling.css">
             <VBox.margin>
                <Insets bottom="40.0" left="40.0" right="40.0" top="40.0" />
             </VBox.margin>
@@ -109,7 +109,7 @@
                </Label>
             </VBox>
             <styleClass>
-               <String fx:value="button2" />
+               <String fx:value="panes" />
                <String fx:value="glass" />
             </styleClass>
          </Pane>

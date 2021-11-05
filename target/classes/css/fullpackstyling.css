@@ -237,7 +237,7 @@
 
 .wallpaper{
     -fx-background-image: url('bubble2.png');
-    -fx-background-size: 1900;
+    -fx-background-size: 1800;
 
 }
 .wallpaperlogin{
@@ -246,7 +246,7 @@
 
 }
 .glass{
-    -fx-effect: dropshadow(one-pass-box,white,10,10,0,0);
+    -fx-effect: dropshadow(one-pass-box, #bbbbbb,10,10,5,5);
 }
 
 .buttonCancel
@@ -278,5 +278,20 @@
 .buttonLogin:pressed
 {
     -fx-background-color : #2c92ff;
+    -fx-background-radius :  20;
+}
+
+.background-display{
+    -fx-background-color: #c7c7c7;
+}
+
+.panes
+{
+    -fx-background-color : #f1f1f1;
+    -fx-background-radius :  20;
+}
+.panes:hover
+{
+    -fx-background-color : #e3e3e3;
     -fx-background-radius :  20;
 }
