@@ -8,17 +8,18 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.text.Font?>
 
-<HBox prefHeight="90.0" prefWidth="800.0" spacing="15.0" stylesheets="@../../../css/fullpackstyling.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.comics.CategoryController">
+<HBox prefHeight="90.0" prefWidth="800.0" spacing="15.0" stylesheets="@../../../css/fullpackstyling.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.comics.CategoryController">
     <styleClass>
         <String fx:value="oval-layout" />
-        <String fx:value="transparent" />
+        <String fx:value="glass" />
+      <String fx:value="panes" />
     </styleClass>
     <ImageView fitHeight="72.0" fitWidth="250.0" pickOnBounds="true" preserveRatio="true">
         <HBox.margin>
-            <Insets bottom="10.0" left="10.0" top="15.0"/>
+            <Insets bottom="10.0" left="10.0" top="15.0" />
         </HBox.margin>
 
-        <Image url="@../../../img/output-onlinepngtools.png"/>
+        <Image url="@../../../img/output-onlinepngtools.png" />
     </ImageView>
     <Label fx:id="categoryName" alignment="CENTER" prefHeight="32.0" prefWidth="179.0" text="Action">
         <HBox.margin>

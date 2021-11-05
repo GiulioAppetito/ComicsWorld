@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.String?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
@@ -7,12 +8,12 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane opacity="0.75" prefHeight="729.0" prefWidth="980.0" styleClass="transparent" stylesheets="@../../../css/fullpackstyling.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.comics.CategoriesController">
-    <ScrollPane prefHeight="730.0" prefWidth="970.0" styleClass="transparent" stylesheets="@../../../css/fullpackstyling.css">
+<AnchorPane prefHeight="729.0" prefWidth="980.0" stylesheets="@../../../css/fullpackstyling.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.comics.CategoriesController">
+    <ScrollPane prefHeight="706.0" prefWidth="969.0" styleClass="transparent" stylesheets="@../../../css/fullpackstyling.css">
         <padding>
             <Insets left="20.0" top="20.0" />
         </padding>
-        <VBox opacity="0.75" prefHeight="1457.0" prefWidth="933.0" spacing="10.0" styleClass="transparent" stylesheets="@../../../css/fullpackstyling.css">
+        <VBox maxHeight="-Infinity" minHeight="-Infinity" opacity="0.75" prefHeight="684.0" prefWidth="933.0" spacing="10.0" stylesheets="@../../../css/fullpackstyling.css">
             <padding>
                 <Insets right="10.0" top="10.0" />
             </padding>
@@ -21,7 +22,7 @@
                     <Font size="24.0" />
                 </font>
             </Label>
-            <VBox fx:id="boxA" prefHeight="150.0" prefWidth="900.0" spacing="5.0" styleClass="transparent" stylesheets="@../../../css/fullpackstyling.css" />
+            <VBox fx:id="boxA" prefHeight="150.0" prefWidth="900.0" spacing="5.0" stylesheets="@../../../css/fullpackstyling.css" />
             <Label text="B">
                 <font>
                     <Font size="24.0" />
@@ -176,4 +177,8 @@
 
         </VBox>
     </ScrollPane>
+   <styleClass>
+      <String fx:value="glass" />
+      <String fx:value="panes" />
+   </styleClass>
 </AnchorPane>

@@ -12,14 +12,10 @@
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="729.0" prefWidth="600.0" styleClass="transparent" stylesheets="@../../../css/fullpackstyling.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
    <HBox prefHeight="729.0" prefWidth="600.0">
-      <Pane opacity="0.7" prefHeight="650.0" prefWidth="520.0" stylesheets="@../../../css/fullpackstyling.css">
+      <Pane prefHeight="650.0" prefWidth="520.0" stylesheets="@../../../css/fullpackstyling.css">
          <HBox.margin>
             <Insets bottom="40.0" left="40.0" right="40.0" top="40.0" />
          </HBox.margin>
-         <styleClass>
-            <String fx:value="button2" />
-            <String fx:value="oval-layout" />
-         </styleClass>
          <VBox prefHeight="650.0" prefWidth="520.0">
             <Label alignment="CENTER" prefHeight="74.0" prefWidth="520.0" text="Profile Picture" textAlignment="CENTER" textFill="#0b0404">
                <font>
@@ -68,6 +64,11 @@
                <Insets bottom="40.0" top="40.0" />
             </padding>
          </VBox>
+         <styleClass>
+            <String fx:value="glass" />
+            <String fx:value="oval-layout" />
+            <String fx:value="panes" />
+         </styleClass>
       </Pane>
    </HBox>
 </Pane>
