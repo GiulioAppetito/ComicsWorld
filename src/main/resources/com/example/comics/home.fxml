@@ -37,11 +37,11 @@
             <HBox.margin>
                <Insets />
             </HBox.margin>
-            <ImageView fitHeight="50.0" fitWidth="50.0" layoutY="5.0" onMouseClicked="#openFeed" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="homeIcon" fitHeight="50.0" fitWidth="50.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
                <Image url="@../../../img/icons8-home-page-96.png" />
             </ImageView>
          </Pane>
-         <HBox fx:id="userBox" onMouseClicked="#openProfile" prefHeight="100.0" prefWidth="200.0">
+         <HBox fx:id="userBox" prefHeight="100.0" prefWidth="200.0">
             <Label alignment="CENTER" prefHeight="60.0" prefWidth="146.0" text="Anastasia Brinati">
                <font>
                   <Font name="Berlin Sans FB" size="18.0" />
@@ -68,7 +68,7 @@
                   <Insets left="10.0" />
                </VBox.margin>
             </Label>
-            <Button fx:id="btnCategories" mnemonicParsing="false" onAction="#openCategories" prefHeight="39.0" prefWidth="220.0" styleClass="button2" stylesheets="@../../../css/fullpackstyling.css" text="Categories">
+            <Button fx:id="btnCategories" mnemonicParsing="false" prefHeight="39.0" prefWidth="220.0" styleClass="button2" stylesheets="@../../../css/fullpackstyling.css" text="Categories">
                <graphic>
                   <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
                      <Image url="@../../../img/icons8-classificare-96.png" />
@@ -101,7 +101,7 @@
                      <Insets left="10.0" />
                   </VBox.margin>
                </Label>
-               <Button fx:id="btnFav" mnemonicParsing="false" onAction="#openFavourites" prefHeight="39.0" prefWidth="220.0" styleClass="button2" stylesheets="@../../../css/fullpackstyling.css" text="Favourites">
+               <Button fx:id="btnFav" mnemonicParsing="false" prefHeight="39.0" prefWidth="220.0" styleClass="button2" stylesheets="@../../../css/fullpackstyling.css" text="Favourites">
                   <graphic>
                      <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
                         <Image url="@../../../img/icons8-cartella-preferiti-96.png" />
@@ -144,7 +144,7 @@
                   <Insets left="10.0" />
                </VBox.margin>
             </Label>
-            <Button fx:id="btnSettings" mnemonicParsing="false" onAction="#openSettings" prefHeight="39.0" prefWidth="220.0" styleClass="button2" stylesheets="@../../../css/fullpackstyling.css" text="Settings">
+            <Button fx:id="btnSettings" mnemonicParsing="false" prefHeight="39.0" prefWidth="220.0" styleClass="button2" stylesheets="@../../../css/fullpackstyling.css" text="Settings">
                <graphic>
                   <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
                      <Image url="@../../../img/icons8-impostazioni-96.png" />

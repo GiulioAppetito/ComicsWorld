@@ -2,6 +2,7 @@ package com.example.comics;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
 import com.example.comics.model.Comic;
 import tools.FxmlLoader;
@@ -13,10 +14,10 @@ public class HomeControllerG {
 
     @FXML
     private HBox userBox;
-    @FXML
-    private HBox settingsBox;
+
     @FXML
     private BorderPane mainPane;
+
     @FXML
     private GridPane homeGrid;
 
@@ -38,6 +39,9 @@ public class HomeControllerG {
     @FXML
     private Button btnTop;
 
+    @FXML
+    private ImageView homeIcon;
+
     private List<Comic> listOfCards;
 
 
@@ -45,7 +49,6 @@ public class HomeControllerG {
 
 
     private HomeControllerG(){
-
     }
 
     public static HomeControllerG getInstance(){
@@ -55,8 +58,15 @@ public class HomeControllerG {
         return instance;
     }
 
-    public void initialize() {
+    public void init() {
         openFeed();
+
+        btnFav.setOnAction(event -> openFavourites());
+        btnCategories.setOnAction(event -> openCategories());
+        btnSettings.setOnAction(event -> openSettings());
+        userBox.setOnMouseClicked(event -> openProfile());
+        homeIcon.setOnMouseClicked(event -> openFeed());
+
     }
 
     /* ex initizialize:
