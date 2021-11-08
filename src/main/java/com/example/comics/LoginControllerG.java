@@ -10,19 +10,22 @@ import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.Pane;
-import javafx.scene.layout.StackPane;
-import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
-import tools.FxmlLoader;
 
 import java.io.IOException;
+import java.net.URL;
 
 
 public class LoginControllerG {
 
     @FXML
-    public Button btnRegister;
+    public Button btnLogin;
+
+    @FXML
+    public Button btnCancel;
+
+    @FXML
+    public Button btnBackToRegister;
 
     @FXML
     public BorderPane loginPane;
@@ -38,7 +41,10 @@ public class LoginControllerG {
 
     //register
     @FXML
-    private Button btnLogin;
+    private Button btnBackToLogin;
+
+    @FXML
+    private Button btnCancelForm;
 
     @FXML
     private TextField textFieldEmail;
@@ -56,8 +62,24 @@ public class LoginControllerG {
     private TextField textFieldUsername;
 
 
-    public void initialize(){
+    public LoginControllerG(){
+    }
+
+    public void init(){
         clickLogin();
+        btnLogin.setOnAction(event ->
+        {
+            try {
+                login(event);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+        });
+        btnBackToRegister.setOnAction(event -> clickRegister());
+        btnBackToLogin.setOnAction(event -> clickLogin());
+        btnCancelForm.setOnAction(event -> cancelForm());
+        btnCancel.setOnAction(event -> clickCancel());
     }
 
     public void clickRegister(){
@@ -82,14 +104,22 @@ public class LoginControllerG {
         textFieldPassword.setText("");
     }
 
+
     public void login(ActionEvent event) throws IOException {
         LoginBean loginBean = new LoginBean();
         loginBean.setEmail(tfEmail.getText());
         loginBean.setPassword(tfPassword.getText());
         if(loginBean.validate()) {
             Stage stage = new Stage();
-            FXMLLoader fxmlLoader = new FXMLLoader(this.getClass().getResource("home.fxml"));
-            Scene scene = new Scene(fxmlLoader.load(), 1200, 800);
+
+            HomeControllerG homeControllerG = HomeControllerG.getInstance();
+            FXMLLoader loader = new FXMLLoader();
+
+            URL fxmlLocation = HomeControllerG.class.getResource("home.fxml");
+            loader.setLocation(fxmlLocation);
+            loader.setController(homeControllerG);
+
+            Scene scene = new Scene(loader.load());
             stage.setTitle("ComicsWorld");
             stage.setScene(scene);
             stage.show();

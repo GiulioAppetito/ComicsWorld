@@ -53,7 +53,7 @@
                     <VBox.margin>
                         <Insets />
                     </VBox.margin>
-                    <Button mnemonicParsing="false" onAction="#cancelForm" prefHeight="76.0" prefWidth="186.0" stylesheets="@../../../css/fullpackstyling.css" text="Cancel">
+                    <Button fx:id="btnCancelForm" mnemonicParsing="false" prefHeight="76.0" prefWidth="186.0" stylesheets="@../../../css/fullpackstyling.css" text="Cancel">
                         <font>
                             <Font name="Berlin Sans FB" size="24.0" />
                         </font>
@@ -78,7 +78,7 @@
                         </HBox.margin>
                     </Button>
                 </HBox>
-                <Button fx:id="btnLogin" mnemonicParsing="false" onAction="#clickLogin" prefHeight="27.0" prefWidth="450.0" styleClass="transparent" text="L͟o͟g͟i͟n͟">
+                <Button fx:id="btnBackToLogin" mnemonicParsing="false" prefHeight="27.0" prefWidth="450.0" styleClass="transparent" text="L͟o͟g͟i͟n͟">
                     <VBox.margin>
                         <Insets top="-30.0" />
                     </VBox.margin>
@@ -108,7 +108,7 @@
                   </VBox.margin>
               </PasswordField>
               <HBox prefHeight="121.0" prefWidth="450.0" translateZ="300.0">
-                  <Button mnemonicParsing="false" onAction="#clickCancel" prefHeight="76.0" prefWidth="186.0" stylesheets="@../../../css/fullpackstyling.css" text="Cancel">
+                  <Button fx:id="btnCancel" mnemonicParsing="false" prefHeight="76.0" prefWidth="186.0" stylesheets="@../../../css/fullpackstyling.css" text="Cancel">
                       <font>
                           <Font name="Berlin Sans FB" size="24.0" />
                       </font>
@@ -120,7 +120,7 @@
                           <String fx:value="buttonCancel" />
                       </styleClass>
                   </Button>
-                  <Button mnemonicParsing="false" onAction="#login" prefHeight="76.0" prefWidth="186.0" stylesheets="@../../../css/fullpackstyling.css" text="Login">
+                  <Button fx:id="btnLogin" mnemonicParsing="false" prefHeight="76.0" prefWidth="186.0" stylesheets="@../../../css/fullpackstyling.css" text="Login">
                       <font>
                           <Font name="Berlin Sans FB" size="24.0" />
                       </font>
@@ -136,7 +136,7 @@
                       <Insets bottom="20.0" top="70.0" />
                   </VBox.margin>
               </HBox>
-              <Button fx:id="btnRegister" mnemonicParsing="false" onAction="#clickRegister" prefHeight="40.0" prefWidth="450.0" styleClass="transparent" text="R͟e͟g͟i͟s͟t͟e͟r͟" />
+              <Button fx:id="btnBackToRegister" mnemonicParsing="false" prefHeight="40.0" prefWidth="450.0" styleClass="transparent" text="R͟e͟g͟i͟s͟t͟e͟r͟" />
           </VBox>
         </center>
     </BorderPane>
