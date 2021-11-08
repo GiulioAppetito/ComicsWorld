@@ -40,7 +40,7 @@ public class HomeControllerG {
 
     private List<Comic> listOfCards;
 
-/*
+
     public static HomeControllerG instance;
 
 
@@ -54,7 +54,7 @@ public class HomeControllerG {
         }
         return instance;
     }
-*/
+
     public void initialize() {
         openFeed();
     }
@@ -82,6 +82,10 @@ public class HomeControllerG {
             }
         }
      */
+
+    public void changeCenter(Pane pane){
+        mainPane.setCenter(pane);
+    }
 
     private List<Comic> add(){
 
