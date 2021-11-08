@@ -7,50 +7,44 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<Pane prefHeight="729.0" prefWidth="980.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.comics.FeedController">
-   <children>
-      <VBox layoutX="10.0" layoutY="10.0" prefHeight="719.0" prefWidth="969.0">
+<Pane prefHeight="729.0" prefWidth="980.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.comics.FeedControllerG">
+   <VBox layoutX="10.0" layoutY="10.0" prefHeight="719.0" prefWidth="969.0">
+      <Pane prefHeight="440.0" prefWidth="909.0" stylesheets="@../../../css/fullpackstyling.css">
+         <VBox.margin>
+            <Insets left="30.0" right="30.0" top="30.0" />
+         </VBox.margin>
+         <styleClass>
+            <String fx:value="glass" />
+            <String fx:value="panes" />
+         </styleClass>
+         <Label prefHeight="74.0" prefWidth="437.0" text="Ads">
+            <font>
+               <Font name="Berlin Sans FB" size="24.0" />
+            </font>
+            <padding>
+               <Insets left="20.0" />
+            </padding>
+         </Label>
+      </Pane>
+      <Pane fx:id="latestPane" prefHeight="710.0" prefWidth="929.0" stylesheets="@../../../css/fullpackstyling.css">
+         <styleClass>
+            <String fx:value="panes" />
+            <String fx:value="oval-layout" />
+            <String fx:value="glass" />
+         </styleClass>
+         <VBox.margin>
+            <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
+         </VBox.margin>
          <children>
-            <Pane prefHeight="440.0" prefWidth="909.0" stylesheets="@../../../css/fullpackstyling.css">
-               <VBox.margin>
-                  <Insets left="30.0" right="30.0" top="30.0" />
-               </VBox.margin>
-               <styleClass>
-                  <String fx:value="glass" />
-                  <String fx:value="panes" />
-               </styleClass>
-               <children>
-                  <Label prefHeight="74.0" prefWidth="437.0" text="Ads">
-                     <font>
-                        <Font name="Berlin Sans FB" size="24.0" />
-                     </font>
-                     <padding>
-                        <Insets left="20.0" />
-                     </padding>
-                  </Label>
-               </children>
-            </Pane>
-            <Pane onMouseClicked="#openSeries" prefHeight="710.0" prefWidth="929.0" stylesheets="@../../../css/fullpackstyling.css">
-               <styleClass>
-                  <String fx:value="panes" />
-                  <String fx:value="oval-layout" />
-                  <String fx:value="glass" />
-               </styleClass>
-               <VBox.margin>
-                  <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
-               </VBox.margin>
-               <children>
-                  <Label prefHeight="74.0" prefWidth="437.0" text="Latest comics">
-                     <font>
-                        <Font name="Berlin Sans FB" size="24.0" />
-                     </font>
-                     <padding>
-                        <Insets left="20.0" />
-                     </padding>
-                  </Label>
-               </children>
-            </Pane>
+            <Label prefHeight="74.0" prefWidth="437.0" text="Latest comics">
+               <font>
+                  <Font name="Berlin Sans FB" size="24.0" />
+               </font>
+               <padding>
+                  <Insets left="20.0" />
+               </padding>
+            </Label>
          </children>
-      </VBox>
-   </children>
+      </Pane>
+   </VBox>
 </Pane>

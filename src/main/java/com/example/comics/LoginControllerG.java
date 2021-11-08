@@ -18,6 +18,7 @@ import tools.FxmlLoader;
 
 import java.io.IOException;
 
+
 public class LoginControllerG {
 
     @FXML
@@ -80,7 +81,6 @@ public class LoginControllerG {
         textFieldEmail.setText("");
         textFieldPassword.setText("");
     }
-
 
     public void login(ActionEvent event) throws IOException {
         LoginBean loginBean = new LoginBean();

@@ -56,8 +56,7 @@ public class HomeControllerG {
     }
 */
     public void initialize() {
-
-
+        openFeed();
     }
 
     /* ex initizialize:
@@ -153,6 +152,13 @@ public class HomeControllerG {
         btnReading.setStyle("-fx-background-color: #E2E2E2; ");
         btnTop.setStyle("-fx-background-color: #E2E2E2; ");
         btnToRead.setStyle("-fx-background-color: #E2E2E2; ");
+    }
+
+    public void openCharacter() {
+        System.out.println("Clicked character");
+        FxmlLoader object = new FxmlLoader();
+        Pane view = object.getPage("character");
+        mainPane.setCenter(view);
     }
 
     public void openSettings() {
