@@ -120,6 +120,7 @@ public class LoginControllerG {
             loader.setController(homeControllerG);
 
             Scene scene = new Scene(loader.load());
+            homeControllerG.init();
             stage.setTitle("ComicsWorld");
             stage.setScene(scene);
             stage.show();
