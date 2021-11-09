@@ -32,12 +32,12 @@
                      <Insets left="20.0" />
                   </padding>
                </Label>
-               <ScrollPane vbarPolicy="NEVER">
+               <ScrollPane maxHeight="-Infinity" minHeight="-Infinity" prefHeight="130.0" prefWidth="893.0">
                   <VBox.margin>
-                     <Insets bottom="10.0" left="10.0" right="10.0" />
+                     <Insets left="10.0" right="10.0" />
                   </VBox.margin>
                   <content>
-                     <HBox fx:id="hbAds" prefHeight="178.0" prefWidth="885.0" spacing="10.0" />
+                     <HBox fx:id="hbAds" prefHeight="114.0" prefWidth="1067.0" />
                   </content>
                </ScrollPane>
             </children>
