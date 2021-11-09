@@ -162,16 +162,17 @@ public class FeedControllerG {
     private List<Advertisement> addAds(){
 
         List<Advertisement> la = new ArrayList<>();
+        int i;
+        int n = 20;
 
-        Advertisement ad = new Advertisement();
-        ad.setTitle("Spiderman out now!");
-        //comic.setImageSrc(null);
-        la.add(ad);
 
-        Advertisement ad2 = new Advertisement();
-        ad2.setTitle("Spiderman out now!");
-        //comic.setImageSrc(null);
-        la.add(ad2);
+        for(i=0; i<n; i++){
+            Advertisement ad = new Advertisement();
+            ad.setTitle("Ad n°" + i);
+            //comic.setImageSrc(null);
+            la.add(ad);
+        }
+
 
         return la;
 
