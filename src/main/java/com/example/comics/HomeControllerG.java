@@ -1,12 +1,15 @@
 package com.example.comics;
 
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
 import com.example.comics.model.Comic;
 import tools.FxmlLoader;
 
+import java.io.IOException;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -17,9 +20,6 @@ public class HomeControllerG {
 
     @FXML
     private BorderPane mainPane;
-
-    @FXML
-    private GridPane homeGrid;
 
     @FXML
     private Button btnCategories;
@@ -42,7 +42,6 @@ public class HomeControllerG {
     @FXML
     private ImageView homeIcon;
 
-    private List<Comic> listOfCards;
 
 
     public static HomeControllerG instance;
@@ -58,99 +57,26 @@ public class HomeControllerG {
         return instance;
     }
 
-    public void init() {
+    public void init() throws IOException {
+
         openFeed();
 
         btnFav.setOnAction(event -> openFavourites());
         btnCategories.setOnAction(event -> openCategories());
         btnSettings.setOnAction(event -> openSettings());
         userBox.setOnMouseClicked(event -> openProfile());
-        homeIcon.setOnMouseClicked(event -> openFeed());
+        homeIcon.setOnMouseClicked(event -> {
+            try {
+                openFeed();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        });
 
     }
-
-    /* ex initizialize:
-    listOfCards = new ArrayList<>(add());
-
-        for(int i=0;i<6;i++) {
-
-            for(int j=0; j<listOfCards.size(); j++) {
-                FXMLLoader fxmlLoader = new FXMLLoader();
-                fxmlLoader.setLocation(getClass().getResource("card2.fxml"));
-                /*
-                try {
-                    //VBox cardBox = fxmlLoader.load();
-                    //Card2Controller card2Controller = fxmlLoader.getController();
-                    //card2Controller.setData(listOfCards.get(i));
-                    //homeGrid.getChildren().add(cardBox);
-                    //homeGrid.add(cardBox, i, j);
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-
-
-            }
-        }
-     */
 
     public void changeCenter(Pane pane){
         mainPane.setCenter(pane);
-    }
-
-    private List<Comic> add(){
-
-        List<Comic> ls = new ArrayList<>();
-
-        Comic comic = new Comic();
-        comic.setName("Spiderman");
-        comic.setAuthor("Stan Lee");
-        //comic.setImageSrc(null);
-        ls.add(comic);
-
-        Comic comic2 = new Comic();
-        comic2.setName("Superman");
-        comic2.setAuthor("Stan Lee");
-        //comic2.setImageSrc(null);
-        ls.add(comic2);
-
-        Comic comic3 = new Comic();
-        comic3.setName("Spiderman");
-        comic3.setAuthor("Stan Lee");
-        //comic3.setImageSrc(null);
-        ls.add(comic3);
-
-        Comic comic4 = new Comic();
-        comic4.setName("Superman");
-        comic4.setAuthor("Stan Lee");
-        //comic4.setImageSrc(null);
-        ls.add(comic4);
-
-        Comic comic5= new Comic();
-        comic5.setName("Spiderman");
-        comic5.setAuthor("Stan Lee");
-        //comic5.setImageSrc(null);
-        ls.add(comic5);
-
-        Comic comic6 = new Comic();
-        comic6.setName("Superman");
-        comic6.setAuthor("Stan Lee");
-        //comic6.setImageSrc(null);
-        ls.add(comic6);
-
-        Comic comic7 = new Comic();
-        comic7.setName("Spiderman");
-        comic7.setAuthor("Stan Lee");
-        //comic7.setImageSrc(null);
-        ls.add(comic7);
-
-        Comic comic8 = new Comic();
-        comic8.setName("Superman");
-        comic8.setAuthor("Stan Lee");
-        //comic8.setImageSrc(null);
-        ls.add(comic8);
-
-        return ls;
-
     }
 
 
@@ -218,10 +144,18 @@ public class HomeControllerG {
         btnToRead.setStyle("-fx-background-color: #E2E2E2; ");
     }
 
-    public void openFeed() {
-        System.out.println("Clicked feed");
-        FxmlLoader object = new FxmlLoader();
-        Pane view = object.getPage("feed");
+    public void openFeed() throws IOException {
+
+        FeedControllerG feedControllerG = new FeedControllerG();
+        FXMLLoader loader = new FXMLLoader();
+
+        URL fxmlLocation = FeedControllerG.class.getResource("feed.fxml");
+        loader.setLocation(fxmlLocation);
+        loader.setController(feedControllerG);
+
+        Pane view = loader.load();
+        feedControllerG.init();
+
         mainPane.setCenter(view);
 
         btnSettings.setStyle("-fx-background-color: #E2E2E2; ");

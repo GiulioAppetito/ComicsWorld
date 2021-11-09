@@ -20,44 +20,32 @@ public class LoginControllerG {
 
     @FXML
     public Button btnLogin;
-
     @FXML
     public Button btnCancel;
-
     @FXML
     public Button btnBackToRegister;
-
     @FXML
     public BorderPane loginPane;
-
     @FXML
     public BorderPane registrationPane;
-
     @FXML
     private TextField tfEmail;
-
     @FXML
     private PasswordField tfPassword;
 
     //register
     @FXML
     private Button btnBackToLogin;
-
     @FXML
     private Button btnCancelForm;
-
     @FXML
     private TextField textFieldEmail;
-
     @FXML
     private TextField textFieldName;
-
     @FXML
     private PasswordField textFieldPassword;
-
     @FXML
     private TextField textFieldSurname;
-
     @FXML
     private TextField textFieldUsername;
 
