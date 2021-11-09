@@ -1,10 +1,12 @@
 package com.example.comics;
 
+import com.example.comics.model.Advertisement;
 import com.example.comics.model.Comic;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 
@@ -18,7 +20,11 @@ public class FeedControllerG {
     @FXML
     public GridPane feedGrid;
 
+    @FXML
+    private HBox hbAds;
+
     private List<Comic> listOfCards;
+    private List<Advertisement> listOfAds;
 
 
     public FeedControllerG(){
@@ -52,6 +58,32 @@ public class FeedControllerG {
                     e.printStackTrace();
                 }
             }
+        }
+
+        //load the ads panel
+        listOfAds = new ArrayList<>(addAds());
+        len = listOfAds.size();
+
+        for(int i=0; i<len; i++){
+
+                FXMLLoader fxmlLoader = new FXMLLoader();
+                fxmlLoader.setLocation(getClass().getResource("adcard.fxml"));
+                try {
+                    VBox vbAd = fxmlLoader.load();
+                    AdController adController = fxmlLoader.getController();
+                    adController.setData(listOfAds.get(i));
+
+                    vbAd.setOnMouseClicked(event -> {
+
+                            System.out.println("Clicked ad");
+
+                    });
+
+                    hbAds.getChildren().add(vbAd);
+
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
         }
 
     }
@@ -124,6 +156,24 @@ public class FeedControllerG {
         ls.add(comic8);
 
         return ls;
+
+    }
+
+    private List<Advertisement> addAds(){
+
+        List<Advertisement> la = new ArrayList<>();
+
+        Advertisement ad = new Advertisement();
+        ad.setTitle("Spiderman out now!");
+        //comic.setImageSrc(null);
+        la.add(ad);
+
+        Advertisement ad2 = new Advertisement();
+        ad2.setTitle("Spiderman out now!");
+        //comic.setImageSrc(null);
+        la.add(ad2);
+
+        return la;
 
     }
 

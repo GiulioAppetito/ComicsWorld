@@ -236,13 +236,13 @@
 }
 
 .wallpaper{
-    -fx-background-image: url('bubble2.png');
-    -fx-background-size: 1800;
+    -fx-background-image: url('colorcomics.jpg');
+    -fx-background-size: 1700;
 
 }
 .wallpaperlogin{
-    -fx-background-image: url('bubble2.png');
-    -fx-background-size: 1000;
+    -fx-background-image: url('colorcomics.jpg');
+       -fx-background-size: 900;
 
 }
 .glass{
