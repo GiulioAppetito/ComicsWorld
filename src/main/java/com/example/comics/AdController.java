@@ -8,6 +8,7 @@ import javafx.scene.image.ImageView;
 
 public class AdController {
 
+    public ImageView comicCover;
     @FXML
     private Label lblTitle;
 

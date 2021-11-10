@@ -63,28 +63,24 @@ public class FeedControllerG {
 
         //load the ads panel
         listOfAds = new ArrayList<>(addAds());
-        len = listOfAds.size();
+        int len = listOfAds.size();
 
-        for(int i=0; i<len; i++){
+        for (Advertisement listOfAd : listOfAds) {
 
-                FXMLLoader fxmlLoader = new FXMLLoader();
-                fxmlLoader.setLocation(getClass().getResource("adcard.fxml"));
-                try {
-                    VBox vbAd = fxmlLoader.load();
-                    AdController adController = fxmlLoader.getController();
-                    adController.setData(listOfAds.get(i));
+            FXMLLoader fxmlLoader = new FXMLLoader();
+            fxmlLoader.setLocation(getClass().getResource("hcard.fxml"));
+            try {
+                VBox vbAd = fxmlLoader.load();
+                AdController adController = fxmlLoader.getController();
+                adController.setData(listOfAd);
 
-                    vbAd.setOnMouseClicked(event -> {
+                vbAd.setOnMouseClicked(event -> System.out.println("Clicked ad"));
 
-                            System.out.println("Clicked ad");
+                hbAds.getChildren().add(vbAd);
 
-                    });
-
-                    hbAds.getChildren().add(vbAd);
-
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
 
     }

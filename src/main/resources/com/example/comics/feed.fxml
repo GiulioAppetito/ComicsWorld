@@ -6,6 +6,7 @@
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
@@ -29,6 +30,7 @@
                <Insets left="20.0" />
             </padding>
          </Label>
+         <HBox fx:id="hbAds" layoutX="14.0" layoutY="65.0" prefHeight="100.0" prefWidth="878.0" />
       </Pane>
       <Pane prefHeight="710.0" prefWidth="929.0" stylesheets="@../../../css/fullpackstyling.css">
          <styleClass>
