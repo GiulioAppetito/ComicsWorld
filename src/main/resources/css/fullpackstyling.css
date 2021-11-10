@@ -226,23 +226,20 @@
 
 .round-corners{
     -fx-border-radius: 200;
-
-
 }
-
 
 .selected{
     -fx-background-color:#F3F3F3;
 }
 
 .wallpaper{
-    -fx-background-image: url('colorcomics.jpg');
-    -fx-background-size: 1700;
+    -fx-background-image: url('bubble2.png');
+    -fx-background-size: 1800;
 
 }
 .wallpaperlogin{
-    -fx-background-image: url('colorcomics.jpg');
-       -fx-background-size: 900;
+    -fx-background-image: url('bubble2.png');
+    -fx-background-size: 1000;
 
 }
 .glass{
@@ -287,11 +284,11 @@
 
 .panes
 {
-    -fx-background-color : #eaeaea;
+    -fx-background-color : #f8f8f8;
     -fx-background-radius :  20;
 }
 .panes:hover
 {
-    -fx-background-color : #dadada;
+    -fx-background-color : #f3f3f3;
     -fx-background-radius :  20;
 }

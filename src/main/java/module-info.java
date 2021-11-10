@@ -9,7 +9,7 @@ module com.example.coomics {
     requires org.kordamp.ikonli.javafx;
     requires org.kordamp.bootstrapfx.core;
 
-    opens com.example.comics to javafx.fxml;
-    exports com.example.comics;
+    exports com.example.comics.view1;
     exports com.example.comics.model;
+    opens com.example.comics.view1 to javafx.fxml;
 }
