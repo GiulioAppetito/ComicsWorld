@@ -54,7 +54,7 @@
                   <Font name="Berlin Sans FB" size="24.0" />
                </font>
             </Label>
-            <Button mnemonicParsing="false" onAction="#edit" prefHeight="84.0" prefWidth="157.0" stylesheets="@../../../css/fullpackstyling.css" text="Edit">
+            <Button fx:id="btnEdit" mnemonicParsing="false" onAction="#edit" prefHeight="84.0" prefWidth="157.0" stylesheets="@../../../css/fullpackstyling.css" text="Edit">
                <VBox.margin>
                   <Insets bottom="20.0" left="150.0" />
                </VBox.margin>

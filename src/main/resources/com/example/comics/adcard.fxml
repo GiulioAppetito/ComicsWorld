@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox alignment="CENTER" prefHeight="81.0" prefWidth="200.0" stylesheets="@../../../css/fullpackstyling.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.comics.AdController">
+    <styleClass>
+        <String fx:value="white-background" />
+        <String fx:value="oval-layout" />
+    </styleClass>
+    <Label fx:id="lblTitle" alignment="CENTER" prefHeight="38.0" prefWidth="107.0" text="Spiderman">
+        <font>
+            <Font name="Berlin Sans FB" size="14.0" />
+        </font>
+    </Label>
+    <ImageView fx:id="comicCover1" fitHeight="82.0" fitWidth="73.0" pickOnBounds="true" preserveRatio="true">
+        <Image url="@../../../img/spidey.png" />
+    </ImageView>
+</VBox>
