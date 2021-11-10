@@ -17,7 +17,7 @@
             <Font name="Berlin Sans FB" size="14.0" />
         </font>
     </Label>
-    <ImageView fx:id="comicCover1" fitHeight="82.0" fitWidth="73.0" pickOnBounds="true" preserveRatio="true">
+    <ImageView fx:id="comicCover" fitHeight="82.0" fitWidth="73.0" pickOnBounds="true" preserveRatio="true">
         <Image url="@../../../img/spidey.png" />
     </ImageView>
 </VBox>
