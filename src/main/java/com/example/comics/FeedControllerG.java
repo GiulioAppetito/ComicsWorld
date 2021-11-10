@@ -3,10 +3,11 @@ package com.example.comics;
 import com.example.comics.model.Comic;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.image.ImageView;
+import javafx.scene.control.Button;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
+import tools.FxmlLoader;
 
 import java.io.IOException;
 import java.net.URL;
@@ -28,20 +29,20 @@ public class FeedControllerG {
     public void init() {
 
         listOfCards = new ArrayList<>(add());
-        int len = listOfCards.size();
+        int rows = listOfCards.size()/4;
 
-        for(int i=0; i<len/3; i++){
+        for(int i=0; i<rows+1; i++){
             for(int j=0; j<4; j++) {
                 FXMLLoader fxmlLoader = new FXMLLoader();
                 fxmlLoader.setLocation(getClass().getResource("vcard.fxml"));
                 try {
                     VBox card = fxmlLoader.load();
-                    CardController cardController = fxmlLoader.getController();
-                    cardController.setData(listOfCards.get(i));
+                    VCardController cardController = fxmlLoader.getController();
+                    cardController.setData(listOfCards.get(i).getName());
 
                     card.setOnMouseClicked(event -> {
                         try {
-                            openCharacter();
+                            openSerie();
                         } catch (IOException e) {
                             e.printStackTrace();
                         }
@@ -56,6 +57,21 @@ public class FeedControllerG {
 
     }
 
+    private void openSerie() throws IOException {
+
+        SerieController serieController = new SerieController();
+        FXMLLoader loader = new FXMLLoader();
+
+        URL fxmlLocation = CharacterControllerG.class.getResource("serie.fxml");
+        loader.setLocation(fxmlLocation);
+        loader.setController(serieController);
+
+        HomeControllerG homeControllerG = HomeControllerG.getInstance();
+        homeControllerG.changeCenter(loader.load());
+
+        serieController.init();
+
+    }
 
     private void openCharacter() throws IOException {
         CharacterControllerG characterControllerG = new CharacterControllerG();
@@ -70,6 +86,8 @@ public class FeedControllerG {
         HomeControllerG homeControllerG = HomeControllerG.getInstance();
         homeControllerG.changeCenter(loader.load());
     }
+
+
 
     private List<Comic> add(){
 

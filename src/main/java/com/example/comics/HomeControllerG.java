@@ -43,8 +43,8 @@ public class HomeControllerG {
     private ImageView homeIcon;
 
 
-
     public static HomeControllerG instance;
+    public FeedControllerG feedControllerG;
 
 
     private HomeControllerG(){
@@ -94,13 +94,6 @@ public class HomeControllerG {
         btnToRead.setStyle("-fx-background-color: #E2E2E2; ");
     }
 
-    public void openCharacter() {
-        System.out.println("Clicked character");
-        FxmlLoader object = new FxmlLoader();
-        Pane view = object.getPage("character");
-        mainPane.setCenter(view);
-    }
-
     public void openSettings() {
         System.out.println("Clicked settings");
         FxmlLoader object = new FxmlLoader();
@@ -146,7 +139,7 @@ public class HomeControllerG {
 
     public void openFeed() throws IOException {
 
-        FeedControllerG feedControllerG = new FeedControllerG();
+        feedControllerG = new FeedControllerG();
         FXMLLoader loader = new FXMLLoader();
 
         URL fxmlLocation = FeedControllerG.class.getResource("feed.fxml");
@@ -164,6 +157,7 @@ public class HomeControllerG {
         btnReading.setStyle("-fx-background-color: #E2E2E2; ");
         btnTop.setStyle("-fx-background-color: #E2E2E2; ");
         btnToRead.setStyle("-fx-background-color: #E2E2E2; ");
+
     }
 
 
