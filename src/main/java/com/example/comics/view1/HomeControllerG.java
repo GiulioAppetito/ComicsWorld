@@ -110,7 +110,7 @@ public class HomeControllerG {
 
     public void openCategories() throws IOException {
 
-        categoriesControllerG = CategoriesControllerG.getInstance();
+        categoriesControllerG = new CategoriesControllerG();
         FXMLLoader loader = new FXMLLoader();
 
         URL fxmlLocation = FeedControllerG.class.getResource("categories.fxml");
