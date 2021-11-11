@@ -25,7 +25,7 @@
                <Font name="Berlin Sans FB Demi Bold" size="35.0" />
             </font>
             <textFill>
-               <LinearGradient endX="1.0" endY="1.0">
+               <LinearGradient>
                   <stops>
                      <Stop>
                         <color>
@@ -96,9 +96,7 @@
             <Button fx:id="btnCategories" mnemonicParsing="false" prefHeight="39.0" prefWidth="220.0" stylesheets="@../../../../css/fullpackstyling.css" text="Categories" textFill="WHITE">
                <graphic>
                   <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../../../../img/icons8-classificare-96.png" />
-                     </image>
+                     <Image url="@../../../../img/icons8-classificare-96.png"/>
                   </ImageView>
                </graphic>
                <font>
@@ -112,9 +110,7 @@
             <Button fx:id="btnTop" mnemonicParsing="false" prefHeight="39.0" prefWidth="220.0" stylesheets="@../../../../css/fullpackstyling.css" text="Top comics" textFill="WHITE">
                <graphic>
                   <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../../../../img/icons8-il-più-venduto-96.png" />
-                     </image>
+                     <Image url="@../../../../img/icons8-il-più-venduto-96.png"/>
                   </ImageView>
                </graphic>
                <font>
@@ -144,9 +140,7 @@
                <Button fx:id="btnFav" mnemonicParsing="false" prefHeight="39.0" prefWidth="220.0" stylesheets="@../../../../css/fullpackstyling.css" text="Favourites" textFill="WHITE">
                   <graphic>
                      <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
-                        <image>
-                           <Image url="@../../../../img/icons8-cartella-preferiti-96.png" />
-                        </image>
+                        <Image url="@../../../../img/icons8-cartella-preferiti-96.png"/>
                      </ImageView>
                   </graphic>
                   <font>
@@ -160,9 +154,7 @@
                <Button fx:id="btnReading" mnemonicParsing="false" prefHeight="39.0" prefWidth="220.0" stylesheets="@../../../../css/fullpackstyling.css" text="Reading" textFill="WHITE">
                   <graphic>
                      <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
-                        <image>
-                           <Image url="@../../../../img/icons8-book-reading-96.png.png" />
-                        </image>
+                        <Image url="@../../../../img/icons8-book-reading-96.png.png"/>
                      </ImageView>
                   </graphic>
                   <font>
@@ -176,9 +168,7 @@
                <Button fx:id="btnToRead" mnemonicParsing="false" prefHeight="39.0" prefWidth="220.0" stylesheets="@../../../../css/fullpackstyling.css" text="To read" textFill="WHITE">
                   <graphic>
                      <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
-                        <image>
-                           <Image url="@../../../../img/icons8-promemoria-96.png" />
-                        </image>
+                        <Image url="@../../../../img/icons8-promemoria-96.png"/>
                      </ImageView>
                   </graphic>
                   <font>
@@ -208,9 +198,7 @@
             <Button fx:id="btnSettings" mnemonicParsing="false" prefHeight="39.0" prefWidth="220.0" stylesheets="@../../../../css/fullpackstyling.css" text="Settings" textFill="WHITE">
                <graphic>
                   <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../../../../img/icons8-impostazioni-96.png" />
-                     </image>
+                     <Image url="@../../../../img/icons8-impostazioni-96.png"/>
                   </ImageView>
                </graphic>
                <font>

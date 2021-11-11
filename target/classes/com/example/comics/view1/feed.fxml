@@ -30,11 +30,10 @@
                <Insets left="20.0" />
             </padding>
          </Label>
-         <ScrollPane layoutX="14.0" layoutY="64.0" prefHeight="140.0" prefWidth="883.0" styleClass="transparent" stylesheets="@../../../../css/fullpackstyling.css">
-            <content>
-               <HBox fx:id="hbAds" prefHeight="129.0" prefWidth="881.0" />
-            </content>
-         </ScrollPane>
+          <ScrollPane layoutX="14.0" layoutY="64.0" prefHeight="140.0" prefWidth="883.0" styleClass="transparent"
+                      stylesheets="@../../../../css/fullpackstyling.css">
+              <HBox fx:id="hbAds" prefHeight="129.0" prefWidth="881.0"/>
+          </ScrollPane>
       </Pane>
       <Pane prefHeight="710.0" prefWidth="929.0" stylesheets="@../../../../css/fullpackstyling.css">
          <styleClass>

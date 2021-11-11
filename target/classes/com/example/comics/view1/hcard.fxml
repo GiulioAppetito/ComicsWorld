@@ -15,22 +15,20 @@
         <String fx:value="oval-layout" />
       <String fx:value="linear-grad" />
     </styleClass>
-   <HBox prefHeight="60.0" prefWidth="198.0" styleClass="gradient2" stylesheets="@../../../../css/fullpackstyling.css">
-      <children>
-          <ImageView fx:id="comicCover" fitHeight="103.0" fitWidth="89.0" pickOnBounds="true" preserveRatio="true">
-              <Image url="@../../../../img/3.jpg" />
-            <HBox.margin>
-               <Insets bottom="5.0" left="20.0" top="5.0" />
-            </HBox.margin>
-          </ImageView>
-          <Label fx:id="lblTitle" alignment="CENTER" prefHeight="38.0" prefWidth="107.0" text="Spiderman">
-              <font>
-                  <Font name="Berlin Sans FB" size="14.0" />
-              </font>
-            <HBox.margin>
-               <Insets top="10.0" />
-            </HBox.margin>
-          </Label>
-      </children>
-   </HBox>
+    <HBox prefHeight="60.0" prefWidth="198.0" styleClass="gradient2" stylesheets="@../../../../css/fullpackstyling.css">
+        <ImageView fx:id="comicCover" fitHeight="103.0" fitWidth="89.0" pickOnBounds="true" preserveRatio="true">
+            <Image url="@../../../../img/3.jpg"/>
+          <HBox.margin>
+              <Insets bottom="5.0" left="20.0" top="5.0"/>
+          </HBox.margin>
+        </ImageView>
+        <Label fx:id="lblTitle" alignment="CENTER" prefHeight="38.0" prefWidth="107.0" text="Spiderman">
+            <font>
+                <Font name="Berlin Sans FB" size="14.0"/>
+            </font>
+          <HBox.margin>
+              <Insets top="10.0"/>
+          </HBox.margin>
+        </Label>
+    </HBox>
 </VBox>
