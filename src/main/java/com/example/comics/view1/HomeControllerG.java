@@ -42,6 +42,7 @@ public class HomeControllerG {
 
     public static HomeControllerG instance;
     public FeedControllerG feedControllerG;
+    public CategoriesControllerG categoriesControllerG;
 
 
     private HomeControllerG(){
@@ -59,7 +60,13 @@ public class HomeControllerG {
         openFeed();
 
         btnFav.setOnAction(event -> openFavourites());
-        btnCategories.setOnAction(event -> openCategories());
+        btnCategories.setOnAction(event -> {
+            try {
+                openCategories();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        });
         btnSettings.setOnAction(event -> openSettings());
         userBox.setOnMouseClicked(event -> openProfile());
         homeIcon.setOnMouseClicked(event -> {
@@ -101,10 +108,18 @@ public class HomeControllerG {
 
     }
 
-    public void openCategories() {
-        System.out.println("Clicked btn1");
-        FxmlLoader object = new FxmlLoader();
-        Pane view = object.getPage("categories");
+    public void openCategories() throws IOException {
+
+        categoriesControllerG = CategoriesControllerG.getInstance();
+        FXMLLoader loader = new FXMLLoader();
+
+        URL fxmlLocation = FeedControllerG.class.getResource("categories.fxml");
+        loader.setLocation(fxmlLocation);
+        loader.setController(categoriesControllerG);
+
+        Pane view = loader.load();
+        categoriesControllerG.init();
+
         mainPane.setCenter(view);
 
         btnSettings.setStyle("-fx-background-color: rgba(0,0,0,0); ");

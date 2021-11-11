@@ -6,15 +6,6 @@ import javafx.scene.control.Label;
 
 public class CategoryController {
 
-    @FXML
-    private Label categoryName;
 
-
-    public void setData(ComicsCategory category) {
-
-        categoryName.setText(category.getName());
-        //letterLabel.setText(category.getInitial());
-
-    }
 
 }
