@@ -4,7 +4,6 @@ import com.example.comics.model.Advertisement;
 import com.example.comics.model.Chapter;
 
 import com.example.comics.model.Review;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;

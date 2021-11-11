@@ -8,16 +8,15 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox alignment="CENTER" prefHeight="100.0" prefWidth="80.0" stylesheets="@../../../../css/fullpackstyling.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.comics.view1.VCardController">
+<VBox alignment="CENTER" prefHeight="150.0" prefWidth="100.0" stylesheets="@../../../../css/fullpackstyling.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.comics.view1.VCardController">
     <styleClass>
         <String fx:value="white-background" />
-        <String fx:value="oval-layout" />
-      <String fx:value="transparent" />
+        <String fx:value="transparent" />
     </styleClass>
-    <ImageView fx:id="comicCover" fitHeight="54.0" fitWidth="71.0" pickOnBounds="true" preserveRatio="true">
-        <Image url="@../../../../img/spidey.png" />
+    <ImageView fx:id="comicCover" fitHeight="183.0" fitWidth="122.0" pickOnBounds="true" preserveRatio="true">
+        <Image url="@../../../../img/2.jpg" />
       <VBox.margin>
-         <Insets top="5.0" />
+         <Insets />
       </VBox.margin>
     </ImageView>
     <Label fx:id="comicName" alignment="CENTER" prefHeight="38.0" prefWidth="107.0" text="Spiderman">

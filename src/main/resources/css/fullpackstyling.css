@@ -74,6 +74,7 @@
 
 .lateral
 {
+    -fx-background-color: white;
 
 }
 .lateral:hover
