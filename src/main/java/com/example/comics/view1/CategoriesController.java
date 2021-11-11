@@ -1,6 +1,5 @@
 package com.example.comics.view1;
 
-import com.example.comics.model.ComicsCategory;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.layout.HBox;
