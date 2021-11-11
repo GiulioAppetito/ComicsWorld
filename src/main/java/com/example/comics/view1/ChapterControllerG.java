@@ -1,6 +1,8 @@
 package com.example.comics.view1;
 
 import com.example.comics.model.Advertisement;
+import com.example.comics.model.Chapter;
+
 import com.example.comics.model.Review;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -94,5 +96,7 @@ public class ChapterControllerG {
         paneInsertReview.setVisible(false);
 
     }
+
+
 
 }
