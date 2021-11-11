@@ -168,6 +168,14 @@
                             <Insets left="20.0" />
                         </padding>
                     </Label>
+               <ScrollPane prefHeight="275.0" prefWidth="348.0">
+                  <VBox.margin>
+                     <Insets bottom="10.0" left="10.0" right="10.0" />
+                  </VBox.margin>
+                  <content>
+                     <VBox fx:id="vbChapters" prefHeight="273.0" prefWidth="346.0" />
+                  </content>
+               </ScrollPane>
                 </VBox>
                 <styleClass>
                     <String fx:value="panes" />
