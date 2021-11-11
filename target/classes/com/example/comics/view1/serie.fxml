@@ -169,7 +169,7 @@
                         </padding>
                     </Label>
                     <ScrollPane hbarPolicy="NEVER" prefHeight="270.0" prefWidth="368.0" vbarPolicy="ALWAYS">
-                        <VBox fx:id="vbChapters" prefHeight="342.0" prefWidth="368.0"/>
+                        <VBox fx:id="vbChapters" prefHeight="342.0" prefWidth="368.0" />
                     </ScrollPane>
                 </VBox>
                 <styleClass>
