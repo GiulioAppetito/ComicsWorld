@@ -20,7 +20,7 @@
             <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
          </BorderPane.margin>
 
-         <Button fx:id="profile" mnemonicParsing="false" onAction="#openProfileSettings" prefHeight="58.0" prefWidth="185.0" styleClass="button2" stylesheets="@../../../../css/fullpackstyling.css" text="Profile">
+         <Button fx:id="btnProfile" mnemonicParsing="false" onAction="#openProfileSettings" prefHeight="58.0" prefWidth="185.0" styleClass="button2" stylesheets="@../../../../css/fullpackstyling.css" text="Profile">
             <font>
                <Font name="Berlin Sans FB" size="18.0" />
             </font></Button>

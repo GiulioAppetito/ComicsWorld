@@ -10,7 +10,7 @@ import tools.FxmlLoader;
 public class SettingsController {
 
     @FXML
-    private Button profile;
+    private Button btnProfile;
     @FXML
     private VBox settingsBox;
     @FXML
@@ -23,6 +23,10 @@ public class SettingsController {
     private Button badgessettings;
     @FXML
     private Button aboutussettings;
+
+    public void initialize(){
+        openProfileSettings();
+    }
 
     public void openProfileSettings() {
         System.out.println("Clicked profile settings");
