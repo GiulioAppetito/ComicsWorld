@@ -8,14 +8,14 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="729.0" prefWidth="980.0" stylesheets="@../../../../css/fullpackstyling.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" >
-    <ScrollPane prefHeight="706.0" prefWidth="969.0" styleClass="transparent" stylesheets="@../../../../css/fullpackstyling.css">
+<AnchorPane prefHeight="722.0" prefWidth="883.0" stylesheets="@../../../../css/fullpackstyling.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+    <ScrollPane layoutX="20.0" layoutY="13.0" prefHeight="710.0" prefWidth="822.0" styleClass="transparent" stylesheets="@../../../../css/fullpackstyling.css">
         <padding>
-            <Insets left="20.0" top="20.0" />
+            <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
         </padding>
-        <VBox maxHeight="-Infinity" minHeight="-Infinity" opacity="0.75" prefHeight="684.0" prefWidth="933.0" spacing="10.0" stylesheets="@../../../../css/fullpackstyling.css">
+        <VBox maxHeight="-Infinity" minHeight="-Infinity" opacity="0.75" prefHeight="7300.0" prefWidth="766.0" spacing="10.0" stylesheets="@../../../../css/fullpackstyling.css">
             <padding>
-                <Insets right="10.0" top="10.0" />
+                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
             </padding>
             <Label text="A" translateZ="-400.0">
                 <font>
@@ -177,8 +177,12 @@
 
         </VBox>
     </ScrollPane>
+   <padding>
+      <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+   </padding>
    <styleClass>
-      <String fx:value="glass" />
       <String fx:value="panes" />
+      <String fx:value="glass" />
+      <String fx:value="transparent" />
    </styleClass>
 </AnchorPane>
