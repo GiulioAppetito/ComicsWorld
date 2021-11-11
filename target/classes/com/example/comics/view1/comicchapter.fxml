@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<StackPane xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <AnchorPane prefHeight="400.0" prefWidth="600.0">
+         <Pane layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="729.0" prefWidth="980.0" styleClass="transparent" stylesheets="@../../../../css/fullpackstyling.css">
+            <HBox prefHeight="729.0" prefWidth="980.0">
+               <Pane prefHeight="649.0" prefWidth="457.0" stylesheets="@../../../../css/fullpackstyling.css">
+                  <HBox.margin>
+                     <Insets bottom="40.0" left="40.0" right="40.0" top="40.0" />
+                  </HBox.margin>
+                  <styleClass>
+                     <String fx:value="panes" />
+                     <String fx:value="oval-layout" />
+                     <String fx:value="glass" />
+                  </styleClass>
+                  <VBox prefHeight="649.0" prefWidth="452.0">
+                     <ImageView fitHeight="261.0" fitWidth="466.0" pickOnBounds="true" preserveRatio="true">
+                        <VBox.margin>
+                           <Insets left="140.0" top="20.0" />
+                        </VBox.margin>
+                        <Image url="@../../../../img/2.jpg" />
+                     </ImageView>
+                     <Label alignment="CENTER" prefHeight="74.0" prefWidth="615.0" text="Chapter 2">
+                        <font>
+                           <Font name="Berlin Sans FB" size="24.0" />
+                        </font>
+                     </Label>
+                     <Label alignment="CENTER" prefHeight="74.0" prefWidth="615.0" text="Stan Lee">
+                        <font>
+                           <Font name="Berlin Sans FB" size="24.0" />
+                        </font>
+                     </Label>
+                     <Label alignment="CENTER" prefHeight="74.0" prefWidth="615.0" text="Marvel">
+                        <font>
+                           <Font name="Berlin Sans FB" size="24.0" />
+                        </font>
+                     </Label>
+                     <Label alignment="CENTER" prefHeight="74.0" prefWidth="615.0" text="May,1962">
+                        <font>
+                           <Font name="Berlin Sans FB" size="24.0" />
+                        </font>
+                     </Label>
+                     <Label alignment="CENTER" prefHeight="74.0" prefWidth="615.0">
+                        <font>
+                           <Font name="Berlin Sans FB" size="24.0" />
+                        </font>
+                     </Label>
+                     <HBox prefWidth="393.0" spacing="20.0">
+                        <VBox.margin>
+                           <Insets bottom="20.0" left="20.0" right="20.0" />
+                        </VBox.margin>
+                        <children>
+                           <Button mnemonicParsing="false" prefHeight="84.0" prefWidth="157.0" stylesheets="@../../../../css/fullpackstyling.css">
+                              <font>
+                                 <Font name="Berlin Sans FB" size="24.0" />
+                              </font>
+                              <styleClass>
+                                 <String fx:value="oval-layout" />
+                                 <String fx:value="transparent" />
+                                 <String fx:value="buttonEdit" />
+                              </styleClass>
+                              <graphic>
+                                 <ImageView fitHeight="45.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                       <Image url="@../../../../img/icons8-mi-piace-96.png" />
+                                    </image>
+                                 </ImageView>
+                              </graphic>
+                           </Button>
+                           <Button mnemonicParsing="false" prefHeight="84.0" prefWidth="157.0" stylesheets="@../../../../css/fullpackstyling.css">
+                              <font>
+                                 <Font name="Berlin Sans FB" size="24.0" />
+                              </font>
+                              <styleClass>
+                                 <String fx:value="oval-layout" />
+                                 <String fx:value="transparent" />
+                                 <String fx:value="buttonEdit" />
+                              </styleClass>
+                              <graphic>
+                                 <ImageView fitHeight="45.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true">
+                                    <Image url="@../../../../img/icons8-libro-96.png" />
+                                 </ImageView>
+                              </graphic>
+                           </Button>
+                           <Button mnemonicParsing="false" prefHeight="84.0" prefWidth="157.0" stylesheets="@../../../../css/fullpackstyling.css">
+                              <font>
+                                 <Font name="Berlin Sans FB" size="24.0" />
+                              </font>
+                              <styleClass>
+                                 <String fx:value="oval-layout" />
+                                 <String fx:value="transparent" />
+                                 <String fx:value="buttonEdit" />
+                              </styleClass>
+                              <graphic>
+                                 <ImageView fitHeight="45.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true">
+                                    <Image url="@../../../../img/icons8-segno-di-spunta-96.png" />
+                                 </ImageView>
+                              </graphic>
+                           </Button>
+                           <Button mnemonicParsing="false" prefHeight="84.0" prefWidth="157.0" stylesheets="@../../../../css/fullpackstyling.css">
+                              <font>
+                                 <Font name="Berlin Sans FB" size="24.0" />
+                              </font>
+                              <styleClass>
+                                 <String fx:value="oval-layout" />
+                                 <String fx:value="transparent" />
+                                 <String fx:value="buttonEdit" />
+                              </styleClass>
+                              <graphic>
+                                 <ImageView fitHeight="45.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                       <Image url="@../../../../img/icons8-chevron-destra-96.png" />
+                                    </image>
+                                 </ImageView>
+                              </graphic>
+                           </Button>
+                        </children>
+                     </HBox>
+                  </VBox>
+               </Pane>
+               <VBox prefHeight="729.0" prefWidth="453.0">
+                  <Pane prefHeight="227.0" prefWidth="368.0" stylesheets="@../../../../css/fullpackstyling.css">
+                     <VBox.margin>
+                        <Insets bottom="40.0" left="40.0" right="40.0" top="40.0" />
+                     </VBox.margin>
+                     <styleClass>
+                        <String fx:value="panes" />
+                        <String fx:value="glass" />
+                     </styleClass>
+                     <children>
+                        <VBox prefHeight="200.0" prefWidth="368.0">
+                           <children>
+                              <Label prefHeight="74.0" prefWidth="615.0" text="Description">
+                                 <font>
+                                    <Font name="Berlin Sans FB" size="24.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets left="20.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <ScrollPane hbarPolicy="NEVER" prefHeight="125.0" prefWidth="368.0">
+                                 <VBox.margin>
+                                    <Insets bottom="10.0" left="10.0" right="10.0" />
+                                 </VBox.margin>
+                                 <content>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Spider-Man is a superhero created by writer-editor Stan Lee and writer-artist Steve Ditko. He first appeared in the anthology comic book Amazing Fantasy #15 (Aug. 1962) in the Silver Age of Comic Books. He appears in American comic books published by Marvel Comics and in movies, television shows, and video game adaptations set in the Marvel Universe. Spider-Man is the alias of Peter Parker, an orphan raised by his Aunt May and Uncle Ben in New York City after his parents Richard and Mary Parker died in a plane crash. Lee and Ditko had the character deal with the struggles of adolescence and financial issues and gave him many supporting characters, such as J. Jonah Jameson, Harry Osborn, romantic interests Gwen Stacy and Mary Jane Watson, and foes such as Doctor Octopus, the Green Goblin, Venom, and Mephisto. In his origin story, he gets spider-related abilities from a bite from a radioactive spider; these include clinging to surfaces, superhuman strength and agility, and detecting danger with his &quot;spider-sense.&quot; He also builds wrist-mounted &quot;web-shooter&quot; devices that shoot artificial spider webs of his own design." wrappingWidth="365.13671875" />
+                                 </content>
+                              </ScrollPane>
+                           </children>
+                        </VBox>
+                     </children>
+                  </Pane>
+                  <Pane prefHeight="377.0" prefWidth="308.0" stylesheets="@../../../../css/fullpackstyling.css">
+                     <VBox.margin>
+                        <Insets bottom="40.0" left="40.0" right="40.0" top="40.0" />
+                     </VBox.margin>
+                     <styleClass>
+                        <String fx:value="panes" />
+                        <String fx:value="glass" />
+                     </styleClass>
+                     <children>
+                        <VBox prefHeight="369.0" prefWidth="368.0">
+                           <children>
+                              <HBox>
+                                 <children>
+                                    <Label prefHeight="74.0" prefWidth="246.0" text="Reviews">
+                                       <font>
+                                          <Font name="Berlin Sans FB" size="24.0" />
+                                       </font>
+                                       <padding>
+                                          <Insets left="20.0" />
+                                       </padding>
+                                    </Label>
+                                    <Button fx:id="btnAddReview" mnemonicParsing="false"  prefHeight="75.0" prefWidth="231.0" stylesheets="@../../../../css/fullpackstyling.css" text="Add a review">
+                                       <font>
+                                          <Font name="Berlin Sans FB" size="18.0" />
+                                       </font>
+                                       <styleClass>
+                                          <String fx:value="oval-layout" />
+                                          <String fx:value="transparent" />
+                                          <String fx:value="buttonEdit" />
+                                       </styleClass>
+                                       <graphic>
+                                          <ImageView fitHeight="45.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../../../../img/icons8-modificare-96.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                    </Button>
+                                 </children>
+                              </HBox>
+                              <ScrollPane hbarPolicy="NEVER" prefHeight="265.0" prefWidth="348.0" styleClass="transparent">
+                                 <VBox.margin>
+                                    <Insets left="10.0" right="10.0" />
+                                 </VBox.margin>
+                                 <content>
+                                    <VBox fx:id="vbReviews" prefHeight="262.0" prefWidth="346.0" spacing="5.0" styleClass="transparent" stylesheets="@../../../../css/fullpackstyling.css" />
+                                 </content>
+                              </ScrollPane>
+                           </children>
+                        </VBox>
+                     </children>
+                  </Pane>
+               </VBox>
+            </HBox>
+         </Pane>
+      </AnchorPane>
+      <Pane fx:id="paneInsertReview" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="522.0" prefWidth="362.0" styleClass="linear-grad" stylesheets="@../../../../css/fullpackstyling.css">
+         <StackPane.margin>
+            <Insets />
+         </StackPane.margin>
+         <VBox prefHeight="379.0" prefWidth="362.0">
+            <HBox>
+               <VBox.margin>
+                  <Insets top="20.0" />
+               </VBox.margin>
+               <Label prefHeight="49.0" prefWidth="296.0" text="Add a review" textFill="WHITE">
+                  <font>
+                     <Font name="Berlin Sans FB" size="24.0" />
+                  </font>
+                  <padding>
+                     <Insets left="20.0" />
+                  </padding>
+               </Label>
+               <Button fx:id="btnCloseEditor" alignment="CENTER_RIGHT" mnemonicParsing="false"  prefHeight="49.0" prefWidth="65.0" stylesheets="@../../../../css/fullpackstyling.css" text="X" textAlignment="CENTER" textFill="WHITE">
+                  <font>
+                     <Font name="Berlin Sans FB" size="24.0" />
+                  </font>
+                  <styleClass>
+                     <String fx:value="oval-layout" />
+                     <String fx:value="transparent" />
+                     <String fx:value="buttonEdit" />
+                  </styleClass>
+                  <padding>
+                     <Insets right="20.0" />
+                  </padding>
+                  <HBox.margin>
+                     <Insets right="20.0" />
+                  </HBox.margin>
+               </Button>
+            </HBox>
+            <TextArea minHeight="-Infinity" minWidth="-Infinity" prefHeight="270.0" prefWidth="322.0">
+               <VBox.margin>
+                  <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+               </VBox.margin>
+            </TextArea>
+         </VBox>
+         <Button layoutX="181.0" layoutY="393.0" mnemonicParsing="false" prefHeight="74.0" prefWidth="157.0" stylesheets="@../../../../css/fullpackstyling.css" text="Post" textFill="WHITE">
+            <font>
+               <Font name="Berlin Sans FB" size="24.0" />
+            </font>
+            <styleClass>
+               <String fx:value="oval-layout" />
+               <String fx:value="transparent" />
+               <String fx:value="buttonEdit" />
+            </styleClass>
+            <graphic>
+               <ImageView fitHeight="45.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true">
+                  <image>
+                     <Image url="@../../../../img/icons8-modificare-96.png" />
+                  </image>
+               </ImageView>
+            </graphic>
+            <padding>
+               <Insets right="20.0" />
+            </padding>
+         </Button>
+      </Pane>
+   </children>
+</StackPane>

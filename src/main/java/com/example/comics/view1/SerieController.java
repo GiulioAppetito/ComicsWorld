@@ -43,6 +43,7 @@ public class SerieController {
     }
 
     private void openChapter() throws IOException {
+        System.out.println("Opening chapter...");
 
         ChapterControllerG chapterControllerG = new ChapterControllerG();
         FXMLLoader loader = new FXMLLoader();
