@@ -89,7 +89,7 @@
 .lateral:focused
 {
     -fx-background-color :#5DADE2 ;
-    -fx-background-radius :  20;
+    -fx-background-radius :  25;
 
 }
 
@@ -194,6 +194,7 @@
 .linear-grad
 {
     -fx-background-color: linear-gradient(to bottom left, #A868A0, #2D75E8);
+    -fx-background-radius: 25;
 }
 
 .white-background{
@@ -228,18 +229,19 @@
     -fx-border-radius: 200;
 }
 
+
 .selected{
     -fx-background-color:#F3F3F3;
 }
 
 .wallpaper{
-    -fx-background-image: url('bubble2.png');
-    -fx-background-size: 1800;
+    -fx-background-image: url('colorcomics.jpg');
+    -fx-background-size: 1700;
 
 }
 .wallpaperlogin{
-    -fx-background-image: url('bubble2.png');
-    -fx-background-size: 1000;
+    -fx-background-image: url('colorcomics.jpg');
+       -fx-background-size: 900;
 
 }
 .glass{
@@ -284,11 +286,17 @@
 
 .panes
 {
-    -fx-background-color : #f8f8f8;
+    -fx-background-color : #eaeaea;
     -fx-background-radius :  20;
 }
 .panes:hover
 {
-    -fx-background-color : #f3f3f3;
+    -fx-background-color : #dadada;
     -fx-background-radius :  20;
+}
+
+.gradient2
+{
+    -fx-background-color: linear-gradient(to bottom left, #ffffff, #8d8d8d);
+    -fx-background-radius: 25;
 }

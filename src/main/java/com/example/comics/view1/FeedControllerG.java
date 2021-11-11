@@ -174,7 +174,7 @@ public class FeedControllerG {
 
         List<Advertisement> la = new ArrayList<>();
         int i;
-        int n = 12;
+        int n = 14;
 
 
         for(i=0; i<n; i++){
