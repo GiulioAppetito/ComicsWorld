@@ -4,9 +4,12 @@ import com.example.comics.model.Categories;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.layout.HBox;
+import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
+import tools.FxmlLoader;
 
 import java.io.IOException;
+import java.net.URL;
 
 public class CategoriesControllerG {
 
@@ -120,7 +123,13 @@ public class CategoriesControllerG {
             fxmlLoader.setLocation(getClass().getResource("categorycard.fxml"));
             try {
                 HBox categoryBox = fxmlLoader.load();
-                categoryBox.setOnMouseClicked(event -> openCategory(categoryName));
+                categoryBox.setOnMouseClicked(event -> {
+                    try {
+                        openCategory(categoryName);
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                });
 
                 CategoryCardController categoryCardController = fxmlLoader.getController();
                 categoryCardController.setData(categoryName);
@@ -164,9 +173,18 @@ public class CategoriesControllerG {
 
     }
 
-    private void openCategory(String categoryName){
-        System.out.println(categoryName);
+    private void openCategory(String categoryName) throws IOException {
+        System.out.println("Clicked on " + categoryName);
 
+        FXMLLoader loader = new FXMLLoader();
+
+        URL fxmlLocation = CategoryController.class.getResource("category.fxml");
+        loader.setLocation(fxmlLocation);
+        Pane view = loader.load();
+
+        CategoryController categoryController = loader.getController();
+        categoryController.setData(categoryName);
+        HomeControllerG.getInstance().changeCenter(view);
     }
 
 }

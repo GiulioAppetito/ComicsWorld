@@ -12,9 +12,9 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<Pane prefHeight="729.0" prefWidth="980.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
+<Pane prefHeight="729.0" prefWidth="980.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
    <VBox layoutX="10.0" layoutY="10.0" prefHeight="719.0" prefWidth="969.0">
-      <Pane prefHeight="493.0" prefWidth="911.0" stylesheets="@../../../../css/fullpackstyling.css">
+      <Pane prefHeight="525.0" prefWidth="909.0" stylesheets="@../../../../css/fullpackstyling.css">
          <VBox.margin>
             <Insets left="30.0" right="30.0" top="30.0" />
          </VBox.margin>
@@ -30,9 +30,14 @@
                <Insets left="20.0" />
             </padding>
          </Label>
-          <ScrollPane layoutX="14.0" layoutY="64.0" prefHeight="140.0" prefWidth="883.0" styleClass="transparent"
-                      stylesheets="@../../../../css/fullpackstyling.css">
-              <HBox fx:id="hbAds" prefHeight="129.0" prefWidth="881.0"/>
+          <ScrollPane layoutX="14.0" layoutY="64.0" prefHeight="146.0" prefWidth="883.0" styleClass="transparent" stylesheets="@../../../../css/fullpackstyling.css" vbarPolicy="NEVER">
+              <HBox fx:id="hbAds" prefHeight="126.0" prefWidth="882.0" spacing="5.0" styleClass="transparent">
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <padding>
+                  <Insets left="5.0" right="5.0" top="5.0" />
+               </padding></HBox>
           </ScrollPane>
       </Pane>
       <Pane prefHeight="710.0" prefWidth="929.0" stylesheets="@../../../../css/fullpackstyling.css">

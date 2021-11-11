@@ -25,24 +25,24 @@
                 <String fx:value="glass" />
             </styleClass>
             <VBox prefHeight="649.0" prefWidth="452.0">
-            <Button fx:id="btnBack" mnemonicParsing="false" prefHeight="51.0" prefWidth="81.0" stylesheets="@../../../../css/fullpackstyling.css">
-               <font>
-                  <Font name="Berlin Sans FB" size="24.0" />
-               </font>
-               <styleClass>
-                  <String fx:value="oval-layout" />
-                  <String fx:value="transparent" />
-                  <String fx:value="buttonEdit" />
-               </styleClass>
-               <graphic>
-                   <ImageView fitHeight="32.0" fitWidth="39.0" pickOnBounds="true" preserveRatio="true">
-                       <Image url="@../../../../img/icons8-annulla-96.png" />
-                   </ImageView>
-               </graphic>
-               <VBox.margin>
-                  <Insets left="5.0" top="5.0" />
-               </VBox.margin>
-            </Button>
+                <Button fx:id="btnBack" mnemonicParsing="false" prefHeight="51.0" prefWidth="81.0" stylesheets="@../../../../css/fullpackstyling.css">
+                    <font>
+                        <Font name="Berlin Sans FB" size="24.0" />
+                    </font>
+                    <styleClass>
+                        <String fx:value="oval-layout" />
+                        <String fx:value="transparent" />
+                        <String fx:value="buttonEdit" />
+                    </styleClass>
+                    <graphic>
+                        <ImageView fitHeight="32.0" fitWidth="39.0" pickOnBounds="true" preserveRatio="true">
+                            <Image url="@../../../../img/icons8-annulla-96.png" />
+                        </ImageView>
+                    </graphic>
+                    <VBox.margin>
+                        <Insets left="5.0" top="5.0" />
+                    </VBox.margin>
+                </Button>
                 <ImageView fitHeight="261.0" fitWidth="466.0" pickOnBounds="true" preserveRatio="true">
                     <VBox.margin>
                         <Insets left="140.0" />
@@ -73,9 +73,9 @@
                     <font>
                         <Font name="Berlin Sans FB" size="24.0" />
                     </font>
-               <VBox.margin>
-                  <Insets bottom="20.0" />
-               </VBox.margin>
+                    <VBox.margin>
+                        <Insets bottom="20.0" />
+                    </VBox.margin>
                 </Label>
                 <HBox prefWidth="393.0" spacing="20.0">
                     <VBox.margin>
@@ -168,14 +168,6 @@
                             <Insets left="20.0" />
                         </padding>
                     </Label>
-               <ScrollPane prefHeight="275.0" prefWidth="348.0">
-                  <VBox.margin>
-                     <Insets bottom="10.0" left="10.0" right="10.0" />
-                  </VBox.margin>
-                  <content>
-                     <VBox fx:id="vbChapters" prefHeight="273.0" prefWidth="346.0" />
-                  </content>
-               </ScrollPane>
                 </VBox>
                 <styleClass>
                     <String fx:value="panes" />
