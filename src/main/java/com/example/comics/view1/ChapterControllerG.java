@@ -21,11 +21,22 @@ public class ChapterControllerG {
 
 
     @FXML
+    private Button btnAddReview;
+
+    @FXML
     private Pane paneInsertReview;
 
     public void init(){
 
         paneInsertReview.setVisible(false);
+
+        btnCloseEditor.setOnAction(event ->
+                closeEditor());
+
+        btnAddReview.setOnAction(event ->
+                openEditor());
+
+
 
         ArrayList<Review> listOfReviews = new ArrayList<>(addReviews());
         int len = listOfReviews.size();

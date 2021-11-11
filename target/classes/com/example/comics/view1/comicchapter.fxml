@@ -188,7 +188,7 @@
                                           <Insets left="20.0" />
                                        </padding>
                                     </Label>
-                                    <Button fx:id="btnAddReview" mnemonicParsing="false" onAction="#openEditor" prefHeight="75.0" prefWidth="231.0" stylesheets="@../../../../css/fullpackstyling.css" text="Add a review">
+                                    <Button fx:id="btnAddReview" mnemonicParsing="false"  prefHeight="75.0" prefWidth="231.0" stylesheets="@../../../../css/fullpackstyling.css" text="Add a review">
                                        <font>
                                           <Font name="Berlin Sans FB" size="18.0" />
                                        </font>
@@ -240,7 +240,7 @@
                      <Insets left="20.0" />
                   </padding>
                </Label>
-               <Button fx:id="btnCloseEditor" alignment="CENTER_RIGHT" mnemonicParsing="false" onAction="#closeEditor" prefHeight="49.0" prefWidth="65.0" stylesheets="@../../../../css/fullpackstyling.css" text="X" textAlignment="CENTER" textFill="WHITE">
+               <Button fx:id="btnCloseEditor" alignment="CENTER_RIGHT" mnemonicParsing="false"  prefHeight="49.0" prefWidth="65.0" stylesheets="@../../../../css/fullpackstyling.css" text="X" textAlignment="CENTER" textFill="WHITE">
                   <font>
                      <Font name="Berlin Sans FB" size="24.0" />
                   </font>
@@ -275,7 +275,7 @@
             <graphic>
                <ImageView fitHeight="45.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true">
                   <image>
-                     <Image url="@../../../../img/icons8-libro-96.png" />
+                     <Image url="@../../../../img/icons8-modificare-96.png" />
                   </image>
                </ImageView>
             </graphic>
