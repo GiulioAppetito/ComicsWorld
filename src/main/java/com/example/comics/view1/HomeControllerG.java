@@ -83,12 +83,7 @@ public class HomeControllerG {
         Pane view = object.getPage("profile");
         mainPane.setCenter(view);
 
-        btnSettings.setStyle("-fx-background-color: #E2E2E2; ");
-        btnCategories.setStyle("-fx-background-color: #E2E2E2; ");
-        btnFav.setStyle("-fx-background-color: #E2E2E2; ");
-        btnReading.setStyle("-fx-background-color: #E2E2E2; ");
-        btnTop.setStyle("-fx-background-color: #E2E2E2; ");
-        btnToRead.setStyle("-fx-background-color: #E2E2E2; ");
+        resetButtons();
     }
 
     public void openSettings() {
@@ -97,12 +92,12 @@ public class HomeControllerG {
         Pane view = object.getPage("settings");
         mainPane.setCenter(view);
 
-        btnSettings.setStyle("-fx-background-color: #5DADE2; ");
-        btnCategories.setStyle("-fx-background-color: #E2E2E2; ");
-        btnFav.setStyle("-fx-background-color: #E2E2E2; ");
-        btnReading.setStyle("-fx-background-color: #E2E2E2; ");
-        btnTop.setStyle("-fx-background-color: #E2E2E2; ");
-        btnToRead.setStyle("-fx-background-color: #E2E2E2; ");
+        btnSettings.setStyle("-fx-background-color: #4d12b9; ");
+        btnCategories.setStyle("-fx-background-color: rgba(0,0,0,0); ");
+        btnFav.setStyle("-fx-background-color: rgba(0,0,0,0); ");
+        btnReading.setStyle("-fx-background-color: rgba(0,0,0,0); ");
+        btnTop.setStyle("-fx-background-color: rgba(0,0,0,0); ");
+        btnToRead.setStyle("-fx-background-color: rgba(0,0,0,0); ");
 
     }
 
@@ -112,12 +107,12 @@ public class HomeControllerG {
         Pane view = object.getPage("categories");
         mainPane.setCenter(view);
 
-        btnSettings.setStyle("-fx-background-color: #E2E2E2; ");
-        btnCategories.setStyle("-fx-background-color: #5DADE2; ");
-        btnFav.setStyle("-fx-background-color: #E2E2E2; ");
-        btnReading.setStyle("-fx-background-color: #E2E2E2; ");
-        btnTop.setStyle("-fx-background-color: #E2E2E2; ");
-        btnToRead.setStyle("-fx-background-color: #E2E2E2; ");
+        btnSettings.setStyle("-fx-background-color: rgba(0,0,0,0); ");
+        btnCategories.setStyle("-fx-background-color: #4d12b9; ");
+        btnFav.setStyle("-fx-background-color: rgba(0,0,0,0); ");
+        btnReading.setStyle("-fx-background-color: rgba(0,0,0,0); ");
+        btnTop.setStyle("-fx-background-color: rgba(0,0,0,0); ");
+        btnToRead.setStyle("-fx-background-color: rgba(0,0,0,0); ");
     }
 
     public void openFavourites() {
@@ -126,12 +121,12 @@ public class HomeControllerG {
         Pane view = object.getPage("favourites");
         mainPane.setCenter(view);
 
-        btnSettings.setStyle("-fx-background-color: #E2E2E2; ");
-        btnCategories.setStyle("-fx-background-color: #E2E2E2; ");
-        btnFav.setStyle("-fx-background-color: #5DADE2; ");
-        btnReading.setStyle("-fx-background-color: #E2E2E2; ");
-        btnTop.setStyle("-fx-background-color: #E2E2E2; ");
-        btnToRead.setStyle("-fx-background-color: #E2E2E2; ");
+        btnSettings.setStyle("-fx-background-color:  rgba(0,0,0,0); ");
+        btnCategories.setStyle("-fx-background-color:  rgba(0,0,0,0); ");
+        btnFav.setStyle("-fx-background-color: #4d12b9; ");
+        btnReading.setStyle("-fx-background-color:  rgba(0,0,0,0); ");
+        btnTop.setStyle("-fx-background-color:  rgba(0,0,0,0); ");
+        btnToRead.setStyle("-fx-background-color:  rgba(0,0,0,0); ");
     }
 
     public void openFeed() throws IOException {
@@ -148,30 +143,17 @@ public class HomeControllerG {
 
         mainPane.setCenter(view);
 
-        btnSettings.setStyle("-fx-background-color: #E2E2E2; ");
-        btnCategories.setStyle("-fx-background-color: #E2E2E2; ");
-        btnFav.setStyle("-fx-background-color: #E2E2E2; ");
-        btnReading.setStyle("-fx-background-color: #E2E2E2; ");
-        btnTop.setStyle("-fx-background-color: #E2E2E2; ");
-        btnToRead.setStyle("-fx-background-color: #E2E2E2; ");
-
+        resetButtons();
     }
 
-    public void openSeries() {
-        System.out.println("Clicked series");
-        FxmlLoader object = new FxmlLoader();
-        Pane view = object.getPage("comicseries");
-        mainPane.setCenter(view);
-
-        btnSettings.setStyle("-fx-background-color: #E2E2E2; ");
-        btnCategories.setStyle("-fx-background-color: #E2E2E2; ");
-        btnFav.setStyle("-fx-background-color: #E2E2E2; ");
-        btnReading.setStyle("-fx-background-color: #E2E2E2; ");
-        btnTop.setStyle("-fx-background-color: #E2E2E2; ");
-        btnToRead.setStyle("-fx-background-color: #E2E2E2; ");
+    private void resetButtons(){
+        btnSettings.setStyle("-fx-background-color: rgba(0,0,0,0); ");
+        btnCategories.setStyle("-fx-background-color: rgba(0,0,0,0); ");
+        btnFav.setStyle("-fx-background-color: rgba(0,0,0,0); ");
+        btnReading.setStyle("-fx-background-color: rgba(0,0,0,0); ");
+        btnTop.setStyle("-fx-background-color: rgba(0,0,0,0); ");
+        btnToRead.setStyle("-fx-background-color: rgba(0,0,0,0); ");
     }
-
-
 
 
 }
