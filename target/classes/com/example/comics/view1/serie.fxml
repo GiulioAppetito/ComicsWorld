@@ -13,7 +13,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="729.0" prefWidth="980.0" styleClass="transparent" stylesheets="@../../../../css/fullpackstyling.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="729.0" prefWidth="980.0" styleClass="transparent" stylesheets="@../../../../css/fullpackstyling.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
     <HBox prefHeight="729.0" prefWidth="980.0">
         <Pane prefHeight="649.0" prefWidth="457.0" stylesheets="@../../../../css/fullpackstyling.css">
             <HBox.margin>
@@ -168,6 +168,11 @@
                             <Insets left="20.0" />
                         </padding>
                     </Label>
+               <ScrollPane hbarPolicy="NEVER" prefHeight="270.0" prefWidth="368.0" vbarPolicy="ALWAYS">
+                  <content>
+                     <VBox fx:id="vbChapters" prefHeight="342.0" prefWidth="368.0" />
+                  </content>
+               </ScrollPane>
                 </VBox>
                 <styleClass>
                     <String fx:value="panes" />
