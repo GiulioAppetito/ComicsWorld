@@ -4,7 +4,6 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
-<?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
@@ -12,7 +11,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<Pane prefHeight="729.0" prefWidth="980.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+<Pane prefHeight="729.0" prefWidth="980.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
    <VBox layoutX="10.0" layoutY="10.0" prefHeight="719.0" prefWidth="969.0">
       <Pane prefHeight="525.0" prefWidth="909.0" stylesheets="@../../../../css/fullpackstyling.css">
          <VBox.margin>
@@ -57,18 +56,9 @@
                <Insets left="20.0" />
             </padding>
          </Label>
-          <ScrollPane hbarPolicy="NEVER" layoutX="14.0" layoutY="74.0" prefHeight="337.0" prefWidth="892.0" styleClass="transparent" vbarPolicy="ALWAYS">
-              <GridPane fx:id="feedGrid" hgap="20.0" prefHeight="900.0" prefWidth="874.0" styleClass="panes" vgap="20.0">
-                  <columnConstraints>
-                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="70.0" />
-                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="70.0" />
-                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="70.0" />
-                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="70.0" />
-                  </columnConstraints>
+          <ScrollPane hbarPolicy="NEVER" layoutX="14.0" layoutY="74.0" prefHeight="312.0" prefWidth="892.0" styleClass="transparent" vbarPolicy="ALWAYS">
+              <GridPane fx:id="feedGrid" hgap="30.0" prefHeight="0.0" prefWidth="0.0" styleClass="panes" vgap="30.0">
                   <rowConstraints>
-                      <RowConstraints maxHeight="359.59996032714844" minHeight="10.0" prefHeight="150.0" vgrow="SOMETIMES" />
-                      <RowConstraints maxHeight="462.4000053405762" minHeight="10.0" prefHeight="150.0" vgrow="SOMETIMES" />
-                      <RowConstraints minHeight="10.0" prefHeight="150.0" vgrow="SOMETIMES" />
                       <RowConstraints minHeight="10.0" prefHeight="150.0" vgrow="SOMETIMES" />
                   </rowConstraints>
                <padding>

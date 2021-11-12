@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="729.0" prefWidth="980.0" styleClass="transparent" stylesheets="@../../../../css/fullpackstyling.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.comics.view1.ProfileController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="729.0" prefWidth="980.0" styleClass="transparent" stylesheets="@../../../../css/fullpackstyling.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.comics.view1.ProfileController">
    <HBox prefHeight="729.0" prefWidth="980.0">
       <Pane prefHeight="649.0" prefWidth="457.0" stylesheets="@../../../../css/fullpackstyling.css">
          <HBox.margin>
@@ -28,12 +28,16 @@
                   <Insets left="20.0" top="20.0" />
                </VBox.margin>
                <children>
-                  <ImageView fitHeight="244.0" fitWidth="221.0" pickOnBounds="true" preserveRatio="true">
-                     <Image url="@../../../../img/business_man.jpg" />
+                  <VBox>
                      <HBox.margin>
                         <Insets top="10.0" />
                      </HBox.margin>
-                  </ImageView>
+                     <children>
+                        <ImageView fitHeight="244.0" fitWidth="221.0" pickOnBounds="true" preserveRatio="true">
+                           <Image url="@../../../../img/business_man.jpg" />
+                        </ImageView>
+                     </children>
+                  </VBox>
                   <VBox prefHeight="243.0" prefWidth="182.0">
                      <children>
                         <Label alignment="CENTER" prefHeight="77.0" prefWidth="175.0" text="Coin count">
@@ -61,7 +65,7 @@
                   </VBox>
                </children>
             </HBox>
-            <HBox prefHeight="55.0" prefWidth="452.0">
+            <HBox prefHeight="55.0" prefWidth="452.0" spacing="100.0">
                <children>
                   <Button fx:id="btnEdit" mnemonicParsing="false" onAction="#edit" prefHeight="63.0" prefWidth="130.0" stylesheets="@../../../../css/fullpackstyling.css" text="Edit">
                      <font>
@@ -78,7 +82,7 @@
                         </ImageView>
                      </graphic>
                      <HBox.margin>
-                        <Insets left="20.0" right="30.0" />
+                        <Insets left="20.0" />
                      </HBox.margin>
                   </Button>
                   <Button fx:id="btnEdit1" mnemonicParsing="false" onAction="#edit" prefHeight="63.0" prefWidth="182.0" stylesheets="@../../../../css/fullpackstyling.css" text="Converter">
@@ -98,12 +102,12 @@
                         </ImageView>
                      </graphic>
                      <HBox.margin>
-                        <Insets left="60.0" right="30.0" />
+                        <Insets right="20.0" />
                      </HBox.margin>
                   </Button>
                </children>
             </HBox>
-            <Label prefHeight="60.0" prefWidth="456.0" text="    Anastasia">
+            <Label alignment="CENTER" prefHeight="60.0" prefWidth="456.0" text="    Anastasia">
                <font>
                   <Font name="Berlin Sans FB" size="24.0" />
                </font>
@@ -111,22 +115,22 @@
                   <Insets top="20.0" />
                </VBox.margin>
             </Label>
-            <Label prefHeight="47.0" prefWidth="452.0" text="    username">
+            <Label alignment="CENTER" prefHeight="47.0" prefWidth="452.0" text="Brinati">
                <font>
                   <Font name="Berlin Sans FB" size="24.0" />
                </font>
             </Label>
-            <Label prefHeight="44.0" prefWidth="452.0" text="    username">
+            <Label alignment="CENTER" prefHeight="44.0" prefWidth="452.0" text="    username">
                <font>
                   <Font name="Berlin Sans FB" size="24.0" />
                </font>
             </Label>
-            <Label prefHeight="39.0" prefWidth="452.0" text="    username">
+            <Label alignment="CENTER" prefHeight="39.0" prefWidth="452.0" text="    username">
                <font>
                   <Font name="Berlin Sans FB" size="24.0" />
                </font>
             </Label>
-            <Label prefHeight="46.0" prefWidth="452.0" text="    username">
+            <Label alignment="CENTER" prefHeight="46.0" prefWidth="452.0" text="    username">
                <font>
                   <Font name="Berlin Sans FB" size="24.0" />
                </font>
@@ -151,6 +155,7 @@
             <styleClass>
                <String fx:value="panes" />
                <String fx:value="glass" />
+               <String fx:value="oval-layout" />
             </styleClass>
          </Pane>
          <Pane prefHeight="377.0" prefWidth="308.0" stylesheets="@../../../../css/fullpackstyling.css">
@@ -170,6 +175,7 @@
             <styleClass>
                <String fx:value="panes" />
                <String fx:value="glass" />
+               <String fx:value="oval-layout" />
             </styleClass>
          </Pane>
       </VBox>
