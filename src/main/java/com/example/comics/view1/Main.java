@@ -28,6 +28,7 @@ public class Main extends Application {
         stage.setScene(scene);
         stage.show();
         int k = 0;
+        int a = 1;
 
 
         //senti ora andrà ritoccato tutto perché:
