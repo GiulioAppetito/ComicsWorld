@@ -27,6 +27,7 @@ public class Main extends Application {
         stage.setTitle("ComicsWorld");
         stage.setScene(scene);
         stage.show();
+        int k = 0;
 
 
         //senti ora andrà ritoccato tutto perché:
