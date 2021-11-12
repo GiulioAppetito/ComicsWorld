@@ -1,0 +1,1 @@
+= 2javaXhr9src/main/java/com/example/comics/model/Advertisement.java

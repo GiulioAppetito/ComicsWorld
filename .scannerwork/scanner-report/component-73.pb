@@ -1,0 +1,1 @@
+I 2javaXhrDsrc/main/java/com/example/comics/view1/BadgesSettingsController.java

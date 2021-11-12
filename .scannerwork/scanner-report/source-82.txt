@@ -39,7 +39,6 @@ public class HomeControllerG {
     @FXML
     private ImageView homeIcon;
 
-    String STYLE = ".button2";
 
     public static HomeControllerG instance;
     public FeedControllerG feedControllerG;
@@ -100,8 +99,12 @@ public class HomeControllerG {
         Pane view = object.getPage("settings");
         mainPane.setCenter(view);
 
-        resetButtons();
         btnSettings.setStyle("-fx-background-color: #5DADE2; ");
+        btnCategories.setStyle("-fx-background-color: rgba(0,0,0,0); ");
+        btnFav.setStyle("-fx-background-color: rgba(0,0,0,0); ");
+        btnReading.setStyle("-fx-background-color: rgba(0,0,0,0); ");
+        btnTop.setStyle("-fx-background-color: rgba(0,0,0,0); ");
+        btnToRead.setStyle("-fx-background-color: rgba(0,0,0,0); ");
 
     }
 
@@ -119,8 +122,12 @@ public class HomeControllerG {
 
         mainPane.setCenter(view);
 
-        resetButtons();
+        btnSettings.setStyle("-fx-background-color: rgba(0,0,0,0); ");
         btnCategories.setStyle("-fx-background-color: #5DADE2; ");
+        btnFav.setStyle("-fx-background-color: rgba(0,0,0,0); ");
+        btnReading.setStyle("-fx-background-color: rgba(0,0,0,0); ");
+        btnTop.setStyle("-fx-background-color: rgba(0,0,0,0); ");
+        btnToRead.setStyle("-fx-background-color: rgba(0,0,0,0); ");
     }
 
     public void openFavourites() {
@@ -129,9 +136,12 @@ public class HomeControllerG {
         Pane view = object.getPage("favourites");
         mainPane.setCenter(view);
 
-        resetButtons();
+        btnSettings.setStyle("-fx-background-color:  rgba(0,0,0,0); ");
+        btnCategories.setStyle("-fx-background-color:  rgba(0,0,0,0); ");
         btnFav.setStyle("-fx-background-color: #5DADE2; ");
-
+        btnReading.setStyle("-fx-background-color:  rgba(0,0,0,0); ");
+        btnTop.setStyle("-fx-background-color:  rgba(0,0,0,0); ");
+        btnToRead.setStyle("-fx-background-color:  rgba(0,0,0,0); ");
     }
 
     public void openFeed() throws IOException {
@@ -152,12 +162,12 @@ public class HomeControllerG {
     }
 
     private void resetButtons(){
-        btnSettings.setStyle(STYLE);
-        btnCategories.setStyle(STYLE);
-        btnFav.setStyle(STYLE);
-        btnReading.setStyle(STYLE);
-        btnTop.setStyle(STYLE);
-        btnToRead.setStyle(STYLE);
+        btnSettings.setStyle("-fx-background-color: rgba(0,0,0,0); ");
+        btnCategories.setStyle("-fx-background-color: rgba(0,0,0,0); ");
+        btnFav.setStyle("-fx-background-color: rgba(0,0,0,0); ");
+        btnReading.setStyle("-fx-background-color: rgba(0,0,0,0); ");
+        btnTop.setStyle("-fx-background-color: rgba(0,0,0,0); ");
+        btnToRead.setStyle("-fx-background-color: rgba(0,0,0,0); ");
     }
 
 

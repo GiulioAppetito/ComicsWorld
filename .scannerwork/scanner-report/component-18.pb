@@ -1,0 +1,1 @@
+ 2xmlXhrI.idea/libraries/Maven__org_kordamp_bootstrapfx_bootstrapfx_core_0_4_0.xml

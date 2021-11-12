@@ -1,0 +1,1 @@
+R 2javaX®hr;src/main/java/com/example/comics/view1/HomeControllerG.java
