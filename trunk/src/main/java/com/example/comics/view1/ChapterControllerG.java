@@ -1,8 +1,5 @@
 package com.example.comics.view1;
 
-import com.example.comics.model.Advertisement;
-import com.example.comics.model.Chapter;
-
 import com.example.comics.model.Review;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;

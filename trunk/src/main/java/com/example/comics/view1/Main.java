@@ -1,6 +1,5 @@
 package com.example.comics.view1;
 
-import com.example.comics.view1.LoginControllerG;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;

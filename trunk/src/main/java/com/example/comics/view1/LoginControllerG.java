@@ -1,7 +1,6 @@
 package com.example.comics.view1;
 
 import com.example.comics.fagioli.LoginBean;
-import com.example.comics.view1.HomeControllerG;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;

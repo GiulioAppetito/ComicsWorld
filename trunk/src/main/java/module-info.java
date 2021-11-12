@@ -8,6 +8,7 @@ module com.example.coomics {
     requires validatorfx;
     requires org.kordamp.ikonli.javafx;
     requires org.kordamp.bootstrapfx.core;
+    requires javafx.graphics;
 
     exports com.example.comics.view1;
     exports com.example.comics.model;

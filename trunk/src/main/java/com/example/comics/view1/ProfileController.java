@@ -1,6 +1,5 @@
 package com.example.comics.view1;
 
-import com.example.comics.view1.HomeControllerG;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 
