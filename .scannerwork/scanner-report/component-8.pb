@@ -1,1 +1,0 @@
- 2xmlXhr'.idea/libraries/Java_EE_6_Java_EE_6.xml

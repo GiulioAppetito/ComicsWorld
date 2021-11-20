@@ -17,6 +17,7 @@ public class Main extends Application {
         FXMLLoader loader = new FXMLLoader();
 
         URL fxmlLocation = LoginControllerG.class.getResource("login.fxml");
+        System.out.println(fxmlLocation);
         loader.setLocation(fxmlLocation);
         loader.setController(loginControllerG);
 
@@ -26,15 +27,6 @@ public class Main extends Application {
         stage.setTitle("ComicsWorld");
         stage.setScene(scene);
         stage.show();
-        int k = 0;
-        int a = 1;
-
-
-        //senti ora andrà ritoccato tutto perché:
-        //non possiamo/dobbiamo più associare i controllori e i metodi da scene builder, ma metterli a mano
-        //quindi per i bottoni già esistenti etc, dobbiamo farlo alla creazione delle istanze nei costruttori di ognuno
-        //good luck a te del futuro
-        //però funziona capisci sarà tutto singleton
 
     }
 

@@ -39,7 +39,7 @@ public class HomeControllerG {
     @FXML
     private ImageView homeIcon;
 
-    String STYLE = ".button2";
+    String STYLE = ".button";
 
     public static HomeControllerG instance;
     public FeedControllerG feedControllerG;
