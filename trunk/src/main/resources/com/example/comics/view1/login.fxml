@@ -88,56 +88,56 @@
     </BorderPane>
     <BorderPane fx:id="loginPane">
         <center>
-          <VBox prefHeight="630.0" prefWidth="450.0" styleClass="wallpaperlogin" stylesheets="@../../../../css/fullpackstyling.css">
-              <Label alignment="CENTER" prefHeight="111.0" prefWidth="358.0" text="ComicsWorld" textAlignment="CENTER">
-                  <font>
-                      <Font name="Berlin Sans FB Demi Bold" size="50.0" />
-                  </font>
-                  <VBox.margin>
-                      <Insets left="50.0" right="50.0" top="50.0" />
-                  </VBox.margin>
-              </Label>
-              <TextField fx:id="tfEmail" opacity="0.75" promptText="e-mail / username">
-                  <VBox.margin>
-                      <Insets bottom="50.0" left="50.0" right="50.0" top="60.0" />
-                  </VBox.margin>
-              </TextField>
-              <PasswordField fx:id="tfPassword" opacity="0.75" promptText="password">
-                  <VBox.margin>
-                      <Insets bottom="45.0" left="50.0" right="50.0" />
-                  </VBox.margin>
-              </PasswordField>
-              <HBox prefHeight="121.0" prefWidth="450.0" translateZ="300.0">
-                  <Button fx:id="btnCancel" mnemonicParsing="false" prefHeight="76.0" prefWidth="186.0" stylesheets="@../../../../css/fullpackstyling.css" text="Cancel">
-                      <font>
-                          <Font name="Berlin Sans FB" size="24.0" />
-                      </font>
-                      <HBox.margin>
-                          <Insets left="50.0" right="50.0" top="30.0" />
-                      </HBox.margin>
-                      <styleClass>
-                          <String fx:value="glass" />
-                          <String fx:value="buttonCancel" />
-                      </styleClass>
-                  </Button>
-                  <Button fx:id="btnLogin" mnemonicParsing="false" prefHeight="76.0" prefWidth="186.0" stylesheets="@../../../../css/fullpackstyling.css" text="Login">
-                      <font>
-                          <Font name="Berlin Sans FB" size="24.0" />
-                      </font>
-                      <styleClass>
-                          <String fx:value="glass" />
-                          <String fx:value="buttonLogin" />
-                      </styleClass>
-                      <HBox.margin>
-                          <Insets right="50.0" top="30.0" />
-                      </HBox.margin>
-                  </Button>
-                  <VBox.margin>
-                      <Insets bottom="20.0" top="70.0" />
-                  </VBox.margin>
-              </HBox>
-              <Button fx:id="btnBackToRegister" mnemonicParsing="false" prefHeight="40.0" prefWidth="450.0" styleClass="transparent" text="R͟e͟g͟i͟s͟t͟e͟r͟" />
-          </VBox>
+            <VBox prefHeight="630.0" prefWidth="450.0" styleClass="wallpaperlogin" stylesheets="@../../../../css/fullpackstyling.css">
+                <Label alignment="CENTER" prefHeight="111.0" prefWidth="358.0" text="ComicsWorld" textAlignment="CENTER">
+                    <font>
+                        <Font name="Berlin Sans FB Demi Bold" size="50.0" />
+                    </font>
+                    <VBox.margin>
+                        <Insets left="50.0" right="50.0" top="50.0" />
+                    </VBox.margin>
+                </Label>
+                <TextField fx:id="tfEmail" opacity="0.75" promptText="e-mail / username">
+                    <VBox.margin>
+                        <Insets bottom="50.0" left="50.0" right="50.0" top="60.0" />
+                    </VBox.margin>
+                </TextField>
+                <PasswordField fx:id="tfPassword" opacity="0.75" promptText="password">
+                    <VBox.margin>
+                        <Insets bottom="45.0" left="50.0" right="50.0" />
+                    </VBox.margin>
+                </PasswordField>
+                <HBox prefHeight="121.0" prefWidth="450.0" translateZ="300.0">
+                    <Button fx:id="btnCancel" mnemonicParsing="false" prefHeight="76.0" prefWidth="186.0" stylesheets="@../../../../css/fullpackstyling.css" text="Cancel">
+                        <font>
+                            <Font name="Berlin Sans FB" size="24.0" />
+                        </font>
+                        <HBox.margin>
+                            <Insets left="50.0" right="50.0" top="30.0" />
+                        </HBox.margin>
+                        <styleClass>
+                            <String fx:value="glass" />
+                            <String fx:value="buttonCancel" />
+                        </styleClass>
+                    </Button>
+                    <Button fx:id="btnLogin" mnemonicParsing="false" prefHeight="76.0" prefWidth="186.0" stylesheets="@../../../../css/fullpackstyling.css" text="Login">
+                        <font>
+                            <Font name="Berlin Sans FB" size="24.0" />
+                        </font>
+                        <styleClass>
+                            <String fx:value="glass" />
+                            <String fx:value="buttonLogin" />
+                        </styleClass>
+                        <HBox.margin>
+                            <Insets right="50.0" top="30.0" />
+                        </HBox.margin>
+                    </Button>
+                    <VBox.margin>
+                        <Insets bottom="20.0" top="70.0" />
+                    </VBox.margin>
+                </HBox>
+                <Button fx:id="btnBackToRegister" mnemonicParsing="false" prefHeight="40.0" prefWidth="450.0" styleClass="transparent" text="R͟e͟g͟i͟s͟t͟e͟r͟" />
+            </VBox>
         </center>
     </BorderPane>
 </StackPane>
