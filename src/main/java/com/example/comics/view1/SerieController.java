@@ -29,7 +29,6 @@ public class SerieController {
     public void init() {
 
         ArrayList<Chapter> listOfChapters = new ArrayList<>(addChapters());
-        int len = listOfChapters.size();
 
         for (Chapter chapter : listOfChapters) {
 
