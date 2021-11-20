@@ -1,0 +1,7 @@
+organization=giulioappetito
+projectKey=GiulioAppetito_ComicsWorld
+serverUrl=https://sonarcloud.io
+serverVersion=8.0.0.24741
+dashboardUrl=https://sonarcloud.io/dashboard?id=GiulioAppetito_ComicsWorld
+ceTaskId=AX0UrhTdLlFIuyykiF9t
+ceTaskUrl=https://sonarcloud.io/api/ce/task?id=AX0UrhTdLlFIuyykiF9t

@@ -1,0 +1,389 @@
+.button1
+{
+    -fx-background-color : #393351;
+    -fx-background-radius :  30 0 0 30;
+}
+.button1:hover
+{
+    -fx-background-color : #524A7B ;
+    -fx-background-radius :  30 0 0 30;
+}
+.button1:pressed
+{
+    -fx-background-color : #2F2B43 ;
+    -fx-background-radius :  30 0 0 30;
+}
+
+.button2
+{
+    -fx-background-color : #E2E2E2;
+    -fx-background-radius :  20;
+}
+.button2:hover
+{
+    -fx-background-color : #D2D2D2 ;
+    -fx-background-radius :  20;
+}
+.button2:pressed
+{
+    -fx-background-color : #C2C2C2 ;
+    -fx-background-radius :  20;
+}
+.button2:focused
+{
+    -fx-background-color :#5DADE2 ;
+    -fx-background-radius :  20;
+
+}
+
+.button2
+{
+    -fx-background-color : #E2E2E2;
+    -fx-background-radius :  20;
+}
+.button2:hover
+{
+    -fx-background-color : #D2D2D2 ;
+    -fx-background-radius :  20;
+}
+.button2:pressed
+{
+    -fx-background-color : #5DADE2 ;
+    -fx-background-radius :  20;
+}
+.button2:focused
+{
+    -fx-background-color :#5DADE2 ;
+    -fx-background-radius :  20;
+
+}
+
+.buttonEdit {
+}
+.buttonEdit:hover
+{
+    -fx-background-color : #8ec7ff;
+    -fx-background-radius :  20;
+}
+.buttonEdit:pressed
+{
+    -fx-background-color : #2c92ff;
+    -fx-background-radius :  20;
+}
+
+
+.lateral
+{
+    -fx-background-color: white;
+
+}
+.lateral:hover
+{
+    -fx-background-color : #D2D2D2 ;
+    -fx-background-radius :  20;
+}
+.lateral:pressed
+{
+    -fx-background-color : #C2C2C2 ;
+    -fx-background-radius :  20;
+}
+.lateral:focused
+{
+    -fx-background-color :#5DADE2 ;
+    -fx-background-radius :  25;
+
+}
+
+
+.button4:hover
+{
+    -fx-background-color :linear-gradient(to top left, #D4CEE3, #41951C);
+    -fx-background-radius :  30 30 30 30;
+}
+.button4:pressed
+{
+    -fx-background-color :linear-gradient(to top left, #41951C, #D4CEE3);
+    -fx-background-radius :  30 30 30 30;
+}
+
+.linear-grad
+{
+    -fx-background-color: linear-gradient(to bottom left, #A868A0, #2D75E8);
+    -fx-background-radius: 25;
+}
+
+.white-background{
+    -fx-background-color: #fff;
+}
+
+
+.highlighted-background{
+    -fx-background-color: #ACACE6;
+}
+
+
+.default-background{
+    -fx-background-color: #D7D7D7;
+}
+
+.transparent{
+    -fx-background-color: rgba(0,0,0,0);
+}
+
+.round-layout{
+    -fx-border-radius:50;
+    -fx-border-color:#D7D7D7;
+}
+
+.oval-layout{
+    -fx-border-radius:25;
+    -fx-border-color:#D7D7D7;
+}
+
+.round-corners{
+    -fx-border-radius: 200;
+}
+
+
+.selected{
+    -fx-background-color:#F3F3F3;
+}
+
+.wallpaper{
+    -fx-background-image: url('colorcomics.jpg');
+    -fx-background-size: 1700;
+
+}
+.wallpaperlogin{
+    -fx-background-image: url('colorcomics.jpg');
+       -fx-background-size: 900;
+
+}
+.glass{
+    -fx-effect: dropshadow(one-pass-box, #bbbbbb,10,10,5,5);
+}
+
+.buttonCancel
+{
+    -fx-background-color : #E2E2E2;
+    -fx-background-radius :  20;
+}
+.buttonCancel:hover
+{
+    -fx-background-color : #D2D2D2 ;
+    -fx-background-radius :  20;
+}
+.buttonCancel:pressed
+{
+    -fx-background-color : #d25b5b;
+    -fx-background-radius :  20;
+}
+
+.buttonLogin
+{
+    -fx-background-color : #E2E2E2;
+    -fx-background-radius :  20;
+}
+.buttonLogin:hover
+{
+    -fx-background-color : #D2D2D2 ;
+    -fx-background-radius :  20;
+}
+.buttonLogin:pressed
+{
+    -fx-background-color : #2c92ff;
+    -fx-background-radius :  20;
+}
+
+.background-display{
+    -fx-background-color: #c7c7c7;
+}
+
+.panes
+{
+    -fx-background-color : #eaeaea;
+    -fx-background-radius :  20;
+}
+.panes:hover
+{
+    -fx-background-color : #dadada;
+    -fx-background-radius :  20;
+}
+
+.gradient2
+{
+    -fx-background-color: linear-gradient(to bottom left, #ffffff, #8d8d8d);
+    -fx-background-radius: 25;
+}
+
+/*.combo-box
+{
+    -fx-background-color : #141124;
+    -fx-border-color:  #515658;
+    -fx-border-radius: 30;
+}
+.combo-box:hover
+{
+    -fx-background-color : #141124;
+    -fx-border-color:  #FFFF;
+    -fx-border-radius: 30;
+}
+.combo-box:pressed
+{
+    -fx-background-color : #141124;
+    -fx-border-color:  #FFFF;
+    -fx-border-radius: 30;
+}
+
+.table-view .column-header,
+.table-view .column-header-background .filler {
+    -fx-cell-size : 20;
+    -fx-background-color:   #2D75E8;
+}
+.table-view .column-header .label{
+
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-alignment: CENTER_LEFT;
+}
+.table-view .cell{
+    -fx-cell-size: 30;
+    -fx-alignment: center-left;
+    -fx-text-fill: #000000;
+}
+
+.table-row-cell:selected {
+    -fx-background-color:  rgb(127, 172, 243);
+}
+.table-row-cell:selected .text {
+    -fx-fill : white ;
+
+}
+/* scroll bar starts here */
+
+/* The increment and decrement button CSS class of scrollbar */
+/*
+.table-view .increment-button ,.table-view .decrement-button {
+    -fx-background-color:transparent;
+    -fx-background-radius: 2em;
+
+}
+/*
+/* The main scrollbar **track** CSS class  */
+.table-view .scroll-bar:horizontal .track,
+.table-view .scroll-bar:vertical .track{
+    -fx-background-color: transparent;
+    -fx-border-color:derive(  #2D75E8,80%);
+    -fx-background-radius: 2em;
+    -fx-border-radius:2em;
+}
+
+/* The main scrollbar **thumb** CSS class which we drag every time (movable) */
+.table-view .scroll-bar:horizontal .thumb,
+.table-view .scroll-bar:vertical .thumb {
+    -fx-background-color:derive( #2D75E8,90%);
+    -fx-background-insets: 2, 0, 0;
+    -fx-background-radius: 2em;
+
+}
+
+/* chart properties */
+.chart {
+    -fx-padding: 10px;
+    -fx-background-color: transparent;
+    -fx-legend-visible: false;
+}
+.chart-plot-background {
+    -fx-background-color:transparent;
+}
+
+.chart-pie {
+    -fx-border-color: derive(-fx-pie-color, 1%);
+    -fx-border-width: 0px;
+}
+
+/*.combo-box
+{
+    -fx-background-color : #141124;
+    -fx-border-color:  #515658;
+    -fx-border-radius: 30;
+}
+.combo-box:hover
+{
+    -fx-background-color : #141124;
+    -fx-border-color:  #FFFF;
+    -fx-border-radius: 30;
+}
+.combo-box:pressed
+{
+    -fx-background-color : #141124;
+    -fx-border-color:  #FFFF;
+    -fx-border-radius: 30;
+}
+
+.table-view .column-header,
+.table-view .column-header-background .filler {
+    -fx-cell-size : 20;
+    -fx-background-color:   #2D75E8;
+}
+.table-view .column-header .label{
+
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-alignment: CENTER_LEFT;
+}
+.table-view .cell{
+    -fx-cell-size: 30;
+    -fx-alignment: center-left;
+    -fx-text-fill: #000000;
+}
+
+.table-row-cell:selected {
+    -fx-background-color:  rgb(127, 172, 243);
+}
+.table-row-cell:selected .text {
+    -fx-fill : white ;
+
+}
+/* scroll bar starts here */
+
+/* The increment and decrement button CSS class of scrollbar */
+/*
+.table-view .increment-button ,.table-view .decrement-button {
+    -fx-background-color:transparent;
+    -fx-background-radius: 2em;
+
+}
+/*
+/* The main scrollbar **track** CSS class  */
+.table-view .scroll-bar:horizontal .track,
+.table-view .scroll-bar:vertical .track{
+    -fx-background-color: transparent;
+    -fx-border-color:derive(  #2D75E8,80%);
+    -fx-background-radius: 2em;
+    -fx-border-radius:2em;
+}
+
+/* The main scrollbar **thumb** CSS class which we drag every time (movable) */
+.table-view .scroll-bar:horizontal .thumb,
+.table-view .scroll-bar:vertical .thumb {
+    -fx-background-color:derive( #2D75E8,90%);
+    -fx-background-insets: 2, 0, 0;
+    -fx-background-radius: 2em;
+
+}
+
+/* chart properties */
+.chart {
+    -fx-padding: 10px;
+    -fx-background-color: transparent;
+    -fx-legend-visible: false;
+}
+.chart-plot-background {
+    -fx-background-color:transparent;
+}
+
+.chart-pie {
+    -fx-border-color: derive(-fx-pie-color, 1%);
+    -fx-border-width: 0px;
+}

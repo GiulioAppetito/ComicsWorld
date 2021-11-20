@@ -1,0 +1,1 @@
+ 2xmlXhr,.idea/inspectionProfiles/Project_Default.xml
