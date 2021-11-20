@@ -1,2 +1,0 @@
-ComicsWorld :K
-!"[>EU8	ZNRHM=Å&#AˇQD$LO%SFX GK]TW@Y?\JB<IPVCB1-https://github.com/GiulioAppetito/ComicsWorldB40https://travis-ci.org/GiulioAppetito/ComicsWorldB84https://github.com/GiulioAppetito/ComicsWorld/issuesB1-https://github.com/GiulioAppetito/ComicsWorldRGiulioAppetito_ComicsWorld

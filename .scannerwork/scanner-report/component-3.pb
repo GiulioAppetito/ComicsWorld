@@ -1,1 +1,0 @@
- 2xmlXhr.idea/compiler.xml

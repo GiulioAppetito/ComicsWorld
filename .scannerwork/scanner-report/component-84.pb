@@ -1,1 +1,0 @@
-T 2javaX.hr0src/main/java/com/example/comics/view1/Main.java

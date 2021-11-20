@@ -1,1 +1,0 @@
-J 2javaX¿hrAsrc/main/java/com/example/comics/view1/CategoriesControllerG.java

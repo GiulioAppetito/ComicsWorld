@@ -16,28 +16,25 @@
 <?import javafx.scene.text.Font?>
 
 <AnchorPane prefHeight="690.0" prefWidth="834.0" styleClass="transparent" stylesheets="@../../../../css/fullpackstyling.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.comics.view1.CategoryController">
-   <HBox layoutX="14.0" layoutY="14.0" prefHeight="50.0" prefWidth="804.0">
-      <children>
-         <Button mnemonicParsing="false" onAction="#back" prefHeight="58.0" prefWidth="94.0" styleClass="button2" stylesheets="@../../../../css/fullpackstyling.css">
-            <padding>
-               <Insets bottom="-20.0" top="-20.0" />
-            </padding>
-            <graphic>
+    <HBox layoutX="14.0" layoutY="14.0" prefHeight="50.0" prefWidth="804.0">
+        <Button mnemonicParsing="false" onAction="#back" prefHeight="58.0" prefWidth="94.0" styleClass="button2"
+                stylesheets="@../../../../css/fullpackstyling.css">
+           <padding>
+               <Insets bottom="-20.0" top="-20.0"/>
+           </padding>
+           <graphic>
                <ImageView fitHeight="32.0" fitWidth="78.0" pickOnBounds="true" preserveRatio="true">
-                  <image>
-                     <Image url="@../../../../img/icons8-annulla-96.png" />
-                  </image>
+                   <Image url="@../../../../img/icons8-annulla-96.png"/>
                </ImageView>
-            </graphic>
-         </Button>
-          <Label fx:id="lblcategory" alignment="CENTER" prefHeight="54.0" prefWidth="570.0" text="Category">
-              <font>
-                <Font name="Berlin Sans FB Demi Bold" size="24.0" />
-              </font>
-          </Label>
-         <Pane prefHeight="38.0" prefWidth="93.0" HBox.hgrow="ALWAYS" />
-      </children>
-   </HBox>
+           </graphic>
+        </Button>
+        <Label fx:id="lblcategory" alignment="CENTER" prefHeight="54.0" prefWidth="570.0" text="Category">
+            <font>
+              <Font name="Berlin Sans FB Demi Bold" size="24.0"/>
+            </font>
+        </Label>
+        <Pane prefHeight="38.0" prefWidth="93.0" HBox.hgrow="ALWAYS"/>
+    </HBox>
     <ScrollPane hbarPolicy="NEVER" layoutX="14.0" layoutY="76.0" prefHeight="602.0" prefWidth="804.0">
         <GridPane prefHeight="601.0" prefWidth="781.0" styleClass="transparent">
             <columnConstraints>

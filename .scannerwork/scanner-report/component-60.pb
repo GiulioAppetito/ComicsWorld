@@ -1,1 +1,0 @@
-< 2javaX'hr7src/main/java/com/example/comics/fagioli/LoginBean.java

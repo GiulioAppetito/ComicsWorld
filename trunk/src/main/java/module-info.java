@@ -11,6 +11,5 @@ module com.example.coomics {
     requires javafx.graphics;
 
     exports com.example.comics.view1;
-    exports com.example.comics.model;
     opens com.example.comics.view1 to javafx.fxml;
 }

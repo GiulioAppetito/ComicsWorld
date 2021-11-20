@@ -17,6 +17,7 @@ public class Main extends Application {
         FXMLLoader loader = new FXMLLoader();
 
         URL fxmlLocation = LoginControllerG.class.getResource("login.fxml");
+        System.out.println(fxmlLocation);
         loader.setLocation(fxmlLocation);
         loader.setController(loginControllerG);
 
