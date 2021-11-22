@@ -25,6 +25,9 @@ public class HomeControllerG {
     private Button btnFav;
 
     @FXML
+    private Button btnConverter;
+
+    @FXML
     private Button btnReading;
 
     @FXML
@@ -39,7 +42,8 @@ public class HomeControllerG {
     @FXML
     private ImageView homeIcon;
 
-    String STYLE = ".button";
+    String STYLE = ".button2";
+
 
     public static HomeControllerG instance;
     public FeedControllerG feedControllerG;
@@ -69,6 +73,10 @@ public class HomeControllerG {
             }
         });
         btnSettings.setOnAction(event -> openSettings());
+        btnTop.setOnAction(event -> openTop());
+        btnToRead.setOnAction(event -> openToRead());
+        btnConverter.setOnAction(event-> openConverter());
+        btnReading.setOnAction(event -> openReading());
         userBox.setOnMouseClicked(event -> openProfile());
         homeIcon.setOnMouseClicked(event -> {
             try {
@@ -78,6 +86,18 @@ public class HomeControllerG {
             }
         });
 
+    }
+
+    public void openReading() {
+        resetButtons();
+    }
+
+    public void openConverter() {
+        resetButtons();
+    }
+
+    public void openToRead() {
+        resetButtons();
     }
 
     public void changeCenter(Pane pane){
@@ -94,6 +114,10 @@ public class HomeControllerG {
         resetButtons();
     }
 
+    public void openTop(){
+        resetButtons();
+    }
+
     public void openSettings() {
         System.out.println("Clicked settings");
         FxmlLoader object = new FxmlLoader();
@@ -101,7 +125,7 @@ public class HomeControllerG {
         mainPane.setCenter(view);
 
         resetButtons();
-        btnSettings.setStyle("-fx-background-color: #5DADE2; ");
+        btnSettings.setStyle("-fx-background-color: #5DADE2; -fx-background-radius: 20");
 
     }
 
@@ -130,7 +154,7 @@ public class HomeControllerG {
         mainPane.setCenter(view);
 
         resetButtons();
-        btnFav.setStyle("-fx-background-color: #5DADE2; ");
+        btnFav.setStyle("-fx-background-color: #5DADE2; -fx-background-radius: 20 ");
 
     }
 
