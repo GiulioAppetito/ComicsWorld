@@ -5,16 +5,28 @@ import javafx.scene.image.ImageView;
 import java.util.Date;
 import java.util.List;
 
-public class User {
+public abstract class User {
+
+    private static User instance;
+
+    public synchronized static User getInstance(char type){
+        if(instance == null){
+            if(type == 'a'){
+                instance = new Author();
+            }
+            if(type == 'r'){
+                instance = new Reader();
+            }
+        }
+        return instance;
+    }
+
     private String firstName;
     private String lastName;
     private String username;
     private String city;
     private Date birthday;
     private ImageView proPic;
-    private List<Series> favourites;
-    private List<Series> toRead;
-    private List<Series> reading;
 
 
     public String getFirstName() {
@@ -65,27 +77,11 @@ public class User {
         this.proPic = proPic;
     }
 
-    public List<Series> getFavourites() {
-        return favourites;
+    public static boolean login(String username, String password){
+        if(Math.random() > 0.5){
+            return true;
+        }
+        return true;
     }
 
-    public void setFavourites(List<Series> favourites) {
-        this.favourites = favourites;
-    }
-
-    public List<Series> getToRead() {
-        return toRead;
-    }
-
-    public void setToRead(List<Series> toRead) {
-        this.toRead = toRead;
-    }
-
-    public List<Series> getReading() {
-        return reading;
-    }
-
-    public void setReading(List<Series> reading) {
-        this.reading = reading;
-    }
 }

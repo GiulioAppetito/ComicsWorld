@@ -13,4 +13,6 @@ public class Author extends User {
     public void setPublishedSeries(List<Series> publishedSeries) {
         this.publishedSeries = publishedSeries;
     }
+
+
 }

@@ -1,4 +1,6 @@
-package com.example.comics.model;
+package com.example.comics;
+
+import com.example.comics.model.User;
 
 public class LoginController {
     public static LoginController INSTANCE;
@@ -18,10 +20,8 @@ public class LoginController {
 
     public boolean login(String email, String password){
 
-        //ricerca utente + validation
-        if(Math.random() > 0.5){
-            return true;
-        }
-        return true;
+        //ricerca utente + validationù
+        return User.login(email, password) == true;
+
     }
 }
