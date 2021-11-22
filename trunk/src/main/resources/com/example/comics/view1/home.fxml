@@ -54,12 +54,12 @@
                <Insets bottom="10.0" left="10.0" top="20.0" />
             </HBox.margin>
          </TextField>
-         <Button mnemonicParsing="false" prefHeight="17.0" prefWidth="24.0" stylesheets="@../../../../css/fullpackstyling.css">
+         <Button mnemonicParsing="false" prefHeight="23.0" prefWidth="36.0" stylesheets="@../../../../css/fullpackstyling.css">
             <HBox.margin>
                <Insets right="20.0" top="20.0" />
             </HBox.margin>
             <graphic>
-               <ImageView fitHeight="18.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+               <ImageView fitHeight="15.0" fitWidth="13.0" pickOnBounds="true" preserveRatio="true">
                   <image>
                      <Image url="@../../../../img/icons8-ricerca-96.png" />
                   </image>
