@@ -17,10 +17,6 @@
          <VBox.margin>
             <Insets left="30.0" right="30.0" top="30.0" />
          </VBox.margin>
-         <styleClass>
-            <String fx:value="glass" />
-            <String fx:value="panes" />
-         </styleClass>
          <Label prefHeight="74.0" prefWidth="437.0" text="Ads">
             <font>
                <Font name="Berlin Sans FB" size="24.0" />
@@ -30,7 +26,7 @@
             </padding>
          </Label>
           <ScrollPane layoutX="14.0" layoutY="64.0" prefHeight="146.0" prefWidth="883.0" styleClass="transparent" stylesheets="@../../../../css/fullpackstyling.css" vbarPolicy="NEVER">
-              <HBox fx:id="hbAds" prefHeight="126.0" prefWidth="882.0" spacing="5.0" styleClass="transparent">
+              <HBox fx:id="hbAds" prefHeight="126.0" prefWidth="882.0" spacing="5.0" styleClass="white-background">
                <opaqueInsets>
                   <Insets />
                </opaqueInsets>
@@ -38,13 +34,13 @@
                   <Insets left="5.0" right="5.0" top="5.0" />
                </padding></HBox>
           </ScrollPane>
-      </Pane>
-      <Pane prefHeight="710.0" prefWidth="929.0" stylesheets="@../../../../css/fullpackstyling.css">
          <styleClass>
-            <String fx:value="panes" />
             <String fx:value="oval-layout" />
+            <String fx:value="panes" />
             <String fx:value="glass" />
          </styleClass>
+      </Pane>
+      <Pane prefHeight="710.0" prefWidth="929.0" stylesheets="@../../../../css/fullpackstyling.css">
          <VBox.margin>
             <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
          </VBox.margin>
@@ -56,8 +52,8 @@
                <Insets left="20.0" />
             </padding>
          </Label>
-          <ScrollPane hbarPolicy="NEVER" layoutX="14.0" layoutY="74.0" prefHeight="312.0" prefWidth="892.0" styleClass="transparent" vbarPolicy="ALWAYS">
-              <GridPane fx:id="feedGrid" hgap="30.0" prefHeight="0.0" prefWidth="0.0" styleClass="panes" vgap="30.0">
+          <ScrollPane hbarPolicy="NEVER" layoutX="14.0" layoutY="74.0" prefHeight="312.0" prefWidth="892.0" styleClass="transparent" stylesheets="@../../../../css/fullpackstyling.css" vbarPolicy="ALWAYS">
+              <GridPane fx:id="feedGrid" hgap="30.0" prefHeight="309.0" prefWidth="876.0" styleClass="white-background" vgap="30.0">
                   <rowConstraints>
                       <RowConstraints minHeight="10.0" prefHeight="150.0" vgrow="SOMETIMES" />
                   </rowConstraints>
@@ -66,6 +62,11 @@
                </padding>
               </GridPane>
           </ScrollPane>
+         <styleClass>
+            <String fx:value="oval-layout" />
+            <String fx:value="panes" />
+            <String fx:value="glass" />
+         </styleClass>
 
       </Pane>
    </VBox>
