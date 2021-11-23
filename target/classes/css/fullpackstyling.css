@@ -145,17 +145,18 @@
 }
 
 
+
 .selected{
     -fx-background-color:#F3F3F3;
 }
 
 .wallpaper{
-    -fx-background-image: url('colorcomics.jpg');
+    -fx-background-image: url('bubbles.png');
     -fx-background-size: 1700;
 
 }
 .wallpaperlogin{
-    -fx-background-image: url('colorcomics.jpg');
+    -fx-background-image: url('bubbles.png');
        -fx-background-size: 900;
 
 }
@@ -201,13 +202,12 @@
 
 .panes
 {
-    -fx-background-color : #f5f5f5;
+    -fx-background-color : #ffffff;
     -fx-background-radius :  20;
 }
 .panes:hover
 {
-    -fx-background-color : #ececec;
-    -fx-background-radius :  20;
+
 }
 
 .gradient2
