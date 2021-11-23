@@ -150,12 +150,12 @@
 }
 
 .wallpaper{
-    -fx-background-image: url('colorcomics.jpg');
+    -fx-background-image: url('bubbles.png');
     -fx-background-size: 1700;
 
 }
 .wallpaperlogin{
-    -fx-background-image: url('colorcomics.jpg');
+    -fx-background-image: url('bubbles.png');
        -fx-background-size: 900;
 
 }
