@@ -60,9 +60,7 @@
             </HBox.margin>
             <graphic>
                <ImageView fitHeight="15.0" fitWidth="13.0" pickOnBounds="true" preserveRatio="true">
-                  <image>
-                     <Image url="@../../../../img/icons8-ricerca-96.png" />
-                  </image>
+
                </ImageView>
             </graphic>
             <styleClass>
@@ -92,7 +90,7 @@
                <HBox.margin>
                   <Insets top="5.0" />
                </HBox.margin>
-               <Image url="@../../../../img/business_man.jpg" />
+               <Image url="@../../../../img/flat-business-man-user-profile-avatar-icon-vector-4333097.jpg" />
             </ImageView>
          </HBox>
          <HBox.margin>
@@ -157,7 +155,7 @@
                <graphic>
                   <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../../../../img/icons8-mi-piace-96.png" />
+                        <Image url="@../../../../img/icons8-cartella-preferiti-96.png" />
                      </image>
                   </ImageView>
                </graphic>
@@ -225,9 +223,7 @@
                </font>
                <graphic>
                   <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../../../../img/icons8-chevron-destra-96.png" />
-                     </image>
+
                   </ImageView>
                </graphic>
             </Button>

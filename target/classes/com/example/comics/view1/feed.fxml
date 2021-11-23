@@ -53,13 +53,10 @@
             </padding>
          </Label>
           <ScrollPane hbarPolicy="NEVER" layoutX="14.0" layoutY="74.0" prefHeight="312.0" prefWidth="892.0" styleClass="transparent" stylesheets="@../../../../css/fullpackstyling.css" vbarPolicy="ALWAYS">
-              <GridPane fx:id="feedGrid" hgap="30.0" prefHeight="309.0" prefWidth="876.0" styleClass="white-background" vgap="30.0">
+              <GridPane fx:id="feedGrid" alignment="CENTER" hgap="20.0" prefHeight="309.0" prefWidth="876.0" styleClass="white-background" vgap="20.0">
                   <rowConstraints>
                       <RowConstraints minHeight="10.0" prefHeight="150.0" vgrow="SOMETIMES" />
                   </rowConstraints>
-               <padding>
-                  <Insets left="5.0" right="5.0" />
-               </padding>
               </GridPane>
           </ScrollPane>
          <styleClass>
