@@ -34,7 +34,7 @@
                      </HBox.margin>
                      <children>
                         <ImageView fitHeight="244.0" fitWidth="221.0" pickOnBounds="true" preserveRatio="true">
-                           <Image url="@../../../../img/business_man.jpg" />
+                           <Image url="@../../../../img/flat-business-man-user-profile-avatar-icon-vector-4333097.jpg" />
                         </ImageView>
                      </children>
                   </VBox>
@@ -46,9 +46,7 @@
                            </font>
                         </Label>
                         <ImageView fitHeight="108.0" fitWidth="82.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../../../../img/528-5281845_new-super-mario-bros-2-star-coins-locations.png" />
-                           </image>
+
                            <VBox.margin>
                               <Insets left="50.0" right="60.0" />
                            </VBox.margin>
@@ -78,7 +76,7 @@
                      </styleClass>
                      <graphic>
                         <ImageView fitHeight="45.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true">
-                           <Image url="@../../../../img/icons8-modificare-96.png" />
+                           <Image url="@../../../../img/icons8-impostazioni-96.png" />
                         </ImageView>
                      </graphic>
                      <HBox.margin>
@@ -97,7 +95,7 @@
                      <graphic>
                         <ImageView fitHeight="45.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../../../../img/icons8-moneta-in-mano-64.png" />
+                              <Image url="@../../../../img/icons8-utente-uomo-cerchiato-96.png" />
                            </image>
                         </ImageView>
                      </graphic>

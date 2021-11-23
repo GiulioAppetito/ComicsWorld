@@ -30,7 +30,7 @@
                   <Insets />
                </VBox.margin>
                <ImageView fitHeight="221.0" fitWidth="220.0" pickOnBounds="true" preserveRatio="true">
-                  <Image url="@../../../../img/business_man.jpg" />
+                  <Image url="@../../../../img/flat-business-man-user-profile-avatar-icon-vector-4333097.jpg" />
                   <HBox.margin>
                      <Insets left="25.0" />
                   </HBox.margin>

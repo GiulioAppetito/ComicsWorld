@@ -18,10 +18,11 @@
     </styleClass>
     <HBox prefHeight="60.0" prefWidth="198.0" stylesheets="@../../../../css/fullpackstyling.css">
         <ImageView fx:id="comicCover" fitHeight="103.0" fitWidth="89.0" pickOnBounds="true" preserveRatio="true">
-
+            
           <HBox.margin>
               <Insets bottom="5.0" left="20.0" top="5.0" />
           </HBox.margin>
+
         </ImageView>
         <Label fx:id="lblTitle" alignment="CENTER" prefHeight="38.0" prefWidth="107.0" text="Spiderman">
             <font>

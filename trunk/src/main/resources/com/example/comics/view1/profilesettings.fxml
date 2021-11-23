@@ -30,13 +30,13 @@
                   <Insets />
                </VBox.margin>
                <ImageView fitHeight="221.0" fitWidth="220.0" pickOnBounds="true" preserveRatio="true">
-                  <Image url="@../../../../img/business_man.jpg" />
+                  <Image url="@../../../../img/flat-business-man-user-profile-avatar-icon-vector-4333097.jpg" />
                   <HBox.margin>
                      <Insets left="25.0" />
                   </HBox.margin>
                </ImageView>
                <ImageView fitHeight="33.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true">
-                  <Image url="@../../../../img/icons8-modificare-96.png" />
+
                </ImageView>
             </HBox>
             <Label alignment="CENTER" prefHeight="52.0" prefWidth="520.0" text="Username" textAlignment="CENTER" textFill="#110303">
@@ -57,7 +57,7 @@
                   </HBox.margin>
                </Label>
                <ImageView fitHeight="33.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true">
-                  <Image url="@../../../../img/icons8-modificare-96.png" />
+
                </ImageView>
             </HBox>
             <padding>
