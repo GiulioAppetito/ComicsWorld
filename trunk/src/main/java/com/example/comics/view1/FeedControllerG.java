@@ -34,8 +34,8 @@ public class FeedControllerG {
         listOfCards = new ArrayList<>(add());
         int rows = listOfCards.size()/4;
 
-        for(int i=0; i<rows+1; i++){
-            for(int j=0; j<4; j++) {
+        for(int i=0; i<rows; i++){
+            for(int j=0; j<5; j++) {
                 FXMLLoader fxmlLoader = new FXMLLoader();
                 fxmlLoader.setLocation(getClass().getResource("vcard.fxml"));
                 try {
@@ -51,7 +51,7 @@ public class FeedControllerG {
                         }
                     });
 
-                    feedGrid.add(card, i, j);
+                    feedGrid.add(card,j,i);
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
@@ -118,53 +118,18 @@ public class FeedControllerG {
 
         List<Series> ls = new ArrayList<>();
 
-        Series comic = new Series();
-        comic.setName("Spiderman");
-        comic.setAuthor("Stan Lee");
-        //comic.setImageSrc(null);
-        ls.add(comic);
+        int numSeries = 17;
+        int i;
 
-        Series comic2 = new Series();
-        comic2.setName("Superman");
-        comic2.setAuthor("Stan Lee");
-        //comic2.setImageSrc(null);
-        ls.add(comic2);
+        for(i=0;i<numSeries;i++){
+            Series comic = new Series();
+            comic.setName("Spiderman");
+            comic.setAuthor("Stan Lee");
+            //comic.setImageSrc(null);
+            ls.add(comic);
 
-        Series comic3 = new Series();
-        comic3.setName("Spiderman");
-        comic3.setAuthor("Stan Lee");
-        //comic3.setImageSrc(null);
-        ls.add(comic3);
+        }
 
-        Series comic4 = new Series();
-        comic4.setName("Superman");
-        comic4.setAuthor("Stan Lee");
-        //comic4.setImageSrc(null);
-        ls.add(comic4);
-
-        Series comic5= new Series();
-        comic5.setName("Spiderman");
-        comic5.setAuthor("Stan Lee");
-        //comic5.setImageSrc(null);
-        ls.add(comic5);
-
-        Series comic6 = new Series();
-        comic6.setName("Superman");
-        comic6.setAuthor("Stan Lee");
-        //comic6.setImageSrc(null);
-        ls.add(comic6);
-
-        Series comic7 = new Series();
-        comic7.setName("Spiderman");
-        comic7.setAuthor("Stan Lee");
-        //comic7.setImageSrc(null);
-        ls.add(comic7);
-
-        Series comic8 = new Series();
-        comic8.setName("Superman");
-        comic8.setAuthor("Stan Lee");
-        //comic8.setImageSrc(null);
-        ls.add(comic8);
 
         return ls;
 
