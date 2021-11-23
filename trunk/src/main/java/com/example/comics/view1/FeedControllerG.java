@@ -34,7 +34,7 @@ public class FeedControllerG {
         listOfCards = new ArrayList<>(add());
         int rows = listOfCards.size()/4;
 
-        for(int i=0; i<rows; i++){
+        for(int i=1; i<rows; i++){
             for(int j=0; j<5; j++) {
                 FXMLLoader fxmlLoader = new FXMLLoader();
                 fxmlLoader.setLocation(getClass().getResource("vcard.fxml"));

@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="729.0" prefWidth="600.0" styleClass="transparent" stylesheets="@../../../../css/fullpackstyling.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="729.0" prefWidth="600.0" styleClass="transparent" stylesheets="@../../../../css/fullpackstyling.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
    <HBox prefHeight="729.0" prefWidth="600.0">
       <Pane prefHeight="650.0" prefWidth="520.0" stylesheets="@../../../../css/fullpackstyling.css">
          <HBox.margin>
@@ -36,8 +36,9 @@
                   </HBox.margin>
                </ImageView>
                <ImageView fitHeight="33.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true">
-
-               </ImageView>
+                  <image>
+                     <Image url="@../../../../img/matita.png" />
+                  </image></ImageView>
             </HBox>
             <Label alignment="CENTER" prefHeight="52.0" prefWidth="520.0" text="Username" textAlignment="CENTER" textFill="#110303">
                <font>
@@ -57,8 +58,9 @@
                   </HBox.margin>
                </Label>
                <ImageView fitHeight="33.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true">
-
-               </ImageView>
+                  <image>
+                     <Image url="@../../../../img/matita.png" />
+                  </image></ImageView>
             </HBox>
             <padding>
                <Insets bottom="40.0" top="40.0" />

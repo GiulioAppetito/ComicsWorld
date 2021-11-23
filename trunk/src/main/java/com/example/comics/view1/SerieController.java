@@ -83,7 +83,7 @@ public class SerieController {
         ChapterControllerG chapterControllerG = new ChapterControllerG();
         FXMLLoader loader = new FXMLLoader();
 
-        URL fxmlLocation = ChapterControllerG.class.getResource("comicchapter.fxml");
+        URL fxmlLocation = ChapterControllerG.class.getResource("chapter.fxml");
         loader.setLocation(fxmlLocation);
         loader.setController(chapterControllerG);
 

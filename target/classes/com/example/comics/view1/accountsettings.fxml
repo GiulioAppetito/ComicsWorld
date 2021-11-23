@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="729.0" prefWidth="600.0" styleClass="transparent" stylesheets="@../../../../css/fullpackstyling.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.comics.view1.AccountSettingsController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="729.0" prefWidth="600.0" styleClass="transparent" stylesheets="@../../../../css/fullpackstyling.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.comics.view1.AccountSettingsController">
    <HBox prefHeight="729.0" prefWidth="600.0">
       <Pane prefHeight="650.0" prefWidth="520.0" stylesheets="@../../../../css/fullpackstyling.css">
          <HBox.margin>
@@ -44,7 +44,7 @@
                   </HBox.margin>
                </Label>
                <ImageView fitHeight="33.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true">
-                  <Image url="@../../../../img/icons8-modificare-96.png" />
+                  <Image url="@../../../../img/matita.png" />
                </ImageView>
             </HBox>
             <Label alignment="CENTER" prefHeight="52.0" prefWidth="520.0" text="Last Name " textAlignment="CENTER" textFill="#0b0404">
@@ -65,7 +65,7 @@
                   </HBox.margin>
                </Label>
                <ImageView fitHeight="33.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true">
-                  <Image url="@../../../../img/icons8-modificare-96.png" />
+                  <Image url="@../../../../img/matita.png" />
                </ImageView>
             </HBox>
             <Label alignment="CENTER" prefHeight="52.0" prefWidth="520.0" text="Email" textAlignment="CENTER" textFill="#0b0404">
@@ -86,7 +86,7 @@
                   </HBox.margin>
                </Label>
                <ImageView fitHeight="33.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true">
-                  <Image url="@../../../../img/icons8-modificare-96.png" />
+                  <Image url="@../../../../img/matita.png" />
                </ImageView>
             </HBox>
             <Button alignment="CENTER" mnemonicParsing="false" prefHeight="84.0" prefWidth="290.0" stylesheets="@../../../../css/fullpackstyling.css" text="Change password">
@@ -100,7 +100,7 @@
                </styleClass>
                <graphic>
                   <ImageView fitHeight="45.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true">
-                     <Image url="@../../../../img/icons8-modificare-96.png" />
+                     <Image url="@../../../../img/lock.png" />
                   </ImageView>
                </graphic>
                <VBox.margin>

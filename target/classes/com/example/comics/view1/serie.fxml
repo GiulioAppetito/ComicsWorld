@@ -36,7 +36,7 @@
                     </styleClass>
                     <graphic>
                         <ImageView fitHeight="32.0" fitWidth="39.0" pickOnBounds="true" preserveRatio="true">
-                            <Image url="@../../../../img/icons8-annulla-96.png" />
+                            <Image url="@../../../../img/back.png" />
                         </ImageView>
                     </graphic>
                     <VBox.margin>
@@ -47,7 +47,7 @@
                     <VBox.margin>
                         <Insets left="140.0" />
                     </VBox.margin>
-                    <Image url="@../../../../img/sp.jpg" />
+                    <Image url="@../../../../img/download%20(2).jpg" />
                 </ImageView>
                 <Label alignment="CENTER" prefHeight="74.0" prefWidth="615.0" text="Spiderman">
                     <font>
@@ -92,7 +92,7 @@
                         </styleClass>
                         <graphic>
                             <ImageView fitHeight="45.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true">
-                                <Image url="@../../../../img/icons8-mi-piace-96.png" />
+                                <Image url="@../../../../img/like.png" />
                             </ImageView>
                         </graphic>
                     </Button>

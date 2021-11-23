@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="729.0" prefWidth="980.0" styleClass="transparent" stylesheets="@../../../../css/fullpackstyling.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.comics.view1.ProfileController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="729.0" prefWidth="980.0" styleClass="transparent" stylesheets="@../../../../css/fullpackstyling.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.comics.view1.ProfileController">
    <HBox prefHeight="729.0" prefWidth="980.0">
       <Pane prefHeight="649.0" prefWidth="457.0" stylesheets="@../../../../css/fullpackstyling.css">
          <HBox.margin>
@@ -38,20 +38,23 @@
                         </ImageView>
                      </children>
                   </VBox>
-                  <VBox prefHeight="243.0" prefWidth="182.0">
+                  <VBox prefHeight="223.0" prefWidth="193.0">
                      <children>
                         <Label alignment="CENTER" prefHeight="77.0" prefWidth="175.0" text="Coin count">
                            <font>
                               <Font name="Berlin Sans FB" size="24.0" />
                            </font>
                         </Label>
-                        <ImageView fitHeight="108.0" fitWidth="82.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="84.0" fitWidth="92.0" pickOnBounds="true" preserveRatio="true">
 
                            <VBox.margin>
                               <Insets left="50.0" right="60.0" />
                            </VBox.margin>
+                           <image>
+                              <Image url="@../../../../img/coin2.png" />
+                           </image>
                         </ImageView>
-                        <Label alignment="CENTER" prefHeight="59.0" prefWidth="181.0" text="45">
+                        <Label alignment="CENTER" prefHeight="66.0" prefWidth="182.0" text="45">
                            <font>
                               <Font name="Berlin Sans FB" size="24.0" />
                            </font>
@@ -63,9 +66,9 @@
                   </VBox>
                </children>
             </HBox>
-            <HBox prefHeight="55.0" prefWidth="452.0" spacing="100.0">
+            <HBox prefHeight="55.0" prefWidth="452.0" spacing="60.0">
                <children>
-                  <Button fx:id="btnEdit" mnemonicParsing="false" onAction="#edit" prefHeight="63.0" prefWidth="130.0" stylesheets="@../../../../css/fullpackstyling.css" text="Edit">
+                  <Button fx:id="btnEdit" mnemonicParsing="false" onAction="#edit" prefHeight="63.0" prefWidth="165.0" stylesheets="@../../../../css/fullpackstyling.css" text="Edit">
                      <font>
                         <Font name="Berlin Sans FB" size="24.0" />
                      </font>
@@ -76,14 +79,14 @@
                      </styleClass>
                      <graphic>
                         <ImageView fitHeight="45.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true">
-                           <Image url="@../../../../img/icons8-impostazioni-96.png" />
+                           <Image url="@../../../../img/matita.png" />
                         </ImageView>
                      </graphic>
                      <HBox.margin>
-                        <Insets left="20.0" />
+                        <Insets left="30.0" />
                      </HBox.margin>
                   </Button>
-                  <Button fx:id="btnEdit1" mnemonicParsing="false" onAction="#edit" prefHeight="63.0" prefWidth="182.0" stylesheets="@../../../../css/fullpackstyling.css" text="Converter">
+                  <Button fx:id="btnEdit1" mnemonicParsing="false" onAction="#edit" prefHeight="63.0" prefWidth="203.0" stylesheets="@../../../../css/fullpackstyling.css" text="Converter">
                      <font>
                         <Font name="Berlin Sans FB" size="24.0" />
                      </font>
@@ -95,12 +98,12 @@
                      <graphic>
                         <ImageView fitHeight="45.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../../../../img/icons8-utente-uomo-cerchiato-96.png" />
+                              <Image url="@../../../../img/coin.png" />
                            </image>
                         </ImageView>
                      </graphic>
                      <HBox.margin>
-                        <Insets right="20.0" />
+                        <Insets right="40.0" />
                      </HBox.margin>
                   </Button>
                </children>
