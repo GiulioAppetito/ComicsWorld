@@ -1,9 +1,19 @@
 package com.example.comics.model;
 
+import javafx.scene.image.ImageView;
+import javafx.scene.text.Text;
+
+import java.util.Date;
+import java.util.List;
+
 public class Chapter {
 
     private String name;
     private String series;
+    private Date publishingDate;
+    private List<Review> reviews;
+    private ImageView cover;
+    private Text description;
 
     public String getName() {
         return name;
@@ -20,7 +30,36 @@ public class Chapter {
     public void setSeries(String series) {
         this.series = series;
     }
-    //private ImageView cover;
 
+    public Date getPublishingDate() {
+        return publishingDate;
+    }
 
+    public void setPublishingDate(Date publishingDate) {
+        this.publishingDate = publishingDate;
+    }
+
+    public ImageView getCover() {
+        return cover;
+    }
+
+    public void setCover(ImageView cover) {
+        this.cover = cover;
+    }
+
+    public List<Review> getReviews() {
+        return reviews;
+    }
+
+    public void setReviews(List<Review> reviews) {
+        this.reviews = reviews;
+    }
+
+    public Text getDescription() {
+        return description;
+    }
+
+    public void setDescription(Text description) {
+        this.description = description;
+    }
 }

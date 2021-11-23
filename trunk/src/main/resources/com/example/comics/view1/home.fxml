@@ -20,7 +20,7 @@
 <BorderPane fx:id="mainPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" style="-fx-background-color: white;" stylesheets="@../../../../css/fullpackstyling.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
    <top>
       <HBox prefHeight="60.0" prefWidth="1191.0" stylesheets="@../../../../css/fullpackstyling.css" BorderPane.alignment="CENTER">
-         <Label alignment="CENTER" prefHeight="70.0" prefWidth="218.0" text="ComicsWorld" textAlignment="CENTER">
+         <Label alignment="CENTER" prefHeight="60.0" prefWidth="238.0" text="ComicsWorld" textAlignment="CENTER">
             <font>
                <Font name="Berlin Sans FB Demi Bold" size="35.0" />
             </font>
@@ -54,12 +54,12 @@
                <Insets bottom="10.0" left="10.0" top="20.0" />
             </HBox.margin>
          </TextField>
-         <Button mnemonicParsing="false" prefHeight="17.0" prefWidth="24.0" stylesheets="@../../../../css/fullpackstyling.css">
+         <Button mnemonicParsing="false" prefHeight="23.0" prefWidth="36.0" stylesheets="@../../../../css/fullpackstyling.css">
             <HBox.margin>
                <Insets right="20.0" top="20.0" />
             </HBox.margin>
             <graphic>
-               <ImageView fitHeight="18.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+               <ImageView fitHeight="15.0" fitWidth="13.0" pickOnBounds="true" preserveRatio="true">
                   <image>
                      <Image url="@../../../../img/icons8-ricerca-96.png" />
                   </image>
@@ -124,7 +124,7 @@
                <graphic>
                   <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../../../../img/icons8-categorize-64.png" />
+                        <Image url="@../../../../img/icons8-classificare-96.png" />
                      </image>
                   </ImageView>
                </graphic>
@@ -157,7 +157,7 @@
                <graphic>
                   <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../../../../img/icons8-love-book-64.png" />
+                        <Image url="@../../../../img/icons8-mi-piace-96.png" />
                      </image>
                   </ImageView>
                </graphic>
@@ -211,7 +211,7 @@
                <graphic>
                   <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../../../../img/icons8-settings-64.png" />
+                        <Image url="@../../../../img/icons8-impostazioni-96.png" />
                      </image>
                   </ImageView>
                </graphic>
@@ -219,14 +219,14 @@
                   <Insets left="-15.0" />
                </padding>
             </Button>
-            <Button fx:id="btnSettings1" mnemonicParsing="false" prefHeight="78.0" prefWidth="230.0" styleClass="lateral" stylesheets="@../../../../css/fullpackstyling.css" text="Converter">
+            <Button fx:id="btnConverter" mnemonicParsing="false" prefHeight="78.0" prefWidth="230.0" styleClass="lateral" stylesheets="@../../../../css/fullpackstyling.css" text="Converter">
                <font>
                   <Font name="Berlin Sans FB" size="18.0" />
                </font>
                <graphic>
                   <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../../../../img/icons8-moneta-in-mano-64.png" />
+                        <Image url="@../../../../img/icons8-chevron-destra-96.png" />
                      </image>
                   </ImageView>
                </graphic>

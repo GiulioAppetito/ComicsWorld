@@ -1,7 +1,7 @@
 package com.example.comics.view1;
 
 import com.example.comics.model.Advertisement;
-import com.example.comics.model.Comic;
+import com.example.comics.model.Series;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.layout.GridPane;
@@ -21,7 +21,7 @@ public class FeedControllerG {
     @FXML
     private HBox hbAds;
 
-    private List<Comic> listOfCards;
+    private List<Series> listOfCards;
     private List<Advertisement> listOfAds;
 
 
@@ -114,53 +114,53 @@ public class FeedControllerG {
 
 
 
-    private List<Comic> add(){
+    private List<Series> add(){
 
-        List<Comic> ls = new ArrayList<>();
+        List<Series> ls = new ArrayList<>();
 
-        Comic comic = new Comic();
+        Series comic = new Series();
         comic.setName("Spiderman");
         comic.setAuthor("Stan Lee");
         //comic.setImageSrc(null);
         ls.add(comic);
 
-        Comic comic2 = new Comic();
+        Series comic2 = new Series();
         comic2.setName("Superman");
         comic2.setAuthor("Stan Lee");
         //comic2.setImageSrc(null);
         ls.add(comic2);
 
-        Comic comic3 = new Comic();
+        Series comic3 = new Series();
         comic3.setName("Spiderman");
         comic3.setAuthor("Stan Lee");
         //comic3.setImageSrc(null);
         ls.add(comic3);
 
-        Comic comic4 = new Comic();
+        Series comic4 = new Series();
         comic4.setName("Superman");
         comic4.setAuthor("Stan Lee");
         //comic4.setImageSrc(null);
         ls.add(comic4);
 
-        Comic comic5= new Comic();
+        Series comic5= new Series();
         comic5.setName("Spiderman");
         comic5.setAuthor("Stan Lee");
         //comic5.setImageSrc(null);
         ls.add(comic5);
 
-        Comic comic6 = new Comic();
+        Series comic6 = new Series();
         comic6.setName("Superman");
         comic6.setAuthor("Stan Lee");
         //comic6.setImageSrc(null);
         ls.add(comic6);
 
-        Comic comic7 = new Comic();
+        Series comic7 = new Series();
         comic7.setName("Spiderman");
         comic7.setAuthor("Stan Lee");
         //comic7.setImageSrc(null);
         ls.add(comic7);
 
-        Comic comic8 = new Comic();
+        Series comic8 = new Series();
         comic8.setName("Superman");
         comic8.setAuthor("Stan Lee");
         //comic8.setImageSrc(null);

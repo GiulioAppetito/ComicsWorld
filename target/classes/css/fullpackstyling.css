@@ -201,12 +201,12 @@
 
 .panes
 {
-    -fx-background-color : #eaeaea;
+    -fx-background-color : #f5f5f5;
     -fx-background-radius :  20;
 }
 .panes:hover
 {
-    -fx-background-color : #dadada;
+    -fx-background-color : #ececec;
     -fx-background-radius :  20;
 }
 
