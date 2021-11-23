@@ -3,20 +3,14 @@ package com.example.comics.model;
 import javafx.scene.image.ImageView;
 
 import java.util.Date;
-import java.util.List;
 
-public abstract class User {
+public class Account {
 
-    private static User instance;
+    private static Account instance;
 
-    public synchronized static User getInstance(char type){
+    public synchronized static Account getInstance(char type){
         if(instance == null){
-            if(type == 'a'){
-                instance = new Author();
-            }
-            if(type == 'r'){
-                instance = new Reader();
-            }
+            instance = new Account();
         }
         return instance;
     }

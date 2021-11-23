@@ -2,7 +2,8 @@ package com.example.comics.model;
 
 import java.util.List;
 
-public class Reader extends User {
+public class Reader {
+    private Account account;
     private List<Series> favourites;
     private List<Series> toRead;
     private List<Series> reading;

@@ -2,7 +2,9 @@ package com.example.comics.model;
 
 import java.util.List;
 
-public class Author extends User {
+public class Author {
+
+    private Account account;
     private List<Series> publishedSeries;
 
 
