@@ -2,11 +2,16 @@ package com.example.comics.model;
 
 import java.util.List;
 
-public class Author {
+public class Author extends Account{
 
-    private Account account;
     private List<Series> publishedSeries;
 
+    private final String role = "author";
+
+    @Override
+    public String getRole(){
+        return role;
+    }
 
     public List<Series> getPublishedSeries() {
         return publishedSeries;

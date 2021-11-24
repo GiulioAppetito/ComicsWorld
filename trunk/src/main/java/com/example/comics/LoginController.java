@@ -1,6 +1,7 @@
 package com.example.comics;
 
 import com.example.comics.model.Account;
+import com.example.comics.model.UserLogin;
 
 public class LoginController {
 
@@ -22,7 +23,7 @@ public class LoginController {
     public boolean login(String email, String password){
 
         //ricerca utente + validation
-        return Account.login(email, password);
+        return UserLogin.login(email, password);
 
     }
 }

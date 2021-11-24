@@ -4,16 +4,7 @@ import javafx.scene.image.ImageView;
 
 import java.util.Date;
 
-public class Account {
-
-    private static Account instance;
-
-    public synchronized static Account getInstance(char type){
-        if(instance == null){
-            instance = new Account();
-        }
-        return instance;
-    }
+public abstract class Account {
 
     private String firstName;
     private String lastName;
@@ -21,6 +12,10 @@ public class Account {
     private String city;
     private Date birthday;
     private ImageView proPic;
+
+    private String Role;
+
+    abstract public String getRole();
 
 
     public String getFirstName() {
@@ -69,13 +64,6 @@ public class Account {
 
     public void setProPic(ImageView proPic) {
         this.proPic = proPic;
-    }
-
-    public static boolean login(String username, String password){
-        if(Math.random() > 0.5){
-            return true;
-        }
-        return true;
     }
 
 }

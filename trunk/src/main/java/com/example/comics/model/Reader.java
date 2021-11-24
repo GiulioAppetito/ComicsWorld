@@ -2,12 +2,20 @@ package com.example.comics.model;
 
 import java.util.List;
 
-public class Reader {
+public class Reader extends Account{
+
     private Account account;
     private List<Series> favourites;
     private List<Series> toRead;
     private List<Series> reading;
     private int coins;
+
+    private final String role = "reader";
+
+    @Override
+    public String getRole(){
+        return role;
+    }
 
     public List<Series> getFavourites() {
         return favourites;

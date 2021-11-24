@@ -1,5 +1,6 @@
 package com.example.comics.view1;
 
+import com.example.comics.model.UserLogin;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
@@ -9,6 +10,7 @@ import tools.FxmlLoader;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.Objects;
 
 public class HomeControllerG {
 
@@ -42,12 +44,12 @@ public class HomeControllerG {
     @FXML
     private ImageView homeIcon;
 
-    String STYLE = ".button2";
+    String style = ".button2";
 
 
-    public static HomeControllerG instance;
-    public FeedControllerG feedControllerG;
-    public CategoriesControllerG categoriesControllerG;
+    private static HomeControllerG instance;
+    private FeedControllerG feedControllerG;
+    private CategoriesControllerG categoriesControllerG;
 
 
     private HomeControllerG(){
@@ -106,12 +108,21 @@ public class HomeControllerG {
 
 
     public void openProfile() {
-        System.out.println("Clicked profile");
+
+        String role = UserLogin.getAccount().getRole();
+        Pane view;
+        System.out.println("Clicked profile: " + role);
         FxmlLoader object = new FxmlLoader();
-        Pane view = object.getPage("profile");
+        if(Objects.equals(role, "reader")){
+            view = object.getPage("readerprofile");
+        }
+        else{
+            view = object.getPage("authorprofile");
+        }
         mainPane.setCenter(view);
 
         resetButtons();
+
     }
 
     public void openTop(){
@@ -176,12 +187,12 @@ public class HomeControllerG {
     }
 
     private void resetButtons(){
-        btnSettings.setStyle(STYLE);
-        btnCategories.setStyle(STYLE);
-        btnFav.setStyle(STYLE);
-        btnReading.setStyle(STYLE);
-        btnTop.setStyle(STYLE);
-        btnToRead.setStyle(STYLE);
+        btnSettings.setStyle(style);
+        btnCategories.setStyle(style);
+        btnFav.setStyle(style);
+        btnReading.setStyle(style);
+        btnTop.setStyle(style);
+        btnToRead.setStyle(style);
     }
 
 
