@@ -100,10 +100,6 @@ public class HomeControllerG {
         resetButtons();
     }
 
-    public void openConverter() {
-        resetButtons();
-    }
-
     public void openToRead() {
         resetButtons();
     }
@@ -175,6 +171,17 @@ public class HomeControllerG {
 
     }
 
+    public void openConverter() {
+        System.out.println("Clicked converter");
+        FxmlLoader object = new FxmlLoader();
+        Pane view = object.getPage("converter");
+        mainPane.setCenter(view);
+
+        resetButtons();
+        btnConverter.setStyle("-fx-background-color: #5DADE2; -fx-background-radius: 20 ");
+
+    }
+
     public void openFeed() throws IOException {
 
         feedControllerG = new FeedControllerG();
@@ -199,6 +206,7 @@ public class HomeControllerG {
         btnReading.setStyle(style);
         btnTop.setStyle(style);
         btnToRead.setStyle(style);
+        btnConverter.setStyle(style);
     }
 
 

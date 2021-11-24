@@ -21,5 +21,3 @@ r
 Btrunk/src/main/java/com/example/comics/view1/LoginControllerG.java,c\e\ce2466ad6ef4e7ee688a7c6ee590a9a25d5f40e1
 y
 Itrunk/src/main/java/com/example/comics/view1/AuthorProfileController.java,a\c\ac6227319a2c858e9d46491faaa19c378d66a679
-q
-Atrunk/src/main/java/com/example/comics/view1/HomeControllerG.java,6\5\65170d991c764b5bfea3b63bba16114a7d073d7c

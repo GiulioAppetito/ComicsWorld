@@ -9,7 +9,7 @@ import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import tools.FxmlLoader;
 
-public class FavouritesController {
+public class FavouritesControllerG {
 
     @FXML
     private BorderPane mainPane;
@@ -56,5 +56,6 @@ public class FavouritesController {
     }
 
 
-
+    public void switchToCategories(ActionEvent actionEvent) {
+    }
 }
