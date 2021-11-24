@@ -16,7 +16,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<StackPane xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
+<StackPane xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <AnchorPane prefHeight="400.0" prefWidth="600.0">
          <Pane layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="729.0" prefWidth="980.0" styleClass="transparent" stylesheets="@../../../../css/fullpackstyling.css">
@@ -79,7 +79,7 @@
                               <graphic>
                                  <ImageView fitHeight="45.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true">
                                     <image>
-                                       <Image url="@../../../../img/icons8-mi-piace-96.png" />
+                                       <Image url="file:/C:/Users/biril/IdeaProjects/ComicsWorld/trunk/src/main/resources/img/like.png" />
                                     </image>
                                  </ImageView>
                               </graphic>
@@ -110,7 +110,9 @@
                               </styleClass>
                               <graphic>
                                  <ImageView fitHeight="45.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true">
-                                    <Image url="@../../../../img/icons8-segno-di-spunta-96.png" />
+                                    <image>
+                                       <Image url="@../../../../img/icons8-book-reading-96.png" />
+                                    </image>
                                  </ImageView>
                               </graphic>
                            </Button>
@@ -125,9 +127,7 @@
                               </styleClass>
                               <graphic>
                                  <ImageView fitHeight="45.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true">
-                                    <image>
-                                       <Image url="@../../../../img/icons8-chevron-destra-96.png" />
-                                    </image>
+                                    <Image url="@../../../../img/icons8-segno-di-spunta-96.png" />
                                  </ImageView>
                               </graphic>
                            </Button>
@@ -205,7 +205,7 @@
                                           <Insets left="20.0" />
                                        </padding>
                                     </Label>
-                                    <Button fx:id="btnAddReview" mnemonicParsing="false" prefHeight="75.0" prefWidth="350.0" stylesheets="@../../../../css/fullpackstyling.css" text="Add a review">
+                                    <Button fx:id="btnAddReview" mnemonicParsing="false" prefHeight="62.0" prefWidth="291.0" stylesheets="@../../../../css/fullpackstyling.css" text="Add a review">
                                        <font>
                                           <Font name="Berlin Sans FB" size="18.0" />
                                        </font>
@@ -217,10 +217,13 @@
                                        <graphic>
                                           <ImageView fitHeight="42.0" fitWidth="56.0" pickOnBounds="true" preserveRatio="true">
                                              <image>
-                                                <Image url="@../../../../img/icons8-modificare-96.png" />
+                                                <Image url="@../../../../img/matita.png" />
                                              </image>
                                           </ImageView>
                                        </graphic>
+                                       <HBox.margin>
+                                          <Insets right="10.0" top="5.0" />
+                                       </HBox.margin>
                                     </Button>
                                  </children>
                               </HBox>
@@ -290,9 +293,9 @@
                <String fx:value="buttonEdit" />
             </styleClass>
             <graphic>
-               <ImageView fitHeight="45.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true">
+               <ImageView fitHeight="41.0" fitWidth="37.0" pickOnBounds="true" preserveRatio="true">
                   <image>
-                     <Image url="@../../../../img/icons8-modificare-96.png" />
+                     <Image url="@../../../../img/post2.png" />
                   </image>
                </ImageView>
             </graphic>

@@ -2,13 +2,25 @@ package com.example.comics.model;
 
 public class UserLogin{
 
+    public static UserLogin instance;
     private static Account account;
+
+    private UserLogin(){
+
+    }
+
+    public static synchronized UserLogin getInstance(){
+        if(instance==null){
+            instance = new UserLogin();
+        }
+        return instance;
+    }
 
     public static Account getAccount() {
         return account;
     }
 
-    public static boolean login(String username, String password){
+    public boolean login(String username, String password){
 
         //soluzione polimorfa
         if(Math.random() > 0.5){
