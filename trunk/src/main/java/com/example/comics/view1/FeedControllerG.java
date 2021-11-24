@@ -32,16 +32,16 @@ public class FeedControllerG {
     public void init() {
 
         listOfCards = new ArrayList<>(add());
-        int rows = listOfCards.size()/4;
+        int size = listOfCards.size();
 
-        for(int i=1; i<rows; i++){
-            for(int j=0; j<5; j++) {
+        int i=1;
+            for(int j=0; j<size; j++) {
                 FXMLLoader fxmlLoader = new FXMLLoader();
                 fxmlLoader.setLocation(getClass().getResource("vcard.fxml"));
                 try {
                     VBox card = fxmlLoader.load();
                     VCardController cardController = fxmlLoader.getController();
-                    cardController.setData(listOfCards.get(i).getName());
+                    cardController.setData(listOfCards.get(j).getName());
 
                     card.setOnMouseClicked(event -> {
                         try {
@@ -51,12 +51,15 @@ public class FeedControllerG {
                         }
                     });
 
-                    feedGrid.add(card,j,i);
+                    feedGrid.add(card,j%5,i);
+                    if(j%5 == 4){
+                        i++;
+                    }
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
             }
-        }
+
 
         //load the ads panel
         listOfAds = new ArrayList<>(addAds());
@@ -118,7 +121,7 @@ public class FeedControllerG {
 
         List<Series> ls = new ArrayList<>();
 
-        int numSeries = 17;
+        int numSeries = 7;
         int i;
 
         for(i=0;i<numSeries;i++){

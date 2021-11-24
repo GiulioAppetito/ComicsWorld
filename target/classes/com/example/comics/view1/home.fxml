@@ -17,7 +17,7 @@
 <?import javafx.scene.paint.Stop?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane fx:id="mainPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" style="-fx-background-color: white;" styleClass="wallpaper" stylesheets="@../../../../css/fullpackstyling.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane fx:id="mainPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" style="-fx-background-color: white;" styleClass="wallpaper" stylesheets="@../../../../css/fullpackstyling.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
    <top>
       <HBox prefHeight="60.0" prefWidth="1191.0" stylesheets="@../../../../css/fullpackstyling.css" BorderPane.alignment="CENTER">
          <Label alignment="CENTER" prefHeight="60.0" prefWidth="238.0" text="ComicsWorld" textAlignment="CENTER">
@@ -82,10 +82,13 @@
             </padding>
          </Pane>
          <HBox fx:id="userBox" prefHeight="100.0" prefWidth="200.0">
-            <Label fx:id="lblName" alignment="CENTER" prefHeight="60.0" prefWidth="146.0" text="Giulio Appetito">
+            <Label fx:id="lblName" alignment="CENTER_RIGHT" prefHeight="60.0" prefWidth="146.0" text="Giulio">
                <font>
                   <Font name="Berlin Sans FB" size="18.0" />
                </font>
+               <HBox.margin>
+                  <Insets right="10.0" />
+               </HBox.margin>
             </Label>
             <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
                <HBox.margin>
