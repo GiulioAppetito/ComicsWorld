@@ -16,7 +16,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<StackPane xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+<StackPane xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <AnchorPane prefHeight="400.0" prefWidth="600.0">
          <Pane layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="729.0" prefWidth="980.0" styleClass="transparent" stylesheets="@../../../../css/fullpackstyling.css">
@@ -134,6 +134,23 @@
                         </children>
                      </HBox>
                   </VBox>
+                  <Button fx:id="btnBack" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="51.0" prefWidth="81.0" stylesheets="@../../../../css/fullpackstyling.css">
+                     <font>
+                        <Font name="Berlin Sans FB" size="24.0" />
+                     </font>
+                     <styleClass>
+                        <String fx:value="oval-layout" />
+                        <String fx:value="transparent" />
+                        <String fx:value="buttonEdit" />
+                     </styleClass>
+                     <graphic>
+                        <ImageView fitHeight="32.0" fitWidth="39.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../../img/back.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
                </Pane>
                <VBox prefHeight="729.0" prefWidth="453.0">
                   <Pane prefHeight="227.0" prefWidth="368.0" stylesheets="@../../../../css/fullpackstyling.css">
