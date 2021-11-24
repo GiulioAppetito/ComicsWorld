@@ -24,6 +24,9 @@ public class ChapterControllerG {
     @FXML
     private Pane paneInsertReview;
 
+    @FXML
+    private Button btnBack;
+
     public void init(){
 
         paneInsertReview.setVisible(false);
@@ -56,6 +59,15 @@ public class ChapterControllerG {
                 e.printStackTrace();
             }
         }
+
+        btnBack.setOnAction(event -> {
+            FeedControllerG feedControllerG = new FeedControllerG();
+            try {
+                feedControllerG.openSerie();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        });
     }
 
     private List<Review> addReviews(){
@@ -79,6 +91,7 @@ public class ChapterControllerG {
         return lr;
 
     }
+
 
     public void openEditor(){
         paneInsertReview.setVisible(true);

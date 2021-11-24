@@ -82,7 +82,7 @@ public class FeedControllerG {
 
     }
 
-    private void openSerie() throws IOException {
+    public void openSerie() throws IOException {
 
         SerieController serieController = new SerieController();
         FXMLLoader loader = new FXMLLoader();
