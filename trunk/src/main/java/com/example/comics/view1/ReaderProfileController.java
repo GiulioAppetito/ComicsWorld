@@ -20,6 +20,7 @@ public class ReaderProfileController {
     public void initialize(){
         lblName.setText(UserLogin.getAccount().getFirstName());
         lblUsername.setText(UserLogin.getAccount().getLastName());
+        btnEdit.setOnAction(actionEvent -> edit());
     }
 
     public void init(){

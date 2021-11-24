@@ -1,11 +1,10 @@
 package com.example.comics;
 
-import com.example.comics.model.Account;
 import com.example.comics.model.UserLogin;
 
 public class LoginController {
 
-    private static LoginController inst;
+    private static LoginController instance;
 
     private LoginController(){
 
@@ -13,11 +12,11 @@ public class LoginController {
 
     public static LoginController getInstance(){
 
-        if(inst ==null){
-            inst = new LoginController();
+        if(instance ==null){
+            instance = new LoginController();
         }
 
-        return inst;
+        return instance;
     }
 
     public boolean login(String email, String password){
