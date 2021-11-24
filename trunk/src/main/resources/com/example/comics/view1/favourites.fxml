@@ -35,15 +35,6 @@
                   <Font name="Berlin Sans FB" size="18.0" />
                </font>
             </Button>
-            <Separator prefWidth="200.0" />
-            <Button fx:id="btnCategories" mnemonicParsing="false" onAction="#switchToCategories" prefHeight="58.0" prefWidth="185.0" styleClass="button2" text="Categories?">
-               <font>
-                  <Font name="Berlin Sans FB" size="18.0" />
-               </font>
-               <VBox.margin>
-                  <Insets top="20.0" />
-               </VBox.margin>
-            </Button>
          </children>
       </VBox>
    </left>

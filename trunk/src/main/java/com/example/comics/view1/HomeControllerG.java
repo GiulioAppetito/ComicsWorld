@@ -97,11 +97,24 @@ public class HomeControllerG {
     }
 
     public void openReading() {
+
+        System.out.println("Clicked reading");
+        FxmlLoader object = new FxmlLoader();
+        Pane view = object.getPage("reading");
+        mainPane.setCenter(view);
+
         resetButtons();
+        btnReading.setStyle("-fx-background-color: #5DADE2; -fx-background-radius: 20");
     }
 
     public void openToRead() {
+        System.out.println("Clicked to read");
+        FxmlLoader object = new FxmlLoader();
+        Pane view = object.getPage("toread");
+        mainPane.setCenter(view);
+
         resetButtons();
+        btnToRead.setStyle("-fx-background-color: #5DADE2; -fx-background-radius: 20");
     }
 
     public void changeCenter(Pane pane){
@@ -128,10 +141,18 @@ public class HomeControllerG {
     }
 
     public void openTop(){
+
+        System.out.println("Clicked top comics");
+        FxmlLoader object = new FxmlLoader();
+        Pane view = object.getPage("topcomics");
+        mainPane.setCenter(view);
+
         resetButtons();
+        btnTop.setStyle("-fx-background-color: #5DADE2; -fx-background-radius: 20");
     }
 
     public void openSettings() {
+
         System.out.println("Clicked settings");
         FxmlLoader object = new FxmlLoader();
         Pane view = object.getPage("settings");
@@ -157,7 +178,7 @@ public class HomeControllerG {
         mainPane.setCenter(view);
 
         resetButtons();
-        btnCategories.setStyle("-fx-background-color: #5DADE2; ");
+        btnCategories.setStyle("-fx-background-color: #5DADE2; -fx-background-radius: 20");
     }
 
     public void openFavourites() {
