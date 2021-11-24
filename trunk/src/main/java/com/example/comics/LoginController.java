@@ -22,7 +22,7 @@ public class LoginController {
     public boolean login(String email, String password){
 
         //ricerca utente + validation
-        return UserLogin.login(email, password);
+        return UserLogin.getInstance().login(email, password);
 
     }
 }
