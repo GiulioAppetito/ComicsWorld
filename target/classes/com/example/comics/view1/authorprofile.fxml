@@ -23,42 +23,15 @@
                 <String fx:value="glass" />
             </styleClass>
             <VBox prefHeight="649.0" prefWidth="460.0">
-                <HBox prefHeight="243.0" prefWidth="431.0">
+                <HBox alignment="CENTER" prefHeight="243.0" prefWidth="431.0">
                     <VBox.margin>
-                        <Insets left="20.0" top="20.0" />
+                        <Insets top="20.0" />
                     </VBox.margin>
-                    <VBox>
-                        <HBox.margin>
-                            <Insets top="10.0" />
-                        </HBox.margin>
-                        <ImageView fitHeight="244.0" fitWidth="221.0" pickOnBounds="true" preserveRatio="true">
-                            <Image url="@../../../../img/flat-business-man-user-profile-avatar-icon-vector-4333097.jpg" />
-                        </ImageView>
-                    </VBox>
-                    <VBox prefHeight="223.0" prefWidth="193.0">
-                        <HBox.margin>
-                            <Insets right="10.0" />
-                        </HBox.margin>
-                        <Label alignment="CENTER" prefHeight="77.0" prefWidth="175.0" text="Coin count">
-                            <font>
-                                <Font name="Berlin Sans FB" size="24.0" />
-                            </font>
-                        </Label>
-                        <ImageView fitHeight="84.0" fitWidth="92.0" pickOnBounds="true" preserveRatio="true">
-
-                            <VBox.margin>
-                                <Insets left="50.0" right="60.0" />
-                            </VBox.margin>
-                            <Image url="@../../../../img/coin2.png" />
-                        </ImageView>
-                        <Label alignment="CENTER" prefHeight="66.0" prefWidth="182.0" text="45">
-                            <font>
-                                <Font name="Berlin Sans FB" size="24.0" />
-                            </font>
-                        </Label>
-                    </VBox>
+                     <ImageView fitHeight="241.0" fitWidth="275.0" pickOnBounds="true" preserveRatio="true">
+                         <Image url="@../../../../img/flat-business-man-user-profile-avatar-icon-vector-4333097.jpg" />
+                     </ImageView>
                 </HBox>
-                <HBox prefHeight="55.0" prefWidth="452.0" spacing="60.0">
+                <HBox alignment="CENTER" prefHeight="55.0" prefWidth="452.0" spacing="60.0">
                     <Button fx:id="btnEdit" mnemonicParsing="false" onAction="#edit" prefHeight="63.0" prefWidth="165.0" stylesheets="@../../../../css/fullpackstyling.css" text="Edit">
                         <font>
                             <Font name="Berlin Sans FB" size="24.0" />
@@ -74,25 +47,7 @@
                             </ImageView>
                         </graphic>
                         <HBox.margin>
-                            <Insets left="30.0" />
-                        </HBox.margin>
-                    </Button>
-                    <Button fx:id="btnConverter" mnemonicParsing="false" onAction="#edit" prefHeight="63.0" prefWidth="203.0" stylesheets="@../../../../css/fullpackstyling.css" text="Converter">
-                        <font>
-                            <Font name="Berlin Sans FB" size="24.0" />
-                        </font>
-                        <styleClass>
-                            <String fx:value="oval-layout" />
-                            <String fx:value="transparent" />
-                            <String fx:value="buttonEdit" />
-                        </styleClass>
-                        <graphic>
-                            <ImageView fitHeight="45.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true">
-                                <Image url="@../../../../img/coin.png" />
-                            </ImageView>
-                        </graphic>
-                        <HBox.margin>
-                            <Insets right="40.0" />
+                            <Insets />
                         </HBox.margin>
                     </Button>
                 </HBox>

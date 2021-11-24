@@ -4,6 +4,7 @@ import com.example.comics.model.UserLogin;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
 import tools.FxmlLoader;
@@ -44,6 +45,9 @@ public class HomeControllerG {
     @FXML
     private ImageView homeIcon;
 
+    @FXML
+    private Label lblName;
+
     String style = ".button2";
 
 
@@ -65,6 +69,8 @@ public class HomeControllerG {
     public void init() throws IOException {
 
         openFeed();
+
+        lblName.setText(UserLogin.getAccount().getFirstName());
 
         btnFav.setOnAction(event -> openFavourites());
         btnCategories.setOnAction(event -> {

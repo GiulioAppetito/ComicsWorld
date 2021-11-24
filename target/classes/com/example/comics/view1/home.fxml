@@ -82,7 +82,7 @@
             </padding>
          </Pane>
          <HBox fx:id="userBox" prefHeight="100.0" prefWidth="200.0">
-            <Label alignment="CENTER" prefHeight="60.0" prefWidth="146.0" text="Giulio Appetito">
+            <Label fx:id="lblName" alignment="CENTER" prefHeight="60.0" prefWidth="146.0" text="Giulio Appetito">
                <font>
                   <Font name="Berlin Sans FB" size="18.0" />
                </font>
