@@ -161,7 +161,7 @@
 
 }
 .glass{
-    -fx-effect: dropshadow(one-pass-box, #bbbbbb,10,10,5,5);
+    -fx-effect: dropshadow(one-pass-box, #eaeaea,10,10,5,5);
 }
 
 .buttonCancel
@@ -300,4 +300,19 @@
 .chart-pie {
     -fx-border-color: derive(-fx-pie-color, 1%);
     -fx-border-width: 0px;
+}
+
+.card {
+    border: 1px solid #fff;
+    border-radius: 15px;
+    box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.2);
+    font-size: 2rem;
+    overflow: hidden;
+
+    background-color: rgba(197, 185, 185, 0.3);
+    backdrop-filter: blur(10px) saturate(100%) contrast(45%) brightness(130%);
+    content: '';
+    height: 100%;
+    position: absolute;
+    width: 100%;
 }
