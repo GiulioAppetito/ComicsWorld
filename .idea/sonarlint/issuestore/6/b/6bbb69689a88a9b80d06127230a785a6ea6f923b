@@ -1,0 +1,14 @@
+
+o
+AX0Ui0u-UnpKTxYiZEu7
+java:S1854"7Remove this useless assignment to local variable "len".(¬õ°Üùÿÿÿÿ8˜É…öĞ/
+`
+AX0Ui0u-UnpKTxYiZEu8
+java:S1481"(Remove this unused "len" local variable.(¬õ°Üùÿÿÿÿ8˜É…öĞ/
+k
+AX0Ui0u-UnpKTxYiZEu-	java:S106Q"9Replace this use of System.out or System.err by a logger.(û˜8è‘öôĞ/
+s
+AX0Ui0u-UnpKTxYiZEu_	java:S125l"<This block of commented-out lines of code should be removed.(Ôô£ûÿÿÿÿ8˜É…öĞ/
+}
+AX0Ui0u-UnpKTxYiZEvA
+java:S1192f"JDefine a constant instead of duplicating this literal "Spiderman" 4 times.(É‡ˆ¬8˜É…öĞ/
