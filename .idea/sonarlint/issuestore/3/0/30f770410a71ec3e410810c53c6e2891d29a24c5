@@ -1,0 +1,26 @@
+
+¹
+AX0Ui0tfUnpKTxYiZEue
+java:S1186 "€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(ª²ÀĞùÿÿÿÿ8°Ù¨Ğ/
+‹
+AX0Ui0tfUnpKTxYiZEuf
+java:S1450"XRemove the "listOfAds" field and declare it as a local variable in the relevant methods.(©­íş8ĞÌ±²Ğ/
+w
+java:S1450"ZRemove the "listOfCards" field and declare it as a local variable in the relevant methods.(ô¸Ù8Ï·Û¶Õ/
+j
+AX0Ui0tfUnpKTxYiZEuh
+java:S1854F"7Remove this useless assignment to local variable "len".(ë”‡ 8Ğ–õËĞ/
+[
+AX0Ui0tfUnpKTxYiZEuj
+java:S1481F"(Remove this unused "len" local variable.(ë”‡ 8Ğ–õËĞ/
+k
+AX0Ui0tfUnpKTxYiZEuk	java:S106Q"9Replace this use of System.out or System.err by a logger.(ÀÚŞ»8Ğ–õËĞ/
+k
+AX0Ui0tfUnpKTxYiZEum	java:S106t"9Replace this use of System.out or System.err by a logger.(Å¶¡ÿ8àÂ¯÷Ï/
+t
+AX0Ui0tfUnpKTxYiZEuv	java:S125‡"<This block of commented-out lines of code should be removed.(Ôô£ûÿÿÿÿ8ĞÌ±²Ğ/
+t
+AX0Ui0tfUnpKTxYiZEun	java:S125›"<This block of commented-out lines of code should be removed.(Ôô£ûÿÿÿÿ8°Ù¨Ğ/
+j
+AX0Ui0tfUnpKTxYiZEuw
+java:S1144l"2Remove this unused private "openCharacter" method.(ŞÍø€ùÿÿÿÿ8àÂ¯÷Ï/

@@ -1,0 +1,15 @@
+
+z
+java:S14508"dRemove the "categoriesControllerG" field and declare it as a local variable in the relevant methods.(È×Ïœ
+y
+java:S14507"^Remove the "feedControllerG" field and declare it as a local variable in the relevant methods.(û…Øˆÿÿÿÿÿ
+N	java:S106e"9Replace this use of System.out or System.err by a logger.(ŒÚú§
+N	java:S106o"9Replace this use of System.out or System.err by a logger.(¼™«¬
+T	java:S106‰"9Replace this use of System.out or System.err by a logger.(ÈŒŞÿÿÿÿÿ
+O	java:S106”"9Replace this use of System.out or System.err by a logger.(­Ÿ×‰
+T	java:S106±"9Replace this use of System.out or System.err by a logger.(“ó¦èøÿÿÿÿ
+T	java:S106¼"9Replace this use of System.out or System.err by a logger.(ü•¬¤ÿÿÿÿÿ
+K
+java:S1128".Remove this unused import 'java.util.Objects'.(¼¸õ›8”ÒİµÕ/
+
+java:S1192k"yDefine a constant instead of duplicating this literal "-fx-background-color: #5DADE2; -fx-background-radius: 20" 5 times.(öÎ‘
