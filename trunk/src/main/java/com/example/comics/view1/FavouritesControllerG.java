@@ -39,6 +39,8 @@ public class FavouritesControllerG {
         FxmlLoader object = new FxmlLoader();
         Pane view = object.getPage("favouritecomics");
         mainPane.setCenter(view);
+
+
     }
 
     @FXML

@@ -35,7 +35,7 @@ public class FeedControllerG {
         int size = listOfCards.size();
 
         int i=1;
-            for(int j=0; j<size; j++) {
+        for(int j=0; j<size; j++) {
                 FXMLLoader fxmlLoader = new FXMLLoader();
                 fxmlLoader.setLocation(getClass().getResource("vcard.fxml"));
                 try {
@@ -58,7 +58,7 @@ public class FeedControllerG {
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
-            }
+        }
 
 
         //load the ads panel
