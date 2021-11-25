@@ -302,3 +302,29 @@
     -fx-border-width: 0px;
 }
 
+.onlyhover:hover{
+    -fx-background-color : #D2D2D2 ;
+    -fx-background-radius :  20;
+}
+
+.buttonprofile
+{
+    -fx-background-color : #ffffff;
+    -fx-background-radius :  20;
+}
+.buttonprofile:hover
+{
+    -fx-background-color : #D2D2D2 ;
+    -fx-background-radius :  20;
+}
+.buttonprofile:pressed
+{
+    -fx-background-color : #5DADE2 ;
+    -fx-background-radius :  20;
+}
+.buttonprofile:focused
+{
+    -fx-background-color :#5DADE2 ;
+    -fx-background-radius :  20;
+
+}
