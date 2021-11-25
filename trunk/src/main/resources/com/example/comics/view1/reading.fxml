@@ -2,8 +2,11 @@
 
 <?import java.lang.String?>
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="729.0" prefWidth="980.0" styleClass="transparent" stylesheets="@../../../../css/fullpackstyling.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
     <HBox prefHeight="729.0" prefWidth="980.0">
@@ -16,6 +19,17 @@
                 <String fx:value="oval-layout" />
                 <String fx:value="glass" />
             </styleClass>
+         <children>
+            <ScrollPane hbarPolicy="NEVER" layoutX="17.0" layoutY="12.0" prefHeight="622.0" prefWidth="778.0" styleClass="transparent" stylesheets="@../../../../css/fullpackstyling.css" vbarPolicy="ALWAYS">
+               <content>
+                  <GridPane fx:id="feedGrid" alignment="CENTER" hgap="20.0" prefHeight="620.0" prefWidth="762.0" styleClass="white-background" vgap="20.0">
+                     <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="150.0" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                  </GridPane>
+               </content>
+            </ScrollPane>
+         </children>
         </Pane>
     </HBox>
 </Pane>
