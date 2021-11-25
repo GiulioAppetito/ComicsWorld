@@ -16,9 +16,7 @@
         <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="358.0" stylesheets="@../../../../css/fullpackstyling.css">
             <children>
                 <ImageView fx:id="ivCover" fitHeight="84.0" fitWidth="77.0" pickOnBounds="true" preserveRatio="true">
-                    <image>
-                        <Image url="@../../../../img/download%20(1).jpg" />
-                    </image>
+
                     <HBox.margin>
                         <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                     </HBox.margin>

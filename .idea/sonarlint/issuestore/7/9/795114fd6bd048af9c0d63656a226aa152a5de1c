@@ -1,0 +1,10 @@
+
+Z	java:S106&"9Replace this use of System.out or System.err by a logger.(úó÷ıÿÿÿÿ8ÁÕì±Õ/
+Z	java:S1061"9Replace this use of System.out or System.err by a logger.(úó÷ıÿÿÿÿ8ÑÕì±Õ/
+Z	java:S106:"9Replace this use of System.out or System.err by a logger.(úó÷ıÿÿÿÿ8ÑÕì±Õ/
+W
+java:S1128"5Remove this unused import 'javafx.event.ActionEvent'.(î•¯¼ıÿÿÿÿ8ğÕì±Õ/
+U
+java:S1128"3Remove this unused import 'javafx.fxml.FXMLLoader'.(À‡ô³úÿÿÿÿ8òÕì±Õ/
+q
+java:S1192&"ODefine a constant instead of duplicating this literal "Clicked comics" 3 times.(úó÷ıÿÿÿÿ8óÕì±Õ/

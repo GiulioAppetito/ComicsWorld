@@ -74,19 +74,15 @@
             <HBox.margin>
                <Insets />
             </HBox.margin>
-            <Pane layoutY="10.0" stylesheets="@../../../../css/fullpackstyling.css">
-               <children>
-                  <ImageView fx:id="homeIcon" fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
-                     <Image url="@../../../../img/icons8-home-page-96.png" />
-                  </ImageView>
-               </children>
-            </Pane>
+            <ImageView fx:id="homeIcon" fitHeight="40.0" fitWidth="40.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+               <Image url="@../../../../img/icons8-home-page-96.png" />
+            </ImageView>
             <padding>
                <Insets top="40.0" />
             </padding>
          </Pane>
-         <HBox fx:id="userBox" prefHeight="60.0" prefWidth="199.0" styleClass="buttonprofile" stylesheets="@../../../../css/fullpackstyling.css">
-            <Label fx:id="lblName" alignment="CENTER_RIGHT" prefHeight="60.0" prefWidth="117.0" text="Giulio">
+         <HBox fx:id="userBox" prefHeight="100.0" prefWidth="200.0">
+            <Label fx:id="lblName" alignment="CENTER_RIGHT" prefHeight="60.0" prefWidth="146.0" text="Giulio">
                <font>
                   <Font name="Berlin Sans FB" size="18.0" />
                </font>
@@ -94,9 +90,9 @@
                   <Insets right="10.0" />
                </HBox.margin>
             </Label>
-            <ImageView fitHeight="50.0" fitWidth="98.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
                <HBox.margin>
-                  <Insets right="10.0" top="5.0" />
+                  <Insets top="5.0" />
                </HBox.margin>
                <Image url="@../../../../img/flat-business-man-user-profile-avatar-icon-vector-4333097.jpg" />
             </ImageView>
