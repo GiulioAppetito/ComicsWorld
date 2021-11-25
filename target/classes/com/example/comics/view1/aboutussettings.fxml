@@ -23,6 +23,11 @@
                <Font name="Berlin Sans FB" size="18.0" />
             </font>
          </Label>
+         <Label alignment="CENTER" prefHeight="21.0" prefWidth="150.0" text="Tor Vergata ">
+            <font>
+               <Font name="Berlin Sans FB" size="18.0" />
+            </font>
+         </Label>
       </children>
    </VBox>
    <VBox layoutX="318.0" layoutY="200.0">
@@ -31,6 +36,11 @@
             <Image url="@../../../../img/flat-business-man-user-profile-avatar-icon-vector-4333097.jpg" />
          </ImageView>
          <Label alignment="CENTER" prefHeight="21.0" prefWidth="150.0" text="Giulio Appetito">
+            <font>
+               <Font name="Berlin Sans FB" size="18.0" />
+            </font>
+         </Label>
+         <Label alignment="CENTER" prefHeight="21.0" prefWidth="150.0" text="Tor Vergata">
             <font>
                <Font name="Berlin Sans FB" size="18.0" />
             </font>

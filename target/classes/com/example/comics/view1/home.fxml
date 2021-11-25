@@ -81,7 +81,7 @@
                <Insets top="40.0" />
             </padding>
          </Pane>
-         <HBox fx:id="userBox" prefHeight="100.0" prefWidth="200.0">
+         <HBox fx:id="userBox" prefHeight="60.0" prefWidth="122.0" styleClass="buttonprofile" stylesheets="@../../../../css/fullpackstyling.css">
             <Label fx:id="lblName" alignment="CENTER_RIGHT" prefHeight="60.0" prefWidth="146.0" text="Giulio">
                <font>
                   <Font name="Berlin Sans FB" size="18.0" />
@@ -92,7 +92,7 @@
             </Label>
             <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
                <HBox.margin>
-                  <Insets top="5.0" />
+                  <Insets right="10.0" top="5.0" />
                </HBox.margin>
                <Image url="@../../../../img/flat-business-man-user-profile-avatar-icon-vector-4333097.jpg" />
             </ImageView>
