@@ -13,7 +13,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.Objects;
 
-public class HomeControllerG {
+public class ReaderHomeControllerG {
 
     @FXML
     private HBox userBox;
@@ -51,17 +51,17 @@ public class HomeControllerG {
     String style = ".button2";
 
 
-    private static HomeControllerG instance;
+    private static ReaderHomeControllerG instance;
     private FeedControllerG feedControllerG;
     private CategoriesControllerG categoriesControllerG;
 
 
-    private HomeControllerG(){
+    private ReaderHomeControllerG(){
     }
 
-    public static HomeControllerG getInstance(){
+    public static ReaderHomeControllerG getInstance(){
         if(instance==null){
-            instance = new HomeControllerG();
+            instance = new ReaderHomeControllerG();
         }
         return instance;
     }
@@ -124,18 +124,10 @@ public class HomeControllerG {
 
     public void openProfile() {
 
-        String role = UserLogin.getAccount().getRole();
-        Pane view;
-        System.out.println("Clicked profile: " + role);
         FxmlLoader object = new FxmlLoader();
-        if(Objects.equals(role, "reader")){
-            view = object.getPage("readerprofile");
-        }
-        else{
-            view = object.getPage("authorprofile");
-        }
-        mainPane.setCenter(view);
+        Pane view = object.getPage("readerprofile");
 
+        mainPane.setCenter(view);
         resetButtons();
 
     }

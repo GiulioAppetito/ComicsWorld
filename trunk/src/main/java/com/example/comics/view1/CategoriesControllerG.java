@@ -183,7 +183,7 @@ public class CategoriesControllerG {
 
         CategoryController categoryController = loader.getController();
         categoryController.setData(categoryName);
-        HomeControllerG.getInstance().changeCenter(view);
+        ReaderHomeControllerG.getInstance().changeCenter(view);
     }
 
 }

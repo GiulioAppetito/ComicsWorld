@@ -4,6 +4,7 @@ import com.example.comics.model.Advertisement;
 import com.example.comics.model.Series;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.control.MenuButton;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
@@ -20,6 +21,9 @@ public class FeedControllerG {
 
     @FXML
     private HBox hbAds;
+
+    @FXML
+    private MenuButton btnFilter;
 
     private List<Series> listOfCards;
     private List<Advertisement> listOfAds;
@@ -94,8 +98,8 @@ public class FeedControllerG {
         loader.setLocation(fxmlLocation);
         loader.setController(serieController);
 
-        HomeControllerG homeControllerG = HomeControllerG.getInstance();
-        homeControllerG.changeCenter(loader.load());
+        ReaderHomeControllerG readerHomeControllerG = ReaderHomeControllerG.getInstance();
+        readerHomeControllerG.changeCenter(loader.load());
 
         serieController.init();
 
@@ -111,8 +115,8 @@ public class FeedControllerG {
 
         System.out.println("Clicked character");
 
-        HomeControllerG homeControllerG = HomeControllerG.getInstance();
-        homeControllerG.changeCenter(loader.load());
+        ReaderHomeControllerG readerHomeControllerG = ReaderHomeControllerG.getInstance();
+        readerHomeControllerG.changeCenter(loader.load());
     }
 
 

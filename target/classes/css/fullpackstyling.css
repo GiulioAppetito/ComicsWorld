@@ -151,13 +151,13 @@
 }
 
 .wallpaper{
-    -fx-background-image: url('bluecloud.jpg');
-    -fx-background-size: 1700;
+    -fx-background-image: url('fluid4.jpg');
+    -fx-background-size: 800;
 
 }
 .wallpaperlogin{
-    -fx-background-image: url('bluecloud.jpg');
-       -fx-background-size: 800;
+    -fx-background-image: url('fluid4.jpg');
+       -fx-background-size: 700;
 
 }
 .glass{

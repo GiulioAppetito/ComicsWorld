@@ -58,9 +58,9 @@ public class SerieController {
             //non so, secondo me basterebbe andare dinuovo su feed facendo tipo un refresh
             //però che ne sa il feed che deve sostituire il centro della home?
             //boh
-            HomeControllerG homeControllerG = HomeControllerG.getInstance();
+            ReaderHomeControllerG readerHomeControllerG = ReaderHomeControllerG.getInstance();
             try {
-                homeControllerG.openFeed();
+                readerHomeControllerG.openFeed();
             } catch (IOException e) {
                 e.printStackTrace();
             }
@@ -87,8 +87,8 @@ public class SerieController {
         loader.setLocation(fxmlLocation);
         loader.setController(chapterControllerG);
 
-        HomeControllerG homeControllerG = HomeControllerG.getInstance();
-        homeControllerG.changeCenter(loader.load());
+        ReaderHomeControllerG readerHomeControllerG = ReaderHomeControllerG.getInstance();
+        readerHomeControllerG.changeCenter(loader.load());
 
         chapterControllerG.init();
 

@@ -1,7 +1,7 @@
 package com.example.comics.view1;
 
 import com.example.comics.fagioli.LoginBean;
-import com.example.comics.view1.HomeControllerG;
+import com.example.comics.model.UserLogin;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -100,19 +100,35 @@ public class LoginControllerG {
         loginBean.setPassword(tfPassword.getText());
         if(loginBean.validate()) {
             Stage stage = new Stage();
-
-            HomeControllerG homeControllerG = HomeControllerG.getInstance();
             FXMLLoader loader = new FXMLLoader();
+            URL fxmlLocation;
+            Scene scene;
 
-            URL fxmlLocation = HomeControllerG.class.getResource("home.fxml");
-            loader.setLocation(fxmlLocation);
-            loader.setController(homeControllerG);
+            String role = UserLogin.getInstance().getAccount().getRole();
+            if(role == "reader") {
+                ReaderHomeControllerG readerHomeControllerG = ReaderHomeControllerG.getInstance();
 
-            Scene scene = new Scene(loader.load());
-            homeControllerG.init();
+                fxmlLocation = ReaderHomeControllerG.class.getResource("readerhome.fxml");
+                loader.setLocation(fxmlLocation);
+                loader.setController(readerHomeControllerG);
+                scene = new Scene(loader.load());
+                readerHomeControllerG.init();
+            }
+            else{
+                AuthorHomeControllerG authorHomeControllerG = AuthorHomeControllerG.getInstance();
+
+                fxmlLocation = AuthorHomeControllerG.class.getResource("authorhome.fxml");
+                loader.setLocation(fxmlLocation);
+                loader.setController(authorHomeControllerG);
+
+                scene = new Scene(loader.load());
+                authorHomeControllerG.init();
+            }
+
             stage.setTitle("ComicsWorld");
             stage.setScene(scene);
             stage.show();
+
 
             ((Stage) ((Node) event.getSource()).getScene().getWindow()).close();
         }

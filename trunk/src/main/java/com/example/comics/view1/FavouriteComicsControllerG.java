@@ -76,8 +76,8 @@ public class FavouriteComicsControllerG {
         loader.setLocation(fxmlLocation);
         loader.setController(serieController);
 
-        HomeControllerG homeControllerG = HomeControllerG.getInstance();
-        homeControllerG.changeCenter(loader.load());
+        ReaderHomeControllerG readerHomeControllerG = ReaderHomeControllerG.getInstance();
+        readerHomeControllerG.changeCenter(loader.load());
 
         serieController.init();
 

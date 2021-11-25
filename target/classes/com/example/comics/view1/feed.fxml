@@ -3,7 +3,11 @@
 <?import java.lang.String?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
@@ -11,11 +15,36 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<Pane prefHeight="729.0" prefWidth="980.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
+<Pane prefHeight="729.0" prefWidth="980.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
    <VBox layoutX="10.0" layoutY="10.0" prefHeight="719.0" prefWidth="969.0">
-      <Pane prefHeight="525.0" prefWidth="909.0" stylesheets="@../../../../css/fullpackstyling.css">
+      <HBox>
          <VBox.margin>
-            <Insets left="30.0" right="30.0" top="30.0" />
+            <Insets left="40.0" top="15.0" />
+         </VBox.margin>
+         <children>
+            <VBox alignment="CENTER">
+               <children>
+                  <Label prefHeight="10.0" prefWidth="118.0" text="Filter your research: " textFill="#6e40ff" />
+               </children>
+            </VBox>
+            <MenuButton fx:id="btnFilter" mnemonicParsing="false" prefHeight="47.0" prefWidth="61.0" styleClass="transparent" stylesheets="@../../../../css/fullpackstyling.css">
+              <items>
+                <MenuItem mnemonicParsing="false" text="Action 1" />
+                <MenuItem mnemonicParsing="false" text="Action 2" />
+              </items>
+               <graphic>
+                  <ImageView fitHeight="39.0" fitWidth="63.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../img/filters.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </MenuButton>
+         </children>
+      </HBox>
+      <Pane prefHeight="230.0" prefWidth="909.0" stylesheets="@../../../../css/fullpackstyling.css">
+         <VBox.margin>
+            <Insets left="30.0" right="30.0" top="10.0" />
          </VBox.margin>
          <Label prefHeight="74.0" prefWidth="437.0" text="Ads">
             <font>
@@ -40,9 +69,9 @@
             <String fx:value="glass" />
          </styleClass>
       </Pane>
-      <Pane prefHeight="710.0" prefWidth="929.0" stylesheets="@../../../../css/fullpackstyling.css">
+      <Pane prefHeight="399.0" prefWidth="909.0" stylesheets="@../../../../css/fullpackstyling.css">
          <VBox.margin>
-            <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
+            <Insets bottom="30.0" left="30.0" right="30.0" top="15.0" />
          </VBox.margin>
          <Label prefHeight="74.0" prefWidth="437.0" text="Latest comics">
             <font>

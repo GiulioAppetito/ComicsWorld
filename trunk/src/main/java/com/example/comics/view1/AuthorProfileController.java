@@ -29,7 +29,7 @@ public class AuthorProfileController {
 
     public void edit(){
 
-        HomeControllerG.getInstance().openSettings();
+        ReaderHomeControllerG.getInstance().openSettings();
 
     }
 

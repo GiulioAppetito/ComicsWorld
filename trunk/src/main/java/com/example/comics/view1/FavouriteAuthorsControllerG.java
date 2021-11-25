@@ -1,7 +1,6 @@
 package com.example.comics.view1;
 
 import com.example.comics.model.Author;
-import com.example.comics.model.Series;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.layout.GridPane;
@@ -79,8 +78,8 @@ public class FavouriteAuthorsControllerG {
         loader.setLocation(fxmlLocation);
         loader.setController(serieController);
 
-        HomeControllerG homeControllerG = HomeControllerG.getInstance();
-        homeControllerG.changeCenter(loader.load());
+        ReaderHomeControllerG readerHomeControllerG = ReaderHomeControllerG.getInstance();
+        readerHomeControllerG.changeCenter(loader.load());
 
         serieController.init();
 
