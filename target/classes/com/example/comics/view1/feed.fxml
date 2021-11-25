@@ -11,9 +11,9 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<Pane prefHeight="729.0" prefWidth="980.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
+<Pane prefHeight="729.0" prefWidth="980.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
    <VBox layoutX="10.0" layoutY="10.0" prefHeight="719.0" prefWidth="969.0">
-      <Pane prefHeight="525.0" prefWidth="909.0" stylesheets="@../../../../css/fullpackstyling.css">
+      <Pane prefHeight="525.0" prefWidth="980.0" stylesheets="@../../../../css/fullpackstyling.css">
          <VBox.margin>
             <Insets left="30.0" right="30.0" top="30.0" />
          </VBox.margin>
@@ -40,7 +40,7 @@
             <String fx:value="glass" />
          </styleClass>
       </Pane>
-      <Pane prefHeight="710.0" prefWidth="929.0" stylesheets="@../../../../css/fullpackstyling.css">
+      <Pane prefHeight="710.0" prefWidth="980.0" stylesheets="@../../../../css/fullpackstyling.css">
          <VBox.margin>
             <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
          </VBox.margin>
