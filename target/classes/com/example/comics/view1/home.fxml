@@ -74,9 +74,13 @@
             <HBox.margin>
                <Insets />
             </HBox.margin>
-            <ImageView fx:id="homeIcon" fitHeight="40.0" fitWidth="40.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
-               <Image url="@../../../../img/icons8-home-page-96.png" />
-            </ImageView>
+            <Pane layoutY="10.0" stylesheets="@../../../../css/fullpackstyling.css">
+               <children>
+                  <ImageView fx:id="homeIcon" fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <Image url="@../../../../img/icons8-home-page-96.png" />
+                  </ImageView>
+               </children>
+            </Pane>
             <padding>
                <Insets top="40.0" />
             </padding>

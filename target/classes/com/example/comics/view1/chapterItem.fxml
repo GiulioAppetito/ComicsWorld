@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.String?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Separator?>
@@ -10,9 +11,9 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="330.0" styleClass="transparent" stylesheets="@../../../../css/fullpackstyling.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.comics.view1.ChapterItemController">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="357.0" styleClass="transparent" stylesheets="@../../../../css/fullpackstyling.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.comics.view1.ChapterItemController">
     <children>
-        <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="330.0" styleClass="oval-layout" stylesheets="@../../../../css/fullpackstyling.css">
+        <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="358.0" stylesheets="@../../../../css/fullpackstyling.css">
             <children>
                 <ImageView fx:id="ivCover" fitHeight="84.0" fitWidth="77.0" pickOnBounds="true" preserveRatio="true">
                     <image>
@@ -41,6 +42,10 @@
                     </children>
                 </VBox>
             </children>
+         <styleClass>
+            <String fx:value="oval-layout" />
+            <String fx:value="button2" />
+         </styleClass>
         </HBox>
     </children>
 </VBox>

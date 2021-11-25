@@ -12,9 +12,8 @@
 <VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="120.0" prefWidth="368.0" stylesheets="@../../../../css/fullpackstyling.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.comics.view1.AdController">
     <styleClass>
         <String fx:value="white-background" />
-        <String fx:value="oval-layout" />
         <String fx:value="linear-grad" />
-        <String fx:value="button2" />
+      <String fx:value="buttonEdit" />
     </styleClass>
     <HBox prefHeight="99.0" prefWidth="323.0" stylesheets="@../../../../css/fullpackstyling.css">
         <ImageView fx:id="comicCover" fitHeight="103.0" fitWidth="89.0" pickOnBounds="true" preserveRatio="true">
