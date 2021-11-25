@@ -1,7 +1,6 @@
 package com.example.comics.view1;
 
 import com.example.comics.model.Badge;
-import com.example.comics.model.Series;
 import com.example.comics.model.UserLogin;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -16,6 +15,9 @@ import java.util.List;
 
 public class ReaderProfileController {
 
+
+    @FXML
+    public Button btnEdit;
     @FXML
     public Button btnConverter;
     @FXML
@@ -23,10 +25,7 @@ public class ReaderProfileController {
     @FXML
     public Label lblUsername;
     @FXML
-    private Button btnEdit;
-
-    @FXML
-    private GridPane gpBadges;
+    public GridPane gpBadges;
 
     @FXML
     public void initialize() {

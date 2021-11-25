@@ -21,3 +21,9 @@ r
 Btrunk/src/main/java/com/example/comics/view1/LoginControllerG.java,c\e\ce2466ad6ef4e7ee688a7c6ee590a9a25d5f40e1
 y
 Itrunk/src/main/java/com/example/comics/view1/AuthorProfileController.java,a\c\ac6227319a2c858e9d46491faaa19c378d66a679
+k
+;trunk/src/main/java/com/example/comics/model/UserLogin.java,5\d\5dfc908745a1c7e70c463f0eeb83fb14a2777e53
+k
+;trunk/src/main/java/com/example/comics/LoginController.java,1\e\1e9938c87bd5abcc2a352ab73f69819baf251c09
+u
+Etrunk/src/main/java/com/example/comics/view1/ConverterController.java,0\6\06699b06ed34d37315832793615d4385655aac5f
