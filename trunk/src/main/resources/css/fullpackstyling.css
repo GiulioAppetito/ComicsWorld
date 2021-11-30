@@ -151,13 +151,13 @@
 }
 
 .wallpaper{
-    -fx-background-image: url('fluid2.jpg');
-    -fx-background-size: 1500;
+    -fx-background-image: url('fluid5.png');
+    -fx-background-size: 1200
 
 }
 .wallpaperlogin{
-    -fx-background-image: url('fluid2.jpg');
-       -fx-background-size: 950;
+    -fx-background-image: url('fluid5.png');
+       -fx-background-size: 800;
 
 }
 .glass{
