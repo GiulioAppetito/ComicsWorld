@@ -13,6 +13,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -36,6 +37,12 @@ public class LoginControllerG {
     @FXML
     private PasswordField tfPassword;
 
+    //error pane
+    @FXML
+    private Pane errorPane;
+    @FXML
+    private Button btnCloseErrorMessage;
+
     //register
     @FXML
     private Button btnBackToLogin;
@@ -58,6 +65,7 @@ public class LoginControllerG {
 
     public void init(){
         clickLogin();
+        errorPane.setVisible(false);
         btnLogin.setOnAction(event ->
         {
             try {
@@ -71,6 +79,8 @@ public class LoginControllerG {
         btnBackToLogin.setOnAction(event -> clickLogin());
         btnCancelForm.setOnAction(event -> cancelForm());
         btnCancel.setOnAction(event -> clickCancel());
+        btnCloseErrorMessage.setOnAction(event -> closeErrorMessage());
+
     }
 
     public void clickRegister(){
@@ -102,7 +112,7 @@ public class LoginControllerG {
         try {
             loginBean.setEmail(tfEmail.getText());
         } catch (WrongCredentialException e) {
-
+            showErrorMessage();
             return;
         }
         loginBean.setPassword(tfPassword.getText());
@@ -145,6 +155,14 @@ public class LoginControllerG {
         else{
             clickCancel();
         }
+    }
+
+    private void showErrorMessage() {
+        errorPane.setVisible(true);
+    }
+
+    void closeErrorMessage() {
+        errorPane.setVisible(false);
     }
 
 }

@@ -8,6 +8,7 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
@@ -88,7 +89,7 @@
     </BorderPane>
     <BorderPane fx:id="loginPane">
         <center>
-            <VBox prefHeight="630.0" prefWidth="450.0" styleClass="wallpaperlogin" stylesheets="@../../../../css/fullpackstyling.css">
+            <VBox prefHeight="661.0" prefWidth="450.0" styleClass="wallpaperlogin" stylesheets="@../../../../css/fullpackstyling.css">
                 <Label alignment="CENTER" prefHeight="111.0" prefWidth="358.0" text="ComicsWorld" textAlignment="CENTER">
                     <font>
                         <Font name="Berlin Sans FB Demi Bold" size="50.0" />
@@ -140,4 +141,17 @@
             </VBox>
         </center>
     </BorderPane>
+   <Pane fx:id="errorPane" prefHeight="100.0" prefWidth="290.0" stylesheets="@../../../../css/fullpackstyling.css">
+      <StackPane.margin>
+         <Insets bottom="250.0" left="80.0" right="80.0" top="300.0" />
+      </StackPane.margin>
+      <styleClass>
+         <String fx:value="white-background" />
+         <String fx:value="buttonLogin" />
+      </styleClass>
+      <children>
+         <Button fx:id="btnCloseErrorMessage" layoutX="238.0" layoutY="14.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="38.0" styleClass="button2" text="X" />
+         <Label alignment="CENTER" layoutX="76.0" layoutY="50.0" prefHeight="17.0" prefWidth="139.0" text="Wrong Credentials!" />
+      </children>
+   </Pane>
 </StackPane>
