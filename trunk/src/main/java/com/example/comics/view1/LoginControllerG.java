@@ -1,6 +1,8 @@
 package com.example.comics.view1;
 
+import com.example.comics.LoginController;
 import com.example.comics.fagioli.LoginBean;
+import com.example.comics.fagioli.WrongCredentialException;
 import com.example.comics.model.UserLogin;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -96,9 +98,17 @@ public class LoginControllerG {
 
     public void login(ActionEvent event) throws IOException {
         LoginBean loginBean = new LoginBean();
-        loginBean.setEmail(tfEmail.getText());
+
+        try {
+            loginBean.setEmail(tfEmail.getText());
+        } catch (WrongCredentialException e) {
+
+            return;
+        }
         loginBean.setPassword(tfPassword.getText());
-        if(loginBean.validate()) {
+        LoginController loginController = new LoginController();
+
+        if(loginController.login(loginBean)) {
             Stage stage = new Stage();
             FXMLLoader loader = new FXMLLoader();
             URL fxmlLocation;

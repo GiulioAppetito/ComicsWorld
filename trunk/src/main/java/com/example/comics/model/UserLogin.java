@@ -2,12 +2,10 @@ package com.example.comics.model;
 
 public class UserLogin{
 
-    public static UserLogin instance;
+    private static UserLogin instance;
     private static Account account;
 
-    private UserLogin(){
-
-    }
+    private UserLogin(){}
 
     public static synchronized UserLogin getInstance(){
         if(instance==null){
