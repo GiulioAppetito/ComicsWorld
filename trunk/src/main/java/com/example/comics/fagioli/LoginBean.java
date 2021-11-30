@@ -2,7 +2,9 @@ package com.example.comics.fagioli;
 
 import com.example.comics.LoginController;
 
-public class LoginBean {
+import java.lang.invoke.WrongMethodTypeException;
+
+public class LoginBean{
     private String email;
     private String password;
 
@@ -13,8 +15,13 @@ public class LoginBean {
         return email;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setEmail(String email) throws WrongCredentialException{
+        if(email.contains("@")){
+            this.email = email;
+        }
+        else{
+            throw new WrongCredentialException();
+        }
     }
 
     public String getPassword() {
@@ -23,16 +30,6 @@ public class LoginBean {
 
     public void setPassword(String password) {
         this.password = password;
-    }
-
-    public boolean validate() {
-        // controllo sintattico
-        /*
-        if (email == null || email.equals("") || password == null || password.equals("")) {
-            return false;
-        }
-        */
-        return LoginController.getInstance().login(email, password);
     }
 
 }

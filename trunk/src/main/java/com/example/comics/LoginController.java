@@ -1,28 +1,14 @@
 package com.example.comics;
 
+import com.example.comics.fagioli.LoginBean;
 import com.example.comics.model.UserLogin;
 
 public class LoginController {
 
-    private static LoginController instance;
-
-    private LoginController(){
-
-    }
-
-    public static LoginController getInstance(){
-
-        if(instance ==null){
-            instance = new LoginController();
-        }
-
-        return instance;
-    }
-
-    public boolean login(String email, String password){
+    public boolean login(LoginBean loginBean){
 
         //ricerca utente + validation
-        return UserLogin.getInstance().login(email, password);
+        return UserLogin.getInstance().login(loginBean.getEmail(), loginBean.getPassword());
 
     }
 }
