@@ -25,17 +25,15 @@ public class FeedControllerG {
     @FXML
     private MenuButton btnFilter;
 
-    private List<Series> listOfCards;
-    private List<Advertisement> listOfAds;
-
 
     public FeedControllerG(){
+        //costruttore
     }
 
 
     public void init() {
 
-        listOfCards = new ArrayList<>(add());
+        List<Series> listOfCards = new ArrayList<>(add());
         int size = listOfCards.size();
 
         int i=1;
@@ -66,8 +64,8 @@ public class FeedControllerG {
 
 
         //load the ads panel
-        listOfAds = new ArrayList<>(addAds());
-        int len = listOfAds.size();
+
+        List<Advertisement> listOfAds = new ArrayList<>(addAds());
 
         for (Advertisement listOfAd : listOfAds) {
 
@@ -113,8 +111,6 @@ public class FeedControllerG {
         loader.setLocation(fxmlLocation);
         loader.setController(characterControllerG);
 
-        System.out.println("Clicked character");
-
         ReaderHomeControllerG readerHomeControllerG = ReaderHomeControllerG.getInstance();
         readerHomeControllerG.changeCenter(loader.load());
     }
@@ -132,7 +128,6 @@ public class FeedControllerG {
             Series comic = new Series();
             comic.setName("Spiderman");
             comic.setAuthor("Stan Lee");
-            //comic.setImageSrc(null);
             ls.add(comic);
 
         }
@@ -152,7 +147,6 @@ public class FeedControllerG {
         for(i=0; i<n; i++){
             Advertisement ad = new Advertisement();
             ad.setTitle("Ad n°" + i);
-            //comic.setImageSrc(null);
             la.add(ad);
         }
 

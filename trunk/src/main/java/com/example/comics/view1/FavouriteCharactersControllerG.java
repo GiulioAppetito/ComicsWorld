@@ -1,7 +1,6 @@
 package com.example.comics.view1;
 
 import com.example.comics.model.Character;
-import com.example.comics.model.Series;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.layout.GridPane;
@@ -28,17 +27,6 @@ public class FavouriteCharactersControllerG {
             fxmlLoader.setLocation(getClass().getResource("charactercard.fxml"));
             try {
                 VBox card = fxmlLoader.load();
-                /*VCardController cardController = fxmlLoader.getController();
-                cardController.setData(listOfCards.get(j).getName());
-
-                card.setOnMouseClicked(event -> {
-                    try {
-                        openSerie();
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
-                });
-*/
                 gpFavCharacters.add(card,j%columns,i);
                 if(j%columns == columns-1){
                     i++;

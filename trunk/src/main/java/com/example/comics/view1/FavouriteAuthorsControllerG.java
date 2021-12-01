@@ -27,18 +27,6 @@ public class FavouriteAuthorsControllerG {
             fxmlLoader.setLocation(getClass().getResource("authorcard.fxml"));
             try {
                 VBox card = fxmlLoader.load();
-                /*
-                VCardController cardController = fxmlLoader.getController();
-                cardController.setData(listOfCards.get(j).getName());
-
-                card.setOnMouseClicked(event -> {
-                    try {
-                        openSerie();
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
-                });
-            */
                 gpFavAuthors.add(card,j%columns,i);
                 if(j%columns == columns-1){
                     i++;
@@ -63,7 +51,6 @@ public class FavouriteAuthorsControllerG {
             author.setLastName("Lee");
             author.setCity("New York");
             author.setUsername("stanlee");
-            //comic.setImageSrc(null);
             la.add(author);
         }
         return la;

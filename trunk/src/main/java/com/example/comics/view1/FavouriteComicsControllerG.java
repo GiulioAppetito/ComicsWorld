@@ -60,7 +60,6 @@ public class FavouriteComicsControllerG {
             Series comic = new Series();
             comic.setName("Spiderman");
             comic.setAuthor("Stan Lee");
-            //comic.setImageSrc(null);
             ls.add(comic);
 
         }
