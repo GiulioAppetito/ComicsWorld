@@ -18,6 +18,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.Objects;
 
 
 public class LoginControllerG {
@@ -61,6 +62,7 @@ public class LoginControllerG {
 
 
     public LoginControllerG(){
+        //costruttore
     }
 
     public void init(){
@@ -124,8 +126,8 @@ public class LoginControllerG {
             URL fxmlLocation;
             Scene scene;
 
-            String role = UserLogin.getInstance().getAccount().getRole();
-            if(role == "reader") {
+            String role = UserLogin.getAccount().getRole();
+            if(Objects.equals(role, "reader")) {
                 ReaderHomeControllerG readerHomeControllerG = ReaderHomeControllerG.getInstance();
 
                 fxmlLocation = ReaderHomeControllerG.class.getResource("readerhome.fxml");

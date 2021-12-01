@@ -1,14 +1,11 @@
 package com.example.comics.fagioli;
 
-import com.example.comics.LoginController;
-
-import java.lang.invoke.WrongMethodTypeException;
-
 public class LoginBean{
     private String email;
     private String password;
 
     public LoginBean() {
+        //costruttore
     }
 
     public String getEmail() {
