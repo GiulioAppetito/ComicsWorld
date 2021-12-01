@@ -221,6 +221,21 @@
                         <Insets left="-15.0" />
                     </padding>
                 </Button>
+            <Button fx:id="btnStatistics" mnemonicParsing="false" prefHeight="78.0" prefWidth="230.0" styleClass="lateral" stylesheets="@../../../../css/fullpackstyling.css" text="Statistics">
+               <font>
+                  <Font name="Berlin Sans FB" size="18.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../img/statistics.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <padding>
+                  <Insets left="-15.0" />
+               </padding>
+            </Button>
             </children>
         </VBox>
     </left>

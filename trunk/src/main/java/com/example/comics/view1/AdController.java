@@ -7,21 +7,12 @@ import javafx.scene.image.ImageView;
 
 public class AdController {
 
-    public ImageView comicCover;
+    private ImageView comicCover;
     @FXML
     private Label lblTitle;
 
     public void setData(Advertisement ad) {
-        //Image image = new Image(getClass().getResourceAsStream(comic.getImageSrc()));
-        //comicCover.setImage(image);
         lblTitle.setText(ad.getTitle());
-
-    }
-
-    public void dummy() {
-
-        System.out.println("Card selected on click : " + lblTitle.getText());
-
 
     }
 

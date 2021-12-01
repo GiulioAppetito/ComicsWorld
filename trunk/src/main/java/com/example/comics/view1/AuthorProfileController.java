@@ -21,12 +21,6 @@ public class AuthorProfileController {
         btnEdit.setOnAction(actionEvent -> edit());
     }
 
-    /*
-    public void init(){
-        btnEdit.setOnAction(actionEvent -> edit());
-    }
-    */
-
     public void edit(){
 
         ReaderHomeControllerG.getInstance().openSettings();

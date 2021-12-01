@@ -40,7 +40,6 @@ public class ChapterControllerG {
 
 
         ArrayList<Review> listOfReviews = new ArrayList<>(addReviews());
-        int len = listOfReviews.size();
 
         for (Review review : listOfReviews) {
 

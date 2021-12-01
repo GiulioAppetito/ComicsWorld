@@ -6,11 +6,11 @@ public class Author extends Account{
 
     private List<Series> publishedSeries;
 
-    private final String role = "author";
+    private static final String ROLE = "author";
 
     @Override
     public String getRole(){
-        return role;
+        return ROLE;
     }
 
     public List<Series> getPublishedSeries() {

@@ -13,9 +13,7 @@ public abstract class Account {
     private Date birthday;
     private ImageView proPic;
 
-    private String Role;
-
-    abstract public String getRole();
+    public abstract String getRole();
 
 
     public String getFirstName() {

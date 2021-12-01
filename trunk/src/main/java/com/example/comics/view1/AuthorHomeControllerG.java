@@ -28,6 +28,8 @@ public class AuthorHomeControllerG {
     @FXML
     private Button btnMySeries;
 
+    @FXML
+    private Button btnStatistics;
 
     @FXML
     private Button btnMyCharacters;
@@ -47,11 +49,10 @@ public class AuthorHomeControllerG {
     @FXML
     private Label lblName;
 
-    String style = ".button2";
+    private static final String STYLE = ".button2";
+    private static final String STYLE2 = "-fx-background-color: #5DADE2; -fx-background-radius: 20";
 
-    public static AuthorHomeControllerG instance;
-    private FeedControllerG feedControllerG;
-    private CategoriesControllerG categoriesControllerG;
+    private static AuthorHomeControllerG instance;
 
     public static synchronized AuthorHomeControllerG getInstance() {
         if(instance == null){
@@ -74,6 +75,7 @@ public class AuthorHomeControllerG {
                 e.printStackTrace();
             }
         });
+        btnStatistics.setOnAction(event -> openStatistics());
         btnSettings.setOnAction(event -> openSettings());
         btnTop.setOnAction(event -> openTop());
         btnMyBadges.setOnAction(event -> openMyBadges());
@@ -88,53 +90,62 @@ public class AuthorHomeControllerG {
         });
     }
 
-    public void openMyCharacters() {
+    private void openStatistics() {
 
-        System.out.println("Clicked my characters");
+        FxmlLoader object = new FxmlLoader();
+        Pane view = object.getPage("statistics");
+        mainPane.setCenter(view);
+
+        resetButtons();
+        btnStatistics.setStyle(STYLE2);
+    }
+
+    public void changeCenter(Pane pane){
+        mainPane.setCenter(pane);
+    }
+
+
+    public void openMyCharacters() {
         FxmlLoader object = new FxmlLoader();
         Pane view = object.getPage("authormycharacter");
         mainPane.setCenter(view);
 
         resetButtons();
-        btnMyCharacters.setStyle("-fx-background-color: #5DADE2; -fx-background-radius: 20");
+        btnMyCharacters.setStyle(STYLE2);
     }
 
     public void openMyBadges() {
-        System.out.println("Clicked my badges");
         FxmlLoader object = new FxmlLoader();
         Pane view = object.getPage("authormybadges");
         mainPane.setCenter(view);
 
         resetButtons();
-        btnMyBadges.setStyle("-fx-background-color: #5DADE2; -fx-background-radius: 20");
+        btnMyBadges.setStyle(STYLE2);
     }
 
     public void openTop(){
-
-        System.out.println("Clicked top comics");
         FxmlLoader object = new FxmlLoader();
         Pane view = object.getPage("topcomics");
         mainPane.setCenter(view);
 
         resetButtons();
-        btnTop.setStyle("-fx-background-color: #5DADE2; -fx-background-radius: 20");
+        btnTop.setStyle(STYLE2);
     }
 
     public void openSettings() {
 
-        System.out.println("Clicked settings");
         FxmlLoader object = new FxmlLoader();
         Pane view = object.getPage("settings");
         mainPane.setCenter(view);
 
         resetButtons();
-        btnSettings.setStyle("-fx-background-color: #5DADE2; -fx-background-radius: 20");
+        btnSettings.setStyle(STYLE2);
 
     }
 
     public void openCategories() throws IOException {
 
-        categoriesControllerG = new CategoriesControllerG();
+        CategoriesControllerG categoriesControllerG = new CategoriesControllerG();
         FXMLLoader loader = new FXMLLoader();
 
         URL fxmlLocation = FeedControllerG.class.getResource("categories.fxml");
@@ -147,24 +158,23 @@ public class AuthorHomeControllerG {
         mainPane.setCenter(view);
 
         resetButtons();
-        btnCategories.setStyle("-fx-background-color: #5DADE2; -fx-background-radius: 20");
+        btnCategories.setStyle(STYLE2);
     }
 
     public void openMySeries() {
-        System.out.println("Clicked my series");
         FxmlLoader object = new FxmlLoader();
         Pane view = object.getPage("authormyseries");
         mainPane.setCenter(view);
 
         resetButtons();
-        btnMySeries.setStyle("-fx-background-color: #5DADE2; -fx-background-radius: 20 ");
+        btnMySeries.setStyle(STYLE2);
 
     }
 
 
     public void openFeed() throws IOException {
 
-        feedControllerG = new FeedControllerG();
+        FeedControllerG feedControllerG = new FeedControllerG();
         FXMLLoader loader = new FXMLLoader();
 
         URL fxmlLocation = FeedControllerG.class.getResource("feed.fxml");
@@ -190,11 +200,12 @@ public class AuthorHomeControllerG {
     }
 
     private void resetButtons(){
-        btnSettings.setStyle(style);
-        btnCategories.setStyle(style);
-        btnMySeries.setStyle(style);
-        btnMyCharacters.setStyle(style);
-        btnTop.setStyle(style);
-        btnMyBadges.setStyle(style);
+        btnSettings.setStyle(STYLE);
+        btnCategories.setStyle(STYLE);
+        btnMySeries.setStyle(STYLE);
+        btnMyCharacters.setStyle(STYLE);
+        btnTop.setStyle(STYLE);
+        btnMyBadges.setStyle(STYLE);
+        btnStatistics.setStyle(STYLE);
     }
 }

@@ -90,28 +90,6 @@ public class CategoriesControllerG {
     @FXML
     private VBox boxZ;
 
-/*
-    public static CategoriesControllerG instance;
-
-    private CategoriesControllerG(){
-    }
-
-    public static synchronized CategoriesControllerG getInstance(){
-
-        if(instance==null){
-            instance = new CategoriesControllerG();
-            //questo (di seguito) non lo puoi fare perchè gli oggetti fxml sono null
-            //quindi di norma facciamo init dopo,
-            //se volessi farlo singleton, allora il metodo init lo faccio solo la prima volta
-            //però non posso perchè ci stanno valori che ancora non esistono.... aaaaaaa
-            //forse un metodo statico che esegue solo la prima volta? però come lo segno?
-            //allora a sto punto provo a farlo normale, però ogni volta le ricarica
-            instance.init();
-        }
-        return instance;
-
-    }
-*/
 
     public void init() {
 
@@ -161,6 +139,7 @@ public class CategoriesControllerG {
                     case "Y" -> boxY.getChildren().add(categoryBox);
                     case "Z" -> boxZ.getChildren().add(categoryBox);
                     default -> {
+                        boxA.getChildren().add(categoryBox);
                     }
                 }
 
@@ -173,7 +152,6 @@ public class CategoriesControllerG {
     }
 
     private void openCategory(String categoryName) throws IOException {
-        System.out.println("Clicked on " + categoryName);
 
         FXMLLoader loader = new FXMLLoader();
 
