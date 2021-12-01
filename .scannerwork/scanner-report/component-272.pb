@@ -1,0 +1,1 @@
+ê 2javaXBhr9trunk/src/main/java/com/example/comics/model/Chapter.java
