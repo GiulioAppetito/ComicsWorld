@@ -1,14 +1,12 @@
 package com.example.comics.view1;
 
 import com.example.comics.model.Badge;
-import com.example.comics.model.Character;
 import com.example.comics.model.UserLogin;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.GridPane;
-import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 
 import java.io.IOException;
@@ -79,7 +77,6 @@ public class ReaderProfileControllerG {
     }
 
     public void loadFavouriteCharacter(){
-        Character favouriteCharacter = new Character();
         //dummy init
         FXMLLoader fxmlLoader = new FXMLLoader();
         fxmlLoader.setLocation(getClass().getResource("favouritecharacteritem.fxml"));
@@ -91,6 +88,8 @@ public class ReaderProfileControllerG {
         }
     }
 
-    public void edit(){}
+    public void edit(){
+        //TO-DO
+    }
 
 }

@@ -11,7 +11,6 @@ import tools.FxmlLoader;
 
 import java.io.IOException;
 import java.net.URL;
-import java.util.Objects;
 
 public class ReaderHomeControllerG {
 
@@ -48,12 +47,10 @@ public class ReaderHomeControllerG {
     @FXML
     private Label lblName;
 
-    String style = ".button2";
-
+    private static final String STYLE = ".button2";
+    private static final String STYLE2 = "-fx-background-color: #5DADE2; -fx-background-radius: 20";
 
     private static ReaderHomeControllerG instance;
-    private FeedControllerG feedControllerG;
-    private CategoriesControllerG categoriesControllerG;
 
 
     private ReaderHomeControllerG(){
@@ -97,24 +94,21 @@ public class ReaderHomeControllerG {
     }
 
     public void openReading() {
-
-        System.out.println("Clicked reading");
         FxmlLoader object = new FxmlLoader();
         Pane view = object.getPage("reading");
         mainPane.setCenter(view);
 
         resetButtons();
-        btnReading.setStyle("-fx-background-color: #5DADE2; -fx-background-radius: 20");
+        btnReading.setStyle(STYLE2);
     }
 
     public void openToRead() {
-        System.out.println("Clicked to read");
         FxmlLoader object = new FxmlLoader();
         Pane view = object.getPage("toread");
         mainPane.setCenter(view);
 
         resetButtons();
-        btnToRead.setStyle("-fx-background-color: #5DADE2; -fx-background-radius: 20");
+        btnToRead.setStyle(STYLE2);
     }
 
     public void changeCenter(Pane pane){
@@ -133,31 +127,27 @@ public class ReaderHomeControllerG {
     }
 
     public void openTop(){
-
-        System.out.println("Clicked top comics");
         FxmlLoader object = new FxmlLoader();
         Pane view = object.getPage("topcomics");
         mainPane.setCenter(view);
 
         resetButtons();
-        btnTop.setStyle("-fx-background-color: #5DADE2; -fx-background-radius: 20");
+        btnTop.setStyle(STYLE2);
     }
 
     public void openSettings() {
-
-        System.out.println("Clicked settings");
         FxmlLoader object = new FxmlLoader();
         Pane view = object.getPage("settings");
         mainPane.setCenter(view);
 
         resetButtons();
-        btnSettings.setStyle("-fx-background-color: #5DADE2; -fx-background-radius: 20");
+        btnSettings.setStyle(STYLE2);
 
     }
 
     public void openCategories() throws IOException {
 
-        categoriesControllerG = new CategoriesControllerG();
+        CategoriesControllerG categoriesControllerG = new CategoriesControllerG();
         FXMLLoader loader = new FXMLLoader();
 
         URL fxmlLocation = FeedControllerG.class.getResource("categories.fxml");
@@ -170,34 +160,32 @@ public class ReaderHomeControllerG {
         mainPane.setCenter(view);
 
         resetButtons();
-        btnCategories.setStyle("-fx-background-color: #5DADE2; -fx-background-radius: 20");
+        btnCategories.setStyle(STYLE2);
     }
 
     public void openFavourites() {
-        System.out.println("Clicked favourites");
         FxmlLoader object = new FxmlLoader();
         Pane view = object.getPage("favourites");
         mainPane.setCenter(view);
 
         resetButtons();
-        btnFav.setStyle("-fx-background-color: #5DADE2; -fx-background-radius: 20 ");
+        btnFav.setStyle(STYLE2);
 
     }
 
     public void openConverter() {
-        System.out.println("Clicked converter");
         FxmlLoader object = new FxmlLoader();
         Pane view = object.getPage("converter");
         mainPane.setCenter(view);
 
         resetButtons();
-        btnConverter.setStyle("-fx-background-color: #5DADE2; -fx-background-radius: 20 ");
+        btnConverter.setStyle(STYLE2);
 
     }
 
     public void openFeed() throws IOException {
 
-        feedControllerG = new FeedControllerG();
+        FeedControllerG feedControllerG = new FeedControllerG();
         FXMLLoader loader = new FXMLLoader();
 
         URL fxmlLocation = FeedControllerG.class.getResource("feed.fxml");
@@ -213,13 +201,13 @@ public class ReaderHomeControllerG {
     }
 
     private void resetButtons(){
-        btnSettings.setStyle(style);
-        btnCategories.setStyle(style);
-        btnFav.setStyle(style);
-        btnReading.setStyle(style);
-        btnTop.setStyle(style);
-        btnToRead.setStyle(style);
-        btnConverter.setStyle(style);
+        btnSettings.setStyle(STYLE);
+        btnCategories.setStyle(STYLE);
+        btnFav.setStyle(STYLE);
+        btnReading.setStyle(STYLE);
+        btnTop.setStyle(STYLE);
+        btnToRead.setStyle(STYLE);
+        btnConverter.setStyle(STYLE);
     }
 
 

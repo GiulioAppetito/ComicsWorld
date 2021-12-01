@@ -4,17 +4,17 @@ import java.util.List;
 
 public class Reader extends Account{
 
-    private Account account;
+
     private List<Series> favourites;
     private List<Series> toRead;
     private List<Series> reading;
     private int coins;
 
-    private final String role = "reader";
+    private static final String ROLE = "reader";
 
     @Override
     public String getRole(){
-        return role;
+        return ROLE;
     }
 
     public List<Series> getFavourites() {
