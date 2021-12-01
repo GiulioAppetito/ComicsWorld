@@ -1,4 +1,4 @@
 package com.example.comics.fagioli;
 
-public class WrongCredentialException extends Throwable {
+public class WrongCredentialException extends Exception {
 }

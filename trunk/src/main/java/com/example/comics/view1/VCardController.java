@@ -12,8 +12,6 @@ public class VCardController {
     public Label comicName;
 
     public void setData(String name) {
-
-        //comicCover = new ImageView("/src/main/resources/img/spidey.png");
         comicName.setText(name);
 
     }
