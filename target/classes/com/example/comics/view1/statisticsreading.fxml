@@ -24,7 +24,7 @@
                         <Insets top="20.0" />
                     </VBox.margin>
                 </Label>
-            <PieChart />
+            <PieChart prefHeight="462.0" prefWidth="520.0" />
                 <padding>
                     <Insets bottom="40.0" top="40.0" />
                 </padding>

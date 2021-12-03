@@ -6,195 +6,200 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="729.0" prefWidth="980.0" styleClass="transparent" stylesheets="@../../../../css/fullpackstyling.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.comics.view1.AuthorProfileController">
-    <HBox prefHeight="729.0" prefWidth="980.0">
-        <Pane prefHeight="649.0" prefWidth="457.0" stylesheets="@../../../../css/fullpackstyling.css">
-            <HBox.margin>
-                <Insets bottom="40.0" left="40.0" right="40.0" top="40.0" />
-            </HBox.margin>
-            <styleClass>
-                <String fx:value="panes" />
-                <String fx:value="oval-layout" />
-                <String fx:value="glass" />
-            </styleClass>
-            <VBox prefHeight="649.0" prefWidth="460.0">
-                <HBox alignment="CENTER" prefHeight="243.0" prefWidth="431.0">
-                    <VBox.margin>
-                        <Insets top="20.0" />
-                    </VBox.margin>
-                     <ImageView fitHeight="241.0" fitWidth="275.0" pickOnBounds="true" preserveRatio="true">
-                         <Image url="@../../../../img/flat-business-man-user-profile-avatar-icon-vector-4333097.jpg" />
-                     </ImageView>
-                </HBox>
-                <HBox alignment="CENTER" prefHeight="55.0" prefWidth="452.0">
-                    <Button fx:id="btnEdit" mnemonicParsing="false" onAction="#edit" prefHeight="63.0" prefWidth="165.0" stylesheets="@../../../../css/fullpackstyling.css" text="Edit">
-                        <font>
-                            <Font name="Berlin Sans FB" size="24.0" />
-                        </font>
-                        <styleClass>
-                            <String fx:value="oval-layout" />
-                            <String fx:value="transparent" />
-                            <String fx:value="buttonEdit" />
-                        </styleClass>
-                        <graphic>
-                            <ImageView fitHeight="45.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true">
-                                <Image url="@../../../../img/matita.png" />
-                            </ImageView>
-                        </graphic>
-                        <HBox.margin>
-                            <Insets />
-                        </HBox.margin>
-                    </Button>
-                </HBox>
-                <Label fx:id="lblName" alignment="CENTER" prefHeight="60.0" prefWidth="456.0" text="Anastasia Brinati">
-                    <font>
-                        <Font name="Berlin Sans FB" size="24.0" />
-                    </font>
-                    <VBox.margin>
-                        <Insets top="20.0" />
-                    </VBox.margin>
-                </Label>
-                <Label fx:id="lblUsername" alignment="CENTER" prefHeight="47.0" prefWidth="452.0" text="pinkiepiex">
-                    <font>
-                        <Font name="Berlin Sans FB" size="24.0" />
-                    </font>
-                </Label>
-                <Label alignment="CENTER" prefHeight="44.0" prefWidth="452.0" text="16-02-2000">
-                    <font>
-                        <Font name="Berlin Sans FB" size="24.0" />
-                    </font>
-                </Label>
-                <Label alignment="CENTER" prefHeight="39.0" prefWidth="452.0" text="Rome">
-                    <font>
-                        <Font name="Berlin Sans FB" size="24.0" />
-                    </font>
-                </Label>
-                <Label alignment="CENTER" prefHeight="46.0" prefWidth="452.0" text="Italy">
-                    <font>
-                        <Font name="Berlin Sans FB" size="24.0" />
-                    </font>
-                </Label>
-            </VBox>
-        </Pane>
-        <VBox prefHeight="729.0" prefWidth="417.0">
-         <children>
-            <Pane prefHeight="135.0" prefWidth="337.0" stylesheets="@../../../../css/fullpackstyling.css">
-               <styleClass>
-                  <String fx:value="panes" />
-                  <String fx:value="glass" />
-                  <String fx:value="oval-layout" />
-               </styleClass>
-               <VBox.margin>
-                  <Insets bottom="70.0" left="70.0" right="70.0" top="40.0" />
-               </VBox.margin>
-               <children>
-                  <VBox prefHeight="127.0" prefWidth="337.0">
-                     <children>
-                        <Label text="Want to create a new series?">
-                           <font>
-                              <Font name="Berlin Sans FB" size="18.0" />
-                           </font>
-                           <VBox.margin>
-                              <Insets left="20.0" top="10.0" />
-                           </VBox.margin>
-                        </Label>
-                        <Button alignment="CENTER" mnemonicParsing="false" prefHeight="91.0" prefWidth="91.0" stylesheets="@../../../../css/fullpackstyling.css" text="+">
-                           <VBox.margin>
-                              <Insets bottom="10.0" left="100.0" right="5.0" top="10.0" />
-                           </VBox.margin>
-                           <font>
-                              <Font name="Berlin Sans FB Bold" size="35.0" />
-                           </font>
-                           <styleClass>
-                              <String fx:value="oval-layout" />
-                              <String fx:value="transparent" />
-                              <String fx:value="buttonEdit" />
-                           </styleClass>
-                        </Button>
-                     </children>
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="729.0" prefWidth="980.0" styleClass="transparent" stylesheets="@../../../../css/fullpackstyling.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.comics.view1.AuthorProfileControllerG">
+   <BorderPane fx:id="mainPane">
+      <center>
+          <HBox prefHeight="729.0" prefWidth="980.0">
+              <Pane prefHeight="649.0" prefWidth="457.0" stylesheets="@../../../../css/fullpackstyling.css">
+                  <HBox.margin>
+                      <Insets bottom="40.0" left="40.0" right="40.0" top="40.0" />
+                  </HBox.margin>
+                  <styleClass>
+                      <String fx:value="panes" />
+                      <String fx:value="oval-layout" />
+                      <String fx:value="glass" />
+                  </styleClass>
+                  <VBox prefHeight="649.0" prefWidth="460.0">
+                      <HBox alignment="CENTER" prefHeight="243.0" prefWidth="431.0">
+                          <VBox.margin>
+                              <Insets top="20.0" />
+                          </VBox.margin>
+                           <ImageView fitHeight="241.0" fitWidth="275.0" pickOnBounds="true" preserveRatio="true">
+                               <Image url="@../../../../img/flat-business-man-user-profile-avatar-icon-vector-4333097.jpg" />
+                           </ImageView>
+                      </HBox>
+                      <HBox alignment="CENTER" prefHeight="55.0" prefWidth="452.0">
+                          <Button fx:id="btnEdit" mnemonicParsing="false" onAction="#edit" prefHeight="63.0" prefWidth="165.0" stylesheets="@../../../../css/fullpackstyling.css" text="Edit">
+                              <font>
+                                  <Font name="Berlin Sans FB" size="24.0" />
+                              </font>
+                              <styleClass>
+                                  <String fx:value="oval-layout" />
+                                  <String fx:value="transparent" />
+                                  <String fx:value="buttonEdit" />
+                              </styleClass>
+                              <graphic>
+                                  <ImageView fitHeight="45.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true">
+                                      <Image url="@../../../../img/matita.png" />
+                                  </ImageView>
+                              </graphic>
+                              <HBox.margin>
+                                  <Insets />
+                              </HBox.margin>
+                          </Button>
+                      </HBox>
+                      <Label fx:id="lblName" alignment="CENTER" prefHeight="60.0" prefWidth="456.0" text="Anastasia Brinati">
+                          <font>
+                              <Font name="Berlin Sans FB" size="24.0" />
+                          </font>
+                          <VBox.margin>
+                              <Insets top="20.0" />
+                          </VBox.margin>
+                      </Label>
+                      <Label fx:id="lblUsername" alignment="CENTER" prefHeight="47.0" prefWidth="452.0" text="pinkiepiex">
+                          <font>
+                              <Font name="Berlin Sans FB" size="24.0" />
+                          </font>
+                      </Label>
+                      <Label alignment="CENTER" prefHeight="44.0" prefWidth="452.0" text="16-02-2000">
+                          <font>
+                              <Font name="Berlin Sans FB" size="24.0" />
+                          </font>
+                      </Label>
+                      <Label alignment="CENTER" prefHeight="39.0" prefWidth="452.0" text="Rome">
+                          <font>
+                              <Font name="Berlin Sans FB" size="24.0" />
+                          </font>
+                      </Label>
+                      <Label alignment="CENTER" prefHeight="46.0" prefWidth="452.0" text="Italy">
+                          <font>
+                              <Font name="Berlin Sans FB" size="24.0" />
+                          </font>
+                      </Label>
                   </VBox>
-               </children>
-            </Pane>
-            <Pane prefHeight="135.0" prefWidth="337.0" stylesheets="@../../../../css/fullpackstyling.css">
-               <styleClass>
-                  <String fx:value="panes" />
-                  <String fx:value="glass" />
-                  <String fx:value="oval-layout" />
-               </styleClass>
+              </Pane>
+              <VBox prefHeight="729.0" prefWidth="417.0">
                <children>
-                  <VBox prefHeight="127.0" prefWidth="337.0">
+                  <Pane prefHeight="135.0" prefWidth="337.0" stylesheets="@../../../../css/fullpackstyling.css">
+                     <styleClass>
+                        <String fx:value="panes" />
+                        <String fx:value="glass" />
+                        <String fx:value="oval-layout" />
+                     </styleClass>
+                     <VBox.margin>
+                        <Insets bottom="70.0" left="70.0" right="70.0" top="40.0" />
+                     </VBox.margin>
                      <children>
-                        <Label text="Want to add a new chapter?">
-                           <font>
-                              <Font name="Berlin Sans FB" size="18.0" />
-                           </font>
-                           <VBox.margin>
-                              <Insets left="20.0" top="10.0" />
-                           </VBox.margin>
-                        </Label>
-                        <Button alignment="CENTER" mnemonicParsing="false" prefHeight="91.0" prefWidth="91.0" stylesheets="@../../../../css/fullpackstyling.css" text="+">
-                           <VBox.margin>
-                              <Insets bottom="10.0" left="100.0" right="5.0" top="10.0" />
-                           </VBox.margin>
-                           <font>
-                              <Font name="Berlin Sans FB Bold" size="35.0" />
-                           </font>
-                           <styleClass>
-                              <String fx:value="oval-layout" />
-                              <String fx:value="transparent" />
-                              <String fx:value="buttonEdit" />
-                           </styleClass>
-                        </Button>
+                        <VBox prefHeight="127.0" prefWidth="337.0">
+                           <children>
+                              <Label text="Want to create a new series?">
+                                 <font>
+                                    <Font name="Berlin Sans FB" size="18.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets left="20.0" top="10.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <Button fx:id="btnNewSeries" alignment="CENTER" mnemonicParsing="false" onAction="#publishNewSerie" prefHeight="91.0" prefWidth="91.0" stylesheets="@../../../../css/fullpackstyling.css" text="+">
+                                 <VBox.margin>
+                                    <Insets bottom="10.0" left="100.0" right="5.0" top="10.0" />
+                                 </VBox.margin>
+                                 <font>
+                                    <Font name="Berlin Sans FB Bold" size="35.0" />
+                                 </font>
+                                 <styleClass>
+                                    <String fx:value="oval-layout" />
+                                    <String fx:value="transparent" />
+                                    <String fx:value="buttonEdit" />
+                                 </styleClass>
+                              </Button>
+                           </children>
+                        </VBox>
                      </children>
-                  </VBox>
-               </children>
-               <VBox.margin>
-                  <Insets bottom="70.0" left="70.0" right="70.0" top="70.0" />
-               </VBox.margin>
-            </Pane>
-            <Pane prefHeight="135.0" prefWidth="337.0" stylesheets="@../../../../css/fullpackstyling.css">
-               <styleClass>
-                  <String fx:value="panes" />
-                  <String fx:value="glass" />
-                  <String fx:value="oval-layout" />
-               </styleClass>
-               <children>
-                  <VBox prefHeight="127.0" prefWidth="337.0">
+                  </Pane>
+                  <Pane prefHeight="135.0" prefWidth="337.0" stylesheets="@../../../../css/fullpackstyling.css">
+                     <styleClass>
+                        <String fx:value="panes" />
+                        <String fx:value="glass" />
+                        <String fx:value="oval-layout" />
+                     </styleClass>
                      <children>
-                        <Label text="Want to create a new badge?">
-                           <font>
-                              <Font name="Berlin Sans FB" size="18.0" />
-                           </font>
-                           <VBox.margin>
-                              <Insets left="20.0" top="10.0" />
-                           </VBox.margin>
-                        </Label>
-                        <Button alignment="CENTER" mnemonicParsing="false" prefHeight="91.0" prefWidth="91.0" stylesheets="@../../../../css/fullpackstyling.css" text="+">
-                           <VBox.margin>
-                              <Insets bottom="10.0" left="100.0" right="5.0" top="10.0" />
-                           </VBox.margin>
-                           <font>
-                              <Font name="Berlin Sans FB Bold" size="35.0" />
-                           </font>
-                           <styleClass>
-                              <String fx:value="oval-layout" />
-                              <String fx:value="transparent" />
-                              <String fx:value="buttonEdit" />
-                           </styleClass>
-                        </Button>
+                        <VBox prefHeight="127.0" prefWidth="337.0">
+                           <children>
+                              <Label text="Want to add a new chapter?">
+                                 <font>
+                                    <Font name="Berlin Sans FB" size="18.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets left="20.0" top="10.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <Button alignment="CENTER" mnemonicParsing="false" prefHeight="91.0" prefWidth="91.0" stylesheets="@../../../../css/fullpackstyling.css" text="+">
+                                 <VBox.margin>
+                                    <Insets bottom="10.0" left="100.0" right="5.0" top="10.0" />
+                                 </VBox.margin>
+                                 <font>
+                                    <Font name="Berlin Sans FB Bold" size="35.0" />
+                                 </font>
+                                 <styleClass>
+                                    <String fx:value="oval-layout" />
+                                    <String fx:value="transparent" />
+                                    <String fx:value="buttonEdit" />
+                                 </styleClass>
+                              </Button>
+                           </children>
+                        </VBox>
                      </children>
-                  </VBox>
+                     <VBox.margin>
+                        <Insets bottom="70.0" left="70.0" right="70.0" top="70.0" />
+                     </VBox.margin>
+                  </Pane>
+                  <Pane prefHeight="135.0" prefWidth="337.0" stylesheets="@../../../../css/fullpackstyling.css">
+                     <styleClass>
+                        <String fx:value="panes" />
+                        <String fx:value="glass" />
+                        <String fx:value="oval-layout" />
+                     </styleClass>
+                     <children>
+                        <VBox prefHeight="127.0" prefWidth="337.0">
+                           <children>
+                              <Label text="Want to create a new badge?">
+                                 <font>
+                                    <Font name="Berlin Sans FB" size="18.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets left="20.0" top="10.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <Button alignment="CENTER" mnemonicParsing="false" prefHeight="91.0" prefWidth="91.0" stylesheets="@../../../../css/fullpackstyling.css" text="+">
+                                 <VBox.margin>
+                                    <Insets bottom="10.0" left="100.0" right="5.0" top="10.0" />
+                                 </VBox.margin>
+                                 <font>
+                                    <Font name="Berlin Sans FB Bold" size="35.0" />
+                                 </font>
+                                 <styleClass>
+                                    <String fx:value="oval-layout" />
+                                    <String fx:value="transparent" />
+                                    <String fx:value="buttonEdit" />
+                                 </styleClass>
+                              </Button>
+                           </children>
+                        </VBox>
+                     </children>
+                     <VBox.margin>
+                        <Insets bottom="40.0" left="70.0" right="70.0" top="70.0" />
+                     </VBox.margin>
+                  </Pane>
                </children>
-               <VBox.margin>
-                  <Insets bottom="40.0" left="70.0" right="70.0" top="70.0" />
-               </VBox.margin>
-            </Pane>
-         </children>
-        </VBox>
-    </HBox>
+              </VBox>
+          </HBox>
+      </center>
+   </BorderPane>
 </Pane>

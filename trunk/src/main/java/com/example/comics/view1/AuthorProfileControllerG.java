@@ -4,8 +4,11 @@ import com.example.comics.model.UserLogin;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.Pane;
+import tools.FxmlLoader;
 
-public class AuthorProfileController {
+public class AuthorProfileControllerG {
 
     @FXML
     private Button btnEdit;
@@ -13,6 +16,10 @@ public class AuthorProfileController {
     public Label lblName;
     @FXML
     public Label lblUsername;
+    @FXML
+    public Button btnNewSeries;
+    @FXML
+    private BorderPane mainPane;
 
     @FXML
     public void initialize(){
@@ -21,10 +28,17 @@ public class AuthorProfileController {
         btnEdit.setOnAction(actionEvent -> edit());
     }
 
+    @FXML
     public void edit(){
 
         ReaderHomeControllerG.getInstance().openSettings();
 
+    }
+
+    public void publishNewSerie(){
+        FxmlLoader object = new FxmlLoader();
+        Pane view = object.getPage("newseriesmodule");
+        mainPane.setCenter(view);
     }
 
 

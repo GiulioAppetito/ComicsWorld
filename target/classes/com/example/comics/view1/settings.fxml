@@ -35,11 +35,6 @@
                <Font name="Berlin Sans FB" size="18.0" />
             </font></Button>
          <Separator prefWidth="200.0" />
-         <Button fx:id="badgessettings" mnemonicParsing="false" onAction="#openMyBadgesSettings" prefHeight="58.0" prefWidth="185.0" styleClass="button2" text="My Badges">
-            <font>
-               <Font name="Berlin Sans FB" size="18.0" />
-            </font></Button>
-         <Separator prefWidth="200.0" />
          <Button fx:id="aboutussettings" mnemonicParsing="false" onAction="#openAboutUsSettings" prefHeight="58.0" prefWidth="185.0" styleClass="button2" text="About Us">
             <font>
                <Font name="Berlin Sans FB" size="18.0" />

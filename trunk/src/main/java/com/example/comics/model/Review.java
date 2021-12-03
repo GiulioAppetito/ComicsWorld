@@ -21,5 +21,4 @@ public class Review {
         this.username = username;
     }
 
-
 }

@@ -6,12 +6,20 @@ import java.util.Date;
 
 public abstract class Account {
 
+    //profile personal
     private String firstName;
     private String lastName;
-    private String username;
-    private String city;
     private Date birthday;
+
+    //profile basics
+    private String username;
     private ImageView proPic;
+
+    //profile private
+    private String city;
+    private String email;
+    private String password;
+
 
     public abstract String getRole();
 
@@ -38,6 +46,8 @@ public abstract class Account {
 
     public void setUsername(String username) {
         this.username = username;
+        //e va a cambiare anche su db
+        System.out.println(username);
     }
 
     public String getCity() {
@@ -64,4 +74,19 @@ public abstract class Account {
         this.proPic = proPic;
     }
 
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
 }

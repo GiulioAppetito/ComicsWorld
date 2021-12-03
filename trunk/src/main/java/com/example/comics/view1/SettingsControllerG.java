@@ -20,8 +20,6 @@ public class SettingsControllerG {
     @FXML
     private Button preferencessettings;
     @FXML
-    private Button badgessettings;
-    @FXML
     private Button aboutussettings;
 
     public void initialize(){
@@ -43,12 +41,6 @@ public class SettingsControllerG {
     public void openPreferencesSettings() {
         FxmlLoader object = new FxmlLoader();
         Pane view = object.getPage("preferencessettings");
-        mainPane.setCenter(view);
-    }
-
-    public void openMyBadgesSettings() {
-        FxmlLoader object = new FxmlLoader();
-        Pane view = object.getPage("badgessettings");
         mainPane.setCenter(view);
     }
 

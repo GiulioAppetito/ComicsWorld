@@ -4,7 +4,6 @@ import java.util.List;
 
 public class Reader extends Account{
 
-
     private List<Series> favourites;
     private List<Series> toRead;
     private List<Series> reading;

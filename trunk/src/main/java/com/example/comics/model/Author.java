@@ -5,6 +5,8 @@ import java.util.List;
 public class Author extends Account{
 
     private List<Series> publishedSeries;
+    private List<Badge> badges;
+    private List<Character> characters;
 
     private static final String ROLE = "author";
 
