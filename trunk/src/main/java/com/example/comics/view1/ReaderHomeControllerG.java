@@ -1,5 +1,7 @@
 package com.example.comics.view1;
 
+import com.example.comics.AccountObserver;
+import com.example.comics.AccountSubject;
 import com.example.comics.model.UserLogin;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -12,7 +14,7 @@ import tools.FxmlLoader;
 import java.io.IOException;
 import java.net.URL;
 
-public class ReaderHomeControllerG {
+public class ReaderHomeControllerG implements AccountObserver {
 
     @FXML
     private HBox userBox;
@@ -59,6 +61,7 @@ public class ReaderHomeControllerG {
     public static ReaderHomeControllerG getInstance(){
         if(instance==null){
             instance = new ReaderHomeControllerG();
+            AccountSubject.attach(instance);
         }
         return instance;
     }
@@ -211,4 +214,8 @@ public class ReaderHomeControllerG {
     }
 
 
+    @Override
+    public void update() {
+        lblName.setText(UserLogin.getAccount().getUsername());
+    }
 }

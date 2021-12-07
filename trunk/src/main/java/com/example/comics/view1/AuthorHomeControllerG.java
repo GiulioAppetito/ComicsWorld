@@ -1,5 +1,7 @@
 package com.example.comics.view1;
 
+import com.example.comics.AccountObserver;
+import com.example.comics.AccountSubject;
 import com.example.comics.model.UserLogin;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -14,7 +16,7 @@ import tools.FxmlLoader;
 import java.io.IOException;
 import java.net.URL;
 
-public class AuthorHomeControllerG {
+public class AuthorHomeControllerG implements AccountObserver {
 
     @FXML
     private HBox userBox;
@@ -57,6 +59,7 @@ public class AuthorHomeControllerG {
     public static synchronized AuthorHomeControllerG getInstance() {
         if(instance == null){
             instance = new AuthorHomeControllerG();
+            AccountSubject.attach(instance);
         }
         return instance;
     }
@@ -207,5 +210,10 @@ public class AuthorHomeControllerG {
         btnTop.setStyle(STYLE);
         btnMyBadges.setStyle(STYLE);
         btnStatistics.setStyle(STYLE);
+    }
+
+    @Override
+    public void update() {
+        lblName.setText(UserLogin.getAccount().getUsername());
     }
 }

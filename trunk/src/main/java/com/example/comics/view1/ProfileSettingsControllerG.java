@@ -1,6 +1,8 @@
 package com.example.comics.view1;
 
+import com.example.comics.AccountSubject;
 import com.example.comics.CustomizeProfileController;
+import com.example.comics.AccountObserver;
 import com.example.comics.fagioli.ProfileBean;
 import com.example.comics.model.UserLogin;
 import javafx.fxml.FXML;
@@ -10,7 +12,7 @@ import javafx.scene.control.TextArea;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
 
-public class ProfileSettingsControllerG {
+public class ProfileSettingsControllerG implements AccountObserver {
 
     @FXML
     private Button btnCloseEditorProPic;
@@ -48,6 +50,8 @@ public class ProfileSettingsControllerG {
 
         lblUsername.setText(UserLogin.getAccount().getUsername());
         //stessa cosa con la propic
+
+        AccountSubject.attach(this);
     }
 
     @FXML
@@ -81,8 +85,13 @@ public class ProfileSettingsControllerG {
 
         CustomizeProfileController customizeProfileController = new CustomizeProfileController();
         customizeProfileController.changeUsername(profileBean);
-
-        initialize();
     }
 
+    @Override
+    public void update() {
+        paneEditUsername.setVisible(false);
+        paneEditProPic.setVisible(false);
+
+        lblUsername.setText(UserLogin.getAccount().getUsername());
+    }
 }
