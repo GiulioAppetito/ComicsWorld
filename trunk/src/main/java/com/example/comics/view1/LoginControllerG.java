@@ -74,6 +74,8 @@ public class LoginControllerG {
                 login(event);
             } catch (IOException e) {
                 e.printStackTrace();
+            } catch (Exception e) {
+                e.printStackTrace();
             }
 
         });
@@ -108,7 +110,7 @@ public class LoginControllerG {
     }
 
 
-    public void login(ActionEvent event) throws IOException {
+    public void login(ActionEvent event) throws Exception {
         LoginBean loginBean = new LoginBean();
 
         try {

@@ -81,7 +81,7 @@ public class ChapterControllerG {
         for(i=0; i<nameList.size(); i++){
             Review review = new Review();
             review.setComment(commentList.get(i));
-            review.setUsername(nameList.get(i));
+            //review.setUsername(nameList.get(i));
             //comic.setImageSrc(null);
             lr.add(review);
         }

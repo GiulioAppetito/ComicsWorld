@@ -1,5 +1,7 @@
 package com.example.comics.model;
 
+import com.example.comics.model.dao.AccountDAO;
+
 public class UserLogin{
 
     private static UserLogin instance;
@@ -18,18 +20,22 @@ public class UserLogin{
         return account;
     }
 
-    public boolean login(String username, String password){
+    public boolean login(String email, String password) throws Exception {
 
-        //soluzione polimorfa
-        if(Math.random() > 0.5){
+        AccountDAO dao = new AccountDAO();
+        String role;
+        role = dao.verifyCredentials(email,password);
+
+        if(role.equals("author")){
+            account = new Author();
+            account.setFirstName("Giulio");
+            account.setLastName("Appetito");
+        }else if(role.equals("reader")){
             account = new Reader();
             account.setFirstName("Anastasia");
             account.setLastName("Brinati");
-            return true;
         }
-        account = new Author();
-        account.setFirstName("Giulio");
-        account.setLastName("Appetito");
+
         return true;
 
     }

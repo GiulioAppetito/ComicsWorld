@@ -2,12 +2,15 @@ package com.example.comics.model;
 
 import javafx.scene.image.ImageView;
 
+import java.util.List;
+
 public class Series {
 	
 	private String name;
 	private ImageView cover;
 	private String author;
 	private String publishingHouse;
+	private List<Chapter> chapters;
 
 	
 	

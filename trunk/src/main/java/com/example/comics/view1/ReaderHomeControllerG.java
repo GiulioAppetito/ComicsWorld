@@ -28,8 +28,6 @@ public class ReaderHomeControllerG implements AccountObserver {
     @FXML
     private Button btnFav;
 
-    @FXML
-    private Button btnConverter;
 
     @FXML
     private Button btnReading;
@@ -83,7 +81,6 @@ public class ReaderHomeControllerG implements AccountObserver {
         btnSettings.setOnAction(event -> openSettings());
         btnTop.setOnAction(event -> openTop());
         btnToRead.setOnAction(event -> openToRead());
-        btnConverter.setOnAction(event-> openConverter());
         btnReading.setOnAction(event -> openReading());
         userBox.setOnMouseClicked(event -> openProfile());
         homeIcon.setOnMouseClicked(event -> {
@@ -176,15 +173,6 @@ public class ReaderHomeControllerG implements AccountObserver {
 
     }
 
-    public void openConverter() {
-        FxmlLoader object = new FxmlLoader();
-        Pane view = object.getPage("converter");
-        mainPane.setCenter(view);
-
-        resetButtons();
-        btnConverter.setStyle(STYLE2);
-
-    }
 
     public void openFeed() throws IOException {
 
@@ -210,7 +198,7 @@ public class ReaderHomeControllerG implements AccountObserver {
         btnReading.setStyle(STYLE);
         btnTop.setStyle(STYLE);
         btnToRead.setStyle(STYLE);
-        btnConverter.setStyle(STYLE);
+
     }
 
 

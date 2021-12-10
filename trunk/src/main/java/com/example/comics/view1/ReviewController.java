@@ -18,7 +18,7 @@ public class ReviewController {
     private Text txtComment;
 
     public void setData(Review review) {
-        lblUsername.setText(review.getUsername());
+        //lblUsername.setText(review.getUsername());
         txtComment.setText(review.getComment());
 
     }
