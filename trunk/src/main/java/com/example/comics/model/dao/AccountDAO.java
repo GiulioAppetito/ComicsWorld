@@ -4,6 +4,8 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.InputStream;
 import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class AccountDAO {
     private static final String USER = "anastasia";
@@ -16,13 +18,10 @@ public class AccountDAO {
 
 
 
-    public String verifyCredentials(String email,String password) throws Exception {
+    public String verifyCredentials(String credential,String password) throws Exception {
 
         //dichiarazioni
         Statement stmt=null;
-        Statement stmtCourses = null;
-        Statement stmtEvents = null;
-        Statement stmtCourts = null;
         Connection conn=null;
         String role=null;
 
@@ -31,50 +30,28 @@ public class AccountDAO {
             conn= DriverManager.getConnection(DB_URL,USER,PASS);
 
             stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE,ResultSet.CONCUR_READ_ONLY);
-            ResultSet rs = Queries.checkSignedUserByEmail(stmt, email);
+            ResultSet rs = Queries.checkSignedUserByEmail(stmt, credential);
 
             if (!rs.first()){
-                Exception e = new Exception("No username Found matching with email: "+email);
+                Exception e = new Exception("No username Found matching with email or username: "+ credential);
                 throw e;
             }
-
             rs.first();
             do{
                 //verificare se la password � corretta
                 String foundPassword=rs.getString("password");
                 if(foundPassword.equals(password)) {
                     role = rs.getString("role");
-                    if(role.equals("reader")) {
-
-                        //setting the user profile
-                        //String nome = rs.getString("firstname");
-                        //String cognome = rs.getString("lastname");
-                        //String email = rs.getString("email");
-                    }
-                    else {
-
-                    }
-
                 }
 
 
             }while(rs.next());
-
-
             return role;
 
         }finally {
-
-
             try {
                 if (stmt != null)
                     stmt.close();
-                if (stmtCourses != null)
-                    stmtCourses.close();
-                if (stmtCourts != null)
-                    stmtCourts.close();
-                if (stmtEvents != null)
-                    stmtEvents.close();
             } catch (SQLException se2) {
             }
             try {
@@ -89,5 +66,101 @@ public class AccountDAO {
 
     }
 
+    public void changeUsername(String newName, String newSurname,String oldUsername, String newUsername){
 
+        Statement stmt=null;
+        Connection conn=null;
+
+        System.out.println("3. [DAO] changeUsername contains oldUsername: "+oldUsername);
+
+        try {
+            Class.forName(DRIVER_CLASS_NAME);
+            conn= DriverManager.getConnection(DB_URL,USER,PASS);
+
+            stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE,ResultSet.CONCUR_READ_ONLY);
+            Queries.updateCredentials(stmt, newName, newSurname, oldUsername, newUsername);
+
+
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                if (stmt != null)
+                    stmt.close();
+            } catch (SQLException se2) {
+            }
+            try {
+                if (conn != null)
+                    conn.close();
+            } catch (SQLException se) {
+                se.printStackTrace();
+            }
+
+        }
+
+    }
+
+    public ArrayList<String> retreiveCredentials(String username) {
+        Statement stmt=null;
+        Connection conn=null;
+
+        String foundFirstName;
+        String foundLastName;
+        String foundUsername;
+
+        ArrayList<String> credentialList = new ArrayList<String>();
+
+
+        try {
+            Class.forName(DRIVER_CLASS_NAME);
+            conn= DriverManager.getConnection(DB_URL,USER,PASS);
+
+            stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE,ResultSet.CONCUR_READ_ONLY);
+            ResultSet rs = Queries.retreiveCredentials(stmt,username);
+
+            if (!rs.first()){
+                Exception e = new Exception("No username Found matching with email or username: "+ username);
+                throw e;
+            }
+            rs.first();
+
+            //verificare se la password � corretta
+             foundFirstName = rs.getString("firstname");
+             credentialList.add(foundFirstName);
+             foundLastName = rs.getString("lastname");
+            credentialList.add(foundLastName);
+             foundUsername = rs.getString("username");
+            credentialList.add(foundUsername);
+
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                if (stmt != null)
+                    stmt.close();
+            } catch (SQLException se2) {
+            }
+            try {
+                if (conn != null)
+                    conn.close();
+            } catch (SQLException se) {
+                se.printStackTrace();
+            }
+
+
+        }
+        return credentialList;
+
+
+
+
+    }
 }

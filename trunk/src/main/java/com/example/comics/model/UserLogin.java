@@ -28,16 +28,16 @@ public class UserLogin{
 
         if(role.equals("author")){
             account = new Author();
-            account.setFirstName("Giulio");
-            account.setLastName("Appetito");
+
         }else if(role.equals("reader")){
             account = new Reader();
-            account.setFirstName("Anastasia");
-            account.setLastName("Brinati");
+
         }
+        account.init(email);
 
         return true;
 
     }
+
 
 }
