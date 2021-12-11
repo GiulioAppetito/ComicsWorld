@@ -216,6 +216,15 @@
     -fx-background-radius: 25;
 }
 
+
+.scroll-pane{
+    -fx-background-color:transparent;
+}
+
+.scroll-pane > .viewport {
+    -fx-background-color: transparent;
+}
+
 /*.combo-box
 {
     -fx-background-color : #141124;

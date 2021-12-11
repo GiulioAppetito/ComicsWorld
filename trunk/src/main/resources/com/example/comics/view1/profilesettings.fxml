@@ -85,9 +85,9 @@
          </styleClass>
       </Pane>
    </HBox>
-   <Pane fx:id="paneEditProPic" layoutX="68.0" layoutY="153.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="369.0" prefWidth="474.0" styleClass="linear-grad" stylesheets="@../../../../css/fullpackstyling.css">
+   <Pane fx:id="paneEditProPic" layoutX="68.0" layoutY="153.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="369.0" prefWidth="464.0" styleClass="linear-grad" stylesheets="@../../../../css/fullpackstyling.css">
       <children>
-         <VBox prefHeight="369.0" prefWidth="474.0">
+         <VBox prefHeight="369.0" prefWidth="464.0">
             <children>
                <HBox>
                   <VBox.margin>
@@ -120,7 +120,7 @@
                      </Button>
                   </children>
                </HBox>
-               <TextArea minHeight="-Infinity" minWidth="-Infinity" prefHeight="194.0" prefWidth="434.0">
+               <TextArea minHeight="-Infinity" minWidth="-Infinity" prefHeight="194.0" prefWidth="418.0">
                   <VBox.margin>
                      <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
                   </VBox.margin>
@@ -147,9 +147,9 @@
          </VBox>
       </children>
    </Pane>
-   <Pane fx:id="paneEditUsername" layoutX="68.0" layoutY="218.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="227.0" prefWidth="474.0" styleClass="linear-grad" stylesheets="@../../../../css/fullpackstyling.css">
+   <Pane fx:id="paneEditUsername" layoutX="68.0" layoutY="218.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="227.0" prefWidth="464.0" styleClass="linear-grad" stylesheets="@../../../../css/fullpackstyling.css">
       <children>
-         <VBox prefHeight="227.0" prefWidth="474.0">
+         <VBox prefHeight="227.0" prefWidth="464.0">
             <children>
                <HBox>
                   <VBox.margin>
@@ -182,7 +182,7 @@
                      </Button>
                   </children>
                </HBox>
-               <TextArea fx:id="taNewUsername" minHeight="-Infinity" minWidth="-Infinity" prefHeight="49.0" prefWidth="434.0">
+               <TextArea fx:id="taNewUsername" minHeight="-Infinity" minWidth="-Infinity" prefHeight="50.0" prefWidth="419.0">
                   <VBox.margin>
                      <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
                   </VBox.margin>

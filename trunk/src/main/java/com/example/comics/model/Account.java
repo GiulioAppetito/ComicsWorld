@@ -81,6 +81,7 @@ public abstract class Account extends AccountSubject {
 
     public void setEmail(String email) {
         this.email = email;
+        System.out.println(email);
     }
 
     public String getPassword() {
