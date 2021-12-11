@@ -1,9 +1,5 @@
 package com.example.comics.model.dao;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.InputStream;
-import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -22,7 +18,7 @@ public class Queries {
 
     public static ResultSet checkSignedUserByEmail(Statement stmt, String email) throws SQLException {
 
-        String sql = "SELECT * FROM users WHERE email = '" + email + "';";
+        String sql = "SELECT * FROM users WHERE email = '" + email + "' or username = '" + email + "';";
 
         System.out.println(sql);
         return stmt.executeQuery(sql);
@@ -38,6 +34,13 @@ public class Queries {
         System.out.println(sql);
         return stmt.executeQuery(sql);
     }
+
+
+
+
+
+
+    //query to add a new Course to the DB
 
     //query to insert a new user
     public static int addProfile(Statement stmt,String name, String surname, String username, String email,String password,String type,String location) throws SQLException {
@@ -66,10 +69,17 @@ public class Queries {
     }
 
     //per il singolo utente
-    public static int updateCredentials(Statement stmt, String newName,String newSurname,String newUsername,String oldUsername) throws SQLException {
-        String updateStatement = String.format("UPDATE users set name='%s', surname='%s', username='%s' WHERE username = '%s' ", newName,newSurname,newUsername,oldUsername);
+    public static void updateCredentials(Statement stmt, String newName, String newSurname, String oldUsername, String newUsername) throws SQLException {
+        String updateStatement = String.format("UPDATE users set firstname='%s', lastname='%s', username='%s' WHERE username = '%s' ", newName,newSurname,newUsername,oldUsername);
         System.out.println(updateStatement);
-        return stmt.executeUpdate(updateStatement);
+        stmt.executeUpdate(updateStatement);
+    }
+
+    public static ResultSet retreiveCredentials(Statement stmt, String username) throws SQLException {
+        String query = String.format("SELECT * FROM users WHERE username = '%s'", username);
+        System.out.println(query);
+        return stmt.executeQuery(query);
+
     }
 
     public static int updateCredentialsNoUsername(Statement stmt, String newName,String newSurname,String oldUsername) throws SQLException {
