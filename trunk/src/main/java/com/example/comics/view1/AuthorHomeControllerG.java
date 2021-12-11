@@ -68,7 +68,7 @@ public class AuthorHomeControllerG implements AccountObserver {
 
         openFeed();
 
-        lblName.setText(UserLogin.getAccount().getFirstName());
+        lblName.setText(UserLogin.getAccount().getUsername());
 
         btnMySeries.setOnAction(event -> openMySeries());
         btnCategories.setOnAction(event -> {

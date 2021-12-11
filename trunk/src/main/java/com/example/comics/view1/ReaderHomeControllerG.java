@@ -68,7 +68,7 @@ public class ReaderHomeControllerG implements AccountObserver {
 
         openFeed();
 
-        lblName.setText(UserLogin.getAccount().getFirstName());
+        lblName.setText(UserLogin.getAccount().getUsername());
 
         btnFav.setOnAction(event -> openFavourites());
         btnCategories.setOnAction(event -> {
