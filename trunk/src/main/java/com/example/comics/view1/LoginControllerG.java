@@ -1,7 +1,9 @@
 package com.example.comics.view1;
 
 import com.example.comics.LoginController;
+import com.example.comics.RegistrationController;
 import com.example.comics.fagioli.LoginBean;
+import com.example.comics.fagioli.RegistrationBean;
 import com.example.comics.fagioli.WrongCredentialException;
 import com.example.comics.model.UserLogin;
 import javafx.event.ActionEvent;
@@ -9,9 +11,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.PasswordField;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
@@ -25,6 +25,8 @@ public class LoginControllerG {
 
     @FXML
     public Button btnLogin;
+    @FXML
+    private Label errorPaneLabel;
     @FXML
     public Button btnCancel;
     @FXML
@@ -59,6 +61,11 @@ public class LoginControllerG {
     private TextField textFieldSurname;
     @FXML
     private TextField textFieldUsername;
+    @FXML
+    private RadioButton radioBtnReader;
+
+    @FXML
+    private RadioButton radioBtnAuthor;
 
 
     public LoginControllerG(){
@@ -91,16 +98,56 @@ public class LoginControllerG {
         loginPane.setVisible(false);
         registrationPane.setVisible(true);
     }
+
+    public void clickRegisterButton(){
+
+        RegistrationBean registrationBean = new RegistrationBean();
+
+        registrationBean.setFirstName(textFieldName.getText());
+        registrationBean.setLastName(textFieldSurname.getText());
+        registrationBean.setUsername(textFieldUsername.getText());
+        registrationBean.setEmail(textFieldEmail.getText());
+        registrationBean.setPassword(textFieldPassword.getText());
+
+        if(radioBtnAuthor.isSelected()){
+            registrationBean.setRole("author");
+        }else if(radioBtnReader.isSelected()){
+            registrationBean.setRole("reader");
+        }
+
+        RegistrationController registrationController = new RegistrationController();
+        if(registrationController.registerNewAccount(registrationBean) == false){
+            //registrazione fallita
+            errorPaneLabel.setText("Username already exists!");
+            textFieldUsername.setText("");
+            errorPane.setVisible(true);
+        }else{
+            clickLogin();
+        }
+
+
+
+    }
+
+
     public void clickLogin(){
         loginPane.setVisible(true);
         registrationPane.setVisible(false);
     }
 
+    public void authorSelected(){
+        radioBtnReader.setSelected(false);
+    }
+
+    public void readerSelected(){
+        radioBtnAuthor.setSelected(false);
+    }
 
     public void clickCancel() {
         tfPassword.setText("");
         tfEmail.setText("");
     }
+
     public void cancelForm(){
         textFieldName.setText("");
         textFieldSurname.setText("");
@@ -108,7 +155,6 @@ public class LoginControllerG {
         textFieldEmail.setText("");
         textFieldPassword.setText("");
     }
-
 
     public void login(ActionEvent event) throws Exception {
         LoginBean loginBean = new LoginBean();

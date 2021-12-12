@@ -80,8 +80,10 @@ public class AccountDAO {
             Queries.updateCredentials(stmt, newName, newSurname, oldUsername, newUsername);
 
 
-        } catch (SQLException throwables) {
-            throwables.printStackTrace();
+        }
+        catch (SQLException throwables) {
+            System.out.println("ECCEZIONE REGISTRAZIONE");
+
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         } catch (Exception e) {
@@ -201,5 +203,34 @@ public class AccountDAO {
 
 
 
+    }
+
+    public void registerNewAccount(String firstName, String lastName, String username, String email, String password, String role) throws AlreadyUsedUsernameException{
+        Statement stmt=null;
+        Connection conn=null;
+
+        try {
+            conn=DriverManager.getConnection(DB_URL,USER,PASS);
+            stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE,ResultSet.CONCUR_READ_ONLY);
+            Queries.addProfile(stmt, firstName, lastName, username, email, password,role);
+
+        }
+        catch (SQLException se) {
+            se.printStackTrace();
+        }
+        finally {
+            try {
+                if (stmt != null)
+                    stmt.close();
+            } catch (SQLException se2) {
+            }
+            try {
+                if (conn != null)
+                    conn.close();
+            } catch (SQLException se) {
+                se.printStackTrace();
+            }
+
+        }
     }
 }

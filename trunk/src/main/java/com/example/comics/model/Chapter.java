@@ -3,6 +3,7 @@ package com.example.comics.model;
 import javafx.scene.image.ImageView;
 import javafx.scene.text.Text;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -14,7 +15,7 @@ public class Chapter {
     private List<Review> reviews;
     private ImageView cover;
     private Text description;
-
+    private ArrayList<Character> characters = new ArrayList<Character>();
     public String getName() {
         return name;
     }
@@ -61,5 +62,13 @@ public class Chapter {
 
     public void setDescription(Text description) {
         this.description = description;
+    }
+
+    public ArrayList<Character> getCharacters() {
+        return characters;
+    }
+
+    public void setCharacters(ArrayList<Character> characters) {
+        this.characters = characters;
     }
 }

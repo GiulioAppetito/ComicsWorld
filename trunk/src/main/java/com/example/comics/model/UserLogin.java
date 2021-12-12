@@ -1,6 +1,8 @@
 package com.example.comics.model;
 
+import com.example.comics.fagioli.RegistrationBean;
 import com.example.comics.model.dao.AccountDAO;
+import com.example.comics.model.dao.AlreadyUsedUsernameException;
 
 public class UserLogin{
 
@@ -40,4 +42,8 @@ public class UserLogin{
     }
 
 
+    public void register(String firstName, String lastName, String username, String email, String password, String role) throws AlreadyUsedUsernameException {
+        AccountDAO dao = new AccountDAO();
+        dao.registerNewAccount(firstName,lastName,username,email,password,role);
+    }
 }

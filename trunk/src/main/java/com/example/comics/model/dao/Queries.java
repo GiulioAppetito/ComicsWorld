@@ -2,6 +2,7 @@ package com.example.comics.model.dao;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.SQLIntegrityConstraintViolationException;
 import java.sql.Statement;
 
 public class Queries {
@@ -152,5 +153,16 @@ conn.commit();
     }
 
 
-
+    public static void addProfile(Statement stmt, String firstName, String lastName, String username, String email, String password, String role) throws AlreadyUsedUsernameException {
+        try{
+            String insertStatement = String.format("INSERT INTO `users`(firstname,lastname,username,email,password,role) VALUES ('%s','%s','%s','%s','%s','%s')", firstName,lastName,username,email,password,role);
+            System.out.println(insertStatement);
+             stmt.executeUpdate(insertStatement);
+        }
+        catch (SQLIntegrityConstraintViolationException e){
+            throw new AlreadyUsedUsernameException();
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+    }
 }
