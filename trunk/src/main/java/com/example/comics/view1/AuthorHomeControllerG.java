@@ -214,6 +214,6 @@ public class AuthorHomeControllerG implements AccountObserver {
 
     @Override
     public void update() {
-        lblName.setText(UserLogin.getAccount().getFirstName());
+        lblName.setText(UserLogin.getAccount().getUsername());
     }
 }

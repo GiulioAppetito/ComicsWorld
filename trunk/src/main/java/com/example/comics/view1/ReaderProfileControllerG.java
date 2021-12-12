@@ -1,5 +1,7 @@
 package com.example.comics.view1;
 
+import com.example.comics.AccountObserver;
+import com.example.comics.AccountSubject;
 import com.example.comics.model.Badge;
 import com.example.comics.model.UserLogin;
 import javafx.fxml.FXML;
@@ -13,7 +15,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ReaderProfileControllerG {
+public class ReaderProfileControllerG implements AccountObserver {
 
 
     @FXML
@@ -33,6 +35,7 @@ public class ReaderProfileControllerG {
     public void initialize() {
         lblName.setText(UserLogin.getAccount().getFirstName());
         lblUsername.setText(UserLogin.getAccount().getLastName());
+        AccountSubject.attach(this);
 
         loadBadges();
         loadFavouriteCharacter();
@@ -92,4 +95,9 @@ public class ReaderProfileControllerG {
         //TO-DO
     }
 
+    @Override
+    public void update() {
+        lblName.setText(UserLogin.getAccount().getFirstName());
+        lblUsername.setText(UserLogin.getAccount().getUsername());
+    }
 }

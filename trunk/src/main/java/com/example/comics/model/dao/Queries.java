@@ -6,6 +6,32 @@ import java.sql.Statement;
 
 public class Queries {
 
+
+    public static void updateCredentials(Statement stmt, String newName, String newSurname, String oldUsername, String newUsername) throws SQLException {
+        String updateStatement = String.format("UPDATE users set firstname='%s', lastname='%s', username='%s' WHERE username = '%s' ", newName,newSurname,newUsername,oldUsername);
+        System.out.println(updateStatement);
+        stmt.executeUpdate(updateStatement);
+    }
+
+    public static ResultSet retreiveCredentials(Statement stmt, String username) throws SQLException {
+        String query = String.format("SELECT * FROM users WHERE username = '%s'", username);
+        System.out.println(query);
+        return stmt.executeQuery(query);
+
+    }
+
+    public static void updateEmail(Statement stmt, String newEmail, String username) throws SQLException {
+        String updateStatement = String.format("UPDATE users set email='%s' WHERE username = '%s' ", newEmail, username);
+        System.out.println(updateStatement);
+        stmt.executeUpdate(updateStatement);
+    }
+
+
+
+
+    //veche query
+
+
     //query to check if a user is signed or not
     public static ResultSet checkSignedUserByUsername(Statement stmt, String username) throws SQLException {
 
@@ -68,31 +94,11 @@ public class Queries {
         return stmt.executeQuery(sql);
     }
 
-    //per il singolo utente
-    public static void updateCredentials(Statement stmt, String newName, String newSurname, String oldUsername, String newUsername) throws SQLException {
-        String updateStatement = String.format("UPDATE users set firstname='%s', lastname='%s', username='%s' WHERE username = '%s' ", newName,newSurname,newUsername,oldUsername);
-        System.out.println(updateStatement);
-        stmt.executeUpdate(updateStatement);
-    }
-
-    public static ResultSet retreiveCredentials(Statement stmt, String username) throws SQLException {
-        String query = String.format("SELECT * FROM users WHERE username = '%s'", username);
-        System.out.println(query);
-        return stmt.executeQuery(query);
-
-    }
 
     public static int updateCredentialsNoUsername(Statement stmt, String newName,String newSurname,String oldUsername) throws SQLException {
         String updateStatement = String.format("UPDATE users set name='%s', surname='%s' WHERE username = '%s' ", newName,newSurname,oldUsername);
         System.out.println(updateStatement);
         return stmt.executeUpdate(updateStatement);
-    }
-
-    public static int updateEmail(Statement stmt,String newEmail,String username) throws SQLException {
-        String updateStatement = String.format("UPDATE users set email='%s' WHERE username = '%s' ",newEmail,username);
-        System.out.println(updateStatement);
-        return stmt.executeUpdate(updateStatement);
-
     }
 
     public static int updatePassword(Statement stmt,String newPassword,String username) throws SQLException {

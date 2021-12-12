@@ -32,7 +32,13 @@ public abstract class Account extends AccountSubject {
     }
 
     public void setFirstName(String firstName) {
+        String oldFirstName = this.firstName;
+        System.out.println("2. [ACCOUNT] Parameter old firstName : "+ oldFirstName);
         this.firstName = firstName;
+        //e va a cambiare anche su db
+        AccountDAO accountDAO = new AccountDAO();
+        accountDAO.changeCredentials(this.firstName, this.lastName, this.username, this.username);
+        System.out.println("Called DAO with username : "+ this.username);
     }
 
     public String getLastName() {
@@ -40,7 +46,13 @@ public abstract class Account extends AccountSubject {
     }
 
     public void setLastName(String lastName) {
+        String oldLastName = this.lastName;
+        System.out.println("2. [ACCOUNT] Parameter old lastName : "+ oldLastName);
         this.lastName = lastName;
+        //e va a cambiare anche su db
+        AccountDAO accountDAO = new AccountDAO();
+        accountDAO.changeCredentials(this.firstName, this.lastName, this.username, this.username);
+        System.out.println("Called DAO with username : "+ this.username);
     }
 
     public String getUsername() {
@@ -53,7 +65,7 @@ public abstract class Account extends AccountSubject {
         this.username = username;
         //e va a cambiare anche su db
         AccountDAO accountDAO = new AccountDAO();
-        accountDAO.changeUsername(this.firstName, this.lastName, oldUsername,this.username);
+        accountDAO.changeCredentials(this.firstName, this.lastName, oldUsername,this.username);
         System.out.println("Called DAO with username : "+ this.username);
     }
 
@@ -86,8 +98,13 @@ public abstract class Account extends AccountSubject {
     }
 
     public void setEmail(String email) {
+        String oldEmail = this.email;
+        System.out.println("2. [ACCOUNT] Parameter old email : "+ oldEmail);
         this.email = email;
-        System.out.println(email);
+        //e va a cambiare anche su db
+        AccountDAO accountDAO = new AccountDAO();
+        accountDAO.changeEmail(this.email, this.username);
+        System.out.println("Called DAO with username : "+ this.username);
     }
 
     public String getPassword() {
@@ -105,7 +122,6 @@ public abstract class Account extends AccountSubject {
         this.firstName = credentials.get(0);
         this.lastName = credentials.get(1);
         this.username = credentials.get(2);
-
-
+        this.email = credentials.get(3);
     }
 }

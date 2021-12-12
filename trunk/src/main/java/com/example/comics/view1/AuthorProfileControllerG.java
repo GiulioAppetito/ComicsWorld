@@ -1,5 +1,7 @@
 package com.example.comics.view1;
 
+import com.example.comics.AccountObserver;
+import com.example.comics.AccountSubject;
 import com.example.comics.model.UserLogin;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -8,7 +10,7 @@ import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.Pane;
 import tools.FxmlLoader;
 
-public class AuthorProfileControllerG {
+public class AuthorProfileControllerG implements AccountObserver {
 
     @FXML
     private Button btnEdit;
@@ -26,6 +28,7 @@ public class AuthorProfileControllerG {
         lblName.setText(UserLogin.getAccount().getFirstName());
         lblUsername.setText(UserLogin.getAccount().getLastName());
         btnEdit.setOnAction(actionEvent -> edit());
+        AccountSubject.attach(this);
     }
 
     @FXML
@@ -42,5 +45,9 @@ public class AuthorProfileControllerG {
     }
 
 
-
+    @Override
+    public void update() {
+        lblName.setText(UserLogin.getAccount().getFirstName());
+        lblUsername.setText(UserLogin.getAccount().getUsername());
+    }
 }

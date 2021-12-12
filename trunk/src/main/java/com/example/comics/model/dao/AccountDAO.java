@@ -66,12 +66,11 @@ public class AccountDAO {
 
     }
 
-    public void changeUsername(String newName, String newSurname,String oldUsername, String newUsername){
+    public void changeCredentials(String newName, String newSurname, String newUsername, String oldUsername){
 
         Statement stmt=null;
         Connection conn=null;
 
-        System.out.println("3. [DAO] changeUsername contains oldUsername: "+oldUsername);
 
         try {
             Class.forName(DRIVER_CLASS_NAME);
@@ -104,6 +103,43 @@ public class AccountDAO {
 
     }
 
+    public void changeEmail(String newEmail, String username){
+
+        Statement stmt=null;
+        Connection conn=null;
+
+
+        try {
+            Class.forName(DRIVER_CLASS_NAME);
+            conn= DriverManager.getConnection(DB_URL,USER,PASS);
+
+            stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE,ResultSet.CONCUR_READ_ONLY);
+            Queries.updateEmail(stmt, newEmail, username);
+
+
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                if (stmt != null)
+                    stmt.close();
+            } catch (SQLException se2) {
+            }
+            try {
+                if (conn != null)
+                    conn.close();
+            } catch (SQLException se) {
+                se.printStackTrace();
+            }
+
+        }
+
+    }
+
     public ArrayList<String> retreiveCredentials(String username) {
         Statement stmt=null;
         Connection conn=null;
@@ -111,6 +147,7 @@ public class AccountDAO {
         String foundFirstName;
         String foundLastName;
         String foundUsername;
+        String foundEmail;
 
         ArrayList<String> credentialList = new ArrayList<String>();
 
@@ -132,9 +169,11 @@ public class AccountDAO {
              foundFirstName = rs.getString("firstname");
              credentialList.add(foundFirstName);
              foundLastName = rs.getString("lastname");
-            credentialList.add(foundLastName);
+             credentialList.add(foundLastName);
              foundUsername = rs.getString("username");
-            credentialList.add(foundUsername);
+             credentialList.add(foundUsername);
+             foundEmail = rs.getString("email");
+             credentialList.add(foundEmail);
 
         } catch (SQLException throwables) {
             throwables.printStackTrace();
