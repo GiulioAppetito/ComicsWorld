@@ -4,49 +4,55 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" stylesheets="@../../../../css/fullpackstyling.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.comics.view1.AboutUsSettingsController">
-   <Label alignment="CENTER" prefHeight="190.0" prefWidth="600.0" text="About Us">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" stylesheets="@../../../../css/fullpackstyling.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.comics.view1.AboutUsSettingsController">
+   <Label alignment="CENTER" prefHeight="132.0" prefWidth="600.0" text="About Us">
       <font>
          <Font name="Berlin Sans FB" size="24.0" />
       </font></Label>
-   <VBox layoutX="109.0" layoutY="200.0">
+   <HBox layoutX="35.0" layoutY="119.0" prefHeight="223.0" prefWidth="533.0">
       <children>
-         <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
-            <Image url="@../../../../img/flat-business-woman-user-profile-avatar-icon-vector-4334111.jpg" />
-         </ImageView>
-         <Label alignment="CENTER" prefHeight="21.0" prefWidth="150.0" text="Anastasia Brinati">
-            <font>
-               <Font name="Berlin Sans FB" size="18.0" />
-            </font>
-         </Label>
-         <Label alignment="CENTER" prefHeight="21.0" prefWidth="150.0" text="Tor Vergata ">
-            <font>
-               <Font name="Berlin Sans FB" size="18.0" />
-            </font>
-         </Label>
+         <VBox prefHeight="206.0" prefWidth="151.0">
+            <children>
+               <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                  <Image url="@../../../../img/flat-business-woman-user-profile-avatar-icon-vector-4334111.jpg" />
+               </ImageView>
+               <Label alignment="CENTER" prefHeight="21.0" prefWidth="150.0" text="Anastasia Brinati">
+                  <font>
+                     <Font name="Berlin Sans FB" size="18.0" />
+                  </font>
+               </Label>
+               <Label alignment="CENTER" prefHeight="21.0" prefWidth="150.0" text="Tor Vergata ">
+                  <font>
+                     <Font name="Berlin Sans FB" size="18.0" />
+                  </font>
+               </Label>
+            </children>
+         </VBox>
+         <Pane prefHeight="264.0" prefWidth="238.0" />
+         <VBox prefHeight="234.0" prefWidth="151.0">
+            <children>
+               <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                  <Image url="@../../../../img/flat-business-man-user-profile-avatar-icon-vector-4333097.jpg" />
+               </ImageView>
+               <Label alignment="CENTER" prefHeight="21.0" prefWidth="150.0" text="Giulio Appetito">
+                  <font>
+                     <Font name="Berlin Sans FB" size="18.0" />
+                  </font>
+               </Label>
+               <Label alignment="CENTER" prefHeight="21.0" prefWidth="150.0" text="Tor Vergata">
+                  <font>
+                     <Font name="Berlin Sans FB" size="18.0" />
+                  </font>
+               </Label>
+            </children>
+         </VBox>
       </children>
-   </VBox>
-   <VBox layoutX="318.0" layoutY="200.0">
-      <children>
-         <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
-            <Image url="@../../../../img/flat-business-man-user-profile-avatar-icon-vector-4333097.jpg" />
-         </ImageView>
-         <Label alignment="CENTER" prefHeight="21.0" prefWidth="150.0" text="Giulio Appetito">
-            <font>
-               <Font name="Berlin Sans FB" size="18.0" />
-            </font>
-         </Label>
-         <Label alignment="CENTER" prefHeight="21.0" prefWidth="150.0" text="Tor Vergata">
-            <font>
-               <Font name="Berlin Sans FB" size="18.0" />
-            </font>
-         </Label>
-      </children>
-   </VBox>
+   </HBox>
    <styleClass>
       <String fx:value="glass" />
       <String fx:value="panes" />

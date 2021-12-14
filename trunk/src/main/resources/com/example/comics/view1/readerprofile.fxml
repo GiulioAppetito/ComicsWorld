@@ -14,7 +14,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="729.0" prefWidth="980.0" styleClass="transparent" stylesheets="@../../../../css/fullpackstyling.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.comics.view1.ReaderProfileControllerG">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="729.0" prefWidth="980.0" styleClass="transparent" stylesheets="@../../../../css/fullpackstyling.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.comics.view1.ReaderProfileControllerG">
    <HBox prefHeight="729.0" prefWidth="980.0">
       <Pane prefHeight="649.0" prefWidth="457.0" stylesheets="@../../../../css/fullpackstyling.css">
          <HBox.margin>
@@ -25,39 +25,22 @@
             <String fx:value="oval-layout" />
             <String fx:value="glass" />
          </styleClass>
-         <VBox prefHeight="649.0" prefWidth="460.0">
-            <HBox prefHeight="243.0" prefWidth="418.0">
+         <VBox prefHeight="649.0" prefWidth="448.0">
+            <HBox alignment="CENTER" prefHeight="243.0" prefWidth="406.0">
                <VBox.margin>
-                  <Insets left="20.0" top="20.0" />
+                  <Insets top="20.0" />
                </VBox.margin>
-               <VBox>
+               <VBox prefHeight="226.0" prefWidth="222.0">
                   <HBox.margin>
-                     <Insets top="10.0" />
+                     <Insets />
                   </HBox.margin>
-                  <ImageView fitHeight="244.0" fitWidth="221.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="234.0" fitWidth="221.0" pickOnBounds="true" preserveRatio="true">
                      <Image url="@../../../../img/flat-business-woman-user-profile-avatar-icon-vector-4334111.jpg" />
                   </ImageView>
                </VBox>
-               <VBox prefHeight="223.0" prefWidth="193.0">
-                  <HBox.margin>
-                     <Insets right="10.0" />
-                  </HBox.margin>
-                  <ImageView fitHeight="84.0" fitWidth="92.0" pickOnBounds="true" preserveRatio="true">
-
-                     <VBox.margin>
-                        <Insets left="50.0" right="60.0" top="70.0" />
-                     </VBox.margin>
-                     <Image url="@../../../../img/coin2.png" />
-                  </ImageView>
-                  <Label alignment="CENTER" prefHeight="66.0" prefWidth="182.0" text="45">
-                     <font>
-                        <Font name="Berlin Sans FB" size="24.0" />
-                     </font>
-                  </Label>
-               </VBox>
             </HBox>
-            <HBox prefHeight="55.0" prefWidth="452.0" spacing="60.0">
-               <Button fx:id="btnEdit" mnemonicParsing="false" onAction="#edit" prefHeight="63.0" prefWidth="165.0" stylesheets="@../../../../css/fullpackstyling.css" text="Edit">
+            <HBox alignment="CENTER" prefHeight="63.0" prefWidth="432.0" spacing="60.0">
+               <Button fx:id="btnEdit" alignment="CENTER" mnemonicParsing="false" onAction="#edit" prefHeight="63.0" prefWidth="143.0" stylesheets="@../../../../css/fullpackstyling.css" text="Edit">
                   <font>
                      <Font name="Berlin Sans FB" size="24.0" />
                   </font>
@@ -72,29 +55,11 @@
                      </ImageView>
                   </graphic>
                   <HBox.margin>
-                     <Insets left="30.0" />
-                  </HBox.margin>
-               </Button>
-               <Button fx:id="btnConverter" mnemonicParsing="false" onAction="#edit" prefHeight="63.0" prefWidth="203.0" stylesheets="@../../../../css/fullpackstyling.css" text="Converter">
-                  <font>
-                     <Font name="Berlin Sans FB" size="24.0" />
-                  </font>
-                  <styleClass>
-                     <String fx:value="oval-layout" />
-                     <String fx:value="transparent" />
-                     <String fx:value="buttonEdit" />
-                  </styleClass>
-                  <graphic>
-                     <ImageView fitHeight="45.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true">
-                        <Image url="@../../../../img/coin.png" />
-                     </ImageView>
-                  </graphic>
-                  <HBox.margin>
-                     <Insets right="40.0" />
+                     <Insets />
                   </HBox.margin>
                </Button>
             </HBox>
-            <Label fx:id="lblName" alignment="CENTER" prefHeight="60.0" prefWidth="456.0" text="Anastasia Brinati">
+            <Label fx:id="lblName" alignment="CENTER" prefHeight="60.0" prefWidth="456.0" text="Anastasia">
                <font>
                   <Font name="Berlin Sans FB" size="24.0" />
                </font>

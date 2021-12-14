@@ -14,7 +14,7 @@ import tools.FxmlLoader;
 import java.io.IOException;
 import java.net.URL;
 
-public class ReaderHomeControllerG implements AccountObserver {
+public class ReaderHomeControllerG extends HomeControllerG implements AccountObserver {
 
     @FXML
     private HBox userBox;
@@ -150,7 +150,7 @@ public class ReaderHomeControllerG implements AccountObserver {
         CategoriesControllerG categoriesControllerG = new CategoriesControllerG();
         FXMLLoader loader = new FXMLLoader();
 
-        URL fxmlLocation = FeedControllerG.class.getResource("categories.fxml");
+        URL fxmlLocation = HomeControllerG.class.getResource("categories.fxml");
         loader.setLocation(fxmlLocation);
         loader.setController(categoriesControllerG);
 
@@ -179,7 +179,7 @@ public class ReaderHomeControllerG implements AccountObserver {
         FeedControllerG feedControllerG = new FeedControllerG();
         FXMLLoader loader = new FXMLLoader();
 
-        URL fxmlLocation = FeedControllerG.class.getResource("feed.fxml");
+        URL fxmlLocation = HomeControllerG.class.getResource("feed.fxml");
         loader.setLocation(fxmlLocation);
         loader.setController(feedControllerG);
 

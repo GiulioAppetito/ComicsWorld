@@ -2,7 +2,7 @@ package com.example.comics;
 
 import java.util.ArrayList;
 
-public abstract class AccountSubject {
+public abstract class ChapterSubject {
 
     private static ArrayList<AccountObserver> observers = new ArrayList<>();
 

@@ -13,7 +13,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="729.0" prefWidth="980.0" styleClass="transparent" stylesheets="@../../../../css/fullpackstyling.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="729.0" prefWidth="980.0" styleClass="transparent" stylesheets="@../../../../css/fullpackstyling.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
     <HBox prefHeight="729.0" prefWidth="980.0">
         <Pane prefHeight="649.0" prefWidth="457.0" stylesheets="@../../../../css/fullpackstyling.css">
             <HBox.margin>
@@ -49,12 +49,12 @@
                     </VBox.margin>
                     <Image url="@../../../../img/download.jpg" />
                 </ImageView>
-                <Label alignment="CENTER" prefHeight="74.0" prefWidth="615.0" text="Spiderman">
+                <Label fx:id="lblTitle" alignment="CENTER" prefHeight="74.0" prefWidth="615.0" text="Spiderman">
                     <font>
                         <Font name="Berlin Sans FB" size="24.0" />
                     </font>
                 </Label>
-                <Label alignment="CENTER" prefHeight="74.0" prefWidth="615.0" text="Stan Lee">
+                <Label fx:id="lblAuthor" alignment="CENTER" prefHeight="74.0" prefWidth="615.0" text="Stan Lee">
                     <font>
                         <Font name="Berlin Sans FB" size="24.0" />
                     </font>

@@ -161,7 +161,10 @@ public class CategoriesControllerG {
 
         CategoryController categoryController = loader.getController();
         categoryController.setData(categoryName);
-        ReaderHomeControllerG.getInstance().changeCenter(view);
+
+        HomeFactory homeFactory = new HomeFactory();
+        HomeControllerG homeControllerG = homeFactory.getHomeControllerG();
+        homeControllerG.changeCenter(view);
     }
 
 }

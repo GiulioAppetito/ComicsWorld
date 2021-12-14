@@ -37,17 +37,17 @@
                         </VBox.margin>
                         <Image url="@../../../../img/download%20(1).jpg" />
                      </ImageView>
-                     <Label alignment="CENTER" prefHeight="74.0" prefWidth="615.0" text="Chapter 2">
+                     <Label fx:id="lblChapterTitle" alignment="CENTER" prefHeight="74.0" prefWidth="615.0" text="Chapter 2">
                         <font>
                            <Font name="Berlin Sans FB" size="24.0" />
                         </font>
                      </Label>
-                     <Label alignment="CENTER" prefHeight="74.0" prefWidth="615.0" text="Stan Lee">
+                     <Label fx:id="lblAuthor" alignment="CENTER" prefHeight="74.0" prefWidth="615.0" text="Stan Lee">
                         <font>
                            <Font name="Berlin Sans FB" size="24.0" />
                         </font>
                      </Label>
-                     <Label alignment="CENTER" prefHeight="74.0" prefWidth="615.0" text="Marvel">
+                     <Label fx:id="lblChapterId" alignment="CENTER" prefHeight="74.0" prefWidth="615.0" text="Marvel">
                         <font>
                            <Font name="Berlin Sans FB" size="24.0" />
                         </font>
@@ -277,13 +277,13 @@
                   </HBox.margin>
                </Button>
             </HBox>
-            <TextArea minHeight="-Infinity" minWidth="-Infinity" prefHeight="270.0" prefWidth="322.0">
+            <TextArea fx:id="txtAreaComment" minHeight="-Infinity" minWidth="-Infinity" prefHeight="270.0" prefWidth="322.0">
                <VBox.margin>
                   <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
                </VBox.margin>
             </TextArea>
          </VBox>
-         <Button layoutX="181.0" layoutY="393.0" mnemonicParsing="false" prefHeight="74.0" prefWidth="157.0" stylesheets="@../../../../css/fullpackstyling.css" text="Post" textFill="WHITE">
+         <Button fx:id="btnPostReview" layoutX="181.0" layoutY="393.0" mnemonicParsing="false" prefHeight="74.0" prefWidth="157.0" stylesheets="@../../../../css/fullpackstyling.css" text="Post" textFill="WHITE">
             <font>
                <Font name="Berlin Sans FB" size="24.0" />
             </font>

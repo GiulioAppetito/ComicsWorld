@@ -1,9 +1,14 @@
 package com.example.comics.view1;
 
+import com.example.comics.PostReviewController;
+import com.example.comics.fagioli.ReviewBean;
 import com.example.comics.model.Review;
+import com.example.comics.model.UserLogin;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.TextArea;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 
@@ -17,7 +22,6 @@ public class ChapterControllerG {
     @FXML
     private VBox vbReviews;
 
-
     @FXML
     private Button btnAddReview;
 
@@ -27,7 +31,26 @@ public class ChapterControllerG {
     @FXML
     private Button btnBack;
 
-    public void init(){
+    @FXML
+    private Button btnPostReview;
+
+    @FXML
+    private TextArea txtAreaComment;
+
+    @FXML
+    private Label lblAuthor;
+
+    @FXML
+    private Label lblChapterId;
+
+    @FXML
+    private Label lblChapterTitle;
+
+
+    public void init(String author, String chapter_title){
+
+        lblAuthor.setText(author);
+        lblChapterTitle.setText(chapter_title);
 
         paneInsertReview.setVisible(false);
 
@@ -37,7 +60,8 @@ public class ChapterControllerG {
         btnAddReview.setOnAction(event ->
                 openEditor());
 
-
+        btnPostReview.setOnAction(event ->
+                postReview());
 
         ArrayList<Review> listOfReviews = new ArrayList<>(addReviews());
 
@@ -60,13 +84,21 @@ public class ChapterControllerG {
         }
 
         btnBack.setOnAction(event -> {
+
             FeedControllerG feedControllerG = new FeedControllerG();
             try {
-                feedControllerG.openSerie();
+                //feedControllerG.openSerie();
+                //per ora rimando poi i penso
+
+                HomeFactory homeFactory = new HomeFactory();
+                HomeControllerG homeControllerG = homeFactory.getHomeControllerG();
+                homeControllerG.openFeed();
+
             } catch (IOException e) {
                 e.printStackTrace();
             }
         });
+
     }
 
     private List<Review> addReviews(){
@@ -77,18 +109,22 @@ public class ChapterControllerG {
         List<String> commentList = Arrays.asList("Very interesting chapter!","I didn't like this chapter.","Not my favourite chapter...","Best chapter ever!");
 
 
-
         for(i=0; i<nameList.size(); i++){
-            Review review = new Review();
-            review.setComment(commentList.get(i));
-            //review.setUsername(nameList.get(i));
-            //comic.setImageSrc(null);
+            Review review = new Review(commentList.get(i), nameList.get(i));
             lr.add(review);
         }
 
-
         return lr;
 
+    }
+
+    public void postReview(){
+        ReviewBean reviewBean = new ReviewBean();
+        reviewBean.setComment(txtAreaComment.getText());
+        reviewBean.setUsername(UserLogin.getAccount().getUsername());
+        //e magari anche la foto
+        PostReviewController postReviewController = new PostReviewController();
+        postReviewController.post(reviewBean);
     }
 
 
@@ -102,7 +138,6 @@ public class ChapterControllerG {
     @FXML
     void closeEditor() {
         paneInsertReview.setVisible(false);
-
     }
 
 

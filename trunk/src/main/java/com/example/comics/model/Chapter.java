@@ -1,26 +1,29 @@
 package com.example.comics.model;
 
+import com.example.comics.ChapterSubject;
 import javafx.scene.image.ImageView;
 import javafx.scene.text.Text;
 
 import java.util.Date;
 import java.util.List;
 
-public class Chapter {
+public class Chapter extends ChapterSubject {
 
-    private String name;
+    private String title;
     private String series;
+    private Integer id;
     private Date publishingDate;
     private List<Review> reviews;
     private ImageView cover;
     private Text description;
 
-    public String getName() {
-        return name;
+
+    public String getTitle() {
+        return title;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setTitle(String title) {
+        this.title = title;
     }
 
     public String getSeries() {
@@ -61,5 +64,19 @@ public class Chapter {
 
     public void setDescription(Text description) {
         this.description = description;
+    }
+
+    public void addReview(String comment, String username){
+        Review review = new Review(comment, username);
+        reviews.add(review);
+
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
     }
 }

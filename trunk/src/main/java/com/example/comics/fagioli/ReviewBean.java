@@ -1,14 +1,12 @@
-package com.example.comics.model;
+package com.example.comics.fagioli;
 
-public class Review {
+import javafx.scene.image.ImageView;
+
+public class ReviewBean {
 
     private String comment;
     private String username;
-
-    public Review(String comment, String username){
-            this.comment = comment;
-            this.username = username;
-    }
+    private ImageView propic;
 
     public String getComment() {
         return comment;
@@ -25,5 +23,4 @@ public class Review {
     public void setUsername(String username) {
         this.username = username;
     }
-
 }

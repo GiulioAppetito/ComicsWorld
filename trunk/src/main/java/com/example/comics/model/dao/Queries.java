@@ -26,6 +26,17 @@ public class Queries {
         stmt.executeUpdate(updateStatement);
     }
 
+    public static ResultSet retriveLatestSeries(Statement stmt) throws SQLException {
+        String selectStatement = String.format("SELECT * FROM series");
+        System.out.println(selectStatement);
+        return stmt.executeQuery(selectStatement);
+    }
+
+    public static ResultSet retriveChapters(Statement stmt, String seriesTitle) throws SQLException {
+        String selectStatement = String.format("SELECT * FROM chapters WHERE series_title = '%s' ", seriesTitle);
+        System.out.println(selectStatement);
+        return stmt.executeQuery(selectStatement);
+    }
 
 
 

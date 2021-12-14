@@ -28,11 +28,11 @@ public class FavouriteComicsControllerG {
             try {
                 VBox card = fxmlLoader.load();
                 VCardController cardController = fxmlLoader.getController();
-                cardController.setData(listOfCards.get(j).getName());
+                cardController.setData(listOfCards.get(j).getTitle());
 
                 card.setOnMouseClicked(event -> {
                     try {
-                        openSerie();
+                        openSerie("Batman", "-");
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
@@ -58,7 +58,7 @@ public class FavouriteComicsControllerG {
 
         for(i=0;i<numSeries;i++){
             Series comic = new Series();
-            comic.setName("Spiderman");
+            comic.setTitle("Spiderman");
             comic.setAuthor("Stan Lee");
             ls.add(comic);
 
@@ -66,9 +66,9 @@ public class FavouriteComicsControllerG {
         return ls;
     }
 
-    public void openSerie() throws IOException {
+    public void openSerie(String title, String author) throws IOException {
 
-        SerieController serieController = new SerieController();
+        SeriesControllerG serieController = new SeriesControllerG();
         FXMLLoader loader = new FXMLLoader();
 
         URL fxmlLocation = CharacterControllerG.class.getResource("serie.fxml");
@@ -78,7 +78,7 @@ public class FavouriteComicsControllerG {
         ReaderHomeControllerG readerHomeControllerG = ReaderHomeControllerG.getInstance();
         readerHomeControllerG.changeCenter(loader.load());
 
-        serieController.init();
+        serieController.init(title, author);
 
     }
 }

@@ -1,5 +1,6 @@
 package com.example.comics.view1;
 
+import com.example.comics.ResearchController;
 import com.example.comics.model.Advertisement;
 import com.example.comics.model.Series;
 import javafx.fxml.FXML;
@@ -14,7 +15,7 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
-public class FeedControllerG {
+public class FeedControllerG{
 
     @FXML
     public GridPane feedGrid;
@@ -33,33 +34,38 @@ public class FeedControllerG {
 
     public void init() {
 
-        List<Series> listOfCards = new ArrayList<>(add());
-        int size = listOfCards.size();
+        ResearchController researchController = new ResearchController();
+        ArrayList<Series> latestSeries = researchController.getLatestSeries();
+        int size = latestSeries.size();
 
         int i=1;
         for(int j=0; j<size; j++) {
-                FXMLLoader fxmlLoader = new FXMLLoader();
-                fxmlLoader.setLocation(getClass().getResource("vcard.fxml"));
-                try {
-                    VBox card = fxmlLoader.load();
-                    VCardController cardController = fxmlLoader.getController();
-                    cardController.setData(listOfCards.get(j).getName());
+            FXMLLoader fxmlLoader = new FXMLLoader();
+            fxmlLoader.setLocation(getClass().getResource("vcard.fxml"));
+            try {
+                VBox card = fxmlLoader.load();
+                VCardController cardController = fxmlLoader.getController();
+                cardController.setData(latestSeries.get(j).getTitle());
 
-                    card.setOnMouseClicked(event -> {
-                        try {
-                            openSerie();
-                        } catch (IOException e) {
-                            e.printStackTrace();
-                        }
-                    });
+                String title = latestSeries.get(i).getTitle();
+                //poi servirà anche per la cover
+                String author = latestSeries.get(i).getAuthor();
 
-                    feedGrid.add(card,j%5,i);
-                    if(j%5 == 4){
-                        i++;
+                card.setOnMouseClicked(event -> {
+                    try {
+                        openSerie(title, author);
+                    } catch (IOException e) {
+                        e.printStackTrace();
                     }
-                } catch (IOException e) {
-                    e.printStackTrace();
+                });
+
+                feedGrid.add(card,j%5,i);
+                if(j%5 == 4){
+                    i++;
                 }
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
 
 
@@ -87,53 +93,20 @@ public class FeedControllerG {
 
     }
 
-    public void openSerie() throws IOException {
+    public void openSerie(String title, String author) throws IOException {
 
-        SerieController serieController = new SerieController();
+        SeriesControllerG serieController = new SeriesControllerG();
         FXMLLoader loader = new FXMLLoader();
 
         URL fxmlLocation = CharacterControllerG.class.getResource("serie.fxml");
         loader.setLocation(fxmlLocation);
         loader.setController(serieController);
 
-        ReaderHomeControllerG readerHomeControllerG = ReaderHomeControllerG.getInstance();
-        readerHomeControllerG.changeCenter(loader.load());
+        HomeFactory homeFactory = new HomeFactory();
+        HomeControllerG homeControllerG = homeFactory.getHomeControllerG();
+        homeControllerG.changeCenter(loader.load());
 
-        serieController.init();
-
-    }
-
-    private void openCharacter() throws IOException {
-        CharacterControllerG characterControllerG = new CharacterControllerG();
-        FXMLLoader loader = new FXMLLoader();
-
-        URL fxmlLocation = CharacterControllerG.class.getResource("character.fxml");
-        loader.setLocation(fxmlLocation);
-        loader.setController(characterControllerG);
-
-        ReaderHomeControllerG readerHomeControllerG = ReaderHomeControllerG.getInstance();
-        readerHomeControllerG.changeCenter(loader.load());
-    }
-
-
-
-    private List<Series> add(){
-
-        List<Series> ls = new ArrayList<>();
-
-        int numSeries = 7;
-        int i;
-
-        for(i=0;i<numSeries;i++){
-            Series comic = new Series();
-            comic.setName("Spiderman");
-            comic.setAuthor("Stan Lee");
-            ls.add(comic);
-
-        }
-
-
-        return ls;
+        serieController.init(title, author);
 
     }
 

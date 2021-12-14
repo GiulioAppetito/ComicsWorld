@@ -16,7 +16,7 @@ import tools.FxmlLoader;
 import java.io.IOException;
 import java.net.URL;
 
-public class AuthorHomeControllerG implements AccountObserver {
+public class AuthorHomeControllerG  extends HomeControllerG implements AccountObserver {
 
     @FXML
     private HBox userBox;
@@ -103,6 +103,7 @@ public class AuthorHomeControllerG implements AccountObserver {
         btnStatistics.setStyle(STYLE2);
     }
 
+
     public void changeCenter(Pane pane){
         mainPane.setCenter(pane);
     }
@@ -151,7 +152,7 @@ public class AuthorHomeControllerG implements AccountObserver {
         CategoriesControllerG categoriesControllerG = new CategoriesControllerG();
         FXMLLoader loader = new FXMLLoader();
 
-        URL fxmlLocation = FeedControllerG.class.getResource("categories.fxml");
+        URL fxmlLocation = HomeControllerG.class.getResource("categories.fxml");
         loader.setLocation(fxmlLocation);
         loader.setController(categoriesControllerG);
 
@@ -180,7 +181,7 @@ public class AuthorHomeControllerG implements AccountObserver {
         FeedControllerG feedControllerG = new FeedControllerG();
         FXMLLoader loader = new FXMLLoader();
 
-        URL fxmlLocation = FeedControllerG.class.getResource("feed.fxml");
+        URL fxmlLocation = HomeControllerG.class.getResource("feed.fxml");
         loader.setLocation(fxmlLocation);
         loader.setController(feedControllerG);
 

@@ -1,9 +1,12 @@
 package com.example.comics.view1;
 
+import com.example.comics.ResearchController;
 import com.example.comics.model.Chapter;
+import com.example.comics.model.Series;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.layout.VBox;
 
 import java.io.IOException;
@@ -12,7 +15,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class SerieController {
+public class SeriesControllerG {
 
     @FXML
     public Button btnBack;
@@ -20,18 +23,31 @@ public class SerieController {
     @FXML
     private Button btnCheck;
 
-
     @FXML
     private VBox vbChapters;
 
-    public void init() {
+    @FXML
+    private Label lblAuthor;
 
-        ArrayList<Chapter> listOfChapters = new ArrayList<>(addChapters());
+    @FXML
+    private Label lblTitle;
+
+
+    public void init(String series_title, String author) {
+
+        lblAuthor.setText(author);
+        lblTitle.setText(series_title);
+
+        ResearchController researchController = new ResearchController();
+        //magari serve altro oltre al title
+        ArrayList<Chapter> listOfChapters = researchController.getChapters(series_title);
 
         for (Chapter chapter : listOfChapters) {
 
             FXMLLoader fxmlLoader = new FXMLLoader();
             fxmlLoader.setLocation(getClass().getResource("chapterItem.fxml"));
+
+            String chapterTitle = chapter.getTitle();
             try {
                 VBox vbChapter = fxmlLoader.load();
                 ChapterItemController chapterControllerItem = fxmlLoader.getController();
@@ -39,7 +55,7 @@ public class SerieController {
 
                 vbChapter.setOnMouseClicked(event -> {
                     try {
-                        openChapter();
+                        openChapter(chapterTitle, author);
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
@@ -57,26 +73,24 @@ public class SerieController {
             //non so, secondo me basterebbe andare dinuovo su feed facendo tipo un refresh
             //però che ne sa il feed che deve sostituire il centro della home?
             //boh
-            ReaderHomeControllerG readerHomeControllerG = ReaderHomeControllerG.getInstance();
+            HomeFactory homeFactory = new HomeFactory();
+            HomeControllerG homeControllerG = homeFactory.getHomeControllerG();
             try {
-                readerHomeControllerG.openFeed();
+                homeControllerG.openFeed();
             } catch (IOException e) {
                 e.printStackTrace();
             }
         });
 
-        btnCheck.setOnAction(event ->
-        {
-            try {
-                openChapter();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
+        btnCheck.setOnAction(event -> {
+                //openChapter(chapterTitle, author);
+                System.out.println("ciao");
+
         }
         );
     }
 
-    private void openChapter() throws IOException {
+    private void openChapter(String chapterTitle, String author) throws IOException {
 
         ChapterControllerG chapterControllerG = new ChapterControllerG();
         FXMLLoader loader = new FXMLLoader();
@@ -85,28 +99,14 @@ public class SerieController {
         loader.setLocation(fxmlLocation);
         loader.setController(chapterControllerG);
 
-        ReaderHomeControllerG readerHomeControllerG = ReaderHomeControllerG.getInstance();
-        readerHomeControllerG.changeCenter(loader.load());
+        HomeFactory homeFactory = new HomeFactory();
 
-        chapterControllerG.init();
+        HomeControllerG homeControllerG = homeFactory.getHomeControllerG();
+        homeControllerG.changeCenter(loader.load());
 
-    }
-
-    private List<Chapter> addChapters(){
-
-        List<Chapter> chapters = new ArrayList<>();
-        int i;
-        List<String> nameList = Arrays.asList("1.Chapter","2.Chapter","3.Chapter","4.Chapter");
-        List<String> seriesList = Arrays.asList("Spiderman","Superman","Saitama","Senpai");
-
-        for(i=0; i<nameList.size(); i++){
-            Chapter chapter = new Chapter();
-            chapter.setName(nameList.get(i));
-            chapter.setSeries(seriesList.get(i));
-            chapters.add(chapter);
-        }
-
-        return chapters;
+        chapterControllerG.init(chapterTitle, author);
 
     }
+
+
 }
