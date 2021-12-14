@@ -65,7 +65,7 @@ public abstract class Account extends AccountSubject {
         this.username = username;
         //e va a cambiare anche su db
         AccountDAO accountDAO = new AccountDAO();
-        accountDAO.changeCredentials(this.firstName, this.lastName, oldUsername,this.username);
+        accountDAO.changeCredentials(this.firstName, this.lastName, this.username,oldUsername);
         System.out.println("Called DAO with username : "+ this.username);
     }
 

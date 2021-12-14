@@ -1,6 +1,6 @@
 package com.example.comics.view1;
 
-import com.example.comics.model.Categories;
+import com.example.comics.model.Genres;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.layout.HBox;
@@ -93,7 +93,7 @@ public class CategoriesControllerG {
 
     public void init() {
 
-        for (Categories category : Categories.values()) {
+        for (Genres category : Genres.values()) {
 
             String categoryName = category.name();
             FXMLLoader fxmlLoader = new FXMLLoader();

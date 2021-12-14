@@ -1,6 +1,6 @@
 package com.example.comics.model;
 
-public enum Categories {
+public enum Genres {
     ACTION, ADVENTURE, BIOGRAPHY, COMEDY, DRAMA, HORROR, HIGHSCHOOL,
     MANGA, MARVEL, DC_COMICS, LOVE, SLICE_OF_LIFE, SCI_FI, SHONEN, SHOJO,
     SUPERNATURAL, SUPERHEROES, TEEN_ROMANCE,
