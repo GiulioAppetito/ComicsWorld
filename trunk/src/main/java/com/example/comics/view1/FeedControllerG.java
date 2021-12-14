@@ -47,12 +47,13 @@ public class FeedControllerG{
                 VCardController cardController = fxmlLoader.getController();
                 cardController.setData(latestSeries.get(j).getTitle());
 
-                String title = latestSeries.get(i).getTitle();
+                String title = latestSeries.get(j).getTitle();
                 //poi servirà anche per la cover
-                String author = latestSeries.get(i).getAuthor();
+                String author = latestSeries.get(j).getAuthor();
 
                 card.setOnMouseClicked(event -> {
                     try {
+                        System.out.println(title + " " + " " + author);
                         openSerie(title, author);
                     } catch (IOException e) {
                         e.printStackTrace();
