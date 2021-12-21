@@ -4,6 +4,7 @@ import com.example.comics.ChapterSubject;
 import javafx.scene.image.ImageView;
 import javafx.scene.text.Text;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -13,10 +14,9 @@ public class Chapter extends ChapterSubject {
     private String series;
     private Integer id;
     private Date publishingDate;
-    private List<Review> reviews;
+    private ArrayList<Review> reviews;
     private ImageView cover;
     private Text description;
-
 
     public String getTitle() {
         return title;
@@ -54,7 +54,7 @@ public class Chapter extends ChapterSubject {
         return reviews;
     }
 
-    public void setReviews(List<Review> reviews) {
+    public void setReviews(ArrayList<Review> reviews) {
         this.reviews = reviews;
     }
 

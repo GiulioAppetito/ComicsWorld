@@ -1,6 +1,7 @@
 package com.example.comics.view1;
 
 import com.example.comics.PostReviewController;
+import com.example.comics.fagioli.ChapterBean;
 import com.example.comics.fagioli.ReviewBean;
 import com.example.comics.model.Review;
 import com.example.comics.model.UserLogin;
@@ -47,10 +48,11 @@ public class ChapterControllerG {
     private Label lblChapterTitle;
 
 
-    public void init(String author, String chapter_title){
+    public void init(ChapterBean chapterBean){
 
-        lblAuthor.setText(author);
-        lblChapterTitle.setText(chapter_title);
+        lblAuthor.setText("autore");
+        lblChapterTitle.setText(chapterBean.getTitle());
+        lblChapterId.setText(chapterBean.getId().toString());
 
         paneInsertReview.setVisible(false);
 
@@ -71,7 +73,7 @@ public class ChapterControllerG {
             fxmlLoader.setLocation(getClass().getResource("review.fxml"));
             try {
                 VBox vbRev = fxmlLoader.load();
-                ReviewController reviewController = fxmlLoader.getController();
+                ReviewControllerG reviewController = fxmlLoader.getController();
                 reviewController.setData(review);
 
                 vbRev.setOnMouseClicked(event -> System.out.println("Clicked ad"));

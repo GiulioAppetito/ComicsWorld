@@ -1,10 +1,10 @@
 package com.example.comics.model;
 
+import com.example.comics.model.dao.ChapterDAO;
 import com.example.comics.model.dao.SeriesDAO;
 import javafx.scene.image.ImageView;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class Series {
 	
@@ -12,15 +12,43 @@ public class Series {
 	private ImageView cover;
 	private String author;
 	private String publishingHouse;
-	private final ArrayList<Chapter> chapters;
+	private ArrayList<Chapter> chapters;
 	private ArrayList<Character> characters;
-	private Objective objective;
+	private static Objective[] objectives = new Objective[Levels.values().length];
 
-	public Series(){
+	private Series(){
+		//costruttore di default
+	}
 
-		//composizione di capitoli
-		this.chapters = new ArrayList<>();
-		//riprendi i capitoli dalla DAO ?
+	public Series(String title){
+
+		/*
+		//PROBLEMA:
+
+		Salve professore, mi trovo nella seguente situazione:
+		una classe A svolge il ruolo di 'whole' in una relazione di composizione con una
+		classe B, le cui istanze sono appunto le 'parts'.
+
+		Nel momento in cui una classe con ruolo di
+		creator per la classe A, come ad esempio un DAO, si trova ad istanziare un oggetto di tipo A, ne
+		invocherà il costruttore, il quale si dovrà occupare della creazione delle istanze di B(parts).
+		Tuttavia, momento in cui, le parts devono essere ad esempio recuperate dallo strato di persistenza,
+		è possibile che la loro creazione venga delegata ad un'ulteriore classe C, che prenderà dunque la
+		responsabilità di creator?
+
+		Sostengo che potrebbe essere una soluzione se la classe C fosse ad uso esclusivo della classe A(whole),
+		in modo trasparente al resto del sistema, in quanto
+		l'invocazione della creazione delle parti(B) resterebbe sempre vincolata e implicita
+		nella creazione dell'whole.
+
+		*/
+
+		this.title = title;
+		SeriesDAO seriesDAO = new SeriesDAO();
+		this.chapters = seriesDAO.retriveChapters(title);
+
+		//inizializzazione obiettivi
+
 	}
 
 	
@@ -53,14 +81,7 @@ public class Series {
 		this.publishingHouse = publishingHouse;
 	}
 
-	//effettivamente non so se qua sarebbe solo una get, e sti chapters
-	//li devo settare quando creo una nuova serie
-	//e poi qua faccio solo return di quell'array
-	//però vabbe per ora lascio cosi, che non sono settati e quindi
-	//devo per forza tornare sul db a prenderli
-
-	//per ora dummy
-	public ArrayList<Chapter> getChapters(String seriesTitle){
+	public ArrayList<Chapter> getChapters(){
 		return chapters;
 	}
 

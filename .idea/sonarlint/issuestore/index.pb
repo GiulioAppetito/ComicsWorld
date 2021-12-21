@@ -5,3 +5,15 @@ o
 Ltrunk/src/main/java/com/example/comics/view1/ProfileSettingsControllerG.java,4\1\415b665414f37f262296f9bac7a0b4c322bf6bb6
 k
 ;trunk/src/main/java/com/example/comics/model/UserLogin.java,5\d\5dfc908745a1c7e70c463f0eeb83fb14a2777e53
+‚
+Rtrunk/src/main/java/com/example/comics/model/dao/AlreadyUsedUsernameException.java,5\4\549025d20afa96abbca439b8d234768498d1e724
+p
+@trunk/src/main/java/com/example/comics/model/dao/AccountDAO.java,f\9\f9fbbecf4bd6d3b71d8b4a6360b3ecba6bd88d4b
+m
+=trunk/src/main/java/com/example/comics/model/dao/Queries.java,f\3\f3a37695c77dad5023ee85e5787ca9de0b649080
+r
+Btrunk/src/main/java/com/example/comics/model/ReviewsObjective.java,8\6\86cce63a53e7a442e2b5a265b13e8961f22996cd
+h
+8trunk/src/main/java/com/example/comics/model/Levels.java,9\f\9f502bf70865a0c0b02346d4a01da46d366822ef
+i
+9trunk/src/main/java/com/example/comics/model/Account.java,9\a\9a56b31fe52b942392371e7a8bc9f9ad131d226e

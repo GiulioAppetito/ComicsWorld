@@ -1,5 +1,6 @@
 package com.example.comics.view1;
 
+import com.example.comics.model.Levels;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -12,8 +13,6 @@ public class Main extends Application {
 
     @Override
     public void start(Stage stage) throws IOException {
-
-
 
         LoginControllerG loginControllerG = new LoginControllerG();
         FXMLLoader loader = new FXMLLoader();

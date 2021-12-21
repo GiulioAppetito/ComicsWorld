@@ -6,7 +6,7 @@ import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import javafx.scene.text.Text;
 
-public class ReviewController {
+public class ReviewControllerG {
 
     @FXML
     private ImageView ivProPic;

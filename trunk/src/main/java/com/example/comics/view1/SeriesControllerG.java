@@ -2,6 +2,7 @@ package com.example.comics.view1;
 
 import com.example.comics.ResearchController;
 import com.example.comics.fagioli.ChapterBean;
+import com.example.comics.fagioli.SeriesBean;
 import com.example.comics.model.Chapter;
 import com.example.comics.model.Series;
 import javafx.fxml.FXML;
@@ -34,21 +35,18 @@ public class SeriesControllerG {
     private Label lblTitle;
 
 
-    public void init(String series_title, String author) {
+    public void init(SeriesBean seriesBean) {
 
-        lblAuthor.setText(author);
-        lblTitle.setText(series_title);
+        lblAuthor.setText(seriesBean.getAuthor());
+        lblTitle.setText(seriesBean.getTitle());
 
-        ResearchController researchController = new ResearchController();
-        //magari serve altro oltre al title
-        ArrayList<ChapterBean> listOfChapters = researchController.getChapters(series_title);
+        ArrayList<ChapterBean> listOfChapters = seriesBean.getChapters();
 
         for (ChapterBean chapter : listOfChapters) {
 
             FXMLLoader fxmlLoader = new FXMLLoader();
             fxmlLoader.setLocation(getClass().getResource("chapterItem.fxml"));
 
-            String chapterTitle = chapter.getTitle();
             try {
                 VBox vbChapter = fxmlLoader.load();
                 ChapterItemController chapterControllerItem = fxmlLoader.getController();
@@ -56,7 +54,7 @@ public class SeriesControllerG {
 
                 vbChapter.setOnMouseClicked(event -> {
                     try {
-                        openChapter(chapterTitle, author);
+                        openChapter(chapter);
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
@@ -91,7 +89,7 @@ public class SeriesControllerG {
         );
     }
 
-    private void openChapter(String chapterTitle, String author) throws IOException {
+    private void openChapter(ChapterBean chapterBean) throws IOException {
 
         ChapterControllerG chapterControllerG = new ChapterControllerG();
         FXMLLoader loader = new FXMLLoader();
@@ -105,7 +103,7 @@ public class SeriesControllerG {
         HomeControllerG homeControllerG = homeFactory.getHomeControllerG();
         homeControllerG.changeCenter(loader.load());
 
-        chapterControllerG.init(chapterTitle, author);
+        chapterControllerG.init(chapterBean);
 
     }
 
