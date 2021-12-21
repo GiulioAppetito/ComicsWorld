@@ -1,5 +1,7 @@
 package com.example.comics.view1;
 
+import com.example.comics.ResearchController;
+import com.example.comics.fagioli.SeriesBean;
 import com.example.comics.model.Series;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -18,7 +20,9 @@ public class FavouriteComicsControllerG {
 
     public void initialize(){
 
-        List<Series>listOfCards = new ArrayList<>(add());
+        ResearchController researchController = new ResearchController();
+        //poi ovviamente sarà na cosa diversa da latest
+        ArrayList<SeriesBean> listOfCards = researchController.getLatestSeries();
         int size = listOfCards.size();
         int columns = 3;
         int i=1;
@@ -27,12 +31,13 @@ public class FavouriteComicsControllerG {
             fxmlLoader.setLocation(getClass().getResource("vcard.fxml"));
             try {
                 VBox card = fxmlLoader.load();
-                VCardController cardController = fxmlLoader.getController();
+                VCardControllerG cardController = fxmlLoader.getController();
                 cardController.setData(listOfCards.get(j).getTitle());
 
+                int finalJ = j;
                 card.setOnMouseClicked(event -> {
                     try {
-                        openSerie("Batman", "-");
+                        openSerie(listOfCards.get(finalJ));
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
@@ -49,24 +54,8 @@ public class FavouriteComicsControllerG {
 
     }
 
-    private List<Series> add(){
 
-        List<Series> ls = new ArrayList<>();
-
-        int numSeries = 7;
-        int i;
-
-        for(i=0;i<numSeries;i++){
-            Series comic = new Series();
-            comic.setTitle("Spiderman");
-            comic.setAuthor("Stan Lee");
-            ls.add(comic);
-
-        }
-        return ls;
-    }
-
-    public void openSerie(String title, String author) throws IOException {
+    public void openSerie(SeriesBean seriesBean) throws IOException {
 
         SeriesControllerG serieController = new SeriesControllerG();
         FXMLLoader loader = new FXMLLoader();
@@ -78,7 +67,7 @@ public class FavouriteComicsControllerG {
         ReaderHomeControllerG readerHomeControllerG = ReaderHomeControllerG.getInstance();
         readerHomeControllerG.changeCenter(loader.load());
 
-        serieController.init(title, author);
+        serieController.init(seriesBean);
 
     }
 }

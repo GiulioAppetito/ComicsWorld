@@ -3,6 +3,7 @@ package com.example.comics.fagioli;
 import com.example.comics.model.Chapter;
 import javafx.scene.image.ImageView;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class SeriesBean {
@@ -10,6 +11,7 @@ public class SeriesBean {
     private String title;
     private ImageView cover;
     private String author;
+    private ArrayList<Chapter> chapters = new ArrayList<>();
 
 
     public String getTitle() {
@@ -31,5 +33,25 @@ public class SeriesBean {
     }
     public void setAuthor(String author) {
         this.author = author;
+    }
+
+    public ArrayList<ChapterBean> getChapters(){
+
+        ArrayList<ChapterBean> chapterBeans = new ArrayList<>();
+        ChapterBean chapterBean = new ChapterBean();
+
+        for(Chapter chapter : this.chapters){
+            chapterBean.setTitle(chapter.getTitle());
+            chapterBean.setSeries(this.title);
+            chapterBean.setId(chapter.getId());
+            //chapterBean.setCover(chapter.getCover());
+            chapterBeans.add(chapterBean);
+        }
+
+        return chapterBeans;
+    }
+
+    public void setChapters(ArrayList<Chapter> chapters) {
+        this.chapters = chapters;
     }
 }

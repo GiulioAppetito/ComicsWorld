@@ -4,7 +4,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 
-public class VCardController {
+public class VCardControllerG {
 
     @FXML
     public ImageView comicCover;

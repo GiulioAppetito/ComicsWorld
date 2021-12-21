@@ -1,54 +1,57 @@
 package com.example.comics.model.dao;
 
 import com.example.comics.model.Chapter;
-import com.example.comics.model.Series;
 import javafx.scene.image.ImageView;
 
 import java.sql.*;
 import java.util.ArrayList;
 
-public class SeriesDAO {
+public class ChapterDAO {
 
     private static final String USER = "anastasia";
     private static final String PASS = "passwordanastasia";
     private static final String DB_URL = "jdbc:mysql://comics-world.ce9t0fxhansh.eu-west-2.rds.amazonaws.com:3306/ComicsWorld?autoReconnect=true&useSSL=false";
     private static final String DRIVER_CLASS_NAME = "com.mysql.jdbc.Driver";
 
-
-    public ArrayList<Series> retriveLatestSeries() {
+    public ArrayList<Chapter> retriveChapters(String seriesTitle) {
 
         Statement stmt = null;
         Connection conn = null;
 
-        ArrayList<Series> seriesList = new ArrayList<Series>();
+        ArrayList<Chapter> chaptersList = new ArrayList<Chapter>();
 
-        String title;
-        String author;
+        String chapterTitle;
         String publishingHouse;
         ImageView cover;
+        Integer chapter_id;
 
-        Series series;
+        Chapter chapter;
 
         try {
             Class.forName(DRIVER_CLASS_NAME);
             conn = DriverManager.getConnection(DB_URL, USER, PASS);
 
             stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
-            ResultSet rs = Queries.retriveLatestSeries(stmt);
+            ResultSet rs = Queries.retriveChapters(stmt, seriesTitle);
 
             if (!rs.first()) {
-                Exception e = new Exception("No series Found ");
-                throw e;
+                throw new Exception("No chapters Found on series: " + seriesTitle);
             }
             rs.first();
 
             do {
-                title = rs.getString("title");
-                author = rs.getString("author");
+                chapterTitle = rs.getString("chapter_title");
+                chapter_id = rs.getInt("chapter_id");
+
+                //author = rs.getString("author");
                 //cover = rs.getImg("cover");
-                series = new Series(title);
-                series.setAuthor(author);
-                seriesList.add(series);
+                chapter = new Chapter();
+                chapter.setTitle(chapterTitle);
+                chapter.setId(chapter_id);
+                chapter.setSeries(seriesTitle);
+
+                //chapters.setAuthor(author);
+                chaptersList.add(chapter);
             } while (rs.next());
 
 
@@ -73,12 +76,7 @@ public class SeriesDAO {
             }
 
         }
-        return seriesList;
-    }
-
-    public ArrayList<Chapter> retriveChapters(String seriesTitle) {
-        ChapterDAO chapterDAO = new ChapterDAO();
-        return chapterDAO.retriveChapters(seriesTitle);
+        return chaptersList;
     }
 
 }

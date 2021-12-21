@@ -3,7 +3,6 @@ package com.example.comics.view1;
 import com.example.comics.ResearchController;
 import com.example.comics.fagioli.SeriesBean;
 import com.example.comics.model.Advertisement;
-import com.example.comics.model.Series;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.MenuButton;
@@ -45,17 +44,13 @@ public class FeedControllerG{
             fxmlLoader.setLocation(getClass().getResource("vcard.fxml"));
             try {
                 VBox card = fxmlLoader.load();
-                VCardController cardController = fxmlLoader.getController();
+                VCardControllerG cardController = fxmlLoader.getController();
                 cardController.setData(latestSeries.get(j).getTitle());
 
-                String title = latestSeries.get(j).getTitle();
-                //poi servirà anche per la cover
-                String author = latestSeries.get(j).getAuthor();
-
+                int finalJ = j;
                 card.setOnMouseClicked(event -> {
                     try {
-                        System.out.println(title + " " + " " + author);
-                        openSerie(title, author);
+                        openSerie(latestSeries.get(finalJ));
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
@@ -95,20 +90,20 @@ public class FeedControllerG{
 
     }
 
-    public void openSerie(String title, String author) throws IOException {
+    public void openSerie(SeriesBean seriesBean) throws IOException {
 
-        SeriesControllerG serieController = new SeriesControllerG();
+        SeriesControllerG serieControllerG = new SeriesControllerG();
         FXMLLoader loader = new FXMLLoader();
 
         URL fxmlLocation = CharacterControllerG.class.getResource("serie.fxml");
         loader.setLocation(fxmlLocation);
-        loader.setController(serieController);
+        loader.setController(serieControllerG);
 
         HomeFactory homeFactory = new HomeFactory();
         HomeControllerG homeControllerG = homeFactory.getHomeControllerG();
         homeControllerG.changeCenter(loader.load());
 
-        serieController.init(title, author);
+        serieControllerG.init(seriesBean);
 
     }
 

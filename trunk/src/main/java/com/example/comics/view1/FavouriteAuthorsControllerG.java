@@ -1,5 +1,6 @@
 package com.example.comics.view1;
 
+import com.example.comics.fagioli.SeriesBean;
 import com.example.comics.model.Author;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -56,7 +57,7 @@ public class FavouriteAuthorsControllerG {
         return la;
     }
 
-    public void openSerie(String title, String author) throws IOException {
+    public void openSerie(SeriesBean seriesBean) throws IOException {
 
         SeriesControllerG serieController = new SeriesControllerG();
         FXMLLoader loader = new FXMLLoader();
@@ -69,7 +70,7 @@ public class FavouriteAuthorsControllerG {
         HomeControllerG homeControllerG = homeFactory.getHomeControllerG();
         homeControllerG.changeCenter(loader.load());
 
-        serieController.init(title, author);
+        serieController.init(seriesBean);
 
     }
 
