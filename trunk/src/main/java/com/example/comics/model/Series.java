@@ -12,7 +12,16 @@ public class Series {
 	private ImageView cover;
 	private String author;
 	private String publishingHouse;
-	private List<Chapter> chapters;
+	private final ArrayList<Chapter> chapters;
+	private ArrayList<Character> characters;
+	private Objective objective;
+
+	public Series(){
+
+		//composizione di capitoli
+		this.chapters = new ArrayList<>();
+		//riprendi i capitoli dalla DAO ?
+	}
 
 	
 	
@@ -44,14 +53,6 @@ public class Series {
 		this.publishingHouse = publishingHouse;
 	}
 
-
-
-	public static ArrayList<Series> getSeries(){
-		SeriesDAO seriesdao = new SeriesDAO();
-		ArrayList<Series> latestSeries = seriesdao.retriveLatestSeries();
-		return latestSeries;
-	}
-
 	//effettivamente non so se qua sarebbe solo una get, e sti chapters
 	//li devo settare quando creo una nuova serie
 	//e poi qua faccio solo return di quell'array
@@ -59,10 +60,8 @@ public class Series {
 	//devo per forza tornare sul db a prenderli
 
 	//per ora dummy
-	public static ArrayList<Chapter> getChapters(String seriesTitle){
-		SeriesDAO seriesdao = new SeriesDAO();
-		ArrayList<Chapter> seriesChapters = seriesdao.retriveChapters(seriesTitle);
-		return seriesChapters;
+	public ArrayList<Chapter> getChapters(String seriesTitle){
+		return chapters;
 	}
 
 }

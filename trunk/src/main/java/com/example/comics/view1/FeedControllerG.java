@@ -1,6 +1,7 @@
 package com.example.comics.view1;
 
 import com.example.comics.ResearchController;
+import com.example.comics.fagioli.SeriesBean;
 import com.example.comics.model.Advertisement;
 import com.example.comics.model.Series;
 import javafx.fxml.FXML;
@@ -35,7 +36,7 @@ public class FeedControllerG{
     public void init() {
 
         ResearchController researchController = new ResearchController();
-        ArrayList<Series> latestSeries = researchController.getLatestSeries();
+        ArrayList<SeriesBean> latestSeries = researchController.getLatestSeries();
         int size = latestSeries.size();
 
         int i=1;
