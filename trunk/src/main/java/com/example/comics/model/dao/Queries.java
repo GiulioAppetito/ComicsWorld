@@ -166,15 +166,16 @@ conn.commit();
 
 
     public static void addProfile(Statement stmt, String firstName, String lastName, String username, String email, String password, String role) throws AlreadyUsedUsernameException {
-        try{
 
+        try{
+/*
             File file = new File("immagine.jpg");
             InputStream fin = new java.io.FileInputStream(file);
             int fileLength = (int)file.length();
-
-            String insertStatement = String.format("INSERT INTO `users`(firstname,lastname,username,email,password,role,propic) VALUES ('%s','%s','%s','%s','%s','%s')", firstName,lastName,username,email,password,role);
+*/
+            String insertStatement = String.format("INSERT INTO `users`(firstname,lastname,username,email,password,role) VALUES ('%s','%s','%s','%s','%s','%s')", firstName,lastName,username,email,password,role);
             System.out.println(insertStatement);
-             stmt.executeUpdate(insertStatement);
+            stmt.executeUpdate(insertStatement);
 
             /*File file = new File("immagine.jpg");
             InputStream fin = new java.io.FileInputStream(file);
@@ -189,8 +190,6 @@ conn.commit();
             throw new AlreadyUsedUsernameException();
         } catch (SQLException throwables) {
             throwables.printStackTrace();
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
         }
     }
 }
