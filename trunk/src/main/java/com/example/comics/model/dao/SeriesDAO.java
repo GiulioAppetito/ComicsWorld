@@ -76,6 +76,74 @@ public class SeriesDAO {
         return seriesList;
     }
 
+    public ArrayList<Series> retriveFavouriteSeries(String user) {
+
+        Statement stmt = null;
+        Connection conn = null;
+
+        ArrayList<Series> seriesList = new ArrayList<Series>();
+
+        String title;
+        String author;
+        String publishingHouse;
+        ImageView cover;
+
+        Series series;
+
+        try {
+            Class.forName(DRIVER_CLASS_NAME);
+            conn = DriverManager.getConnection(DB_URL, USER, PASS);
+
+            stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
+            ResultSet rs = Queries.retriveFavouriteSeries(stmt, user);
+
+            if (!rs.first()) {
+                Exception e = new Exception("No series Found ");
+                throw e;
+            }
+            rs.first();
+
+            do {
+                ResultSet rs2 = Queries.retriveSeries(stmt, rs.getString("series"));
+                if (!rs2.first()) {
+                    Exception e = new Exception("No series Found ");
+                    throw e;
+                }
+                rs2.first();
+
+                title = rs2.getString("title");
+                author = rs2.getString("author");
+                //cover = rs.getImg("cover");
+                series = new Series(title);
+                series.setAuthor(author);
+                seriesList.add(series);
+            } while (rs.next());
+
+
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        finally {
+            try {
+                if (stmt != null)
+                    stmt.close();
+            } catch (SQLException se2) {
+            }
+            try {
+                if (conn != null)
+                    conn.close();
+            } catch (SQLException se) {
+                se.printStackTrace();
+            }
+
+        }
+        return seriesList;
+    }
+
     public ArrayList<Chapter> retriveChapters(String seriesTitle) {
         ChapterDAO chapterDAO = new ChapterDAO();
         return chapterDAO.retriveChapters(seriesTitle);
