@@ -1,9 +1,9 @@
 package com.example.comics.model.dao;
 
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.SQLIntegrityConstraintViolationException;
-import java.sql.Statement;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.InputStream;
+import java.sql.*;
 
 public class Queries {
 
@@ -56,7 +56,8 @@ public class Queries {
 
     public static ResultSet checkSignedUserByEmail(Statement stmt, String email) throws SQLException {
 
-        String sql = "SELECT * FROM users WHERE email = '" + email + "' or username = '" + email + "';";
+        String sql;
+        sql = "SELECT * FROM users WHERE email = '" + email + "' or username = '" + email + "';";
 
         System.out.println(sql);
         return stmt.executeQuery(sql);
@@ -166,14 +167,30 @@ conn.commit();
 
     public static void addProfile(Statement stmt, String firstName, String lastName, String username, String email, String password, String role) throws AlreadyUsedUsernameException {
         try{
-            String insertStatement = String.format("INSERT INTO `users`(firstname,lastname,username,email,password,role) VALUES ('%s','%s','%s','%s','%s','%s')", firstName,lastName,username,email,password,role);
+
+            File file = new File("immagine.jpg");
+            InputStream fin = new java.io.FileInputStream(file);
+            int fileLength = (int)file.length();
+
+            String insertStatement = String.format("INSERT INTO `users`(firstname,lastname,username,email,password,role,propic) VALUES ('%s','%s','%s','%s','%s','%s')", firstName,lastName,username,email,password,role);
             System.out.println(insertStatement);
              stmt.executeUpdate(insertStatement);
+
+            /*File file = new File("immagine.jpg");
+            InputStream fin = new java.io.FileInputStream(file);
+            int fileLength = (int)file.length();
+
+            insertStatement = String.format("UPDATE INTO users (NAME, IMG) "+"VALUES (?, ?)");
+            //pstmt.setString(1, file.getName());
+            //pstmt.setBinaryStream (2, fin, fileLength);
+            //pstmt.executeUpdate();*/
         }
         catch (SQLIntegrityConstraintViolationException e){
             throw new AlreadyUsedUsernameException();
         } catch (SQLException throwables) {
             throwables.printStackTrace();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
         }
     }
 }

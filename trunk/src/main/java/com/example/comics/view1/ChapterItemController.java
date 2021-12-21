@@ -16,9 +16,9 @@ public class ChapterItemController {
     @FXML
     private Text lblSeries;
 
-    public void setData(Chapter chapter){
-        lblName.setText(chapter.getTitle());
-        lblSeries.setText(chapter.getSeries());
+    public void setData(String chaptersTitle, String chaptersSeries){
+        lblName.setText(chaptersTitle);
+        lblSeries.setText(chaptersSeries);
 
     }
 }

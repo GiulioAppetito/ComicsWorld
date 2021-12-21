@@ -1,6 +1,7 @@
 package com.example.comics.view1;
 
 import com.example.comics.ResearchController;
+import com.example.comics.fagioli.ChapterBean;
 import com.example.comics.model.Chapter;
 import com.example.comics.model.Series;
 import javafx.fxml.FXML;
@@ -40,9 +41,9 @@ public class SeriesControllerG {
 
         ResearchController researchController = new ResearchController();
         //magari serve altro oltre al title
-        ArrayList<Chapter> listOfChapters = researchController.getChapters(series_title);
+        ArrayList<ChapterBean> listOfChapters = researchController.getChapters(series_title);
 
-        for (Chapter chapter : listOfChapters) {
+        for (ChapterBean chapter : listOfChapters) {
 
             FXMLLoader fxmlLoader = new FXMLLoader();
             fxmlLoader.setLocation(getClass().getResource("chapterItem.fxml"));
@@ -51,7 +52,7 @@ public class SeriesControllerG {
             try {
                 VBox vbChapter = fxmlLoader.load();
                 ChapterItemController chapterControllerItem = fxmlLoader.getController();
-                chapterControllerItem.setData(chapter);
+                chapterControllerItem.setData(chapter.getTitle(),chapter.getSeries());
 
                 vbChapter.setOnMouseClicked(event -> {
                     try {
