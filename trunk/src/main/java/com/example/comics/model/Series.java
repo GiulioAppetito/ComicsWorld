@@ -14,7 +14,7 @@ public class Series {
 	private String publishingHouse;
 	private ArrayList<Chapter> chapters;
 	private ArrayList<Character> characters;
-	private static Objective[] objectives = new Objective[Levels.values().length];
+	private static final Objective[] objectives = new Objective[Levels.values().length];
 
 	private Series(){
 		//costruttore di default
@@ -51,8 +51,6 @@ public class Series {
 
 	}
 
-	
-	
 	public String getTitle() {
 		return title;
 	}
@@ -65,13 +63,6 @@ public class Series {
 	}
 	public void setAuthor(String author) {
 		this.author = author;
-	}
-
-	public ImageView getCover() {
-		return cover;
-	}
-	public void setCover(ImageView cover) {
-		this.cover = cover;
 	}
 
 	public String getPublishingHouse() {

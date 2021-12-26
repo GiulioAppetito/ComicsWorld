@@ -1,5 +1,6 @@
 package com.example.comics.view1;
 
+import com.example.comics.fagioli.ReviewBean;
 import com.example.comics.model.Review;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
@@ -17,9 +18,10 @@ public class ReviewControllerG {
     @FXML
     private Text txtComment;
 
-    public void setData(Review review) {
+    public void setData(ReviewBean review) {
         //lblUsername.setText(review.getUsername());
         txtComment.setText(review.getComment());
+        lblUsername.setText(review.getUsername());
 
     }
 

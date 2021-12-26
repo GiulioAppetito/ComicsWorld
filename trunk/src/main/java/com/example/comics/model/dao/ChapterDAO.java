@@ -1,6 +1,7 @@
 package com.example.comics.model.dao;
 
 import com.example.comics.model.Chapter;
+import com.example.comics.model.Review;
 import javafx.scene.image.ImageView;
 
 import java.sql.*;
@@ -24,13 +25,13 @@ public class ChapterDAO {
         String publishingHouse;
         ImageView cover;
         Integer chapter_id;
+        String chapterSeries;
 
         Chapter chapter;
 
         try {
             Class.forName(DRIVER_CLASS_NAME);
             conn = DriverManager.getConnection(DB_URL, USER, PASS);
-
             stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
             ResultSet rs = Queries.retriveChapters(stmt, seriesTitle);
 
@@ -42,13 +43,13 @@ public class ChapterDAO {
             do {
                 chapterTitle = rs.getString("chapter_title");
                 chapter_id = rs.getInt("chapter_id");
+                chapterSeries = rs.getString("series_title");
 
                 //author = rs.getString("author");
                 //cover = rs.getImg("cover");
-                chapter = new Chapter();
-                chapter.setTitle(chapterTitle);
+                chapter = new Chapter(chapterSeries,chapterTitle);
                 chapter.setId(chapter_id);
-                chapter.setSeries(seriesTitle);
+
 
                 //chapters.setAuthor(author);
                 chaptersList.add(chapter);
@@ -79,4 +80,9 @@ public class ChapterDAO {
         return chaptersList;
     }
 
+    public ArrayList<Review> retrieveReviews(String series, String chapter) throws ReviewsNotFoundException{
+        ReviewDAO reviewDAO = new ReviewDAO();
+        return reviewDAO.retrieveReviews(series,chapter);
+
+    }
 }
