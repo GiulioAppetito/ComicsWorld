@@ -1,9 +1,14 @@
 package com.example.comics.fagioli;
 
+import com.example.comics.model.Chapter;
 import com.example.comics.model.Review;
+import com.example.comics.model.dao.ReviewDAO;
 import javafx.scene.image.ImageView;
 import javafx.scene.text.Text;
 
+import java.lang.reflect.Array;
+import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -13,11 +18,11 @@ public class ChapterBean {
     private String series;
     private Integer id;
     private ImageView cover;
+    private ArrayList<Review> reviews = new ArrayList<>();
 
     public String getTitle() {
         return title;
     }
-
     public void setTitle(String title) {
         this.title = title;
     }
@@ -25,7 +30,6 @@ public class ChapterBean {
     public String getSeries() {
         return series;
     }
-
     public void setSeries(String series) {
         this.series = series;
     }
@@ -33,7 +37,6 @@ public class ChapterBean {
     public Integer getId() {
         return id;
     }
-
     public void setId(Integer id) {
         this.id = id;
     }
@@ -41,8 +44,27 @@ public class ChapterBean {
     public ImageView getCover() {
         return cover;
     }
-
     public void setCover(ImageView cover) {
         this.cover = cover;
+    }
+
+    public ArrayList<ReviewBean> getReviews() throws SQLException {
+        ReviewDAO reviewDAO = new ReviewDAO();
+        ArrayList<ReviewBean> reviewBeans = new ArrayList<>();
+        ReviewBean reviewBean ;
+
+        for(Review review : reviews){
+            //non so le info su review
+            reviewBean = new ReviewBean();
+            reviewBean.setComment(review.getComment());
+            reviewBean.setUsername(review.getUsername());
+            reviewBeans.add(reviewBean);
+        }
+
+        return reviewBeans;
+    }
+
+    public void setReviews(ArrayList<Review> reviews) {
+        this.reviews = reviews;
     }
 }

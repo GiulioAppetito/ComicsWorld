@@ -76,6 +76,7 @@ public class SeriesDAO {
         return seriesList;
     }
 
+
     public ArrayList<Chapter> retriveChapters(String seriesTitle) {
         ChapterDAO chapterDAO = new ChapterDAO();
         return chapterDAO.retriveChapters(seriesTitle);

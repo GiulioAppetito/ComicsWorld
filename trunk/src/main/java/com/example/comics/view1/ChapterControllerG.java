@@ -14,6 +14,7 @@ import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 
 import java.io.IOException;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -65,19 +66,23 @@ public class ChapterControllerG {
         btnPostReview.setOnAction(event ->
                 postReview());
 
-        ArrayList<Review> listOfReviews = new ArrayList<>(addReviews());
+        ArrayList<ReviewBean> listOfReviews = null;
+        try {
+            listOfReviews = chapterBean.getReviews();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
 
-        for (Review review : listOfReviews) {
+
+        for (ReviewBean reviewBean : listOfReviews) {
 
             FXMLLoader fxmlLoader = new FXMLLoader();
             fxmlLoader.setLocation(getClass().getResource("review.fxml"));
             try {
                 VBox vbRev = fxmlLoader.load();
                 ReviewControllerG reviewController = fxmlLoader.getController();
-                reviewController.setData(review);
-
+                reviewController.setData(reviewBean);
                 vbRev.setOnMouseClicked(event -> System.out.println("Clicked ad"));
-
                 vbReviews.getChildren().add(vbRev);
 
             } catch (IOException e) {
@@ -103,22 +108,7 @@ public class ChapterControllerG {
 
     }
 
-    private List<Review> addReviews(){
 
-        List<Review> lr = new ArrayList<>();
-        int i;
-        List<String> nameList = Arrays.asList("Anastasia","Giulio","Gregor","Peter");
-        List<String> commentList = Arrays.asList("Very interesting chapter!","I didn't like this chapter.","Not my favourite chapter...","Best chapter ever!");
-
-
-        for(i=0; i<nameList.size(); i++){
-            Review review = new Review(commentList.get(i), nameList.get(i));
-            lr.add(review);
-        }
-
-        return lr;
-
-    }
 
     public void postReview(){
         ReviewBean reviewBean = new ReviewBean();

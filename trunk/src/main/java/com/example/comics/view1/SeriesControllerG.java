@@ -42,7 +42,7 @@ public class SeriesControllerG {
 
         ArrayList<ChapterBean> listOfChapters = seriesBean.getChapters();
 
-        for (ChapterBean chapter : listOfChapters) {
+        for (ChapterBean chapterBean : listOfChapters) {
 
             FXMLLoader fxmlLoader = new FXMLLoader();
             fxmlLoader.setLocation(getClass().getResource("chapterItem.fxml"));
@@ -50,11 +50,11 @@ public class SeriesControllerG {
             try {
                 VBox vbChapter = fxmlLoader.load();
                 ChapterItemController chapterControllerItem = fxmlLoader.getController();
-                chapterControllerItem.setData(chapter.getTitle(),chapter.getSeries());
+                chapterControllerItem.setData(chapterBean.getTitle(),chapterBean.getSeries());
 
                 vbChapter.setOnMouseClicked(event -> {
                     try {
-                        openChapter(chapter);
+                        openChapter(chapterBean);
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
@@ -103,6 +103,7 @@ public class SeriesControllerG {
         HomeControllerG homeControllerG = homeFactory.getHomeControllerG();
         homeControllerG.changeCenter(loader.load());
 
+        System.out.println("[SeriesControllerG] calling chaptherControllerG.init("+chapterBean.getSeries()+","+chapterBean.getTitle());
         chapterControllerG.init(chapterBean);
 
     }
