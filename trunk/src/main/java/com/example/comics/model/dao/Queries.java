@@ -1,12 +1,10 @@
 package com.example.comics.model.dao;
 
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.InputStream;
 import java.sql.*;
 
 public class Queries {
 
+    private Queries(){}
 
     public static void updateCredentials(Statement stmt, String newName, String newSurname, String oldUsername, String newUsername) throws SQLException {
         String updateStatement = String.format("UPDATE users set firstname='%s', lastname='%s', username='%s' WHERE username = '%s' ", newName,newSurname,newUsername,oldUsername);
@@ -29,6 +27,18 @@ public class Queries {
 
     public static ResultSet retriveLatestSeries(Statement stmt) throws SQLException {
         String selectStatement = String.format("SELECT * FROM series");
+        System.out.println(selectStatement);
+        return stmt.executeQuery(selectStatement);
+    }
+
+    public static ResultSet retriveSeries(Statement stmt, String title) throws SQLException {
+        String selectStatement = String.format("SELECT * FROM series where title = '%s'", title);
+        System.out.println(selectStatement);
+        return stmt.executeQuery(selectStatement);
+    }
+
+    public static ResultSet retriveFavouriteSeries(Statement stmt, String user) throws SQLException {
+        String selectStatement = String.format("SELECT * from userFavouriteSeries where user = '%s' ", user);
         System.out.println(selectStatement);
         return stmt.executeQuery(selectStatement);
     }

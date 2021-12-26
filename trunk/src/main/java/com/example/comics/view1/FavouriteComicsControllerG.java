@@ -22,7 +22,7 @@ public class FavouriteComicsControllerG {
 
         ResearchController researchController = new ResearchController();
         //poi ovviamente sarà na cosa diversa da latest
-        ArrayList<SeriesBean> listOfCards = researchController.getLatestSeries();
+        ArrayList<SeriesBean> listOfCards = researchController.getFavouriteSeries();
         int size = listOfCards.size();
         int columns = 3;
         int i=1;
@@ -33,6 +33,7 @@ public class FavouriteComicsControllerG {
                 VBox card = fxmlLoader.load();
                 VCardControllerG cardController = fxmlLoader.getController();
                 cardController.setData(listOfCards.get(j).getTitle());
+                System.out.println(listOfCards.get(j).getTitle());
 
                 int finalJ = j;
                 card.setOnMouseClicked(event -> {
