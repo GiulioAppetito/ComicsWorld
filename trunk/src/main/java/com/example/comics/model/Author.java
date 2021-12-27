@@ -5,8 +5,9 @@ import java.util.List;
 
 public class Author extends Account{
 
-    private List<Series> publishedSeries;
-    private List<Badge> badges;
+    private ArrayList<Series> publishedSeries;
+    private ArrayList<Badge> badges;
+    private ArrayList<Character> characters;
 
     public Author(){
         //dummy
@@ -23,11 +24,11 @@ public class Author extends Account{
         return ROLE;
     }
 
-    public List<Series> getPublishedSeries() {
+    public ArrayList<Series> getPublishedSeries() {
         return publishedSeries;
     }
 
-    public void setPublishedSeries(List<Series> publishedSeries) {
+    public void setPublishedSeries(ArrayList<Series> publishedSeries) {
         this.publishedSeries = publishedSeries;
     }
 

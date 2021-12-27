@@ -2,6 +2,7 @@ package com.example.comics.view1;
 
 import com.example.comics.fagioli.SeriesBean;
 import com.example.comics.model.Author;
+import com.example.comics.model.Series;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.layout.GridPane;
@@ -42,12 +43,12 @@ public class FavouriteAuthorsControllerG {
     private List<Author> add(){
 
         List<Author> la = new ArrayList<>();
-
+        ArrayList<Series> series = null;
         int dummyNumAuthors = 12;
         int i;
 
         for(i=0;i<dummyNumAuthors;i++){
-            Author author = new Author();
+            Author author = new Author(series);
             author.setUsername("stanlee");
             la.add(author);
         }
