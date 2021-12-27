@@ -22,7 +22,6 @@ public class ReaderDAO {
         Reader reader = null;
 
         try {
-            Class.forName(DRIVER_CLASS_NAME);
             conn = DriverManager.getConnection(DB_URL, USER, PASS);
             stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
             ResultSet rs = Queries.retreiveReader(stmt, identifier, password);
@@ -33,21 +32,18 @@ public class ReaderDAO {
             rs.first();
 
             SeriesDAO seriesDAO = new SeriesDAO();
-            ArrayList<Series> favSeries = seriesDAO.retrieveFavouriteSeries(rs.getString("username"));
-            ArrayList<Series> toReadSeries = seriesDAO.retrieveToReadSeries(rs.getString("username"));
-            ArrayList<Series> readingSeries = seriesDAO.retrieveReadingSeries(rs.getString("username"));
+            String username = rs.getString("username");
+            ArrayList<Series> favSeries = seriesDAO.retrieveFavouriteSeries(username);
+            ArrayList<Series> toReadSeries = seriesDAO.retrieveToReadSeries(username);
+            ArrayList<Series> readingSeries = seriesDAO.retrieveReadingSeries(username);
 
             reader = new Reader(favSeries, toReadSeries, readingSeries);
 
             reader.setUsername(rs.getString("username"));
             reader.setFirstName(rs.getString("firstname"));
-            reader.setLastName(rs.getString("email"));
+            reader.setEmail(rs.getString("email"));
             reader.setPassword(rs.getString("password"));
 
-
-
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }

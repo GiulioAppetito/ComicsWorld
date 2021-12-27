@@ -6,15 +6,16 @@ import com.example.comics.model.UserLogin;
 import com.example.comics.model.dao.SeriesDAO;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class ResearchController {
 
-    public ArrayList<SeriesBean> getFavouriteSeries(){
+    public List<SeriesBean> getFavouriteSeries(){
 
-        ArrayList<SeriesBean> seriesBeans = new ArrayList<>();
+        List<SeriesBean> seriesBeans = new ArrayList<>();
         SeriesBean seriesBean;
 
-        ArrayList<Series> favouriteSeries = UserLogin.getInstance().getReader().getFavourites();
+        List<Series> favouriteSeries = UserLogin.getInstance().getReader().getFavourites();
 
         for(Series series : favouriteSeries){
             seriesBean = new SeriesBean();
@@ -30,7 +31,7 @@ public class ResearchController {
         return seriesBeans;
     }
 
-    public ArrayList<SeriesBean> getLatestSeries(){
+    public List<SeriesBean> getLatestSeries(){
 
         ArrayList<SeriesBean> seriesBeans = new ArrayList<>();
         SeriesBean seriesBean;
