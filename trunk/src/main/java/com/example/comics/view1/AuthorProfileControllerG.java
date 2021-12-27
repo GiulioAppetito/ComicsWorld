@@ -25,8 +25,8 @@ public class AuthorProfileControllerG implements AccountObserver {
 
     @FXML
     public void initialize(){
-        lblName.setText(UserLogin.getAccount().getFirstName());
-        lblUsername.setText(UserLogin.getAccount().getLastName());
+        lblName.setText(UserLogin.getInstance().getAccount().getFirstName());
+        lblUsername.setText(UserLogin.getInstance().getAccount().getLastName());
         btnEdit.setOnAction(actionEvent -> edit());
         AccountSubject.attach(this);
     }
@@ -47,7 +47,7 @@ public class AuthorProfileControllerG implements AccountObserver {
 
     @Override
     public void update() {
-        lblName.setText(UserLogin.getAccount().getFirstName());
-        lblUsername.setText(UserLogin.getAccount().getUsername());
+        lblName.setText(UserLogin.getInstance().getAccount().getFirstName());
+        lblUsername.setText(UserLogin.getInstance().getAccount().getUsername());
     }
 }

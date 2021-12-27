@@ -48,9 +48,6 @@ public class FavouriteAuthorsControllerG {
 
         for(i=0;i<dummyNumAuthors;i++){
             Author author = new Author();
-            author.setFirstName("Stan");
-            author.setLastName("Lee");
-            author.setCity("New York");
             author.setUsername("stanlee");
             la.add(author);
         }

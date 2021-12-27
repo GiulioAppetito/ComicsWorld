@@ -166,16 +166,21 @@ public class LoginControllerG {
             return;
         }
         loginBean.setPassword(tfPassword.getText());
+
         LoginController loginController = new LoginController();
 
         if(loginController.login(loginBean)) {
+            System.out.println(loginBean.getEmail());
             Stage stage = new Stage();
             FXMLLoader loader = new FXMLLoader();
             URL fxmlLocation;
             Scene scene;
 
-            String role = UserLogin.getAccount().getRole();
-            if(Objects.equals(role, "reader")) {
+            String role = UserLogin.getInstance().getAccount().getRole();
+            System.out.println("role: " + UserLogin.getInstance().getAccount().getUsername());
+
+
+            if(role.equals("reader")) {
                 ReaderHomeControllerG readerHomeControllerG = ReaderHomeControllerG.getInstance();
 
                 fxmlLocation = ReaderHomeControllerG.class.getResource("readerhome.fxml");

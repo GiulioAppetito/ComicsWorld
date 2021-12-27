@@ -66,9 +66,9 @@ public class AccountSettingsControllerG implements AccountObserver {
         paneEditFirstName.setVisible(false);
         paneEditLastName.setVisible(false);
 
-        lblFirstName.setText(UserLogin.getAccount().getFirstName());
-        lblLastName.setText(UserLogin.getAccount().getLastName());
-        lblEmail.setText(UserLogin.getAccount().getEmail());
+        lblFirstName.setText(UserLogin.getInstance().getAccount().getFirstName());
+        lblLastName.setText(UserLogin.getInstance().getAccount().getLastName());
+        lblEmail.setText(UserLogin.getInstance().getAccount().getEmail());
 
         //stessa cosa con la propic
 
@@ -151,9 +151,9 @@ public class AccountSettingsControllerG implements AccountObserver {
         paneEditFirstName.setVisible(false);
 
 
-        lblFirstName.setText(UserLogin.getAccount().getFirstName());
-        lblLastName.setText(UserLogin.getAccount().getLastName());
-        lblEmail.setText(UserLogin.getAccount().getEmail());
+        lblFirstName.setText(UserLogin.getInstance().getAccount().getFirstName());
+        lblLastName.setText(UserLogin.getInstance().getAccount().getLastName());
+        lblEmail.setText(UserLogin.getInstance().getAccount().getEmail());
     }
 
 }

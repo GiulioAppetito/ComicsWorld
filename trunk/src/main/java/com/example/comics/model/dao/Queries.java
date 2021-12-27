@@ -19,8 +19,8 @@ public class Queries {
 
     }
 
-    public static void updateEmail(Statement stmt, String newEmail, String username) throws SQLException {
-        String updateStatement = String.format("UPDATE users set email='%s' WHERE username = '%s' ", newEmail, username);
+    public static void updateEmail(Statement stmt, String newEmail, String password) throws SQLException {
+        String updateStatement = String.format("UPDATE users set email='%s' WHERE password = '%s' ", newEmail, password);
         System.out.println(updateStatement);
         stmt.executeUpdate(updateStatement);
     }
@@ -31,7 +31,7 @@ public class Queries {
         return stmt.executeQuery(selectStatement);
     }
 
-    public static ResultSet retriveSeries(Statement stmt, String title) throws SQLException {
+    public static ResultSet retrieveSeries(Statement stmt, String title) throws SQLException {
         String selectStatement = String.format("SELECT * FROM series where title = '%s'", title);
         System.out.println(selectStatement);
         return stmt.executeQuery(selectStatement);
@@ -43,20 +43,40 @@ public class Queries {
         return stmt.executeQuery(selectStatement);
     }
 
+    public static ResultSet retrivePublishedSeries(Statement stmt, String user) throws SQLException {
+        String selectStatement = String.format("SELECT * from publishedSeries where user = '%s' ", user);
+        System.out.println(selectStatement);
+        return stmt.executeQuery(selectStatement);
+    }
+
+    public static ResultSet retriveToReadSeries(Statement stmt, String user) throws SQLException {
+        String selectStatement = String.format("SELECT * from userToReadSeries where user = '%s' ", user);
+        System.out.println(selectStatement);
+        return stmt.executeQuery(selectStatement);
+    }
+
+    public static ResultSet retriveReadingSeries(Statement stmt, String user) throws SQLException {
+        String selectStatement = String.format("SELECT * from userReadingSeries where user = '%s' ", user);
+        System.out.println(selectStatement);
+        return stmt.executeQuery(selectStatement);
+    }
+
+    public static ResultSet retreiveReader(Statement stmt, String identifier, String password) throws SQLException {
+        String selectStatement = String.format("SELECT * FROM users WHERE (username = '%s' OR email = '%s')  AND password = '%s'",identifier,identifier,password);
+        System.out.println(selectStatement);
+        return stmt.executeQuery(selectStatement);
+    }
+
     public static ResultSet retriveChapters(Statement stmt, String seriesTitle) throws SQLException {
         String selectStatement = String.format("SELECT * FROM chapters WHERE series_title = '%s' ", seriesTitle);
         System.out.println(selectStatement);
         return stmt.executeQuery(selectStatement);
     }
 
-    public static ResultSet checkSignedUserByEmail(Statement stmt, String email) throws SQLException {
-
-        String sql;
-        sql = "SELECT * FROM users WHERE email = '" + email + "' or username = '" + email + "';";
-
-        System.out.println(sql);
-        return stmt.executeQuery(sql);
-
+    public static ResultSet checkSignedUserByEmail(Statement stmt, String credential, String password) throws SQLException {
+        String selectStatement = String.format("SELECT * FROM users WHERE (email = '%s' OR username = '%s') AND password = '%s'", credential, credential, password);
+        System.out.println(selectStatement);
+        return stmt.executeQuery(selectStatement);
     }
 
     public static void addProfile(Statement stmt, String firstName, String lastName, String username, String email, String password, String role) throws AlreadyUsedUsernameException {

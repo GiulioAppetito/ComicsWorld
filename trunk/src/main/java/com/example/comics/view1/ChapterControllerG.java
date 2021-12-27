@@ -113,7 +113,7 @@ public class ChapterControllerG {
     public void postReview(){
         ReviewBean reviewBean = new ReviewBean();
         reviewBean.setComment(txtAreaComment.getText());
-        reviewBean.setUsername(UserLogin.getAccount().getUsername());
+        reviewBean.setUsername(UserLogin.getInstance().getAccount().getUsername());
         //e magari anche la foto
         PostReviewController postReviewController = new PostReviewController();
         postReviewController.post(reviewBean);

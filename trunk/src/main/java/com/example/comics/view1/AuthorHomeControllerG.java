@@ -68,7 +68,7 @@ public class AuthorHomeControllerG  extends HomeControllerG implements AccountOb
 
         openFeed();
 
-        lblName.setText(UserLogin.getAccount().getUsername());
+        lblName.setText(UserLogin.getInstance().getAccount().getUsername());
 
         btnMySeries.setOnAction(event -> openMySeries());
         btnCategories.setOnAction(event -> {
@@ -215,6 +215,6 @@ public class AuthorHomeControllerG  extends HomeControllerG implements AccountOb
 
     @Override
     public void update() {
-        lblName.setText(UserLogin.getAccount().getUsername());
+        lblName.setText(UserLogin.getInstance().getAccount().getUsername());
     }
 }

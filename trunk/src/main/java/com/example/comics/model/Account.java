@@ -32,13 +32,7 @@ public abstract class Account extends AccountSubject {
     }
 
     public void setFirstName(String firstName) {
-        String oldFirstName = this.firstName;
-        System.out.println("2. [ACCOUNT] Parameter old firstName : "+ oldFirstName);
         this.firstName = firstName;
-        //e va a cambiare anche su db
-        AccountDAO accountDAO = new AccountDAO();
-        accountDAO.changeCredentials(this.firstName, this.lastName, this.username, this.username);
-        System.out.println("Called DAO with username : "+ this.username);
     }
 
     public String getLastName() {
@@ -46,27 +40,15 @@ public abstract class Account extends AccountSubject {
     }
 
     public void setLastName(String lastName) {
-        String oldLastName = this.lastName;
-        System.out.println("2. [ACCOUNT] Parameter old lastName : "+ oldLastName);
         this.lastName = lastName;
-        //e va a cambiare anche su db
-        AccountDAO accountDAO = new AccountDAO();
-        accountDAO.changeCredentials(this.firstName, this.lastName, this.username, this.username);
-        System.out.println("Called DAO with username : "+ this.username);
-    }
+        }
 
     public String getUsername() {
         return username;
     }
 
     public void setUsername(String username) {
-        String oldUsername = this.username;
-        System.out.println("2. [ACCOUNT] Parameter username : "+oldUsername);
         this.username = username;
-        //e va a cambiare anche su db
-        AccountDAO accountDAO = new AccountDAO();
-        accountDAO.changeCredentials(this.firstName, this.lastName, this.username,oldUsername);
-        System.out.println("Called DAO with username : "+ this.username);
     }
 
     public String getCity() {
@@ -98,13 +80,7 @@ public abstract class Account extends AccountSubject {
     }
 
     public void setEmail(String email) {
-        String oldEmail = this.email;
-        System.out.println("2. [ACCOUNT] Parameter old email : "+ oldEmail);
         this.email = email;
-        //e va a cambiare anche su db
-        AccountDAO accountDAO = new AccountDAO();
-        accountDAO.changeEmail(this.email, this.username);
-        System.out.println("Called DAO with username : "+ this.username);
     }
 
     public String getPassword() {
@@ -115,13 +91,32 @@ public abstract class Account extends AccountSubject {
         this.password = password;
     }
 
-    //init the account credentials through DB
-    public void init(String input) {
-        AccountDAO accountDAO = new AccountDAO();
-        ArrayList<String> credentials = accountDAO.retreiveCredentials(input);
-        this.firstName = credentials.get(0);
-        this.lastName = credentials.get(1);
-        this.username = credentials.get(2);
-        this.email = credentials.get(3);
+    public void changeCredential(String credentialType, String newCredential){
+
+        switch(credentialType){
+            case "email":
+                this.setEmail(newCredential);
+                break;
+            case "username":
+                this.setUsername(newCredential);
+                break;
+            case "firstname":
+                this.setFirstName(newCredential);
+                break;
+            case "lastname":
+                this.setLastName(newCredential);
+                break;
+            case "password":
+                this.setPassword(newCredential);
+                break;
+            case "city":
+                this.setCity(newCredential);
+                break;
+
+
+        }
     }
+
+    public void changeProPic(ImageView imageView){}
+
 }

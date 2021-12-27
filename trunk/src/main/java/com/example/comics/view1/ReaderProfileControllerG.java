@@ -33,8 +33,8 @@ public class ReaderProfileControllerG implements AccountObserver {
 
     @FXML
     public void initialize() {
-        lblName.setText(UserLogin.getAccount().getFirstName());
-        lblUsername.setText(UserLogin.getAccount().getLastName());
+        lblName.setText(UserLogin.getInstance().getAccount().getFirstName());
+        lblUsername.setText(UserLogin.getInstance().getAccount().getLastName());
         AccountSubject.attach(this);
 
         loadBadges();
@@ -97,7 +97,7 @@ public class ReaderProfileControllerG implements AccountObserver {
 
     @Override
     public void update() {
-        lblName.setText(UserLogin.getAccount().getFirstName());
-        lblUsername.setText(UserLogin.getAccount().getUsername());
+        lblName.setText(UserLogin.getInstance().getAccount().getFirstName());
+        lblUsername.setText(UserLogin.getInstance().getAccount().getUsername());
     }
 }

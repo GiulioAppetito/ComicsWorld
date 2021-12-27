@@ -68,7 +68,7 @@ public class ReaderHomeControllerG extends HomeControllerG implements AccountObs
 
         openFeed();
 
-        lblName.setText(UserLogin.getAccount().getUsername());
+        lblName.setText(UserLogin.getInstance().getAccount().getUsername());
 
         btnFav.setOnAction(event -> openFavourites());
         btnCategories.setOnAction(event -> {
@@ -204,6 +204,6 @@ public class ReaderHomeControllerG extends HomeControllerG implements AccountObs
 
     @Override
     public void update() {
-        lblName.setText(UserLogin.getAccount().getUsername());
+        lblName.setText(UserLogin.getInstance().getAccount().getUsername());
     }
 }

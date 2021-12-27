@@ -7,7 +7,7 @@ public class HomeFactory {
     public HomeControllerG getHomeControllerG(){
 
         HomeControllerG homeControllerG;
-        String role = UserLogin.getAccount().getRole();
+        String role = UserLogin.getInstance().getAccount().getRole();
 
         if(role.equals("reader")){
             homeControllerG = ReaderHomeControllerG.getInstance();

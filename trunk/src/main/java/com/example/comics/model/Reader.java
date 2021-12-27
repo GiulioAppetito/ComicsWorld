@@ -1,13 +1,24 @@
 package com.example.comics.model;
 
+import com.example.comics.model.dao.AccountDAO;
+import com.example.comics.model.dao.SeriesDAO;
+
+import java.util.ArrayList;
 import java.util.List;
 
 public class Reader extends Account{
 
-    private List<Series> favourites;
-    private List<Series> toRead;
-    private List<Series> reading;
-    private int coins;
+    private ArrayList<Series> favourites;
+    private ArrayList<Series> toRead;
+    private ArrayList<Series> reading;
+
+    public Reader(ArrayList<Series> favourites, ArrayList<Series> toRead, ArrayList<Series> reading){
+
+        this.favourites = favourites;
+        this.toRead = toRead;
+        this.reading = reading;
+
+    }
 
     private static final String ROLE = "reader";
 
@@ -16,35 +27,28 @@ public class Reader extends Account{
         return ROLE;
     }
 
-    public List<Series> getFavourites() {
+    public ArrayList<Series> getFavourites() {
         return favourites;
     }
 
-    public void setFavourites(List<Series> favourites) {
+    public void setFavourites(ArrayList<Series> favourites) {
         this.favourites = favourites;
     }
 
-    public List<Series> getToRead() {
+    public ArrayList<Series> getToRead() {
         return toRead;
     }
 
-    public void setToRead(List<Series> toRead) {
+    public void setToRead(ArrayList<Series> toRead) {
         this.toRead = toRead;
     }
 
-    public List<Series> getReading() {
+    public ArrayList<Series> getReading() {
         return reading;
     }
 
-    public void setReading(List<Series> reading) {
+    public void setReading(ArrayList<Series> reading) {
         this.reading = reading;
     }
 
-    public int getCoins() {
-        return coins;
-    }
-
-    public void incrementCoins(int increment) {
-        this.coins = this.coins + increment;
-    }
 }

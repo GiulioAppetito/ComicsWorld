@@ -15,6 +15,291 @@ public class SeriesDAO {
     private static final String DRIVER_CLASS_NAME = "com.mysql.jdbc.Driver";
 
 
+    public ArrayList<Series> retrieveFavouriteSeries(String user) {
+        Statement stmt = null;
+        Connection conn = null;
+
+        ArrayList<Series> seriesList = new ArrayList<Series>();
+
+        String title;
+        String author;
+        String publishingHouse;
+        ImageView cover;
+
+        Series series;
+
+        try {
+            Class.forName(DRIVER_CLASS_NAME);
+            conn = DriverManager.getConnection(DB_URL, USER, PASS);
+
+            stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
+            ResultSet rs = Queries.retriveFavouriteSeries(stmt, user);
+
+            if (!rs.first()) {
+                Exception e = new Exception("No series Found ");
+                throw e;
+            }
+            rs.first();
+
+            do {
+                title = rs.getString("series");
+                series = retrieveSeries(title);
+                seriesList.add(series);
+            } while (rs.next());
+
+
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        finally {
+            try {
+                if (stmt != null)
+                    stmt.close();
+            } catch (SQLException se2) {
+            }
+            try {
+                if (conn != null)
+                    conn.close();
+            } catch (SQLException se) {
+                se.printStackTrace();
+            }
+
+        }
+        return seriesList;
+    }
+
+    public ArrayList<Series> retrieveToReadSeries(String user) {
+        Statement stmt = null;
+        Connection conn = null;
+
+        ArrayList<Series> seriesList = new ArrayList<Series>();
+
+        String title;
+        String author;
+        String publishingHouse;
+        ImageView cover;
+
+        Series series;
+
+        try {
+            Class.forName(DRIVER_CLASS_NAME);
+            conn = DriverManager.getConnection(DB_URL, USER, PASS);
+
+            stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
+            ResultSet rs = Queries.retriveToReadSeries(stmt, user);
+
+            if (!rs.first()) {
+                Exception e = new Exception("No series Found ");
+                throw e;
+            }
+            rs.first();
+
+            do {
+                title = rs.getString("series");
+                series = retrieveSeries(title);
+                seriesList.add(series);
+            } while (rs.next());
+
+
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        finally {
+            try {
+                if (stmt != null)
+                    stmt.close();
+            } catch (SQLException se2) {
+            }
+            try {
+                if (conn != null)
+                    conn.close();
+            } catch (SQLException se) {
+                se.printStackTrace();
+            }
+
+        }
+        return seriesList;
+    }
+
+    public ArrayList<Series> retrievePublishedSeries(String user) {
+        Statement stmt = null;
+        Connection conn = null;
+
+        ArrayList<Series> seriesList = new ArrayList<Series>();
+
+        String title;
+        String author;
+        String publishingHouse;
+        ImageView cover;
+
+        Series series;
+
+        try {
+            Class.forName(DRIVER_CLASS_NAME);
+            conn = DriverManager.getConnection(DB_URL, USER, PASS);
+
+            stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
+            ResultSet rs = Queries.retrivePublishedSeries(stmt, user);
+
+            if (!rs.first()) {
+                Exception e = new Exception("No series Found ");
+                throw e;
+            }
+            rs.first();
+
+            do {
+                title = rs.getString("series");
+                series = retrieveSeries(title);
+                seriesList.add(series);
+            } while (rs.next());
+
+
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        finally {
+            try {
+                if (stmt != null)
+                    stmt.close();
+            } catch (SQLException se2) {
+            }
+            try {
+                if (conn != null)
+                    conn.close();
+            } catch (SQLException se) {
+                se.printStackTrace();
+            }
+
+        }
+        return seriesList;
+    }
+
+    public ArrayList<Series> retrieveReadingSeries(String user) {
+        Statement stmt = null;
+        Connection conn = null;
+
+        ArrayList<Series> seriesList = new ArrayList<Series>();
+
+        String title;
+        String author;
+        String publishingHouse;
+        ImageView cover;
+
+        Series series;
+
+        try {
+            Class.forName(DRIVER_CLASS_NAME);
+            conn = DriverManager.getConnection(DB_URL, USER, PASS);
+
+            stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
+            ResultSet rs = Queries.retriveReadingSeries(stmt, user);
+
+            if (!rs.first()) {
+                Exception e = new Exception("No series Found ");
+                throw e;
+            }
+            rs.first();
+
+            do {
+                title = rs.getString("series");
+                series = retrieveSeries(title);
+                seriesList.add(series);
+            } while (rs.next());
+
+
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        finally {
+            try {
+                if (stmt != null)
+                    stmt.close();
+            } catch (SQLException se2) {
+            }
+            try {
+                if (conn != null)
+                    conn.close();
+            } catch (SQLException se) {
+                se.printStackTrace();
+            }
+
+        }
+        return seriesList;
+    }
+
+    public Series retrieveSeries(String title) {
+        Statement stmt = null;
+        Connection conn = null;
+
+        String author;
+        String publishingHouse;
+        ImageView cover;
+
+        Series series = null;
+
+        try {
+            Class.forName(DRIVER_CLASS_NAME);
+            conn = DriverManager.getConnection(DB_URL, USER, PASS);
+
+            stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
+            ResultSet rs = Queries.retrieveSeries(stmt, title);
+
+            if (!rs.first()) {
+                Exception e = new Exception("No series Found ");
+                throw e;
+            }
+            rs.first();
+
+            do {
+                title = rs.getString("title");
+                author = rs.getString("author");
+                //cover = rs.getImg("cover");
+                series = new Series(title);
+                series.setAuthor(author);
+
+            } while (rs.next());
+
+
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        finally {
+            try {
+                if (stmt != null)
+                    stmt.close();
+            } catch (SQLException se2) {
+            }
+            try {
+                if (conn != null)
+                    conn.close();
+            } catch (SQLException se) {
+                se.printStackTrace();
+            }
+
+        }
+        return series;
+    }
+
     public ArrayList<Series> retriveLatestSeries() {
 
         Statement stmt = null;

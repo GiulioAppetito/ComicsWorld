@@ -30,7 +30,7 @@ public class AccountDAO {
             conn= DriverManager.getConnection(DB_URL,USER,PASS);
 
             stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE,ResultSet.CONCUR_READ_ONLY);
-            ResultSet rs = Queries.checkSignedUserByEmail(stmt, credential);
+            ResultSet rs = Queries.checkSignedUserByEmail(stmt, credential, password);
 
             if (!rs.first()){
                 Exception e = new Exception("No username Found matching with email or username: "+ credential);
@@ -42,6 +42,7 @@ public class AccountDAO {
                 String foundPassword=rs.getString("password");
                 if(foundPassword.equals(password)) {
                     role = rs.getString("role");
+                    System.out.println("AccountDAO role: " + role);
                 }
 
 
@@ -105,7 +106,7 @@ public class AccountDAO {
 
     }
 
-    public void changeEmail(String newEmail, String username){
+    public void changeEmail(String newEmail, String password){
 
         Statement stmt=null;
         Connection conn=null;
@@ -116,7 +117,7 @@ public class AccountDAO {
             conn= DriverManager.getConnection(DB_URL,USER,PASS);
 
             stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE,ResultSet.CONCUR_READ_ONLY);
-            Queries.updateEmail(stmt, newEmail, username);
+            Queries.updateEmail(stmt, newEmail, password);
 
 
         } catch (SQLException throwables) {
@@ -142,7 +143,7 @@ public class AccountDAO {
 
     }
 
-    public ArrayList<String> retreiveCredentials(String username) {
+    public ArrayList<String> retrieveCredentials(String username) {
         Statement stmt=null;
         Connection conn=null;
 

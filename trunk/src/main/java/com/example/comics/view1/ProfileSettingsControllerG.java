@@ -48,7 +48,7 @@ public class ProfileSettingsControllerG implements AccountObserver {
         paneEditUsername.setVisible(false);
         paneEditProPic.setVisible(false);
 
-        lblUsername.setText(UserLogin.getAccount().getUsername());
+        lblUsername.setText(UserLogin.getInstance().getAccount().getUsername());
         //stessa cosa con la propic
 
         AccountSubject.attach(this);
@@ -92,6 +92,6 @@ public class ProfileSettingsControllerG implements AccountObserver {
         paneEditUsername.setVisible(false);
         paneEditProPic.setVisible(false);
 
-        lblUsername.setText(UserLogin.getAccount().getUsername());
+        lblUsername.setText(UserLogin.getInstance().getAccount().getUsername());
     }
 }

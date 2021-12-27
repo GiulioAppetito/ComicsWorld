@@ -1,13 +1,17 @@
 package com.example.comics.model;
 
-import com.example.comics.fagioli.RegistrationBean;
 import com.example.comics.model.dao.AccountDAO;
 import com.example.comics.model.dao.AlreadyUsedUsernameException;
+import com.example.comics.model.dao.AuthorDAO;
+import com.example.comics.model.dao.ReaderDAO;
 
 public class UserLogin{
 
-    private static UserLogin instance;
+    private static UserLogin instance = null;
     private static Account account;
+
+    private static Reader reader;
+    private static Author author;
 
     private UserLogin(){}
 
@@ -18,24 +22,33 @@ public class UserLogin{
         return instance;
     }
 
-    public static Account getAccount() {
+    public Account getAccount() {
         return account;
     }
 
-    public boolean login(String email, String password) throws Exception {
+    public Reader getReader() {
+        return reader;
+    }
 
-        AccountDAO dao = new AccountDAO();
-        String role;
-        role = dao.verifyCredentials(email,password);
+    public Author getAuthor() {
+        return author;
+    }
+
+    public static boolean createAccount(String email, String password, String role){
 
         if(role.equals("author")){
-            account = new Author();
+            AuthorDAO authorDAO = new AuthorDAO();
+            author = authorDAO.retrieveAuthor(email, password);
+            UserLogin.account = author;
 
         }else if(role.equals("reader")){
-            account = new Reader();
+            ReaderDAO readerDAO = new ReaderDAO();
+            reader = readerDAO.retrieveReader(email, password);
+            UserLogin.account = reader;
 
+        }else{
+            return false;
         }
-        account.init(email);
 
         return true;
 

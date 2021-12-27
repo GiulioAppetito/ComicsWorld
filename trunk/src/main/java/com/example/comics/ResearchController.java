@@ -18,9 +18,9 @@ public class ResearchController {
 
         SeriesDAO seriesdao = new SeriesDAO();
 
-        ArrayList<Series> latestSeries = seriesdao.retriveFavouriteSeries(UserLogin.getAccount().getUsername());
-        //return Series.getSeries();
-        for(Series series : latestSeries){
+        ArrayList<Series> favouriteSeries = UserLogin.getInstance().getReader().getFavourites();
+
+        for(Series series : favouriteSeries){
             seriesBean = new SeriesBean();
             seriesBean.setTitle(series.getTitle());
             seriesBean.setAuthor(series.getAuthor());
