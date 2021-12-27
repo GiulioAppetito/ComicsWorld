@@ -140,7 +140,7 @@
                            <Insets left="20.0" />
                         </padding>
                      </Label>
-                     <Button fx:id="btnCloseEditorFirstName" alignment="CENTER_RIGHT" mnemonicParsing="false" onAction="#closeFirstNameEditor" prefHeight="50.0" prefWidth="82.0" stylesheets="@../../../../css/fullpackstyling.css" text="X" textAlignment="CENTER" textFill="WHITE">
+                     <Button fx:id="btnCloseEditorFirstName" alignment="CENTER_RIGHT" mnemonicParsing="false" onAction="#closeEditor" prefHeight="50.0" prefWidth="82.0" stylesheets="@../../../../css/fullpackstyling.css" text="X" textAlignment="CENTER" textFill="WHITE">
                         <font>
                            <Font name="Berlin Sans FB" size="24.0" />
                         </font>
@@ -204,7 +204,7 @@
                            <Insets left="20.0" />
                         </padding>
                      </Label>
-                     <Button fx:id="btnCloseEditorEmail" alignment="CENTER_RIGHT" mnemonicParsing="false" onAction="#closeEmailEditor" prefHeight="50.0" prefWidth="82.0" stylesheets="@../../../../css/fullpackstyling.css" text="X" textAlignment="CENTER" textFill="WHITE">
+                     <Button fx:id="btnCloseEditorEmail" alignment="CENTER_RIGHT" mnemonicParsing="false" onAction="#closeEditor" prefHeight="50.0" prefWidth="82.0" stylesheets="@../../../../css/fullpackstyling.css" text="X" textAlignment="CENTER" textFill="WHITE">
                         <font>
                            <Font name="Berlin Sans FB" size="24.0" />
                         </font>
@@ -268,7 +268,7 @@
                            <Insets left="20.0" />
                         </padding>
                      </Label>
-                     <Button fx:id="btnCloseEditorLastName" alignment="CENTER_RIGHT" mnemonicParsing="false" onAction="#closeLastNameEditor" prefHeight="50.0" prefWidth="82.0" stylesheets="@../../../../css/fullpackstyling.css" text="X" textAlignment="CENTER" textFill="WHITE">
+                     <Button fx:id="btnCloseEditorLastName" alignment="CENTER_RIGHT" mnemonicParsing="false" onAction="#closeEditor" prefHeight="50.0" prefWidth="82.0" stylesheets="@../../../../css/fullpackstyling.css" text="X" textAlignment="CENTER" textFill="WHITE">
                         <font>
                            <Font name="Berlin Sans FB" size="24.0" />
                         </font>

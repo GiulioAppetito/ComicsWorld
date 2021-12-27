@@ -1,10 +1,7 @@
 package com.example.comics.view1;
 
-import com.example.comics.ResearchController;
 import com.example.comics.fagioli.ChapterBean;
 import com.example.comics.fagioli.SeriesBean;
-import com.example.comics.model.Chapter;
-import com.example.comics.model.Series;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
@@ -13,8 +10,6 @@ import javafx.scene.layout.VBox;
 
 import java.io.IOException;
 import java.net.URL;
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 public class SeriesControllerG {
@@ -40,7 +35,7 @@ public class SeriesControllerG {
         lblAuthor.setText(seriesBean.getAuthor());
         lblTitle.setText(seriesBean.getTitle());
 
-        ArrayList<ChapterBean> listOfChapters = seriesBean.getChapters();
+        List<ChapterBean> listOfChapters = seriesBean.getChapters();
 
         for (ChapterBean chapterBean : listOfChapters) {
 
@@ -82,7 +77,6 @@ public class SeriesControllerG {
         });
 
         btnCheck.setOnAction(event -> {
-                //openChapter(chapterTitle, author);
                 System.out.println("ciao");
 
         }
@@ -103,7 +97,6 @@ public class SeriesControllerG {
         HomeControllerG homeControllerG = homeFactory.getHomeControllerG();
         homeControllerG.changeCenter(loader.load());
 
-        System.out.println("[SeriesControllerG] calling chaptherControllerG.init("+chapterBean.getSeries()+","+chapterBean.getTitle());
         chapterControllerG.init(chapterBean);
 
     }

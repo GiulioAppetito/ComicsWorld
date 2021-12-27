@@ -59,4 +59,5 @@ public class UserLogin{
         AccountDAO dao = new AccountDAO();
         dao.registerNewAccount(firstName,lastName,username,email,password,role);
     }
+
 }

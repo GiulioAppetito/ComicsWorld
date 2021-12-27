@@ -2,13 +2,11 @@ package com.example.comics.model;
 
 import com.example.comics.ChapterSubject;
 import com.example.comics.model.dao.ChapterDAO;
-import com.example.comics.model.dao.ReviewDAO;
 import com.example.comics.model.dao.ReviewsNotFoundException;
 import javafx.scene.image.ImageView;
 import javafx.scene.text.Text;
 
 import java.sql.SQLException;
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -18,7 +16,7 @@ public class Chapter extends ChapterSubject {
     private String series;
     private Integer id;
     private Date publishingDate;
-    private ArrayList<Review> reviews;
+    private List<Review> reviews;
     private ImageView cover;
     private Text description;
 
@@ -30,7 +28,6 @@ public class Chapter extends ChapterSubject {
         ChapterDAO chapterDAO = new ChapterDAO();
         try {
             this.reviews = chapterDAO.retrieveReviews(this.series,this.title);
-            //System.out.println("[Chapter] First review comment : "+this.reviews.get(0).getComment());
         } catch (ReviewsNotFoundException e) {
             System.out.println("No reviews found on "+this.series + " - "+this.title);
         }
@@ -64,10 +61,10 @@ public class Chapter extends ChapterSubject {
         this.cover = cover;
     }
 
-    public ArrayList<Review> getReviews() {
+    public List<Review> getReviews() {
         return reviews;
     }
-    public void setReviews(ArrayList<Review> reviews) {
+    public void setReviews(List<Review> reviews) {
         this.reviews = reviews;
     }
 

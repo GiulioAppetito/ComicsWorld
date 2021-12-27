@@ -1,7 +1,6 @@
 package com.example.comics.model;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class Author extends Account{
 

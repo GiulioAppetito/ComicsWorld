@@ -66,7 +66,7 @@ public class ChapterControllerG {
         btnPostReview.setOnAction(event ->
                 postReview());
 
-        ArrayList<ReviewBean> listOfReviews = null;
+        List<ReviewBean> listOfReviews = null;
         try {
             listOfReviews = chapterBean.getReviews();
         } catch (SQLException e) {
@@ -94,13 +94,9 @@ public class ChapterControllerG {
 
             FeedControllerG feedControllerG = new FeedControllerG();
             try {
-                //feedControllerG.openSerie();
-                //per ora rimando poi i penso
-
                 HomeFactory homeFactory = new HomeFactory();
                 HomeControllerG homeControllerG = homeFactory.getHomeControllerG();
                 homeControllerG.openFeed();
-
             } catch (IOException e) {
                 e.printStackTrace();
             }

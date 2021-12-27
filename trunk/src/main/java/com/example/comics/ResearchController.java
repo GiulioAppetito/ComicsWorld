@@ -1,8 +1,6 @@
 package com.example.comics;
 
-import com.example.comics.fagioli.ChapterBean;
 import com.example.comics.fagioli.SeriesBean;
-import com.example.comics.model.Chapter;
 import com.example.comics.model.Series;
 import com.example.comics.model.UserLogin;
 import com.example.comics.model.dao.SeriesDAO;
@@ -15,8 +13,6 @@ public class ResearchController {
 
         ArrayList<SeriesBean> seriesBeans = new ArrayList<>();
         SeriesBean seriesBean;
-
-        SeriesDAO seriesdao = new SeriesDAO();
 
         ArrayList<Series> favouriteSeries = UserLogin.getInstance().getReader().getFavourites();
 

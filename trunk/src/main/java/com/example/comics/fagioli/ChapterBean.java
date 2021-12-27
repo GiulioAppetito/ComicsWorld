@@ -18,7 +18,7 @@ public class ChapterBean {
     private String series;
     private Integer id;
     private ImageView cover;
-    private ArrayList<Review> reviews = new ArrayList<>();
+    private List<Review> reviews = new ArrayList<>();
 
     public String getTitle() {
         return title;
@@ -48,7 +48,7 @@ public class ChapterBean {
         this.cover = cover;
     }
 
-    public ArrayList<ReviewBean> getReviews() throws SQLException {
+    public List<ReviewBean> getReviews() throws SQLException {
         ReviewDAO reviewDAO = new ReviewDAO();
         ArrayList<ReviewBean> reviewBeans = new ArrayList<>();
         ReviewBean reviewBean ;
@@ -64,7 +64,7 @@ public class ChapterBean {
         return reviewBeans;
     }
 
-    public void setReviews(ArrayList<Review> reviews) {
+    public void setReviews(List<Review> reviews) {
         this.reviews = reviews;
     }
 }

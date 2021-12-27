@@ -1,10 +1,7 @@
 package com.example.comics.model;
 
 import com.example.comics.AccountSubject;
-import com.example.comics.model.dao.AccountDAO;
 import javafx.scene.image.ImageView;
-
-import java.util.ArrayList;
 import java.util.Date;
 
 public abstract class Account extends AccountSubject {
@@ -112,7 +109,8 @@ public abstract class Account extends AccountSubject {
             case "city":
                 this.setCity(newCredential);
                 break;
-
+            default:
+                break;
 
         }
     }

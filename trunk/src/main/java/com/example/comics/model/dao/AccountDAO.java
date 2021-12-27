@@ -1,8 +1,5 @@
 package com.example.comics.model.dao;
 
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.InputStream;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -26,15 +23,13 @@ public class AccountDAO {
         String role=null;
 
         try {
-            Class.forName(DRIVER_CLASS_NAME);
             conn= DriverManager.getConnection(DB_URL,USER,PASS);
 
             stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE,ResultSet.CONCUR_READ_ONLY);
             ResultSet rs = Queries.checkSignedUserByEmail(stmt, credential, password);
 
             if (!rs.first()){
-                Exception e = new Exception("No username Found matching with email or username: "+ credential);
-                throw e;
+                throw new Exception("No username Found matching with email or username: "+ credential);
             }
             rs.first();
             do{
@@ -42,7 +37,6 @@ public class AccountDAO {
                 String foundPassword=rs.getString("password");
                 if(foundPassword.equals(password)) {
                     role = rs.getString("role");
-                    System.out.println("AccountDAO role: " + role);
                 }
 
 
@@ -74,7 +68,6 @@ public class AccountDAO {
 
 
         try {
-            Class.forName(DRIVER_CLASS_NAME);
             conn= DriverManager.getConnection(DB_URL,USER,PASS);
 
             stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE,ResultSet.CONCUR_READ_ONLY);
@@ -85,8 +78,6 @@ public class AccountDAO {
         catch (SQLException throwables) {
             System.out.println("ECCEZIONE REGISTRAZIONE");
 
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
         } catch (Exception e) {
             e.printStackTrace();
         } finally {
@@ -120,12 +111,10 @@ public class AccountDAO {
             Queries.updateEmail(stmt, newEmail, password);
 
 
-        } catch (SQLException throwables) {
-            throwables.printStackTrace();
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
-        } catch (Exception e) {
-            e.printStackTrace();
+        } catch (Exception throwables) {
+            throwables.printStackTrace();
         } finally {
             try {
                 if (stmt != null)
@@ -143,7 +132,7 @@ public class AccountDAO {
 
     }
 
-    public ArrayList<String> retrieveCredentials(String username) {
+    public List<String> retrieveCredentials(String username) {
         Statement stmt=null;
         Connection conn=null;
 
@@ -152,19 +141,18 @@ public class AccountDAO {
         String foundUsername;
         String foundEmail;
 
-        ArrayList<String> credentialList = new ArrayList<String>();
+        List<String> credentialList = new ArrayList<>();
 
 
         try {
-            Class.forName(DRIVER_CLASS_NAME);
             conn= DriverManager.getConnection(DB_URL,USER,PASS);
 
             stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE,ResultSet.CONCUR_READ_ONLY);
             ResultSet rs = Queries.retreiveCredentials(stmt,username);
 
             if (!rs.first()){
-                Exception e = new Exception("No username Found matching with email or username: "+ username);
-                throw e;
+                throw new Exception("No username Found matching with email or username: "+ username);
+
             }
             rs.first();
 
@@ -178,12 +166,10 @@ public class AccountDAO {
              foundEmail = rs.getString("email");
              credentialList.add(foundEmail);
 
-        } catch (SQLException throwables) {
-            throwables.printStackTrace();
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
-        } catch (Exception e) {
-            e.printStackTrace();
+        } catch (Exception throwables) {
+            throwables.printStackTrace();
         } finally {
             try {
                 if (stmt != null)

@@ -11,7 +11,7 @@ public class SeriesBean {
     private String title;
     private ImageView cover;
     private String author;
-    private ArrayList<Chapter> chapters = new ArrayList<>();
+    private List<Chapter> chapters = new ArrayList<>();
 
 
     public String getTitle() {
@@ -35,7 +35,7 @@ public class SeriesBean {
         this.author = author;
     }
 
-    public ArrayList<ChapterBean> getChapters(){
+    public List<ChapterBean> getChapters(){
 
         ArrayList<ChapterBean> chapterBeans = new ArrayList<>();
         ChapterBean chapterBean = new ChapterBean();
@@ -52,7 +52,7 @@ public class SeriesBean {
         return chapterBeans;
     }
 
-    public void setChapters(ArrayList<Chapter> chapters) {
+    public void setChapters(List<Chapter> chapters) {
         this.chapters = chapters;
     }
 }

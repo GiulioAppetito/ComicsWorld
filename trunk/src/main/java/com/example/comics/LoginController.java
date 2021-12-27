@@ -11,10 +11,8 @@ public class LoginController {
         AccountDAO dao = new AccountDAO();
         String role;
         role = dao.verifyCredentials(loginBean.getEmail(), loginBean.getPassword());
-        System.out.println("Login Controller: role: " + role);
         if(role.equals("reader") || role.equals("author")){
-            UserLogin.getInstance().createAccount(loginBean.getEmail(), loginBean.getPassword(), role);
-            System.out.println("ROle: " + UserLogin.getInstance().getAccount().getRole());
+            UserLogin.createAccount(loginBean.getEmail(), loginBean.getPassword(), role);
             return true;
         }
         return false;

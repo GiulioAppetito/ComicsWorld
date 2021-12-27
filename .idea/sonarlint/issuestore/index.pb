@@ -1,8 +1,6 @@
 
 o
 ?trunk/src/main/java/com/example/comics/fagioli/AccountBean.java,c\4\c4385d87b1ef2632e20bec6605c75d38bf6fd06e
-‚
-Rtrunk/src/main/java/com/example/comics/model/dao/AlreadyUsedUsernameException.java,5\4\549025d20afa96abbca439b8d234768498d1e724
 r
 Btrunk/src/main/java/com/example/comics/model/ReviewsObjective.java,8\6\86cce63a53e7a442e2b5a265b13e8961f22996cd
 h
@@ -15,7 +13,5 @@ q
 Atrunk/src/main/java/com/example/comics/view1/FeedControllerG.java,3\0\30f770410a71ec3e410810c53c6e2891d29a24c5
 s
 Ctrunk/src/main/java/com/example/comics/view1/ReviewControllerG.java,a\c\ac5b4e435a0fa8774cef86ff1be8def634e39f94
-n
->trunk/src/main/java/com/example/comics/fagioli/SeriesBean.java,3\1\312772bbdfe1fae79b5e9a4726b90f9ea060e6a1
 r
 Btrunk/src/main/java/com/example/comics/view1/VCardControllerG.java,1\7\17dccfd2fa1976234d4229aa2c91c053f3f2b1ff

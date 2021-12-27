@@ -4,10 +4,7 @@ import com.example.comics.AccountObserver;
 import com.example.comics.AccountSubject;
 import com.example.comics.CustomizeProfileController;
 import com.example.comics.fagioli.AccountBean;
-import com.example.comics.fagioli.ProfileBean;
-import com.example.comics.model.Account;
 import com.example.comics.model.UserLogin;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -83,7 +80,7 @@ public class AccountSettingsControllerG implements AccountObserver {
     }
 
     @FXML
-    void closeFirstNameEditor() {
+    void closeEditor() {
         paneEditEmail.setVisible(false);
         paneEditFirstName.setVisible(false);
         paneEditLastName.setVisible(false);
@@ -106,13 +103,6 @@ public class AccountSettingsControllerG implements AccountObserver {
     }
 
     @FXML
-    void closeLastNameEditor() {
-        paneEditEmail.setVisible(false);
-        paneEditFirstName.setVisible(false);
-        paneEditLastName.setVisible(false);
-    }
-
-    @FXML
     void saveLastName() {
         AccountBean accountBean = new AccountBean();
         accountBean.setLastName(taNewLastName.getText());
@@ -124,13 +114,6 @@ public class AccountSettingsControllerG implements AccountObserver {
     @FXML
     void editEmail(){
         paneEditEmail.setVisible(true);
-        paneEditFirstName.setVisible(false);
-        paneEditLastName.setVisible(false);
-    }
-
-    @FXML
-    void closeEmailEditor() {
-        paneEditEmail.setVisible(false);
         paneEditFirstName.setVisible(false);
         paneEditLastName.setVisible(false);
     }
