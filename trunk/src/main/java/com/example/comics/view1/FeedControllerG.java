@@ -35,7 +35,7 @@ public class FeedControllerG{
     public void init() {
 
         ResearchController researchController = new ResearchController();
-        ArrayList<SeriesBean> latestSeries = researchController.getLatestSeries();
+        List<SeriesBean> latestSeries = researchController.getLatestSeries();
         int size = latestSeries.size();
 
         int i=1;

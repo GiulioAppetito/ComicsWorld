@@ -2,7 +2,6 @@ package com.example.comics.view1;
 
 import com.example.comics.ResearchController;
 import com.example.comics.fagioli.SeriesBean;
-import com.example.comics.model.Series;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.layout.GridPane;
@@ -10,7 +9,6 @@ import javafx.scene.layout.VBox;
 
 import java.io.IOException;
 import java.net.URL;
-import java.util.ArrayList;
 import java.util.List;
 
 public class FavouriteComicsControllerG {
@@ -22,7 +20,7 @@ public class FavouriteComicsControllerG {
 
         ResearchController researchController = new ResearchController();
         //poi ovviamente sarà na cosa diversa da latest
-        ArrayList<SeriesBean> listOfCards = researchController.getFavouriteSeries();
+        List<SeriesBean> listOfCards = researchController.getFavouriteSeries();
         int size = listOfCards.size();
         int columns = 3;
         int i=1;
