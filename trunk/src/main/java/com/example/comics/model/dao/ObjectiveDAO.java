@@ -29,7 +29,7 @@ public class ObjectiveDAO {
             ResultSet rs = Queries.retrieveObjectivesByReader(stmt, username);
 
             if(!rs.first()){
-                return null;
+                return achievedObjectives;
             }
             rs.first();
 

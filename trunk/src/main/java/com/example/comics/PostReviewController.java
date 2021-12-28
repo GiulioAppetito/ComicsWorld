@@ -1,15 +1,13 @@
 package com.example.comics;
 
+import com.example.comics.fagioli.ObjectiveBean;
 import com.example.comics.fagioli.ReviewBean;
-import com.example.comics.model.Objective;
-import com.example.comics.model.Review;
-import com.example.comics.model.Series;
-import com.example.comics.model.UserLogin;
+import com.example.comics.model.*;
 import com.example.comics.model.dao.ReaderDAO;
 import com.example.comics.model.dao.ReviewDAO;
 import com.example.comics.model.dao.SeriesDAO;
 
-public class PostReviewController {
+public class PostReviewController extends ReviewSubject {
 
     public void post(ReviewBean reviewBean) {
 
@@ -31,6 +29,7 @@ public class PostReviewController {
         Series series = seriesDAO.retrieveSeries(reviewBean.getSeries());
         checkObjectives(series);
 
+        notifyObservers(reviewBean);
         //aggiunta sul chapter//chapter.addReview(reviewBean.getComment(), reviewBean.getUsername());//chapter.notify();
     }
 
@@ -60,10 +59,20 @@ public class PostReviewController {
                         //aggiungo obiettivo alla lista e salvo sul DB + assegno badge
                         UserLogin.getInstance().getReader().addAchievedObjective(objective);
 
+                        ObjectiveBean objectiveBean = new ObjectiveBean();
+                        objectiveBean.setBadge(objective.getBadge());
+                        objectiveBean.setLevel(objective.getLevel());
+                        objectiveBean.setSeriesTitle((objective.getSeries_title()));
+                        notifyAchievedReviewObjective(objectiveBean);
+
+                        //genero discount code
                         //discount code : arriva la mail
                     }
                     System.out.println("[ P REV CONTR] Dopo if e else");
+                }else{
+                    System.out.println("Obiettivo non raggiunto.");
                 }
+
             }
 
         }

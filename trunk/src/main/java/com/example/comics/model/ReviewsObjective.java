@@ -13,7 +13,7 @@ public class ReviewsObjective extends Objective{
 
     @Override
     public boolean achieveObjective(int readersReviews){
-        return readersReviews > requiredReviews;
+        return readersReviews >= requiredReviews;
     }
 
     @Override
