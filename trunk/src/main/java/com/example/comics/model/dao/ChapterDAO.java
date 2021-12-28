@@ -85,4 +85,13 @@ public class ChapterDAO {
         return reviewDAO.retrieveReviews(series,chapter);
 
     }
+
+    public void addReview(Review review) {
+        ReviewDAO reviewDAO = new ReviewDAO();
+        try {
+            ReviewDAO.saveReview(review);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 }

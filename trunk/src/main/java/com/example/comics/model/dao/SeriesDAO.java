@@ -1,7 +1,6 @@
 package com.example.comics.model.dao;
 
-import com.example.comics.model.Chapter;
-import com.example.comics.model.Series;
+import com.example.comics.model.*;
 import javafx.scene.image.ImageView;
 
 import java.sql.*;
@@ -367,4 +366,121 @@ public class SeriesDAO {
         return chapterDAO.retriveChapters(seriesTitle);
     }
 
+    public void addReviewToChapter(Review review) {
+        ChapterDAO chapterDAO = new ChapterDAO();
+        chapterDAO.addReview(review);
+    }
+
+    public ArrayList<Objective> retrieveObjectives(String title) {
+        Statement stmt = null;
+        Connection conn = null;
+
+        ArrayList<Objective> objectives = new ArrayList<Objective>();
+
+
+        try {
+            conn = DriverManager.getConnection(DB_URL, USER, PASS);
+            stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
+            ResultSet rs = Queries.retreiveObjectivesBySeries(stmt,title);
+            System.out.println("[SERIES DAO] Chiamato queries con title : "+title);
+
+            if (!rs.first()) {
+                Exception e = new Exception("No objectives Found ");
+                throw e;
+            }
+            rs.first();
+
+            do {
+                if(rs.getString("type").equals("reviews")){
+                    ReviewsObjective reviewsObjective = new ReviewsObjective(rs.getInt("associatedBadgeID"));
+                    switch (rs.getString("level")){
+                        case "beginner":
+                            reviewsObjective.setLevel(Levels.BEGINNER);
+                            break;
+                        case "intermediate":
+                            reviewsObjective.setLevel(Levels.INTERMEDIATE);
+                            break;
+                        case "expert":
+                            reviewsObjective.setLevel(Levels.EXPERT);
+                            break;
+                    }
+
+                    reviewsObjective.setSeries_title(title);
+                    reviewsObjective.setRequiredReviews(rs.getInt("number"));
+                    objectives.add(reviewsObjective);
+
+
+                }else if(rs.getString("type").equals("chapters")){
+                    ChapterObjective chapterObjective = new ChapterObjective();
+                    switch (rs.getString("level")){
+                        case "beginner":
+                            chapterObjective.setLevel(Levels.BEGINNER);
+                            break;
+                        case "intermediate":
+                            chapterObjective.setLevel(Levels.INTERMEDIATE);
+                            break;
+                        case "expert":
+                            chapterObjective.setLevel(Levels.EXPERT);
+                            break;
+                    }
+
+                    chapterObjective.setSeries_title(title);
+                    chapterObjective.setRequiredChapters(rs.getInt("number"));
+                    objectives.add(chapterObjective);
+                }
+
+
+            } while (rs.next());
+
+
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        System.out.println("[SeriesDAO] taglia di objectives : "+objectives.size());
+        return objectives;
+    }
+
+    public ArrayList<Review> retrieveReviewsByReader(String username) {
+
+        Statement stmt = null;
+        Connection conn = null;
+
+        ArrayList<Review> reviews = new ArrayList<Review>();
+        Review review;
+
+        try {
+            conn = DriverManager.getConnection(DB_URL, USER, PASS);
+            stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
+            ResultSet rs = Queries.retrieveReviewsByReader(stmt,username);
+
+            if (!rs.first()) {
+                Exception e = new Exception("No reviews Found ");
+                throw e;
+            }
+            rs.first();
+
+            do {
+                review = new Review(rs.getString("comment"), rs.getString("user"));
+                review.setSeries(rs.getString("series_title"));
+                review.setChapter(rs.getString("chapter_id"));
+                reviews.add(review);
+
+            } while (rs.next());
+
+
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return reviews;
+
+    }
 }

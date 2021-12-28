@@ -41,12 +41,18 @@ public class UserLogin{
             author = authorDAO.retrieveAuthor(email, password);
             UserLogin.account = author;
 
+            System.out.println("[USER LOGIN] 1"+account.getUsername());
+
+
         }else if(role.equals("reader")){
             ReaderDAO readerDAO = new ReaderDAO();
-            reader = readerDAO.retrieveReader(email, password);
+            UserLogin.reader = readerDAO.retrieveReader(email, password);
             UserLogin.account = reader;
+            System.out.println("[USER LOGIN] 2"+account.getUsername());
 
         }else{
+
+            System.out.println("[USER LOGIN] 3"+account.getUsername());
             return false;
         }
 

@@ -1,5 +1,7 @@
 package com.example.comics.model.dao;
 
+import com.example.comics.model.Review;
+
 import java.sql.*;
 
 public class Queries {
@@ -61,11 +63,7 @@ public class Queries {
         return stmt.executeQuery(selectStatement);
     }
 
-    public static ResultSet retreiveReader(Statement stmt, String identifier, String password) throws SQLException {
-        String selectStatement = String.format("SELECT * FROM users WHERE (username = '%s' OR email = '%s')  AND password = '%s'",identifier,identifier,password);
-        System.out.println(selectStatement);
-        return stmt.executeQuery(selectStatement);
-    }
+
 
     public static ResultSet retriveChapters(Statement stmt, String seriesTitle) throws SQLException {
         String selectStatement = String.format("SELECT * FROM chapters WHERE series_title = '%s' ", seriesTitle);
@@ -107,10 +105,54 @@ public class Queries {
         }
     }
 
+    public static ResultSet retrieveReviewsByReader(Statement stmt, String user) throws SQLException {
+        String selectStatement = String.format("SELECT * FROM review WHERE user = '%s' ",user);
+        System.out.println(selectStatement);
+        return stmt.executeQuery(selectStatement);
+
+    }
+
     public static ResultSet retreiveReviewsByChapter(Statement stmt, String series, String chapter) throws SQLException {
         String selectStatement = String.format("SELECT * FROM review WHERE series_title = '%s' AND chapter_id = '%s'",series,chapter);
         System.out.println(selectStatement);
         return stmt.executeQuery(selectStatement);
 
+    }
+
+    public static ResultSet retreiveReader(Statement stmt, String identifier, String password) throws SQLException {
+        String selectStatement = String.format("SELECT * FROM users WHERE (username = '%s' OR email = '%s')  AND password = '%s'",identifier,identifier,password);
+        System.out.println(selectStatement);
+        return stmt.executeQuery(selectStatement);
+    }
+
+    public static int saveReview(Statement stmt, Review review) throws SQLException {
+        String insertStatement = String.format("INSERT INTO review (user, comment, series_title, chapter_id) VALUES ('%s','%s','%s','%s')", review.getUsername(), review.getComment(),review.getSeries(),review.getChapter());
+        System.out.println(insertStatement);
+        stmt.executeUpdate(insertStatement);
+        return 0;
+    }
+
+    public static ResultSet retreiveObjectivesBySeries(Statement stmt,String seriesTitle) throws SQLException {
+        String selectStatement = String.format("SELECT * FROM objectives WHERE seriesTitle = '%s'",seriesTitle);
+        System.out.println(selectStatement);
+        return stmt.executeQuery(selectStatement);
+    }
+
+    public static ResultSet retreiveBadgeByID(Statement stmt, int badgeID) throws SQLException {
+        String selectStatement = String.format("SELECT * FROM badges WHERE badgeID = '%d'",badgeID);
+        System.out.println(selectStatement);
+        return stmt.executeQuery(selectStatement);
+    }
+
+    public static ResultSet retrieveObjectivesByReader(Statement stmt, String username) throws SQLException {
+        String selectStatement = String.format("SELECT * FROM objectives join achievedObjectives WHERE (username = '%s') AND (level = objectiveLevel AND seriesTitle = objectiveSeries AND type = objectiveType)", username);
+        System.out.println(selectStatement);
+        return stmt.executeQuery(selectStatement);
+    }
+
+    public static void addAchievedObjective(Statement stmt, String username, String series_title, String objective_level, String objective_type) throws SQLException {
+        String insertStatement = String.format("INSERT INTO achievedObjectives (username, objectiveSeries, objectiveLevel, objectiveType) values ('%s', '%s', '%s', '%s')", username, series_title, objective_level, objective_type);
+        System.out.println(insertStatement);
+        stmt.executeUpdate(insertStatement);
     }
 }

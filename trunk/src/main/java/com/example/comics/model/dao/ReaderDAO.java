@@ -1,6 +1,8 @@
 package com.example.comics.model.dao;
 
+import com.example.comics.model.Objective;
 import com.example.comics.model.Reader;
+import com.example.comics.model.Review;
 import com.example.comics.model.Series;
 
 import java.sql.*;
@@ -33,16 +35,19 @@ public class ReaderDAO {
             rs.first();
 
             SeriesDAO seriesDAO = new SeriesDAO();
-            ArrayList<Series> favSeries = seriesDAO.retrieveFavouriteSeries(rs.getString("username"));
-            ArrayList<Series> toReadSeries = seriesDAO.retrieveToReadSeries(rs.getString("username"));
-            ArrayList<Series> readingSeries = seriesDAO.retrieveReadingSeries(rs.getString("username"));
 
-            reader = new Reader(favSeries, toReadSeries, readingSeries);
+            String username = rs.getString("username");
+            ArrayList<Series> favSeries = seriesDAO.retrieveFavouriteSeries(username);
+            ArrayList<Series> toReadSeries = seriesDAO.retrieveToReadSeries(username);
+            ArrayList<Series> readingSeries = seriesDAO.retrieveReadingSeries(username);
+            ArrayList<Review> reviews = seriesDAO.retrieveReviewsByReader(username);
 
-            reader.setUsername(rs.getString("username"));
+            reader = new Reader(favSeries, toReadSeries, readingSeries, reviews, username);
+
             reader.setFirstName(rs.getString("firstname"));
-            reader.setLastName(rs.getString("email"));
+            reader.setLastName(rs.getString("lastname"));
             reader.setPassword(rs.getString("password"));
+
 
 
 
@@ -53,5 +58,11 @@ public class ReaderDAO {
         }
 
         return reader;
+    }
+
+    public void saveAchievedObjective(Objective objective, String username) {
+        ObjectiveDAO objectiveDAO = new ObjectiveDAO();
+        System.out.println("[ReaderDAO] Calling objectiveDAO con objective,username = "+objective+","+username);
+        objectiveDAO.addAchievedObjective(objective, username);
     }
 }

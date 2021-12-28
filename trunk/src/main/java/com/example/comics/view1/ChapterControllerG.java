@@ -5,6 +5,7 @@ import com.example.comics.fagioli.ChapterBean;
 import com.example.comics.fagioli.ReviewBean;
 import com.example.comics.model.Review;
 import com.example.comics.model.UserLogin;
+import com.example.comics.model.dao.ChapterDAO;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
@@ -57,14 +58,11 @@ public class ChapterControllerG {
 
         paneInsertReview.setVisible(false);
 
-        btnCloseEditor.setOnAction(event ->
-                closeEditor());
+        btnCloseEditor.setOnAction(event -> closeEditor());
 
-        btnAddReview.setOnAction(event ->
-                openEditor());
+        btnAddReview.setOnAction(event -> openEditor());
 
-        btnPostReview.setOnAction(event ->
-                postReview());
+        btnPostReview.setOnAction(event -> postReview(chapterBean));
 
         List<ReviewBean> listOfReviews = null;
         try {
@@ -104,17 +102,17 @@ public class ChapterControllerG {
 
     }
 
-
-
-    public void postReview(){
+    public void postReview(ChapterBean chapterBean){
         ReviewBean reviewBean = new ReviewBean();
         reviewBean.setComment(txtAreaComment.getText());
         reviewBean.setUsername(UserLogin.getInstance().getAccount().getUsername());
+        System.out.println("ChapterControllerG: role: username: "+ UserLogin.getInstance().getAccount().getUsername());
+        reviewBean.setSeries(chapterBean.getSeries());
+        reviewBean.setChapter(chapterBean.getTitle());
         //e magari anche la foto
         PostReviewController postReviewController = new PostReviewController();
         postReviewController.post(reviewBean);
     }
-
 
     public void openEditor(){
         paneInsertReview.setVisible(true);

@@ -4,7 +4,8 @@ public abstract class Objective {
 
     private Levels level;
     private Discount discount;
-    private Badge badge;
+    protected Badge badge;
+    private String series_title;
 
     public Levels getLevel() {
         return level;
@@ -13,7 +14,8 @@ public abstract class Objective {
         this.level = level;
     }
 
-    public abstract boolean achieveObjective();
+    public abstract boolean achieveObjective(int input);
+    public abstract String getType();
 
     public Badge getBadge() {
         return badge;
@@ -29,5 +31,13 @@ public abstract class Objective {
 
     public void setDiscount(Discount discount) {
         this.discount = discount;
+    }
+
+    public String getSeries_title() {
+        return series_title;
+    }
+
+    public void setSeries_title(String series_title) {
+        this.series_title = series_title;
     }
 }

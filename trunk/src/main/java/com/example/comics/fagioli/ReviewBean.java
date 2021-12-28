@@ -6,6 +6,8 @@ public class ReviewBean {
 
     private String comment;
     private String username;
+    private String series;
+    private String chapter;
     private ImageView propic;
 
     public String getComment() {
@@ -22,5 +24,29 @@ public class ReviewBean {
 
     public void setUsername(String username) {
         this.username = username;
+    }
+
+    public String getSeries() {
+        return series;
+    }
+
+    public void setSeries(String series) {
+        this.series = series;
+    }
+
+    public String getChapter() {
+        return chapter;
+    }
+
+    public void setChapter(String chapter) {
+        this.chapter = chapter;
+    }
+
+    public ImageView getPropic() {
+        return propic;
+    }
+
+    public void setPropic(ImageView propic) {
+        this.propic = propic;
     }
 }
