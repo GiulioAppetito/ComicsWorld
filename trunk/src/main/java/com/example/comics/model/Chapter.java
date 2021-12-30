@@ -3,6 +3,7 @@ package com.example.comics.model;
 import com.example.comics.ChapterSubject;
 import com.example.comics.model.dao.ChapterDAO;
 import com.example.comics.model.dao.ReviewsNotFoundException;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.text.Text;
 
@@ -17,7 +18,7 @@ public class Chapter extends ChapterSubject {
     private Integer id;
     private Date publishingDate;
     private List<Review> reviews;
-    private ImageView cover;
+    private Image cover;
     private Text description;
 
     public Chapter(String series, String title) throws SQLException {
@@ -54,10 +55,10 @@ public class Chapter extends ChapterSubject {
         this.publishingDate = publishingDate;
     }
 
-    public ImageView getCover() {
+    public Image getCover() {
         return cover;
     }
-    public void setCover(ImageView cover) {
+    public void setCover(Image cover) {
         this.cover = cover;
     }
 
