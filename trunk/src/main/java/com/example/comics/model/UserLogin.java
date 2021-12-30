@@ -48,11 +48,8 @@ public class UserLogin{
             ReaderDAO readerDAO = new ReaderDAO();
             UserLogin.reader = readerDAO.retrieveReader(email, password);
             UserLogin.account = reader;
-            System.out.println("[USER LOGIN] 2"+account.getUsername());
 
         }else{
-
-            System.out.println("[USER LOGIN] 3"+account.getUsername());
             return false;
         }
 

@@ -2,6 +2,7 @@ package com.example.comics.fagioli;
 
 import com.example.comics.model.Badge;
 import com.example.comics.model.Levels;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
 public class ObjectiveBean {
@@ -19,7 +20,7 @@ public class ObjectiveBean {
         this.level = level;
     }
 
-    public ImageView getBadgeIcon() {
+    public Image getBadgeIcon() {
         return badge.getIcon();
     }
 

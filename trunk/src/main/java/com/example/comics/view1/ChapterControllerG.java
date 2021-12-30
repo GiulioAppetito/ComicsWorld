@@ -12,6 +12,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 
@@ -29,6 +30,10 @@ public class ChapterControllerG implements ReviewObserver {
 
     @FXML
     private Pane paneInsertReview;
+
+
+    @FXML
+    private ImageView badgeIconView;
 
     @FXML
     private Button btnBack;
@@ -82,6 +87,7 @@ public class ChapterControllerG implements ReviewObserver {
 
         paneInsertReview.setVisible(false);
         newBadgeWonPane.setVisible(false);
+
 
         btnCloseEditor.setOnAction(event -> closeEditor());
         btnCloseBadge.setOnAction(event -> closeBadgeWon());
@@ -174,5 +180,7 @@ public class ChapterControllerG implements ReviewObserver {
         newBadgeWonPane.setVisible(true);
         lblBadgeName.setText(objectiveBean.getBadgeName());
         lblBadgeSeries.setText(objectiveBean.getSeriesTitle());
+        badgeIconView.setImage(objectiveBean.getBadgeIcon());
+
     }
 }

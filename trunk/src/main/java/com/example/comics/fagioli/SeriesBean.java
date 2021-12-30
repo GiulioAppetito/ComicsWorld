@@ -39,9 +39,10 @@ public class SeriesBean {
     public List<ChapterBean> getChapters(){
 
         ArrayList<ChapterBean> chapterBeans = new ArrayList<>();
-        ChapterBean chapterBean = new ChapterBean();
+        ChapterBean chapterBean;
 
         for(Chapter chapter : this.chapters){
+            chapterBean = new ChapterBean();
             chapterBean.setTitle(chapter.getTitle());
             chapterBean.setSeries(this.title);
             chapterBean.setId(chapter.getId());

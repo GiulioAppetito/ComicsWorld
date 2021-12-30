@@ -2,7 +2,9 @@ package com.example.comics.model.dao;
 
 import com.example.comics.model.Badge;
 import com.example.comics.model.Review;
+import javafx.scene.image.Image;
 
+import java.io.InputStream;
 import java.sql.*;
 import java.util.ArrayList;
 
@@ -29,6 +31,13 @@ public class BadgeDAO {
             associatedBadge.setName(rs.getString("badgeName"));
             //icon
             associatedBadge.setId(rs.getInt("badgeID"));
+
+            Blob bl = rs.getBlob("badgeIcon");
+            InputStream inputStream = bl.getBinaryStream();
+            Image image = new Image(inputStream);
+            associatedBadge.setIcon(image);
+
+
 
         } catch (SQLException throwables) {
             throwables.printStackTrace();

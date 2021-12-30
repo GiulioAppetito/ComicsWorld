@@ -6,6 +6,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.VBox;
 
 import java.io.IOException;
@@ -16,6 +17,10 @@ public class SeriesControllerG {
 
     @FXML
     public Button btnBack;
+
+
+    @FXML
+    private ImageView comicCover;
 
     @FXML
     private Button btnCheck;
@@ -34,6 +39,8 @@ public class SeriesControllerG {
 
         lblAuthor.setText(seriesBean.getAuthor());
         lblTitle.setText(seriesBean.getTitle());
+        comicCover.setImage(seriesBean.getCover());
+
 
         List<ChapterBean> listOfChapters = seriesBean.getChapters();
 

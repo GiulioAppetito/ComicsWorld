@@ -20,6 +20,10 @@ public class ReaderHomeControllerG extends HomeControllerG implements AccountObs
     private HBox userBox;
 
     @FXML
+    private ImageView proPic;
+
+
+    @FXML
     private BorderPane mainPane;
 
     @FXML
@@ -69,6 +73,7 @@ public class ReaderHomeControllerG extends HomeControllerG implements AccountObs
         openFeed();
 
         lblName.setText(UserLogin.getInstance().getAccount().getUsername());
+        proPic.setImage(UserLogin.getInstance().getAccount().getProPic());
 
         btnFav.setOnAction(event -> openFavourites());
         btnCategories.setOnAction(event -> {

@@ -1,6 +1,7 @@
 package com.example.comics.model;
 
 import com.example.comics.AccountSubject;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import java.util.Date;
 
@@ -13,7 +14,7 @@ public abstract class Account extends AccountSubject {
 
     //profile basics
     private String username;
-    private ImageView proPic;
+    private Image proPic;
 
     //profile private
     private String city;
@@ -64,11 +65,11 @@ public abstract class Account extends AccountSubject {
         this.birthday = birthday;
     }
 
-    public ImageView getProPic() {
+    public Image getProPic() {
         return proPic;
     }
 
-    public void setProPic(ImageView proPic) {
+    public void setProPic(Image proPic) {
         this.proPic = proPic;
     }
 
@@ -115,6 +116,6 @@ public abstract class Account extends AccountSubject {
         }
     }
 
-    public void changeProPic(ImageView imageView){}
+    public void changeProPic(Image imageView){}
 
 }

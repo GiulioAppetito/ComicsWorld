@@ -339,7 +339,7 @@ public class SeriesDAO {
                 series.setCover(image);
 
                 author = rs.getString("author");
-                //cover = rs.getImg("cover");
+
 
                 series.setAuthor(author);
                 seriesList.add(series);

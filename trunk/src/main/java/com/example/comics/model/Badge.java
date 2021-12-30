@@ -1,11 +1,12 @@
 package com.example.comics.model;
 
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
 public class Badge {
 	
 	private String name;
-	private ImageView icon;
+	private Image icon;
 	private int id;
 
 
@@ -18,11 +19,11 @@ public class Badge {
 	}
 
 
-	public ImageView getIcon() {
+	public Image getIcon() {
 		return icon;
 	}
 
-	public void setIcon(ImageView icon) {
+	public void setIcon(Image icon) {
 		this.icon = icon;
 	}
 

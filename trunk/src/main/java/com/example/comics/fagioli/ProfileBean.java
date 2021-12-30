@@ -1,11 +1,11 @@
 package com.example.comics.fagioli;
 
-import javafx.scene.image.ImageView;
+import javafx.scene.image.Image;
 
 public class ProfileBean {
 
     private String username;
-    private ImageView proPic;
+    private Image proPic;
 
 
     public String getUsername() {
@@ -16,11 +16,11 @@ public class ProfileBean {
         this.username = username;
     }
 
-    public ImageView getProPic() {
+    public Image getProPic() {
         return proPic;
     }
 
-    public void setProPic(ImageView proPic) {
+    public void setProPic(Image proPic) {
         this.proPic = proPic;
     }
 

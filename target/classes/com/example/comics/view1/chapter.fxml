@@ -17,6 +17,7 @@
 <?import javafx.scene.text.Text?>
 
 <!--suppress XmlPathReference -->
+
 <StackPane xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <AnchorPane prefHeight="400.0" prefWidth="600.0">
@@ -345,7 +346,7 @@
                         <Insets left="20.0" top="10.0" />
                      </VBox.margin>
                      <children>
-                        <ImageView fitHeight="127.0" fitWidth="128.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fx:id="badgeIconView" fitHeight="127.0" fitWidth="128.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../../../../img/download%20(2).png" />
                            </image>

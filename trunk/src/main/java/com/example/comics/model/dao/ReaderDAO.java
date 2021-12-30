@@ -1,7 +1,9 @@
 package com.example.comics.model.dao;
 
 import com.example.comics.model.*;
+import javafx.scene.image.Image;
 
+import java.io.InputStream;
 import java.sql.*;
 import java.util.ArrayList;
 
@@ -44,6 +46,11 @@ public class ReaderDAO {
             reader.setFirstName(rs.getString("firstname"));
             reader.setLastName(rs.getString("lastname"));
             reader.setPassword(rs.getString("password"));
+
+            Blob bl = rs.getBlob("proPic");
+            InputStream inputStream = bl.getBinaryStream();
+            Image image = new Image(inputStream);
+            reader.setProPic(image);
 
 
 
