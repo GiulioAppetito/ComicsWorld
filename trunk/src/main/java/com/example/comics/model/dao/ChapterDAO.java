@@ -18,10 +18,10 @@ public class ChapterDAO {
         Statement stmt = null;
         Connection conn = null;
 
-        List<Chapter> chaptersList = new List<>();
+        List<Chapter> chaptersList = new ArrayList<>();
 
         String chapterTitle;
-        Integer chapter_id;
+        Integer chapterID;
         String chapterSeries;
 
         Chapter chapter;
@@ -38,10 +38,10 @@ public class ChapterDAO {
 
             do {
                 chapterTitle = rs.getString("chapter_title");
-                chapter_id = rs.getInt("chapter_id");
+                chapterID = rs.getInt("chapterID");
                 chapterSeries = rs.getString("series_title");
                 chapter = new Chapter(chapterSeries,chapterTitle);
-                chapter.setId(chapter_id);
+                chapter.setId(chapterID);
 
                 chaptersList.add(chapter);
             } while (rs.next());
@@ -49,8 +49,6 @@ public class ChapterDAO {
 
         } catch (SQLException throwables) {
             throwables.printStackTrace();
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
         } catch (Exception e) {
             e.printStackTrace();
         }

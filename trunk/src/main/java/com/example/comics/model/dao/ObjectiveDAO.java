@@ -4,23 +4,22 @@ import com.example.comics.model.*;
 
 import java.sql.*;
 import java.util.ArrayList;
+import java.util.List;
 
 public class ObjectiveDAO {
 
     private static final String USER = "anastasia";
     private static final String PASS = "passwordanastasia";
     private static final String DB_URL = "jdbc:mysql://comics-world.ce9t0fxhansh.eu-west-2.rds.amazonaws.com:3306/ComicsWorld?autoReconnect=true&useSSL=false";
-    private static final String DRIVER_CLASS_NAME = "com.mysql.jdbc.Driver";
 
-    public ArrayList<Objective> retreiveAchievedObjectives(String username) {
+    public List<Objective> retreiveAchievedObjectives(String username) {
 
         Statement stmt = null;
         Connection conn = null;
 
-        ArrayList<Objective> achievedObjectives = new ArrayList<Objective>();
+        List<Objective> achievedObjectives = new ArrayList<>();
 
         try {
-            Class.forName(DRIVER_CLASS_NAME);
             conn = DriverManager.getConnection(DB_URL, USER, PASS);
             stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
             ResultSet rs = Queries.retrieveObjectivesByReader(stmt, username);
@@ -38,10 +37,13 @@ public class ObjectiveDAO {
                 Discount discount = new Discount(rs.getFloat("discountPercentage"));
                 discount.setLimitDays(rs.getInt("limitDays"));
 
+                int numberOfReviews = rs.getInt("number");
+                String level = rs.getString("level");
+
                 if(rs.getString("objectiveType").equals("reviews")){
                     ReviewsObjective reviewsObjective = new ReviewsObjective(badge,discount);
-                    reviewsObjective.setRequiredReviews(rs.getInt("number"));
-                    switch (rs.getString("level")){
+                    reviewsObjective.setRequiredReviews(numberOfReviews);
+                    switch (level){
                         case "beginner":
                             reviewsObjective.setLevel(Levels.BEGINNER);
                             break;
@@ -51,12 +53,14 @@ public class ObjectiveDAO {
                         case "expert":
                             reviewsObjective.setLevel(Levels.EXPERT);
                             break;
+                        default:
+                            break;
                     }
                     achievedObjectives.add(reviewsObjective);
                 }else if(rs.getString("objectiveType").equals("chapters")){
                     ChapterObjective chapterObjective = new ChapterObjective(badge, discount);
-                    chapterObjective.setRequiredChapters(rs.getInt("number"));
-                    switch (rs.getString("level")){
+                    chapterObjective.setRequiredChapters(numberOfReviews);
+                    switch (level){
                         case "beginner":
                             chapterObjective.setLevel(Levels.BEGINNER);
                             break;
@@ -65,6 +69,8 @@ public class ObjectiveDAO {
                             break;
                         case "expert":
                             chapterObjective.setLevel(Levels.EXPERT);
+                            break;
+                        default:
                             break;
                     }
                     achievedObjectives.add(chapterObjective);
@@ -76,8 +82,14 @@ public class ObjectiveDAO {
 
 
 
-        } catch (ClassNotFoundException | SQLException e) {
+        } catch (SQLException e) {
             e.printStackTrace();
+        } finally {
+            try {
+                conn.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
         }
 
         return achievedObjectives;
@@ -93,24 +105,31 @@ public class ObjectiveDAO {
             conn = DriverManager.getConnection(DB_URL, USER, PASS);
             stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
 
-            String series_title = objective.getSeries_title();
-            String objective_level = objective.getLevel().toString();
-            String objective_type = objective.getType();
+            String seriesTitle = objective.getSeries_title();
+            String objectiveLevel = objective.getLevel().toString();
+            String objectiveType = objective.getType();
 
-            Queries.addAchievedObjective(stmt, username, series_title, objective_level, objective_type);
+            Queries.addAchievedObjective(stmt, username, seriesTitle, objectiveLevel, objectiveType);
 
 
         } catch (SQLException e) {
             e.printStackTrace();
+        }finally {
+            try {
+                assert conn != null;
+                conn.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
         }
 
     }
 
-    public ArrayList<Objective> retrieveSeriesObjectives(Series series){
+    public List<Objective> retrieveSeriesObjectives(Series series){
         Statement stmt = null;
         Connection conn = null;
 
-        ArrayList<Objective> objectives = new ArrayList<Objective>();
+        List<Objective> objectives = new ArrayList<>();
 
 
         try {
@@ -143,6 +162,8 @@ public class ObjectiveDAO {
                         case "expert":
                             reviewsObjective.setLevel(Levels.EXPERT);
                             break;
+                        default:
+                            break;
                     }
 
                     reviewsObjective.setSeries_title(series.getTitle());
@@ -162,6 +183,8 @@ public class ObjectiveDAO {
                         case "expert":
                             chapterObjective.setLevel(Levels.EXPERT);
                             break;
+                        default:
+                            break;
                     }
 
                     chapterObjective.setSeries_title(series.getTitle());
@@ -177,6 +200,13 @@ public class ObjectiveDAO {
             throwables.printStackTrace();
         } catch (Exception e) {
             e.printStackTrace();
+        } finally {
+            assert conn != null;
+            try {
+                conn.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
         }
 
 
