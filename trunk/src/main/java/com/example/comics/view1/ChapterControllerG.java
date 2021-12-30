@@ -26,6 +26,9 @@ public class ChapterControllerG implements ReviewObserver {
     private VBox vbReviews;
 
     @FXML
+    private ImageView chapterCoverIV;
+
+    @FXML
     private Button btnAddReview;
 
     @FXML
@@ -87,6 +90,7 @@ public class ChapterControllerG implements ReviewObserver {
 
         paneInsertReview.setVisible(false);
         newBadgeWonPane.setVisible(false);
+        chapterCoverIV.setImage(chapterBean.getCover());
 
 
         btnCloseEditor.setOnAction(event -> closeEditor());

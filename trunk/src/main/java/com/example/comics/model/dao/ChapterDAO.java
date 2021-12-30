@@ -2,8 +2,10 @@ package com.example.comics.model.dao;
 
 import com.example.comics.model.Chapter;
 import com.example.comics.model.Review;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
+import java.io.InputStream;
 import java.sql.*;
 import java.util.ArrayList;
 
@@ -49,6 +51,11 @@ public class ChapterDAO {
                 //cover = rs.getImg("cover");
                 chapter = new Chapter(chapterSeries,chapterTitle);
                 chapter.setId(chapter_id);
+
+                Blob bl = rs.getBlob("chapterCover");
+                InputStream inputStream = bl.getBinaryStream();
+                Image image = new Image(inputStream);
+                chapter.setCover(image);
 
 
                 //chapters.setAuthor(author);

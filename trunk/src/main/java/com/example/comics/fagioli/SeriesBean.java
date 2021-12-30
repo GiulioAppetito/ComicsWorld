@@ -47,7 +47,7 @@ public class SeriesBean {
             chapterBean.setSeries(this.title);
             chapterBean.setId(chapter.getId());
             chapterBean.setReviews(chapter.getReviews());
-            //chapterBean.setCover(chapter.getCover());
+            chapterBean.setCover(chapter.getCover());
             chapterBeans.add(chapterBean);
         }
 

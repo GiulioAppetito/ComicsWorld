@@ -3,6 +3,7 @@ package com.example.comics.fagioli;
 import com.example.comics.model.Chapter;
 import com.example.comics.model.Review;
 import com.example.comics.model.dao.ReviewDAO;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.text.Text;
 
@@ -17,7 +18,7 @@ public class ChapterBean {
     private String title;
     private String series;
     private Integer id;
-    private ImageView cover;
+    private Image cover;
     private List<Review> reviews = new ArrayList<>();
 
     public String getTitle() {
@@ -41,10 +42,10 @@ public class ChapterBean {
         this.id = id;
     }
 
-    public ImageView getCover() {
+    public Image getCover() {
         return cover;
     }
-    public void setCover(ImageView cover) {
+    public void setCover(Image cover) {
         this.cover = cover;
     }
 
