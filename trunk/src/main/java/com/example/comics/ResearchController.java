@@ -39,7 +39,7 @@ public class ResearchController {
         SeriesDAO seriesdao = new SeriesDAO();
 
         ArrayList<Series> latestSeries = seriesdao.retriveLatestSeries();
-        //return Series.getSeries();
+
         for(Series series : latestSeries){
             seriesBean = new SeriesBean();
             seriesBean.setTitle(series.getTitle());

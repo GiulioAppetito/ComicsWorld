@@ -1,24 +1,20 @@
 package com.example.comics.model;
 
-import com.example.comics.model.dao.AccountDAO;
 import com.example.comics.model.dao.ObjectiveDAO;
 import com.example.comics.model.dao.ReaderDAO;
-import com.example.comics.model.dao.SeriesDAO;
 
-import java.util.ArrayList;
+import java.sql.SQLException;
 import java.util.List;
-
-import static java.lang.System.in;
 
 public class Reader extends Account{
 
-    private ArrayList<Series> favourites;
-    private ArrayList<Series> toRead;
-    private ArrayList<Series> reading;
-    private ArrayList<Review> publishedReviews;
-    private ArrayList<Objective> objectives;
+    private List<Series> favourites;
+    private List<Series> toRead;
+    private List<Series> reading;
+    private List<Review> publishedReviews;
+    private List<Objective> objectives;
 
-    public Reader(ArrayList<Series> favourites, ArrayList<Series> toRead, ArrayList<Series> reading,ArrayList<Review> publishedReviews,String username){
+    public Reader(List<Series> favourites, List<Series> toRead, List<Series> reading, List<Review> publishedReviews,String username){
 
         this.setUsername(username);
 
@@ -38,41 +34,41 @@ public class Reader extends Account{
         return ROLE;
     }
 
-    public ArrayList<Series> getFavourites() {
+    public List<Series> getFavourites() {
         return favourites;
     }
 
-    public void setFavourites(ArrayList<Series> favourites) {
+    public void setFavourites(List<Series> favourites) {
         this.favourites = favourites;
     }
 
-    public ArrayList<Series> getToRead() {
+    public List<Series> getToRead() {
         return toRead;
     }
 
-    public void setToRead(ArrayList<Series> toRead) {
+    public void setToRead(List<Series> toRead) {
         this.toRead = toRead;
     }
 
-    public ArrayList<Series> getReading() {
+    public List<Series> getReading() {
         return reading;
     }
 
-    public void setReading(ArrayList<Series> reading) {
+    public void setReading(List<Series> reading) {
         this.reading = reading;
     }
 
-    public ArrayList<Review> getPublishedReviews() {
+    public List<Review> getPublishedReviews() {
         return publishedReviews;
     }
 
-    public void setPublishedReviews(ArrayList<Review> publishedReviews) {
+    public void setPublishedReviews(List<Review> publishedReviews) {
         this.publishedReviews = publishedReviews;
     }
 
     public boolean hasAchievedThisObjective(Objective objective) {
+
         if(this.objectives.isEmpty()){
-            System.out.println("objectives is empty");
             return false;
         }
 
@@ -88,11 +84,11 @@ public class Reader extends Account{
         return false;
     }
 
-    public ArrayList<Objective> getObjectives() {
+    public List<Objective> getObjectives() {
         return objectives;
     }
 
-    public void setObjectives(ArrayList<Objective> objectives) {
+    public void setObjectives(List<Objective> objectives) {
         this.objectives = objectives;
     }
 
@@ -108,6 +104,10 @@ public class Reader extends Account{
 
     public void addDiscountCode(DiscountCode discountCode) {
         ReaderDAO readerDAO = new ReaderDAO();
-        readerDAO.saveObtainedDiscountCode(discountCode,this);
+        try {
+            readerDAO.saveObtainedDiscountCode(discountCode,this);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 }

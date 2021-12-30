@@ -12,10 +12,8 @@ public class ReaderDAO {
     private static final String USER = "anastasia";
     private static final String PASS = "passwordanastasia";
     private static final String DB_URL = "jdbc:mysql://comics-world.ce9t0fxhansh.eu-west-2.rds.amazonaws.com:3306/ComicsWorld?autoReconnect=true&useSSL=false";
-    private static final String DRIVER_CLASS_NAME = "com.mysql.jdbc.Driver";
 
-
-    public Reader retrieveReader(String identifier, String password) {
+    public Reader retrieveReader(String identifier, String password){
 
         Statement stmt = null;
         Connection conn = null;
@@ -23,7 +21,6 @@ public class ReaderDAO {
         Reader reader = null;
 
         try {
-            Class.forName(DRIVER_CLASS_NAME);
             conn = DriverManager.getConnection(DB_URL, USER, PASS);
             stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
             ResultSet rs = Queries.retreiveReader(stmt, identifier, password);
@@ -55,10 +52,15 @@ public class ReaderDAO {
 
 
 
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
         } catch (SQLException throwables) {
             throwables.printStackTrace();
+        }
+    finally{
+            try {
+                conn.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
         }
 
         return reader;
@@ -70,22 +72,21 @@ public class ReaderDAO {
         objectiveDAO.addAchievedObjective(objective, username);
     }
 
-    public void saveObtainedDiscountCode(DiscountCode discountCode, Reader reader) {
+    public void saveObtainedDiscountCode(DiscountCode discountCode, Reader reader) throws SQLException {
         Statement stmt = null;
         Connection conn = null;
 
         try {
-            Class.forName(DRIVER_CLASS_NAME);
             conn = DriverManager.getConnection(DB_URL, USER, PASS);
             stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
             Queries.saveReadersDiscountCode(stmt,discountCode,reader);
 
-        } catch (ClassNotFoundException e) {
+        } catch (SQLException e) {
             e.printStackTrace();
-        } catch (SQLException throwables) {
-            throwables.printStackTrace();
         }
-
+        finally{
+            conn.close();
+        }
     }
 
 }
