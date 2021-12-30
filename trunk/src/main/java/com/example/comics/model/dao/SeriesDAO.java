@@ -2,46 +2,37 @@ package com.example.comics.model.dao;
 
 import com.example.comics.model.*;
 import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
 
-import java.io.File;
-import java.io.FileOutputStream;
 import java.io.InputStream;
-import java.io.OutputStream;
 import java.sql.*;
 import java.util.ArrayList;
+import java.util.List;
 
 public class SeriesDAO {
 
     private static final String USER = "anastasia";
     private static final String PASS = "passwordanastasia";
     private static final String DB_URL = "jdbc:mysql://comics-world.ce9t0fxhansh.eu-west-2.rds.amazonaws.com:3306/ComicsWorld?autoReconnect=true&useSSL=false";
-    private static final String DRIVER_CLASS_NAME = "com.mysql.jdbc.Driver";
 
 
-    public ArrayList<Series> retrieveFavouriteSeries(String user) {
+    public List<Series> retrieveFavouriteSeries(String user) {
         Statement stmt = null;
         Connection conn = null;
 
-        ArrayList<Series> seriesList = new ArrayList<Series>();
+        List<Series> seriesList = new ArrayList<>();
 
         String title;
-        String author;
-        String publishingHouse;
-        ImageView cover;
 
         Series series;
 
         try {
-            Class.forName(DRIVER_CLASS_NAME);
             conn = DriverManager.getConnection(DB_URL, USER, PASS);
 
             stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
             ResultSet rs = Queries.retriveFavouriteSeries(stmt, user);
 
             if (!rs.first()) {
-                Exception e = new Exception("No series Found ");
-                throw e;
+                throw new Exception("No series Found ");
             }
             rs.first();
 
@@ -54,8 +45,6 @@ public class SeriesDAO {
 
         } catch (SQLException throwables) {
             throwables.printStackTrace();
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -64,6 +53,7 @@ public class SeriesDAO {
                 if (stmt != null)
                     stmt.close();
             } catch (SQLException se2) {
+                //TO-DO
             }
             try {
                 if (conn != null)
@@ -76,29 +66,23 @@ public class SeriesDAO {
         return seriesList;
     }
 
-    public ArrayList<Series> retrieveToReadSeries(String user) {
+    public List<Series> retrieveToReadSeries(String user) {
         Statement stmt = null;
         Connection conn = null;
 
-        ArrayList<Series> seriesList = new ArrayList<Series>();
+        List<Series> seriesList = new ArrayList<>();
 
         String title;
-        String author;
-        String publishingHouse;
-        ImageView cover;
-
         Series series;
 
         try {
-            Class.forName(DRIVER_CLASS_NAME);
             conn = DriverManager.getConnection(DB_URL, USER, PASS);
 
             stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
             ResultSet rs = Queries.retriveToReadSeries(stmt, user);
 
             if (!rs.first()) {
-                Exception e = new Exception("No series Found ");
-                throw e;
+                throw new Exception("No series Found ");
             }
             rs.first();
 
@@ -111,8 +95,6 @@ public class SeriesDAO {
 
         } catch (SQLException throwables) {
             throwables.printStackTrace();
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -121,6 +103,7 @@ public class SeriesDAO {
                 if (stmt != null)
                     stmt.close();
             } catch (SQLException se2) {
+                //TO-DO
             }
             try {
                 if (conn != null)
@@ -133,29 +116,23 @@ public class SeriesDAO {
         return seriesList;
     }
 
-    public ArrayList<Series> retrievePublishedSeries(String user) {
+    public List<Series> retrievePublishedSeries(String user) {
         Statement stmt = null;
         Connection conn = null;
 
-        ArrayList<Series> seriesList = new ArrayList<Series>();
+        List<Series> seriesList = new ArrayList<>();
 
         String title;
-        String author;
-        String publishingHouse;
-        ImageView cover;
-
         Series series;
 
         try {
-            Class.forName(DRIVER_CLASS_NAME);
             conn = DriverManager.getConnection(DB_URL, USER, PASS);
 
             stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
             ResultSet rs = Queries.retrivePublishedSeries(stmt, user);
 
             if (!rs.first()) {
-                Exception e = new Exception("No series Found ");
-                throw e;
+                throw new Exception("No series Found ");
             }
             rs.first();
 
@@ -168,9 +145,7 @@ public class SeriesDAO {
 
         } catch (SQLException throwables) {
             throwables.printStackTrace();
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
-        } catch (Exception e) {
+        }catch (Exception e) {
             e.printStackTrace();
         }
         finally {
@@ -178,6 +153,7 @@ public class SeriesDAO {
                 if (stmt != null)
                     stmt.close();
             } catch (SQLException se2) {
+                //TO-DO
             }
             try {
                 if (conn != null)
@@ -190,29 +166,23 @@ public class SeriesDAO {
         return seriesList;
     }
 
-    public ArrayList<Series> retrieveReadingSeries(String user) {
+    public List<Series> retrieveReadingSeries(String user) {
         Statement stmt = null;
         Connection conn = null;
 
-        ArrayList<Series> seriesList = new ArrayList<Series>();
+        List<Series> seriesList = new ArrayList<>();
 
         String title;
-        String author;
-        String publishingHouse;
-        ImageView cover;
-
         Series series;
 
         try {
-            Class.forName(DRIVER_CLASS_NAME);
             conn = DriverManager.getConnection(DB_URL, USER, PASS);
 
             stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
             ResultSet rs = Queries.retriveReadingSeries(stmt, user);
 
             if (!rs.first()) {
-                Exception e = new Exception("No series Found ");
-                throw e;
+                throw new Exception("No series Found ");
             }
             rs.first();
 
@@ -225,9 +195,7 @@ public class SeriesDAO {
 
         } catch (SQLException throwables) {
             throwables.printStackTrace();
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
-        } catch (Exception e) {
+        }catch (Exception e) {
             e.printStackTrace();
         }
         finally {
@@ -235,6 +203,7 @@ public class SeriesDAO {
                 if (stmt != null)
                     stmt.close();
             } catch (SQLException se2) {
+                //TO-DO
             }
             try {
                 if (conn != null)
@@ -252,28 +221,22 @@ public class SeriesDAO {
         Connection conn = null;
 
         String author;
-        String publishingHouse;
-        ImageView cover;
-
         Series series = null;
 
         try {
-            Class.forName(DRIVER_CLASS_NAME);
             conn = DriverManager.getConnection(DB_URL, USER, PASS);
 
             stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
             ResultSet rs = Queries.retrieveSeries(stmt, title);
 
             if (!rs.first()) {
-                Exception e = new Exception("No series Found ");
-                throw e;
+                throw new Exception("No series Found ");
             }
             rs.first();
 
             do {
                 title = rs.getString("title");
                 author = rs.getString("author");
-                //cover = rs.getImg("cover");
                 series = new Series(title);
                 series.setAuthor(author);
 
@@ -282,16 +245,14 @@ public class SeriesDAO {
 
         } catch (SQLException throwables) {
             throwables.printStackTrace();
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
         } catch (Exception e) {
             e.printStackTrace();
-        }
-        finally {
+        } finally {
             try {
                 if (stmt != null)
                     stmt.close();
             } catch (SQLException se2) {
+                //TO-DO
             }
             try {
                 if (conn != null)
@@ -304,30 +265,24 @@ public class SeriesDAO {
         return series;
     }
 
-    public ArrayList<Series> retriveLatestSeries() {
+    public List<Series> retriveLatestSeries() {
 
         Statement stmt = null;
         Connection conn = null;
 
-        ArrayList<Series> seriesList = new ArrayList<Series>();
+        List<Series> seriesList = new ArrayList<>();
 
-        String title;
         String author;
-        String publishingHouse;
-        ImageView cover;
-
         Series series;
 
         try {
-            Class.forName(DRIVER_CLASS_NAME);
             conn = DriverManager.getConnection(DB_URL, USER, PASS);
 
             stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
             ResultSet rs = Queries.retriveLatestSeries(stmt);
 
             if (!rs.first()) {
-                Exception e = new Exception("No series Found ");
-                throw e;
+                throw new Exception("No series Found ");
             }
             rs.first();
             do {
@@ -348,8 +303,6 @@ public class SeriesDAO {
 
         } catch (SQLException throwables) {
             throwables.printStackTrace();
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -358,6 +311,7 @@ public class SeriesDAO {
                 if (stmt != null)
                     stmt.close();
             } catch (SQLException se2) {
+                //TO-DO
             }
             try {
                 if (conn != null)
@@ -370,7 +324,7 @@ public class SeriesDAO {
         return seriesList;
     }
 
-    public ArrayList<Chapter> retriveChapters(String seriesTitle) {
+    public List<Chapter> retriveChapters(String seriesTitle) {
         ChapterDAO chapterDAO = new ChapterDAO();
         return chapterDAO.retriveChapters(seriesTitle);
     }
@@ -380,17 +334,17 @@ public class SeriesDAO {
         chapterDAO.addReview(review);
     }
 
-    public ArrayList<Objective> retrieveObjectives(Series series) {
+    public List<Objective> retrieveObjectives(Series series) {
         ObjectiveDAO objectiveDAO = new ObjectiveDAO();
         return objectiveDAO.retrieveSeriesObjectives(series);
     }
 
-    public ArrayList<Review> retrieveReviewsByReader(String username) {
+    public List<Review> retrieveReviewsByReader(String username) {
 
         Statement stmt = null;
         Connection conn = null;
 
-        ArrayList<Review> reviews = new ArrayList<Review>();
+        List<Review> reviews = new ArrayList<>();
         Review review;
 
         try {
@@ -399,8 +353,7 @@ public class SeriesDAO {
             ResultSet rs = Queries.retrieveReviewsByReader(stmt,username);
 
             if (!rs.first()) {
-                Exception e = new Exception("No reviews Found ");
-                throw e;
+                throw new Exception("No reviews Found ");
             }
             rs.first();
 
@@ -415,10 +368,15 @@ public class SeriesDAO {
 
         } catch (SQLException throwables) {
             throwables.printStackTrace();
-        } catch (ClassNotFoundException e) {
+        }catch (Exception e) {
             e.printStackTrace();
-        } catch (Exception e) {
-            e.printStackTrace();
+        } finally{
+            try {
+                assert conn != null;
+                conn.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
         }
 
         return reviews;

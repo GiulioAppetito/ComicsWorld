@@ -6,6 +6,7 @@ import javafx.scene.image.Image;
 import java.io.InputStream;
 import java.sql.*;
 import java.util.ArrayList;
+import java.util.List;
 
 public class ReaderDAO {
 
@@ -33,10 +34,10 @@ public class ReaderDAO {
             SeriesDAO seriesDAO = new SeriesDAO();
 
             String username = rs.getString("username");
-            ArrayList<Series> favSeries = seriesDAO.retrieveFavouriteSeries(username);
-            ArrayList<Series> toReadSeries = seriesDAO.retrieveToReadSeries(username);
-            ArrayList<Series> readingSeries = seriesDAO.retrieveReadingSeries(username);
-            ArrayList<Review> reviews = seriesDAO.retrieveReviewsByReader(username);
+            List<Series> favSeries = seriesDAO.retrieveFavouriteSeries(username);
+            List<Series> toReadSeries = seriesDAO.retrieveToReadSeries(username);
+            List<Series> readingSeries = seriesDAO.retrieveReadingSeries(username);
+            List<Review> reviews = seriesDAO.retrieveReviewsByReader(username);
 
             reader = new Reader(favSeries, toReadSeries, readingSeries, reviews, username);
 
@@ -57,6 +58,7 @@ public class ReaderDAO {
         }
     finally{
             try {
+                assert conn != null;
                 conn.close();
             } catch (SQLException e) {
                 e.printStackTrace();
@@ -85,6 +87,7 @@ public class ReaderDAO {
             e.printStackTrace();
         }
         finally{
+            assert conn != null;
             conn.close();
         }
     }

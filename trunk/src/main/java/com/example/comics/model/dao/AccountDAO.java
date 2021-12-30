@@ -8,11 +8,6 @@ public class AccountDAO {
     private static final String USER = "anastasia";
     private static final String PASS = "passwordanastasia";
     private static final String DB_URL = "jdbc:mysql://comics-world.ce9t0fxhansh.eu-west-2.rds.amazonaws.com:3306/ComicsWorld?autoReconnect=true&useSSL=false";
-    private static final String DRIVER_CLASS_NAME = "com.mysql.jdbc.Driver";
-
-    //MANCA LA REFLECTION
-
-
 
 
     public String verifyCredentials(String credential,String password) throws Exception {
@@ -48,6 +43,7 @@ public class AccountDAO {
                 if (stmt != null)
                     stmt.close();
             } catch (SQLException se2) {
+                //TO-DO
             }
             try {
                 if (conn != null)
@@ -77,7 +73,6 @@ public class AccountDAO {
         }
         catch (SQLException throwables) {
             System.out.println("ECCEZIONE REGISTRAZIONE");
-
         } catch (Exception e) {
             e.printStackTrace();
         } finally {
@@ -85,6 +80,7 @@ public class AccountDAO {
                 if (stmt != null)
                     stmt.close();
             } catch (SQLException se2) {
+                //TO-DO
             }
             try {
                 if (conn != null)
@@ -104,22 +100,20 @@ public class AccountDAO {
 
 
         try {
-            Class.forName(DRIVER_CLASS_NAME);
             conn= DriverManager.getConnection(DB_URL,USER,PASS);
 
             stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE,ResultSet.CONCUR_READ_ONLY);
             Queries.updateEmail(stmt, newEmail, password);
 
 
-        } catch (ClassNotFoundException e) {
+        } catch (SQLException e) {
             e.printStackTrace();
-        } catch (Exception throwables) {
-            throwables.printStackTrace();
         } finally {
             try {
                 if (stmt != null)
                     stmt.close();
             } catch (SQLException se2) {
+                //TO-DO
             }
             try {
                 if (conn != null)
@@ -175,6 +169,7 @@ public class AccountDAO {
                 if (stmt != null)
                     stmt.close();
             } catch (SQLException se2) {
+                //TO-DO
             }
             try {
                 if (conn != null)
@@ -210,6 +205,7 @@ public class AccountDAO {
                 if (stmt != null)
                     stmt.close();
             } catch (SQLException se2) {
+                //TO-DO
             }
             try {
                 if (conn != null)

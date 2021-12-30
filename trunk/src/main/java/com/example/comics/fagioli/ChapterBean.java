@@ -1,15 +1,8 @@
 package com.example.comics.fagioli;
 
-import com.example.comics.model.Chapter;
 import com.example.comics.model.Review;
-import com.example.comics.model.dao.ReviewDAO;
 import javafx.scene.image.ImageView;
-import javafx.scene.text.Text;
-
-import java.lang.reflect.Array;
-import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 public class ChapterBean {
@@ -48,13 +41,11 @@ public class ChapterBean {
         this.cover = cover;
     }
 
-    public List<ReviewBean> getReviews() throws SQLException {
-        ReviewDAO reviewDAO = new ReviewDAO();
+    public List<ReviewBean> getReviews(){
         ArrayList<ReviewBean> reviewBeans = new ArrayList<>();
         ReviewBean reviewBean ;
 
         for(Review review : reviews){
-            //non so le info su review
             reviewBean = new ReviewBean();
             reviewBean.setComment(review.getComment());
             reviewBean.setUsername(review.getUsername());

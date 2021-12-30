@@ -5,6 +5,7 @@ import com.example.comics.model.Series;
 
 import java.sql.*;
 import java.util.ArrayList;
+import java.util.List;
 
 public class AuthorDAO {
 
@@ -32,7 +33,7 @@ public class AuthorDAO {
             rs.first();
 
             SeriesDAO seriesDAO = new SeriesDAO();
-            ArrayList<Series> publishedSeries = seriesDAO.retrievePublishedSeries(rs.getString("username"));
+            List<Series> publishedSeries = seriesDAO.retrievePublishedSeries(rs.getString("username"));
 
             author = new Author(publishedSeries);
             author.setFirstName(rs.getString("firstname"));

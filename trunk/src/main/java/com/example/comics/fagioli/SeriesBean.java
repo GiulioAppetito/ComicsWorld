@@ -2,7 +2,6 @@ package com.example.comics.fagioli;
 
 import com.example.comics.model.Chapter;
 import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -47,7 +46,6 @@ public class SeriesBean {
             chapterBean.setSeries(this.title);
             chapterBean.setId(chapter.getId());
             chapterBean.setReviews(chapter.getReviews());
-            //chapterBean.setCover(chapter.getCover());
             chapterBeans.add(chapterBean);
         }
 

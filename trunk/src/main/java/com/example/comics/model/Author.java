@@ -1,18 +1,18 @@
 package com.example.comics.model;
 
-import java.util.ArrayList;
+import java.util.List;
 
 public class Author extends Account{
 
-    private ArrayList<Series> publishedSeries;
-    private ArrayList<Badge> badges;
-    private ArrayList<Character> characters;
+    private List<Series> publishedSeries;
+    private List<Badge> badges;
+    private List<Character> characters;
 
     public Author(){
         //dummy
     }
 
-    public Author(ArrayList<Series> publishedSeries){
+    public Author(List<Series> publishedSeries){
         this.publishedSeries = publishedSeries;
     }
 
@@ -23,11 +23,11 @@ public class Author extends Account{
         return ROLE;
     }
 
-    public ArrayList<Series> getPublishedSeries() {
+    public List<Series> getPublishedSeries() {
         return publishedSeries;
     }
 
-    public void setPublishedSeries(ArrayList<Series> publishedSeries) {
+    public void setPublishedSeries(List<Series> publishedSeries) {
         this.publishedSeries = publishedSeries;
     }
 

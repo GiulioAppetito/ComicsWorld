@@ -1,11 +1,10 @@
 package com.example.comics.model;
 
-import com.example.comics.model.dao.ChapterDAO;
 import com.example.comics.model.dao.SeriesDAO;
 import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Series {
 	
@@ -13,9 +12,9 @@ public class Series {
 	private Image cover;
 	private String author;
 	private String publishingHouse;
-	private ArrayList<Chapter> chapters;
-	private ArrayList<Character> characters;
-	private ArrayList<Objective> objectives = new ArrayList<Objective>();
+	private List<Chapter> chapters;
+	private List<Character> characters;
+	private List<Objective> objectives = new ArrayList<>();
 
 	private Series(){
 		//costruttore di default
@@ -56,15 +55,15 @@ public class Series {
 		this.publishingHouse = publishingHouse;
 	}
 
-	public ArrayList<Chapter> getChapters(){
+	public List<Chapter> getChapters(){
 		return chapters;
 	}
 
-	public ArrayList<Objective> getObjectives() {
+	public List<Objective> getObjectives() {
 		return objectives;
 	}
 
-	public void setObjectives(ArrayList<Objective> objectives) {
+	public void setObjectives(List<Objective> objectives) {
 		this.objectives = objectives;
 	}
 

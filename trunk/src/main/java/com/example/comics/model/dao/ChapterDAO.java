@@ -2,35 +2,31 @@ package com.example.comics.model.dao;
 
 import com.example.comics.model.Chapter;
 import com.example.comics.model.Review;
-import javafx.scene.image.ImageView;
 
 import java.sql.*;
 import java.util.ArrayList;
+import java.util.List;
 
 public class ChapterDAO {
 
     private static final String USER = "anastasia";
     private static final String PASS = "passwordanastasia";
     private static final String DB_URL = "jdbc:mysql://comics-world.ce9t0fxhansh.eu-west-2.rds.amazonaws.com:3306/ComicsWorld?autoReconnect=true&useSSL=false";
-    private static final String DRIVER_CLASS_NAME = "com.mysql.jdbc.Driver";
 
-    public ArrayList<Chapter> retriveChapters(String seriesTitle) {
+    public List<Chapter> retriveChapters(String seriesTitle) {
 
         Statement stmt = null;
         Connection conn = null;
 
-        ArrayList<Chapter> chaptersList = new ArrayList<Chapter>();
+        List<Chapter> chaptersList = new List<>();
 
         String chapterTitle;
-        String publishingHouse;
-        ImageView cover;
         Integer chapter_id;
         String chapterSeries;
 
         Chapter chapter;
 
         try {
-            Class.forName(DRIVER_CLASS_NAME);
             conn = DriverManager.getConnection(DB_URL, USER, PASS);
             stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
             ResultSet rs = Queries.retriveChapters(stmt, seriesTitle);
@@ -44,14 +40,9 @@ public class ChapterDAO {
                 chapterTitle = rs.getString("chapter_title");
                 chapter_id = rs.getInt("chapter_id");
                 chapterSeries = rs.getString("series_title");
-
-                //author = rs.getString("author");
-                //cover = rs.getImg("cover");
                 chapter = new Chapter(chapterSeries,chapterTitle);
                 chapter.setId(chapter_id);
 
-
-                //chapters.setAuthor(author);
                 chaptersList.add(chapter);
             } while (rs.next());
 
@@ -68,6 +59,7 @@ public class ChapterDAO {
                 if (stmt != null)
                     stmt.close();
             } catch (SQLException se2) {
+                //TO-DO
             }
             try {
                 if (conn != null)
@@ -80,14 +72,13 @@ public class ChapterDAO {
         return chaptersList;
     }
 
-    public ArrayList<Review> retrieveReviews(String series, String chapter) throws ReviewsNotFoundException{
+    public List<Review> retrieveReviews(String series, String chapter) throws ReviewsNotFoundException{
         ReviewDAO reviewDAO = new ReviewDAO();
         return reviewDAO.retrieveReviews(series,chapter);
 
     }
 
     public void addReview(Review review) {
-        ReviewDAO reviewDAO = new ReviewDAO();
         try {
             ReviewDAO.saveReview(review);
         } catch (Exception e) {
