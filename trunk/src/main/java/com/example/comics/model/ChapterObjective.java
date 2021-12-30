@@ -4,6 +4,11 @@ public class ChapterObjective extends Objective{
 
     private int requiredChapters;
 
+    public ChapterObjective(Badge badge,Discount discount) {
+        this.badge = badge;
+        this.discount = discount;
+    }
+
     @Override
     public boolean achieveObjective(int input) {
         return false;

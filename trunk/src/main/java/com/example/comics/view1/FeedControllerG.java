@@ -45,7 +45,7 @@ public class FeedControllerG{
             try {
                 VBox card = fxmlLoader.load();
                 VCardControllerG cardController = fxmlLoader.getController();
-                cardController.setData(latestSeries.get(j).getTitle());
+                cardController.setData(latestSeries.get(j).getTitle(),latestSeries.get(j).getCover());
 
                 int finalJ = j;
                 card.setOnMouseClicked(event -> {
@@ -78,11 +78,8 @@ public class FeedControllerG{
                 VBox vbAd = fxmlLoader.load();
                 AdController adController = fxmlLoader.getController();
                 adController.setData(listOfAd);
-
                 vbAd.setOnMouseClicked(event -> System.out.println("Clicked ad"));
-
                 hbAds.getChildren().add(vbAd);
-
             } catch (IOException e) {
                 e.printStackTrace();
             }

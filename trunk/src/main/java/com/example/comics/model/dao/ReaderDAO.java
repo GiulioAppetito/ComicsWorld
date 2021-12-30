@@ -1,9 +1,6 @@
 package com.example.comics.model.dao;
 
-import com.example.comics.model.Objective;
-import com.example.comics.model.Reader;
-import com.example.comics.model.Review;
-import com.example.comics.model.Series;
+import com.example.comics.model.*;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -65,4 +62,23 @@ public class ReaderDAO {
         System.out.println("[ReaderDAO] Calling objectiveDAO con objective,username = "+objective+","+username);
         objectiveDAO.addAchievedObjective(objective, username);
     }
+
+    public void saveObtainedDiscountCode(DiscountCode discountCode, Reader reader) {
+        Statement stmt = null;
+        Connection conn = null;
+
+        try {
+            Class.forName(DRIVER_CLASS_NAME);
+            conn = DriverManager.getConnection(DB_URL, USER, PASS);
+            stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
+            Queries.saveReadersDiscountCode(stmt,discountCode,reader);
+
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+
+    }
+
 }

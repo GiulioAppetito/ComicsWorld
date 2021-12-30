@@ -24,7 +24,7 @@ public class ResearchController {
             seriesBean.setChapters(series.getChapters());
 
             seriesBeans.add(seriesBean);
-            //seriesBean.setCover();
+            seriesBean.setCover(series.getCover());
         }
 
 
@@ -46,7 +46,7 @@ public class ResearchController {
             seriesBean.setAuthor(series.getAuthor());
             seriesBean.setChapters(series.getChapters());
             seriesBeans.add(seriesBean);
-            //seriesBean.setCover();
+            seriesBean.setCover(series.getCover());
         }
 
 

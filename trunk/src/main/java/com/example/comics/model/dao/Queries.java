@@ -1,5 +1,7 @@
 package com.example.comics.model.dao;
 
+import com.example.comics.model.DiscountCode;
+import com.example.comics.model.Reader;
 import com.example.comics.model.Review;
 
 import java.sql.*;
@@ -154,5 +156,17 @@ public class Queries {
         String insertStatement = String.format("INSERT INTO achievedObjectives (username, objectiveSeries, objectiveLevel, objectiveType) values ('%s', '%s', '%s', '%s')", username, series_title, objective_level, objective_type);
         System.out.println(insertStatement);
         stmt.executeUpdate(insertStatement);
+    }
+
+    public static void saveReadersDiscountCode(Statement stmt, DiscountCode discountCode, Reader reader) throws SQLException {
+        String insertStatement = String.format("INSERT INTO discountCodes (username, code, expiringDate, percentage) values ('%s', '%s', '%s', '%s')", reader.getUsername(), discountCode.getCode(), discountCode.getExpiringDate(), discountCode.getDiscount().getPercentage());
+        System.out.println(insertStatement);
+        stmt.executeUpdate(insertStatement);
+    }
+
+    public static ResultSet retreiveDiscountCodesByReader(Statement stmt, Reader reader) throws SQLException {
+        String selectStatement = String.format("SELECT * FROM discountCodes WHERE username = '%s'", reader.getUsername());
+        System.out.println(selectStatement);
+        return stmt.executeQuery(selectStatement);
     }
 }

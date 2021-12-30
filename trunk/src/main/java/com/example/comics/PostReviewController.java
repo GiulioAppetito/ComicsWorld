@@ -41,21 +41,17 @@ public class PostReviewController extends ReviewSubject {
                 numOfReviews++;
             }
         }
-        System.out.println("[POST REVIEW CONTROLLER] Hai numReviews = "+numOfReviews);
-
         //controllo degli obiettivi
         for(Objective objective : series.getObjectives()){
-            System.out.println("[POST REVIEW CONTROLLER] Iniziato il ciclo for del titolo : "+series.getTitle());
+
             if(objective.getType().equals("reviewsObjective")){
-                System.out.println("[P REV CONTR] C'è almeno un reviewsObjective!");
                 if(objective.achieveObjective(numOfReviews)){
                     //controllo che il lettore non abbia già raggiunto questo obiettivo
-                    System.out.println("[P REV CONTR] Achieved objective");
+                    System.out.println("[POST REVIEW CONTROLLER] Obiettivo raggiunto!");
                     if(UserLogin.getInstance().getReader().hasAchievedThisObjective(objective)){
-                        System.out.println("[P REV CONTR] Reader  ha questo obiettivo gia.");
+                        System.out.println("[POST REVIEW CONTROLLER] Reader ha già questo obiettivo.");
 
                     }else {
-                        System.out.println("[P REV CONTR] Reader non ha questo obiettivo gia.");
                         //aggiungo obiettivo alla lista e salvo sul DB + assegno badge
                         UserLogin.getInstance().getReader().addAchievedObjective(objective);
 
@@ -63,14 +59,19 @@ public class PostReviewController extends ReviewSubject {
                         objectiveBean.setBadge(objective.getBadge());
                         objectiveBean.setLevel(objective.getLevel());
                         objectiveBean.setSeriesTitle((objective.getSeries_title()));
-                        notifyAchievedReviewObjective(objectiveBean);
+
 
                         //genero discount code
+                        DiscountCode discountCode = new DiscountCode(objective.getDiscount());
+                        UserLogin.getInstance().getReader().addDiscountCode(discountCode);
+
+                        //notifica di badge
+                        notifyAchievedReviewObjective(objectiveBean);
+
                         //discount code : arriva la mail
                     }
-                    System.out.println("[ P REV CONTR] Dopo if e else");
                 }else{
-                    System.out.println("Obiettivo non raggiunto.");
+                    System.out.println("Obiettivo non raggiunto per numero di reviews.");
                 }
 
             }

@@ -1,6 +1,7 @@
 package com.example.comics.fagioli;
 
 import com.example.comics.model.Chapter;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
 import java.util.ArrayList;
@@ -9,7 +10,7 @@ import java.util.List;
 public class SeriesBean {
 
     private String title;
-    private ImageView cover;
+    private Image cover;
     private String author;
     private List<Chapter> chapters = new ArrayList<>();
 
@@ -21,10 +22,10 @@ public class SeriesBean {
         this.title = title;
     }
 
-    public ImageView getCover() {
+    public Image getCover() {
         return cover;
     }
-    public void setCover(ImageView cover) {
+    public void setCover(Image cover) {
         this.cover = cover;
     }
 

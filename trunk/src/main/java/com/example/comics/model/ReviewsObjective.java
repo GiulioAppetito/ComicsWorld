@@ -6,9 +6,9 @@ public class ReviewsObjective extends Objective{
 
     private int requiredReviews;
 
-    public ReviewsObjective(int badgeID){
-        BadgeDAO badgeDAO = new BadgeDAO();
-        this.badge = badgeDAO.retreiveAssociatedBadge(badgeID);
+    public ReviewsObjective(Badge badge, Discount discount){
+        this.badge = badge;
+        this.discount = discount;
     }
 
     @Override

@@ -2,6 +2,7 @@ package com.example.comics.model;
 
 import com.example.comics.model.dao.ChapterDAO;
 import com.example.comics.model.dao.SeriesDAO;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
 import java.util.ArrayList;
@@ -9,7 +10,7 @@ import java.util.ArrayList;
 public class Series {
 	
 	private String title;
-	private ImageView cover;
+	private Image cover;
 	private String author;
 	private String publishingHouse;
 	private ArrayList<Chapter> chapters;
@@ -26,7 +27,7 @@ public class Series {
 		this.chapters = seriesDAO.retriveChapters(title);
 
 		//inizializzazione obiettivi dal db
-		this.objectives = seriesDAO.retrieveObjectives(title);
+		this.objectives = seriesDAO.retrieveObjectives(this);
 		if(objectives==null){
 			objectives = new ArrayList<>();
 		}
@@ -65,6 +66,14 @@ public class Series {
 
 	public void setObjectives(ArrayList<Objective> objectives) {
 		this.objectives = objectives;
+	}
+
+	public Image getCover() {
+		return cover;
+	}
+
+	public void setCover(Image cover) {
+		this.cover = (cover);
 	}
 }
 

@@ -18,9 +18,6 @@ public class Reader extends Account{
     private ArrayList<Review> publishedReviews;
     private ArrayList<Objective> objectives;
 
-
-
-
     public Reader(ArrayList<Series> favourites, ArrayList<Series> toRead, ArrayList<Series> reading,ArrayList<Review> publishedReviews,String username){
 
         this.setUsername(username);
@@ -31,7 +28,6 @@ public class Reader extends Account{
         this.publishedReviews = publishedReviews;
 
         ObjectiveDAO objectiveDAO = new ObjectiveDAO();
-
         objectives = objectiveDAO.retreiveAchievedObjectives(username);
     }
 
@@ -105,16 +101,13 @@ public class Reader extends Account{
     }
 
     public void addAchievedObjective(Objective objective) {
-
-
         this.objectives.add(objective);
-
         ReaderDAO readerDAO = new ReaderDAO();
-        System.out.println("[Reader] Calling readerDAO con username " +this.getUsername());
         readerDAO.saveAchievedObjective(objective, this.getUsername());
-
-
-
     }
 
+    public void addDiscountCode(DiscountCode discountCode) {
+        ReaderDAO readerDAO = new ReaderDAO();
+        readerDAO.saveObtainedDiscountCode(discountCode,this);
+    }
 }

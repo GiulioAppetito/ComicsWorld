@@ -1,9 +1,6 @@
 package com.example.comics.model.dao;
 
-import com.example.comics.model.ChapterObjective;
-import com.example.comics.model.Levels;
-import com.example.comics.model.Objective;
-import com.example.comics.model.ReviewsObjective;
+import com.example.comics.model.*;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -34,9 +31,15 @@ public class ObjectiveDAO {
             rs.first();
 
             do{
-                if(rs.getString("objectiveType").equals("reviews")){
 
-                    ReviewsObjective reviewsObjective = new ReviewsObjective(rs.getInt("associatedBadgeID"));
+                BadgeDAO badgeDAO = new BadgeDAO();
+                Badge badge = badgeDAO.retreiveAssociatedBadge(rs.getInt("associatedBadgeID"));
+
+                Discount discount = new Discount(rs.getFloat("discountPercentage"));
+                discount.setLimitDays(rs.getInt("limitDays"));
+
+                if(rs.getString("objectiveType").equals("reviews")){
+                    ReviewsObjective reviewsObjective = new ReviewsObjective(badge,discount);
                     reviewsObjective.setRequiredReviews(rs.getInt("number"));
                     switch (rs.getString("level")){
                         case "beginner":
@@ -51,7 +54,7 @@ public class ObjectiveDAO {
                     }
                     achievedObjectives.add(reviewsObjective);
                 }else if(rs.getString("objectiveType").equals("chapters")){
-                    ChapterObjective chapterObjective = new ChapterObjective();
+                    ChapterObjective chapterObjective = new ChapterObjective(badge, discount);
                     chapterObjective.setRequiredChapters(rs.getInt("number"));
                     switch (rs.getString("level")){
                         case "beginner":
@@ -101,5 +104,82 @@ public class ObjectiveDAO {
             e.printStackTrace();
         }
 
+    }
+
+    public ArrayList<Objective> retrieveSeriesObjectives(Series series){
+        Statement stmt = null;
+        Connection conn = null;
+
+        ArrayList<Objective> objectives = new ArrayList<Objective>();
+
+
+        try {
+            conn = DriverManager.getConnection(DB_URL, USER, PASS);
+            stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
+            ResultSet rs = Queries.retreiveObjectivesBySeries(stmt, series.getTitle());
+
+            if (!rs.first()) {
+                System.out.println("No objectives found on series : "+series.getTitle());
+                return objectives;
+            }
+            rs.first();
+
+            do {
+                BadgeDAO badgeDAO = new BadgeDAO();
+                Badge badge = badgeDAO.retreiveAssociatedBadge(rs.getInt("associatedBadgeID"));
+
+                Discount discount = new Discount(rs.getFloat("discountPercentage"));
+                discount.setLimitDays(rs.getInt("limitDays"));
+
+                if(rs.getString("type").equals("reviews")){
+                    ReviewsObjective reviewsObjective = new ReviewsObjective(badge,discount);
+                    switch (rs.getString("level")){
+                        case "beginner":
+                            reviewsObjective.setLevel(Levels.BEGINNER);
+                            break;
+                        case "intermediate":
+                            reviewsObjective.setLevel(Levels.INTERMEDIATE);
+                            break;
+                        case "expert":
+                            reviewsObjective.setLevel(Levels.EXPERT);
+                            break;
+                    }
+
+                    reviewsObjective.setSeries_title(series.getTitle());
+                    reviewsObjective.setRequiredReviews(rs.getInt("number"));
+                    objectives.add(reviewsObjective);
+
+
+                }else if(rs.getString("type").equals("chapters")){
+                    ChapterObjective chapterObjective = new ChapterObjective(badge,discount);
+                    switch (rs.getString("level")){
+                        case "beginner":
+                            chapterObjective.setLevel(Levels.BEGINNER);
+                            break;
+                        case "intermediate":
+                            chapterObjective.setLevel(Levels.INTERMEDIATE);
+                            break;
+                        case "expert":
+                            chapterObjective.setLevel(Levels.EXPERT);
+                            break;
+                    }
+
+                    chapterObjective.setSeries_title(series.getTitle());
+                    chapterObjective.setRequiredChapters(rs.getInt("number"));
+                    objectives.add(chapterObjective);
+                }
+
+
+            } while (rs.next());
+
+
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+
+        return objectives;
     }
 }

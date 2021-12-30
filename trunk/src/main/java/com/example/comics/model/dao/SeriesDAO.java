@@ -1,8 +1,13 @@
 package com.example.comics.model.dao;
 
 import com.example.comics.model.*;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.InputStream;
+import java.io.OutputStream;
 import java.sql.*;
 import java.util.ArrayList;
 
@@ -325,12 +330,17 @@ public class SeriesDAO {
                 throw e;
             }
             rs.first();
-
             do {
-                title = rs.getString("title");
+                series = new Series(rs.getString("title"));
+
+                Blob bl = rs.getBlob("cover");
+                InputStream inputStream = bl.getBinaryStream();
+                Image image = new Image(inputStream);
+                series.setCover(image);
+
                 author = rs.getString("author");
                 //cover = rs.getImg("cover");
-                series = new Series(title);
+
                 series.setAuthor(author);
                 seriesList.add(series);
             } while (rs.next());
@@ -360,7 +370,6 @@ public class SeriesDAO {
         return seriesList;
     }
 
-
     public ArrayList<Chapter> retriveChapters(String seriesTitle) {
         ChapterDAO chapterDAO = new ChapterDAO();
         return chapterDAO.retriveChapters(seriesTitle);
@@ -371,77 +380,9 @@ public class SeriesDAO {
         chapterDAO.addReview(review);
     }
 
-    public ArrayList<Objective> retrieveObjectives(String title) {
-        Statement stmt = null;
-        Connection conn = null;
-
-        ArrayList<Objective> objectives = new ArrayList<Objective>();
-
-
-        try {
-            conn = DriverManager.getConnection(DB_URL, USER, PASS);
-            stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
-            ResultSet rs = Queries.retreiveObjectivesBySeries(stmt,title);
-            System.out.println("[SERIES DAO] Chiamato queries con title : "+title);
-
-            if (!rs.first()) {
-                Exception e = new Exception("No objectives Found ");
-                throw e;
-            }
-            rs.first();
-
-            do {
-                if(rs.getString("type").equals("reviews")){
-                    ReviewsObjective reviewsObjective = new ReviewsObjective(rs.getInt("associatedBadgeID"));
-                    switch (rs.getString("level")){
-                        case "beginner":
-                            reviewsObjective.setLevel(Levels.BEGINNER);
-                            break;
-                        case "intermediate":
-                            reviewsObjective.setLevel(Levels.INTERMEDIATE);
-                            break;
-                        case "expert":
-                            reviewsObjective.setLevel(Levels.EXPERT);
-                            break;
-                    }
-
-                    reviewsObjective.setSeries_title(title);
-                    reviewsObjective.setRequiredReviews(rs.getInt("number"));
-                    objectives.add(reviewsObjective);
-
-
-                }else if(rs.getString("type").equals("chapters")){
-                    ChapterObjective chapterObjective = new ChapterObjective();
-                    switch (rs.getString("level")){
-                        case "beginner":
-                            chapterObjective.setLevel(Levels.BEGINNER);
-                            break;
-                        case "intermediate":
-                            chapterObjective.setLevel(Levels.INTERMEDIATE);
-                            break;
-                        case "expert":
-                            chapterObjective.setLevel(Levels.EXPERT);
-                            break;
-                    }
-
-                    chapterObjective.setSeries_title(title);
-                    chapterObjective.setRequiredChapters(rs.getInt("number"));
-                    objectives.add(chapterObjective);
-                }
-
-
-            } while (rs.next());
-
-
-        } catch (SQLException throwables) {
-            throwables.printStackTrace();
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        System.out.println("[SeriesDAO] taglia di objectives : "+objectives.size());
-        return objectives;
+    public ArrayList<Objective> retrieveObjectives(Series series) {
+        ObjectiveDAO objectiveDAO = new ObjectiveDAO();
+        return objectiveDAO.retrieveSeriesObjectives(series);
     }
 
     public ArrayList<Review> retrieveReviewsByReader(String username) {

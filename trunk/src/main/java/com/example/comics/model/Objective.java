@@ -3,9 +3,10 @@ package com.example.comics.model;
 public abstract class Objective {
 
     private Levels level;
-    private Discount discount;
+    protected Discount discount;
     protected Badge badge;
     private String series_title;
+
 
     public Levels getLevel() {
         return level;
