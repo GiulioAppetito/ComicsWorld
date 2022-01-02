@@ -1,7 +1,6 @@
 package com.example.comics.view1;
 
-import com.example.comics.fagioli.ReviewBean;
-import com.example.comics.model.Review;
+import com.example.comics.model.fagioli.ReviewBean;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;

@@ -1,7 +1,7 @@
 package com.example.comics.view1;
 
-import com.example.comics.fagioli.ChapterBean;
-import com.example.comics.fagioli.SeriesBean;
+import com.example.comics.model.fagioli.ChapterBean;
+import com.example.comics.model.fagioli.SeriesBean;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;

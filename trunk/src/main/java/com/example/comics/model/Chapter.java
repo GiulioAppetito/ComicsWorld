@@ -1,10 +1,8 @@
 package com.example.comics.model;
 
-import com.example.comics.ChapterSubject;
 import com.example.comics.model.dao.ChapterDAO;
 import com.example.comics.model.dao.ReviewsNotFoundException;
 import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
 import javafx.scene.text.Text;
 
 import java.sql.SQLException;

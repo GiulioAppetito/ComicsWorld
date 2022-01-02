@@ -1,7 +1,7 @@
 package com.example.comics.view1;
 
-import com.example.comics.AccountObserver;
-import com.example.comics.AccountSubject;
+import com.example.comics.model.AccountObserver;
+import com.example.comics.model.AccountSubject;
 import com.example.comics.model.UserLogin;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;

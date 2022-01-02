@@ -1,7 +1,7 @@
-package com.example.comics;
+package com.example.comics.controller;
 
-import com.example.comics.fagioli.AccountBean;
-import com.example.comics.fagioli.ProfileBean;
+import com.example.comics.model.fagioli.AccountBean;
+import com.example.comics.model.fagioli.ProfileBean;
 import com.example.comics.model.UserLogin;
 import com.example.comics.model.dao.AccountDAO;
 

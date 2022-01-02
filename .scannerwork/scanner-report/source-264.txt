@@ -1,4 +1,4 @@
-package com.example.comics.fagioli;
+package com.example.comics.model.fagioli;
 
 public class LoginBean{
     private String email;

@@ -1,8 +1,7 @@
 package com.example.comics.model;
 
-import com.example.comics.AccountObserver;
-import com.example.comics.fagioli.ObjectiveBean;
-import com.example.comics.fagioli.ReviewBean;
+import com.example.comics.model.fagioli.ObjectiveBean;
+import com.example.comics.model.fagioli.ReviewBean;
 
 import java.util.ArrayList;
 

@@ -1,7 +1,7 @@
 package com.example.comics.model;
 
-import com.example.comics.fagioli.ObjectiveBean;
-import com.example.comics.fagioli.ReviewBean;
+import com.example.comics.model.fagioli.ObjectiveBean;
+import com.example.comics.model.fagioli.ReviewBean;
 
 public interface ReviewObserver {
     void update(ReviewBean reviewBean);

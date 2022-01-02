@@ -1,6 +1,6 @@
-package com.example.comics;
+package com.example.comics.controller;
 
-import com.example.comics.fagioli.RegistrationBean;
+import com.example.comics.model.fagioli.RegistrationBean;
 import com.example.comics.model.UserLogin;
 import com.example.comics.model.dao.AlreadyUsedUsernameException;
 
