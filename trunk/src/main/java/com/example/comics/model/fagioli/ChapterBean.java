@@ -11,7 +11,7 @@ public class ChapterBean {
     private String title;
     private String series;
     private Integer id;
-    private ImageView cover;
+    private Image cover;
     private List<Review> reviews = new ArrayList<>();
 
     public String getTitle() {
@@ -38,7 +38,7 @@ public class ChapterBean {
     public Image getCover() {
         return cover;
     }
-    public void setCover(ImageView cover) {
+    public void setCover(Image cover) {
         this.cover = cover;
     }
 

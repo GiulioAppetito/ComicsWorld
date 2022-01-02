@@ -158,12 +158,7 @@ public class LoginControllerG {
     public void login(ActionEvent event) throws Exception {
         LoginBean loginBean = new LoginBean();
 
-        try {
-            loginBean.setEmail(tfEmail.getText());
-        } catch (WrongCredentialException e) {
-            showErrorMessage();
-            return;
-        }
+        loginBean.setEmail(tfEmail.getText());
         loginBean.setPassword(tfPassword.getText());
 
         LoginController loginController = new LoginController();
