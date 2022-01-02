@@ -14,8 +14,5 @@ public class RegistrationController {
              System.out.println("Username already taken!");
              return false;
          }
-
     }
-
-
 }
