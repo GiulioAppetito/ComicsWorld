@@ -103,8 +103,8 @@ public class ChapterControllerG implements ReviewObserver {
         List<ReviewBean> listOfReviews = null;
         try {
             listOfReviews = chapterBean.getReviews();
-        } catch (SQLException e) {
-            e.printStackTrace();
+        } catch(Exception e){
+            //TO-DO
         }
 
 

@@ -1,6 +1,7 @@
 package com.example.comics.model.fagioli;
 
 import com.example.comics.model.Review;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import java.util.ArrayList;
 import java.util.List;
@@ -34,7 +35,7 @@ public class ChapterBean {
         this.id = id;
     }
 
-    public ImageView getCover() {
+    public Image getCover() {
         return cover;
     }
     public void setCover(ImageView cover) {
