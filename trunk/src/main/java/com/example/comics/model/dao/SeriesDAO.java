@@ -382,4 +382,90 @@ public class SeriesDAO {
         return reviews;
 
     }
+
+    public boolean isSeriesFavourite(String series_title, String username) {
+        Statement stmt = null;
+        Connection conn = null;
+
+        try {
+            conn = DriverManager.getConnection(DB_URL, USER, PASS);
+            stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
+            ResultSet rs = Queries.isSeriesFavourite(stmt, series_title, username);
+
+            if (!rs.first()) {
+                throw new Exception("It is not favourite");
+            }
+            rs.first();
+
+            do {
+                if(rs == null){
+                    return false;
+                }
+            } while (rs.next());
+
+
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }catch (Exception e) {
+            e.printStackTrace();
+        } finally{
+            try {
+                assert conn != null;
+                conn.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+        return true;
+    }
+
+    public void addSeriesToFavourites(Series series, String username) {
+        Statement stmt = null;
+        Connection conn = null;
+
+        String series_title = series.getTitle();
+
+        try {
+            conn = DriverManager.getConnection(DB_URL, USER, PASS);
+            stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
+            Queries.addSeriesToFavourites(stmt, series_title, username);
+
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                assert conn != null;
+                conn.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    public void removeSeriesFromFavourites(Series series, String username) {
+        Statement stmt = null;
+        Connection conn = null;
+
+        String series_title = series.getTitle();
+
+        try {
+            conn = DriverManager.getConnection(DB_URL, USER, PASS);
+            stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
+            Queries.removeSeriesFromFavourites(stmt, series_title, username);
+
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                assert conn != null;
+                conn.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+    }
 }

@@ -3,12 +3,8 @@ p
 @trunk/src/main/java/com/example/comics/PostReviewController.java,c\2\c240a9dc550247d43cca07c004fa6d7a8f152f43
 f
 6trunk/src/main/java/com/example/comics/view1/Main.java,4\f\4fac817cac1c690fe55eef1a8c0e48877f7cdb73
-h
-8trunk/src/main/java/com/example/comics/model/Reader.java,3\e\3eba6c3a37f9370082944319cedcfebca37815ca
 n
 >trunk/src/main/java/com/example/comics/ResearchController.java,0\a\0a9a5a9dbd1b69a37646d448e64f0e64a646671a
-k
-;trunk/src/main/java/com/example/comics/model/UserLogin.java,5\d\5dfc908745a1c7e70c463f0eeb83fb14a2777e53
 o
 ?trunk/src/main/java/com/example/comics/fagioli/AccountBean.java,c\4\c4385d87b1ef2632e20bec6605c75d38bf6fd06e
 o
@@ -35,11 +31,5 @@ m
 =trunk/src/main/java/com/example/comics/fagioli/LoginBean.java,9\a\9a0dedc110d5cac2c8bc48b55959905f10e07bac
 q
 Atrunk/src/main/java/com/example/comics/fagioli/ObjectiveBean.java,8\f\8f8f81ad3d6e584072b3c1b384a3399b8b25f78a
-h
-8trunk/src/main/java/com/example/comics/model/Series.java,c\8\c8bcf65e561109814ec36c1d5eccfe66f4067141
 n
 >trunk/src/main/java/com/example/comics/fagioli/SeriesBean.java,3\1\312772bbdfe1fae79b5e9a4726b90f9ea060e6a1
-o
-?trunk/src/main/java/com/example/comics/model/dao/SeriesDAO.java,1\a\1a268b5783fdf4518ee179aca9664c3642aacf6e
-p
-@trunk/src/main/java/com/example/comics/model/dao/ChapterDAO.java,1\d\1ddfc0cfcef200504c825e15e2d46d1aa7918d49

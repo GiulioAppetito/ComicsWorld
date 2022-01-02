@@ -169,4 +169,22 @@ public class Queries {
         System.out.println(selectStatement);
         return stmt.executeQuery(selectStatement);
     }
+
+    public static ResultSet isSeriesFavourite(Statement stmt, String series_title, String username) throws SQLException {
+        String selectStatement = String.format("SELECT * FROM userFavouriteSeries WHERE user = '%s' AND series = '%s'", username, series_title);
+        System.out.println(selectStatement);
+        return stmt.executeQuery(selectStatement);
+    }
+
+    public static void addSeriesToFavourites(Statement stmt, String series_title, String username) throws SQLException {
+        String insertStatement = String.format("INSERT INTO userFavouriteSeries(user, series) values ('%s', '%s')", username, series_title);
+        System.out.println(insertStatement);
+        stmt.executeUpdate(insertStatement);
+    }
+
+    public static void removeSeriesFromFavourites(Statement stmt, String series_title, String username) throws SQLException {
+        String insertStatement = String.format("DELETE FROM userFavouriteSeries WHERE user = '%s' AND series = '%s'", username, series_title);
+        System.out.println(insertStatement);
+        stmt.executeUpdate(insertStatement);
+    }
 }

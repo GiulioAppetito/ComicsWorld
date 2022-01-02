@@ -110,4 +110,22 @@ public class Reader extends Account{
             e.printStackTrace();
         }
     }
+
+    public boolean likesThisSeries(Series series){
+
+        for(Series fav : favourites){
+            if(fav.getTitle().equals(series.getTitle())){
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public void addSeriesToFavourites(Series series) {
+        this.favourites.add(series);
+    }
+
+    public void removeSeriesFromFavourites(Series series) {
+        this.favourites.remove(series);
+    }
 }
