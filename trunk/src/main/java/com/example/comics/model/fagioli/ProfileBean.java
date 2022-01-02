@@ -1,4 +1,4 @@
-package com.example.comics.fagioli;
+package com.example.comics.model.fagioli;
 
 import javafx.scene.image.Image;
 

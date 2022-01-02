@@ -1,4 +1,6 @@
-package com.example.comics;
+package com.example.comics.model;
+
+import com.example.comics.model.AccountObserver;
 
 import java.util.ArrayList;
 

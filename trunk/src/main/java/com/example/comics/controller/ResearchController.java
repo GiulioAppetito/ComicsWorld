@@ -1,6 +1,6 @@
-package com.example.comics;
+package com.example.comics.controller;
 
-import com.example.comics.fagioli.SeriesBean;
+import com.example.comics.model.fagioli.SeriesBean;
 import com.example.comics.model.Series;
 import com.example.comics.model.UserLogin;
 import com.example.comics.model.dao.SeriesDAO;
@@ -38,7 +38,7 @@ public class ResearchController {
 
         SeriesDAO seriesdao = new SeriesDAO();
 
-        ArrayList<Series> latestSeries = seriesdao.retriveLatestSeries();
+        List<Series> latestSeries = seriesdao.retriveLatestSeries();
 
         for(Series series : latestSeries){
             seriesBean = new SeriesBean();

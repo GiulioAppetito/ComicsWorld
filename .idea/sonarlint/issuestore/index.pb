@@ -1,8 +1,4 @@
 
-z
-Jtrunk/src/main/java/com/example/comics/view1/AuthorProfileControllerG.java,2\e\2e3b36eb64db7069014d51e48bfef7ad03af4d18
-|
-Ltrunk/src/main/java/com/example/comics/view1/AccountSettingsControllerG.java,0\f\0fc27c6cd671a8ceecf31e5699deb2fe6ce56f4d
 p
 @trunk/src/main/java/com/example/comics/PostReviewController.java,c\2\c240a9dc550247d43cca07c004fa6d7a8f152f43
 f
@@ -11,10 +7,6 @@ h
 8trunk/src/main/java/com/example/comics/model/Reader.java,3\e\3eba6c3a37f9370082944319cedcfebca37815ca
 n
 >trunk/src/main/java/com/example/comics/ResearchController.java,0\a\0a9a5a9dbd1b69a37646d448e64f0e64a646671a
-q
-Atrunk/src/main/java/com/example/comics/view1/FeedControllerG.java,3\0\30f770410a71ec3e410810c53c6e2891d29a24c5
-|
-Ltrunk/src/main/java/com/example/comics/view1/FavouriteComicsControllerG.java,a\9\a9e472ecb5fb1c16992545a801842ac3a9166f3e
 k
 ;trunk/src/main/java/com/example/comics/model/UserLogin.java,5\d\5dfc908745a1c7e70c463f0eeb83fb14a2777e53
 o
@@ -29,8 +21,6 @@ n
 Ltrunk/src/main/java/com/example/comics/fagioli/WrongCredentialException.java,4\9\4916cd87d6022eeb4976fc6a16570d196ba62796
 ‚
 Rtrunk/src/main/java/com/example/comics/model/dao/AlreadyUsedUsernameException.java,5\4\549025d20afa96abbca439b8d234768498d1e724
-i
-9trunk/src/main/java/com/example/comics/model/Chapter.java,e\e\ee53f251e6fa246c2de20c960c4d267b1c885842
 p
 @trunk/src/main/java/com/example/comics/model/dao/AccountDAO.java,f\9\f9fbbecf4bd6d3b71d8b4a6360b3ecba6bd88d4b
 h

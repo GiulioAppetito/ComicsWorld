@@ -1,9 +1,9 @@
 package com.example.comics.view1;
 
-import com.example.comics.AccountObserver;
-import com.example.comics.AccountSubject;
-import com.example.comics.CustomizeProfileController;
-import com.example.comics.fagioli.AccountBean;
+import com.example.comics.model.AccountObserver;
+import com.example.comics.model.AccountSubject;
+import com.example.comics.controller.CustomizeProfileController;
+import com.example.comics.model.fagioli.AccountBean;
 import com.example.comics.model.UserLogin;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;

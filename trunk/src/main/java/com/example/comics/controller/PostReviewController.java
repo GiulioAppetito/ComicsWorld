@@ -1,10 +1,8 @@
-package com.example.comics;
+package com.example.comics.controller;
 
-import com.example.comics.fagioli.ObjectiveBean;
-import com.example.comics.fagioli.ReviewBean;
+import com.example.comics.model.fagioli.ObjectiveBean;
+import com.example.comics.model.fagioli.ReviewBean;
 import com.example.comics.model.*;
-import com.example.comics.model.dao.ReaderDAO;
-import com.example.comics.model.dao.ReviewDAO;
 import com.example.comics.model.dao.SeriesDAO;
 
 public class PostReviewController extends ReviewSubject {

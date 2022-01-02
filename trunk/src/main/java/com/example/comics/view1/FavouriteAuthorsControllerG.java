@@ -1,6 +1,6 @@
 package com.example.comics.view1;
 
-import com.example.comics.fagioli.SeriesBean;
+import com.example.comics.model.fagioli.SeriesBean;
 import com.example.comics.model.Author;
 import com.example.comics.model.Series;
 import javafx.fxml.FXML;

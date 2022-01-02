@@ -1,9 +1,9 @@
 package com.example.comics.view1;
 
-import com.example.comics.PostReviewController;
-import com.example.comics.fagioli.ChapterBean;
-import com.example.comics.fagioli.ObjectiveBean;
-import com.example.comics.fagioli.ReviewBean;
+import com.example.comics.controller.PostReviewController;
+import com.example.comics.model.fagioli.ChapterBean;
+import com.example.comics.model.fagioli.ObjectiveBean;
+import com.example.comics.model.fagioli.ReviewBean;
 import com.example.comics.model.ReviewObserver;
 import com.example.comics.model.ReviewSubject;
 import com.example.comics.model.UserLogin;
@@ -103,8 +103,8 @@ public class ChapterControllerG implements ReviewObserver {
         List<ReviewBean> listOfReviews = null;
         try {
             listOfReviews = chapterBean.getReviews();
-        } catch (SQLException e) {
-            e.printStackTrace();
+        } catch(Exception e){
+            //TO-DO
         }
 
 

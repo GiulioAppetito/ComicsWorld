@@ -1,8 +1,7 @@
 package com.example.comics.model;
 
-import com.example.comics.AccountSubject;
 import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
+
 import java.util.Date;
 
 public abstract class Account extends AccountSubject {

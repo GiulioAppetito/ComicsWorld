@@ -1,6 +1,6 @@
 package com.example.comics;
 
-import com.example.comics.fagioli.LoginBean;
+import com.example.comics.model.fagioli.LoginBean;
 import com.example.comics.model.UserLogin;
 
 public class LoginController {
