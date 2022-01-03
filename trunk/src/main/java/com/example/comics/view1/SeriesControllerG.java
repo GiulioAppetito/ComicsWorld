@@ -79,13 +79,16 @@ public class SeriesControllerG {
         if(favouritesController.isSeriesFavourite(seriesBean)){
             //setta cuore pieno
             System.out.println("Serie tra i preferiti: " + seriesBean.getTitle());
-            btnAddToFav.setStyle("-fx-background-color: #5DADE2");
+            btnAddToFav.setStyle("-fx-background-color: #5DADE2; -fx-background-radius: 20");
             btnAddToFav.setOnAction(event -> removeFromFavourites(seriesBean));
+            btnAddToFav.setText("Remove from fav");
+
         }else{
             //cuore vuoto
             System.out.println("Serie NON tra i preferiti: " + seriesBean.getTitle());
-            btnAddToFav.setStyle("-fx-background-color: #AACC22");
+            btnAddToFav.setStyle(".button2");
             btnAddToFav.setOnAction(event -> addSeriesToFavourites(seriesBean));
+            btnAddToFav.setText("Add to favourites");
         }
 
         ToReadController toReadController = new ToReadController();
@@ -136,7 +139,8 @@ public class SeriesControllerG {
         favouritesController.addSeriesToFavourites(seriesBean);
         btnAddToFav.setOnAction(event -> removeFromFavourites(seriesBean));
         System.out.println("Serie aggiunta tra i preferiti: " + seriesBean.getTitle());
-        btnAddToFav.setStyle("-fx-background-color: #5DADE2");
+        btnAddToFav.setStyle("-fx-background-color: #5DADE2; -fx-background-radius: 20");
+        btnAddToFav.setText("Remove from fav");
     }
 
     private void removeFromFavourites(SeriesBean seriesBean) {
@@ -144,7 +148,8 @@ public class SeriesControllerG {
         favouritesController.removeSeriesFromFavourites(seriesBean);
         btnAddToFav.setOnAction(event -> addSeriesToFavourites(seriesBean));
         System.out.println("Serie rimossa dai preferiti: " + seriesBean.getTitle());
-        btnAddToFav.setStyle("-fx-background-color: #AACC22");
+        btnAddToFav.setStyle(".button2");
+        btnAddToFav.setText("Add to favourites");
     }
 
     private void openChapter(ChapterBean chapterBean) throws IOException {
