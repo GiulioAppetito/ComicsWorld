@@ -175,7 +175,6 @@ public class ReaderHomeControllerG extends HomeControllerG implements AccountObs
 
         resetButtons();
         btnFav.setStyle(STYLE2);
-
     }
 
 

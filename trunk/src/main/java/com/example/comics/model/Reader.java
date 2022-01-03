@@ -126,6 +126,10 @@ public class Reader extends Account{
     }
 
     public void removeSeriesFromFavourites(Series series) {
-        this.favourites.remove(series);
+        for(int i=0; i<this.favourites.size(); i++){
+            if(favourites.get(i).getTitle().equals(series.getTitle())){
+                this.favourites.remove(i);
+            }
+        }
     }
 }
