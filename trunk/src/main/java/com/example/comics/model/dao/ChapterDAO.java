@@ -38,7 +38,7 @@ public class ChapterDAO {
 
             do {
                 chapterTitle = rs.getString("chapter_title");
-                chapterID = rs.getInt("chapterID");
+                chapterID = rs.getInt("chapter_id");
                 chapterSeries = rs.getString("series_title");
                 chapter = new Chapter(chapterSeries,chapterTitle);
                 chapter.setId(chapterID);

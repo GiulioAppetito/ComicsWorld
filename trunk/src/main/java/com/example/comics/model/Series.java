@@ -24,7 +24,6 @@ public class Series {
 		this.title = title;
 		SeriesDAO seriesDAO = new SeriesDAO();
 		this.chapters = seriesDAO.retriveChapters(title);
-
 		//inizializzazione obiettivi dal db
 		this.objectives = seriesDAO.retrieveObjectives(this);
 		if(objectives==null){

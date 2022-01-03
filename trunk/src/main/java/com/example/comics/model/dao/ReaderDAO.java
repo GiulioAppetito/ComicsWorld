@@ -92,4 +92,46 @@ public class ReaderDAO {
         }
     }
 
+    public void addSeriesToToRead(Series series,Reader reader) throws SQLException {
+        Statement stmt = null;
+        Connection conn = null;
+
+        try {
+            conn = DriverManager.getConnection(DB_URL, USER, PASS);
+            stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
+            Queries.addSeriesToToRead(stmt,series,reader);
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        finally{
+            assert conn != null;
+            conn.close();
+        }
+    }
+
+    public static void removeSeriesFromToRead(Series series,Reader reader) throws Exception {
+        // STEP 1: dichiarazioni
+        Statement stmt = null;
+        Connection conn = null;
+
+        try {
+            // STEP 2: loading dinamico del driver mysql
+
+            // STEP 3: apertura connessione
+            conn = DriverManager.getConnection(DB_URL, USER, PASS);
+
+            // STEP 4.1: creazione ed esecuzione della query
+            stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
+            Queries.removeSeriesFromToRead(stmt,series,reader);
+
+        } finally {
+            // STEP 5.2: Clean-up dell'ambiente
+            if (stmt != null)
+                stmt.close();
+            if (conn != null)
+                conn.close();
+        }
+
+    }
 }

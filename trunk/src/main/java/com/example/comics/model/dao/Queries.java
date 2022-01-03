@@ -3,6 +3,7 @@ package com.example.comics.model.dao;
 import com.example.comics.model.DiscountCode;
 import com.example.comics.model.Reader;
 import com.example.comics.model.Review;
+import com.example.comics.model.Series;
 
 import java.sql.*;
 
@@ -186,5 +187,17 @@ public class Queries {
         String insertStatement = String.format("DELETE FROM userFavouriteSeries WHERE user = '%s' AND series = '%s'", username, series_title);
         System.out.println(insertStatement);
         stmt.executeUpdate(insertStatement);
+    }
+
+    public static void addSeriesToToRead(Statement stmt, Series series, Reader reader) throws SQLException {
+        String insertStatement = String.format("INSERT INTO userToReadSeries (user, series) values ('%s', '%s')", reader.getUsername(),series.getTitle());
+        System.out.println(insertStatement);
+        stmt.executeUpdate(insertStatement);
+    }
+
+    public static void removeSeriesFromToRead(Statement stmt, Series series, Reader reader) throws SQLException {
+        String deleteStatement = String.format("DELETE FROM userToReadSeries WHERE user = '%s' AND series = '%s'", reader.getUsername(), series.getTitle());
+        System.out.println(deleteStatement);
+        stmt.executeUpdate(deleteStatement);
     }
 }

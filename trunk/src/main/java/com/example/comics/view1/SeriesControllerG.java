@@ -2,6 +2,7 @@ package com.example.comics.view1;
 
 import com.example.comics.controller.FavouritesController;
 import com.example.comics.controller.ResearchController;
+import com.example.comics.controller.ToReadController;
 import com.example.comics.model.Series;
 import com.example.comics.model.fagioli.ChapterBean;
 import com.example.comics.model.fagioli.SeriesBean;
@@ -87,6 +88,20 @@ public class SeriesControllerG {
             btnAddToFav.setOnAction(event -> addSeriesToFavourites(seriesBean));
         }
 
+        ToReadController toReadController = new ToReadController();
+        if(toReadController.isSeriesAddedToRead(seriesBean)){
+            //setta cuore pieno
+            System.out.println("Serie tra quelli da leggere : " + seriesBean.getTitle());
+            btnAddToRead.setStyle("-fx-background-color: #5DADE2");
+            btnAddToRead.setOnAction(event -> removeSeriesFromToRead(seriesBean));
+        }else{
+            //cuore vuoto
+            System.out.println("Serie NON tra quelli da leggere : " + seriesBean.getTitle());
+            btnAddToRead.setStyle("-fx-background-color: #AACC22");
+            btnAddToRead.setOnAction(event -> addSeriesToToRead(seriesBean));
+        }
+
+
         btnBack.setOnAction(event -> {
             //ha senso che serie conosca home per tornare sul feed?
             //non so, secondo me basterebbe andare dinuovo su feed facendo tipo un refresh
@@ -100,6 +115,19 @@ public class SeriesControllerG {
                 e.printStackTrace();
             }
         });
+
+    }
+
+    private void removeSeriesFromToRead(SeriesBean seriesBean) {
+        ToReadController toReadController = new ToReadController();
+        toReadController.removeSeriesFromToRead(seriesBean);
+        btnAddToRead.setOnAction(event -> addSeriesToToRead(seriesBean));
+    }
+
+    private void addSeriesToToRead(SeriesBean seriesBean) {
+        ToReadController toReadController = new ToReadController();
+        toReadController.addSeriesToToRead(seriesBean);
+        btnAddToRead.setOnAction(event -> removeSeriesFromToRead(seriesBean));
 
     }
 

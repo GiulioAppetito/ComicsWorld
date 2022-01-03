@@ -89,6 +89,7 @@ public class SeriesDAO {
             do {
                 title = rs.getString("series");
                 series = retrieveSeries(title);
+
                 seriesList.add(series);
             } while (rs.next());
 
@@ -238,8 +239,11 @@ public class SeriesDAO {
                 title = rs.getString("title");
                 author = rs.getString("author");
                 series = new Series(title);
+                Blob bl = rs.getBlob("cover");
+                InputStream inputStream = bl.getBinaryStream();
+                Image image = new Image(inputStream);
+                series.setCover(image);
                 series.setAuthor(author);
-
             } while (rs.next());
 
 
