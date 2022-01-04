@@ -1,9 +1,11 @@
 package com.example.comics.view1;
 
+import com.example.comics.controller.ResearchController;
 import com.example.comics.model.AccountObserver;
 import com.example.comics.model.AccountSubject;
 import com.example.comics.model.Badge;
 import com.example.comics.model.UserLogin;
+import com.example.comics.model.fagioli.BadgeBean;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
@@ -19,17 +21,20 @@ public class ReaderProfileControllerG implements AccountObserver {
 
 
     @FXML
-    public Button btnEdit;
+    private Button btnEdit;
+
     @FXML
-    public Button btnConverter;
-    @FXML
-    public Label lblName;
-    @FXML
-    public Label lblUsername;
-    @FXML
-    public GridPane gpBadges;
+    private GridPane gpBadges;
+
     @FXML
     private GridPane gpCharacter;
+
+    @FXML
+    private Label lblName;
+
+    @FXML
+    private Label lblUsername;
+
 
     @FXML
     public void initialize() {
@@ -42,33 +47,24 @@ public class ReaderProfileControllerG implements AccountObserver {
 
     }
 
-    private List<Badge> add() {
-
-        List<Badge> lb = new ArrayList<>();
-
-        int numBadges = 17;
-        int i;
-
-        for(i=0;i<numBadges;i++){
-            Badge badge = new Badge();
-            badge.setName("Spiderman");
-            lb.add(badge);
-        }
-        return lb;
-    }
 
     public void loadBadges(){
-        List<Badge>listOfBadges = new ArrayList<>(add());
-        int columns = 3;
-        int i=1;
-        int dummyNumBadges = listOfBadges.size();
 
-        for (int j = 0; j < dummyNumBadges; j++) {
+        ResearchController researchController = new ResearchController();
+        List<BadgeBean> listOfBadges = researchController.getUserBadges();
+        BadgeBean badgeBean;
+        int columns=3;
+        int i=1;
+
+        for (int j = 0; j < listOfBadges.size(); j++) {
 
             FXMLLoader fxmlLoader = new FXMLLoader();
             fxmlLoader.setLocation(getClass().getResource("badge.fxml"));
+            badgeBean = listOfBadges.get(i);
             try {
                 VBox card = fxmlLoader.load();
+                BadgeCardControllerG badgeCardControllerG = fxmlLoader.getController();
+                badgeCardControllerG.setData(badgeBean.getName(), badgeBean.getIcon());
                 gpBadges.add(card, j%columns, i);
                 if(j%columns == columns -1 ){
                     i++;
@@ -91,6 +87,7 @@ public class ReaderProfileControllerG implements AccountObserver {
         }
     }
 
+    @FXML
     public void edit(){
         //TO-DO
     }

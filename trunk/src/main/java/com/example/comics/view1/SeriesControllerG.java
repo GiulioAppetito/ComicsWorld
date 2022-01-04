@@ -1,9 +1,7 @@
 package com.example.comics.view1;
 
 import com.example.comics.controller.FavouritesController;
-import com.example.comics.controller.ResearchController;
 import com.example.comics.controller.ToReadController;
-import com.example.comics.model.Series;
 import com.example.comics.model.fagioli.ChapterBean;
 import com.example.comics.model.fagioli.SeriesBean;
 import javafx.fxml.FXML;
@@ -12,7 +10,6 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.VBox;
-import javafx.scene.paint.Color;
 
 import java.io.IOException;
 import java.net.URL;

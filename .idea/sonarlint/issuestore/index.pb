@@ -11,8 +11,6 @@ o
 ?trunk/src/main/java/com/example/comics/model/dao/AuthorDAO.java,b\9\b9de5122434cae66700037895ef8a2dc8e8a42e8
 n
 >trunk/src/main/java/com/example/comics/model/dao/BadgeDAO.java,5\c\5c6bff5f7715bfb3aee28deec64036a8fdc1f276
-o
-?trunk/src/main/java/com/example/comics/model/dao/ReaderDAO.java,3\b\3bd4551b66716af31be8aa022e406ebae2bc3845
 r
 Btrunk/src/main/java/com/example/comics/model/dao/ObjectiveDAO.java,c\7\c7045f6d6870d3973d5b81168efa0837b642c85d
 Z
@@ -43,8 +41,6 @@ p
 Qtrunk/src/main/java/com/example/comics/controller/CustomizeProfileController.java,2\d\2dbf5afb17ba5adc40d371a5aa29e8812bff060c
 €
 Ptrunk/src/main/java/com/example/comics/view1/FavouriteCharactersControllerG.java,3\b\3be8ac2df5f5661711730d0ce861ef7c0c70599c
-|
-Ltrunk/src/main/java/com/example/comics/view1/FavouriteComicsControllerG.java,a\9\a9e472ecb5fb1c16992545a801842ac3a9166f3e
 v
 Ftrunk/src/main/java/com/example/comics/controller/LoginController.java,5\2\52c8d0ece5ecea5be79349a3b18d789e37c95ad8
 w
@@ -55,8 +51,6 @@ u
 Etrunk/src/main/java/com/example/comics/model/fagioli/ProfileBean.java,3\1\319a75db0d22880bf299081b55bb1ae7f375ccc4
 |
 Ltrunk/src/main/java/com/example/comics/view1/ProfileSettingsControllerG.java,4\1\415b665414f37f262296f9bac7a0b4c322bf6bb6
-z
-Jtrunk/src/main/java/com/example/comics/view1/ReaderProfileControllerG.java,9\d\9d55d09a3bc1211493d2067fe3a33b4ff83ca9f4
 z
 Jtrunk/src/main/java/com/example/comics/model/fagioli/RegistrationBean.java,4\0\401d7157b53fc41e97db3cc87f7e43537ad2ee3f
 }
@@ -69,12 +63,8 @@ p
 @trunk/src/main/java/com/example/comics/model/ReviewObserver.java,9\1\91de5df4adcddff95b9467ed77b0a41baba17b15
 o
 ?trunk/src/main/java/com/example/comics/model/ReviewSubject.java,a\9\a9938e1744f6d53f6c3153e3ab80ca7e17b07eda
-t
-Dtrunk/src/main/java/com/example/comics/model/fagioli/SeriesBean.java,f\d\fd75283aef1e8f11518e9607c93bdaffabd5c688
 ‚
 Rtrunk/src/main/java/com/example/comics/model/fagioli/WrongCredentialException.java,3\2\32082050d751c630bd43e56925e30579e3f72aaf
-y
-Itrunk/src/main/java/com/example/comics/controller/ResearchController.java,2\6\2631e9287909fea85acc2c091fa23962f532d491
 t
 Dtrunk/src/main/java/com/example/comics/view1/ChapterControllerG.java,0\0\0001f7e92c2791823074c36e4a3485140d2f11e6
 r
@@ -83,8 +73,6 @@ u
 Etrunk/src/main/java/com/example/comics/model/fagioli/ChapterBean.java,1\0\10ff9f5e6d454fce4bc8188b948cd60f08d61d27
 w
 Gtrunk/src/main/java/com/example/comics/view1/FavouritesControllerG.java,7\9\795114fd6bd048af9c0d63656a226aa152a5de1c
-k
-;trunk/src/main/java/com/example/comics/model/UserLogin.java,5\d\5dfc908745a1c7e70c463f0eeb83fb14a2777e53
 i
 9trunk/src/main/java/com/example/comics/model/Account.java,9\a\9a56b31fe52b942392371e7a8bc9f9ad131d226e
 w

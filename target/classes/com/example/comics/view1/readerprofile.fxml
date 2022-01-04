@@ -130,7 +130,7 @@
                </Label>
                <ScrollPane prefHeight="268.0" prefWidth="368.0">
                   <content>
-                     <GridPane fx:id="gpBadges" hgap="30.0" prefHeight="3.0" prefWidth="352.0" vgap="30.0">
+                     <GridPane fx:id="gpBadges" hgap="30.0" prefHeight="13.0" prefWidth="365.0" vgap="30.0">
                        <rowConstraints>
                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                        </rowConstraints>

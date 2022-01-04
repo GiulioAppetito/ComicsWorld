@@ -10,7 +10,7 @@ import tools.FxmlLoader;
 import java.io.IOException;
 import java.net.URL;
 
-public class AuthorMyBadgesController {
+public class AuthorMyBadgesControllerG {
 
     @FXML
     private Button btnCreateBadge;

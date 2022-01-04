@@ -108,7 +108,7 @@ public class CategoriesControllerG {
                     }
                 });
 
-                CategoryCardController categoryCardController = fxmlLoader.getController();
+                CategoryCardControllerG categoryCardController = fxmlLoader.getController();
                 categoryCardController.setData(categoryName);
 
                 switch (categoryName.substring(0,1)) {

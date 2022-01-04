@@ -76,7 +76,7 @@ public class FeedControllerG{
             fxmlLoader.setLocation(getClass().getResource("hcard.fxml"));
             try {
                 VBox vbAd = fxmlLoader.load();
-                AdController adController = fxmlLoader.getController();
+                AdControllerG adController = fxmlLoader.getController();
                 adController.setData(listOfAd);
                 vbAd.setOnMouseClicked(event -> System.out.println("Clicked ad"));
                 hbAds.getChildren().add(vbAd);

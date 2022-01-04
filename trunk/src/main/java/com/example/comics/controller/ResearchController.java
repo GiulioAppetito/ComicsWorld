@@ -1,5 +1,8 @@
 package com.example.comics.controller;
 
+import com.example.comics.model.Badge;
+import com.example.comics.model.Objective;
+import com.example.comics.model.fagioli.BadgeBean;
 import com.example.comics.model.fagioli.SeriesBean;
 import com.example.comics.model.Series;
 import com.example.comics.model.UserLogin;
@@ -65,8 +68,8 @@ public class ResearchController {
             seriesBean.setTitle(series.getTitle());
             seriesBean.setAuthor(series.getAuthor());
             seriesBean.setChapters(series.getChapters());
-            seriesBeans.add(seriesBean);
             seriesBean.setCover(series.getCover());
+            seriesBeans.add(seriesBean);
         }
 
 
@@ -74,4 +77,20 @@ public class ResearchController {
     }
 
 
+    public List<BadgeBean> getUserBadges() {
+        ArrayList<BadgeBean> badgeBeans = new ArrayList<>();
+        BadgeBean badgeBean;
+
+        List<Objective> objectives = UserLogin.getInstance().getReader().getObjectives();
+
+        for(Objective objective : objectives){
+            badgeBean = new BadgeBean();
+            badgeBean.setIcon(objective.getBadge().getIcon());
+            badgeBean.setName(objective.getBadge().getName());
+            badgeBeans.add(badgeBean);
+        }
+
+
+        return badgeBeans;
+    }
 }

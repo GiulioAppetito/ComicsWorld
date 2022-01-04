@@ -2,6 +2,7 @@ package com.example.comics.controller;
 
 import com.example.comics.model.Series;
 import com.example.comics.model.UserLogin;
+import com.example.comics.model.dao.ReaderDAO;
 import com.example.comics.model.dao.SeriesDAO;
 import com.example.comics.model.fagioli.SeriesBean;
 
@@ -29,8 +30,8 @@ public class FavouritesController {
         series.setCover(seriesBean.getCover());
         //poi altri dettagli
 
-        SeriesDAO seriesDAO = new SeriesDAO();
-        seriesDAO.addSeriesToFavourites(series, UserLogin.getInstance().getAccount().getUsername());
+        ReaderDAO readerDAO = new ReaderDAO();
+        readerDAO.addSeriesToFavourites(series, UserLogin.getInstance().getReader());
 
         UserLogin.getInstance().getReader().addSeriesToFavourites(series);
 
@@ -42,8 +43,8 @@ public class FavouritesController {
         series.setCover(seriesBean.getCover());
         //poi altri dettagli
 
-        SeriesDAO seriesDAO = new SeriesDAO();
-        seriesDAO.removeSeriesFromFavourites(series, UserLogin.getInstance().getAccount().getUsername());
+        ReaderDAO readerDAO = new ReaderDAO();
+        readerDAO.removeSeriesFromFavourites(series, UserLogin.getInstance().getReader());
 
         UserLogin.getInstance().getReader().removeSeriesFromFavourites(series);
     }

@@ -41,9 +41,6 @@ public class UserLogin{
             author = authorDAO.retrieveAuthor(email, password);
             UserLogin.account = author;
 
-            System.out.println("[USER LOGIN] 1"+account.getUsername());
-
-
         }else if(role.equals("reader")){
             ReaderDAO readerDAO = new ReaderDAO();
             UserLogin.reader = readerDAO.retrieveReader(email, password);

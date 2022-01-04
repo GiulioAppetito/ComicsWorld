@@ -110,7 +110,7 @@ public class ReaderDAO {
         }
     }
 
-    public static void removeSeriesFromToRead(Series series,Reader reader) throws Exception {
+    public void removeSeriesFromToRead(Series series,Reader reader){
         // STEP 1: dichiarazioni
         Statement stmt = null;
         Connection conn = null;
@@ -125,13 +125,70 @@ public class ReaderDAO {
             stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
             Queries.removeSeriesFromToRead(stmt,series,reader);
 
+        }catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }catch (Exception e) {
+            e.printStackTrace();
         } finally {
-            // STEP 5.2: Clean-up dell'ambiente
-            if (stmt != null)
-                stmt.close();
-            if (conn != null)
+            try {
+                assert conn != null;
                 conn.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
         }
 
+    }
+
+    public void addSeriesToFavourites(Series series, Reader reader) {
+        Statement stmt = null;
+        Connection conn = null;
+
+        String series_title = series.getTitle();
+        String username = reader.getUsername();
+
+        try {
+            conn = DriverManager.getConnection(DB_URL, USER, PASS);
+            stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
+            Queries.addSeriesToFavourites(stmt, series_title, username);
+
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                assert conn != null;
+                conn.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    public void removeSeriesFromFavourites(Series series, Reader reader) {
+        Statement stmt = null;
+        Connection conn = null;
+
+        String series_title = series.getTitle();
+        String username = reader.getUsername();
+
+        try {
+            conn = DriverManager.getConnection(DB_URL, USER, PASS);
+            stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
+            Queries.removeSeriesFromFavourites(stmt, series_title, username);
+
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                assert conn != null;
+                conn.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
     }
 }

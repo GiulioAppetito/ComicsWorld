@@ -113,7 +113,7 @@ public class Reader extends Account{
 
     public boolean likesThisSeries(Series series){
 
-        for(Series fav : favourites){
+        for(Series fav : this.favourites){
             if(fav.getTitle().equals(series.getTitle())){
                 return true;
             }
@@ -129,6 +129,27 @@ public class Reader extends Account{
         for(int i=0; i<this.favourites.size(); i++){
             if(favourites.get(i).getTitle().equals(series.getTitle())){
                 this.favourites.remove(i);
+            }
+        }
+    }
+
+    public boolean wantsToRead(Series series) {
+        for(Series toBeRead : this.toRead){
+            if(toBeRead.getTitle().equals(series.getTitle())){
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public void addSeriesToToRead(Series series) {
+        this.toRead.add(series);
+    }
+
+    public void removeSeriesFromToRead(Series series) {
+        for(int i=0; i<this.toRead.size(); i++){
+            if(toRead.get(i).getTitle().equals(series.getTitle())){
+                this.toRead.remove(i);
             }
         }
     }

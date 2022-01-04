@@ -9,8 +9,6 @@ public class Badge {
 	private Image icon;
 	private int id;
 
-
-
 	public String getName() {
 		return name;
 	}
@@ -18,11 +16,9 @@ public class Badge {
 		this.name = name;
 	}
 
-
 	public Image getIcon() {
 		return icon;
 	}
-
 	public void setIcon(Image icon) {
 		this.icon = icon;
 	}
@@ -30,7 +26,6 @@ public class Badge {
 	public int getId() {
 		return id;
 	}
-
 	public void setId(int id) {
 		this.id = id;
 	}
