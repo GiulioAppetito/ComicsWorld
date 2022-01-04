@@ -13,7 +13,7 @@ import java.util.List;
 
 public class ToReadControllerG {
     @FXML
-    private GridPane gpFavComic;
+    private GridPane gpComics;
 
 
     public void initialize(){
@@ -42,7 +42,7 @@ public class ToReadControllerG {
                     }
                 });
 
-                gpFavComic.add(card,j%columns,i);
+                gpComics.add(card,j%columns,i);
                 if(j%columns == columns-1){
                     i++;
                 }

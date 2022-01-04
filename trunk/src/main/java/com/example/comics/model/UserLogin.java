@@ -38,7 +38,7 @@ public class UserLogin{
 
         if(role.equals("author")){
             AuthorDAO authorDAO = new AuthorDAO();
-            author = authorDAO.retrieveAuthor(email, password);
+            UserLogin.author = authorDAO.retrieveAuthor(email, password);
             UserLogin.account = author;
 
         }else if(role.equals("reader")){

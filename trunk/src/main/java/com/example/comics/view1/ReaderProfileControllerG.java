@@ -10,6 +10,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
 
@@ -28,6 +29,8 @@ public class ReaderProfileControllerG implements AccountObserver {
 
     @FXML
     private GridPane gpCharacter;
+    @FXML
+    private ImageView ivProPic;
 
     @FXML
     private Label lblName;
@@ -40,6 +43,8 @@ public class ReaderProfileControllerG implements AccountObserver {
     public void initialize() {
         lblName.setText(UserLogin.getInstance().getAccount().getFirstName());
         lblUsername.setText(UserLogin.getInstance().getAccount().getLastName());
+        ivProPic.setImage(UserLogin.getInstance().getAccount().getProPic());
+
         AccountSubject.attach(this);
 
         loadBadges();

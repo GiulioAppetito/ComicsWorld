@@ -51,6 +51,10 @@ public class AuthorHomeControllerG  extends HomeControllerG implements AccountOb
     @FXML
     private Label lblName;
 
+
+    @FXML
+    private ImageView ivUpperProPic;
+
     private static final String STYLE = ".button2";
     private static final String STYLE2 = "-fx-background-color: #5DADE2; -fx-background-radius: 20";
 
@@ -67,7 +71,7 @@ public class AuthorHomeControllerG  extends HomeControllerG implements AccountOb
     public void init() throws IOException {
 
         openFeed();
-
+        ivUpperProPic.setImage(UserLogin.getInstance().getAccount().getProPic());
         lblName.setText(UserLogin.getInstance().getAccount().getUsername());
 
         btnMySeries.setOnAction(event -> openMySeries());

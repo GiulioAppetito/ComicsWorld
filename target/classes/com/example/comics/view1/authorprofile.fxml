@@ -12,7 +12,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="729.0" prefWidth="980.0" styleClass="transparent" stylesheets="@../../../../css/fullpackstyling.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.comics.view1.AuthorProfileControllerG">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="729.0" prefWidth="980.0" styleClass="transparent" stylesheets="@../../../../css/fullpackstyling.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.comics.view1.AuthorProfileControllerG">
    <BorderPane fx:id="mainPane">
       <center>
           <HBox prefHeight="729.0" prefWidth="980.0">
@@ -30,7 +30,7 @@
                           <VBox.margin>
                               <Insets top="20.0" />
                           </VBox.margin>
-                           <ImageView fitHeight="241.0" fitWidth="275.0" pickOnBounds="true" preserveRatio="true">
+                           <ImageView fx:id="ivProPic" fitHeight="241.0" fitWidth="275.0" pickOnBounds="true" preserveRatio="true">
                                <Image url="@../../../../img/flat-business-man-user-profile-avatar-icon-vector-4333097.jpg" />
                            </ImageView>
                       </HBox>
@@ -67,17 +67,17 @@
                               <Font name="Berlin Sans FB" size="24.0" />
                           </font>
                       </Label>
-                      <Label alignment="CENTER" prefHeight="44.0" prefWidth="452.0" text="16-02-2000">
+                      <Label fx:id="lblBirthday" alignment="CENTER" prefHeight="44.0" prefWidth="452.0" text="16-02-2000">
                           <font>
                               <Font name="Berlin Sans FB" size="24.0" />
                           </font>
                       </Label>
-                      <Label alignment="CENTER" prefHeight="39.0" prefWidth="452.0" text="Rome">
+                      <Label fx:id="lblCity" alignment="CENTER" prefHeight="39.0" prefWidth="452.0" text="Rome">
                           <font>
                               <Font name="Berlin Sans FB" size="24.0" />
                           </font>
                       </Label>
-                      <Label alignment="CENTER" prefHeight="46.0" prefWidth="452.0" text="Italy">
+                      <Label fx:id="lblCountry" alignment="CENTER" prefHeight="46.0" prefWidth="452.0" text="Italy">
                           <font>
                               <Font name="Berlin Sans FB" size="24.0" />
                           </font>
@@ -140,7 +140,7 @@
                                     <Insets left="20.0" top="10.0" />
                                  </VBox.margin>
                               </Label>
-                              <Button alignment="CENTER" mnemonicParsing="false" prefHeight="91.0" prefWidth="91.0" stylesheets="@../../../../css/fullpackstyling.css" text="+">
+                              <Button fx:id="btnNewChapter" alignment="CENTER" mnemonicParsing="false" prefHeight="91.0" prefWidth="91.0" stylesheets="@../../../../css/fullpackstyling.css" text="+">
                                  <VBox.margin>
                                     <Insets bottom="10.0" left="100.0" right="5.0" top="10.0" />
                                  </VBox.margin>
@@ -177,7 +177,7 @@
                                     <Insets left="20.0" top="10.0" />
                                  </VBox.margin>
                               </Label>
-                              <Button alignment="CENTER" mnemonicParsing="false" prefHeight="91.0" prefWidth="91.0" stylesheets="@../../../../css/fullpackstyling.css" text="+">
+                              <Button fx:id="btnNewBadge" alignment="CENTER" mnemonicParsing="false" prefHeight="91.0" prefWidth="91.0" stylesheets="@../../../../css/fullpackstyling.css" text="+">
                                  <VBox.margin>
                                     <Insets bottom="10.0" left="100.0" right="5.0" top="10.0" />
                                  </VBox.margin>

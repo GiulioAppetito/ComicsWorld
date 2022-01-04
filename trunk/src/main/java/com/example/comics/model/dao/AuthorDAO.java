@@ -2,7 +2,9 @@ package com.example.comics.model.dao;
 
 import com.example.comics.model.Author;
 import com.example.comics.model.Series;
+import javafx.scene.image.Image;
 
+import java.io.InputStream;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -40,6 +42,11 @@ public class AuthorDAO {
             author.setUsername(rs.getString("username"));
             author.setLastName(rs.getString(rs.getString("email")));
             author.setPassword(rs.getString("password"));
+
+            Blob bl = rs.getBlob("propic");
+            InputStream inputStream = bl.getBinaryStream();
+            Image image = new Image(inputStream);
+            author.setProPic(image);
 
         } catch (SQLException throwables) {
             throwables.printStackTrace();
