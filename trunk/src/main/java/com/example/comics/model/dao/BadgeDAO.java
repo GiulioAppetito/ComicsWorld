@@ -1,10 +1,12 @@
 package com.example.comics.model.dao;
 
-import com.example.comics.model.Badge;
+import com.example.comics.model.*;
 import javafx.scene.image.Image;
 
 import java.io.InputStream;
 import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class BadgeDAO {
 
@@ -45,6 +47,81 @@ public class BadgeDAO {
             }
         }
         return associatedBadge;
+
+    }
+
+    public List<Badge> retrieveAchievedBadges(String username) {
+
+        Statement stmt = null;
+        Connection conn = null;
+
+        List<Badge> achievedBadges = new ArrayList<>();
+        Badge badge;
+
+        try {
+            conn = DriverManager.getConnection(DB_URL, USER, PASS);
+            stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
+            ResultSet rs = Queries.retrieveBadgesByReader(stmt, username);
+
+            rs.first();
+
+            do{
+                badge = new Badge();
+                badge.setId(rs.getInt("badgeID"));
+                badge.setName(rs.getString("badgeName"));
+                System.out.println("[BADGE DAO] BADGE: " + badge.getName());
+                Blob bl = rs.getBlob("badgeIcon");
+                InputStream inputStream = bl.getBinaryStream();
+                Image image = new Image(inputStream);
+                badge.setIcon(image);
+
+                achievedBadges.add(badge);
+
+            } while(rs.next());
+
+
+
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                conn.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+
+        return achievedBadges;
+    }
+
+
+    public void addAchievedBadge(Badge badge, Reader reader) {
+
+        Statement stmt = null;
+        Connection conn = null;
+
+        try {
+
+            conn = DriverManager.getConnection(DB_URL, USER, PASS);
+            stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
+
+            int achievedbadge_id = badge.getId();
+            String username = reader.getUsername();
+
+            Queries.addAchievedBadge(stmt, username, achievedbadge_id);
+
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }finally {
+            try {
+                assert conn != null;
+                conn.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
 
     }
 }

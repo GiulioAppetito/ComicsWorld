@@ -12,123 +12,6 @@ public class ObjectiveDAO {
     private static final String PASS = "passwordanastasia";
     private static final String DB_URL = "jdbc:mysql://comics-world.ce9t0fxhansh.eu-west-2.rds.amazonaws.com:3306/ComicsWorld?autoReconnect=true&useSSL=false";
 
-    public List<Objective> retreiveAchievedObjectives(String username) {
-
-        Statement stmt = null;
-        Connection conn = null;
-
-        List<Objective> achievedObjectives = new ArrayList<>();
-
-        try {
-            conn = DriverManager.getConnection(DB_URL, USER, PASS);
-            stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
-            ResultSet rs = Queries.retrieveObjectivesByReader(stmt, username);
-
-            if(!rs.first()){
-                return achievedObjectives;
-            }
-            rs.first();
-
-            do{
-
-                BadgeDAO badgeDAO = new BadgeDAO();
-                Badge badge = badgeDAO.retreiveAssociatedBadge(rs.getInt("associatedBadgeID"));
-
-                Discount discount = new Discount(rs.getFloat("discountPercentage"));
-                discount.setLimitDays(rs.getInt("limitDays"));
-
-                int numberOfReviews = rs.getInt("number");
-                String level = rs.getString("level");
-                String seriesTitle = rs.getString("seriesTitle");
-
-                if(rs.getString("type").equals("reviews")){
-
-                    ReviewsObjective reviewsObjective = new ReviewsObjective(badge,discount);
-                    reviewsObjective.setRequiredReviews(numberOfReviews);
-                    reviewsObjective.setSeries_title(seriesTitle);
-                    switch (level){
-                        case "beginner":
-                            reviewsObjective.setLevel(Levels.BEGINNER);
-                            break;
-                        case "intermediate":
-                            reviewsObjective.setLevel(Levels.INTERMEDIATE);
-                            break;
-                        case "expert":
-                            reviewsObjective.setLevel(Levels.EXPERT);
-                            break;
-                        default:
-                            break;
-                    }
-                    achievedObjectives.add(reviewsObjective);
-
-                }else if(rs.getString("objectiveType").equals("chapters")){
-
-                    ChapterObjective chapterObjective = new ChapterObjective(badge, discount);
-                    chapterObjective.setRequiredChapters(numberOfReviews);
-                    chapterObjective.setSeries_title(seriesTitle);
-                    switch (level){
-                        case "beginner":
-                            chapterObjective.setLevel(Levels.BEGINNER);
-                            break;
-                        case "intermediate":
-                            chapterObjective.setLevel(Levels.INTERMEDIATE);
-                            break;
-                        case "expert":
-                            chapterObjective.setLevel(Levels.EXPERT);
-                            break;
-                        default:
-                            break;
-                    }
-                    achievedObjectives.add(chapterObjective);
-
-                }
-
-            }while(rs.next());
-
-
-
-
-        } catch (SQLException e) {
-            e.printStackTrace();
-        } finally {
-            try {
-                conn.close();
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
-        }
-
-        return achievedObjectives;
-    }
-
-    public void addAchievedObjective(Objective objective, Reader reader) {
-
-        Statement stmt = null;
-        Connection conn = null;
-
-        try {
-
-            conn = DriverManager.getConnection(DB_URL, USER, PASS);
-            stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
-
-            int achivedobjective_id = objective.getId();
-            String username = reader.getUsername();
-
-            Queries.addAchievedObjective(stmt, username, achivedobjective_id);
-
-
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }finally {
-            try {
-                assert conn != null;
-                conn.close();
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
-        }
-
-    }
 
     public List<Objective> retrieveSeriesObjectives(Series series){
         Statement stmt = null;
@@ -154,9 +37,12 @@ public class ObjectiveDAO {
 
                 Discount discount = new Discount(rs.getFloat("discountPercentage"));
                 discount.setLimitDays(rs.getInt("limitDays"));
+                String seriesTitle = rs.getString("seriesTitle");
 
                 if(rs.getString("type").equals("reviews")){
                     ReviewsObjective reviewsObjective = new ReviewsObjective(badge,discount);
+                    reviewsObjective.setSeries_title(seriesTitle);
+                    reviewsObjective.setId(rs.getInt("objective_id"));
                     switch (rs.getString("level")){
                         case "beginner":
                             reviewsObjective.setLevel(Levels.BEGINNER);
@@ -171,13 +57,14 @@ public class ObjectiveDAO {
                             break;
                     }
 
-                    reviewsObjective.setSeries_title(series.getTitle());
                     reviewsObjective.setRequiredReviews(rs.getInt("number"));
                     objectives.add(reviewsObjective);
 
 
                 }else if(rs.getString("type").equals("chapters")){
                     ChapterObjective chapterObjective = new ChapterObjective(badge,discount);
+                    chapterObjective.setSeries_title(seriesTitle);
+                    chapterObjective.setId(rs.getInt("objective_id"));
                     switch (rs.getString("level")){
                         case "beginner":
                             chapterObjective.setLevel(Levels.BEGINNER);
@@ -192,7 +79,6 @@ public class ObjectiveDAO {
                             break;
                     }
 
-                    chapterObjective.setSeries_title(series.getTitle());
                     chapterObjective.setRequiredChapters(rs.getInt("number"));
                     objectives.add(chapterObjective);
                 }

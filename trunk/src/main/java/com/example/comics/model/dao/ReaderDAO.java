@@ -67,9 +67,9 @@ public class ReaderDAO {
         return reader;
     }
 
-    public void saveAchievedObjective(Objective objective, Reader reader) {
-        ObjectiveDAO objectiveDAO = new ObjectiveDAO();
-        objectiveDAO.addAchievedObjective(objective, reader);
+    public void saveAchievedBadge(Badge badge, Reader reader) {
+        BadgeDAO badgeDAO = new BadgeDAO();
+        badgeDAO.addAchievedBadge(badge, reader);
     }
 
     public void saveObtainedDiscountCode(DiscountCode discountCode, Reader reader) throws SQLException {

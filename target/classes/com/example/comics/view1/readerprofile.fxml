@@ -128,14 +128,20 @@
                      <Insets left="20.0" />
                   </padding>
                </Label>
-               <ScrollPane prefHeight="268.0" prefWidth="368.0">
+               <ScrollPane hbarPolicy="NEVER" prefHeight="268.0" prefWidth="350.0">
                   <content>
-                     <GridPane fx:id="gpBadges" hgap="30.0" prefHeight="13.0" prefWidth="365.0" vgap="30.0">
+                     <GridPane fx:id="gpBadges" hgap="25.0" prefHeight="14.0" prefWidth="339.0" vgap="25.0">
                        <rowConstraints>
                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                        </rowConstraints>
                      </GridPane>
                   </content>
+                  <VBox.margin>
+                     <Insets left="10.0" right="10.0" />
+                  </VBox.margin>
+                  <padding>
+                     <Insets left="5.0" />
+                  </padding>
                </ScrollPane>
             </VBox>
             <styleClass>

@@ -8,9 +8,9 @@ import javafx.scene.image.ImageView;
 public class BadgeCardControllerG {
 
     @FXML
-    public ImageView badgeIcon;
+    private ImageView badgeIcon;
     @FXML
-    public Label badgeName;
+    private Label badgeName;
 
     public void setData(String name, Image icon) {
         badgeName.setText(name);

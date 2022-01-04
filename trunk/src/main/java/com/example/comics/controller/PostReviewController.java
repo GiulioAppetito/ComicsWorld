@@ -44,20 +44,19 @@ public class PostReviewController extends ReviewSubject {
 
             if(objective.getType().equals("reviewsObjective")){
                 if(objective.achieveObjective(numOfReviews)){
-                    //controllo che il lettore non abbia già raggiunto questo obiettivo
+                    //controllo che il lettore non abbia già raggiunto questo obiettivo confrontando i badge
                     System.out.println("[POST REVIEW CONTROLLER] Obiettivo raggiunto!");
-                    if(UserLogin.getInstance().getReader().hasAchievedThisObjective(objective)){
+                    if(UserLogin.getInstance().getReader().hasAchievedThisBadge(objective.getBadge())){
                         System.out.println("[POST REVIEW CONTROLLER] Reader ha già questo obiettivo.");
 
                     }else {
-                        //aggiungo obiettivo alla lista e salvo sul DB + assegno badge
-                        UserLogin.getInstance().getReader().addAchievedObjective(objective);
+                        //aggiungo badge alla lista e salvo sul DB + assegno badge
+                        UserLogin.getInstance().getReader().addAchievedBadge(objective.getBadge());
 
                         ObjectiveBean objectiveBean = new ObjectiveBean();
                         objectiveBean.setBadge(objective.getBadge());
                         objectiveBean.setLevel(objective.getLevel());
                         objectiveBean.setSeriesTitle((objective.getSeries_title()));
-
 
                         //genero discount code
                         DiscountCode discountCode = new DiscountCode(objective.getDiscount());

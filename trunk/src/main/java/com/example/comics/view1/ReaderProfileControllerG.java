@@ -37,6 +37,7 @@ public class ReaderProfileControllerG implements AccountObserver {
 
     @FXML
     public void initialize() {
+
         lblName.setText(UserLogin.getInstance().getAccount().getFirstName());
         lblUsername.setText(UserLogin.getInstance().getAccount().getLastName());
         ivProPic.setImage(UserLogin.getInstance().getAccount().getProPic());
@@ -53,7 +54,6 @@ public class ReaderProfileControllerG implements AccountObserver {
 
         ResearchController researchController = new ResearchController();
         List<BadgeBean> listOfBadges = researchController.getUserBadges();
-        BadgeBean badgeBean;
         int columns=3;
         int i=1;
 
@@ -61,11 +61,10 @@ public class ReaderProfileControllerG implements AccountObserver {
 
             FXMLLoader fxmlLoader = new FXMLLoader();
             fxmlLoader.setLocation(getClass().getResource("badge.fxml"));
-            badgeBean = listOfBadges.get(i);
             try {
                 VBox card = fxmlLoader.load();
                 BadgeCardControllerG badgeCardControllerG = fxmlLoader.getController();
-                badgeCardControllerG.setData(badgeBean.getName(), badgeBean.getIcon());
+                badgeCardControllerG.setData(listOfBadges.get(j).getName(), listOfBadges.get(j).getIcon());
                 gpBadges.add(card, j%columns, i);
                 if(j%columns == columns -1 ){
                     i++;
@@ -74,6 +73,7 @@ public class ReaderProfileControllerG implements AccountObserver {
                 e.printStackTrace();
             }
         }
+
     }
 
     public void loadFavouriteCharacter(){

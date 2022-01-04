@@ -1,5 +1,6 @@
 package com.example.comics.model;
 
+import com.example.comics.model.dao.BadgeDAO;
 import com.example.comics.model.dao.ObjectiveDAO;
 import com.example.comics.model.dao.ReaderDAO;
 
@@ -12,7 +13,7 @@ public class Reader extends Account{
     private List<Series> toRead;
     private List<Series> reading;
     private List<Review> publishedReviews;
-    private List<Objective> objectives;
+    private List<Badge> badges;
 
     public Reader(List<Series> favourites, List<Series> toRead, List<Series> reading, List<Review> publishedReviews,String username){
 
@@ -23,8 +24,8 @@ public class Reader extends Account{
         this.reading = reading;
         this.publishedReviews = publishedReviews;
 
-        ObjectiveDAO objectiveDAO = new ObjectiveDAO();
-        this.objectives = objectiveDAO.retreiveAchievedObjectives(username);
+        BadgeDAO badgesDAO = new BadgeDAO();
+        this.badges = badgesDAO.retrieveAchievedBadges(username);
     }
 
     private static final String ROLE = "reader";
@@ -46,18 +47,17 @@ public class Reader extends Account{
         return publishedReviews;
     }
 
-    public boolean hasAchievedThisObjective(Objective objective) {
+    public boolean hasAchievedThisBadge(Badge badge) {
 
-        if(this.objectives.isEmpty()){
+        if(this.badges.isEmpty()){
             return false;
         }
 
-        for(Objective readersObjective : this.objectives){
+        for(Badge readerBadge : this.badges){
 
-            System.out.println("objective già in possesso per: " + readersObjective.getSeries_title());
+            System.out.println("[READER] Badge già in possesso");
 
-            if(readersObjective.getSeries_title().equals(objective.getSeries_title())
-                    && (readersObjective.getLevel().toString().equals(objective.getLevel().toString())) && (readersObjective.getType().equals(objective.getType()))){
+            if(readerBadge.getId() == badge.getId()){
                 return true;
             }
         }
@@ -65,18 +65,22 @@ public class Reader extends Account{
 
     }
 
-    public List<Objective> getObjectives() {
-        return this.objectives;
+    public List<Badge> getBadges() {
+
+        if(this.badges.isEmpty()){
+            System.out.println("[READER]: lista badge vuota");
+        }
+        return this.badges;
     }
 
     public void addPublishedReview(Review review) {
         this.publishedReviews.add(review);
     }
 
-    public void addAchievedObjective(Objective objective) {
-        this.objectives.add(objective);
+    public void addAchievedBadge(Badge badge) {
+        this.badges.add(badge);
         ReaderDAO readerDAO = new ReaderDAO();
-        readerDAO.saveAchievedObjective(objective, this);
+        readerDAO.saveAchievedBadge(badge, this);
     }
 
     public void addDiscountCode(DiscountCode discountCode) {

@@ -78,15 +78,17 @@ public class ResearchController {
 
 
     public List<BadgeBean> getUserBadges() {
+
         ArrayList<BadgeBean> badgeBeans = new ArrayList<>();
         BadgeBean badgeBean;
 
-        List<Objective> objectives = UserLogin.getInstance().getReader().getObjectives();
+        List<Badge> badges = UserLogin.getInstance().getReader().getBadges();
 
-        for(Objective objective : objectives){
+        for(Badge badge : badges){
             badgeBean = new BadgeBean();
-            badgeBean.setIcon(objective.getBadge().getIcon());
-            badgeBean.setName(objective.getBadge().getName());
+            badgeBean.setIcon(badge.getIcon());
+            badgeBean.setName(badge.getName());
+            System.out.println("[RESEARCH CONTROLLER] BADGE: " + badge.getName());
             badgeBeans.add(badgeBean);
         }
 

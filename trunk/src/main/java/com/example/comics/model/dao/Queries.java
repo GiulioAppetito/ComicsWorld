@@ -147,17 +147,6 @@ public class Queries {
         return stmt.executeQuery(selectStatement);
     }
 
-    public static ResultSet retrieveObjectivesByReader(Statement stmt, String username) throws SQLException {
-        String selectStatement = String.format("SELECT * FROM objectives JOIN achievedObjectives ON objective_id = achivedobjective_id WHERE user = '%s'", username);
-        System.out.println(selectStatement);
-        return stmt.executeQuery(selectStatement);
-    }
-
-    public static void addAchievedObjective(Statement stmt, String username, int achivedobjective_id) throws SQLException {
-        String insertStatement = String.format("INSERT INTO achievedObjectives (user, achivedobjective_id) values ('%s', '%d')", username, achivedobjective_id);
-        System.out.println(insertStatement);
-        stmt.executeUpdate(insertStatement);
-    }
 
     public static void saveReadersDiscountCode(Statement stmt, DiscountCode discountCode, Reader reader) throws SQLException {
         String insertStatement = String.format("INSERT INTO discountCodes (username, code, expiringDate, percentage) values ('%s', '%s', '%s', '%s')", reader.getUsername(), discountCode.getCode(), discountCode.getExpiringDate(), discountCode.getDiscount().getPercentage());
@@ -187,5 +176,17 @@ public class Queries {
         String deleteStatement = String.format("DELETE FROM userToReadSeries WHERE user = '%s' AND series = '%s'", reader.getUsername(), series.getTitle());
         System.out.println(deleteStatement);
         stmt.executeUpdate(deleteStatement);
+    }
+
+    public static ResultSet retrieveBadgesByReader(Statement stmt, String username) throws SQLException {
+        String selectStatement = String.format("SELECT * FROM achievedBadges join badges on achievedbadges_id = badgeID WHERE user = '%s'", username);
+        System.out.println(selectStatement);
+        return stmt.executeQuery(selectStatement);
+    }
+
+    public static void addAchievedBadge(Statement stmt, String username, int achievedbadge_id) throws SQLException {
+        String insertStatement = String.format("INSERT INTO achievedBadges (user, achievedbadges_id) values ('%s', '%d')", username, achievedbadge_id);
+        System.out.println(insertStatement);
+        stmt.executeUpdate(insertStatement);
     }
 }

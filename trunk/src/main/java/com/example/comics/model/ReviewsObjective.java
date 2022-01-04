@@ -1,6 +1,5 @@
 package com.example.comics.model;
 
-import com.example.comics.model.dao.BadgeDAO;
 
 public class ReviewsObjective extends Objective{
 
