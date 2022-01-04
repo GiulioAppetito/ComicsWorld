@@ -24,7 +24,7 @@ public class Reader extends Account{
         this.publishedReviews = publishedReviews;
 
         ObjectiveDAO objectiveDAO = new ObjectiveDAO();
-        objectives = objectiveDAO.retreiveAchievedObjectives(username);
+        this.objectives = objectiveDAO.retreiveAchievedObjectives(username);
     }
 
     private static final String ROLE = "reader";
@@ -38,32 +38,12 @@ public class Reader extends Account{
         return favourites;
     }
 
-    public void setFavourites(List<Series> favourites) {
-        this.favourites = favourites;
-    }
-
     public List<Series> getToRead() {
         return toRead;
     }
 
-    public void setToRead(List<Series> toRead) {
-        this.toRead = toRead;
-    }
-
-    public List<Series> getReading() {
-        return reading;
-    }
-
-    public void setReading(List<Series> reading) {
-        this.reading = reading;
-    }
-
     public List<Review> getPublishedReviews() {
         return publishedReviews;
-    }
-
-    public void setPublishedReviews(List<Review> publishedReviews) {
-        this.publishedReviews = publishedReviews;
     }
 
     public boolean hasAchievedThisObjective(Objective objective) {
@@ -74,7 +54,7 @@ public class Reader extends Account{
 
         for(Objective readersObjective : this.objectives){
 
-            System.out.println("titolo serie di objective già in possesso" + readersObjective.getSeries_title() + "titolo nuova serie" + objective.getSeries_title());
+            System.out.println("objective già in possesso per: " + readersObjective.getSeries_title());
 
             if(readersObjective.getSeries_title().equals(objective.getSeries_title())
                     && (readersObjective.getLevel().toString().equals(objective.getLevel().toString())) && (readersObjective.getType().equals(objective.getType()))){
@@ -82,14 +62,11 @@ public class Reader extends Account{
             }
         }
         return false;
+
     }
 
     public List<Objective> getObjectives() {
-        return objectives;
-    }
-
-    public void setObjectives(List<Objective> objectives) {
-        this.objectives = objectives;
+        return this.objectives;
     }
 
     public void addPublishedReview(Review review) {
@@ -99,7 +76,7 @@ public class Reader extends Account{
     public void addAchievedObjective(Objective objective) {
         this.objectives.add(objective);
         ReaderDAO readerDAO = new ReaderDAO();
-        readerDAO.saveAchievedObjective(objective, this.getUsername());
+        readerDAO.saveAchievedObjective(objective, this);
     }
 
     public void addDiscountCode(DiscountCode discountCode) {

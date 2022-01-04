@@ -148,13 +148,13 @@ public class Queries {
     }
 
     public static ResultSet retrieveObjectivesByReader(Statement stmt, String username) throws SQLException {
-        String selectStatement = String.format("SELECT * FROM objectives join achievedObjectives WHERE (username = '%s') AND (level = objectiveLevel AND seriesTitle = objectiveSeries AND type = objectiveType)", username);
+        String selectStatement = String.format("SELECT * FROM objectives JOIN achievedObjectives ON objective_id = achivedobjective_id WHERE user = '%s'", username);
         System.out.println(selectStatement);
         return stmt.executeQuery(selectStatement);
     }
 
-    public static void addAchievedObjective(Statement stmt, String username, String series_title, String objective_level, String objective_type) throws SQLException {
-        String insertStatement = String.format("INSERT INTO achievedObjectives (username, objectiveSeries, objectiveLevel, objectiveType) values ('%s', '%s', '%s', '%s')", username, series_title, objective_level, objective_type);
+    public static void addAchievedObjective(Statement stmt, String username, int achivedobjective_id) throws SQLException {
+        String insertStatement = String.format("INSERT INTO achievedObjectives (user, achivedobjective_id) values ('%s', '%d')", username, achivedobjective_id);
         System.out.println(insertStatement);
         stmt.executeUpdate(insertStatement);
     }
@@ -163,18 +163,6 @@ public class Queries {
         String insertStatement = String.format("INSERT INTO discountCodes (username, code, expiringDate, percentage) values ('%s', '%s', '%s', '%s')", reader.getUsername(), discountCode.getCode(), discountCode.getExpiringDate(), discountCode.getDiscount().getPercentage());
         System.out.println(insertStatement);
         stmt.executeUpdate(insertStatement);
-    }
-
-    public static ResultSet retreiveDiscountCodesByReader(Statement stmt, Reader reader) throws SQLException {
-        String selectStatement = String.format("SELECT * FROM discountCodes WHERE username = '%s'", reader.getUsername());
-        System.out.println(selectStatement);
-        return stmt.executeQuery(selectStatement);
-    }
-
-    public static ResultSet isSeriesFavourite(Statement stmt, String series_title, String username) throws SQLException {
-        String selectStatement = String.format("SELECT * FROM userFavouriteSeries WHERE user = '%s' AND series = '%s'", username, series_title);
-        System.out.println(selectStatement);
-        return stmt.executeQuery(selectStatement);
     }
 
     public static void addSeriesToFavourites(Statement stmt, String series_title, String username) throws SQLException {

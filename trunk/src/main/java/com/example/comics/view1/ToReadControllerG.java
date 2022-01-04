@@ -12,6 +12,7 @@ import java.net.URL;
 import java.util.List;
 
 public class ToReadControllerG {
+
     @FXML
     private GridPane gpComics;
 
@@ -19,7 +20,7 @@ public class ToReadControllerG {
     public void initialize(){
 
         ResearchController researchController = new ResearchController();
-        //poi ovviamente sarà na cosa diversa da latest
+
         List<SeriesBean> listOfCards = researchController.getToReadSeries();
         int size = listOfCards.size();
         int columns = 3;

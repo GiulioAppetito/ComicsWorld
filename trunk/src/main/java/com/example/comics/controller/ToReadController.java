@@ -1,14 +1,10 @@
 package com.example.comics.controller;
 
-import com.example.comics.model.Reader;
 import com.example.comics.model.Series;
 import com.example.comics.model.UserLogin;
 import com.example.comics.model.dao.ReaderDAO;
-import com.example.comics.model.dao.SeriesDAO;
 import com.example.comics.model.fagioli.SeriesBean;
-
 import java.sql.SQLException;
-import java.util.List;
 
 public class ToReadController {
 

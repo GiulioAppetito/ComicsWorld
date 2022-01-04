@@ -171,8 +171,6 @@ public class LoginControllerG {
             Scene scene;
 
             String role = UserLogin.getInstance().getAccount().getRole();
-            System.out.println("Login controller G role: " + role);
-
 
             if(role.equals("reader")) {
                 ReaderHomeControllerG readerHomeControllerG = ReaderHomeControllerG.getInstance();

@@ -20,10 +20,6 @@ import java.util.List;
 
 public class ReaderProfileControllerG implements AccountObserver {
 
-
-    @FXML
-    private Button btnEdit;
-
     @FXML
     private GridPane gpBadges;
 
@@ -92,10 +88,6 @@ public class ReaderProfileControllerG implements AccountObserver {
         }
     }
 
-    @FXML
-    public void edit(){
-        //TO-DO
-    }
 
     @Override
     public void update() {

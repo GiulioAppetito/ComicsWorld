@@ -3,7 +3,6 @@ package com.example.comics.controller;
 import com.example.comics.model.Series;
 import com.example.comics.model.UserLogin;
 import com.example.comics.model.dao.ReaderDAO;
-import com.example.comics.model.dao.SeriesDAO;
 import com.example.comics.model.fagioli.SeriesBean;
 
 public class FavouritesController {

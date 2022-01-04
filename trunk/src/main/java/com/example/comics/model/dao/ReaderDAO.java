@@ -5,7 +5,6 @@ import javafx.scene.image.Image;
 
 import java.io.InputStream;
 import java.sql.*;
-import java.util.ArrayList;
 import java.util.List;
 
 public class ReaderDAO {
@@ -68,10 +67,9 @@ public class ReaderDAO {
         return reader;
     }
 
-    public void saveAchievedObjective(Objective objective, String username) {
+    public void saveAchievedObjective(Objective objective, Reader reader) {
         ObjectiveDAO objectiveDAO = new ObjectiveDAO();
-        System.out.println("[ReaderDAO] Calling objectiveDAO con objective,username = "+objective+","+username);
-        objectiveDAO.addAchievedObjective(objective, username);
+        objectiveDAO.addAchievedObjective(objective, reader);
     }
 
     public void saveObtainedDiscountCode(DiscountCode discountCode, Reader reader) throws SQLException {

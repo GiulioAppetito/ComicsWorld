@@ -2,6 +2,7 @@ package com.example.comics.model;
 
 public abstract class Objective {
 
+    private int id;
     private Levels level;
     protected Discount discount;
     protected Badge badge;
@@ -40,5 +41,13 @@ public abstract class Objective {
 
     public void setSeries_title(String series_title) {
         this.series_title = series_title;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 }

@@ -39,10 +39,13 @@ public class ObjectiveDAO {
 
                 int numberOfReviews = rs.getInt("number");
                 String level = rs.getString("level");
+                String seriesTitle = rs.getString("seriesTitle");
 
-                if(rs.getString("objectiveType").equals("reviews")){
+                if(rs.getString("type").equals("reviews")){
+
                     ReviewsObjective reviewsObjective = new ReviewsObjective(badge,discount);
                     reviewsObjective.setRequiredReviews(numberOfReviews);
+                    reviewsObjective.setSeries_title(seriesTitle);
                     switch (level){
                         case "beginner":
                             reviewsObjective.setLevel(Levels.BEGINNER);
@@ -57,9 +60,12 @@ public class ObjectiveDAO {
                             break;
                     }
                     achievedObjectives.add(reviewsObjective);
+
                 }else if(rs.getString("objectiveType").equals("chapters")){
+
                     ChapterObjective chapterObjective = new ChapterObjective(badge, discount);
                     chapterObjective.setRequiredChapters(numberOfReviews);
+                    chapterObjective.setSeries_title(seriesTitle);
                     switch (level){
                         case "beginner":
                             chapterObjective.setLevel(Levels.BEGINNER);
@@ -95,7 +101,7 @@ public class ObjectiveDAO {
         return achievedObjectives;
     }
 
-    public void addAchievedObjective(Objective objective, String username) {
+    public void addAchievedObjective(Objective objective, Reader reader) {
 
         Statement stmt = null;
         Connection conn = null;
@@ -105,11 +111,10 @@ public class ObjectiveDAO {
             conn = DriverManager.getConnection(DB_URL, USER, PASS);
             stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
 
-            String seriesTitle = objective.getSeries_title();
-            String objectiveLevel = objective.getLevel().toString();
-            String objectiveType = objective.getType();
+            int achivedobjective_id = objective.getId();
+            String username = reader.getUsername();
 
-            Queries.addAchievedObjective(stmt, username, seriesTitle, objectiveLevel, objectiveType);
+            Queries.addAchievedObjective(stmt, username, achivedobjective_id);
 
 
         } catch (SQLException e) {

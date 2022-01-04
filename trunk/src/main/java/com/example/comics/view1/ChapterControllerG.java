@@ -100,12 +100,7 @@ public class ChapterControllerG implements ReviewObserver {
 
         btnPostReview.setOnAction(event -> postReview(chapterBean));
 
-        List<ReviewBean> listOfReviews = null;
-        try {
-            listOfReviews = chapterBean.getReviews();
-        } catch(Exception e){
-            //TO-DO
-        }
+        List<ReviewBean> listOfReviews = chapterBean.getReviews();
 
 
         for (ReviewBean reviewBean : listOfReviews) {
@@ -143,6 +138,7 @@ public class ChapterControllerG implements ReviewObserver {
     }
 
     public void postReview(ChapterBean chapterBean){
+
         ReviewBean reviewBean = new ReviewBean();
         reviewBean.setComment(txtAreaComment.getText());
         reviewBean.setUsername(UserLogin.getInstance().getAccount().getUsername());
@@ -157,8 +153,11 @@ public class ChapterControllerG implements ReviewObserver {
     }
 
     public void openEditor(){
+
         paneInsertReview.setVisible(true);
+        txtAreaComment.setText("");
         newBadgeWonPane.setVisible(false);
+
     }
 
     @Override
