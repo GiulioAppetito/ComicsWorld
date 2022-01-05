@@ -1,8 +1,10 @@
 package com.example.comics.model;
 
+import com.example.comics.model.dao.ChapterDAO;
 import com.example.comics.model.dao.SeriesDAO;
 import javafx.scene.image.Image;
 
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -13,10 +15,13 @@ public class Series {
 	private String author;
 	private String publishingHouse;
 	private List<Chapter> chapters;
-	//private List<Character> characters;
-	private List<Objective> objectives = new ArrayList<>();
+	private List<Character> characters;
+	private List<Objective> objectives;
+	private Genres genre1;
+	private Genres genre2;
+	private Genres genre3;
 
-	private Series(){
+	public Series(){
 		//costruttore di default
 	}
 
@@ -70,6 +75,39 @@ public class Series {
 
 	public void setCover(Image cover) {
 		this.cover = (cover);
+	}
+
+	public Genres getGenre1() {
+		return genre1;
+	}
+
+	public void setGenre1(Genres genre1) {
+		this.genre1 = genre1;
+	}
+
+	public Genres getGenre2() {
+		return genre2;
+	}
+
+	public void setGenre2(Genres genre2) {
+		this.genre2 = genre2;
+	}
+
+	public Genres getGenre3() {
+		return genre3;
+	}
+
+	public void setGenre3(Genres genre3) {
+		this.genre3 = genre3;
+	}
+
+	public void addChapter(String chapterTitle, Image chapterCover, String chapterDescription) throws SQLException {
+		Chapter chapter = new Chapter(this.title,chapterTitle);
+		chapter.setDescription(chapterDescription);
+		this.chapters.add(chapter);
+
+		ChapterDAO chapterDAO = new ChapterDAO();
+		chapterDAO.saveChapter(chapter,this.title);
 	}
 }
 

@@ -243,7 +243,7 @@
                                           <Insets left="20.0" />
                                        </VBox.margin>
                                     </Label>
-                                    <Button fx:id="btnAddObjectives" mnemonicParsing="false" onAction="#openObjectivesPane" text="Add objectives">
+                                    <Button fx:id="btnAddObjectives" mnemonicParsing="false" text="Add objectives">
                                        <font>
                                           <Font name="Berlin Sans FB" size="18.0" />
                                        </font>
@@ -317,7 +317,7 @@
                                           <Insets left="20.0" />
                                        </VBox.margin>
                                     </Label>
-                                    <Button fx:id="btnPublishSeries" mnemonicParsing="false" onAction="#publishSeries" prefHeight="115.0" prefWidth="261.0" text="Publish series">
+                                    <Button fx:id="btnPublishSeries" mnemonicParsing="false" prefHeight="115.0" prefWidth="261.0" text="Publish series">
                                        <font>
                                           <Font name="Berlin Sans FB" size="27.0" />
                                        </font>
@@ -356,7 +356,7 @@
                               <Insets left="20.0" />
                            </padding>
                         </Label>
-                        <Button fx:id="btnApplyObjectives" alignment="CENTER_RIGHT" mnemonicParsing="false" onAction="#applyObjectives" prefHeight="48.0" prefWidth="141.0" stylesheets="@../../../../css/fullpackstyling.css" text="Apply" textAlignment="CENTER" textFill="WHITE">
+                        <Button fx:id="btnApplyObjectives" alignment="CENTER_RIGHT" mnemonicParsing="false" prefHeight="48.0" prefWidth="141.0" stylesheets="@../../../../css/fullpackstyling.css" text="Apply" textAlignment="CENTER" textFill="WHITE">
                            <font>
                               <Font name="Berlin Sans FB" size="24.0" />
                            </font>
@@ -372,7 +372,7 @@
                               <Insets left="220.0" top="2.0" />
                            </HBox.margin>
                         </Button>
-                        <Button fx:id="btnCloseObjectivesPane1" alignment="CENTER_RIGHT" mnemonicParsing="false" onAction="#closeObjectivesPane" prefHeight="49.0" prefWidth="73.0" stylesheets="@../../../../css/fullpackstyling.css" text="X" textAlignment="CENTER" textFill="WHITE">
+                        <Button fx:id="btnCloseObjectivesPane1" alignment="CENTER_RIGHT" mnemonicParsing="false"  prefHeight="49.0" prefWidth="73.0" stylesheets="@../../../../css/fullpackstyling.css" text="X" textAlignment="CENTER" textFill="WHITE">
                            <font>
                               <Font name="Berlin Sans FB" size="24.0" />
                            </font>
