@@ -11,6 +11,7 @@ public class ObjectiveBean {
     private String seriesTitle;
 
 
+
     public String getLevel() {
         return level.toString();
     }

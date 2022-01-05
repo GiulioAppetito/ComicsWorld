@@ -30,7 +30,7 @@
                           <VBox.margin>
                               <Insets top="20.0" />
                           </VBox.margin>
-                           <ImageView fx:id="ivProPic" fitHeight="241.0" fitWidth="275.0" pickOnBounds="true" preserveRatio="true">
+                           <ImageView fitHeight="241.0" fitWidth="275.0" pickOnBounds="true" preserveRatio="true">
                                <Image url="@../../../../img/flat-business-man-user-profile-avatar-icon-vector-4333097.jpg" />
                            </ImageView>
                       </HBox>
@@ -67,17 +67,17 @@
                               <Font name="Berlin Sans FB" size="24.0" />
                           </font>
                       </Label>
-                      <Label fx:id="lblBirthday" alignment="CENTER" prefHeight="44.0" prefWidth="452.0" text="16-02-2000">
+                      <Label alignment="CENTER" prefHeight="44.0" prefWidth="452.0" text="16-02-2000">
                           <font>
                               <Font name="Berlin Sans FB" size="24.0" />
                           </font>
                       </Label>
-                      <Label fx:id="lblCity" alignment="CENTER" prefHeight="39.0" prefWidth="452.0" text="Rome">
+                      <Label alignment="CENTER" prefHeight="39.0" prefWidth="452.0" text="Rome">
                           <font>
                               <Font name="Berlin Sans FB" size="24.0" />
                           </font>
                       </Label>
-                      <Label fx:id="lblCountry" alignment="CENTER" prefHeight="46.0" prefWidth="452.0" text="Italy">
+                      <Label alignment="CENTER" prefHeight="46.0" prefWidth="452.0" text="Italy">
                           <font>
                               <Font name="Berlin Sans FB" size="24.0" />
                           </font>
@@ -158,43 +158,6 @@
                      </children>
                      <VBox.margin>
                         <Insets bottom="70.0" left="70.0" right="70.0" top="70.0" />
-                     </VBox.margin>
-                  </Pane>
-                  <Pane prefHeight="135.0" prefWidth="337.0" stylesheets="@../../../../css/fullpackstyling.css">
-                     <styleClass>
-                        <String fx:value="panes" />
-                        <String fx:value="glass" />
-                        <String fx:value="oval-layout" />
-                     </styleClass>
-                     <children>
-                        <VBox prefHeight="127.0" prefWidth="337.0">
-                           <children>
-                              <Label text="Want to create a new badge?">
-                                 <font>
-                                    <Font name="Berlin Sans FB" size="18.0" />
-                                 </font>
-                                 <VBox.margin>
-                                    <Insets left="20.0" top="10.0" />
-                                 </VBox.margin>
-                              </Label>
-                              <Button fx:id="btnNewBadge" alignment="CENTER" mnemonicParsing="false" prefHeight="91.0" prefWidth="91.0" stylesheets="@../../../../css/fullpackstyling.css" text="+">
-                                 <VBox.margin>
-                                    <Insets bottom="10.0" left="100.0" right="5.0" top="10.0" />
-                                 </VBox.margin>
-                                 <font>
-                                    <Font name="Berlin Sans FB Bold" size="35.0" />
-                                 </font>
-                                 <styleClass>
-                                    <String fx:value="oval-layout" />
-                                    <String fx:value="transparent" />
-                                    <String fx:value="buttonEdit" />
-                                 </styleClass>
-                              </Button>
-                           </children>
-                        </VBox>
-                     </children>
-                     <VBox.margin>
-                        <Insets bottom="40.0" left="70.0" right="70.0" top="70.0" />
                      </VBox.margin>
                   </Pane>
                </children>

@@ -12,23 +12,21 @@ import java.util.List;
 public class Chapter extends ChapterSubject {
 
     private String title;
-    private String series;
     private Integer id;
     private Date publishingDate;
     private List<Review> reviews;
     private Image cover;
-    private Text description;
+    private String description;
 
-    public Chapter(String series, String title) throws SQLException {
+    public Chapter(String seriesTitle, String title) throws SQLException {
 
-        this.series = series;
         this.title = title;
         //delego la responsabilità di creator delle review del chapter al chapterDAO che farà il retreive delle review
         ChapterDAO chapterDAO = new ChapterDAO();
         try {
-            this.reviews = chapterDAO.retrieveReviews(this.series,this.title);
+            this.reviews = chapterDAO.retrieveReviews(seriesTitle,this.title);
         } catch (ReviewsNotFoundException e) {
-            System.out.println("No reviews found on "+this.series + " - "+this.title);
+            System.out.println("No reviews found on "+seriesTitle + " - "+this.title);
         }
     }
 
@@ -39,12 +37,6 @@ public class Chapter extends ChapterSubject {
         this.title = title;
     }
 
-    public String getSeries() {
-        return series;
-    }
-    public void setSeries(String series) {
-        this.series = series;
-    }
 
     public Date getPublishingDate() {
         return publishingDate;
@@ -67,10 +59,10 @@ public class Chapter extends ChapterSubject {
         this.reviews = reviews;
     }
 
-    public Text getDescription() {
+    public String getDescription() {
         return description;
     }
-    public void setDescription(Text description) {
+    public void setDescription(String description) {
         this.description = description;
     }
 

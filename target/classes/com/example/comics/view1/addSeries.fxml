@@ -1,14 +1,853 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="com.example.comics.view1.AddSeriesControllerG"
-            prefHeight="400.0" prefWidth="600.0">
 
-</AnchorPane>
+<StackPane xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.comics.view1.PublishSeriesControllerG">
+   <children>
+      <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="729.0" prefWidth="980.0" styleClass="transparent" stylesheets="@../../../../css/fullpackstyling.css">
+         <children>
+            <HBox prefHeight="729.0" prefWidth="980.0">
+               <children>
+                  <Pane prefHeight="649.0" prefWidth="457.0" stylesheets="@../../../../css/fullpackstyling.css">
+                     <HBox.margin>
+                        <Insets bottom="40.0" left="40.0" right="40.0" top="40.0" />
+                     </HBox.margin>
+                     <styleClass>
+                        <String fx:value="panes" />
+                        <String fx:value="oval-layout" />
+                        <String fx:value="glass" />
+                     </styleClass>
+                     <children>
+                        <VBox prefHeight="649.0" prefWidth="452.0">
+                           <children>
+                              <Button fx:id="btnBack" mnemonicParsing="false" prefHeight="51.0" prefWidth="81.0" stylesheets="@../../../../css/fullpackstyling.css">
+                                 <font>
+                                    <Font name="Berlin Sans FB" size="24.0" />
+                                 </font>
+                                 <styleClass>
+                                    <String fx:value="oval-layout" />
+                                    <String fx:value="transparent" />
+                                    <String fx:value="buttonEdit" />
+                                 </styleClass>
+                                 <graphic>
+                                    <ImageView fitHeight="32.0" fitWidth="39.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../../../img/back.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                                 <VBox.margin>
+                                    <Insets left="5.0" top="5.0" />
+                                 </VBox.margin>
+                              </Button>
+                              <HBox>
+                                 <VBox.margin>
+                                    <Insets left="140.0" />
+                                 </VBox.margin>
+                                 <children>
+                                    <ImageView fx:id="comicCover" fitHeight="261.0" fitWidth="466.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../../../img/download.jpg" />
+                                       </image>
+                                    </ImageView>
+                                 </children>
+                              </HBox>
+                              <HBox prefWidth="393.0" spacing="20.0">
+                                 <VBox.margin>
+                                    <Insets bottom="20.0" left="20.0" right="20.0" />
+                                 </VBox.margin>
+                              </HBox>
+                              <Button mnemonicParsing="false" text="Set cover">
+                                 <font>
+                                    <Font name="Berlin Sans FB" size="18.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets bottom="10.0" left="180.0" />
+                                 </VBox.margin>
+                              </Button>
+                              <Label text="Insert new series info : " textFill="#545454">
+                                 <font>
+                                    <Font name="Berlin Sans FB" size="14.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets left="30.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <HBox>
+                                 <VBox.margin>
+                                    <Insets left="100.0" right="100.0" top="30.0" />
+                                 </VBox.margin>
+                                 <children>
+                                    <Label text="Title">
+                                       <font>
+                                          <Font name="Berlin Sans FB" size="18.0" />
+                                       </font>
+                                       <HBox.margin>
+                                          <Insets right="35.0" />
+                                       </HBox.margin>
+                                    </Label>
+                                    <TextField fx:id="tfTitle" promptText="Title" />
+                                 </children>
+                              </HBox>
+                              <HBox>
+                                 <children>
+                                    <Label text="Label">
+                                       <font>
+                                          <Font name="Berlin Sans FB" size="18.0" />
+                                       </font>
+                                       <HBox.margin>
+                                          <Insets right="25.0" />
+                                       </HBox.margin>
+                                    </Label>
+                                    <TextField fx:id="tfTitle1" promptText="Title">
+                                       <HBox.margin>
+                                          <Insets right="20.0" />
+                                       </HBox.margin>
+                                    </TextField>
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets left="100.0" top="20.0" />
+                                 </VBox.margin>
+                              </HBox>
+                              <HBox>
+                                 <children>
+                                    <Label text="Genre 1">
+                                       <font>
+                                          <Font name="Berlin Sans FB" size="18.0" />
+                                       </font>
+                                       <HBox.margin>
+                                          <Insets right="10.0" />
+                                       </HBox.margin>
+                                    </Label>
+                                    <ChoiceBox fx:id="choiceBoxGenre1" prefWidth="150.0" />
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets left="100.0" top="20.0" />
+                                 </VBox.margin>
+                              </HBox>
+                              <HBox>
+                                 <children>
+                                    <Label text="Genre 2">
+                                       <font>
+                                          <Font name="Berlin Sans FB" size="18.0" />
+                                       </font>
+                                       <HBox.margin>
+                                          <Insets right="10.0" />
+                                       </HBox.margin>
+                                    </Label>
+                                    <ChoiceBox fx:id="choiceBoxGenre2" prefWidth="150.0" />
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets left="100.0" top="20.0" />
+                                 </VBox.margin>
+                              </HBox>
+                              <HBox>
+                                 <children>
+                                    <Label text="Genre 3">
+                                       <font>
+                                          <Font name="Berlin Sans FB" size="18.0" />
+                                       </font>
+                                       <HBox.margin>
+                                          <Insets right="10.0" />
+                                       </HBox.margin>
+                                    </Label>
+                                    <ChoiceBox fx:id="choiceBoxGenre3" prefWidth="150.0" />
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets left="100.0" top="20.0" />
+                                 </VBox.margin>
+                              </HBox>
+                           </children>
+                        </VBox>
+                     </children>
+                  </Pane>
+                  <VBox prefHeight="729.0" prefWidth="453.0">
+                     <children>
+                        <Pane prefHeight="225.0" prefWidth="368.0" stylesheets="@../../../../css/fullpackstyling.css">
+                           <VBox.margin>
+                              <Insets bottom="40.0" left="40.0" right="40.0" top="40.0" />
+                           </VBox.margin>
+                           <styleClass>
+                              <String fx:value="panes" />
+                              <String fx:value="glass" />
+                           </styleClass>
+                           <children>
+                              <VBox prefHeight="200.0" prefWidth="368.0">
+                                 <children>
+                                    <Label prefHeight="74.0" prefWidth="615.0" text="Description">
+                                       <font>
+                                          <Font name="Berlin Sans FB" size="24.0" />
+                                       </font>
+                                       <VBox.margin>
+                                          <Insets left="20.0" />
+                                       </VBox.margin>
+                                    </Label>
+                                    <ScrollPane hbarPolicy="NEVER" prefHeight="173.0" prefWidth="348.0">
+                                       <VBox.margin>
+                                          <Insets bottom="10.0" left="10.0" right="10.0" />
+                                       </VBox.margin>
+                                       <content>
+                                          <ScrollPane>
+                                             <content>
+                                                <TextField fx:id="tfDescription" alignment="TOP_LEFT" prefHeight="140.0" prefWidth="343.0" promptText="Description" />
+                                             </content>
+                                          </ScrollPane>
+                                       </content>
+                                    </ScrollPane>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </Pane>
+                        <Pane prefHeight="186.0" prefWidth="368.0" stylesheets="@../../../../css/fullpackstyling.css">
+                           <VBox.margin>
+                              <Insets bottom="40.0" left="40.0" right="40.0" top="20.0" />
+                           </VBox.margin>
+                           <styleClass>
+                              <String fx:value="panes" />
+                              <String fx:value="glass" />
+                           </styleClass>
+                           <children>
+                              <VBox prefHeight="186.0" prefWidth="368.0">
+                                 <children>
+                                    <Label prefHeight="57.0" prefWidth="368.0" text="Objectives">
+                                       <font>
+                                          <Font name="Berlin Sans FB" size="24.0" />
+                                       </font>
+                                       <padding>
+                                          <Insets left="20.0" />
+                                       </padding>
+                                    </Label>
+                                    <Label text="Do you want to add objectives for your readers?" textFill="#545454">
+                                       <font>
+                                          <Font name="Berlin Sans FB" size="14.0" />
+                                       </font>
+                                       <VBox.margin>
+                                          <Insets left="20.0" />
+                                       </VBox.margin>
+                                    </Label>
+                                    <Button fx:id="btnAddObjectives" mnemonicParsing="false" onAction="#openObjectivesPane" text="Add objectives">
+                                       <font>
+                                          <Font name="Berlin Sans FB" size="18.0" />
+                                       </font>
+                                       <VBox.margin>
+                                          <Insets left="120.0" top="20.0" />
+                                       </VBox.margin>
+                                    </Button>
+                                    <VBox>
+                                       <VBox.margin>
+                                          <Insets left="20.0" top="20.0" />
+                                       </VBox.margin>
+                                       <children>
+                                          <HBox>
+                                             <VBox.margin>
+                                                <Insets left="20.0" top="5.0" />
+                                             </VBox.margin>
+                                          </HBox>
+                                       </children>
+                                    </VBox>
+                                    <VBox>
+                                       <children>
+                                          <HBox>
+                                             <VBox.margin>
+                                                <Insets left="20.0" top="10.0" />
+                                             </VBox.margin>
+                                          </HBox>
+                                          <HBox>
+                                             <VBox.margin>
+                                                <Insets left="20.0" top="5.0" />
+                                             </VBox.margin>
+                                          </HBox>
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets left="20.0" />
+                                       </VBox.margin>
+                                    </VBox>
+                                    <VBox>
+                                       <children>
+                                          <HBox>
+                                             <VBox.margin>
+                                                <Insets left="20.0" top="10.0" />
+                                             </VBox.margin>
+                                          </HBox>
+                                          <HBox>
+                                             <VBox.margin>
+                                                <Insets left="20.0" top="5.0" />
+                                             </VBox.margin>
+                                          </HBox>
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets left="20.0" />
+                                       </VBox.margin>
+                                    </VBox>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </Pane>
+                        <Pane prefHeight="225.0" prefWidth="368.0" stylesheets="@../../../../css/fullpackstyling.css">
+                           <styleClass>
+                              <String fx:value="panes" />
+                              <String fx:value="glass" />
+                           </styleClass>
+                           <children>
+                              <VBox prefHeight="200.0" prefWidth="368.0">
+                                 <children>
+                                    <Label prefHeight="74.0" prefWidth="615.0">
+                                       <font>
+                                          <Font name="Berlin Sans FB" size="24.0" />
+                                       </font>
+                                       <VBox.margin>
+                                          <Insets left="20.0" />
+                                       </VBox.margin>
+                                    </Label>
+                                    <Button fx:id="btnPublishSeries" mnemonicParsing="false" onAction="#publishSeries" prefHeight="115.0" prefWidth="261.0" text="Publish series">
+                                       <font>
+                                          <Font name="Berlin Sans FB" size="27.0" />
+                                       </font>
+                                       <VBox.margin>
+                                          <Insets bottom="50.0" left="50.0" />
+                                       </VBox.margin>
+                                    </Button>
+                                 </children>
+                              </VBox>
+                           </children>
+                           <VBox.margin>
+                              <Insets bottom="40.0" left="40.0" right="40.0" />
+                           </VBox.margin>
+                        </Pane>
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+         </children>
+      </Pane>
+      <Pane fx:id="objectivesPane" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="508.0" prefWidth="648.0" style="-fx-background-color: lightgrey;" stylesheets="@../../../../css/fullpackstyling.css">
+         <styleClass>
+            <String fx:value="panes" />
+            <String fx:value="glass" />
+         </styleClass>
+         <children>
+            <VBox prefHeight="506.0" prefWidth="648.0" styleClass="linear-grad" stylesheets="@../../../../css/fullpackstyling.css">
+               <children>
+                  <HBox>
+                     <children>
+                        <Label prefHeight="50.0" prefWidth="248.0" text="Objectives" textFill="WHITE">
+                           <font>
+                              <Font name="Berlin Sans FB" size="24.0" />
+                           </font>
+                           <padding>
+                              <Insets left="20.0" />
+                           </padding>
+                        </Label>
+                        <Button fx:id="btnApplyObjectives" alignment="CENTER_RIGHT" mnemonicParsing="false" onAction="#applyObjectives" prefHeight="48.0" prefWidth="141.0" stylesheets="@../../../../css/fullpackstyling.css" text="Apply" textAlignment="CENTER" textFill="WHITE">
+                           <font>
+                              <Font name="Berlin Sans FB" size="24.0" />
+                           </font>
+                           <styleClass>
+                              <String fx:value="oval-layout" />
+                              <String fx:value="transparent" />
+                              <String fx:value="buttonEdit" />
+                           </styleClass>
+                           <padding>
+                              <Insets right="20.0" />
+                           </padding>
+                           <HBox.margin>
+                              <Insets left="220.0" top="2.0" />
+                           </HBox.margin>
+                        </Button>
+                        <Button fx:id="btnCloseObjectivesPane1" alignment="CENTER_RIGHT" mnemonicParsing="false" onAction="#closeObjectivesPane" prefHeight="49.0" prefWidth="73.0" stylesheets="@../../../../css/fullpackstyling.css" text="X" textAlignment="CENTER" textFill="WHITE">
+                           <font>
+                              <Font name="Berlin Sans FB" size="24.0" />
+                           </font>
+                           <styleClass>
+                              <String fx:value="oval-layout" />
+                              <String fx:value="transparent" />
+                              <String fx:value="buttonEdit" />
+                           </styleClass>
+                           <padding>
+                              <Insets right="20.0" />
+                           </padding>
+                        </Button>
+                     </children>
+                  </HBox>
+                  <Label text="Choose target for series objectives : " textFill="#e1e1e1">
+                     <font>
+                        <Font name="Berlin Sans FB" size="14.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets left="20.0" />
+                     </VBox.margin>
+                  </Label>
+                  <VBox>
+                     <VBox.margin>
+                        <Insets left="20.0" top="20.0" />
+                     </VBox.margin>
+                     <children>
+                        <Label text="Beginner level">
+                           <font>
+                              <Font name="Berlin Sans FB" size="18.0" />
+                           </font>
+                           <textFill>
+                              <LinearGradient endX="1.0" endY="1.0">
+                                 <stops>
+                                    <Stop>
+                                       <color>
+                                          <Color red="0.75" green="0.75" blue="0.2291666716337204" />
+                                       </color>
+                                    </Stop>
+                                    <Stop offset="1.0">
+                                       <color>
+                                          <Color red="0.9666666388511658" green="1.0" />
+                                       </color>
+                                    </Stop>
+                                 </stops>
+                              </LinearGradient>
+                           </textFill>
+                        </Label>
+                        <HBox prefHeight="25.0" prefWidth="353.0">
+                           <VBox.margin>
+                              <Insets left="20.0" top="10.0" />
+                           </VBox.margin>
+                           <children>
+                              <HBox>
+                                 <children>
+                                    <HBox>
+                                       <children>
+                                          <Label text="Objective type" textFill="WHITE">
+                                             <font>
+                                                <Font name="Berlin Sans FB" size="18.0" />
+                                             </font>
+                                             <HBox.margin>
+                                                <Insets right="10.0" />
+                                             </HBox.margin>
+                                          </Label>
+                                          <ChoiceBox fx:id="cbObjTypeBeg" prefWidth="150.0" />
+                                       </children>
+                                    </HBox>
+                                    <HBox>
+                                       <children>
+                                          <Label text="Badge name" textFill="WHITE">
+                                             <font>
+                                                <Font name="Berlin Sans FB" size="18.0" />
+                                             </font>
+                                             <HBox.margin>
+                                                <Insets right="10.0" />
+                                             </HBox.margin>
+                                          </Label>
+                                       </children>
+                                       <HBox.margin>
+                                          <Insets left="30.0" />
+                                       </HBox.margin>
+                                    </HBox>
+                                 </children>
+                              </HBox>
+                              <TextField fx:id="tfBadgeNameB" />
+                           </children>
+                        </HBox>
+                        <HBox>
+                           <VBox.margin>
+                              <Insets left="20.0" top="5.0" />
+                           </VBox.margin>
+                           <children>
+                              <HBox>
+                                 <children>
+                                    <Label text="Target number" textFill="WHITE">
+                                       <font>
+                                          <Font name="Berlin Sans FB" size="18.0" />
+                                       </font>
+                                       <HBox.margin>
+                                          <Insets right="6.0" />
+                                       </HBox.margin>
+                                    </Label>
+                                 </children>
+                              </HBox>
+                              <TextField fx:id="tfTargetNumberB" />
+                              <HBox>
+                                 <children>
+                                    <Label text="Badge pic" textFill="WHITE">
+                                       <font>
+                                          <Font name="Berlin Sans FB" size="18.0" />
+                                       </font>
+                                       <HBox.margin>
+                                          <Insets right="6.0" />
+                                       </HBox.margin>
+                                    </Label>
+                                    <ChoiceBox prefWidth="150.0">
+                                       <HBox.margin>
+                                          <Insets left="27.0" />
+                                       </HBox.margin>
+                                    </ChoiceBox>
+                                 </children>
+                                 <HBox.margin>
+                                    <Insets left="30.0" />
+                                 </HBox.margin>
+                              </HBox>
+                           </children>
+                        </HBox>
+                        <HBox>
+                           <children>
+                              <Label text="Discount(%)" textFill="WHITE">
+                                 <font>
+                                    <Font name="Berlin Sans FB" size="18.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets left="20.0" right="29.0" top="5.0" />
+                                 </HBox.margin>
+                              </Label>
+                              <TextField fx:id="tfDiscountPercB">
+                                 <HBox.margin>
+                                    <Insets top="5.0" />
+                                 </HBox.margin>
+                              </TextField>
+                              <Label text="Discount days" textFill="WHITE">
+                                 <font>
+                                    <Font name="Berlin Sans FB" size="18.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets left="30.0" top="5.0" />
+                                 </HBox.margin>
+                              </Label>
+                              <TextField fx:id="tfDiscountDaysB">
+                                 <HBox.margin>
+                                    <Insets left="7.0" top="5.0" />
+                                 </HBox.margin>
+                              </TextField>
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+                  <Separator prefWidth="200.0">
+                     <VBox.margin>
+                        <Insets bottom="10.0" top="10.0" />
+                     </VBox.margin>
+                  </Separator>
+                  <VBox>
+                     <children>
+                        <Label text="Intermediate level">
+                           <font>
+                              <Font name="Berlin Sans FB" size="18.0" />
+                           </font>
+                           <textFill>
+                              <LinearGradient endX="1.0" endY="1.0">
+                                 <stops>
+                                    <Stop>
+                                       <color>
+                                          <Color red="0.7894737124443054" green="0.515350878238678" blue="0.1315789520740509" />
+                                       </color>
+                                    </Stop>
+                                    <Stop offset="1.0">
+                                       <color>
+                                          <Color red="1.0" green="0.7260802388191223" blue="0.34259259700775146" />
+                                       </color>
+                                    </Stop>
+                                 </stops>
+                              </LinearGradient>
+                           </textFill>
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                        </Label>
+                        <HBox prefHeight="25.0" prefWidth="353.0">
+                           <VBox.margin>
+                              <Insets left="20.0" top="10.0" />
+                           </VBox.margin>
+                           <children>
+                              <HBox>
+                                 <children>
+                                    <HBox>
+                                       <children>
+                                          <Label text="Objective type" textFill="WHITE">
+                                             <font>
+                                                <Font name="Berlin Sans FB" size="18.0" />
+                                             </font>
+                                             <HBox.margin>
+                                                <Insets right="10.0" />
+                                             </HBox.margin>
+                                          </Label>
+                                          <ChoiceBox fx:id="cbObjTypeInt" prefWidth="150.0" />
+                                       </children>
+                                    </HBox>
+                                    <HBox>
+                                       <children>
+                                          <Label text="Badge name" textFill="WHITE">
+                                             <font>
+                                                <Font name="Berlin Sans FB" size="18.0" />
+                                             </font>
+                                             <HBox.margin>
+                                                <Insets right="10.0" />
+                                             </HBox.margin>
+                                          </Label>
+                                       </children>
+                                       <HBox.margin>
+                                          <Insets left="30.0" />
+                                       </HBox.margin>
+                                    </HBox>
+                                 </children>
+                              </HBox>
+                              <TextField fx:id="tfBadgeNameI" />
+                           </children>
+                        </HBox>
+                        <HBox>
+                           <VBox.margin>
+                              <Insets left="20.0" top="5.0" />
+                           </VBox.margin>
+                           <children>
+                              <HBox>
+                                 <children>
+                                    <Label text="Target number" textFill="WHITE">
+                                       <font>
+                                          <Font name="Berlin Sans FB" size="18.0" />
+                                       </font>
+                                       <HBox.margin>
+                                          <Insets right="6.0" />
+                                       </HBox.margin>
+                                    </Label>
+                                 </children>
+                              </HBox>
+                              <TextField fx:id="tfTargetNumberI" />
+                              <HBox>
+                                 <children>
+                                    <Label text="Badge pic" textFill="WHITE">
+                                       <font>
+                                          <Font name="Berlin Sans FB" size="18.0" />
+                                       </font>
+                                       <HBox.margin>
+                                          <Insets right="6.0" />
+                                       </HBox.margin>
+                                    </Label>
+                                    <ChoiceBox prefWidth="150.0">
+                                       <HBox.margin>
+                                          <Insets left="27.0" />
+                                       </HBox.margin>
+                                    </ChoiceBox>
+                                 </children>
+                                 <HBox.margin>
+                                    <Insets left="30.0" />
+                                 </HBox.margin>
+                              </HBox>
+                           </children>
+                        </HBox>
+                        <HBox>
+                           <children>
+                              <Label text="Discount(%)" textFill="WHITE">
+                                 <font>
+                                    <Font name="Berlin Sans FB" size="18.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets left="20.0" right="29.0" top="5.0" />
+                                 </HBox.margin>
+                              </Label>
+                              <TextField fx:id="tfDiscountPercI">
+                                 <HBox.margin>
+                                    <Insets top="5.0" />
+                                 </HBox.margin>
+                              </TextField>
+                              <Label text="Discount days" textFill="WHITE">
+                                 <font>
+                                    <Font name="Berlin Sans FB" size="18.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets left="30.0" top="5.0" />
+                                 </HBox.margin>
+                              </Label>
+                              <TextField fx:id="tfDiscountDaysI">
+                                 <HBox.margin>
+                                    <Insets left="7.0" top="5.0" />
+                                 </HBox.margin>
+                              </TextField>
+                           </children>
+                        </HBox>
+                     </children>
+                     <VBox.margin>
+                        <Insets left="20.0" />
+                     </VBox.margin>
+                  </VBox>
+                  <VBox>
+                     <children>
+                        <HBox>
+                           <VBox.margin>
+                              <Insets left="20.0" top="5.0" />
+                           </VBox.margin>
+                           <children>
+                              <HBox />
+                              <HBox>
+                                 <HBox.margin>
+                                    <Insets left="30.0" />
+                                 </HBox.margin>
+                              </HBox>
+                           </children>
+                        </HBox>
+                     </children>
+                     <VBox.margin>
+                        <Insets left="20.0" />
+                     </VBox.margin>
+                  </VBox>
+                  <Separator prefWidth="200.0">
+                     <VBox.margin>
+                        <Insets bottom="10.0" top="10.0" />
+                     </VBox.margin>
+                  </Separator>
+                  <VBox>
+                     <children>
+                        <Label text="Expert level">
+                           <font>
+                              <Font name="Berlin Sans FB" size="18.0" />
+                           </font>
+                           <textFill>
+                              <LinearGradient endX="1.0" endY="1.0">
+                                 <stops>
+                                    <Stop>
+                                       <color>
+                                          <Color red="0.7631579041481018" green="0.3603801131248474" blue="0.3603801131248474" />
+                                       </color>
+                                    </Stop>
+                                    <Stop offset="1.0">
+                                       <color>
+                                          <Color red="1.0" green="0.49537035822868347" blue="0.49537035822868347" />
+                                       </color>
+                                    </Stop>
+                                 </stops>
+                              </LinearGradient>
+                           </textFill>
+                        </Label>
+                        <HBox prefHeight="25.0" prefWidth="353.0">
+                           <VBox.margin>
+                              <Insets left="20.0" top="10.0" />
+                           </VBox.margin>
+                           <children>
+                              <HBox>
+                                 <children>
+                                    <HBox>
+                                       <children>
+                                          <Label text="Objective type" textFill="WHITE">
+                                             <font>
+                                                <Font name="Berlin Sans FB" size="18.0" />
+                                             </font>
+                                             <HBox.margin>
+                                                <Insets right="10.0" />
+                                             </HBox.margin>
+                                          </Label>
+                                          <ChoiceBox fx:id="cbObjTypeExp" prefWidth="150.0" />
+                                       </children>
+                                    </HBox>
+                                    <HBox>
+                                       <children>
+                                          <Label text="Badge name" textFill="WHITE">
+                                             <font>
+                                                <Font name="Berlin Sans FB" size="18.0" />
+                                             </font>
+                                             <HBox.margin>
+                                                <Insets right="10.0" />
+                                             </HBox.margin>
+                                          </Label>
+                                       </children>
+                                       <HBox.margin>
+                                          <Insets left="30.0" />
+                                       </HBox.margin>
+                                    </HBox>
+                                 </children>
+                              </HBox>
+                              <TextField fx:id="tfBadgeNameE" />
+                           </children>
+                        </HBox>
+                        <HBox>
+                           <VBox.margin>
+                              <Insets left="20.0" top="5.0" />
+                           </VBox.margin>
+                           <children>
+                              <HBox>
+                                 <children>
+                                    <Label text="Target number" textFill="WHITE">
+                                       <font>
+                                          <Font name="Berlin Sans FB" size="18.0" />
+                                       </font>
+                                       <HBox.margin>
+                                          <Insets right="6.0" />
+                                       </HBox.margin>
+                                    </Label>
+                                 </children>
+                              </HBox>
+                              <TextField fx:id="tfTargetNumberE" />
+                              <HBox>
+                                 <children>
+                                    <Label text="Badge pic" textFill="WHITE">
+                                       <font>
+                                          <Font name="Berlin Sans FB" size="18.0" />
+                                       </font>
+                                       <HBox.margin>
+                                          <Insets right="6.0" />
+                                       </HBox.margin>
+                                    </Label>
+                                    <ChoiceBox prefWidth="150.0">
+                                       <HBox.margin>
+                                          <Insets left="27.0" />
+                                       </HBox.margin>
+                                    </ChoiceBox>
+                                 </children>
+                                 <HBox.margin>
+                                    <Insets left="30.0" />
+                                 </HBox.margin>
+                              </HBox>
+                           </children>
+                        </HBox>
+                        <HBox>
+                           <children>
+                              <Label text="Discount(%)" textFill="WHITE">
+                                 <font>
+                                    <Font name="Berlin Sans FB" size="18.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets left="20.0" right="29.0" top="5.0" />
+                                 </HBox.margin>
+                              </Label>
+                              <TextField fx:id="tfDiscountPercE">
+                                 <HBox.margin>
+                                    <Insets top="5.0" />
+                                 </HBox.margin>
+                              </TextField>
+                              <Label text="Discount days" textFill="WHITE">
+                                 <font>
+                                    <Font name="Berlin Sans FB" size="18.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets left="30.0" top="5.0" />
+                                 </HBox.margin>
+                              </Label>
+                              <TextField fx:id="tfDiscountDaysE">
+                                 <HBox.margin>
+                                    <Insets left="7.0" top="5.0" />
+                                 </HBox.margin>
+                              </TextField>
+                           </children>
+                           <VBox.margin>
+                              <Insets bottom="20.0" />
+                           </VBox.margin>
+                        </HBox>
+                     </children>
+                     <VBox.margin>
+                        <Insets left="20.0" />
+                     </VBox.margin>
+                  </VBox>
+               </children>
+            </VBox>
+         </children>
+      </Pane>
+   </children>
+</StackPane>

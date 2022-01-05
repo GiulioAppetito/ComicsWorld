@@ -9,10 +9,11 @@ import java.util.List;
 public class ChapterBean {
 
     private String title;
-    private String series;
+
     private Integer id;
     private Image cover;
     private List<Review> reviews = new ArrayList<>();
+    private String description;
 
     public String getTitle() {
         return title;
@@ -21,12 +22,7 @@ public class ChapterBean {
         this.title = title;
     }
 
-    public String getSeries() {
-        return series;
-    }
-    public void setSeries(String series) {
-        this.series = series;
-    }
+
 
     public Integer getId() {
         return id;
@@ -58,5 +54,12 @@ public class ChapterBean {
 
     public void setReviews(List<Review> reviews) {
         this.reviews = reviews;
+    }
+
+    public void setDescription(String chapterDescription) {
+        this.description = chapterDescription;
+    }
+    public String getDescription(){
+        return this.description;
     }
 }

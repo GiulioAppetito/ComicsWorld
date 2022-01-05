@@ -15,6 +15,7 @@ import javafx.scene.control.TextArea;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
+import javafx.scene.text.Text;
 
 import java.io.IOException;
 import java.sql.SQLException;
@@ -75,6 +76,10 @@ public class ChapterControllerG implements ReviewObserver {
     private Label lblBadgeType;
 
     @FXML
+    private TextArea taDescription;
+
+
+    @FXML
     void closeEditor() {
         paneInsertReview.setVisible(false);
     }
@@ -87,6 +92,9 @@ public class ChapterControllerG implements ReviewObserver {
         lblAuthor.setText("autore");
         lblChapterTitle.setText(chapterBean.getTitle());
         lblChapterId.setText(chapterBean.getId().toString());
+        System.out.println("[Chapther controller G] Description : "+chapterBean.getDescription());
+        taDescription.setText(chapterBean.getDescription());
+        taDescription.setEditable(false);
 
         paneInsertReview.setVisible(false);
         newBadgeWonPane.setVisible(false);
@@ -143,7 +151,7 @@ public class ChapterControllerG implements ReviewObserver {
         reviewBean.setComment(txtAreaComment.getText());
         reviewBean.setUsername(UserLogin.getInstance().getAccount().getUsername());
         System.out.println("ChapterControllerG: role: username: "+ UserLogin.getInstance().getAccount().getUsername());
-        reviewBean.setSeries(chapterBean.getSeries());
+
         reviewBean.setChapter(chapterBean.getTitle());
         //e magari anche la foto
         PostReviewController postReviewController = new PostReviewController();

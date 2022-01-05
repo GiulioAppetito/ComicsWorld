@@ -17,9 +17,6 @@ public class AuthorProfileControllerG implements AccountObserver {
     private BorderPane mainPane;
 
     @FXML
-    private ImageView ivProPic;
-
-    @FXML
     private Button btnEdit;
 
     @FXML
@@ -29,29 +26,17 @@ public class AuthorProfileControllerG implements AccountObserver {
     private Label lblUsername;
 
     @FXML
-    private Label lblBirthday;
-
-    @FXML
-    private Label lblCity;
-
-    @FXML
-    private Label lblCountry;
-
-    @FXML
     private Button btnNewSeries;
 
     @FXML
     private Button btnNewChapter;
 
     @FXML
-    private Button btnNewBadge;
-
-    @FXML
     public void initialize(){
         lblName.setText(UserLogin.getInstance().getAccount().getFirstName());
         lblUsername.setText(UserLogin.getInstance().getAccount().getLastName());
         btnEdit.setOnAction(actionEvent -> edit());
-        ivProPic.setImage(UserLogin.getInstance().getAccount().getProPic());
+        //ivProPic.setImage(UserLogin.getInstance().getAccount().getProPic());
         //lblBirthday.setText(UserLogin.getInstance().getAccount().getBirthday().toString());
         //lblCity.setText(UserLogin.getInstance().getAccount().getCity());
 
@@ -59,15 +44,17 @@ public class AuthorProfileControllerG implements AccountObserver {
             publishNewSerie();
         });
 
-        btnNewChapter.setOnAction(actionEvent -> {
-            publishNewChapter();
-        });
+        btnNewChapter.setOnAction(actionEvent -> publishNewChapter());
 
-        btnNewBadge.setOnAction(actionEvent -> {
-            createNewBadge();
-        });
 
         AccountSubject.attach(this);
+    }
+
+    @FXML
+    private void publishNewChapter() {
+        FxmlLoader object = new FxmlLoader();
+        Pane view = object.getPage("publishchapter");
+        mainPane.setCenter(view);
     }
 
     @FXML
@@ -77,16 +64,12 @@ public class AuthorProfileControllerG implements AccountObserver {
 
     }
 
-    public void publishNewSerie(){
+    @FXML
+    private void publishNewSerie(){
         FxmlLoader object = new FxmlLoader();
-        Pane view = object.getPage("newseriesmodule");
+        Pane view = object.getPage("publishseries");
         mainPane.setCenter(view);
     }
-
-    public void publishNewChapter(){
-    }
-
-    public void createNewBadge(){}
 
     @Override
     public void update() {

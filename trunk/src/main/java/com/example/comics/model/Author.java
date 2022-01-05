@@ -31,5 +31,9 @@ public class Author extends Account{
         this.publishedSeries = publishedSeries;
     }
 
+    public void addPublishedSeries(Series series){
+        this.publishedSeries.add(series);
+    }
+
 
 }

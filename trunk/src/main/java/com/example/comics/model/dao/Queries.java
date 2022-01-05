@@ -1,9 +1,6 @@
 package com.example.comics.model.dao;
 
-import com.example.comics.model.DiscountCode;
-import com.example.comics.model.Reader;
-import com.example.comics.model.Review;
-import com.example.comics.model.Series;
+import com.example.comics.model.*;
 
 import java.sql.*;
 
@@ -49,7 +46,7 @@ public class Queries {
     }
 
     public static ResultSet retrivePublishedSeries(Statement stmt, String user) throws SQLException {
-        String selectStatement = String.format("SELECT * from publishedSeries where user = '%s' ", user);
+        String selectStatement = String.format("SELECT * from series where author = '%s' ", user);
         System.out.println(selectStatement);
         return stmt.executeQuery(selectStatement);
     }
@@ -186,6 +183,12 @@ public class Queries {
 
     public static void addAchievedBadge(Statement stmt, String username, int achievedbadge_id) throws SQLException {
         String insertStatement = String.format("INSERT INTO achievedBadges (user, achievedbadges_id) values ('%s', '%d')", username, achievedbadge_id);
+        System.out.println(insertStatement);
+        stmt.executeUpdate(insertStatement);
+    }
+
+    public static void insertChapter(Statement stmt, Chapter chapter,String seriesTitle) throws SQLException {
+        String insertStatement = String.format("INSERT INTO chapters (series_title,chapter_title,chapterDescription) values ('%s', '%s','%s')", seriesTitle, chapter.getTitle(),chapter.getDescription());
         System.out.println(insertStatement);
         stmt.executeUpdate(insertStatement);
     }

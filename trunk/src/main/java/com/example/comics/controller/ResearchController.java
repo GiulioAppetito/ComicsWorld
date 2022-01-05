@@ -68,6 +68,7 @@ public class ResearchController {
             seriesBean.setTitle(series.getTitle());
             seriesBean.setAuthor(series.getAuthor());
             seriesBean.setChapters(series.getChapters());
+            System.out.println("ARRIVATO DOPO GET CHAPTERS");
             seriesBean.setCover(series.getCover());
             seriesBeans.add(seriesBean);
         }

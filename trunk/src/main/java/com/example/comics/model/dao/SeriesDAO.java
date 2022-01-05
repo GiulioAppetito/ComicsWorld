@@ -138,7 +138,7 @@ public class SeriesDAO {
             rs.first();
 
             do {
-                title = rs.getString("series");
+                title = rs.getString("title");
                 series = retrieveSeries(title);
                 seriesList.add(series);
             } while (rs.next());
@@ -223,6 +223,9 @@ public class SeriesDAO {
 
         String author;
         Series series = null;
+        Genres genre1;
+        Genres genre2;
+        Genres genre3;
 
         try {
             conn = DriverManager.getConnection(DB_URL, USER, PASS);
@@ -236,6 +239,10 @@ public class SeriesDAO {
             rs.first();
 
             do {
+                //genre1 = Genres.valueOf(rs.getString("genre1"));
+                //genre2 = Genres.valueOf(rs.getString("genre2"));
+                //genre3 = Genres.valueOf(rs.getString("genre3"));
+
                 title = rs.getString("title");
                 author = rs.getString("author");
                 series = new Series(title);
@@ -244,6 +251,9 @@ public class SeriesDAO {
                 Image image = new Image(inputStream);
                 series.setCover(image);
                 series.setAuthor(author);
+                //series.setGenre1(genre1);
+               // series.setGenre2(genre2);
+                //series.setGenre3(genre3);
             } while (rs.next());
 
 

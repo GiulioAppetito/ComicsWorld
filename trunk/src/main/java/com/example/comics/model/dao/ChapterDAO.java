@@ -42,6 +42,7 @@ public class ChapterDAO {
                 chapterSeries = rs.getString("series_title");
                 chapter = new Chapter(chapterSeries,chapterTitle);
                 chapter.setId(chapterID);
+                chapter.setDescription(rs.getString("chapterDescription"));
 
                 chaptersList.add(chapter);
             } while (rs.next());
@@ -81,6 +82,24 @@ public class ChapterDAO {
             ReviewDAO.saveReview(review);
         } catch (Exception e) {
             e.printStackTrace();
+        }
+    }
+
+    public void saveChapter(Chapter chapter,String seriesTitle) {
+        Statement stmt = null;
+        Connection conn = null;
+
+        try {
+
+            // STEP 3: apertura connessione
+            conn = DriverManager.getConnection(DB_URL, USER, PASS);
+
+            // STEP 4.2: creazione ed esecuzione della query
+            stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
+            Queries.insertChapter(stmt,chapter,seriesTitle);
+
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
         }
     }
 }
