@@ -138,9 +138,8 @@ public class CategoriesControllerG {
                     case "X" -> boxX.getChildren().add(categoryBox);
                     case "Y" -> boxY.getChildren().add(categoryBox);
                     case "Z" -> boxZ.getChildren().add(categoryBox);
-                    default -> {
-                        boxA.getChildren().add(categoryBox);
-                    }
+                    default ->  boxA.getChildren().add(categoryBox);
+
                 }
 
             } catch (IOException e) {

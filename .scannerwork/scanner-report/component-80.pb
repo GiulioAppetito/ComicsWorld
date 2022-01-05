@@ -1,1 +1,0 @@
-P 2xmlXhr.idea/sonarlint-state.xml

@@ -1,1 +1,1 @@
-¯ 2javaXqhrAtrunk/src/main/java/com/example/comics/view1/SerieController.java
+¯ 2javaXOhrKtrunk/src/main/java/com/example/comics/controller/PostReviewController.java

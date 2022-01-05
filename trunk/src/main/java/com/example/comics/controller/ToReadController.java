@@ -14,12 +14,7 @@ public class ToReadController {
         series.setCover(seriesBean.getCover());
         series.setAuthor(series.getAuthor());
 
-        if(UserLogin.getInstance().getReader().wantsToRead(series)){
-            return true;
-        }
-        else{
-            return false;
-        }
+        return UserLogin.getInstance().getReader().wantsToRead(series);
 
     }
 

@@ -1,1 +1,1 @@
-± 2javaXhrAtrunk/src/main/java/com/example/comics/view1/VCardController.java
+± 2javaXahrItrunk/src/main/java/com/example/comics/controller/ResearchController.java

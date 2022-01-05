@@ -1,1 +1,1 @@
- 2xmlXhr.idea/jarRepositories.xml
+ 2xmlXhr,.idea/inspectionProfiles/Project_Default.xml

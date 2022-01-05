@@ -1,0 +1,1 @@
+¹ 2javaXYhr9trunk/src/main/java/com/example/comics/model/Chapter.java

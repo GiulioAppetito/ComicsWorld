@@ -1,1 +1,0 @@
-™ 2javaXÁhrGtrunk/src/main/java/com/example/comics/view1/AuthorHomeControllerG.java

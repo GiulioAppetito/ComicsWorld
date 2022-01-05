@@ -1,0 +1,33 @@
+
+xcom.example.comics.model.dao.Queries#retrieveReviewsByReader(Ljava/sql/Statement;Ljava/lang/String;)Ljava/sql/ResultSet;o
+eC:/Users/biril/IdeaProjects/ComicsWorld/trunk/src/main/java/com/example/comics/model/dao/Queries.javaV V(3"1*¡
+1o
+eC:/Users/biril/IdeaProjects/ComicsWorld/trunk/src/main/java/com/example/comics/model/dao/Queries.javaW! W('Ω
+∫
+o
+eC:/Users/biril/IdeaProjects/ComicsWorld/trunk/src/main/java/com/example/comics/model/dao/Queries.javaW! W(^
+%0java.lang.String"Pjava.lang.String#format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;*"
+java.lang.String*+)
+'SELECT * FROM review WHERE user = '%s' *
+
+userjava.lang.Stringπ
+∂
+o
+eC:/Users/biril/IdeaProjects/ComicsWorld/trunk/src/main/java/com/example/comics/model/dao/Queries.javaW W(_#
+selectStatementjava.lang.String"__id*
+
+%0java.lang.Stringæª
+o
+eC:/Users/biril/IdeaProjects/ComicsWorld/trunk/src/main/java/com/example/comics/model/dao/Queries.javaX X(1
+%1java.sql.ResultSet"Gjava.sql.Statement#executeQuery(Ljava/lang/String;)Ljava/sql/ResultSet;*
+
+stmtjava.sql.Statement*%
+#
+selectStatementjava.lang.String2 executeQuery(Ljava/lang/String;)"ç
+o
+eC:/Users/biril/IdeaProjects/ComicsWorld/trunk/src/main/java/com/example/comics/model/dao/Queries.javaX X(2
+
+%1java.sql.ResultSet:
+stmtjava.sql.Statement:
+userjava.lang.StringB("&
+$com.example.comics.model.dao.Queries

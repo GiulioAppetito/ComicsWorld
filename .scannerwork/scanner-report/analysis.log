@@ -2,34 +2,34 @@ SonarCloud plugins:
   - IaC Code Quality and Security 1.4.0.1294 (iac)
   - PL/SQL Code Quality and Security 3.6.1.3873 (plsql)
   - Scala Code Quality and Security 1.8.3.2219 (sonarscala)
-  - C# Code Quality and Security 8.32.0.39516 (csharp)
-  - Vulnerability Analysis 9.2.0.14426 (security)
-  - Java Code Quality and Security 7.5.0.28054 (java)
-  - HTML Code Quality and Security 3.4.0.2754 (web)
+  - C# Code Quality and Security 8.33.0.40503 (csharp)
+  - Vulnerability Analysis 9.3.0-M1.14685 (security)
+  - Java Code Quality and Security 7.6.0.28201 (java)
+  - HTML Code Quality and Security 3.5.0.3009 (web)
   - Flex Code Quality and Security 2.6.2.2641 (flex)
-  - XML Code Quality and Security 2.4.0.3273 (xml)
-  - VB.NET Code Quality and Security 8.32.0.39516 (vbnet)
+  - XML Code Quality and Security 2.5.0.3376 (xml)
+  - VB.NET Code Quality and Security 8.33.0.40503 (vbnet)
   - Swift Code Quality and Security 4.3.2.5043 (swift)
-  - CFamily Code Quality and Security 6.28.0.39490 (cpp)
+  - CFamily Code Quality and Security 6.29.0.41127 (cpp)
   - Python Code Quality and Security 3.8.0.8883 (python)
   - Go Code Quality and Security 1.8.3.2219 (go)
   - JaCoCo 1.1.1.1157 (jacoco)
-  - Kotlin Code Quality and Security 2.7.0.948 (kotlin)
+  - Kotlin Code Quality and Security 2.8.0.1093 (kotlin)
   - Mercurial 1.1.2 (scmmercurial)
   - T-SQL Code Quality and Security 1.5.1.4340 (tsql)
   - Apex Code Quality and Security 1.8.3.2219 (sonarapex)
-  - JavaScript/TypeScript Code Quality and Security 8.6.0.16913 (javascript)
+  - JavaScript/TypeScript Code Quality and Security 8.7.0.17093 (javascript)
   - Ruby Code Quality and Security 1.8.3.2219 (ruby)
-  - Vulnerability Rules for C# 9.2.0.14426 (securitycsharpfrontend)
-  - Vulnerability Rules for Java 9.2.0.14426 (securityjavafrontend)
-  - License for SonarLint 8.0.0.25179 (license)
-  - Vulnerability Rules for JS 9.2.0.14426 (securityjsfrontend)
+  - Vulnerability Rules for C# 9.3.0-M1.14685 (securitycsharpfrontend)
+  - Vulnerability Rules for Java 9.3.0-M1.14685 (securityjavafrontend)
+  - License for SonarLint 8.0.0.25802 (license)
+  - Vulnerability Rules for JS 9.3.0-M1.14685 (securityjsfrontend)
   - COBOL Code Quality 4.6.2.4876 (cobol)
-  - Vulnerability Rules for Python 9.2.0.14426 (securitypythonfrontend)
+  - Vulnerability Rules for Python 9.3.0-M1.14685 (securitypythonfrontend)
   - PHP Code Quality and Security 3.22.0.8482 (php)
   - ABAP Code Quality and Security 3.9.1.3127 (abap)
   - Configuration detection fot Code Quality and Security 1.1.0.185 (config)
-  - Vulnerability Rules for PHP 9.2.0.14426 (securityphpfrontend)
+  - Vulnerability Rules for PHP 9.3.0-M1.14685 (securityphpfrontend)
 Global server settings:
   - email.from=noreply@sonarcloud.io
   - email.fromName=SonarCloud
@@ -40,7 +40,7 @@ Global server settings:
   - sonar.auth.microsoft.enabled=true
   - sonar.core.id=1BD809FA-AWHW8ct9-T_TB3XqouNu
   - sonar.core.serverBaseURL=https://sonarcloud.io
-  - sonar.core.startTime=2021-11-29T15:26:28+0100
+  - sonar.core.startTime=2022-01-04T15:24:00+0100
   - sonar.dbcleaner.weeksBeforeDeletingAllSnapshots=260
   - sonar.dbcleaner.weeksBeforeKeepingOnlyOneSnapshotByMonth=4
   - sonar.dbcleaner.weeksBeforeKeepingOnlyOneSnapshotByWeek=1

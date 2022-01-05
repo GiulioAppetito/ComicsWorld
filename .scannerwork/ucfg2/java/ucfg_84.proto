@@ -1,16 +1,17 @@
 
->com.example.comics.model.Review#getComment()Ljava/lang/String;j
-`C:/Users/biril/IdeaProjects/ComicsWorld/trunk/src/main/java/com/example/comics/model/Review.java ("1*º
-1j
-`C:/Users/biril/IdeaProjects/ComicsWorld/trunk/src/main/java/com/example/comics/model/Review.java	 	(¿
-¼
-j
-`C:/Users/biril/IdeaProjects/ComicsWorld/trunk/src/main/java/com/example/comics/model/Review.java	 	(
-%0java.lang.String"__id*0*.!
-com.example.comics.model.Review"	
-comment"†
-j
-`C:/Users/biril/IdeaProjects/ComicsWorld/trunk/src/main/java/com/example/comics/model/Review.java	 	(
-
-%0java.lang.StringB#!
-com.example.comics.model.Review
+Bcom.example.comics.model.Discount#getPercentage()Ljava/lang/Float;l
+bC:/Users/biril/IdeaProjects/ComicsWorld/trunk/src/main/java/com/example/comics/model/Discount.java ("1*Ã
+1l
+bC:/Users/biril/IdeaProjects/ComicsWorld/trunk/src/main/java/com/example/comics/model/Discount.java (Å
+Â
+l
+bC:/Users/biril/IdeaProjects/ComicsWorld/trunk/src/main/java/com/example/comics/model/Discount.java (
+%0java.lang.Float"__id*5*3#
+!com.example.comics.model.Discount"
+
+percentage"‡
+l
+bC:/Users/biril/IdeaProjects/ComicsWorld/trunk/src/main/java/com/example/comics/model/Discount.java (
+
+%0java.lang.FloatB%#
+!com.example.comics.model.Discount

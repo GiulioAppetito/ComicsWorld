@@ -1,0 +1,41 @@
+
+âcom.example.comics.model.dao.Queries#checkSignedUserByEmail(Ljava/sql/Statement;Ljava/lang/String;Ljava/lang/String;)Ljava/sql/ResultSet;o
+eC:/Users/biril/IdeaProjects/ComicsWorld/trunk/src/main/java/com/example/comics/model/dao/Queries.javaC C(2"1*≥	
+1o
+eC:/Users/biril/IdeaProjects/ComicsWorld/trunk/src/main/java/com/example/comics/model/dao/Queries.javaD! D('Æ
+´
+p
+eC:/Users/biril/IdeaProjects/ComicsWorld/trunk/src/main/java/com/example/comics/model/dao/Queries.javaD! D(£
+%0java.lang.String"Pjava.lang.String#format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;*"
+java.lang.String*SQ
+OSELECT * FROM users WHERE (email = '%s' OR username = '%s') AND password = '%s'* 
+
+
+credentialjava.lang.String* 
+
+
+credentialjava.lang.String*
+
+passwordjava.lang.String∫
+∑
+p
+eC:/Users/biril/IdeaProjects/ComicsWorld/trunk/src/main/java/com/example/comics/model/dao/Queries.javaD D(§#
+selectStatementjava.lang.String"__id*
+
+%0java.lang.Stringæª
+o
+eC:/Users/biril/IdeaProjects/ComicsWorld/trunk/src/main/java/com/example/comics/model/dao/Queries.javaE E(1
+%1java.sql.ResultSet"Gjava.sql.Statement#executeQuery(Ljava/lang/String;)Ljava/sql/ResultSet;*
+
+stmtjava.sql.Statement*%
+#
+selectStatementjava.lang.String2 executeQuery(Ljava/lang/String;)"ç
+o
+eC:/Users/biril/IdeaProjects/ComicsWorld/trunk/src/main/java/com/example/comics/model/dao/Queries.javaE E(2
+
+%1java.sql.ResultSet:
+stmtjava.sql.Statement:
+
+credentialjava.lang.String:
+passwordjava.lang.StringB("&
+$com.example.comics.model.dao.Queries

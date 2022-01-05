@@ -1,32 +1,20 @@
-package com.example.comics.view1;
+package com.example.comics.controller;
 
-import com.example.comics.model.Review;
-import javafx.fxml.FXML;
-import javafx.scene.control.Label;
-import javafx.scene.image.ImageView;
-import javafx.scene.text.Text;
+import com.example.comics.model.fagioli.LoginBean;
+import com.example.comics.model.UserLogin;
+import com.example.comics.model.dao.AccountDAO;
 
-public class ReviewController {
+public class LoginController {
 
-    @FXML
-    private ImageView ivProPic;
+    public boolean login(LoginBean loginBean) throws Exception {
 
-    @FXML
-    private Label lblUsername;
-
-    @FXML
-    private Text txtComment;
-
-    public void setData(Review review) {
-        lblUsername.setText(review.getUsername());
-        txtComment.setText(review.getComment());
-
-    }
-
-    public void dummy() {
-
-        System.out.println("Card selected on click : comment");
-
-
+        AccountDAO dao = new AccountDAO();
+        String role;
+        role = dao.verifyCredentials(loginBean.getEmail(), loginBean.getPassword());
+        if(role.equals("reader") || role.equals("author")){
+            UserLogin.createAccount(loginBean.getEmail(), loginBean.getPassword(), role);
+            return true;
+        }
+        return false;
     }
 }

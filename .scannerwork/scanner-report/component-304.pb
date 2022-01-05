@@ -1,1 +1,1 @@
-° 2javaX=hrDtrunk/src/main/java/com/example/comics/view1/SettingsController.java
+° 2javaXhrMtrunk/src/main/java/com/example/comics/controller/RegistrationController.java

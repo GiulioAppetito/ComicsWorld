@@ -1,0 +1,33 @@
+
+wcom.example.comics.model.dao.Queries#retrieveBadgesByReader(Ljava/sql/Statement;Ljava/lang/String;)Ljava/sql/ResultSet;q
+eC:/Users/biril/IdeaProjects/ComicsWorld/trunk/src/main/java/com/example/comics/model/dao/Queries.javaë ë(2"1*É	
+1q
+eC:/Users/biril/IdeaProjects/ComicsWorld/trunk/src/main/java/com/example/comics/model/dao/Queries.javaí! í('ˆ
+Û
+r
+eC:/Users/biril/IdeaProjects/ComicsWorld/trunk/src/main/java/com/example/comics/model/dao/Queries.javaí! í(ï
+%0java.lang.String"Pjava.lang.String#format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;*"
+java.lang.String*][
+YSELECT * FROM achievedBadges join badges on achievedbadges_id = badgeID WHERE user = '%s'*
+
+usernamejava.lang.Stringº
+π
+r
+eC:/Users/biril/IdeaProjects/ComicsWorld/trunk/src/main/java/com/example/comics/model/dao/Queries.javaí í(ñ#
+selectStatementjava.lang.String"__id*
+
+%0java.lang.String¿Ω
+q
+eC:/Users/biril/IdeaProjects/ComicsWorld/trunk/src/main/java/com/example/comics/model/dao/Queries.javaì ì(1
+%1java.sql.ResultSet"Gjava.sql.Statement#executeQuery(Ljava/lang/String;)Ljava/sql/ResultSet;*
+
+stmtjava.sql.Statement*%
+#
+selectStatementjava.lang.String2 executeQuery(Ljava/lang/String;)"è
+q
+eC:/Users/biril/IdeaProjects/ComicsWorld/trunk/src/main/java/com/example/comics/model/dao/Queries.javaì ì(2
+
+%1java.sql.ResultSet:
+stmtjava.sql.Statement:
+usernamejava.lang.StringB("&
+$com.example.comics.model.dao.Queries

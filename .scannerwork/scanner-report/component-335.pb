@@ -1,0 +1,1 @@
+Ï 2javaX#hrCtrunk/src/main/java/com/example/comics/model/fagioli/LoginBean.java

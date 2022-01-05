@@ -1,1 +1,1 @@
- 2xmlXhr.idea/encodings.xml
+ 2xmlXhr.idea/compiler.xml

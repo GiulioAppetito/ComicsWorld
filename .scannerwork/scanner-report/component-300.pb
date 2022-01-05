@@ -1,1 +1,1 @@
-¬ 2javaXÖhrGtrunk/src/main/java/com/example/comics/view1/ReaderHomeControllerG.java
+¬ 2javaX,hrQtrunk/src/main/java/com/example/comics/controller/CustomizeProfileController.java
