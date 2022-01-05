@@ -1,112 +1,78 @@
-package com.example.comics.view1;
+package com.example.comics.controller;
 
-import com.example.comics.model.Chapter;
-import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.control.Button;
-import javafx.scene.layout.VBox;
+import com.example.comics.model.fagioli.ObjectiveBean;
+import com.example.comics.model.fagioli.ReviewBean;
+import com.example.comics.model.*;
+import com.example.comics.model.dao.SeriesDAO;
 
-import java.io.IOException;
-import java.net.URL;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+public class PostReviewController extends ReviewSubject {
 
-public class SerieController {
+    public void post(ReviewBean reviewBean) {
 
-    @FXML
-    public Button btnBack;
+        String reviewer = reviewBean.getUsername();
+        String comment = reviewBean.getComment();
+        Review review = new Review(comment,reviewer);
+        review.setSeries(reviewBean.getSeries());
+        review.setChapter(reviewBean.getChapter());
 
-    @FXML
-    private Button btnCheck;
+        //salvataggio sul DB
+        saveReview(review);
 
+        //aggiorna model
+        UserLogin.getInstance().getReader().addPublishedReview(review);
 
-    @FXML
-    private VBox vbChapters;
+        //controllare obiettivi
+        SeriesDAO seriesDAO = new SeriesDAO();
+        Series series = seriesDAO.retrieveSeries(reviewBean.getSeries());
+        checkObjectives(series);
 
-    public void init() {
+        notifyObservers(reviewBean);
+    }
 
-        ArrayList<Chapter> listOfChapters = new ArrayList<>(addChapters());
+    private void checkObjectives(Series series) {
+        //numero di review del lettore
+        int numOfReviews = 0;
+        for(Review review : UserLogin.getInstance().getReader().getPublishedReviews()) {
+            if(review.getSeries().equals(series.getTitle())){
+                numOfReviews++;
+            }
+        }
+        //controllo degli obiettivi
+        for(Objective objective : series.getObjectives()){
 
-        for (Chapter chapter : listOfChapters) {
+            if(objective.getType().equals("reviewsObjective")){
+                if(objective.achieveObjective(numOfReviews)){
+                    //controllo che il lettore non abbia già raggiunto questo obiettivo confrontando i badge
+                    if(!UserLogin.getInstance().getReader().hasAchievedThisBadge(objective.getBadge())){
 
-            FXMLLoader fxmlLoader = new FXMLLoader();
-            fxmlLoader.setLocation(getClass().getResource("chapterItem.fxml"));
-            try {
-                VBox vbChapter = fxmlLoader.load();
-                ChapterItemController chapterControllerItem = fxmlLoader.getController();
-                chapterControllerItem.setData(chapter);
+                        //aggiungo badge alla lista e salvo sul DB + assegno badge
+                        UserLogin.getInstance().getReader().addAchievedBadge(objective.getBadge());
 
-                vbChapter.setOnMouseClicked(event -> {
-                    try {
-                        openChapter();
-                    } catch (IOException e) {
-                        e.printStackTrace();
+                        ObjectiveBean objectiveBean = new ObjectiveBean();
+                        objectiveBean.setBadge(objective.getBadge());
+                        objectiveBean.setLevel(objective.getLevel());
+                        objectiveBean.setSeriesTitle((objective.getSeriesTitle()));
+
+                        //genero discount code
+                        DiscountCode discountCode = new DiscountCode(objective.getDiscount());
+                        UserLogin.getInstance().getReader().addDiscountCode(discountCode);
+
+                        //notifica di badge
+                        notifyAchievedReviewObjective(objectiveBean);
+
+                        //discount code : arriva la mail
                     }
-                });
-
-                vbChapters.getChildren().add(vbChapter);
-
-            } catch (IOException e) {
-                e.printStackTrace();
+                }
             }
+
         }
-
-        btnBack.setOnAction(event -> {
-            //ha senso che serie conosca home per tornare sul feed?
-            //non so, secondo me basterebbe andare dinuovo su feed facendo tipo un refresh
-            //però che ne sa il feed che deve sostituire il centro della home?
-            //boh
-            ReaderHomeControllerG readerHomeControllerG = ReaderHomeControllerG.getInstance();
-            try {
-                readerHomeControllerG.openFeed();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        });
-
-        btnCheck.setOnAction(event ->
-        {
-            try {
-                openChapter();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        }
-        );
-    }
-
-    private void openChapter() throws IOException {
-
-        ChapterControllerG chapterControllerG = new ChapterControllerG();
-        FXMLLoader loader = new FXMLLoader();
-
-        URL fxmlLocation = ChapterControllerG.class.getResource("chapter.fxml");
-        loader.setLocation(fxmlLocation);
-        loader.setController(chapterControllerG);
-
-        ReaderHomeControllerG readerHomeControllerG = ReaderHomeControllerG.getInstance();
-        readerHomeControllerG.changeCenter(loader.load());
-
-        chapterControllerG.init();
+        //azione a seguito del controllo
 
     }
 
-    private List<Chapter> addChapters(){
-
-        List<Chapter> chapters = new ArrayList<>();
-        int i;
-        List<String> nameList = Arrays.asList("1.Chapter","2.Chapter","3.Chapter","4.Chapter");
-        List<String> seriesList = Arrays.asList("Spiderman","Superman","Saitama","Senpai");
-
-        for(i=0; i<nameList.size(); i++){
-            Chapter chapter = new Chapter();
-            chapter.setName(nameList.get(i));
-            chapter.setSeries(seriesList.get(i));
-            chapters.add(chapter);
-        }
-
-        return chapters;
-
+    private void saveReview(Review review) {
+        SeriesDAO seriesDAO = new SeriesDAO();
+        seriesDAO.addReviewToChapter(review);
     }
+
 }

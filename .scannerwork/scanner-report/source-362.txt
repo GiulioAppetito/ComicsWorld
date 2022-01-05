@@ -1,330 +1,169 @@
-.button1
-{
-    -fx-background-color : #393351;
-    -fx-background-radius :  30 0 0 30;
-}
-.button1:hover
-{
-    -fx-background-color : #524A7B ;
-    -fx-background-radius :  30 0 0 30;
-}
-.button1:pressed
-{
-    -fx-background-color : #2F2B43 ;
-    -fx-background-radius :  30 0 0 30;
-}
+package com.example.comics.view1;
 
-.button2
-{
-    -fx-background-color : #E2E2E2;
-    -fx-background-radius :  20;
-}
-.button2:hover
-{
-    -fx-background-color : #D2D2D2 ;
-    -fx-background-radius :  20;
-}
-.button2:pressed
-{
-    -fx-background-color : #C2C2C2 ;
-    -fx-background-radius :  20;
-}
-.button2:focused
-{
-    -fx-background-color :#5DADE2 ;
-    -fx-background-radius :  20;
+import com.example.comics.model.Genres;
+import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.Pane;
+import javafx.scene.layout.VBox;
 
-}
+import java.io.IOException;
+import java.net.URL;
 
-.button2
-{
-    -fx-background-color : #E2E2E2;
-    -fx-background-radius :  20;
-}
-.button2:hover
-{
-    -fx-background-color : #D2D2D2 ;
-    -fx-background-radius :  20;
-}
-.button2:pressed
-{
-    -fx-background-color : #5DADE2 ;
-    -fx-background-radius :  20;
-}
-.button2:focused
-{
-    -fx-background-color :#5DADE2 ;
-    -fx-background-radius :  20;
+public class CategoriesControllerG {
 
-}
+    @FXML
+    private VBox boxA;
 
-.buttonEdit {
-}
-.buttonEdit:hover
-{
-    -fx-background-color : #8ec7ff;
-    -fx-background-radius :  20;
-}
-.buttonEdit:pressed
-{
-    -fx-background-color : #2c92ff;
-    -fx-background-radius :  20;
-}
+    @FXML
+    private VBox boxB;
 
+    @FXML
+    private VBox boxC;
 
-.lateral
-{
-    -fx-background-color: white;
+    @FXML
+    private VBox boxD;
 
-}
-.lateral:hover
-{
-    -fx-background-color : #D2D2D2 ;
-    -fx-background-radius :  20;
-}
-.lateral:pressed
-{
-    -fx-background-color : #C2C2C2 ;
-    -fx-background-radius :  20;
-}
-.lateral:focused
-{
-    -fx-background-color :#5DADE2 ;
-    -fx-background-radius :  25;
+    @FXML
+    private VBox boxE;
 
-}
+    @FXML
+    private VBox boxF;
+
+    @FXML
+    private VBox boxG;
+
+    @FXML
+    private VBox boxH;
+
+    @FXML
+    private VBox boxI;
+
+    @FXML
+    private VBox boxJ;
+
+    @FXML
+    private VBox boxK;
+
+    @FXML
+    private VBox boxL;
+
+    @FXML
+    private VBox boxM;
+
+    @FXML
+    private VBox boxN;
+
+    @FXML
+    private VBox boxO;
+
+    @FXML
+    private VBox boxP;
+
+    @FXML
+    private VBox boxQ;
+
+    @FXML
+    private VBox boxR;
+
+    @FXML
+    private VBox boxS;
+
+    @FXML
+    private VBox boxT;
+
+    @FXML
+    private VBox boxU;
+
+    @FXML
+    private VBox boxV;
+
+    @FXML
+    private VBox boxW;
+
+    @FXML
+    private VBox boxX;
+
+    @FXML
+    private VBox boxY;
+
+    @FXML
+    private VBox boxZ;
 
 
-.button4:hover
-{
-    -fx-background-color :linear-gradient(to top left, #D4CEE3, #41951C);
-    -fx-background-radius :  30 30 30 30;
-}
-.button4:pressed
-{
-    -fx-background-color :linear-gradient(to top left, #41951C, #D4CEE3);
-    -fx-background-radius :  30 30 30 30;
-}
+    public void init() {
 
-.linear-grad
-{
-    -fx-background-color: linear-gradient(to bottom left, #A868A0, #2D75E8);
-    -fx-background-radius: 25;
-}
+        for (Genres category : Genres.values()) {
 
-.white-background{
-    -fx-background-color: #fff;
-}
+            String categoryName = category.name();
+            FXMLLoader fxmlLoader = new FXMLLoader();
+            fxmlLoader.setLocation(getClass().getResource("categorycard.fxml"));
+            try {
+                HBox categoryBox = fxmlLoader.load();
+                categoryBox.setOnMouseClicked(event -> {
+                    try {
+                        openCategory(categoryName);
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                });
 
+                CategoryCardControllerG categoryCardController = fxmlLoader.getController();
+                categoryCardController.setData(categoryName);
 
-.highlighted-background{
-    -fx-background-color: #ACACE6;
-}
+                switch (categoryName.substring(0,1)) {
+                    case "A" -> boxA.getChildren().add(categoryBox);
+                    case "B" -> boxB.getChildren().add(categoryBox);
+                    case "C" -> boxC.getChildren().add(categoryBox);
+                    case "D" -> boxD.getChildren().add(categoryBox);
+                    case "E" -> boxE.getChildren().add(categoryBox);
+                    case "F" -> boxF.getChildren().add(categoryBox);
+                    case "G" -> boxG.getChildren().add(categoryBox);
+                    case "H" -> boxH.getChildren().add(categoryBox);
+                    case "I" -> boxI.getChildren().add(categoryBox);
+                    case "J" -> boxJ.getChildren().add(categoryBox);
+                    case "K" -> boxK.getChildren().add(categoryBox);
+                    case "L" -> boxL.getChildren().add(categoryBox);
+                    case "M" -> boxM.getChildren().add(categoryBox);
+                    case "N" -> boxN.getChildren().add(categoryBox);
+                    case "O" -> boxO.getChildren().add(categoryBox);
+                    case "P" -> boxP.getChildren().add(categoryBox);
+                    case "Q" -> boxQ.getChildren().add(categoryBox);
+                    case "R" -> boxR.getChildren().add(categoryBox);
+                    case "S" -> boxS.getChildren().add(categoryBox);
+                    case "T" -> boxT.getChildren().add(categoryBox);
+                    case "U" -> boxU.getChildren().add(categoryBox);
+                    case "V" -> boxV.getChildren().add(categoryBox);
+                    case "W" -> boxW.getChildren().add(categoryBox);
+                    case "X" -> boxX.getChildren().add(categoryBox);
+                    case "Y" -> boxY.getChildren().add(categoryBox);
+                    case "Z" -> boxZ.getChildren().add(categoryBox);
+                    default ->  boxA.getChildren().add(categoryBox);
 
+                }
 
-.default-background{
-    -fx-background-color: #D7D7D7;
-}
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
 
-.transparent{
-    -fx-background-color: rgba(0,0,0,0);
-}
+        }
 
-.round-layout{
-    -fx-border-radius:50;
-    -fx-border-color:#D7D7D7;
-}
+    }
 
-.oval-layout{
-    -fx-border-radius:25;
-    -fx-border-color:#D7D7D7;
-}
+    private void openCategory(String categoryName) throws IOException {
 
-.round-corners{
-    -fx-border-radius: 200;
-}
+        FXMLLoader loader = new FXMLLoader();
 
+        URL fxmlLocation = CategoryController.class.getResource("category.fxml");
+        loader.setLocation(fxmlLocation);
+        Pane view = loader.load();
 
+        CategoryController categoryController = loader.getController();
+        categoryController.setData(categoryName);
 
-.selected{
-    -fx-background-color:#F3F3F3;
-}
-
-.wallpaper{
-    -fx-background-image: url('fluid5.png');
-    -fx-background-size: 1200
-
-}
-.wallpaperlogin{
-    -fx-background-image: url('fluid5.png');
-       -fx-background-size: 800;
-
-}
-.glass{
-    -fx-effect: dropshadow(one-pass-box, #eaeaea,10,10,5,5);
-}
-
-.buttonCancel
-{
-    -fx-background-color : #E2E2E2;
-    -fx-background-radius :  20;
-}
-.buttonCancel:hover
-{
-    -fx-background-color : #D2D2D2 ;
-    -fx-background-radius :  20;
-}
-.buttonCancel:pressed
-{
-    -fx-background-color : #d25b5b;
-    -fx-background-radius :  20;
-}
-
-.buttonLogin
-{
-    -fx-background-color : #E2E2E2;
-    -fx-background-radius :  20;
-}
-.buttonLogin:hover
-{
-    -fx-background-color : #D2D2D2 ;
-    -fx-background-radius :  20;
-}
-.buttonLogin:pressed
-{
-    -fx-background-color : #2c92ff;
-    -fx-background-radius :  20;
-}
-
-.background-display{
-    -fx-background-color: #c7c7c7;
-}
-
-.panes
-{
-    -fx-background-color : #ffffff;
-    -fx-background-radius :  20;
-}
-.panes:hover
-{
-
-}
-
-.gradient2
-{
-    -fx-background-color: linear-gradient(to bottom left, #ffffff, #8d8d8d);
-    -fx-background-radius: 25;
-}
-
-/*.combo-box
-{
-    -fx-background-color : #141124;
-    -fx-border-color:  #515658;
-    -fx-border-radius: 30;
-}
-.combo-box:hover
-{
-    -fx-background-color : #141124;
-    -fx-border-color:  #FFFF;
-    -fx-border-radius: 30;
-}
-.combo-box:pressed
-{
-    -fx-background-color : #141124;
-    -fx-border-color:  #FFFF;
-    -fx-border-radius: 30;
-}
-
-.table-view .column-header,
-.table-view .column-header-background .filler {
-    -fx-cell-size : 20;
-    -fx-background-color:   #2D75E8;
-}
-.table-view .column-header .label{
-
-    -fx-text-fill: white;
-    -fx-font-weight: bold;
-    -fx-alignment: CENTER_LEFT;
-}
-.table-view .cell{
-    -fx-cell-size: 30;
-    -fx-alignment: center-left;
-    -fx-text-fill: #000000;
-}
-
-.table-row-cell:selected {
-    -fx-background-color:  rgb(127, 172, 243);
-}
-.table-row-cell:selected .text {
-    -fx-fill : white ;
-
-}
-/* scroll bar starts here */
-
-/* The increment and decrement button CSS class of scrollbar */
-/*
-.table-view .increment-button ,.table-view .decrement-button {
-    -fx-background-color:transparent;
-    -fx-background-radius: 2em;
-
-}
-/*
-/* The main scrollbar **track** CSS class  */
-.table-view .scroll-bar:horizontal .track,
-.table-view .scroll-bar:vertical .track{
-    -fx-background-color: transparent;
-    -fx-border-color:derive(  #2D75E8,80%);
-    -fx-background-radius: 2em;
-    -fx-border-radius:2em;
-}
-
-/* The main scrollbar **thumb** CSS class which we drag every time (movable) */
-.table-view .scroll-bar:horizontal .thumb,
-.table-view .scroll-bar:vertical .thumb {
-    -fx-background-color:derive( #2D75E8,90%);
-    -fx-background-insets: 2, 0, 0;
-    -fx-background-radius: 2em;
-
-}
-
-/* chart properties */
-.chart {
-    -fx-padding: 10px;
-    -fx-background-color: transparent;
-    -fx-legend-visible: false;
-}
-.chart-plot-background {
-    -fx-background-color:transparent;
-}
-
-.chart-pie {
-    -fx-border-color: derive(-fx-pie-color, 1%);
-    -fx-border-width: 0px;
-}
-
-.onlyhover:hover{
-    -fx-background-color : #D2D2D2 ;
-    -fx-background-radius :  20;
-}
-
-.buttonprofile
-{
-    -fx-background-color : #ffffff;
-    -fx-background-radius :  20;
-}
-.buttonprofile:hover
-{
-    -fx-background-color : #D2D2D2 ;
-    -fx-background-radius :  20;
-}
-.buttonprofile:pressed
-{
-    -fx-background-color : #5DADE2 ;
-    -fx-background-radius :  20;
-}
-.buttonprofile:focused
-{
-    -fx-background-color :#5DADE2 ;
-    -fx-background-radius :  20;
+        HomeFactory homeFactory = new HomeFactory();
+        HomeControllerG homeControllerG = homeFactory.getHomeControllerG();
+        homeControllerG.changeCenter(view);
+    }
 
 }

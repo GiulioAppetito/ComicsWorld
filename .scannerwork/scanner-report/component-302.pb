@@ -1,1 +1,1 @@
-® 2javaX!hrBtrunk/src/main/java/com/example/comics/view1/ReviewController.java
+® 2javaXhrFtrunk/src/main/java/com/example/comics/controller/LoginController.java

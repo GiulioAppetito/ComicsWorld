@@ -1,0 +1,1 @@
+Í 2javaXhrCtrunk/src/main/java/com/example/comics/model/fagioli/BadgeBean.java

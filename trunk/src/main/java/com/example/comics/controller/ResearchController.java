@@ -1,7 +1,6 @@
 package com.example.comics.controller;
 
 import com.example.comics.model.Badge;
-import com.example.comics.model.Objective;
 import com.example.comics.model.fagioli.BadgeBean;
 import com.example.comics.model.fagioli.SeriesBean;
 import com.example.comics.model.Series;
@@ -89,7 +88,6 @@ public class ResearchController {
             badgeBean = new BadgeBean();
             badgeBean.setIcon(badge.getIcon());
             badgeBean.setName(badge.getName());
-            System.out.println("[RESEARCH CONTROLLER] BADGE: " + badge.getName());
             badgeBeans.add(badgeBean);
         }
 

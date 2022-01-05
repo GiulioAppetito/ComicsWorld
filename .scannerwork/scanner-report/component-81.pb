@@ -1,1 +1,0 @@
-Q 2xmlXhr.idea/sonarlint.xml

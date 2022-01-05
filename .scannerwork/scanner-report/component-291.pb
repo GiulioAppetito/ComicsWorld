@@ -1,1 +1,0 @@
-£ 2javaXLhrMtrunk/src/main/java/com/example/comics/view1/FavouriteAuthorsControllerG.java

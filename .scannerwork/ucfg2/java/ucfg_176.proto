@@ -1,0 +1,33 @@
+
+tcom.example.comics.model.dao.Queries#retriveToReadSeries(Ljava/sql/Statement;Ljava/lang/String;)Ljava/sql/ResultSet;o
+eC:/Users/biril/IdeaProjects/ComicsWorld/trunk/src/main/java/com/example/comics/model/dao/Queries.java2 2(/"1*À
+1o
+eC:/Users/biril/IdeaProjects/ComicsWorld/trunk/src/main/java/com/example/comics/model/dao/Queries.java3! 3('«
+ƒ
+o
+eC:/Users/biril/IdeaProjects/ComicsWorld/trunk/src/main/java/com/example/comics/model/dao/Queries.java3! 3(i
+%0java.lang.String"Pjava.lang.String#format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;*"
+java.lang.String*53
+1SELECT * from userToReadSeries where user = '%s' *
+
+userjava.lang.Stringπ
+∂
+o
+eC:/Users/biril/IdeaProjects/ComicsWorld/trunk/src/main/java/com/example/comics/model/dao/Queries.java3 3(j#
+selectStatementjava.lang.String"__id*
+
+%0java.lang.Stringæª
+o
+eC:/Users/biril/IdeaProjects/ComicsWorld/trunk/src/main/java/com/example/comics/model/dao/Queries.java4 4(1
+%1java.sql.ResultSet"Gjava.sql.Statement#executeQuery(Ljava/lang/String;)Ljava/sql/ResultSet;*
+
+stmtjava.sql.Statement*%
+#
+selectStatementjava.lang.String2 executeQuery(Ljava/lang/String;)"ç
+o
+eC:/Users/biril/IdeaProjects/ComicsWorld/trunk/src/main/java/com/example/comics/model/dao/Queries.java4 4(2
+
+%1java.sql.ResultSet:
+stmtjava.sql.Statement:
+userjava.lang.StringB("&
+$com.example.comics.model.dao.Queries

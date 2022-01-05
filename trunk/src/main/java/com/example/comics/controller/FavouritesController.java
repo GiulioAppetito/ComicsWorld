@@ -13,12 +13,8 @@ public class FavouritesController {
         series.setCover(seriesBean.getCover());
         series.setAuthor(series.getAuthor());
 
-       if(UserLogin.getInstance().getReader().likesThisSeries(series)){
-           return true;
-       }
-       else{
-           return false;
-       }
+        return UserLogin.getInstance().getReader().likesThisSeries(series);
+
 
     }
 

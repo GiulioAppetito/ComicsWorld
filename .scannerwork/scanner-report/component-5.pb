@@ -1,1 +1,1 @@
- 2xmlXhr,.idea/inspectionProfiles/Project_Default.xml
+ 2xmlXhr.idea/encodings.xml

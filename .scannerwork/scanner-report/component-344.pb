@@ -1,0 +1,1 @@
+Ø 2javaX6hr;trunk/src/main/java/com/example/comics/model/Objective.java

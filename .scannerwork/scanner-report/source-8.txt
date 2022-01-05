@@ -1,13 +1,19 @@
 <component name="libraryTable">
-  <library name="Maven: com.dlsc.formsfx:formsfx-core:11.3.2">
+  <library name="Java EE 6-Java EE 6">
     <CLASSES>
-      <root url="jar://$MAVEN_REPOSITORY$/com/dlsc/formsfx/formsfx-core/11.3.2/formsfx-core-11.3.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/javax.jms.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/javax.persistence.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/javax.annotation.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/javax.ejb.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/javax.transaction.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/javax.resource.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/javax.servlet.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/javax.servlet.jsp.jstl.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/javax.servlet.jsp.jar!/" />
+      <root url="jar://$PROJECT_DIR$/ojdbc11.jar!/" />
+      <root url="jar://$PROJECT_DIR$/trunk/lib/mysql-connector-java-5.1.46-bin.jar!/" />
     </CLASSES>
-    <JAVADOC>
-      <root url="jar://$MAVEN_REPOSITORY$/com/dlsc/formsfx/formsfx-core/11.3.2/formsfx-core-11.3.2-javadoc.jar!/" />
-    </JAVADOC>
-    <SOURCES>
-      <root url="jar://$MAVEN_REPOSITORY$/com/dlsc/formsfx/formsfx-core/11.3.2/formsfx-core-11.3.2-sources.jar!/" />
-    </SOURCES>
+    <JAVADOC />
+    <SOURCES />
   </library>
 </component>

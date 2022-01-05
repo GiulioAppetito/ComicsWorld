@@ -20,7 +20,6 @@ public class PostReviewController extends ReviewSubject {
 
         //aggiorna model
         UserLogin.getInstance().getReader().addPublishedReview(review);
-        System.out.println("[POST REVIEW CONTROLLER] User login ha review : "+UserLogin.getInstance().getReader().getPublishedReviews().get(0).getComment());
 
         //controllare obiettivi
         SeriesDAO seriesDAO = new SeriesDAO();
@@ -28,7 +27,6 @@ public class PostReviewController extends ReviewSubject {
         checkObjectives(series);
 
         notifyObservers(reviewBean);
-        //aggiunta sul chapter//chapter.addReview(reviewBean.getComment(), reviewBean.getUsername());//chapter.notify();
     }
 
     private void checkObjectives(Series series) {
@@ -45,18 +43,15 @@ public class PostReviewController extends ReviewSubject {
             if(objective.getType().equals("reviewsObjective")){
                 if(objective.achieveObjective(numOfReviews)){
                     //controllo che il lettore non abbia già raggiunto questo obiettivo confrontando i badge
-                    System.out.println("[POST REVIEW CONTROLLER] Obiettivo raggiunto!");
-                    if(UserLogin.getInstance().getReader().hasAchievedThisBadge(objective.getBadge())){
-                        System.out.println("[POST REVIEW CONTROLLER] Reader ha già questo obiettivo.");
+                    if(!UserLogin.getInstance().getReader().hasAchievedThisBadge(objective.getBadge())){
 
-                    }else {
                         //aggiungo badge alla lista e salvo sul DB + assegno badge
                         UserLogin.getInstance().getReader().addAchievedBadge(objective.getBadge());
 
                         ObjectiveBean objectiveBean = new ObjectiveBean();
                         objectiveBean.setBadge(objective.getBadge());
                         objectiveBean.setLevel(objective.getLevel());
-                        objectiveBean.setSeriesTitle((objective.getSeries_title()));
+                        objectiveBean.setSeriesTitle((objective.getSeriesTitle()));
 
                         //genero discount code
                         DiscountCode discountCode = new DiscountCode(objective.getDiscount());
@@ -67,10 +62,7 @@ public class PostReviewController extends ReviewSubject {
 
                         //discount code : arriva la mail
                     }
-                }else{
-                    System.out.println("Obiettivo non raggiunto per numero di reviews.");
                 }
-
             }
 
         }

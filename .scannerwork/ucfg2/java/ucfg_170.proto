@@ -1,0 +1,33 @@
+
+tcom.example.comics.model.dao.Queries#retreiveCredentials(Ljava/sql/Statement;Ljava/lang/String;)Ljava/sql/ResultSet;o
+eC:/Users/biril/IdeaProjects/ComicsWorld/trunk/src/main/java/com/example/comics/model/dao/Queries.java (/"1*≥
+1o
+eC:/Users/biril/IdeaProjects/ComicsWorld/trunk/src/main/java/com/example/comics/model/dao/Queries.java (√
+¿
+o
+eC:/Users/biril/IdeaProjects/ComicsWorld/trunk/src/main/java/com/example/comics/model/dao/Queries.java ([
+%0java.lang.String"Pjava.lang.String#format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;*"
+java.lang.String*-+
+)SELECT * FROM users WHERE username = '%s'*
+
+usernamejava.lang.StringØ
+¨
+o
+eC:/Users/biril/IdeaProjects/ComicsWorld/trunk/src/main/java/com/example/comics/model/dao/Queries.java (\
+queryjava.lang.String"__id*
+
+%0java.lang.String¥±
+o
+eC:/Users/biril/IdeaProjects/ComicsWorld/trunk/src/main/java/com/example/comics/model/dao/Queries.java ('
+%1java.sql.ResultSet"Gjava.sql.Statement#executeQuery(Ljava/lang/String;)Ljava/sql/ResultSet;*
+
+stmtjava.sql.Statement*
+
+queryjava.lang.String2 executeQuery(Ljava/lang/String;)"ç
+o
+eC:/Users/biril/IdeaProjects/ComicsWorld/trunk/src/main/java/com/example/comics/model/dao/Queries.java ((
+
+%1java.sql.ResultSet:
+stmtjava.sql.Statement:
+usernamejava.lang.StringB("&
+$com.example.comics.model.dao.Queries

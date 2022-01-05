@@ -1,16 +1,17 @@
 
-<com.example.comics.model.Chapter#getName()Ljava/lang/String;k
-aC:/Users/biril/IdeaProjects/ComicsWorld/trunk/src/main/java/com/example/comics/model/Chapter.java ("1*»
-1k
-aC:/Users/biril/IdeaProjects/ComicsWorld/trunk/src/main/java/com/example/comics/model/Chapter.java (¾
-»
-k
-aC:/Users/biril/IdeaProjects/ComicsWorld/trunk/src/main/java/com/example/comics/model/Chapter.java (
-%0java.lang.String"__id*.*,"
- com.example.comics.model.Chapter"
-name"‡
-k
-aC:/Users/biril/IdeaProjects/ComicsWorld/trunk/src/main/java/com/example/comics/model/Chapter.java (
+?com.example.comics.model.Review#getUsername()Ljava/lang/String;j
+`C:/Users/biril/IdeaProjects/ComicsWorld/trunk/src/main/java/com/example/comics/model/Review.java ("1*»
+1j
+`C:/Users/biril/IdeaProjects/ComicsWorld/trunk/src/main/java/com/example/comics/model/Review.java (À
+½
+j
+`C:/Users/biril/IdeaProjects/ComicsWorld/trunk/src/main/java/com/example/comics/model/Review.java (
+%0java.lang.String"__id*1*/!
+com.example.comics.model.Review"
+
+username"†
+j
+`C:/Users/biril/IdeaProjects/ComicsWorld/trunk/src/main/java/com/example/comics/model/Review.java (
 
-%0java.lang.StringB$"
- com.example.comics.model.Chapter
+%0java.lang.StringB#!
+com.example.comics.model.Review

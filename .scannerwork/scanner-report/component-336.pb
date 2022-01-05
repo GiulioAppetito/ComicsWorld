@@ -1,0 +1,1 @@
+Ð 2javaX*hrGtrunk/src/main/java/com/example/comics/model/fagioli/ObjectiveBean.java

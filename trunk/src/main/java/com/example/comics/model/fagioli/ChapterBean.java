@@ -2,7 +2,6 @@ package com.example.comics.model.fagioli;
 
 import com.example.comics.model.Review;
 import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
 import java.util.ArrayList;
 import java.util.List;
 

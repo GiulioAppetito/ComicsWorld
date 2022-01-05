@@ -102,7 +102,7 @@
                            <Insets left="20.0" />
                         </padding>
                      </Label>
-                     <Button fx:id="btnCloseEditorProPic" alignment="CENTER_RIGHT" mnemonicParsing="false" onAction="#closePropicEditor" prefHeight="49.0" prefWidth="65.0" stylesheets="@../../../../css/fullpackstyling.css" text="X" textAlignment="CENTER" textFill="WHITE">
+                     <Button fx:id="btnCloseEditorProPic" alignment="CENTER_RIGHT" mnemonicParsing="false" onAction="#closeEditor" prefHeight="49.0" prefWidth="65.0" stylesheets="@../../../../css/fullpackstyling.css" text="X" textAlignment="CENTER" textFill="WHITE">
                         <font>
                            <Font name="Berlin Sans FB" size="24.0" />
                         </font>
@@ -164,7 +164,7 @@
                            <Insets left="20.0" />
                         </padding>
                      </Label>
-                     <Button fx:id="btnCloseEditorUsername" alignment="CENTER_RIGHT" mnemonicParsing="false" onAction="#closeUsernameEditor" prefHeight="49.0" prefWidth="65.0" stylesheets="@../../../../css/fullpackstyling.css" text="X" textAlignment="CENTER" textFill="WHITE">
+                     <Button fx:id="btnCloseEditorUsername" alignment="CENTER_RIGHT" mnemonicParsing="false" onAction="#closeEditor" prefHeight="49.0" prefWidth="65.0" stylesheets="@../../../../css/fullpackstyling.css" text="X" textAlignment="CENTER" textFill="WHITE">
                         <font>
                            <Font name="Berlin Sans FB" size="24.0" />
                         </font>

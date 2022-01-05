@@ -1,2 +1,1 @@
-# 2xmlX
-hr.idea/runConfigurations.xml
+# 2xmlXhr.idea/misc.xml

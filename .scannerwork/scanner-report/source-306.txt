@@ -1,15 +1,57 @@
-module com.example.coomics {
-    requires javafx.controls;
-    requires javafx.fxml;
-    requires javafx.web;
+package com.example.comics.controller;
 
-    requires org.controlsfx.controls;
-    requires com.dlsc.formsfx;
-    requires validatorfx;
-    requires org.kordamp.ikonli.javafx;
-    requires org.kordamp.bootstrapfx.core;
-    requires javafx.graphics;
+import com.example.comics.model.Series;
+import com.example.comics.model.UserLogin;
+import com.example.comics.model.dao.ReaderDAO;
+import com.example.comics.model.fagioli.SeriesBean;
+import java.sql.SQLException;
 
-    exports com.example.comics.view1;
-    opens com.example.comics.view1 to javafx.fxml;
+public class ToReadController {
+
+    public boolean isSeriesAddedToRead(SeriesBean seriesBean){
+
+        Series series = new Series(seriesBean.getTitle());
+        series.setCover(seriesBean.getCover());
+        series.setAuthor(series.getAuthor());
+
+        return UserLogin.getInstance().getReader().wantsToRead(series);
+
+    }
+
+    public void addSeriesToToRead(SeriesBean seriesBean) {
+        Series series = new Series(seriesBean.getTitle());
+        series.setAuthor(seriesBean.getAuthor());
+        series.setCover(seriesBean.getCover());
+        //poi altri dettagli
+
+        UserLogin.getInstance().getReader().addSeriesToToRead(series);
+
+        ReaderDAO readerDAO = new ReaderDAO();
+        try {
+            readerDAO.addSeriesToToRead(series,UserLogin.getInstance().getReader());
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void removeSeriesFromToRead(SeriesBean seriesBean) {
+
+        Series series = new Series(seriesBean.getTitle());
+        series.setAuthor(seriesBean.getAuthor());
+        series.setCover(seriesBean.getCover());
+        //poi altri dettagli
+
+        UserLogin.getInstance().getReader().removeSeriesFromToRead(series);
+
+        ReaderDAO readerDAO = new ReaderDAO();
+        readerDAO.removeSeriesFromToRead(series,UserLogin.getInstance().getReader());
+
+    }
 }
+
+
+
+
+
+
+
