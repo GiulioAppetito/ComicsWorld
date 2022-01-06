@@ -17,10 +17,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
-import javafx.scene.text.Text;
-
 import java.io.IOException;
-import java.sql.SQLException;
 import java.util.List;
 
 public class ChapterControllerG implements ReviewObserver {
@@ -340,7 +337,7 @@ public class ChapterControllerG implements ReviewObserver {
     @FXML
     private TextArea taDescription;
 
-    private static int reviewRating = 0;
+    private int reviewRating = 0;
 
     @FXML
     void closeEditor() {
@@ -355,7 +352,6 @@ public class ChapterControllerG implements ReviewObserver {
         lblAuthor.setText("autore");
         lblChapterTitle.setText(chapterBean.getTitle());
         lblChapterId.setText(chapterBean.getId().toString());
-        System.out.println("[Chapther controller G] Description : "+chapterBean.getDescription());
         taDescription.setText(chapterBean.getDescription());
         taDescription.setEditable(false);
 
@@ -392,7 +388,6 @@ public class ChapterControllerG implements ReviewObserver {
 
         btnBack.setOnAction(event -> {
 
-            FeedControllerG feedControllerG = new FeedControllerG();
             try {
                 HomeFactory homeFactory = new HomeFactory();
                 HomeControllerG homeControllerG = homeFactory.getHomeControllerG();
@@ -504,7 +499,6 @@ public class ChapterControllerG implements ReviewObserver {
             VBox vbRev = fxmlLoader.load();
             ReviewControllerG reviewControllerG = fxmlLoader.getController();
             reviewControllerG.setData(reviewBean);
-            vbRev.setOnMouseClicked(event -> System.out.println("Clicked review"));
             vbReviews.getChildren().add(vbRev);
 
         } catch (IOException e) {
