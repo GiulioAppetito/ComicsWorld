@@ -30,7 +30,7 @@
                           <VBox.margin>
                               <Insets top="20.0" />
                           </VBox.margin>
-                           <ImageView fitHeight="241.0" fitWidth="275.0" pickOnBounds="true" preserveRatio="true">
+                           <ImageView fx:id="proPicProfile" fitHeight="241.0" fitWidth="275.0" pickOnBounds="true" preserveRatio="true">
                                <Image url="@../../../../img/flat-business-man-user-profile-avatar-icon-vector-4333097.jpg" />
                            </ImageView>
                       </HBox>

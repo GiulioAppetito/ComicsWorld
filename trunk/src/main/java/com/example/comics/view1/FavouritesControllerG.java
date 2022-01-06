@@ -44,6 +44,7 @@ public class FavouritesControllerG {
         FxmlLoader object = new FxmlLoader();
         Pane view = object.getPage("favouriteauthors");
         mainPane.setCenter(view);
+        System.out.println("FAV CONTR G] Clicked authors.");
     }
 
     @FXML

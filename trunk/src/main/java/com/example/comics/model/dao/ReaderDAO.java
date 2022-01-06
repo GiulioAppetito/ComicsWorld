@@ -5,6 +5,7 @@ import javafx.scene.image.Image;
 
 import java.io.InputStream;
 import java.sql.*;
+import java.util.ArrayList;
 import java.util.List;
 
 public class ReaderDAO {
@@ -38,7 +39,11 @@ public class ReaderDAO {
             List<Series> readingSeries = seriesDAO.retrieveReadingSeries(username);
             List<Review> reviews = seriesDAO.retrieveReviewsByReader(username);
 
-            reader = new Reader(favSeries, toReadSeries, readingSeries, reviews, username);
+            AuthorDAO authorDAO = new AuthorDAO();
+            List<Author> followedAuthors = authorDAO.retreiveFollowedAuthorsByReader(username);
+
+
+            reader = new Reader(favSeries, toReadSeries, readingSeries, reviews, username,followedAuthors);
 
             reader.setFirstName(rs.getString("firstname"));
             reader.setLastName(rs.getString("lastname"));

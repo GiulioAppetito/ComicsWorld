@@ -2,14 +2,20 @@ package com.example.comics.view1;
 
 import com.example.comics.controller.FavouritesController;
 import com.example.comics.controller.ToReadController;
+import com.example.comics.model.fagioli.AccountBean;
 import com.example.comics.model.fagioli.ChapterBean;
 import com.example.comics.model.fagioli.SeriesBean;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
+import javafx.scene.control.ButtonBar;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
+import tools.FxmlLoader;
 
 import java.io.IOException;
 import java.net.URL;
@@ -22,6 +28,9 @@ public class SeriesControllerG {
 
     @FXML
     public Button btnAddToFav;
+    @FXML
+    private ButtonBar buttonBarAuthor;
+
 
     @FXML
     public Button btnAddToRead;
@@ -32,8 +41,12 @@ public class SeriesControllerG {
     @FXML
     private VBox vbChapters;
 
+
     @FXML
-    private Label lblAuthor;
+    private Button btnAuthor;
+
+
+
 
     @FXML
     private Label lblTitle;
@@ -42,9 +55,11 @@ public class SeriesControllerG {
 
     public void init(SeriesBean seriesBean) {
 
-        lblAuthor.setText(seriesBean.getAuthor());
+        btnAuthor.setText(seriesBean.getAuthor());
         lblTitle.setText(seriesBean.getTitle());
         comicCover.setImage(seriesBean.getCover());
+
+        btnAuthor.setOnAction(event -> openAuthor(seriesBean));
 
         List<ChapterBean> listOfChapters = seriesBean.getChapters();
 
@@ -107,6 +122,29 @@ public class SeriesControllerG {
             }
         });
 
+    }
+
+    private void openAuthor(SeriesBean seriesBean) {
+        AuthorFromOutsideControllerG authorController = new AuthorFromOutsideControllerG();
+        FXMLLoader loader = new FXMLLoader();
+
+        URL fxmlLocation = AuthorFromOutsideControllerG.class.getResource("authorfromoutside.fxml");
+        loader.setLocation(fxmlLocation);
+        loader.setController(authorController);
+
+        HomeFactory homeFactory = new HomeFactory();
+
+        HomeControllerG homeControllerG = homeFactory.getHomeControllerG();
+        try {
+            homeControllerG.changeCenter(loader.load());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        AccountBean accountBean = new AccountBean();
+        accountBean.setUsername(seriesBean.getAuthor());
+
+        authorController.init(accountBean);
     }
 
     private void removeSeriesFromToRead(SeriesBean seriesBean) {

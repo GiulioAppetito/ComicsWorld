@@ -198,4 +198,22 @@ public class Queries {
         System.out.println(insertStatement);
         stmt.executeUpdate(insertStatement);
     }
+
+    public static ResultSet retreiveAuthor(Statement stmt, String username) throws SQLException {
+        String selectStatement = String.format("SELECT * FROM users WHERE (username = '%s')  ",username);
+        System.out.println(selectStatement);
+        return stmt.executeQuery(selectStatement);
+    }
+
+    public static void addFollowedAuthor(Statement stmt, Author author) throws SQLException {
+        String insertStatement = String.format("INSERT INTO followedAuthors (reader,author) values ('%s', '%s')", UserLogin.getInstance().getAccount().getUsername(), author.getUsername());
+        System.out.println(insertStatement);
+        stmt.executeUpdate(insertStatement);
+    }
+
+    public static ResultSet retreiveFollowedAuthors(Statement stmt, String username) throws SQLException {
+        String selectStatement = String.format("SELECT * FROM followedAuthors WHERE (reader = '%s')  ",username);
+        System.out.println(selectStatement);
+        return stmt.executeQuery(selectStatement);
+    }
 }

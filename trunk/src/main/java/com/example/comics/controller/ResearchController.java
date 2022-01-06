@@ -1,6 +1,10 @@
 package com.example.comics.controller;
 
+import com.example.comics.model.Author;
 import com.example.comics.model.Badge;
+import com.example.comics.model.dao.AuthorDAO;
+import com.example.comics.model.fagioli.AccountBean;
+import com.example.comics.model.fagioli.AuthorBean;
 import com.example.comics.model.fagioli.BadgeBean;
 import com.example.comics.model.fagioli.SeriesBean;
 import com.example.comics.model.Series;
@@ -93,5 +97,35 @@ public class ResearchController {
 
 
         return badgeBeans;
+    }
+
+    public AuthorBean getAuthor(AccountBean accountBean) {
+        AuthorBean authorBean = new AuthorBean();
+
+        AuthorDAO authorDAO = new AuthorDAO();
+        Author author = authorDAO.retrieveAuthorWithoutPassword(accountBean.getUsername());
+
+        authorBean.setFirstName(author.getFirstName());
+        authorBean.setLastName(author.getLastName());
+        authorBean.setUsername(author.getUsername());
+
+        return authorBean;
+
+    }
+
+    public List<AuthorBean> getFollowedAuthors() {
+        List<AuthorBean> authorBeans = new ArrayList<>();
+        AuthorBean authorBean;
+        System.out.println("[RESEARCH] Prima del for.");
+        for(Author author : UserLogin.getInstance().getReader().getFollowedAuthors()){
+            System.out.println("RESEARCH CONTR] Primo author : "+author.getUsername());
+            authorBean = new AuthorBean();
+            authorBean.setUsername(author.getUsername());
+            authorBean.setProPic(author.getProPic());
+            authorBean.setFirstName(author.getFirstName());
+            authorBean.setLastName(author.getLastName());
+            authorBeans.add(authorBean);
+        }
+        return authorBeans;
     }
 }

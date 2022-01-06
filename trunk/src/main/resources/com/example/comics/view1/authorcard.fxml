@@ -8,13 +8,13 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox alignment="CENTER" prefHeight="236.0" prefWidth="167.0" stylesheets="@../../../../css/fullpackstyling.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.comics.view1.VCardControllerG">
+<VBox alignment="CENTER" prefHeight="236.0" prefWidth="167.0" stylesheets="@../../../../css/fullpackstyling.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.comics.view1.FollowedAuthorCardControllerG">
     <styleClass>
         <String fx:value="white-background" />
         <String fx:value="oval-layout" />
         <String fx:value="button2" />
     </styleClass>
-    <ImageView fitHeight="188.0" fitWidth="124.0" pickOnBounds="true" preserveRatio="true">
+    <ImageView fx:id="ivProPic" fitHeight="188.0" fitWidth="124.0" pickOnBounds="true" preserveRatio="true">
         <image>
             <Image url="@../../../../img/stanlee.jpg" />
         </image>
@@ -22,7 +22,7 @@
             <Insets top="20.0" />
         </VBox.margin>
     </ImageView>
-    <Label fx:id="comicName" alignment="CENTER" prefHeight="38.0" prefWidth="107.0" text="Stan Lee">
+    <Label fx:id="authorUsername" alignment="CENTER" prefHeight="38.0" prefWidth="107.0" text="Stan Lee">
         <font>
             <Font name="Berlin Sans FB" size="14.0" />
         </font>

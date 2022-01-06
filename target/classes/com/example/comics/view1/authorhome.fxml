@@ -90,12 +90,11 @@
                         <Insets right="10.0" />
                     </HBox.margin>
                 </Label>
-                <ImageView fx:id="ivUpperProPic" fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
-                    <HBox.margin>
-                        <Insets top="5.0" />
-                    </HBox.margin>
-                    <Image url="@../../../../img/flat-business-man-user-profile-avatar-icon-vector-4333097.jpg" />
-                </ImageView>
+            <ImageView fx:id="smallProPic" fitHeight="82.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../img/flat-business-man-user-profile-avatar-icon-vector-4333097.jpg" />
+               </image>
+            </ImageView>
             </HBox>
             <HBox.margin>
                 <Insets left="20.0" top="10.0" />
@@ -163,21 +162,6 @@
                             </image>
                         </ImageView>
                     </graphic>
-                </Button>
-                <Button fx:id="btnMyBadges" mnemonicParsing="false" prefHeight="78.0" prefWidth="230.0" styleClass="lateral" stylesheets="@../../../../css/fullpackstyling.css" text="My badges">
-                    <font>
-                        <Font name="Berlin Sans FB" size="18.0" />
-                    </font>
-                    <graphic>
-                        <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
-                            <image>
-                                <Image url="@../../../../img/icons8-animazione-96.png" />
-                            </image>
-                        </ImageView>
-                    </graphic>
-                    <padding>
-                        <Insets left="-20.0" />
-                    </padding>
                 </Button>
                 <Button fx:id="btnMyCharacters" mnemonicParsing="false" prefHeight="78.0" prefWidth="254.0" styleClass="lateral" stylesheets="@../../../../css/fullpackstyling.css" text="My characters">
                     <font>
