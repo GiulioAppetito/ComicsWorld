@@ -1,1 +1,1 @@
-î 2javaXhrHtrunk/src/main/java/com/example/comics/view1/ChapterItemControllerG.java
+ï¿½ 2javaXhrFtrunk/src/main/java/com/example/comics/view1/CharacterControllerG.java

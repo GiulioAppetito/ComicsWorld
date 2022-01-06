@@ -1,184 +1,25 @@
 package com.example.comics.view1;
 
-import com.example.comics.controller.PostReviewController;
-import com.example.comics.model.fagioli.ChapterBean;
-import com.example.comics.model.fagioli.ObjectiveBean;
-import com.example.comics.model.fagioli.ReviewBean;
-import com.example.comics.model.ReviewObserver;
-import com.example.comics.model.ReviewSubject;
-import com.example.comics.model.UserLogin;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.control.TextArea;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.layout.Pane;
-import javafx.scene.layout.VBox;
+import javafx.scene.text.Text;
 
-import java.io.IOException;
-import java.util.List;
-
-public class ChapterControllerG implements ReviewObserver {
+public class ChapterItemControllerG {
+    @FXML
+    private ImageView ivCover;
 
     @FXML
-    private VBox vbReviews;
+    private Label lblName;
 
     @FXML
-    private ImageView chapterCoverIV;
+    private Text lblSeries;
 
-    @FXML
-    private Button btnAddReview;
-
-    @FXML
-    private Pane paneInsertReview;
-
-
-    @FXML
-    private ImageView badgeIconView;
-
-    @FXML
-    private Button btnBack;
-
-    @FXML
-    private Button btnPostReview;
-
-    @FXML
-    private TextArea txtAreaComment;
-
-    @FXML
-    private Label lblAuthor;
-
-    @FXML
-    private Label lblChapterId;
-
-    @FXML
-    private Label lblChapterTitle;
-
-    @FXML
-    private Pane newBadgeWonPane;
-
-    @FXML
-    private Button btnCloseEditor;
-
-    @FXML
-    private Button btnCloseBadge;
-
-    @FXML
-    private Label lblBadgeName;
-
-    @FXML
-    private Label lblBadgeSeries;
-
-    @FXML
-    private Label lblBadgeType;
-
-    @FXML
-    void closeEditor() {
-        paneInsertReview.setVisible(false);
-    }
-
-
-    public void init(ChapterBean chapterBean){
-
-        ReviewSubject.attach(this);
-
-        lblAuthor.setText("autore");
-        lblChapterTitle.setText(chapterBean.getTitle());
-        lblChapterId.setText(chapterBean.getId().toString());
-
-        paneInsertReview.setVisible(false);
-        newBadgeWonPane.setVisible(false);
-        chapterCoverIV.setImage(chapterBean.getCover());
-
-
-        btnCloseEditor.setOnAction(event -> closeEditor());
-        btnCloseBadge.setOnAction(event -> closeBadgeWon());
-
-        btnAddReview.setOnAction(event -> openEditor());
-
-        btnPostReview.setOnAction(event -> postReview(chapterBean));
-
-        List<ReviewBean> listOfReviews = chapterBean.getReviews();
-
-
-        for (ReviewBean reviewBean : listOfReviews) {
-
-            FXMLLoader fxmlLoader = new FXMLLoader();
-            fxmlLoader.setLocation(getClass().getResource("review.fxml"));
-            try {
-                VBox vbRev = fxmlLoader.load();
-                ReviewControllerG reviewController = fxmlLoader.getController();
-                reviewController.setData(reviewBean);
-                vbRev.setOnMouseClicked(event -> System.out.println("Clicked ad"));
-                vbReviews.getChildren().add(vbRev);
-
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        }
-
-        btnBack.setOnAction(event -> {
-
-            try {
-                HomeFactory homeFactory = new HomeFactory();
-                HomeControllerG homeControllerG = homeFactory.getHomeControllerG();
-                homeControllerG.openFeed();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        });
-
-    }
-
-    public void closeBadgeWon() {
-        newBadgeWonPane.setVisible(false);
-    }
-
-    public void postReview(ChapterBean chapterBean){
-
-        ReviewBean reviewBean = new ReviewBean();
-        reviewBean.setComment(txtAreaComment.getText());
-        reviewBean.setUsername(UserLogin.getInstance().getAccount().getUsername());
-        reviewBean.setSeries(chapterBean.getSeries());
-        reviewBean.setChapter(chapterBean.getTitle());
-        PostReviewController postReviewController = new PostReviewController();
-        postReviewController.post(reviewBean);
-
-        paneInsertReview.setVisible(false);
-    }
-
-    public void openEditor(){
-
-        paneInsertReview.setVisible(true);
-        txtAreaComment.setText("");
-        newBadgeWonPane.setVisible(false);
-
-    }
-
-    @Override
-    public void update(ReviewBean reviewBean) {
-        //add della review sulla lista
-        FXMLLoader fxmlLoader = new FXMLLoader();
-        fxmlLoader.setLocation(getClass().getResource("review.fxml"));
-        try {
-            VBox vbRev = fxmlLoader.load();
-            ReviewControllerG reviewController = fxmlLoader.getController();
-            reviewController.setData(reviewBean);
-            vbReviews.getChildren().add(vbRev);
-
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-
-    @Override
-    public void achievedObjective(ObjectiveBean objectiveBean) {
-        //mostra panel con vittoria badge
-        newBadgeWonPane.setVisible(true);
-        lblBadgeName.setText(objectiveBean.getBadgeName());
-        lblBadgeSeries.setText(objectiveBean.getSeriesTitle());
-        badgeIconView.setImage(objectiveBean.getBadgeIcon());
+    public void setData(String chaptersTitle, String chaptersSeries, Image chaptersCover){
+        lblName.setText(chaptersTitle);
+        lblSeries.setText(chaptersSeries);
+        ivCover.setImage(chaptersCover);
 
     }
 }

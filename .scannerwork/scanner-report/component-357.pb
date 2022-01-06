@@ -1,1 +1,1 @@
-å 2javaX hrKtrunk/src/main/java/com/example/comics/view1/AuthorMyBadgesControllerG.java
+ï¿½ 2javaX\hrJtrunk/src/main/java/com/example/comics/view1/AuthorProfileControllerG.java

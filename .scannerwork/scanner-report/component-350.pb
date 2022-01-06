@@ -1,1 +1,1 @@
-Þ 2javaXLhr8trunk/src/main/java/com/example/comics/model/Series.java
+ï¿½ 2javaX@hr;trunk/src/main/java/com/example/comics/model/UserLogin.java

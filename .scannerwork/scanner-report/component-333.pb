@@ -1,1 +1,1 @@
-Í 2javaXhrCtrunk/src/main/java/com/example/comics/model/fagioli/BadgeBean.java
+ï¿½ 2javaX>hrEtrunk/src/main/java/com/example/comics/model/fagioli/ChapterBean.java

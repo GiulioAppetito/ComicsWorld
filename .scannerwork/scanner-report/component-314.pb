@@ -1,1 +1,1 @@
-º 2javaXhrBtrunk/src/main/java/com/example/comics/model/ChapterObjective.java
+ï¿½ 2javaXhrAtrunk/src/main/java/com/example/comics/model/ChapterObserver.java

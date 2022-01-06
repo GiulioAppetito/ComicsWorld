@@ -1,8 +1,7 @@
 package com.example.comics.view1;
 
 import com.example.comics.model.fagioli.SeriesBean;
-import com.example.comics.model.Author;
-import com.example.comics.model.Series;
+import com.example.comics.model.Character;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.layout.GridPane;
@@ -13,23 +12,23 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
-public class FavouriteAuthorsControllerG {
+public class FavouriteCharactersControllerG {
 
     @FXML
-    private GridPane gpFavAuthors;
+    private GridPane gpFavCharacters;
 
     public void initialize(){
 
-        List<Author> listOfCards = new ArrayList<>(add());
+        List<Character> listOfCards = new ArrayList<>(add());
         int size = listOfCards.size();
         int columns = 3;
         int i=1;
         for(int j=0; j<size; j++) {
             FXMLLoader fxmlLoader = new FXMLLoader();
-            fxmlLoader.setLocation(getClass().getResource("authorcard.fxml"));
+            fxmlLoader.setLocation(getClass().getResource("charactercard.fxml"));
             try {
                 VBox card = fxmlLoader.load();
-                gpFavAuthors.add(card,j%columns,i);
+                gpFavCharacters.add(card,j%columns,i);
                 if(j%columns == columns-1){
                     i++;
                 }
@@ -40,19 +39,20 @@ public class FavouriteAuthorsControllerG {
 
     }
 
-    private List<Author> add(){
+    private List<Character> add(){
 
-        List<Author> la = new ArrayList<>();
-        ArrayList<Series> series = null;
-        int dummyNumAuthors = 12;
+        List<Character> lc = new ArrayList<>();
+
+        int dummyNumCharacters = 7;
         int i;
 
-        for(i=0;i<dummyNumAuthors;i++){
-            Author author = new Author(series);
-            author.setUsername("stanlee");
-            la.add(author);
+        for(i=0;i<dummyNumCharacters;i++){
+            Character character = new Character();
+            //dummy init
+            lc.add(character);
+
         }
-        return la;
+        return lc;
     }
 
     public void openSerie(SeriesBean seriesBean) throws IOException {
@@ -64,12 +64,10 @@ public class FavouriteAuthorsControllerG {
         loader.setLocation(fxmlLocation);
         loader.setController(serieController);
 
-        HomeFactory homeFactory = new HomeFactory();
-        HomeControllerG homeControllerG = homeFactory.getHomeControllerG();
-        homeControllerG.changeCenter(loader.load());
+        ReaderHomeControllerG readerHomeControllerG = ReaderHomeControllerG.getInstance();
+        readerHomeControllerG.changeCenter(loader.load());
 
         serieController.init(seriesBean);
 
     }
-
 }

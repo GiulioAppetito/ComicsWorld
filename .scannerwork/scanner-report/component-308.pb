@@ -1,1 +1,1 @@
-´ 2javaXhrAtrunk/src/main/java/com/example/comics/model/AccountObserver.java
+ï¿½ 2javaXhr@trunk/src/main/java/com/example/comics/model/AccountSubject.java

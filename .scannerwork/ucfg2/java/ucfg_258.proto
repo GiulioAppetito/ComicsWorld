@@ -1,17 +1,16 @@
 
-Kcom.example.comics.model.fagioli.ReviewBean#getUsername()Ljava/lang/String;v
-lC:/Users/biril/IdeaProjects/ComicsWorld/trunk/src/main/java/com/example/comics/model/fagioli/ReviewBean.java ("1*ë
+Icom.example.comics.model.fagioli.ReviewBean#getSeries()Ljava/lang/String;v
+lC:/Users/biril/IdeaProjects/ComicsWorld/trunk/src/main/java/com/example/comics/model/fagioli/ReviewBean.java ("1*ï¿½
 1v
-lC:/Users/biril/IdeaProjects/ComicsWorld/trunk/src/main/java/com/example/comics/model/fagioli/ReviewBean.java (Ø
-Õ
+lC:/Users/biril/IdeaProjects/ComicsWorld/trunk/src/main/java/com/example/comics/model/fagioli/ReviewBean.java (ï¿½
+ï¿½
 v
-lC:/Users/biril/IdeaProjects/ComicsWorld/trunk/src/main/java/com/example/comics/model/fagioli/ReviewBean.java (
-%0java.lang.String"__id*=*;-
-+com.example.comics.model.fagioli.ReviewBean"
-
-username"’
+lC:/Users/biril/IdeaProjects/ComicsWorld/trunk/src/main/java/com/example/comics/model/fagioli/ReviewBean.java (
+%0java.lang.String"__id*;*9-
++com.example.comics.model.fagioli.ReviewBean"
+series"ï¿½
 v
-lC:/Users/biril/IdeaProjects/ComicsWorld/trunk/src/main/java/com/example/comics/model/fagioli/ReviewBean.java (
+lC:/Users/biril/IdeaProjects/ComicsWorld/trunk/src/main/java/com/example/comics/model/fagioli/ReviewBean.java (
 
 %0java.lang.StringB/-
 +com.example.comics.model.fagioli.ReviewBean

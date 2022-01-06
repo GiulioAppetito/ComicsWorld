@@ -1,50 +1,31 @@
 package com.example.comics.model;
 
-import java.util.List;
+import javafx.scene.image.Image;
 
-public class Author extends Account{
+public class Badge {
+	
+	private String name;
+	private Image icon;
+	private int id;
 
-    private List<Series> publishedSeries;
-    private List<Badge> badges;
-    private List<Character> characters;
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
 
-    public Author(){
-        //dummy
-    }
+	public Image getIcon() {
+		return icon;
+	}
+	public void setIcon(Image icon) {
+		this.icon = icon;
+	}
 
-    public Author(List<Series> publishedSeries){
-        this.publishedSeries = publishedSeries;
-    }
-
-    private static final String ROLE = "author";
-
-    @Override
-    public String getRole(){
-        return ROLE;
-    }
-
-    public List<Series> getPublishedSeries() {
-        return publishedSeries;
-    }
-
-    public void setPublishedSeries(List<Series> publishedSeries) {
-        this.publishedSeries = publishedSeries;
-    }
-
-
-    public List<Badge> getBadges() {
-        return badges;
-    }
-
-    public void setBadges(List<Badge> badges) {
-        this.badges = badges;
-    }
-
-    public List<Character> getCharacters() {
-        return characters;
-    }
-
-    public void setCharacters(List<Character> characters) {
-        this.characters = characters;
-    }
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
 }

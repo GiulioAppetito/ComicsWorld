@@ -1,1 +1,1 @@
-Â 2javaX€hr>trunk/src/main/java/com/example/comics/model/dao/BadgeDAO.java
+ï¿½ 2javaXWhr@trunk/src/main/java/com/example/comics/model/dao/ChapterDAO.java

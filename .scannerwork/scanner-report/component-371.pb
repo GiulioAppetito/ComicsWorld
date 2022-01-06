@@ -1,1 +1,1 @@
-ó 2javaX9hrGtrunk/src/main/java/com/example/comics/view1/FavouritesControllerG.java
+ï¿½ 2javaX~hrAtrunk/src/main/java/com/example/comics/view1/FeedControllerG.java

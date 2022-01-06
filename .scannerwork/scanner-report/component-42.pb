@@ -1,1 +1,1 @@
-* 2xmlXhr.idea/sonarlint.xml
+* 2xmlX|hr.idea/uiDesigner.xml

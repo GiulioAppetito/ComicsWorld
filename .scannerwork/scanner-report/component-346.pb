@@ -1,1 +1,1 @@
-Ú 2javaX/hr8trunk/src/main/java/com/example/comics/model/Review.java
+ï¿½ 2javaXhr@trunk/src/main/java/com/example/comics/model/ReviewObserver.java

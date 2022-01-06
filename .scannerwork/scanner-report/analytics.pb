@@ -18,16 +18,17 @@
 
 msbuild_version16.9.0.11203
  
-peak_used_heap_byte	251426464
+peak_used_heap_byte	247621632
 
 scanner_type
 ScannerCLI
 
 java_vendorAdoptOpenJDK
-†
+ï¿½
 nodejs_unknown_reasonmGet version command exited / had an exception (exit code : N/A ; stdout: N/A ; stderr: N/A ; exception : N/A)
 
-max_heap_byte
+
+max_heap_byte
 3193962496
 
 java_version11.0.3

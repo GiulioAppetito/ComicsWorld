@@ -1,1 +1,1 @@
-Ã 2javaXWhr@trunk/src/main/java/com/example/comics/model/dao/ChapterDAO.java
+ï¿½ 2javaXkhrBtrunk/src/main/java/com/example/comics/model/dao/ObjectiveDAO.java

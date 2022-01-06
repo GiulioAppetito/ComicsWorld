@@ -17,7 +17,7 @@
 
 <!--suppress XmlPathReference -->
 
-<StackPane xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
+<StackPane xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <AnchorPane prefHeight="400.0" prefWidth="600.0">
          <Pane layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="729.0" prefWidth="980.0" styleClass="transparent" stylesheets="@../../../../css/fullpackstyling.css">
@@ -242,67 +242,6 @@
             </HBox>
          </Pane>
       </AnchorPane>
-      <Pane fx:id="paneInsertReview" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="522.0" prefWidth="362.0" styleClass="linear-grad" stylesheets="@../../../../css/fullpackstyling.css">
-         <StackPane.margin>
-            <Insets />
-         </StackPane.margin>
-         <VBox prefHeight="379.0" prefWidth="362.0">
-            <HBox>
-               <VBox.margin>
-                  <Insets top="20.0" />
-               </VBox.margin>
-               <Label prefHeight="49.0" prefWidth="296.0" text="Add a review" textFill="WHITE">
-                  <font>
-                     <Font name="Berlin Sans FB" size="24.0" />
-                  </font>
-                  <padding>
-                     <Insets left="20.0" />
-                  </padding>
-               </Label>
-               <Button fx:id="btnCloseEditor" alignment="CENTER_RIGHT" mnemonicParsing="false" prefHeight="49.0" prefWidth="65.0" stylesheets="@../../../../css/fullpackstyling.css" text="X" textAlignment="CENTER" textFill="WHITE">
-                  <font>
-                     <Font name="Berlin Sans FB" size="24.0" />
-                  </font>
-                  <styleClass>
-                     <String fx:value="oval-layout" />
-                     <String fx:value="transparent" />
-                     <String fx:value="buttonEdit" />
-                  </styleClass>
-                  <padding>
-                     <Insets right="20.0" />
-                  </padding>
-                  <HBox.margin>
-                     <Insets right="20.0" />
-                  </HBox.margin>
-               </Button>
-            </HBox>
-            <TextArea fx:id="txtAreaComment" minHeight="-Infinity" minWidth="-Infinity" prefHeight="270.0" prefWidth="322.0">
-               <VBox.margin>
-                  <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
-               </VBox.margin>
-            </TextArea>
-         </VBox>
-         <Button fx:id="btnPostReview" layoutX="181.0" layoutY="393.0" mnemonicParsing="false" prefHeight="74.0" prefWidth="157.0" stylesheets="@../../../../css/fullpackstyling.css" text="Post" textFill="WHITE">
-            <font>
-               <Font name="Berlin Sans FB" size="24.0" />
-            </font>
-            <styleClass>
-               <String fx:value="oval-layout" />
-               <String fx:value="transparent" />
-               <String fx:value="buttonEdit" />
-            </styleClass>
-            <graphic>
-               <ImageView fitHeight="41.0" fitWidth="37.0" pickOnBounds="true" preserveRatio="true">
-                  <image>
-                     <Image url="@../../../../img/post2.png" />
-                  </image>
-               </ImageView>
-            </graphic>
-            <padding>
-               <Insets right="20.0" />
-            </padding>
-         </Button>
-      </Pane>
       <Pane fx:id="newBadgeWonPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="252.0" prefWidth="366.0" styleClass="linear-grad" stylesheets="@../../../../css/fullpackstyling.css">
          <children>
             <VBox prefHeight="252.0" prefWidth="362.0">
@@ -373,6 +312,461 @@
                </children>
             </VBox>
          </children>
+      </Pane>
+      <Pane fx:id="paneInsertReview" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="473.0" prefWidth="460.0" styleClass="linear-grad" stylesheets="@../../../../css/fullpackstyling.css">
+         <StackPane.margin>
+            <Insets />
+         </StackPane.margin>
+         <VBox prefHeight="385.0" prefWidth="448.0">
+            <HBox>
+               <VBox.margin>
+                  <Insets top="20.0" />
+               </VBox.margin>
+               <Label prefHeight="50.0" prefWidth="374.0" text="Add a review" textFill="WHITE">
+                  <font>
+                     <Font name="Berlin Sans FB" size="24.0" />
+                  </font>
+                  <padding>
+                     <Insets left="20.0" />
+                  </padding>
+                  <HBox.margin>
+                     <Insets left="5.0" />
+                  </HBox.margin>
+               </Label>
+               <Button fx:id="btnCloseEditor" alignment="CENTER_RIGHT" mnemonicParsing="false" prefHeight="50.0" prefWidth="57.0" stylesheets="@../../../../css/fullpackstyling.css" text="X" textAlignment="CENTER" textFill="WHITE">
+                  <font>
+                     <Font name="Berlin Sans FB" size="24.0" />
+                  </font>
+                  <styleClass>
+                     <String fx:value="oval-layout" />
+                     <String fx:value="transparent" />
+                     <String fx:value="buttonEdit" />
+                  </styleClass>
+                  <padding>
+                     <Insets right="20.0" />
+                  </padding>
+                  <HBox.margin>
+                     <Insets right="20.0" />
+                  </HBox.margin>
+               </Button>
+            </HBox>
+            <TextArea fx:id="txtAreaComment" minHeight="-Infinity" minWidth="-Infinity" prefHeight="187.0" prefWidth="406.0">
+               <VBox.margin>
+                  <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+               </VBox.margin>
+            </TextArea>
+            <StackPane>
+               <VBox.margin>
+                  <Insets left="10.0" right="10.0" />
+               </VBox.margin>
+               <children>
+                  <HBox fx:id="hbox1" prefHeight="83.0" prefWidth="418.0">
+                     <children>
+                        <Button fx:id="btnStar11" mnemonicParsing="false" prefHeight="85.0" prefWidth="86.0" styleClass="transparent" textAlignment="CENTER">
+                           <font>
+                              <Font size="21.0" />
+                           </font>
+                           <graphic>
+                              <ImageView fx:id="imgStar11" fitHeight="69.0" fitWidth="59.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../../img/full-star3.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Button fx:id="btnStar12" mnemonicParsing="false" prefHeight="85.0" prefWidth="86.0" styleClass="transparent" textAlignment="CENTER">
+                           <font>
+                              <Font size="21.0" />
+                           </font>
+                           <graphic>
+                              <ImageView fx:id="imgStar12" fitHeight="69.0" fitWidth="59.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../../img/empty-star3.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Button fx:id="btnStar13" mnemonicParsing="false" prefHeight="85.0" prefWidth="86.0" styleClass="transparent" textAlignment="CENTER">
+                           <font>
+                              <Font size="21.0" />
+                           </font>
+                           <graphic>
+                              <ImageView fx:id="imgStar13" fitHeight="69.0" fitWidth="59.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../../img/empty-star3.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Button fx:id="btnStar14" mnemonicParsing="false" prefHeight="85.0" prefWidth="86.0" styleClass="transparent" textAlignment="CENTER">
+                           <font>
+                              <Font size="21.0" />
+                           </font>
+                           <graphic>
+                              <ImageView fx:id="imgStar14" fitHeight="69.0" fitWidth="59.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../../img/empty-star3.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Button fx:id="btnStar15" mnemonicParsing="false" prefHeight="85.0" prefWidth="86.0" styleClass="transparent" textAlignment="CENTER">
+                           <font>
+                              <Font size="21.0" />
+                           </font>
+                           <graphic>
+                              <ImageView fx:id="imgStar15" fitHeight="69.0" fitWidth="59.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../../img/empty-star3.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                     </children>
+                  </HBox>
+                  <HBox fx:id="hbox2" prefHeight="83.0" prefWidth="418.0">
+                     <children>
+                        <Button fx:id="btnStar21" mnemonicParsing="false" prefHeight="85.0" prefWidth="86.0" styleClass="transparent" textAlignment="CENTER">
+                           <font>
+                              <Font size="21.0" />
+                           </font>
+                           <graphic>
+                              <ImageView fx:id="imgStar21" fitHeight="69.0" fitWidth="59.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../../img/full-star3.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Button fx:id="btnStar22" mnemonicParsing="false" prefHeight="85.0" prefWidth="86.0" styleClass="transparent" textAlignment="CENTER">
+                           <font>
+                              <Font size="21.0" />
+                           </font>
+                           <graphic>
+                              <ImageView fx:id="imgStar22" fitHeight="69.0" fitWidth="59.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../../img/full-star3.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Button fx:id="btnStar23" mnemonicParsing="false" prefHeight="85.0" prefWidth="86.0" styleClass="transparent" textAlignment="CENTER">
+                           <font>
+                              <Font size="21.0" />
+                           </font>
+                           <graphic>
+                              <ImageView fx:id="imgStar23" fitHeight="69.0" fitWidth="59.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../../img/empty-star3.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Button fx:id="btnStar24" mnemonicParsing="false" prefHeight="85.0" prefWidth="86.0" styleClass="transparent" textAlignment="CENTER">
+                           <font>
+                              <Font size="21.0" />
+                           </font>
+                           <graphic>
+                              <ImageView fx:id="imgStar24" fitHeight="69.0" fitWidth="59.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../../img/empty-star3.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Button fx:id="btnStar25" mnemonicParsing="false" prefHeight="85.0" prefWidth="86.0" styleClass="transparent" textAlignment="CENTER">
+                           <font>
+                              <Font size="21.0" />
+                           </font>
+                           <graphic>
+                              <ImageView fx:id="imgStar25" fitHeight="69.0" fitWidth="59.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../../img/empty-star3.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                     </children>
+                  </HBox>
+                  <HBox fx:id="hbox3" prefHeight="83.0" prefWidth="418.0">
+                     <children>
+                        <Button fx:id="btnStar31" mnemonicParsing="false" prefHeight="85.0" prefWidth="86.0" styleClass="transparent" textAlignment="CENTER">
+                           <font>
+                              <Font size="21.0" />
+                           </font>
+                           <graphic>
+                              <ImageView fx:id="imgStar31" fitHeight="69.0" fitWidth="59.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../../img/full-star3.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Button fx:id="btnStar32" mnemonicParsing="false" prefHeight="85.0" prefWidth="86.0" styleClass="transparent" textAlignment="CENTER">
+                           <font>
+                              <Font size="21.0" />
+                           </font>
+                           <graphic>
+                              <ImageView fx:id="imgStar32" fitHeight="69.0" fitWidth="59.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../../img/full-star3.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Button fx:id="btnStar33" mnemonicParsing="false" prefHeight="85.0" prefWidth="86.0" styleClass="transparent" textAlignment="CENTER">
+                           <font>
+                              <Font size="21.0" />
+                           </font>
+                           <graphic>
+                              <ImageView fx:id="imgStar33" fitHeight="69.0" fitWidth="59.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../../img/full-star3.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Button fx:id="btnStar34" mnemonicParsing="false" prefHeight="85.0" prefWidth="86.0" styleClass="transparent" textAlignment="CENTER">
+                           <font>
+                              <Font size="21.0" />
+                           </font>
+                           <graphic>
+                              <ImageView fx:id="imgStar34" fitHeight="69.0" fitWidth="59.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../../img/empty-star3.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Button fx:id="btnStar35" mnemonicParsing="false" prefHeight="85.0" prefWidth="86.0" styleClass="transparent" textAlignment="CENTER">
+                           <font>
+                              <Font size="21.0" />
+                           </font>
+                           <graphic>
+                              <ImageView fx:id="imgStar35" fitHeight="69.0" fitWidth="59.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../../img/empty-star3.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                     </children>
+                  </HBox>
+                  <HBox fx:id="hbox4" prefHeight="83.0" prefWidth="418.0">
+                     <children>
+                        <Button fx:id="btnStar41" mnemonicParsing="false" prefHeight="85.0" prefWidth="86.0" styleClass="transparent" textAlignment="CENTER">
+                           <font>
+                              <Font size="21.0" />
+                           </font>
+                           <graphic>
+                              <ImageView fx:id="imgStar41" fitHeight="69.0" fitWidth="59.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../../img/full-star3.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Button fx:id="btnStar42" mnemonicParsing="false" prefHeight="85.0" prefWidth="86.0" styleClass="transparent" textAlignment="CENTER">
+                           <font>
+                              <Font size="21.0" />
+                           </font>
+                           <graphic>
+                              <ImageView fx:id="imgStar42" fitHeight="69.0" fitWidth="59.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../../img/full-star3.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Button fx:id="btnStar43" mnemonicParsing="false" prefHeight="85.0" prefWidth="86.0" styleClass="transparent" textAlignment="CENTER">
+                           <font>
+                              <Font size="21.0" />
+                           </font>
+                           <graphic>
+                              <ImageView fx:id="imgStar43" fitHeight="69.0" fitWidth="59.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../../img/full-star3.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Button fx:id="btnStar44" mnemonicParsing="false" prefHeight="85.0" prefWidth="86.0" styleClass="transparent" textAlignment="CENTER">
+                           <font>
+                              <Font size="21.0" />
+                           </font>
+                           <graphic>
+                              <ImageView fx:id="imgStar44" fitHeight="69.0" fitWidth="59.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../../img/full-star3.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Button fx:id="btnStar45" mnemonicParsing="false" prefHeight="85.0" prefWidth="86.0" styleClass="transparent" textAlignment="CENTER">
+                           <font>
+                              <Font size="21.0" />
+                           </font>
+                           <graphic>
+                              <ImageView fx:id="imgStar45" fitHeight="69.0" fitWidth="59.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../../img/empty-star3.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                     </children>
+                  </HBox>
+                  <HBox fx:id="hbox5" prefHeight="83.0" prefWidth="418.0">
+                     <children>
+                        <Button fx:id="btnStar51" mnemonicParsing="false" prefHeight="85.0" prefWidth="86.0" styleClass="transparent" textAlignment="CENTER">
+                           <font>
+                              <Font size="21.0" />
+                           </font>
+                           <graphic>
+                              <ImageView fx:id="imgStar51" fitHeight="69.0" fitWidth="59.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../../img/full-star3.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Button fx:id="btnStar52" mnemonicParsing="false" prefHeight="85.0" prefWidth="86.0" styleClass="transparent" textAlignment="CENTER">
+                           <font>
+                              <Font size="21.0" />
+                           </font>
+                           <graphic>
+                              <ImageView fx:id="imgStar52" fitHeight="69.0" fitWidth="59.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../../img/full-star3.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Button fx:id="btnStar53" mnemonicParsing="false" prefHeight="85.0" prefWidth="86.0" styleClass="transparent" textAlignment="CENTER">
+                           <font>
+                              <Font size="21.0" />
+                           </font>
+                           <graphic>
+                              <ImageView fx:id="imgStar53" fitHeight="69.0" fitWidth="59.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../../img/full-star3.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Button fx:id="btnStar54" mnemonicParsing="false" prefHeight="85.0" prefWidth="86.0" styleClass="transparent" textAlignment="CENTER">
+                           <font>
+                              <Font size="21.0" />
+                           </font>
+                           <graphic>
+                              <ImageView fx:id="imgStar54" fitHeight="69.0" fitWidth="59.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../../img/full-star3.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Button fx:id="btnStar55" mnemonicParsing="false" prefHeight="85.0" prefWidth="86.0" styleClass="transparent" textAlignment="CENTER">
+                           <font>
+                              <Font size="21.0" />
+                           </font>
+                           <graphic>
+                              <ImageView fx:id="imgStar55" fitHeight="69.0" fitWidth="59.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../../img/full-star3.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                     </children>
+                  </HBox>
+                  <HBox fx:id="hbox0" prefHeight="83.0" prefWidth="418.0">
+                     <children>
+                        <Button fx:id="btnStar01" mnemonicParsing="false" prefHeight="85.0" prefWidth="86.0" styleClass="transparent" textAlignment="CENTER">
+                           <font>
+                              <Font size="21.0" />
+                           </font>
+                           <graphic>
+                              <ImageView fx:id="imgStar01" fitHeight="80.0" fitWidth="59.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../../img/empty-star3.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Button fx:id="btnStar02" mnemonicParsing="false" prefHeight="85.0" prefWidth="86.0" styleClass="transparent" textAlignment="CENTER">
+                           <font>
+                              <Font size="21.0" />
+                           </font>
+                           <graphic>
+                              <ImageView fx:id="imgStar02" fitHeight="69.0" fitWidth="59.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../../img/empty-star3.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Button fx:id="btnStar03" mnemonicParsing="false" prefHeight="85.0" prefWidth="86.0" styleClass="transparent" textAlignment="CENTER">
+                           <font>
+                              <Font size="21.0" />
+                           </font>
+                           <graphic>
+                              <ImageView fx:id="imgStar03" fitHeight="69.0" fitWidth="59.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../../img/empty-star3.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Button fx:id="btnStar04" mnemonicParsing="false" prefHeight="85.0" prefWidth="86.0" styleClass="transparent" textAlignment="CENTER">
+                           <font>
+                              <Font size="21.0" />
+                           </font>
+                           <graphic>
+                              <ImageView fx:id="imgStar04" fitHeight="69.0" fitWidth="59.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../../img/empty-star3.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Button fx:id="btnStar05" mnemonicParsing="false" prefHeight="85.0" prefWidth="86.0" styleClass="transparent" textAlignment="CENTER">
+                           <font>
+                              <Font size="21.0" />
+                           </font>
+                           <graphic>
+                              <ImageView fx:id="imgStar05" fitHeight="69.0" fitWidth="59.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../../img/empty-star3.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                     </children>
+                  </HBox>
+               </children>
+            </StackPane>
+         </VBox>
+         <Button fx:id="btnPostReview" layoutX="147.0" layoutY="393.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="178.0" stylesheets="@../../../../css/fullpackstyling.css" text="Post" textFill="WHITE">
+            <font>
+               <Font name="Berlin Sans FB" size="24.0" />
+            </font>
+            <styleClass>
+               <String fx:value="oval-layout" />
+               <String fx:value="transparent" />
+               <String fx:value="buttonEdit" />
+            </styleClass>
+            <graphic>
+               <ImageView fitHeight="41.0" fitWidth="37.0" pickOnBounds="true" preserveRatio="true">
+                  <image>
+                     <Image url="@../../../../img/post2.png" />
+                  </image>
+               </ImageView>
+            </graphic>
+            <padding>
+               <Insets right="20.0" />
+            </padding>
+         </Button>
       </Pane>
    </children>
 </StackPane>

@@ -1,1 +1,1 @@
-Ø 2javaX6hr;trunk/src/main/java/com/example/comics/model/Objective.java
+ï¿½ 2javaXï¿½hr8trunk/src/main/java/com/example/comics/model/Reader.java

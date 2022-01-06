@@ -11,7 +11,7 @@ public class ChapterBean {
 
     private Integer id;
     private Image cover;
-    private List<Review> reviews = new ArrayList<>();
+    private List<Review> reviews;
     private String description;
 
     public String getTitle() {
@@ -41,10 +41,15 @@ public class ChapterBean {
         ArrayList<ReviewBean> reviewBeans = new ArrayList<>();
         ReviewBean reviewBean ;
 
+        if(reviews.isEmpty()){
+            return reviewBeans;
+        }
+
         for(Review review : reviews){
             reviewBean = new ReviewBean();
             reviewBean.setComment(review.getComment());
             reviewBean.setUsername(review.getUsername());
+            reviewBean.setRating(Integer.valueOf(review.getRating()));
             reviewBeans.add(reviewBean);
         }
 

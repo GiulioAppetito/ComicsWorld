@@ -1,23 +1,50 @@
 package com.example.comics.model;
 
-public class Advertisement {
+import java.util.List;
 
-    private String title;
-    private Discount discount;
+public class Author extends Account{
 
-    public void setTitle(String title) {
-        this.title = title;
+    private List<Series> publishedSeries;
+    private List<Badge> badges;
+    private List<Character> characters;
+
+    public Author(){
+        //dummy
     }
 
-    public String getTitle(){
-        return this.title;
+    public Author(List<Series> publishedSeries){
+        this.publishedSeries = publishedSeries;
     }
 
-    public Discount getDiscount() {
-        return discount;
+    private static final String ROLE = "author";
+
+    @Override
+    public String getRole(){
+        return ROLE;
     }
 
-    public void setDiscount(Discount discount) {
-        this.discount = discount;
+    public List<Series> getPublishedSeries() {
+        return publishedSeries;
+    }
+
+    public void setPublishedSeries(List<Series> publishedSeries) {
+        this.publishedSeries = publishedSeries;
+    }
+
+
+    public List<Badge> getBadges() {
+        return badges;
+    }
+
+    public void setBadges(List<Badge> badges) {
+        this.badges = badges;
+    }
+
+    public List<Character> getCharacters() {
+        return characters;
+    }
+
+    public void setCharacters(List<Character> characters) {
+        this.characters = characters;
     }
 }

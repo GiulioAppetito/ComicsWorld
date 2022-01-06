@@ -1,75 +1,63 @@
 package com.example.comics.model;
 
-import com.example.comics.model.dao.SeriesDAO;
-import javafx.scene.image.Image;
+import com.example.comics.model.dao.AccountDAO;
+import com.example.comics.model.dao.AlreadyUsedUsernameException;
+import com.example.comics.model.dao.AuthorDAO;
+import com.example.comics.model.dao.ReaderDAO;
 
-import java.util.ArrayList;
-import java.util.List;
+public class UserLogin{
 
-public class Series {
-	
-	private String title;
-	private Image cover;
-	private String author;
-	private String publishingHouse;
-	private List<Chapter> chapters;
-	//private List<Character> characters;
-	private List<Objective> objectives = new ArrayList<>();
+    private static UserLogin instance = null;
+    private static Account account;
 
-	private Series(){
-		//costruttore di default
-	}
+    private static Reader reader;
+    private static Author author;
 
-	public Series(String title){
-		this.title = title;
-		SeriesDAO seriesDAO = new SeriesDAO();
-		this.chapters = seriesDAO.retriveChapters(title);
-		//inizializzazione obiettivi dal db
-		this.objectives = seriesDAO.retrieveObjectives(this);
-		if(objectives==null){
-			objectives = new ArrayList<>();
-		}
-	}
+    private UserLogin(){}
 
-	public String getTitle() {
-		return title;
-	}
-	public void setTitle(String name) {
-		this.title = name;
-	}
+    public static synchronized UserLogin getInstance(){
+        if(instance==null){
+            instance = new UserLogin();
+        }
+        return instance;
+    }
 
-	public String getAuthor() {
-		return author;
-	}
-	public void setAuthor(String author) {
-		this.author = author;
-	}
+    public Account getAccount() {
+        return account;
+    }
 
-	public String getPublishingHouse() {
-		return publishingHouse;
-	}
-	public void setPublishingHouse(String publishingHouse) {
-		this.publishingHouse = publishingHouse;
-	}
+    public Reader getReader() {
+        return reader;
+    }
 
-	public List<Chapter> getChapters(){
-		return chapters;
-	}
+    public Author getAuthor() {
+        return author;
+    }
 
-	public List<Objective> getObjectives() {
-		return objectives;
-	}
+    public static boolean createAccount(String email, String password, String role){
 
-	public void setObjectives(List<Objective> objectives) {
-		this.objectives = objectives;
-	}
+        if(role.equals("author")){
+            AuthorDAO authorDAO = new AuthorDAO();
+            UserLogin.author = authorDAO.retrieveAuthor(email, password);
+            UserLogin.account = author;
 
-	public Image getCover() {
-		return cover;
-	}
+        }else if(role.equals("reader")){
+            ReaderDAO readerDAO = new ReaderDAO();
+            UserLogin.reader = readerDAO.retrieveReader(email, password);
+            UserLogin.account = reader;
 
-	public void setCover(Image cover) {
-		this.cover = (cover);
-	}
+        }else{
+            return false;
+        }
+
+        return true;
+
+    }
+
+
+    public void register(String firstName, String lastName, String username, String email, String password, String role) throws AlreadyUsedUsernameException {
+        AccountDAO dao = new AccountDAO();
+        dao.registerNewAccount(firstName,lastName,username,email,password,role);
+    }
+
 }
-

@@ -1,1 +1,1 @@
-é 2javaXhrKtrunk/src/main/java/com/example/comics/view1/BadgesSettingsControllerG.java
+ï¿½ 2javaXï¿½hrGtrunk/src/main/java/com/example/comics/view1/CategoriesControllerG.java

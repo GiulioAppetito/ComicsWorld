@@ -1,94 +1,25 @@
 package com.example.comics.view1;
 
-import com.example.comics.controller.ResearchController;
-import com.example.comics.model.AccountObserver;
-import com.example.comics.model.AccountSubject;
-import com.example.comics.model.UserLogin;
-import com.example.comics.model.fagioli.BadgeBean;
+import com.example.comics.model.fagioli.ReviewBean;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
-import javafx.scene.layout.GridPane;
-import javafx.scene.layout.VBox;
+import javafx.scene.text.Text;
 
-import java.io.IOException;
-import java.util.List;
+public class ReviewControllerG {
 
-public class ReaderProfileControllerG implements AccountObserver {
-
-    @FXML
-    private GridPane gpBadges;
-
-    @FXML
-    private GridPane gpCharacter;
     @FXML
     private ImageView ivProPic;
 
     @FXML
-    private Label lblName;
-
-    @FXML
     private Label lblUsername;
 
-
     @FXML
-    public void initialize() {
+    private Text txtComment;
 
-        lblName.setText(UserLogin.getInstance().getAccount().getFirstName());
-        lblUsername.setText(UserLogin.getInstance().getAccount().getLastName());
-        ivProPic.setImage(UserLogin.getInstance().getAccount().getProPic());
+    public void setData(ReviewBean review) {
+        txtComment.setText(review.getComment());
+        lblUsername.setText(review.getUsername());
 
-        AccountSubject.attach(this);
-
-        loadBadges();
-        loadFavouriteCharacter();
-
-    }
-
-
-    public void loadBadges(){
-
-        ResearchController researchController = new ResearchController();
-        List<BadgeBean> listOfBadges = researchController.getUserBadges();
-        int columns=3;
-        int i=1;
-
-        for (int j = 0; j < listOfBadges.size(); j++) {
-
-            FXMLLoader fxmlLoader = new FXMLLoader();
-            fxmlLoader.setLocation(getClass().getResource("badge.fxml"));
-            try {
-                VBox card = fxmlLoader.load();
-                BadgeCardControllerG badgeCardControllerG = fxmlLoader.getController();
-                badgeCardControllerG.setData(listOfBadges.get(j).getName(), listOfBadges.get(j).getIcon());
-                gpBadges.add(card, j%columns, i);
-                if(j%columns == columns -1 ){
-                    i++;
-                }
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        }
-
-    }
-
-    public void loadFavouriteCharacter(){
-        //dummy init
-        FXMLLoader fxmlLoader = new FXMLLoader();
-        fxmlLoader.setLocation(getClass().getResource("favouritecharacteritem.fxml"));
-        try {
-            VBox card = fxmlLoader.load();
-            gpCharacter.add(card, 0, 1);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-
-
-    @Override
-    public void update() {
-        lblName.setText(UserLogin.getInstance().getAccount().getFirstName());
-        lblUsername.setText(UserLogin.getInstance().getAccount().getUsername());
     }
 }

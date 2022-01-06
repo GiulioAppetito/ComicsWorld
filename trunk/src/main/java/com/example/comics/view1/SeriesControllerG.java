@@ -38,6 +38,7 @@ public class SeriesControllerG {
     @FXML
     private Label lblTitle;
 
+    private final static String STYLE1 = ".button2";
 
     public void init(SeriesBean seriesBean) {
 
@@ -59,7 +60,7 @@ public class SeriesControllerG {
 
                 vbChapter.setOnMouseClicked(event -> {
                     try {
-                        openChapter(chapterBean);
+                        openChapter(chapterBean, seriesBean);
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
@@ -74,39 +75,29 @@ public class SeriesControllerG {
 
         FavouritesController favouritesController = new FavouritesController();
         if(favouritesController.isSeriesFavourite(seriesBean)){
-            //setta cuore pieno
-            System.out.println("Serie tra i preferiti: " + seriesBean.getTitle());
             btnAddToFav.setStyle("-fx-background-color: #5DADE2; -fx-background-radius: 20");
             btnAddToFav.setOnAction(event -> removeFromFavourites(seriesBean));
             btnAddToFav.setText("Remove from fav");
 
         }else{
-            //cuore vuoto
-            System.out.println("Serie NON tra i preferiti: " + seriesBean.getTitle());
-            btnAddToFav.setStyle(".button2");
+            btnAddToFav.setStyle(STYLE1);
             btnAddToFav.setOnAction(event -> addSeriesToFavourites(seriesBean));
             btnAddToFav.setText("Add to favourites");
         }
 
         ToReadController toReadController = new ToReadController();
         if(toReadController.isSeriesAddedToRead(seriesBean)){
-            //setta cuore pieno
-            System.out.println("Serie tra quelli da leggere : " + seriesBean.getTitle());
-            btnAddToRead.setStyle("-fx-background-color: #5DADE2");
+            btnAddToRead.setStyle("-fx-background-color: #5DADE2; -fx-background-radius: 20");
             btnAddToRead.setOnAction(event -> removeSeriesFromToRead(seriesBean));
+            btnAddToRead.setText("Remove from toRead");
         }else{
-            //cuore vuoto
-            System.out.println("Serie NON tra quelli da leggere : " + seriesBean.getTitle());
-            btnAddToRead.setStyle("-fx-background-color: #AACC22");
+            btnAddToRead.setStyle(STYLE1);
             btnAddToRead.setOnAction(event -> addSeriesToToRead(seriesBean));
+            btnAddToRead.setText("Add to toRead");
         }
 
 
         btnBack.setOnAction(event -> {
-            //ha senso che serie conosca home per tornare sul feed?
-            //non so, secondo me basterebbe andare dinuovo su feed facendo tipo un refresh
-            //però che ne sa il feed che deve sostituire il centro della home?
-            //boh
             HomeFactory homeFactory = new HomeFactory();
             HomeControllerG homeControllerG = homeFactory.getHomeControllerG();
             try {
@@ -122,12 +113,17 @@ public class SeriesControllerG {
         ToReadController toReadController = new ToReadController();
         toReadController.removeSeriesFromToRead(seriesBean);
         btnAddToRead.setOnAction(event -> addSeriesToToRead(seriesBean));
+        btnAddToFav.setStyle(STYLE1);
+        btnAddToFav.setText("Add to toRead");
+
     }
 
     private void addSeriesToToRead(SeriesBean seriesBean) {
         ToReadController toReadController = new ToReadController();
         toReadController.addSeriesToToRead(seriesBean);
         btnAddToRead.setOnAction(event -> removeSeriesFromToRead(seriesBean));
+        btnAddToRead.setStyle("-fx-background-color: #5DADE2; -fx-background-radius: 20");
+        btnAddToRead.setText("Remove from toRead");
 
     }
 
@@ -135,7 +131,6 @@ public class SeriesControllerG {
         FavouritesController favouritesController = new FavouritesController();
         favouritesController.addSeriesToFavourites(seriesBean);
         btnAddToFav.setOnAction(event -> removeFromFavourites(seriesBean));
-        System.out.println("Serie aggiunta tra i preferiti: " + seriesBean.getTitle());
         btnAddToFav.setStyle("-fx-background-color: #5DADE2; -fx-background-radius: 20");
         btnAddToFav.setText("Remove from fav");
     }
@@ -144,12 +139,11 @@ public class SeriesControllerG {
         FavouritesController favouritesController = new FavouritesController();
         favouritesController.removeSeriesFromFavourites(seriesBean);
         btnAddToFav.setOnAction(event -> addSeriesToFavourites(seriesBean));
-        System.out.println("Serie rimossa dai preferiti: " + seriesBean.getTitle());
-        btnAddToFav.setStyle(".button2");
+        btnAddToFav.setStyle(STYLE1);
         btnAddToFav.setText("Add to favourites");
     }
 
-    private void openChapter(ChapterBean chapterBean) throws IOException {
+    private void openChapter(ChapterBean chapterBean, SeriesBean seriesBean) throws IOException {
 
         ChapterControllerG chapterControllerG = new ChapterControllerG();
         FXMLLoader loader = new FXMLLoader();
@@ -163,7 +157,7 @@ public class SeriesControllerG {
         HomeControllerG homeControllerG = homeFactory.getHomeControllerG();
         homeControllerG.changeCenter(loader.load());
 
-        chapterControllerG.init(chapterBean);
+        chapterControllerG.init(chapterBean, seriesBean);
 
     }
 

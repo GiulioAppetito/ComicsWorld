@@ -1,1 +1,1 @@
-ø 2javaX$hr6trunk/src/main/java/com/example/comics/view1/Main.java
+ï¿½ 2javaXhrOtrunk/src/main/java/com/example/comics/view1/PreferencesSettingsController.java

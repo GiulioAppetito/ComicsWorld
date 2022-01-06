@@ -6,9 +6,9 @@ public class ReviewBean {
 
     private String comment;
     private String username;
-    private String series;
     private String chapter;
     private ImageView propic;
+    private int rating;
 
     public String getComment() {
         return comment;
@@ -26,14 +26,6 @@ public class ReviewBean {
         this.username = username;
     }
 
-    public String getSeries() {
-        return series;
-    }
-
-    public void setSeries(String series) {
-        this.series = series;
-    }
-
     public String getChapter() {
         return chapter;
     }
@@ -48,5 +40,13 @@ public class ReviewBean {
 
     public void setPropic(ImageView propic) {
         this.propic = propic;
+    }
+
+    public String getRating() {
+        return String.valueOf(rating);
+    }
+
+    public void setRating(int rating) {
+        this.rating = rating;
     }
 }

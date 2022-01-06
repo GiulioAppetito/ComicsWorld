@@ -846,17 +846,15 @@ openFeed():com.example.comics.view1.ReaderHomeControllerG#openFeed()V}
 setCode(Ljava/lang/String;)Bcom.example.comics.model.DiscountCode#setCode(Ljava/lang/String;)VN
 	getCode()Acom.example.comics.model.DiscountCode#getCode()Ljava/lang/String;N
 getDiscount()=com.example.comics.model.DiscountCode#getDiscount()LDiscount;e
-getExpiringDate()Pcom.example.comics.model.DiscountCode#getExpiringDate()Ljava/time/LocalDateTime;þ
+getExpiringDate()Pcom.example.comics.model.DiscountCode#getExpiringDate()Ljava/time/LocalDateTime;¶
 com.example.comics.model.Reviewjava.lang.ObjectN
 getChapter()>com.example.comics.model.Review#getChapter()Ljava/lang/String;P
 getUsername()?com.example.comics.model.Review#getUsername()Ljava/lang/String;_
-setSeries(Ljava/lang/String;)>com.example.comics.model.Review#setSeries(Ljava/lang/String;)Va
-setComment(Ljava/lang/String;)?com.example.comics.model.Review#setComment(Ljava/lang/String;)VL
+setSeries(Ljava/lang/String;)>com.example.comics.model.Review#setSeries(Ljava/lang/String;)VL
 getSeries()=com.example.comics.model.Review#getSeries()Ljava/lang/String;}
 ,<init>(Ljava/lang/String;Ljava/lang/String;)Mcom.example.comics.model.Review#<init>(Ljava/lang/String;Ljava/lang/String;)VN
 getComment()>com.example.comics.model.Review#getComment()Ljava/lang/String;a
-setChapter(Ljava/lang/String;)?com.example.comics.model.Review#setChapter(Ljava/lang/String;)Vc
-setUsername(Ljava/lang/String;)@com.example.comics.model.Review#setUsername(Ljava/lang/String;)V€
+setChapter(Ljava/lang/String;)?com.example.comics.model.Review#setChapter(Ljava/lang/String;)V€
 *com.example.comics.model.ChaptersObjectivejava.lang.Object@
 <init>()4com.example.comics.model.ChaptersObjective#<init>()Vµ
 +com.example.comics.model.fagioli.SeriesBeanjava.lang.ObjectV

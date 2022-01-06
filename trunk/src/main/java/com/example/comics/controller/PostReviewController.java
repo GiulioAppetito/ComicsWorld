@@ -4,26 +4,26 @@ import com.example.comics.model.fagioli.ObjectiveBean;
 import com.example.comics.model.fagioli.ReviewBean;
 import com.example.comics.model.*;
 import com.example.comics.model.dao.SeriesDAO;
+import com.example.comics.model.fagioli.SeriesBean;
 
 public class PostReviewController extends ReviewSubject {
 
-    public void post(ReviewBean reviewBean) {
+    public void post(ReviewBean reviewBean, SeriesBean seriesBean) {
 
         String reviewer = reviewBean.getUsername();
         String comment = reviewBean.getComment();
         Review review = new Review(comment,reviewer);
-        review.setSeries(reviewBean.getSeries());
         review.setChapter(reviewBean.getChapter());
-
+        review.setRating(reviewBean.getRating());
         //salvataggio sul DB
-        saveReview(review);
+        saveReview(review, seriesBean.getTitle());
 
         //aggiorna model
         UserLogin.getInstance().getReader().addPublishedReview(review);
 
         //controllare obiettivi
         SeriesDAO seriesDAO = new SeriesDAO();
-        Series series = seriesDAO.retrieveSeries(reviewBean.getSeries());
+        Series series = seriesDAO.retrieveSeries(seriesBean.getTitle());
         checkObjectives(series);
 
         notifyObservers(reviewBean);
@@ -31,12 +31,8 @@ public class PostReviewController extends ReviewSubject {
 
     private void checkObjectives(Series series) {
         //numero di review del lettore
-        int numOfReviews = 0;
-        for(Review review : UserLogin.getInstance().getReader().getPublishedReviews()) {
-            if(review.getSeries().equals(series.getTitle())){
-                numOfReviews++;
-            }
-        }
+        int numOfReviews = series.getNumberOfReviews(UserLogin.getInstance().getReader());
+
         //controllo degli obiettivi
         for(Objective objective : series.getObjectives()){
 
@@ -70,9 +66,9 @@ public class PostReviewController extends ReviewSubject {
 
     }
 
-    private void saveReview(Review review) {
+    private void saveReview(Review review, String seriesTitle) {
         SeriesDAO seriesDAO = new SeriesDAO();
-        seriesDAO.addReviewToChapter(review);
+        seriesDAO.addReviewToChapter(review, seriesTitle);
     }
 
 }

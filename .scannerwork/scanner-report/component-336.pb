@@ -1,1 +1,1 @@
-Ð 2javaX*hrGtrunk/src/main/java/com/example/comics/model/fagioli/ObjectiveBean.java
+ï¿½ 2javaXhrEtrunk/src/main/java/com/example/comics/model/fagioli/ProfileBean.java

@@ -1,1 +1,1 @@
-	 2xmlXhr.idea/libraries/JDBCGiulio.xml
+	 2xmlXhr.idea/libraries/JDBCGiulio.xml

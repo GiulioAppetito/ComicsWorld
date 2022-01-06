@@ -1,16 +1,16 @@
 
-Ncom.example.comics.model.fagioli.RegistrationBean#getEmail()Ljava/lang/String;|
-rC:/Users/biril/IdeaProjects/ComicsWorld/trunk/src/main/java/com/example/comics/model/fagioli/RegistrationBean.java- -("1*€
+Mcom.example.comics.model.fagioli.RegistrationBean#getRole()Ljava/lang/String;|
+rC:/Users/biril/IdeaProjects/ComicsWorld/trunk/src/main/java/com/example/comics/model/fagioli/RegistrationBean.java5 5("1*ï¿½
 1|
-rC:/Users/biril/IdeaProjects/ComicsWorld/trunk/src/main/java/com/example/comics/model/fagioli/RegistrationBean.java. .(á
-Þ
+rC:/Users/biril/IdeaProjects/ComicsWorld/trunk/src/main/java/com/example/comics/model/fagioli/RegistrationBean.java6 6(ï¿½
+ï¿½
 |
-rC:/Users/biril/IdeaProjects/ComicsWorld/trunk/src/main/java/com/example/comics/model/fagioli/RegistrationBean.java. .(
-%0java.lang.String"__id*@*>3
-1com.example.comics.model.fagioli.RegistrationBean"
-email"˜
+rC:/Users/biril/IdeaProjects/ComicsWorld/trunk/src/main/java/com/example/comics/model/fagioli/RegistrationBean.java6 6(
+%0java.lang.String"__id*?*=3
+1com.example.comics.model.fagioli.RegistrationBean"
+role"ï¿½
 |
-rC:/Users/biril/IdeaProjects/ComicsWorld/trunk/src/main/java/com/example/comics/model/fagioli/RegistrationBean.java. .(
+rC:/Users/biril/IdeaProjects/ComicsWorld/trunk/src/main/java/com/example/comics/model/fagioli/RegistrationBean.java6 6(
 
 %0java.lang.StringB53
 1com.example.comics.model.fagioli.RegistrationBean

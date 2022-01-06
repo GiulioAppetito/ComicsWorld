@@ -1,52 +1,58 @@
 package com.example.comics.model.fagioli;
 
-import javafx.scene.image.ImageView;
+import com.example.comics.model.Chapter;
+import javafx.scene.image.Image;
 
-public class ReviewBean {
+import java.util.ArrayList;
+import java.util.List;
 
-    private String comment;
-    private String username;
-    private String series;
-    private String chapter;
-    private ImageView propic;
+public class SeriesBean {
 
-    public String getComment() {
-        return comment;
+    private String title;
+    private Image cover;
+    private String author;
+    private List<Chapter> chapters = new ArrayList<>();
+
+
+    public String getTitle() {
+        return title;
+    }
+    public void setTitle(String title) {
+        this.title = title;
     }
 
-    public void setComment(String comment) {
-        this.comment = comment;
+    public Image getCover() {
+        return cover;
+    }
+    public void setCover(Image cover) {
+        this.cover = cover;
     }
 
-    public String getUsername() {
-        return username;
+    public String getAuthor() {
+        return author;
+    }
+    public void setAuthor(String author) {
+        this.author = author;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
+    public List<ChapterBean> getChapters(){
+
+        ArrayList<ChapterBean> chapterBeans = new ArrayList<>();
+        ChapterBean chapterBean;
+
+        for(Chapter chapter : this.chapters){
+            chapterBean = new ChapterBean();
+            chapterBean.setTitle(chapter.getTitle());
+            chapterBean.setSeries(this.title);
+            chapterBean.setId(chapter.getId());
+            chapterBean.setReviews(chapter.getReviews());
+            chapterBeans.add(chapterBean);
+        }
+
+        return chapterBeans;
     }
 
-    public String getSeries() {
-        return series;
-    }
-
-    public void setSeries(String series) {
-        this.series = series;
-    }
-
-    public String getChapter() {
-        return chapter;
-    }
-
-    public void setChapter(String chapter) {
-        this.chapter = chapter;
-    }
-
-    public ImageView getPropic() {
-        return propic;
-    }
-
-    public void setPropic(ImageView propic) {
-        this.propic = propic;
+    public void setChapters(List<Chapter> chapters) {
+        this.chapters = chapters;
     }
 }

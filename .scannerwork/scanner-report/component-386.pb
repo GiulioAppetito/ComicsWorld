@@ -1,1 +1,1 @@
-‚ 2javaXhrBtrunk/src/main/java/com/example/comics/view1/VCardControllerG.java
+ï¿½ 2javaXhr$trunk/src/main/java/module-info.java

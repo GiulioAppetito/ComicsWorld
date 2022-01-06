@@ -1,10 +1,29 @@
 package com.example.comics.model;
 
-import com.example.comics.model.fagioli.ObjectiveBean;
-import com.example.comics.model.fagioli.ReviewBean;
 
-public interface ReviewObserver {
-    void update(ReviewBean reviewBean);
+public class ReviewsObjective extends Objective{
 
-    void achievedObjective(ObjectiveBean objectiveBean);
+    private int requiredReviews;
+
+    public ReviewsObjective(Badge badge, Discount discount){
+        this.badge = badge;
+        this.discount = discount;
+    }
+
+    @Override
+    public boolean achieveObjective(int readersReviews){
+        return readersReviews >= requiredReviews;
+    }
+
+    @Override
+    public String getType() {
+        return "reviewsObjective";
+    }
+
+    public int getRequiredReviews(){
+        return requiredReviews;
+    }
+    public void setRequiredReviews(int num){
+        this.requiredReviews = num;
+    }
 }

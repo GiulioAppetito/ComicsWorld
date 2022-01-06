@@ -1,1 +1,1 @@
-ã 2javaXhrFtrunk/src/main/java/com/example/comics/view1/AddSeriesControllerG.java
+ï¿½ 2javaXï¿½hrGtrunk/src/main/java/com/example/comics/view1/AuthorHomeControllerG.java

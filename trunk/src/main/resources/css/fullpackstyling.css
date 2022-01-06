@@ -155,6 +155,11 @@
     -fx-background-size: 1200
 
 }
+
+.wallpaperStar {
+    -fx-background: url('circle.png');
+}
+
 .wallpaperlogin{
     -fx-background-image: url('fluid5.png');
        -fx-background-size: 800;

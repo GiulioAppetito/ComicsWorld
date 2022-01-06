@@ -1,41 +1,27 @@
 package com.example.comics.model.fagioli;
 
-import com.example.comics.model.Badge;
-import com.example.comics.model.Levels;
 import javafx.scene.image.Image;
 
-public class ObjectiveBean {
+public class ProfileBean {
 
-    private Badge badge;
-    private Levels level;
-    private String seriesTitle;
+    private String username;
+    private Image proPic;
 
 
-    public String getLevel() {
-        return level.toString();
+    public String getUsername() {
+        return username;
     }
 
-    public void setLevel(Levels level) {
-        this.level = level;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
-    public Image getBadgeIcon() {
-        return badge.getIcon();
+    public Image getProPic() {
+        return proPic;
     }
 
-    public String getBadgeName(){
-        return badge.getName();
+    public void setProPic(Image proPic) {
+        this.proPic = proPic;
     }
 
-    public void setBadge(Badge badge) {
-        this.badge = badge;
-    }
-
-    public String getSeriesTitle() {
-        return seriesTitle;
-    }
-
-    public void setSeriesTitle(String seriesTitle) {
-        this.seriesTitle = seriesTitle;
-    }
 }

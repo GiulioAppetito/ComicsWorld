@@ -1,1 +1,1 @@
-÷ 2javaXÔhrBtrunk/src/main/java/com/example/comics/view1/LoginControllerG.java
+ï¿½ 2javaX$hr6trunk/src/main/java/com/example/comics/view1/Main.java

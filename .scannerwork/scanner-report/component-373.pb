@@ -1,1 +1,1 @@
-õ 2javaXhrAtrunk/src/main/java/com/example/comics/view1/HomeControllerG.java
+ï¿½ 2javaXhr=trunk/src/main/java/com/example/comics/view1/HomeFactory.java

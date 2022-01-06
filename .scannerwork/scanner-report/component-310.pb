@@ -1,1 +1,1 @@
-¶ 2javaXhr?trunk/src/main/java/com/example/comics/model/Advertisement.java
+ï¿½ 2javaX3hr8trunk/src/main/java/com/example/comics/model/Author.java

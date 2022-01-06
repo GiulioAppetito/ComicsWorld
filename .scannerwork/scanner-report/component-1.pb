@@ -1,2 +1,3 @@
-ComicsWorld :Ş"ä:½ô¿Ğ¸)õ­¿Ì„»±Ï%€ıÏúÖ+°!Õ³µ¬óÊ´ß‚å·ùëû*Íƒ×ğÇø	ÃË#Ú¼ÔæÎ¯êéî
-ÛÒÅíçÁØòñ,$ÀİºÆÙìÿ÷âŞ¹üşï ÄÑÈè¶Óáà¾Ü®²ÂöãÉB1-https://github.com/GiulioAppetito/ComicsWorldB40https://travis-ci.org/GiulioAppetito/ComicsWorldB84https://github.com/GiulioAppetito/ComicsWorld/issuesB1-https://github.com/GiulioAppetito/ComicsWorldRGiulioAppetito_ComicsWorld
+ComicsWorld :ï¿½"ï¿½9ï¿½ï¿½ï¿½ï¿½ï¿½(ï¿½
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½%ï¿½ï¿½ï¿½ï¿½ï¿½*ï¿½!ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½)ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½	ï¿½ï¿½#ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½+$ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½B1-https://github.com/GiulioAppetito/ComicsWorldB40https://travis-ci.org/GiulioAppetito/ComicsWorldB84https://github.com/GiulioAppetito/ComicsWorld/issuesB1-https://github.com/GiulioAppetito/ComicsWorldRGiulioAppetito_ComicsWorld

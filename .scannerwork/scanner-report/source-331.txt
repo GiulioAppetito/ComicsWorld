@@ -1,55 +1,41 @@
-package com.example.comics.model;
+package com.example.comics.model.fagioli;
 
-import java.time.LocalDateTime;
+public class AccountBean {
 
-public class DiscountCode {
+    private String firstName;
+    private String lastName;
+    private String email;
+    private String password;
 
-    private String code;
-    private LocalDateTime expiringDate;
-    private final Discount discount;
-
-    private static final String ALPHABET = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-    private static final int LENGHT = 6;
-
-
-    public DiscountCode(Discount discount){
-        this.discount = discount;
-        LocalDateTime today = LocalDateTime.now();
-        this.expiringDate = today.plusDays(this.discount.getLimitDays());
-
-        StringBuilder generatedCode = new StringBuilder();
-        int random;
-        for(int i=0; i<LENGHT; i++){
-            random = (int) (Math.random()*100 %26);
-            if(i<=2){
-
-                generatedCode.append(ALPHABET.charAt(random));
-            }else{
-                generatedCode.append(random % 10);
-            }
-        } // generazione codice random
-        this.code = generatedCode.toString();
+    public String getFirstName() {
+        return firstName;
     }
 
-    public String getCode() {
-        return code;
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
     }
 
-    public void setCode(String code) {
-        this.code = code;
+    public String getLastName() {
+        return lastName;
     }
 
-    public LocalDateTime getExpiringDate() {
-        return expiringDate;
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 
-    public void setExpiringDate(LocalDateTime expiringDate) {
-        this.expiringDate = expiringDate;
+    public String getEmail() {
+        return email;
     }
 
-    public Discount getDiscount() {
-        return discount;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
+    public String getPassword() {
+        return password;
+    }
 
+    public void setPassword(String password) {
+        this.password = password;
+    }
 }

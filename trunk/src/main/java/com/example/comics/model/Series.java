@@ -1,6 +1,7 @@
 package com.example.comics.model;
 
 import com.example.comics.model.dao.ChapterDAO;
+import com.example.comics.model.dao.ReviewsNotFoundException;
 import com.example.comics.model.dao.SeriesDAO;
 import javafx.scene.image.Image;
 
@@ -102,12 +103,33 @@ public class Series {
 	}
 
 	public void addChapter(String chapterTitle, Image chapterCover, String chapterDescription) throws SQLException {
-		Chapter chapter = new Chapter(this.title,chapterTitle);
+		Chapter chapter = new Chapter(chapterTitle);
 		chapter.setDescription(chapterDescription);
 		this.chapters.add(chapter);
 
 		ChapterDAO chapterDAO = new ChapterDAO();
 		chapterDAO.saveChapter(chapter,this.title);
+	}
+
+	public int getNumberOfReviews(Reader reader) {
+		int numOfReviews = 0;
+
+		ChapterDAO chapterDAO = new ChapterDAO();
+
+		List<Review> reviews = null;
+		try {
+			reviews = chapterDAO.retrieveReviewsByReader(this, reader);
+		} catch (ReviewsNotFoundException e) {
+			e.printStackTrace();
+		}
+
+
+		for(Review review: reviews){
+			if(review.getUsername().equals(reader.getUsername())){
+				numOfReviews++;
+			}
+		}
+		return numOfReviews;
 	}
 }
 

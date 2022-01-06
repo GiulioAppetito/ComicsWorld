@@ -1,1 +1,1 @@
-± 2javaXahrItrunk/src/main/java/com/example/comics/controller/ResearchController.java
+ï¿½ 2javaX:hrGtrunk/src/main/java/com/example/comics/controller/ToReadController.java

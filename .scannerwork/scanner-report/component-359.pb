@@ -1,1 +1,1 @@
-ç 2javaXhrFtrunk/src/main/java/com/example/comics/view1/BadgeCardControllerG.java
+ï¿½ 2javaX*hrItrunk/src/main/java/com/example/comics/view1/BadgeCreatorControllerG.java

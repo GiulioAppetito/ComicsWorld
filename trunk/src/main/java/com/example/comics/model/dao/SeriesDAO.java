@@ -343,9 +343,9 @@ public class SeriesDAO {
         return chapterDAO.retriveChapters(seriesTitle);
     }
 
-    public void addReviewToChapter(Review review) {
+    public void addReviewToChapter(Review review, String seriesTitle) {
         ChapterDAO chapterDAO = new ChapterDAO();
-        chapterDAO.addReview(review);
+        chapterDAO.addReview(review, seriesTitle);
     }
 
     public List<Objective> retrieveObjectives(Series series) {
@@ -373,7 +373,6 @@ public class SeriesDAO {
 
             do {
                 review = new Review(rs.getString("comment"), rs.getString("user"));
-                review.setSeries(rs.getString("series_title"));
                 review.setChapter(rs.getString("chapter_id"));
                 reviews.add(review);
 

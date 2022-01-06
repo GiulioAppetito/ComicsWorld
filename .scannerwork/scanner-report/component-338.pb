@@ -1,1 +1,1 @@
-Ò 2javaX=hrJtrunk/src/main/java/com/example/comics/model/fagioli/RegistrationBean.java
+ï¿½ 2javaX5hrDtrunk/src/main/java/com/example/comics/model/fagioli/ReviewBean.java

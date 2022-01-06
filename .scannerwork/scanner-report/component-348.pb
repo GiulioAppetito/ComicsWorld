@@ -1,1 +1,1 @@
-Ü 2javaXhrBtrunk/src/main/java/com/example/comics/model/ReviewsObjective.java
+ï¿½ 2javaXhr?trunk/src/main/java/com/example/comics/model/ReviewSubject.java

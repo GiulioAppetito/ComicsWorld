@@ -1,1 +1,1 @@
-ú 2javaX\hrLtrunk/src/main/java/com/example/comics/view1/ProfileSettingsControllerG.java
+ï¿½ 2javaXï¿½hrGtrunk/src/main/java/com/example/comics/view1/ReaderHomeControllerG.java

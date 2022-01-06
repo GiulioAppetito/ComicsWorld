@@ -1,16 +1,18 @@
 
-Gcom.example.comics.model.fagioli.ChapterBean#getId()Ljava/lang/Integer;w
-mC:/Users/biril/IdeaProjects/ComicsWorld/trunk/src/main/java/com/example/comics/model/fagioli/ChapterBean.java ("1*ë
-1w
-mC:/Users/biril/IdeaProjects/ComicsWorld/trunk/src/main/java/com/example/comics/model/fagioli/ChapterBean.java (Õ
-Ò
-w
-mC:/Users/biril/IdeaProjects/ComicsWorld/trunk/src/main/java/com/example/comics/model/fagioli/ChapterBean.java (
-%0java.lang.Integer"__id*8*6.
-,com.example.comics.model.fagioli.ChapterBean"
-id"”
-w
-mC:/Users/biril/IdeaProjects/ComicsWorld/trunk/src/main/java/com/example/comics/model/fagioli/ChapterBean.java (
-
-%0java.lang.IntegerB0.
-,com.example.comics.model.fagioli.ChapterBean
+Rcom.example.comics.model.fagioli.RegistrationBean#getFirstName()Ljava/lang/String;|
+rC:/Users/biril/IdeaProjects/ComicsWorld/trunk/src/main/java/com/example/comics/model/fagioli/RegistrationBean.java
+ 
+("1*ï¿½
+1|
+rC:/Users/biril/IdeaProjects/ComicsWorld/trunk/src/main/java/com/example/comics/model/fagioli/RegistrationBean.java (ï¿½
+ï¿½
+|
+rC:/Users/biril/IdeaProjects/ComicsWorld/trunk/src/main/java/com/example/comics/model/fagioli/RegistrationBean.java (
+%0java.lang.String"__id*D*B3
+1com.example.comics.model.fagioli.RegistrationBean"
+	firstName"ï¿½
+|
+rC:/Users/biril/IdeaProjects/ComicsWorld/trunk/src/main/java/com/example/comics/model/fagioli/RegistrationBean.java (
+
+%0java.lang.StringB53
+1com.example.comics.model.fagioli.RegistrationBean

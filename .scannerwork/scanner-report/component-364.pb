@@ -1,1 +1,1 @@
-ì 2javaXhrDtrunk/src/main/java/com/example/comics/view1/CategoryController.java
+ï¿½ 2javaXï¿½hrDtrunk/src/main/java/com/example/comics/view1/ChapterControllerG.java

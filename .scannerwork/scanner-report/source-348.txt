@@ -1,29 +1,30 @@
 package com.example.comics.model;
 
+import com.example.comics.model.fagioli.ObjectiveBean;
+import com.example.comics.model.fagioli.ReviewBean;
 
-public class ReviewsObjective extends Objective{
+import java.util.ArrayList;
 
-    private int requiredReviews;
+public abstract class ReviewSubject {
 
-    public ReviewsObjective(Badge badge, Discount discount){
-        this.badge = badge;
-        this.discount = discount;
-    }
+      private static final ArrayList<ReviewObserver> observers = new ArrayList<>();
+      public static void attach(ReviewObserver observer){
+  observers.add(observer);
+ }
+      public void detach(ReviewObserver observer){
+  observers.remove(observer);
+ }
 
-    @Override
-    public boolean achieveObjective(int readersReviews){
-        return readersReviews >= requiredReviews;
-    }
+      public void notifyObservers(ReviewBean reviewBean){
+        for (ReviewObserver observer : observers) {
+          observer.update(reviewBean);
+        }
+      }
 
-    @Override
-    public String getType() {
-        return "reviewsObjective";
-    }
+      public void notifyAchievedReviewObjective(ObjectiveBean objectiveBean){
+          for (ReviewObserver observer : observers) {
+              observer.achievedObjective(objectiveBean);
+          }
+      }
 
-    public int getRequiredReviews(){
-        return requiredReviews;
-    }
-    public void setRequiredReviews(int num){
-        this.requiredReviews = num;
-    }
 }

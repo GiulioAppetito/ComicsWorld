@@ -4,8 +4,8 @@ public class Review {
 
     private String comment;
     private String username;
-    private String series;
     private String chapter;
+    private String rating;
 
     public Review(String comment, String username){
             this.comment = comment;
@@ -20,19 +20,19 @@ public class Review {
         return username;
     }
 
-    public String getSeries() {
-        return series;
-    }
-
-    public void setSeries(String series) {
-        this.series = series;
-    }
-
     public String getChapter() {
         return chapter;
     }
 
     public void setChapter(String chapter) {
         this.chapter = chapter;
+    }
+
+    public String getRating() {
+        return rating;
+    }
+
+    public void setRating(String rating) {
+        this.rating = rating;
     }
 }

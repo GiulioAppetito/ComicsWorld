@@ -1,31 +1,31 @@
 
-wcom.example.comics.model.dao.Queries#retriveFavouriteSeries(Ljava/sql/Statement;Ljava/lang/String;)Ljava/sql/ResultSet;o
-eC:/Users/biril/IdeaProjects/ComicsWorld/trunk/src/main/java/com/example/comics/model/dao/Queries.java( ((2"1*Œ
+tcom.example.comics.model.dao.Queries#retriveToReadSeries(Ljava/sql/Statement;Ljava/lang/String;)Ljava/sql/ResultSet;o
+eC:/Users/biril/IdeaProjects/ComicsWorld/trunk/src/main/java/com/example/comics/model/dao/Queries.java2 2(/"1*ÔøΩ
 1o
-eC:/Users/biril/IdeaProjects/ComicsWorld/trunk/src/main/java/com/example/comics/model/dao/Queries.java)! )(' 
-«
+eC:/Users/biril/IdeaProjects/ComicsWorld/trunk/src/main/java/com/example/comics/model/dao/Queries.java3! 3('ÔøΩ
+ÔøΩ
 o
-eC:/Users/biril/IdeaProjects/ComicsWorld/trunk/src/main/java/com/example/comics/model/dao/Queries.java)! )(l
+eC:/Users/biril/IdeaProjects/ComicsWorld/trunk/src/main/java/com/example/comics/model/dao/Queries.java3! 3(i
 %0java.lang.String"Pjava.lang.String#format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;*"
-java.lang.String*86
-4SELECT * from userFavouriteSeries where user = '%s' *
+java.lang.String*53
+1SELECT * from userToReadSeries where user = '%s' *
 
-userjava.lang.Stringπ
-∂
+userjava.lang.StringÔøΩ
+ÔøΩ
 o
-eC:/Users/biril/IdeaProjects/ComicsWorld/trunk/src/main/java/com/example/comics/model/dao/Queries.java) )(m#
+eC:/Users/biril/IdeaProjects/ComicsWorld/trunk/src/main/java/com/example/comics/model/dao/Queries.java3 3(j#
 selectStatementjava.lang.String"__id*
 
-%0java.lang.Stringæª
+%0java.lang.StringÔøΩÔøΩ
 o
-eC:/Users/biril/IdeaProjects/ComicsWorld/trunk/src/main/java/com/example/comics/model/dao/Queries.java* *(1
+eC:/Users/biril/IdeaProjects/ComicsWorld/trunk/src/main/java/com/example/comics/model/dao/Queries.java4 4(1
 %1java.sql.ResultSet"Gjava.sql.Statement#executeQuery(Ljava/lang/String;)Ljava/sql/ResultSet;*
 
 stmtjava.sql.Statement*%
 #
-selectStatementjava.lang.String2 executeQuery(Ljava/lang/String;)"ç
+selectStatementjava.lang.String2 executeQuery(Ljava/lang/String;)"ÔøΩ
 o
-eC:/Users/biril/IdeaProjects/ComicsWorld/trunk/src/main/java/com/example/comics/model/dao/Queries.java* *(2
+eC:/Users/biril/IdeaProjects/ComicsWorld/trunk/src/main/java/com/example/comics/model/dao/Queries.java4 4(2
 
 %1java.sql.ResultSet:
 stmtjava.sql.Statement:

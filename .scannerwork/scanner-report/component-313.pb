@@ -1,1 +1,1 @@
-¹ 2javaXYhr9trunk/src/main/java/com/example/comics/model/Chapter.java
+ï¿½ 2javaXhrBtrunk/src/main/java/com/example/comics/model/ChapterObjective.java

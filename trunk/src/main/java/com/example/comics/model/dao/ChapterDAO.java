@@ -1,7 +1,9 @@
 package com.example.comics.model.dao;
 
 import com.example.comics.model.Chapter;
+import com.example.comics.model.Reader;
 import com.example.comics.model.Review;
+import com.example.comics.model.Series;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -40,7 +42,7 @@ public class ChapterDAO {
                 chapterTitle = rs.getString("chapter_title");
                 chapterID = rs.getInt("chapter_id");
                 chapterSeries = rs.getString("series_title");
-                chapter = new Chapter(chapterSeries,chapterTitle);
+                chapter = new Chapter(chapterTitle);
                 chapter.setId(chapterID);
                 chapter.setDescription(rs.getString("chapterDescription"));
 
@@ -71,15 +73,21 @@ public class ChapterDAO {
         return chaptersList;
     }
 
-    public List<Review> retrieveReviews(String series, String chapter) throws ReviewsNotFoundException{
+    public List<Review> retrieveReviewsByReader(Series series, Reader reader) throws ReviewsNotFoundException{
         ReviewDAO reviewDAO = new ReviewDAO();
-        return reviewDAO.retrieveReviews(series,chapter);
+        return reviewDAO.retrieveReviewsByReaderAndSeries(series,reader);
 
     }
 
-    public void addReview(Review review) {
+    public List<Review> retrieveReviews(String chapter) throws ReviewsNotFoundException{
+        ReviewDAO reviewDAO = new ReviewDAO();
+        return reviewDAO.retrieveReviews(chapter);
+
+    }
+
+    public void addReview(Review review, String seriesTitle) {
         try {
-            ReviewDAO.saveReview(review);
+            ReviewDAO.saveReview(review, seriesTitle);
         } catch (Exception e) {
             e.printStackTrace();
         }

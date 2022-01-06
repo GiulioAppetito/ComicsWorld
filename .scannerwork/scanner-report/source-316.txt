@@ -1,7 +1,23 @@
 package com.example.comics.model;
 
-public class ChaptersObjective {
+import java.util.ArrayList;
 
-    //private Integer numberOfChaptersRead = 0;
+public abstract class ChapterSubject {
+
+    private static ArrayList<AccountObserver> observers = new ArrayList<>();
+
+    public static void attach(AccountObserver observer){
+        observers.add(observer);
+    }
+
+    public void detach(AccountObserver observer){
+        observers.remove(observer);
+    }
+
+    public void notifyObservers(){
+        for (AccountObserver observer : observers) {
+            observer.update();
+        }
+    }
 
 }

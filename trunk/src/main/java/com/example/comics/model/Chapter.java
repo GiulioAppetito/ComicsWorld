@@ -18,15 +18,15 @@ public class Chapter extends ChapterSubject {
     private Image cover;
     private String description;
 
-    public Chapter(String seriesTitle, String title) throws SQLException {
+    public Chapter(String title) throws SQLException {
 
         this.title = title;
-        //delego la responsabilità di creator delle review del chapter al chapterDAO che farà il retreive delle review
+        //delego la responsabilità di creator delle review del chapter al chapterDAO che farà il retrieve delle review
         ChapterDAO chapterDAO = new ChapterDAO();
         try {
-            this.reviews = chapterDAO.retrieveReviews(seriesTitle,this.title);
+            this.reviews = chapterDAO.retrieveReviews(title);
         } catch (ReviewsNotFoundException e) {
-            System.out.println("No reviews found on "+seriesTitle + " - "+this.title);
+            e.printStackTrace();
         }
     }
 

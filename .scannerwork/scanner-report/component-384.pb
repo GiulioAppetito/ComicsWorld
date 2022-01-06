@@ -1,1 +1,1 @@
-€ 2javaX&hrGtrunk/src/main/java/com/example/comics/view1/StatisticsControllerG.java
+ï¿½ 2javaXHhrCtrunk/src/main/java/com/example/comics/view1/ToReadControllerG.java

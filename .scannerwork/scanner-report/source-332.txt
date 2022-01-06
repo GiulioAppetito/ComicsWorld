@@ -1,41 +1,22 @@
 package com.example.comics.model.fagioli;
 
-public class AccountBean {
+import javafx.scene.image.Image;
 
-    private String firstName;
-    private String lastName;
-    private String email;
-    private String password;
+public class BadgeBean {
+    private String name;
+    private Image icon;
 
-    public String getFirstName() {
-        return firstName;
+    public String getName() {
+        return name;
+    }
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
+    public Image getIcon() {
+        return icon;
     }
-
-    public String getLastName() {
-        return lastName;
-    }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
+    public void setIcon(Image icon) {
+        this.icon = icon;
     }
 }

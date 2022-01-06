@@ -3,12 +3,25 @@ package com.example.comics.view1;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 
-public class CategoryCardControllerG {
+import java.io.IOException;
+
+public class CategoryController {
 
     @FXML
-    public Label lblname;
+    public Label lblcategory;
 
-    public void setData(String categoryName){
-        lblname.setText(categoryName);
+
+    public void setData(String name){
+        lblcategory.setText(name);
     }
+
+    public void back(){
+        ReaderHomeControllerG readerHomeControllerG = ReaderHomeControllerG.getInstance();
+        try {
+            readerHomeControllerG.openCategories();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
 }

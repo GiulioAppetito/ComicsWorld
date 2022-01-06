@@ -1,16 +1,9 @@
 
-Ecom.example.comics.model.Objective#getSeriesTitle()Ljava/lang/String;m
-cC:/Users/biril/IdeaProjects/ComicsWorld/trunk/src/main/java/com/example/comics/model/Objective.java& &( "1*Ê
++com.example.comics.model.Objective#getId()Im
+cC:/Users/biril/IdeaProjects/ComicsWorld/trunk/src/main/java/com/example/comics/model/Objective.java. .("1*ï¿½
 1m
-cC:/Users/biril/IdeaProjects/ComicsWorld/trunk/src/main/java/com/example/comics/model/Objective.java' '(É
-Æ
+cC:/Users/biril/IdeaProjects/ComicsWorld/trunk/src/main/java/com/example/comics/model/Objective.java/ /("w
 m
-cC:/Users/biril/IdeaProjects/ComicsWorld/trunk/src/main/java/com/example/comics/model/Objective.java' '(
-%0java.lang.String"__id*7*5$
-"com.example.comics.model.Objective"
-seriesTitle"‰
-m
-cC:/Users/biril/IdeaProjects/ComicsWorld/trunk/src/main/java/com/example/comics/model/Objective.java' '(
-
-%0java.lang.StringB&$
+cC:/Users/biril/IdeaProjects/ComicsWorld/trunk/src/main/java/com/example/comics/model/Objective.java/ /(
+""B&$
 "com.example.comics.model.Objective

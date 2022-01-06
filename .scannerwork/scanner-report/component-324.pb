@@ -1,1 +1,1 @@
-Ä 2javaXkhrBtrunk/src/main/java/com/example/comics/model/dao/ObjectiveDAO.java
+ï¿½ 2javaXï¿½hr=trunk/src/main/java/com/example/comics/model/dao/Queries.java

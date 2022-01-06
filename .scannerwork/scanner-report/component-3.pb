@@ -1,1 +1,1 @@
- 2xmlXhr.idea/aws.xml
+ 2xmlXhr.idea/aws.xml

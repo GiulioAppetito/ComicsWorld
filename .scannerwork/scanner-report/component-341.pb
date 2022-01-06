@@ -1,1 +1,1 @@
-Õ 2javaXhrRtrunk/src/main/java/com/example/comics/model/fagioli/WrongCredentialException.java
+ï¿½ 2javaX	hr8trunk/src/main/java/com/example/comics/model/Genres.java

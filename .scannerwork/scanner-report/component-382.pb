@@ -1,1 +1,1 @@
-þ 2javaXªhrCtrunk/src/main/java/com/example/comics/view1/SeriesControllerG.java
+ï¿½ 2javaX5hrEtrunk/src/main/java/com/example/comics/view1/SettingsControllerG.java

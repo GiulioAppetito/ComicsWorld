@@ -7,46 +7,31 @@ import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import tools.FxmlLoader;
 
-public class SettingsControllerG {
+public class StatisticsControllerG {
 
     @FXML
-    private Button btnProfile;
+    private Button btnRatings;
+
     @FXML
-    private VBox settingsBox;
+    private Button btnReadings;
+
     @FXML
     private BorderPane mainPane;
-    @FXML
-    private Button accountsettings;
-    @FXML
-    private Button preferencessettings;
-    @FXML
-    private Button aboutussettings;
 
-    public void initialize(){
-        openProfileSettings();
-    }
+    @FXML
+    private VBox settingsBox;
 
-    public void openProfileSettings() {
+    @FXML
+    public void openStatisticsRating() {
         FxmlLoader object = new FxmlLoader();
-        Pane view = object.getPage("profilesettings");
+        Pane view = object.getPage("statisticsrating");
         mainPane.setCenter(view);
     }
 
-    public void openAccountSettings() {
+    @FXML
+    public void openStatisticsReading() {
         FxmlLoader object = new FxmlLoader();
-        Pane view = object.getPage("accountsettings");
-        mainPane.setCenter(view);
-    }
-
-    public void openPreferencesSettings() {
-        FxmlLoader object = new FxmlLoader();
-        Pane view = object.getPage("preferencessettings");
-        mainPane.setCenter(view);
-    }
-
-    public void openAboutUsSettings() {
-        FxmlLoader object = new FxmlLoader();
-        Pane view = object.getPage("aboutussettings");
+        Pane view = object.getPage("statisticsreading");
         mainPane.setCenter(view);
     }
 }

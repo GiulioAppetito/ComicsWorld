@@ -1,1 +1,1 @@
-Ý 2javaXhr?trunk/src/main/java/com/example/comics/model/ReviewSubject.java
+ï¿½ 2javaXLhr8trunk/src/main/java/com/example/comics/model/Series.java

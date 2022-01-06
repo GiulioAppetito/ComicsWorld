@@ -1,23 +1,14 @@
 package com.example.comics.model;
 
-import java.util.ArrayList;
+public class Character {
 
-public abstract class ChapterSubject {
+    private String name;
 
-    private static ArrayList<AccountObserver> observers = new ArrayList<>();
-
-    public static void attach(AccountObserver observer){
-        observers.add(observer);
+    public void setName(String name){
+        this.name = name;
     }
 
-    public void detach(AccountObserver observer){
-        observers.remove(observer);
+    public String getName(){
+        return name;
     }
-
-    public void notifyObservers(){
-        for (AccountObserver observer : observers) {
-            observer.update();
-        }
-    }
-
 }

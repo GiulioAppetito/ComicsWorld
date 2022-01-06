@@ -105,15 +105,21 @@ public class Queries {
         }
     }
 
+    public static ResultSet retrieveReviewsByReaderAndSeries(Statement stmt, String seriesTitle, String user) throws SQLException {
+        String selectStatement = String.format("SELECT * FROM review WHERE series_title = '%s' AND user = '%s' ", seriesTitle, user);
+        System.out.println(selectStatement);
+        return stmt.executeQuery(selectStatement);
+
+    }
     public static ResultSet retrieveReviewsByReader(Statement stmt, String user) throws SQLException {
-        String selectStatement = String.format("SELECT * FROM review WHERE user = '%s' ",user);
+        String selectStatement = String.format("SELECT * FROM review WHERE user = '%s' ", user);
         System.out.println(selectStatement);
         return stmt.executeQuery(selectStatement);
 
     }
 
-    public static ResultSet retreiveReviewsByChapter(Statement stmt, String series, String chapter) throws SQLException {
-        String selectStatement = String.format("SELECT * FROM review WHERE series_title = '%s' AND chapter_id = '%s'",series,chapter);
+    public static ResultSet retreiveReviewsByChapter(Statement stmt, String chapterTitle) throws SQLException {
+        String selectStatement = String.format("SELECT * FROM review WHERE chapter_title = '%s'",chapterTitle);
         System.out.println(selectStatement);
         return stmt.executeQuery(selectStatement);
 
@@ -125,8 +131,8 @@ public class Queries {
         return stmt.executeQuery(selectStatement);
     }
 
-    public static int saveReview(Statement stmt, Review review) throws SQLException {
-        String insertStatement = String.format("INSERT INTO review (user, comment, series_title, chapter_id) VALUES ('%s','%s','%s','%s')", review.getUsername(), review.getComment(),review.getSeries(),review.getChapter());
+    public static int saveReview(Statement stmt, Review review, String seriesTitle) throws SQLException {
+        String insertStatement = String.format("INSERT INTO review (user, comment, series_title, chapter_title, rating) VALUES ('%s','%s','%s','%s','%s')", review.getUsername(), review.getComment(), seriesTitle,review.getChapter(), review.getRating());
         System.out.println(insertStatement);
         stmt.executeUpdate(insertStatement);
         return 0;

@@ -1,12 +1,23 @@
 package com.example.comics.view1;
 
-import javafx.scene.layout.Pane;
+import com.example.comics.model.UserLogin;
 
-import java.io.IOException;
+public class HomeFactory {
 
-public abstract class HomeControllerG {
+    public HomeControllerG getHomeControllerG(){
 
-    public abstract void changeCenter(Pane pane);
-    public abstract void openFeed() throws IOException;
+        HomeControllerG homeControllerG;
+        String role = UserLogin.getInstance().getAccount().getRole();
+
+        if(role.equals("reader")){
+            homeControllerG = ReaderHomeControllerG.getInstance();
+        }
+        else{
+            homeControllerG = AuthorHomeControllerG.getInstance();
+        }
+
+        return homeControllerG;
+
+    }
 
 }

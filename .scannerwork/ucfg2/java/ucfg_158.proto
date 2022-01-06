@@ -1,17 +1,17 @@
 
-Qcom.example.comics.model.fagioli.RegistrationBean#getLastName()Ljava/lang/String;|
-rC:/Users/biril/IdeaProjects/ComicsWorld/trunk/src/main/java/com/example/comics/model/fagioli/RegistrationBean.java ("1*ƒ
+Qcom.example.comics.model.fagioli.RegistrationBean#getUsername()Ljava/lang/String;|
+rC:/Users/biril/IdeaProjects/ComicsWorld/trunk/src/main/java/com/example/comics/model/fagioli/RegistrationBean.java ("1*ï¿½
 1|
-rC:/Users/biril/IdeaProjects/ComicsWorld/trunk/src/main/java/com/example/comics/model/fagioli/RegistrationBean.java (ä
-á
+rC:/Users/biril/IdeaProjects/ComicsWorld/trunk/src/main/java/com/example/comics/model/fagioli/RegistrationBean.java (ï¿½
+ï¿½
 |
-rC:/Users/biril/IdeaProjects/ComicsWorld/trunk/src/main/java/com/example/comics/model/fagioli/RegistrationBean.java (
+rC:/Users/biril/IdeaProjects/ComicsWorld/trunk/src/main/java/com/example/comics/model/fagioli/RegistrationBean.java (
 %0java.lang.String"__id*C*A3
 1com.example.comics.model.fagioli.RegistrationBean"
 
-lastName"˜
+username"ï¿½
 |
-rC:/Users/biril/IdeaProjects/ComicsWorld/trunk/src/main/java/com/example/comics/model/fagioli/RegistrationBean.java (
+rC:/Users/biril/IdeaProjects/ComicsWorld/trunk/src/main/java/com/example/comics/model/fagioli/RegistrationBean.java (
 
 %0java.lang.StringB53
 1com.example.comics.model.fagioli.RegistrationBean

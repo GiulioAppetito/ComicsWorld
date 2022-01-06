@@ -1,1 +1,1 @@
-Å 2javaXHhrCtrunk/src/main/java/com/example/comics/view1/ToReadControllerG.java
+ÔøΩ 2javaXhrBtrunk/src/main/java/com/example/comics/view1/VCardControllerG.java

@@ -1,24 +1,23 @@
 package com.example.comics.model;
 
+public class Advertisement {
 
-import java.util.ArrayList;
+    private String title;
+    private Discount discount;
 
-public abstract class AccountSubject {
-
-    private static ArrayList<AccountObserver> observers = new ArrayList<>();
-
-    public static void attach(AccountObserver observer){
-        observers.add(observer);
+    public void setTitle(String title) {
+        this.title = title;
     }
 
-    public void detach(AccountObserver observer){
-        observers.remove(observer);
+    public String getTitle(){
+        return this.title;
     }
 
-    public void notifyObservers(){
-        for (AccountObserver observer : observers) {
-            observer.update();
-        }
+    public Discount getDiscount() {
+        return discount;
     }
 
+    public void setDiscount(Discount discount) {
+        this.discount = discount;
+    }
 }

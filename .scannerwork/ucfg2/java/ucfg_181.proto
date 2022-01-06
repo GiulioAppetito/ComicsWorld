@@ -1,33 +1,41 @@
 
-xcom.example.comics.model.dao.Queries#retrieveReviewsByReader(Ljava/sql/Statement;Ljava/lang/String;)Ljava/sql/ResultSet;o
-eC:/Users/biril/IdeaProjects/ComicsWorld/trunk/src/main/java/com/example/comics/model/dao/Queries.javaV V(3"1*¡
+ÔøΩcom.example.comics.model.dao.Queries#retreiveReader(Ljava/sql/Statement;Ljava/lang/String;Ljava/lang/String;)Ljava/sql/ResultSet;o
+eC:/Users/biril/IdeaProjects/ComicsWorld/trunk/src/main/java/com/example/comics/model/dao/Queries.javab b(*"1*ÔøΩ	
 1o
-eC:/Users/biril/IdeaProjects/ComicsWorld/trunk/src/main/java/com/example/comics/model/dao/Queries.javaW! W('Ω
-∫
-o
-eC:/Users/biril/IdeaProjects/ComicsWorld/trunk/src/main/java/com/example/comics/model/dao/Queries.javaW! W(^
+eC:/Users/biril/IdeaProjects/ComicsWorld/trunk/src/main/java/com/example/comics/model/dao/Queries.javac! c('ÔøΩ
+ÔøΩ
+p
+eC:/Users/biril/IdeaProjects/ComicsWorld/trunk/src/main/java/com/example/comics/model/dao/Queries.javac! c(ÔøΩ
 %0java.lang.String"Pjava.lang.String#format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;*"
-java.lang.String*+)
-'SELECT * FROM review WHERE user = '%s' *
-
-userjava.lang.Stringπ
-∂
-o
-eC:/Users/biril/IdeaProjects/ComicsWorld/trunk/src/main/java/com/example/comics/model/dao/Queries.javaW W(_#
+java.lang.String*TR
+PSELECT * FROM users WHERE (username = '%s' OR email = '%s')  AND password = '%s'* 
+
+
+identifierjava.lang.String* 
+
+
+identifierjava.lang.String*
+
+passwordjava.lang.StringÔøΩ
+ÔøΩ
+p
+eC:/Users/biril/IdeaProjects/ComicsWorld/trunk/src/main/java/com/example/comics/model/dao/Queries.javac c(ÔøΩ#
 selectStatementjava.lang.String"__id*
 
-%0java.lang.Stringæª
+%0java.lang.StringÔøΩÔøΩ
 o
-eC:/Users/biril/IdeaProjects/ComicsWorld/trunk/src/main/java/com/example/comics/model/dao/Queries.javaX X(1
+eC:/Users/biril/IdeaProjects/ComicsWorld/trunk/src/main/java/com/example/comics/model/dao/Queries.javad d(1
 %1java.sql.ResultSet"Gjava.sql.Statement#executeQuery(Ljava/lang/String;)Ljava/sql/ResultSet;*
 
 stmtjava.sql.Statement*%
 #
-selectStatementjava.lang.String2 executeQuery(Ljava/lang/String;)"ç
+selectStatementjava.lang.String2 executeQuery(Ljava/lang/String;)"ÔøΩ
 o
-eC:/Users/biril/IdeaProjects/ComicsWorld/trunk/src/main/java/com/example/comics/model/dao/Queries.javaX X(2
+eC:/Users/biril/IdeaProjects/ComicsWorld/trunk/src/main/java/com/example/comics/model/dao/Queries.javad d(2
 
 %1java.sql.ResultSet:
-stmtjava.sql.Statement:
-userjava.lang.StringB("&
+stmtjava.sql.Statement:
+
+identifierjava.lang.String:
+passwordjava.lang.StringB("&
 $com.example.comics.model.dao.Queries

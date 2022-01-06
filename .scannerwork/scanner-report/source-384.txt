@@ -1,37 +1,72 @@
 package com.example.comics.view1;
 
+import com.example.comics.controller.ResearchController;
+import com.example.comics.model.fagioli.SeriesBean;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.Pane;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
-import tools.FxmlLoader;
 
-public class StatisticsControllerG {
+import java.io.IOException;
+import java.net.URL;
+import java.util.List;
 
-    @FXML
-    private Button btnRatings;
-
-    @FXML
-    private Button btnReadings;
+public class ToReadControllerG {
 
     @FXML
-    private BorderPane mainPane;
+    private GridPane gpComics;
 
-    @FXML
-    private VBox settingsBox;
 
-    @FXML
-    public void openStatisticsRating() {
-        FxmlLoader object = new FxmlLoader();
-        Pane view = object.getPage("statisticsrating");
-        mainPane.setCenter(view);
+    public void initialize(){
+
+        ResearchController researchController = new ResearchController();
+
+        List<SeriesBean> listOfCards = researchController.getToReadSeries();
+        int size = listOfCards.size();
+        int columns = 3;
+        int i=1;
+        for(int j=0; j<size; j++) {
+            FXMLLoader fxmlLoader = new FXMLLoader();
+            fxmlLoader.setLocation(getClass().getResource("vcard.fxml"));
+            try {
+                VBox card = fxmlLoader.load();
+                VCardControllerG cardController = fxmlLoader.getController();
+                cardController.setData(listOfCards.get(j).getTitle(),listOfCards.get(j).getCover());
+
+                int finalJ = j;
+                card.setOnMouseClicked(event -> {
+                    try {
+                        openSerie(listOfCards.get(finalJ));
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                });
+
+                gpComics.add(card,j%columns,i);
+                if(j%columns == columns-1){
+                    i++;
+                }
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+
     }
 
-    @FXML
-    public void openStatisticsReading() {
-        FxmlLoader object = new FxmlLoader();
-        Pane view = object.getPage("statisticsreading");
-        mainPane.setCenter(view);
+
+    public void openSerie(SeriesBean seriesBean) throws IOException {
+
+        SeriesControllerG serieController = new SeriesControllerG();
+        FXMLLoader loader = new FXMLLoader();
+
+        URL fxmlLocation = CharacterControllerG.class.getResource("serie.fxml");
+        loader.setLocation(fxmlLocation);
+        loader.setController(serieController);
+
+        ReaderHomeControllerG readerHomeControllerG = ReaderHomeControllerG.getInstance();
+        readerHomeControllerG.changeCenter(loader.load());
+
+        serieController.init(seriesBean);
+
     }
 }

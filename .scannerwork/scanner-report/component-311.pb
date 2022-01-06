@@ -1,1 +1,1 @@
-· 2javaX3hr8trunk/src/main/java/com/example/comics/model/Author.java
+ï¿½ 2javaX hr7trunk/src/main/java/com/example/comics/model/Badge.java

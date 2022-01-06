@@ -1,22 +1,61 @@
 package com.example.comics.model.fagioli;
 
+import com.example.comics.model.Review;
 import javafx.scene.image.Image;
+import java.util.ArrayList;
+import java.util.List;
 
-public class BadgeBean {
-    private String name;
-    private Image icon;
+public class ChapterBean {
 
-    public String getName() {
-        return name;
+    private String title;
+    private String series;
+    private Integer id;
+    private Image cover;
+    private List<Review> reviews = new ArrayList<>();
+
+    public String getTitle() {
+        return title;
     }
-    public void setName(String name) {
-        this.name = name;
+    public void setTitle(String title) {
+        this.title = title;
     }
 
-    public Image getIcon() {
-        return icon;
+    public String getSeries() {
+        return series;
     }
-    public void setIcon(Image icon) {
-        this.icon = icon;
+    public void setSeries(String series) {
+        this.series = series;
+    }
+
+    public Integer getId() {
+        return id;
+    }
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public Image getCover() {
+        return cover;
+    }
+    public void setCover(Image cover) {
+        this.cover = cover;
+    }
+
+    public List<ReviewBean> getReviews(){
+        ArrayList<ReviewBean> reviewBeans = new ArrayList<>();
+        ReviewBean reviewBean ;
+
+        for(Review review : reviews){
+            reviewBean = new ReviewBean();
+            reviewBean.setComment(review.getComment());
+            reviewBean.setUsername(review.getUsername());
+            reviewBeans.add(reviewBean);
+        }
+
+        return reviewBeans;
+    }
+
+    public void setReviews(List<Review> reviews) {
+        this.reviews = reviews;
     }
 }
