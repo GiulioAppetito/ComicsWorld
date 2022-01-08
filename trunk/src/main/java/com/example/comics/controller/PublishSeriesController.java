@@ -16,24 +16,18 @@ public class PublishSeriesController {
 
     public void publishSeries(SeriesBean seriesBean, List<ObjectiveBean>objectiveBeans){
 
-        Series series;
-        series = new Series(seriesBean.getTitle());
+        Author author = new Author();
+        author.setUsername(seriesBean.getAuthor().getUsername());
+        author.setPublishedSeries(seriesBean.getAuthor().getPublishedSeries());
+        author.setFirstName(seriesBean.getAuthor().getFirstName());
+        author.setLastName(seriesBean.getAuthor().getLastName());
+        author.setProPic(seriesBean.getAuthor().getProPic());
+
+        Series series = new Series(seriesBean.getTitle(), author);
+
         series.setGenre1(seriesBean.getGenre1());
         series.setGenre2(seriesBean.getGenre2());
         series.setGenre3(seriesBean.getGenre3());
-        //series.setCover(seriesBean.getCover());
-
-
-        AuthorBean authorBean = seriesBean.getAuthor();
-        Author author = new Author();
-        author.setPublishedSeries(authorBean.getPublishedSeries());
-        author.setUsername(authorBean.getUsername());
-        author.setLastName(authorBean.getLastName());
-        author.setProPic(authorBean.getProPic());
-        author.setFirstName(authorBean.getFirstName());
-
-        series.setAuthor(author);
-
 
 
         //aggiunta della serie all'autore

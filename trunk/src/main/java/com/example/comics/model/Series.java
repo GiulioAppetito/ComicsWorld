@@ -22,8 +22,9 @@ public class Series {
 	private Genres genre2;
 	private Genres genre3;
 
-	public Series(String title){
+	public Series(String title, Author author){
 		this.title = title;
+		this.author = author;
 		SeriesDAO seriesDAO = new SeriesDAO();
 		this.chapters = seriesDAO.retriveChapters(title);
 		//inizializzazione obiettivi dal db

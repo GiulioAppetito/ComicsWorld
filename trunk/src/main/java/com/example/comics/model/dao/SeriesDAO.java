@@ -138,8 +138,7 @@ public class SeriesDAO {
             rs.first();
 
             do {
-                series = new Series(rs.getString("title"));
-                series.setAuthor(author);
+                series = new Series(rs.getString("title"), author);
 
                 Blob bl = rs.getBlob("cover");
                 InputStream inputStream = bl.getBinaryStream();
@@ -252,12 +251,11 @@ public class SeriesDAO {
 
                 AuthorDAO authorDAO = new AuthorDAO();
                 author = authorDAO.retrieveAuthorWithoutPassword(rs.getString("author"));
-                series = new Series(title);
+                series = new Series(title, author);
                 Blob bl = rs.getBlob("cover");
                 InputStream inputStream = bl.getBinaryStream();
                 Image image = new Image(inputStream);
                 series.setCover(image);
-                series.setAuthor(author);
                 //series.setGenre1(genre1);
                // series.setGenre2(genre2);
                 //series.setGenre3(genre3);
@@ -307,15 +305,16 @@ public class SeriesDAO {
             }
             rs.first();
             do {
-                series = new Series(rs.getString("title"));
+
+                AuthorDAO authorDAO = new AuthorDAO();
+                author = authorDAO.retrieveAuthorWithoutPassword(rs.getString("author"));
+                series = new Series(rs.getString("title"), author);
 
                 Blob bl = rs.getBlob("cover");
                 InputStream inputStream = bl.getBinaryStream();
                 Image image = new Image(inputStream);
                 series.setCover(image);
 
-                AuthorDAO authorDAO = new AuthorDAO();
-                author = authorDAO.retrieveAuthorWithoutPassword(rs.getString("author"));
 
 
                 series.setAuthor(author);

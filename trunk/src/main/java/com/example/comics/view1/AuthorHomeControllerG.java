@@ -43,9 +43,6 @@ public class AuthorHomeControllerG  extends HomeControllerG implements AccountOb
     private Button btnMySeries;
 
     @FXML
-    private Button btnMyBadges;
-
-    @FXML
     private Button btnMyCharacters;
 
     @FXML
@@ -73,9 +70,12 @@ public class AuthorHomeControllerG  extends HomeControllerG implements AccountOb
         return instance;
     }
 
+
+
     public void init() throws IOException {
 
         openFeed();
+
         smallProPic.setImage(UserLogin.getInstance().getAccount().getProPic());
         System.out.println("INITED WITH PIC "+UserLogin.getInstance().getAccount().getProPic());
         lblName.setText(UserLogin.getInstance().getAccount().getUsername());
@@ -91,10 +91,11 @@ public class AuthorHomeControllerG  extends HomeControllerG implements AccountOb
         btnStatistics.setOnAction(event -> openStatistics());
         btnSettings.setOnAction(event -> openSettings());
         btnTop.setOnAction(event -> openTop());
-        btnMyBadges.setOnAction(event -> openMyBadges());
         btnMyCharacters.setOnAction(event -> openMyCharacters());
         userBox.setOnMouseClicked(event -> openProfile());
         homeIcon.setOnMouseClicked(event -> openFeed());
+
+        System.out.println("fine init author home controller g");
     }
 
     private void openStatistics() {
@@ -121,15 +122,6 @@ public class AuthorHomeControllerG  extends HomeControllerG implements AccountOb
 
         resetButtons();
         btnMyCharacters.setStyle(STYLE2);
-    }
-
-    public void openMyBadges() {
-        FxmlLoader object = new FxmlLoader();
-        Pane view = object.getPage("authormybadges");
-        mainPane.setCenter(view);
-
-        resetButtons();
-        btnMyBadges.setStyle(STYLE2);
     }
 
     public void openTop(){
@@ -202,7 +194,7 @@ public class AuthorHomeControllerG  extends HomeControllerG implements AccountOb
         btnMySeries.setStyle(STYLE);
         btnMyCharacters.setStyle(STYLE);
         btnTop.setStyle(STYLE);
-        btnMyBadges.setStyle(STYLE);
+        //btnMyBadges.setStyle(STYLE);
         btnStatistics.setStyle(STYLE);
     }
 

@@ -387,13 +387,10 @@ public class ChapterControllerG implements ReviewObserver {
 
         btnBack.setOnAction(event -> {
 
-            try {
+
                 HomeFactory homeFactory = new HomeFactory();
                 HomeControllerG homeControllerG = homeFactory.getHomeControllerG();
                 homeControllerG.openFeed();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
         });
 
         btnStar01.setOnAction(event -> oneStar());

@@ -40,7 +40,6 @@ public class ChapterDAO {
 
             do {
                 chapterTitle = rs.getString("chapter_title");
-                chapterID = rs.getInt("chapter_id");
                 chapterSeries = rs.getString("series_title");
                 chapter = new Chapter(chapterTitle);
                 chapter.setDescription(rs.getString("chapterDescription"));

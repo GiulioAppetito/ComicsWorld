@@ -1,8 +1,6 @@
 
 Y
 )trunk/src/main/java/tools/FxmlLoader.java,d\e\de32ed8f94441761fd06fd3ef03cf5c2ca800310
-
-Qtrunk/src/main/java/com/example/comics/controller/CustomizeProfileController.java,2\d\2dbf5afb17ba5adc40d371a5aa29e8812bff060c
 v
 Ftrunk/src/main/java/com/example/comics/controller/LoginController.java,5\2\52c8d0ece5ecea5be79349a3b18d789e37c95ad8
 }
@@ -63,8 +61,6 @@ Ftrunk/src/main/java/com/example/comics/view1/CharacterControllerG.java,b\d\bd1
 Ptrunk/src/main/java/com/example/comics/view1/FavouriteCharactersControllerG.java,3\b\3be8ac2df5f5661711730d0ce861ef7c0c70599c
 |
 Ltrunk/src/main/java/com/example/comics/view1/FavouriteComicsControllerG.java,a\9\a9e472ecb5fb1c16992545a801842ac3a9166f3e
-m
-=trunk/src/main/java/com/example/comics/view1/HomeFactory.java,6\8\68f57411c53415cf6dbae85e49b0a05980e4cabe
 f
 6trunk/src/main/java/com/example/comics/view1/Main.java,4\f\4fac817cac1c690fe55eef1a8c0e48877f7cdb73
 
@@ -361,16 +357,12 @@ j
 :trunk/src/main/java/com/example/comics/model/Discount.java,6\7\679da8e9c0f13931aa91489c0173c05b7342e1d8
 n
 >trunk/src/main/java/com/example/comics/model/DiscountCode.java,f\8\f8c1b7e67fef9ace2db0e148950e80095f001b68
-r
-Btrunk/src/main/java/com/example/comics/view1/LoginControllerG.java,c\e\ce2466ad6ef4e7ee688a7c6ee590a9a25d5f40e1
 k
 ;trunk/src/main/java/com/example/comics/model/Objective.java,3\8\385df1ff7a57b7c35d66812611318ab3dc7e6bf1
 |
 Ltrunk/src/main/java/com/example/comics/view1/ProfileSettingsControllerG.java,4\1\415b665414f37f262296f9bac7a0b4c322bf6bb6
 z
 Jtrunk/src/main/java/com/example/comics/view1/ReaderProfileControllerG.java,9\d\9d55d09a3bc1211493d2067fe3a33b4ff83ca9f4
-w
-Gtrunk/src/main/java/com/example/comics/controller/ToReadController.java,1\c\1c3ec2f83de973c2309989978a5802f8217b0e4a
 s
 Ctrunk/src/main/java/com/example/comics/view1/ToReadControllerG.java,a\f\af51d298954fbb57ad158824154a1019417de095
 n
@@ -2123,9 +2115,5 @@ Z
 +.scannerwork/scanner-report/measures-308.pb,5\7\577c27900196ba0e3d1f46e36820a41dfb65d562
 s
 Ctrunk/src/main/java/com/example/comics/model/fagioli/LoginBean.java,5\b\5becafffff50e8d5e91b8682372fe29ba8974529
-u
-Etrunk/src/main/java/com/example/comics/model/fagioli/AccountBean.java,a\5\a5cf89bb8bc9b320572341689a43bdd3972e0503
 s
 Ctrunk/src/main/java/com/example/comics/model/fagioli/BadgeBean.java,5\4\541444d7fee134e989d4ba3f5d7fff0b86d2a1d7
-{
-Ktrunk/src/main/java/com/example/comics/controller/FavouritesController.java,a\d\ad2d7d44963d0e76110b38c8f63d49c1d7c257e1

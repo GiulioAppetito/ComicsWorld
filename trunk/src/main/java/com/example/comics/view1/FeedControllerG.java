@@ -31,13 +31,13 @@ public class FeedControllerG{
     private static List<SeriesBean> latestSeries;
 
     private FeedControllerG(){
-        //costruttore
+        loadLatestSeries();
+        System.out.println("inizializzazione feed");
     }
 
     public static synchronized FeedControllerG getInstance(){
         if(instance == null){
             instance = new FeedControllerG();
-            loadLatestSeries();
         }
         return instance;
     }

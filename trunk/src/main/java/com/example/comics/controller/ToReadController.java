@@ -12,25 +12,30 @@ public class ToReadController {
 
     public boolean isSeriesAddedToRead(SeriesBean seriesBean){
 
-        Series series = new Series(seriesBean.getTitle());
+        Author author = new Author();
+        author.setUsername(seriesBean.getAuthor().getUsername());
+        author.setPublishedSeries(seriesBean.getAuthor().getPublishedSeries());
+        author.setFirstName(seriesBean.getAuthor().getFirstName());
+        author.setLastName(seriesBean.getAuthor().getLastName());
+        author.setProPic(seriesBean.getAuthor().getProPic());
+
+        Series series = new Series(seriesBean.getTitle(), author);
         series.setCover(seriesBean.getCover());
-        series.setAuthor(series.getAuthor());
 
         return UserLogin.getInstance().getReader().wantsToRead(series);
 
     }
 
     public void addSeriesToToRead(SeriesBean seriesBean) {
-        Series series = new Series(seriesBean.getTitle());
-        AuthorBean authorBean = seriesBean.getAuthor();
-        Author author = new Author();
-        author.setPublishedSeries(authorBean.getPublishedSeries());
-        author.setUsername(authorBean.getUsername());
-        author.setLastName(authorBean.getLastName());
-        author.setProPic(authorBean.getProPic());
-        author.setFirstName(authorBean.getFirstName());
 
-        series.setAuthor(author);
+        Author author = new Author();
+        author.setUsername(seriesBean.getAuthor().getUsername());
+        author.setPublishedSeries(seriesBean.getAuthor().getPublishedSeries());
+        author.setFirstName(seriesBean.getAuthor().getFirstName());
+        author.setLastName(seriesBean.getAuthor().getLastName());
+        author.setProPic(seriesBean.getAuthor().getProPic());
+
+        Series series = new Series(seriesBean.getTitle(), author);
         series.setCover(seriesBean.getCover());
         //poi altri dettagli
 
@@ -46,16 +51,16 @@ public class ToReadController {
 
     public void removeSeriesFromToRead(SeriesBean seriesBean) {
 
-        Series series = new Series(seriesBean.getTitle());
-        AuthorBean authorBean = seriesBean.getAuthor();
-        Author author = new Author();
-        author.setPublishedSeries(authorBean.getPublishedSeries());
-        author.setUsername(authorBean.getUsername());
-        author.setLastName(authorBean.getLastName());
-        author.setProPic(authorBean.getProPic());
-        author.setFirstName(authorBean.getFirstName());
 
-        series.setAuthor(author);
+        Author author = new Author();
+        author.setUsername(seriesBean.getAuthor().getUsername());
+        author.setPublishedSeries(seriesBean.getAuthor().getPublishedSeries());
+        author.setFirstName(seriesBean.getAuthor().getFirstName());
+        author.setLastName(seriesBean.getAuthor().getLastName());
+        author.setProPic(seriesBean.getAuthor().getProPic());
+
+        Series series = new Series(seriesBean.getTitle(), author);
+
         series.setCover(seriesBean.getCover());
         //poi altri dettagli
 

@@ -183,7 +183,6 @@ public class LoginControllerG {
                 fxmlLocation = AuthorHomeControllerG.class.getResource("authorhome.fxml");
                 loader.setLocation(fxmlLocation);
                 loader.setController(authorHomeControllerG);
-
                 scene = new Scene(loader.load());
                 authorHomeControllerG.init();
             }
