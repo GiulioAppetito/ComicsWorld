@@ -32,7 +32,6 @@ public class ReaderHomeControllerG extends HomeControllerG implements AccountObs
     @FXML
     private Button btnFav;
 
-
     @FXML
     private Button btnReading;
 
@@ -111,10 +110,10 @@ public class ReaderHomeControllerG extends HomeControllerG implements AccountObs
         btnToRead.setStyle(STYLE2);
     }
 
+    @Override
     public void changeCenter(Pane pane){
         mainPane.setCenter(pane);
     }
-
 
     public void openProfile() {
 
