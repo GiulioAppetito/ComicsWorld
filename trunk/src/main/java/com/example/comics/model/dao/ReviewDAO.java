@@ -86,7 +86,7 @@ public class ReviewDAO {
 
     }
 
-    public static void saveReview(Review review, Chapter chapter, Series series) throws Exception {
+    public void saveReview(Review review, Chapter chapter, Series series) throws Exception {
         // STEP 1: dichiarazioni
         Statement stmt = null;
         Connection conn = null;

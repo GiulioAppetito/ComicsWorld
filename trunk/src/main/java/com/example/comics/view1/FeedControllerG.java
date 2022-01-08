@@ -27,17 +27,30 @@ public class FeedControllerG{
     private MenuButton btnFilter;
 
 
-    public FeedControllerG(){
+    private static FeedControllerG instance;
+    private static List<SeriesBean> latestSeries;
+
+    private FeedControllerG(){
         //costruttore
+    }
+
+    public static synchronized FeedControllerG getInstance(){
+        if(instance == null){
+            instance = new FeedControllerG();
+            loadLatestSeries();
+        }
+        return instance;
+    }
+
+    public static void loadLatestSeries(){
+        ResearchController researchController = new ResearchController();
+        latestSeries = researchController.getLatestSeries();
     }
 
 
     public void init() {
 
-        ResearchController researchController = new ResearchController();
-        List<SeriesBean> latestSeries = researchController.getLatestSeries();
         int size = latestSeries.size();
-
         int i=1;
         for(int j=0; j<size; j++) {
             FXMLLoader fxmlLoader = new FXMLLoader();
@@ -108,7 +121,7 @@ public class FeedControllerG{
 
         List<Advertisement> la = new ArrayList<>();
         int i;
-        int n = 14;
+        int n = 7;
 
 
         for(i=0; i<n; i++){

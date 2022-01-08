@@ -47,8 +47,6 @@ Ktrunk/src/main/java/com/example/comics/view1/AboutUsSettingsController.java,3\
 Ltrunk/src/main/java/com/example/comics/view1/AccountSettingsControllerG.java,0\f\0fc27c6cd671a8ceecf31e5699deb2fe6ce56f4d
 v
 Ftrunk/src/main/java/com/example/comics/view1/AddSeriesControllerG.java,5\c\5cc494a9b6449d8137c8e05e6cb51f2e6e903027
-w
-Gtrunk/src/main/java/com/example/comics/view1/AuthorHomeControllerG.java,a\a\aacf7a587fd8f65b28db22fa4798ed6f14282a41
 v
 Ftrunk/src/main/java/com/example/comics/view1/BadgeCardControllerG.java,3\4\3436a3a027503288b5c3e7c9e0bbc9f875604119
 y
@@ -65,18 +63,12 @@ Ftrunk/src/main/java/com/example/comics/view1/CharacterControllerG.java,b\d\bd1
 Ptrunk/src/main/java/com/example/comics/view1/FavouriteCharactersControllerG.java,3\b\3be8ac2df5f5661711730d0ce861ef7c0c70599c
 |
 Ltrunk/src/main/java/com/example/comics/view1/FavouriteComicsControllerG.java,a\9\a9e472ecb5fb1c16992545a801842ac3a9166f3e
-q
-Atrunk/src/main/java/com/example/comics/view1/FeedControllerG.java,3\0\30f770410a71ec3e410810c53c6e2891d29a24c5
-q
-Atrunk/src/main/java/com/example/comics/view1/HomeControllerG.java,6\5\65170d991c764b5bfea3b63bba16114a7d073d7c
 m
 =trunk/src/main/java/com/example/comics/view1/HomeFactory.java,6\8\68f57411c53415cf6dbae85e49b0a05980e4cabe
 f
 6trunk/src/main/java/com/example/comics/view1/Main.java,4\f\4fac817cac1c690fe55eef1a8c0e48877f7cdb73
 
 Otrunk/src/main/java/com/example/comics/view1/PreferencesSettingsController.java,3\5\3534f485c3bc1958f43d06b2f9d983c4e7758f87
-w
-Gtrunk/src/main/java/com/example/comics/view1/ReaderHomeControllerG.java,e\c\ec2e8050235c1d9d3918ef5543b9bf4b12855c12
 u
 Etrunk/src/main/java/com/example/comics/view1/SettingsControllerG.java,7\9\79ea4a4cd75fb8046c2b9cdeda07ca97f4d2afa6
 r
@@ -2137,5 +2129,3 @@ s
 Ctrunk/src/main/java/com/example/comics/model/fagioli/BadgeBean.java,5\4\541444d7fee134e989d4ba3f5d7fff0b86d2a1d7
 {
 Ktrunk/src/main/java/com/example/comics/controller/FavouritesController.java,a\d\ad2d7d44963d0e76110b38c8f63d49c1d7c257e1
-s
-Ctrunk/src/main/java/com/example/comics/view1/SeriesControllerG.java,9\e\9e35f99e41cf6d6aa41349eee274243f957b0813

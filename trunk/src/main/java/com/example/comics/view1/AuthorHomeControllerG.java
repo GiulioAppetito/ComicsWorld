@@ -94,13 +94,7 @@ public class AuthorHomeControllerG  extends HomeControllerG implements AccountOb
         btnMyBadges.setOnAction(event -> openMyBadges());
         btnMyCharacters.setOnAction(event -> openMyCharacters());
         userBox.setOnMouseClicked(event -> openProfile());
-        homeIcon.setOnMouseClicked(event -> {
-            try {
-                openFeed();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        });
+        homeIcon.setOnMouseClicked(event -> openFeed());
     }
 
     private void openStatistics() {
@@ -186,20 +180,7 @@ public class AuthorHomeControllerG  extends HomeControllerG implements AccountOb
     }
 
 
-    public void openFeed() throws IOException {
-
-        FeedControllerG feedControllerG = new FeedControllerG();
-        FXMLLoader loader = new FXMLLoader();
-
-        URL fxmlLocation = HomeControllerG.class.getResource("feed.fxml");
-        loader.setLocation(fxmlLocation);
-        loader.setController(feedControllerG);
-
-        Pane view = loader.load();
-        feedControllerG.init();
-
-        mainPane.setCenter(view);
-
+    public void openFeed(){
         resetButtons();
     }
 
@@ -213,7 +194,8 @@ public class AuthorHomeControllerG  extends HomeControllerG implements AccountOb
 
     }
 
-    private void resetButtons(){
+    @Override
+    public void resetButtons(){
         btnSettings.setStyle(STYLE);
         btnCategories.setStyle(STYLE);
         btnMySeries.setStyle(STYLE);

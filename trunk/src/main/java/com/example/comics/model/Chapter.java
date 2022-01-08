@@ -4,7 +4,6 @@ import com.example.comics.model.dao.ChapterDAO;
 import com.example.comics.model.dao.ReviewDAO;
 import com.example.comics.model.dao.ReviewsNotFoundException;
 import javafx.scene.image.Image;
-import javafx.scene.text.Text;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -77,6 +76,7 @@ public class Chapter extends ChapterSubject {
         } catch (Exception e) {
             e.printStackTrace();
         }
+        this.averageRating = calculateAverageRating();
     }
 
     public int calculateAverageRating() {
