@@ -13,7 +13,6 @@ import java.util.List;
 public class Chapter extends ChapterSubject {
 
     private String title;
-    private Integer id;
     private Date publishingDate;
     private List<Review> reviews = new ArrayList<>();
     private int averageRating;
@@ -69,17 +68,9 @@ public class Chapter extends ChapterSubject {
         this.description = description;
     }
 
-    public void addReview(String comment, String username){
-        Review review = new Review(comment, username);
+    public void addReview(String comment, int rating, String username){
+        Review review = new Review(comment, rating, username);
         reviews.add(review);
-
-    }
-
-    public Integer getId() {
-        return id;
-    }
-    public void setId(Integer id) {
-        this.id = id;
     }
 
     public int calculateAverageRating() {

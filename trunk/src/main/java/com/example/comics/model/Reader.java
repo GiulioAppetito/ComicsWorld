@@ -13,18 +13,16 @@ public class Reader extends Account{
     private final List<Series> favourites;
     private final List<Series> toRead;
     private final List<Series> reading;
-    private final List<Review> publishedReviews;
     private final List<Badge> badges;
     private final List<Author> followedAuthors;
 
-    public Reader(List<Series> favourites, List<Series> toRead, List<Series> reading, List<Review> publishedReviews,String username,List<Author> followedAuthors){
+    public Reader(List<Series> favourites, List<Series> toRead, List<Series> reading, String username,List<Author> followedAuthors){
 
         this.setUsername(username);
 
         this.favourites = favourites;
         this.toRead = toRead;
         this.reading = reading;
-        this.publishedReviews = publishedReviews;
         this.followedAuthors = followedAuthors;
 
         BadgeDAO badgesDAO = new BadgeDAO();
@@ -46,9 +44,6 @@ public class Reader extends Account{
         return toRead;
     }
 
-    public List<Review> getPublishedReviews() {
-        return publishedReviews;
-    }
 
     public boolean hasAchievedThisBadge(Badge badge) {
 
@@ -70,9 +65,6 @@ public class Reader extends Account{
         return this.badges;
     }
 
-    public void addPublishedReview(Review review) {
-        this.publishedReviews.add(review);
-    }
 
     public void addAchievedBadge(Badge badge) {
         this.badges.add(badge);

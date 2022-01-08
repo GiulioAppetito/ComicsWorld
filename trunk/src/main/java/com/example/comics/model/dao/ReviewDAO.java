@@ -1,9 +1,6 @@
 package com.example.comics.model.dao;
 
-import com.example.comics.model.Reader;
-import com.example.comics.model.Review;
-import com.example.comics.model.Series;
-import com.example.comics.model.UserLogin;
+import com.example.comics.model.*;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -32,8 +29,7 @@ public class ReviewDAO {
             }
             rs.first();
             do{
-                reviewItem = new Review(rs.getString("comment"),rs.getString("user"));
-                reviewItem.setRating(Integer.valueOf(rs.getString("rating")));
+                reviewItem = new Review(rs.getString("comment"),Integer.valueOf(rs.getString("rating")),rs.getString("user"));
                 reviewsList.add(reviewItem);
 
             }while(rs.next());
@@ -70,8 +66,7 @@ public class ReviewDAO {
             }
             rs.first();
             do{
-                reviewItem = new Review(rs.getString("comment"),rs.getString("user"));
-                reviewItem.setRating(Integer.valueOf(rs.getString("rating")));
+                reviewItem = new Review(rs.getString("comment"),Integer.valueOf(rs.getString("rating")),rs.getString("user"));
                 reviewsList.add(reviewItem);
 
             }while(rs.next());
@@ -91,7 +86,7 @@ public class ReviewDAO {
 
     }
 
-    public static void saveReview(Review review, String seriesTitle) throws Exception {
+    public static void saveReview(Review review, Chapter chapter, Series series) throws Exception {
         // STEP 1: dichiarazioni
         Statement stmt = null;
         Connection conn = null;
@@ -104,7 +99,7 @@ public class ReviewDAO {
 
             // STEP 4.2: creazione ed esecuzione della query
             stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
-            Queries.saveReview(stmt,review, seriesTitle);
+            Queries.saveReview(stmt,review, chapter, series);
 
         } finally {
             assert conn!=null;

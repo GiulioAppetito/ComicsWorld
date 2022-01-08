@@ -61,8 +61,6 @@ t
 Dtrunk/src/main/java/com/example/comics/view1/CategoryController.java,e\a\ea9684660414e221bb1525d8a191fd4a234573e3
 v
 Ftrunk/src/main/java/com/example/comics/view1/CharacterControllerG.java,b\d\bd1950108fad9faa006d9ad66c18b531098bf500
-}
-Mtrunk/src/main/java/com/example/comics/view1/FavouriteAuthorsControllerG.java,2\9\29e59c3e0df2781b9ba9041dd71e234a77cf06fd
 €
 Ptrunk/src/main/java/com/example/comics/view1/FavouriteCharactersControllerG.java,3\b\3be8ac2df5f5661711730d0ce861ef7c0c70599c
 |
@@ -387,8 +385,6 @@ n
 >trunk/src/main/java/com/example/comics/model/dao/BadgeDAO.java,5\c\5c6bff5f7715bfb3aee28deec64036a8fdc1f276
 r
 Btrunk/src/main/java/com/example/comics/model/dao/ObjectiveDAO.java,c\7\c7045f6d6870d3973d5b81168efa0837b642c85d
-h
-8trunk/src/main/java/com/example/comics/model/Reader.java,3\e\3eba6c3a37f9370082944319cedcfebca37815ca
 g
 7.scannerwork/scanner-report/syntax-highlightings-375.pb,c\1\c1218429315d8d11756e9e5fe81a529a0b6e1e01
 Y
@@ -2133,16 +2129,12 @@ Z
 +.scannerwork/scanner-report/measures-346.pb,b\7\b77e99105cd1fedf56062f24d37bb24569e83e52
 [
 +.scannerwork/scanner-report/measures-308.pb,5\7\577c27900196ba0e3d1f46e36820a41dfb65d562
-p
-@trunk/src/main/java/com/example/comics/model/dao/ChapterDAO.java,1\d\1ddfc0cfcef200504c825e15e2d46d1aa7918d49
 s
 Ctrunk/src/main/java/com/example/comics/model/fagioli/LoginBean.java,5\b\5becafffff50e8d5e91b8682372fe29ba8974529
 u
 Etrunk/src/main/java/com/example/comics/model/fagioli/AccountBean.java,a\5\a5cf89bb8bc9b320572341689a43bdd3972e0503
 s
 Ctrunk/src/main/java/com/example/comics/model/fagioli/BadgeBean.java,5\4\541444d7fee134e989d4ba3f5d7fff0b86d2a1d7
-t
-Dtrunk/src/main/java/com/example/comics/view1/ChapterControllerG.java,0\0\0001f7e92c2791823074c36e4a3485140d2f11e6
 {
 Ktrunk/src/main/java/com/example/comics/controller/FavouritesController.java,a\d\ad2d7d44963d0e76110b38c8f63d49c1d7c257e1
 s

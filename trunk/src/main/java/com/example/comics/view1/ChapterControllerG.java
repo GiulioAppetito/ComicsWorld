@@ -351,7 +351,6 @@ public class ChapterControllerG implements ReviewObserver {
 
         lblAuthor.setText("autore");
         lblChapterTitle.setText(chapterBean.getTitle());
-        lblChapterId.setText(chapterBean.getId().toString());
         taDescription.setText(chapterBean.getDescription());
         taDescription.setEditable(false);
 
