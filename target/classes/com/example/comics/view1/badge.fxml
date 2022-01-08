@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox prefHeight="101.0" prefWidth="82.0" stylesheets="@../../../../css/fullpackstyling.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.comics.view1.BadgeCardControllerG">
+<VBox prefHeight="101.0" prefWidth="82.0" stylesheets="@../../../../css/fullpackstyling.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.comics.view1.BadgeCardControllerG">
    <children>
       <ImageView fx:id="badgeIcon" fitHeight="70.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
          <image>
@@ -20,7 +20,7 @@
       </ImageView>
       <Label fx:id="badgeName" alignment="CENTER" prefHeight="22.0" prefWidth="106.0" text="Badge">
          <font>
-            <Font name="Berlin Sans FB" size="18.0" />
+            <Font name="Berlin Sans FB" size="10.0" />
          </font>
          <VBox.margin>
             <Insets bottom="5.0" />

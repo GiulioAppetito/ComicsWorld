@@ -139,4 +139,12 @@ public class Reader extends Account{
     public void addFollowedAuthor(Author author) {
         this.followedAuthors.add(author);
     }
+
+    public void unfollowAuthor(Author author) {
+        for(int i=0;i<followedAuthors.size();i++){
+            if(author.getUsername().equals(followedAuthors.get(i).getUsername())){
+                followedAuthors.remove(i);
+            }
+        }
+    }
 }

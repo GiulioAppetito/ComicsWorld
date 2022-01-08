@@ -2,6 +2,7 @@ package com.example.comics.view1;
 
 import com.example.comics.controller.ResearchController;
 import com.example.comics.model.UserLogin;
+import com.example.comics.model.fagioli.AccountBean;
 import com.example.comics.model.fagioli.AuthorBean;
 import com.example.comics.model.fagioli.SeriesBean;
 import com.example.comics.model.Author;
@@ -37,6 +38,14 @@ public class FavouriteAuthorsControllerG {
             fxmlLoader.setLocation(getClass().getResource("authorcard.fxml"));
             try {
                 VBox card = fxmlLoader.load();
+                int finalJ = j;
+                card.setOnMouseClicked(event -> {
+                    try {
+                        openAuthor(listOfCards.get(finalJ));
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                });
                 FollowedAuthorCardControllerG followedAuthorsControllerG= fxmlLoader.getController();
                 followedAuthorsControllerG.setData(listOfCards.get(j).getProPic(),listOfCards.get(j).getUsername());
                 gpFavAuthors.add(card,j%columns,i);
@@ -47,6 +56,28 @@ public class FavouriteAuthorsControllerG {
                 e.printStackTrace();
             }
         }
+
+    }
+
+    public void openAuthor(AuthorBean authorBean) throws IOException {
+        AuthorFromOutsideControllerG authorFromOutsideControllerG = new AuthorFromOutsideControllerG();
+        FXMLLoader loader = new FXMLLoader();
+
+        URL fxmlLocation = CharacterControllerG.class.getResource("authorfromoutside.fxml");
+        loader.setLocation(fxmlLocation);
+        loader.setController(authorFromOutsideControllerG);
+
+        HomeFactory homeFactory = new HomeFactory();
+        HomeControllerG homeControllerG = homeFactory.getHomeControllerG();
+        homeControllerG.changeCenter(loader.load());
+
+        AccountBean accountBean = new AccountBean();
+        accountBean.setUsername(authorBean.getUsername());
+        accountBean.setFirstName(authorBean.getFirstName());
+        accountBean.setLastName(authorBean.getLastName());
+        accountBean.setProPic(authorBean.getProPic());
+
+        authorFromOutsideControllerG.init(accountBean);
 
     }
 

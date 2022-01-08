@@ -46,7 +46,7 @@
                                     </HBox>
                                     <HBox alignment="CENTER" prefHeight="55.0" prefWidth="452.0">
                                        <children>
-                                          <Button fx:id="btnFollow" mnemonicParsing="false" prefHeight="63.0" prefWidth="165.0" stylesheets="@../../../../css/fullpackstyling.css" text="Follow">
+                                          <Button fx:id="btnFollow" mnemonicParsing="false" prefHeight="63.0" prefWidth="187.0" stylesheets="@../../../../css/fullpackstyling.css" text="Unfollow">
                                              <font>
                                                 <Font name="Berlin Sans FB" size="24.0" />
                                              </font>
@@ -116,7 +116,7 @@
                                                 <Font name="Berlin Sans FB" size="24.0" />
                                              </font>
                                              <HBox.margin>
-                                                <Insets left="10.0" />
+                                                <Insets left="20.0" />
                                              </HBox.margin>
                                           </Label>
                                           <Label fx:id="lblAuthorPlaceHolder" prefHeight="60.0" prefWidth="189.0" text="authorName">

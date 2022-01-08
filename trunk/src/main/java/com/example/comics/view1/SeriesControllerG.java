@@ -144,6 +144,7 @@ public class SeriesControllerG {
         AccountBean accountBean = new AccountBean();
         accountBean.setUsername(seriesBean.getAuthor());
 
+
         authorController.init(accountBean);
     }
 

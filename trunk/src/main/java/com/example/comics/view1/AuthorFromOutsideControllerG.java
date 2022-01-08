@@ -43,17 +43,39 @@ public class AuthorFromOutsideControllerG {
         lblAuthorUsername.setText(authorBean.getUsername());
         lblAuthorPlaceHolder.setText(authorBean.getUsername());
         lblName.setText(authorBean.getFirstName() + " " + authorBean.getLastName());
-        proPicProfile.setImage(accountBean.getProPic());
+        proPicProfile.setImage(authorBean.getProPic());
 
-        System.out.println("[AUTHORS FROM OUTSIDE G] Opening author " +authorBean.getUsername() );
+        FollowAuthorController followAuthorController = new FollowAuthorController();
+        if(followAuthorController.isAuthorFollowed(authorBean)){
+            setBtnToUnfollow(authorBean);
+        }else{
+            setBtnToFollow(authorBean);
+        }
 
+
+
+    }
+
+    private void setBtnToUnfollow(AuthorBean authorBean){
+        btnFollow.setText("Unfollow");
+        btnFollow.setOnAction(actionEvent -> unfollowAuthor(authorBean));
+    }
+
+    private void setBtnToFollow(AuthorBean authorBean){
         btnFollow.setOnAction(actionEvent -> followAuthor(authorBean));
+        btnFollow.setText("Follow");
+    }
 
+    private void unfollowAuthor(AuthorBean authorBean) {
+        FollowAuthorController followAuthorController = new FollowAuthorController();
+        followAuthorController.unfollowAuthor(authorBean);
+        setBtnToFollow(authorBean);
     }
 
     private void followAuthor(AuthorBean authorBean) {
         FollowAuthorController followAuthorController = new FollowAuthorController();
         followAuthorController.followAuthor(authorBean);
+        setBtnToUnfollow(authorBean);
     }
 
 }

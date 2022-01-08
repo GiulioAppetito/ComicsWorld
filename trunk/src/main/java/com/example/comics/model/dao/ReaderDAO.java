@@ -194,4 +194,49 @@ public class ReaderDAO {
             }
         }
     }
+
+    public void saveFollowedAuthor(Author author) {
+        Statement stmt = null;
+        Connection conn = null;
+
+        try {
+            conn = DriverManager.getConnection(DB_URL, USER, PASS);
+            stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
+            Queries.addFollowedAuthor(stmt,author);
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        finally{
+            assert conn != null;
+            try {
+                conn.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    public void removeFollowedAuthor(Reader reader, Author author) {
+        Statement stmt = null;
+        Connection conn = null;
+
+        try {
+            conn = DriverManager.getConnection(DB_URL, USER, PASS);
+            stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
+            Queries.removeFollowedAuthor(stmt,reader,author);
+
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                assert conn != null;
+                conn.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+    }
 }

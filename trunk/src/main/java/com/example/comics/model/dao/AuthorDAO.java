@@ -139,27 +139,6 @@ public class AuthorDAO {
             }
     }
 
-    public void saveFollowedAuthor(Author author) {
-        Statement stmt = null;
-        Connection conn = null;
-
-        try {
-            conn = DriverManager.getConnection(DB_URL, USER, PASS);
-            stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
-            Queries.addFollowedAuthor(stmt,author);
-
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-        finally{
-            assert conn != null;
-            try {
-                conn.close();
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
-        }
-    }
 
     public List<Author> retreiveFollowedAuthorsByReader(String username) {
         Statement stmt = null;

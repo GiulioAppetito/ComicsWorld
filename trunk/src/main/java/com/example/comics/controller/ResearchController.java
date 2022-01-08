@@ -108,6 +108,8 @@ public class ResearchController {
         authorBean.setFirstName(author.getFirstName());
         authorBean.setLastName(author.getLastName());
         authorBean.setUsername(author.getUsername());
+        authorBean.setProPic(author.getProPic());
+        System.out.println("[RESEARCH] Author has propic : "+author.getProPic());
 
         return authorBean;
 

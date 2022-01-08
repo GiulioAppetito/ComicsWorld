@@ -216,4 +216,10 @@ public class Queries {
         System.out.println(selectStatement);
         return stmt.executeQuery(selectStatement);
     }
+
+    public static void removeFollowedAuthor(Statement stmt, Reader reader,Author author) throws SQLException {
+        String deleteStatement = String.format("DELETE FROM followedAuthors WHERE reader = '%s' AND author = '%s'", reader.getUsername(), author.getUsername());
+        System.out.println(deleteStatement);
+        stmt.executeUpdate(deleteStatement);
+    }
 }

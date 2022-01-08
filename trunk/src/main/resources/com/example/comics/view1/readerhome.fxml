@@ -70,7 +70,7 @@
             </styleClass>
          </Button>
 
-         <Pane prefHeight="51.0" prefWidth="389.0" HBox.hgrow="ALWAYS">
+         <Pane prefHeight="51.0" prefWidth="265.0" HBox.hgrow="ALWAYS">
             <HBox.margin>
                <Insets />
             </HBox.margin>
@@ -81,7 +81,7 @@
                <Insets top="40.0" />
             </padding>
          </Pane>
-         <HBox fx:id="userBox" prefHeight="53.0" prefWidth="186.0">
+         <HBox fx:id="userBox" prefHeight="60.0" prefWidth="313.0">
             <Button mnemonicParsing="false" prefHeight="67.0" prefWidth="66.0" styleClass="transparent">
                <graphic>
                   <ImageView fitHeight="45.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
@@ -91,7 +91,7 @@
                   </ImageView>
                </graphic>
             </Button>
-            <Label fx:id="lblName" alignment="CENTER_RIGHT" prefHeight="62.0" prefWidth="70.0" text="Giulio">
+            <Label fx:id="lblName" alignment="CENTER_RIGHT" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="60.0" prefWidth="300.0" text="Anastasia">
                <font>
                   <Font name="Berlin Sans FB" size="18.0" />
                </font>
@@ -101,7 +101,7 @@
             </Label>
             <ImageView fx:id="proPic" fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
                <HBox.margin>
-                  <Insets top="5.0" />
+                  <Insets right="3.0" top="5.0" />
                </HBox.margin>
                <Image url="@../../../../img/flat-business-man-user-profile-avatar-icon-vector-4333097.jpg" />
             </ImageView>
