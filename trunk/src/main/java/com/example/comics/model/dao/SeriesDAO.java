@@ -117,7 +117,7 @@ public class SeriesDAO {
         return seriesList;
     }
 
-    public List<Series> retrievePublishedSeries(String user) {
+    public List<Series> retrievePublishedSeries(Author author) {
         Statement stmt = null;
         Connection conn = null;
 
@@ -130,7 +130,7 @@ public class SeriesDAO {
             conn = DriverManager.getConnection(DB_URL, USER, PASS);
 
             stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
-            ResultSet rs = Queries.retrivePublishedSeries(stmt, user);
+            ResultSet rs = Queries.retrivePublishedSeries(stmt, author.getUsername());
 
             if (!rs.first()) {
                 return seriesList;
@@ -138,8 +138,14 @@ public class SeriesDAO {
             rs.first();
 
             do {
-                title = rs.getString("title");
-                series = retrieveSeries(title);
+                series = new Series(rs.getString("title"));
+                series.setAuthor(author);
+
+                Blob bl = rs.getBlob("cover");
+                InputStream inputStream = bl.getBinaryStream();
+                Image image = new Image(inputStream);
+                series.setCover(image);
+
                 seriesList.add(series);
             } while (rs.next());
 
@@ -221,12 +227,11 @@ public class SeriesDAO {
         Statement stmt = null;
         Connection conn = null;
 
-        String author;
         Series series = null;
         Genres genre1;
         Genres genre2;
         Genres genre3;
-
+        Author author;
         try {
             conn = DriverManager.getConnection(DB_URL, USER, PASS);
 
@@ -244,7 +249,9 @@ public class SeriesDAO {
                 //genre3 = Genres.valueOf(rs.getString("genre3"));
 
                 title = rs.getString("title");
-                author = rs.getString("author");
+
+                AuthorDAO authorDAO = new AuthorDAO();
+                author = authorDAO.retrieveAuthorWithoutPassword(rs.getString("author"));
                 series = new Series(title);
                 Blob bl = rs.getBlob("cover");
                 InputStream inputStream = bl.getBinaryStream();
@@ -286,7 +293,7 @@ public class SeriesDAO {
 
         List<Series> seriesList = new ArrayList<>();
 
-        String author;
+        Author author;
         Series series;
 
         try {
@@ -307,7 +314,8 @@ public class SeriesDAO {
                 Image image = new Image(inputStream);
                 series.setCover(image);
 
-                author = rs.getString("author");
+                AuthorDAO authorDAO = new AuthorDAO();
+                author = authorDAO.retrieveAuthorWithoutPassword(rs.getString("author"));
 
 
                 series.setAuthor(author);

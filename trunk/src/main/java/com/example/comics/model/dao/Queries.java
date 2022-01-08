@@ -211,8 +211,8 @@ public class Queries {
         stmt.executeUpdate(insertStatement);
     }
 
-    public static ResultSet retreiveFollowedAuthors(Statement stmt, String username) throws SQLException {
-        String selectStatement = String.format("SELECT * FROM followedAuthors WHERE (reader = '%s')  ",username);
+    public static ResultSet retreiveFollowedAuthors(Statement stmt, String readerUsername) throws SQLException {
+        String selectStatement = String.format("SELECT * FROM followedAuthors WHERE (reader = '%s')  ",readerUsername);
         System.out.println(selectStatement);
         return stmt.executeQuery(selectStatement);
     }
@@ -222,4 +222,5 @@ public class Queries {
         System.out.println(deleteStatement);
         stmt.executeUpdate(deleteStatement);
     }
+
 }

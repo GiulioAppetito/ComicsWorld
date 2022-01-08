@@ -14,6 +14,47 @@ public class ReaderDAO {
     private static final String PASS = "passwordanastasia";
     private static final String DB_URL = "jdbc:mysql://comics-world.ce9t0fxhansh.eu-west-2.rds.amazonaws.com:3306/ComicsWorld?autoReconnect=true&useSSL=false";
 
+    public static List<Author> retreiveFollowedAuthors(Reader reader) {
+        Statement stmt = null;
+        Connection conn = null;
+
+        List<Author> followedAuthors = new ArrayList<>();
+        Author author;
+
+        AuthorDAO authorDAO = new AuthorDAO();
+
+        try {
+            conn = DriverManager.getConnection(DB_URL, USER, PASS);
+            stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
+            ResultSet rs = Queries.retreiveFollowedAuthors(stmt, reader.getUsername());
+
+            if (!rs.first()) {
+                return null;
+            }
+            rs.first();
+
+            do{
+               author = authorDAO.retrieveAuthorWithoutPassword(rs.getString("author"));
+               followedAuthors.add(author);
+
+            }while(rs.next());
+
+
+
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+        finally{
+            try {
+                assert conn != null;
+                conn.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+        return followedAuthors;
+    }
+
     public Reader retrieveReader(String identifier, String password){
 
         Statement stmt = null;

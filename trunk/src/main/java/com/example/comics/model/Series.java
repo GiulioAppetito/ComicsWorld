@@ -10,21 +10,17 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Series {
-	
+
+	private Author author;
 	private String title;
 	private Image cover;
-	private String author;
 	private String publishingHouse;
-	private List<Chapter> chapters;
+	private final List<Chapter> chapters;
 	private List<Character> characters;
 	private List<Objective> objectives;
 	private Genres genre1;
 	private Genres genre2;
 	private Genres genre3;
-
-	public Series(){
-		//costruttore di default
-	}
 
 	public Series(String title){
 		this.title = title;
@@ -44,12 +40,7 @@ public class Series {
 		this.title = name;
 	}
 
-	public String getAuthor() {
-		return author;
-	}
-	public void setAuthor(String author) {
-		this.author = author;
-	}
+
 
 	public String getPublishingHouse() {
 		return publishingHouse;
@@ -130,6 +121,14 @@ public class Series {
 			}
 		}
 		return numOfReviews;
+	}
+
+	public Author getAuthor() {
+		return author;
+	}
+
+	public void setAuthor(Author author) {
+		this.author = author;
 	}
 }
 

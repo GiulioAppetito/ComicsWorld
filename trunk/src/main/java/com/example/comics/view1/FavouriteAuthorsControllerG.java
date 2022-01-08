@@ -26,9 +26,7 @@ public class FavouriteAuthorsControllerG {
     public void initialize(){
         System.out.println("[FAV AUTHORS CONTR G] Metodo initialize.");
         ResearchController researchController = new ResearchController();
-
-
-        List<AuthorBean> listOfCards = researchController.getFollowedAuthors();
+        List<AuthorBean> listOfCards = researchController.getFollowedAuthors(UserLogin.getInstance().getReader());
         int size = listOfCards.size();
         int columns = 3;
         int i=1;
@@ -71,13 +69,7 @@ public class FavouriteAuthorsControllerG {
         HomeControllerG homeControllerG = homeFactory.getHomeControllerG();
         homeControllerG.changeCenter(loader.load());
 
-        AccountBean accountBean = new AccountBean();
-        accountBean.setUsername(authorBean.getUsername());
-        accountBean.setFirstName(authorBean.getFirstName());
-        accountBean.setLastName(authorBean.getLastName());
-        accountBean.setProPic(authorBean.getProPic());
-
-        authorFromOutsideControllerG.init(accountBean);
+        authorFromOutsideControllerG.init(authorBean);
 
     }
 

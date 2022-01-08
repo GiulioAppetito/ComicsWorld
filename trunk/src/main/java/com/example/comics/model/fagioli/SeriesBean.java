@@ -1,5 +1,6 @@
 package com.example.comics.model.fagioli;
 
+import com.example.comics.model.Author;
 import com.example.comics.model.Chapter;
 import com.example.comics.model.Genres;
 import javafx.scene.image.Image;
@@ -11,7 +12,7 @@ public class SeriesBean {
 
     private String title;
     private Image cover;
-    private String author;
+    private Author author;
     private List<Chapter> chapters = new ArrayList<>();
     private Genres genre1;
     private Genres genre2;
@@ -32,10 +33,18 @@ public class SeriesBean {
         this.cover = cover;
     }
 
-    public String getAuthor() {
-        return author;
+    public AuthorBean getAuthor() {
+        AuthorBean authorBean = new AuthorBean();
+        authorBean.setPublishedSeries(author.getPublishedSeries());
+        authorBean.setLastName(author.getLastName());
+        authorBean.setFirstName(authorBean.getFirstName());
+        authorBean.setProPic(authorBean.getProPic());
+        authorBean.setUsername(authorBean.getUsername());
+
+        return authorBean;
     }
-    public void setAuthor(String author) {
+
+    public void setAuthor(Author author) {
         this.author = author;
     }
 

@@ -12,10 +12,6 @@ public class Author extends Account{
         //dummy
     }
 
-    public Author(List<Series> publishedSeries){
-        this.publishedSeries = publishedSeries;
-    }
-
     private static final String ROLE = "author";
 
     @Override

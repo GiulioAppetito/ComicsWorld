@@ -1,8 +1,10 @@
 package com.example.comics.view1;
 
 import com.example.comics.controller.FavouritesController;
+import com.example.comics.controller.ResearchController;
 import com.example.comics.controller.ToReadController;
 import com.example.comics.model.fagioli.AccountBean;
+import com.example.comics.model.fagioli.AuthorBean;
 import com.example.comics.model.fagioli.ChapterBean;
 import com.example.comics.model.fagioli.SeriesBean;
 import javafx.event.EventHandler;
@@ -55,7 +57,7 @@ public class SeriesControllerG {
 
     public void init(SeriesBean seriesBean) {
 
-        btnAuthor.setText(seriesBean.getAuthor());
+        btnAuthor.setText(seriesBean.getAuthor().getUsername());
         lblTitle.setText(seriesBean.getTitle());
         comicCover.setImage(seriesBean.getCover());
 
@@ -125,12 +127,12 @@ public class SeriesControllerG {
     }
 
     private void openAuthor(SeriesBean seriesBean) {
-        AuthorFromOutsideControllerG authorController = new AuthorFromOutsideControllerG();
+        AuthorFromOutsideControllerG authorFromOutsideControllerG = new AuthorFromOutsideControllerG();
         FXMLLoader loader = new FXMLLoader();
 
         URL fxmlLocation = AuthorFromOutsideControllerG.class.getResource("authorfromoutside.fxml");
         loader.setLocation(fxmlLocation);
-        loader.setController(authorController);
+        loader.setController(authorFromOutsideControllerG);
 
         HomeFactory homeFactory = new HomeFactory();
 
@@ -141,11 +143,7 @@ public class SeriesControllerG {
             e.printStackTrace();
         }
 
-        AccountBean accountBean = new AccountBean();
-        accountBean.setUsername(seriesBean.getAuthor());
-
-
-        authorController.init(accountBean);
+        authorFromOutsideControllerG.init(seriesBean.getAuthor());
     }
 
     private void removeSeriesFromToRead(SeriesBean seriesBean) {

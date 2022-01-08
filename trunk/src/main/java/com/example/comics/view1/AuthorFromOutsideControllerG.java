@@ -4,6 +4,7 @@ import com.example.comics.controller.FollowAuthorController;
 import com.example.comics.controller.ResearchController;
 import com.example.comics.model.fagioli.AccountBean;
 import com.example.comics.model.fagioli.AuthorBean;
+import com.example.comics.model.fagioli.SeriesBean;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -37,13 +38,13 @@ public class AuthorFromOutsideControllerG {
     @FXML
     private Label lblAuthorPlaceHolder;
 
-    public void init(AccountBean accountBean){
-        ResearchController researchController = new ResearchController();
-        AuthorBean authorBean = researchController.getAuthor(accountBean);
+    public void init(AuthorBean authorBean){
+
         lblAuthorUsername.setText(authorBean.getUsername());
-        lblAuthorPlaceHolder.setText(authorBean.getUsername());
+        //lblAuthorPlaceHolder.setText(authorBean.getUsername());
         lblName.setText(authorBean.getFirstName() + " " + authorBean.getLastName());
         proPicProfile.setImage(authorBean.getProPic());
+        //display serie autore che stanno nel bean
 
         FollowAuthorController followAuthorController = new FollowAuthorController();
         if(followAuthorController.isAuthorFollowed(authorBean)){
