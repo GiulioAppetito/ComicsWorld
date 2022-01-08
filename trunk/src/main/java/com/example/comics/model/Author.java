@@ -31,7 +31,6 @@ public class Author extends Account{
         this.publishedSeries.add(series);
     }
 
-
     public List<Badge> getBadges() {
         return badges;
     }

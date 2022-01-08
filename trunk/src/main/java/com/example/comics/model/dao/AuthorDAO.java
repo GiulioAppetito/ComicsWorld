@@ -19,12 +19,13 @@ public class AuthorDAO {
 
     public Author retrieveAuthor(String identifier, String password) {
 
-        Statement stmt;
+        Statement stmt = null;
         Connection conn = null;
 
         Author author = null;
 
         try {
+
             conn = DriverManager.getConnection(DB_URL, USER, PASS);
             stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
             ResultSet rs = Queries.retrieveUser(stmt, identifier, password);
@@ -42,6 +43,7 @@ public class AuthorDAO {
             SeriesDAO seriesDAO = new SeriesDAO();
             List<Series> publishedSeries = seriesDAO.retrievePublishedSeries(author);
             author.setPublishedSeries(publishedSeries);
+            System.out.println("Serie pubblicate: " + publishedSeries.get(0).getTitle());
 
             Blob bl = rs.getBlob("proPic");
             InputStream inputStream = bl.getBinaryStream();

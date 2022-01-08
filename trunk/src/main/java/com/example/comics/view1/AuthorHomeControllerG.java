@@ -172,11 +172,6 @@ public class AuthorHomeControllerG  extends HomeControllerG implements AccountOb
 
     }
 
-
-    public void openFeed(){
-        resetButtons();
-    }
-
     public void openProfile() {
 
         FxmlLoader object = new FxmlLoader();
