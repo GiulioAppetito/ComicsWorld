@@ -1,5 +1,9 @@
 package com.example.comics.view1;
 
+import com.example.comics.controller.ResearchController;
+import com.example.comics.model.UserLogin;
+import com.example.comics.model.fagioli.AccountBean;
+import com.example.comics.model.fagioli.AuthorBean;
 import com.example.comics.model.fagioli.SeriesBean;
 import com.example.comics.model.Author;
 import com.example.comics.model.Series;
@@ -18,17 +22,32 @@ public class FavouriteAuthorsControllerG {
     @FXML
     private GridPane gpFavAuthors;
 
+    @FXML
     public void initialize(){
+        System.out.println("[FAV AUTHORS CONTR G] Metodo initialize.");
+        ResearchController researchController = new ResearchController();
 
-        List<Author> listOfCards = new ArrayList<>(add());
+
+        List<AuthorBean> listOfCards = researchController.getFollowedAuthors();
         int size = listOfCards.size();
         int columns = 3;
         int i=1;
         for(int j=0; j<size; j++) {
+            System.out.println("[FAV AUTH CONTR G] NEl ciclo for : "+listOfCards.get(j).getUsername());
             FXMLLoader fxmlLoader = new FXMLLoader();
             fxmlLoader.setLocation(getClass().getResource("authorcard.fxml"));
             try {
                 VBox card = fxmlLoader.load();
+                int finalJ = j;
+                card.setOnMouseClicked(event -> {
+                    try {
+                        openAuthor(listOfCards.get(finalJ));
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                });
+                FollowedAuthorCardControllerG followedAuthorsControllerG= fxmlLoader.getController();
+                followedAuthorsControllerG.setData(listOfCards.get(j).getProPic(),listOfCards.get(j).getUsername());
                 gpFavAuthors.add(card,j%columns,i);
                 if(j%columns == columns-1){
                     i++;
@@ -40,20 +59,29 @@ public class FavouriteAuthorsControllerG {
 
     }
 
-    private List<Author> add(){
+    public void openAuthor(AuthorBean authorBean) throws IOException {
+        AuthorFromOutsideControllerG authorFromOutsideControllerG = new AuthorFromOutsideControllerG();
+        FXMLLoader loader = new FXMLLoader();
 
-        List<Author> la = new ArrayList<>();
-        ArrayList<Series> series = null;
-        int dummyNumAuthors = 12;
-        int i;
+        URL fxmlLocation = CharacterControllerG.class.getResource("authorfromoutside.fxml");
+        loader.setLocation(fxmlLocation);
+        loader.setController(authorFromOutsideControllerG);
 
-        for(i=0;i<dummyNumAuthors;i++){
-            Author author = new Author(series);
-            author.setUsername("stanlee");
-            la.add(author);
-        }
-        return la;
+        HomeFactory homeFactory = new HomeFactory();
+        HomeControllerG homeControllerG = homeFactory.getHomeControllerG();
+        homeControllerG.changeCenter(loader.load());
+
+        AccountBean accountBean = new AccountBean();
+        accountBean.setUsername(authorBean.getUsername());
+        accountBean.setFirstName(authorBean.getFirstName());
+        accountBean.setLastName(authorBean.getLastName());
+        accountBean.setProPic(authorBean.getProPic());
+
+        authorFromOutsideControllerG.init(accountBean);
+
     }
+
+
 
     public void openSerie(SeriesBean seriesBean) throws IOException {
 

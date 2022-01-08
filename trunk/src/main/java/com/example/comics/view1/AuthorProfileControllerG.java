@@ -23,6 +23,9 @@ public class AuthorProfileControllerG implements AccountObserver {
     private Label lblName;
 
     @FXML
+    private ImageView proPicProfile;
+
+    @FXML
     private Label lblUsername;
 
     @FXML
@@ -36,7 +39,7 @@ public class AuthorProfileControllerG implements AccountObserver {
         lblName.setText(UserLogin.getInstance().getAccount().getFirstName());
         lblUsername.setText(UserLogin.getInstance().getAccount().getLastName());
         btnEdit.setOnAction(actionEvent -> edit());
-        //ivProPic.setImage(UserLogin.getInstance().getAccount().getProPic());
+        proPicProfile.setImage(UserLogin.getInstance().getAccount().getProPic());
         //lblBirthday.setText(UserLogin.getInstance().getAccount().getBirthday().toString());
         //lblCity.setText(UserLogin.getInstance().getAccount().getCity());
 

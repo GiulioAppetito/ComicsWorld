@@ -34,7 +34,7 @@ public class ChapterDAO {
             ResultSet rs = Queries.retriveChapters(stmt, seriesTitle);
 
             if (!rs.first()) {
-                throw new Exception("No chapters Found on series: " + seriesTitle);
+                return chaptersList;
             }
             rs.first();
 

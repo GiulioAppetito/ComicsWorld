@@ -74,6 +74,7 @@ public class ReaderHomeControllerG extends HomeControllerG implements AccountObs
 
         lblName.setText(UserLogin.getInstance().getAccount().getUsername());
         proPic.setImage(UserLogin.getInstance().getAccount().getProPic());
+        System.out.println("INITED WITH PIC "+UserLogin.getInstance().getAccount().getProPic());
 
         btnFav.setOnAction(event -> openFavourites());
         btnCategories.setOnAction(event -> {
@@ -175,6 +176,8 @@ public class ReaderHomeControllerG extends HomeControllerG implements AccountObs
 
         resetButtons();
         btnFav.setStyle(STYLE2);
+
+        System.out.println("[ReaderHomeControllerG] Clicked favourites.");
     }
 
 

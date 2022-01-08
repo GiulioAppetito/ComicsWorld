@@ -133,7 +133,7 @@ public class SeriesDAO {
             ResultSet rs = Queries.retrivePublishedSeries(stmt, user);
 
             if (!rs.first()) {
-                throw new Exception("No series Found ");
+                return seriesList;
             }
             rs.first();
 

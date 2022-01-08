@@ -1,15 +1,27 @@
 package com.example.comics.model.fagioli;
 
+import com.example.comics.model.Badge;
+import com.example.comics.model.Character;
+import com.example.comics.model.Series;
 import javafx.scene.image.Image;
 
-public class AccountBean {
+import java.util.List;
 
+public class AuthorBean {
+
+    private List<Series> publishedSeries;
     private String firstName;
     private String lastName;
-    private String email;
-    private String password;
     private String username;
     private Image proPic;
+
+    public List<Series> getPublishedSeries() {
+        return publishedSeries;
+    }
+
+    public void setPublishedSeries(List<Series> publishedSeries) {
+        this.publishedSeries = publishedSeries;
+    }
 
     public String getFirstName() {
         return firstName;
@@ -27,22 +39,6 @@ public class AccountBean {
         this.lastName = lastName;
     }
 
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
     public String getUsername() {
         return username;
     }
@@ -55,7 +51,7 @@ public class AccountBean {
         return this.proPic;
     }
 
-    public void setProPic(Image proPic){
-        this.proPic = proPic;
+    public void setProPic(Image image){
+        this.proPic=image;
     }
 }

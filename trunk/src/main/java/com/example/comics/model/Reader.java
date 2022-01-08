@@ -1,20 +1,23 @@
 package com.example.comics.model;
 
+import com.example.comics.model.dao.AuthorDAO;
 import com.example.comics.model.dao.BadgeDAO;
 import com.example.comics.model.dao.ReaderDAO;
 
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 
 public class Reader extends Account{
 
-    private List<Series> favourites;
-    private List<Series> toRead;
-    private List<Series> reading;
-    private List<Review> publishedReviews;
-    private List<Badge> badges;
+    private final List<Series> favourites;
+    private final List<Series> toRead;
+    private final List<Series> reading;
+    private final List<Review> publishedReviews;
+    private final List<Badge> badges;
+    private final List<Author> followedAuthors;
 
-    public Reader(List<Series> favourites, List<Series> toRead, List<Series> reading, List<Review> publishedReviews,String username){
+    public Reader(List<Series> favourites, List<Series> toRead, List<Series> reading, List<Review> publishedReviews,String username,List<Author> followedAuthors){
 
         this.setUsername(username);
 
@@ -22,6 +25,7 @@ public class Reader extends Account{
         this.toRead = toRead;
         this.reading = reading;
         this.publishedReviews = publishedReviews;
+        this.followedAuthors = followedAuthors;
 
         BadgeDAO badgesDAO = new BadgeDAO();
         this.badges = badgesDAO.retrieveAchievedBadges(username);
@@ -128,4 +132,19 @@ public class Reader extends Account{
         }
     }
 
+    public List<Author> getFollowedAuthors() {
+        return followedAuthors;
+    }
+
+    public void addFollowedAuthor(Author author) {
+        this.followedAuthors.add(author);
+    }
+
+    public void unfollowAuthor(Author author) {
+        for(int i=0;i<followedAuthors.size();i++){
+            if(author.getUsername().equals(followedAuthors.get(i).getUsername())){
+                followedAuthors.remove(i);
+            }
+        }
+    }
 }

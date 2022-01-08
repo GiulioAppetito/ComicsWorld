@@ -19,19 +19,31 @@ import java.net.URL;
 public class AuthorHomeControllerG  extends HomeControllerG implements AccountObserver {
 
     @FXML
+    private BorderPane mainPane;
+
+    @FXML
+    private ImageView homeIcon;
+
+    @FXML
     private HBox userBox;
 
     @FXML
-    private BorderPane mainPane;
+    private Label lblName;
+
+    @FXML
+    private ImageView ivUpperProPic;
 
     @FXML
     private Button btnCategories;
 
     @FXML
+    private Button btnTop;
+
+    @FXML
     private Button btnMySeries;
 
     @FXML
-    private Button btnStatistics;
+    private Button btnMyBadges;
 
     @FXML
     private Button btnMyCharacters;
@@ -40,20 +52,13 @@ public class AuthorHomeControllerG  extends HomeControllerG implements AccountOb
     private Button btnSettings;
 
     @FXML
-    private Button btnMyBadges;
-
-    @FXML
-    private Button btnTop;
-
-    @FXML
-    private ImageView homeIcon;
-
-    @FXML
-    private Label lblName;
+    private Button btnStatistics;
 
 
     @FXML
-    private ImageView ivUpperProPic;
+    private ImageView smallProPic;
+
+
 
     private static final String STYLE = ".button2";
     private static final String STYLE2 = "-fx-background-color: #5DADE2; -fx-background-radius: 20";
@@ -71,7 +76,8 @@ public class AuthorHomeControllerG  extends HomeControllerG implements AccountOb
     public void init() throws IOException {
 
         openFeed();
-        ivUpperProPic.setImage(UserLogin.getInstance().getAccount().getProPic());
+        smallProPic.setImage(UserLogin.getInstance().getAccount().getProPic());
+        System.out.println("INITED WITH PIC "+UserLogin.getInstance().getAccount().getProPic());
         lblName.setText(UserLogin.getInstance().getAccount().getUsername());
 
         btnMySeries.setOnAction(event -> openMySeries());
