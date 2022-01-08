@@ -1,8 +1,6 @@
 package com.example.comics.view1;
 
-import com.example.comics.controller.PublishSeriesController;
-import com.example.comics.controller.ResearchController;
-import com.example.comics.model.Chapter;
+import com.example.comics.controller.PublishChapterController;
 import com.example.comics.model.Series;
 import com.example.comics.model.UserLogin;
 import com.example.comics.model.fagioli.ChapterBean;

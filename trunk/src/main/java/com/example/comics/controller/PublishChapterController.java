@@ -1,4 +1,4 @@
-package com.example.comics.view1;
+package com.example.comics.controller;
 
 import com.example.comics.model.Series;
 import com.example.comics.model.UserLogin;
