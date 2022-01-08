@@ -32,7 +32,6 @@ public class FeedControllerG{
 
     private FeedControllerG(){
         loadLatestSeries();
-        System.out.println("inizializzazione feed");
     }
 
     public static synchronized FeedControllerG getInstance(){
@@ -113,7 +112,7 @@ public class FeedControllerG{
         HomeControllerG homeControllerG = homeFactory.getHomeControllerG();
         homeControllerG.changeCenter(loader.load());
 
-        serieControllerG.init(seriesBean);
+        serieControllerG.setData(seriesBean);
 
     }
 

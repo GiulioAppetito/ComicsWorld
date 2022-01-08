@@ -14,25 +14,26 @@ import tools.FxmlLoader;
 public class AuthorProfileControllerG implements AccountObserver {
 
     @FXML
-    private BorderPane mainPane;
-
-    @FXML
     private Button btnEdit;
 
     @FXML
-    private Label lblName;
-
-    @FXML
-    private ImageView proPicProfile;
-
-    @FXML
-    private Label lblUsername;
+    private Button btnNewChapter;
 
     @FXML
     private Button btnNewSeries;
 
     @FXML
-    private Button btnNewChapter;
+    private Label lblName;
+
+    @FXML
+    private Label lblUsername;
+
+    @FXML
+    private BorderPane mainPane;
+
+    @FXML
+    private ImageView proPicProfile;
+
 
     @FXML
     public void initialize(){

@@ -57,10 +57,6 @@ t
 Dtrunk/src/main/java/com/example/comics/view1/CategoryController.java,e\a\ea9684660414e221bb1525d8a191fd4a234573e3
 v
 Ftrunk/src/main/java/com/example/comics/view1/CharacterControllerG.java,b\d\bd1950108fad9faa006d9ad66c18b531098bf500
-€
-Ptrunk/src/main/java/com/example/comics/view1/FavouriteCharactersControllerG.java,3\b\3be8ac2df5f5661711730d0ce861ef7c0c70599c
-|
-Ltrunk/src/main/java/com/example/comics/view1/FavouriteComicsControllerG.java,a\9\a9e472ecb5fb1c16992545a801842ac3a9166f3e
 f
 6trunk/src/main/java/com/example/comics/view1/Main.java,4\f\4fac817cac1c690fe55eef1a8c0e48877f7cdb73
 
@@ -341,8 +337,6 @@ o
 ?trunk/src/main/java/com/example/comics/view1/AdControllerG.java,3\5\352db4ea410e60bcc4dbaf396b980ca693f8c51b
 {
 Ktrunk/src/main/java/com/example/comics/view1/AuthorMyBadgesControllerG.java,4\3\430466a7779bd98c4a524789822157352e8694f1
-z
-Jtrunk/src/main/java/com/example/comics/view1/AuthorProfileControllerG.java,2\e\2e3b36eb64db7069014d51e48bfef7ad03af4d18
 g
 7trunk/src/main/java/com/example/comics/model/Badge.java,3\1\31f98f33cf5be70d062ca3e1b9483ac49201595f
 w
@@ -363,8 +357,6 @@ k
 Ltrunk/src/main/java/com/example/comics/view1/ProfileSettingsControllerG.java,4\1\415b665414f37f262296f9bac7a0b4c322bf6bb6
 z
 Jtrunk/src/main/java/com/example/comics/view1/ReaderProfileControllerG.java,9\d\9d55d09a3bc1211493d2067fe3a33b4ff83ca9f4
-s
-Ctrunk/src/main/java/com/example/comics/view1/ToReadControllerG.java,a\f\af51d298954fbb57ad158824154a1019417de095
 n
 >trunk/src/main/java/com/example/comics/model/dao/BadgeDAO.java,5\c\5c6bff5f7715bfb3aee28deec64036a8fdc1f276
 r

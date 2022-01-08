@@ -2,6 +2,7 @@ package com.example.comics.view1;
 
 import com.example.comics.controller.FollowAuthorController;
 import com.example.comics.controller.ResearchController;
+import com.example.comics.model.UserLogin;
 import com.example.comics.model.fagioli.AccountBean;
 import com.example.comics.model.fagioli.AuthorBean;
 import com.example.comics.model.fagioli.SeriesBean;
@@ -46,11 +47,15 @@ public class AuthorFromOutsideControllerG {
         proPicProfile.setImage(authorBean.getProPic());
         //display serie autore che stanno nel bean
 
-        FollowAuthorController followAuthorController = new FollowAuthorController();
-        if(followAuthorController.isAuthorFollowed(authorBean)){
-            setBtnToUnfollow(authorBean);
+        if(UserLogin.getInstance().getAccount().getRole()!="author") {
+            FollowAuthorController followAuthorController = new FollowAuthorController();
+            if (followAuthorController.isAuthorFollowed(authorBean)) {
+                setBtnToUnfollow(authorBean);
+            } else {
+                setBtnToFollow(authorBean);
+            }
         }else{
-            setBtnToFollow(authorBean);
+            btnFollow.setVisible(false);
         }
 
 

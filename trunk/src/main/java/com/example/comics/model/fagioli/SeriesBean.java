@@ -37,9 +37,9 @@ public class SeriesBean {
         AuthorBean authorBean = new AuthorBean();
         authorBean.setPublishedSeries(author.getPublishedSeries());
         authorBean.setLastName(author.getLastName());
-        authorBean.setFirstName(authorBean.getFirstName());
-        authorBean.setProPic(authorBean.getProPic());
-        authorBean.setUsername(authorBean.getUsername());
+        authorBean.setFirstName(author.getFirstName());
+        authorBean.setProPic(author.getProPic());
+        authorBean.setUsername(author.getUsername());
 
         return authorBean;
     }

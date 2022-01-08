@@ -23,7 +23,6 @@ public class FavouriteAuthorsControllerG {
 
     @FXML
     public void initialize(){
-        System.out.println("[FAV AUTHORS CONTR G] Metodo initialize.");
         ResearchController researchController = new ResearchController();
         List<AuthorBean> listOfCards = researchController.getFollowedAuthors(UserLogin.getInstance().getReader());
         int size = listOfCards.size();
@@ -87,7 +86,7 @@ public class FavouriteAuthorsControllerG {
         HomeControllerG homeControllerG = homeFactory.getHomeControllerG();
         homeControllerG.changeCenter(loader.load());
 
-        serieController.init(seriesBean);
+        serieController.setData(seriesBean);
 
     }
 

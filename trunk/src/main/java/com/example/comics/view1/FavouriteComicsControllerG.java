@@ -65,7 +65,7 @@ public class FavouriteComicsControllerG {
         ReaderHomeControllerG readerHomeControllerG = ReaderHomeControllerG.getInstance();
         readerHomeControllerG.changeCenter(loader.load());
 
-        serieController.init(seriesBean);
+        serieController.setData(seriesBean);
 
     }
 }

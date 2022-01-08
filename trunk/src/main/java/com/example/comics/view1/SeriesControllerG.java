@@ -3,6 +3,7 @@ package com.example.comics.view1;
 import com.example.comics.controller.FavouritesController;
 import com.example.comics.controller.ResearchController;
 import com.example.comics.controller.ToReadController;
+import com.example.comics.model.UserLogin;
 import com.example.comics.model.fagioli.ChapterBean;
 import com.example.comics.model.fagioli.SeriesBean;
 import javafx.event.EventHandler;
@@ -53,11 +54,12 @@ public class SeriesControllerG {
 
     private final static String STYLE1 = ".button2";
 
-    public void init(SeriesBean seriesBean) {
+    public void setData(SeriesBean seriesBean) {
 
         btnAuthor.setText(seriesBean.getAuthor().getUsername());
         lblTitle.setText(seriesBean.getTitle());
         comicCover.setImage(seriesBean.getCover());
+        btnAuthor.setText(seriesBean.getAuthor().getUsername());
 
         btnAuthor.setOnAction(event -> openAuthor(seriesBean));
 
@@ -88,35 +90,40 @@ public class SeriesControllerG {
             }
         }
 
-        FavouritesController favouritesController = new FavouritesController();
-        if(favouritesController.isSeriesFavourite(seriesBean)){
-            btnAddToFav.setStyle("-fx-background-color: #5DADE2; -fx-background-radius: 20");
-            btnAddToFav.setOnAction(event -> removeFromFavourites(seriesBean));
-            btnAddToFav.setText("Remove from fav");
+        if(UserLogin.getInstance().getAccount().getRole()!="author") {
 
+            FavouritesController favouritesController = new FavouritesController();
+            if (favouritesController.isSeriesFavourite(seriesBean)) {
+                btnAddToFav.setStyle("-fx-background-color: #5DADE2; -fx-background-radius: 20");
+                btnAddToFav.setOnAction(event -> removeFromFavourites(seriesBean));
+                btnAddToFav.setText("Remove from fav");
+
+            } else {
+                btnAddToFav.setStyle(STYLE1);
+                btnAddToFav.setOnAction(event -> addSeriesToFavourites(seriesBean));
+                btnAddToFav.setText("Add to favourites");
+            }
+
+            ToReadController toReadController = new ToReadController();
+            if (toReadController.isSeriesAddedToRead(seriesBean)) {
+                btnAddToRead.setStyle("-fx-background-color: #5DADE2; -fx-background-radius: 20");
+                btnAddToRead.setOnAction(event -> removeSeriesFromToRead(seriesBean));
+                btnAddToRead.setText("Remove from toRead");
+            } else {
+                btnAddToRead.setStyle(STYLE1);
+                btnAddToRead.setOnAction(event -> addSeriesToToRead(seriesBean));
+                btnAddToRead.setText("Add to toRead");
+            }
+
+            btnBack.setOnAction(event -> {
+                HomeFactory homeFactory = new HomeFactory();
+                HomeControllerG homeControllerG = homeFactory.getHomeControllerG();
+                homeControllerG.openFeed();
+            });
         }else{
-            btnAddToFav.setStyle(STYLE1);
-            btnAddToFav.setOnAction(event -> addSeriesToFavourites(seriesBean));
-            btnAddToFav.setText("Add to favourites");
+            btnAddToRead.setVisible(false);
+            btnAddToFav.setVisible(false);
         }
-
-        ToReadController toReadController = new ToReadController();
-        if(toReadController.isSeriesAddedToRead(seriesBean)){
-            btnAddToRead.setStyle("-fx-background-color: #5DADE2; -fx-background-radius: 20");
-            btnAddToRead.setOnAction(event -> removeSeriesFromToRead(seriesBean));
-            btnAddToRead.setText("Remove from toRead");
-        }else{
-            btnAddToRead.setStyle(STYLE1);
-            btnAddToRead.setOnAction(event -> addSeriesToToRead(seriesBean));
-            btnAddToRead.setText("Add to toRead");
-        }
-
-
-        btnBack.setOnAction(event -> {
-            HomeFactory homeFactory = new HomeFactory();
-            HomeControllerG homeControllerG = homeFactory.getHomeControllerG();
-            homeControllerG.openFeed();
-        });
 
     }
 
