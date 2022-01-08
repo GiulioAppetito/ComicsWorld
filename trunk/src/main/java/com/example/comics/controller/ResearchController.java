@@ -1,14 +1,10 @@
 package com.example.comics.controller;
 
-import com.example.comics.model.Author;
-import com.example.comics.model.Badge;
-import com.example.comics.model.dao.AuthorDAO;
-import com.example.comics.model.fagioli.AccountBean;
-import com.example.comics.model.fagioli.AuthorBean;
+import com.example.comics.model.*;
 import com.example.comics.model.fagioli.BadgeBean;
+import com.example.comics.model.fagioli.ChapterBean;
+import com.example.comics.model.fagioli.ReviewBean;
 import com.example.comics.model.fagioli.SeriesBean;
-import com.example.comics.model.Series;
-import com.example.comics.model.UserLogin;
 import com.example.comics.model.dao.SeriesDAO;
 
 import java.util.ArrayList;
@@ -16,63 +12,37 @@ import java.util.List;
 
 public class ResearchController {
 
-    public List<SeriesBean> getFavouriteSeries(){
-
-        List<SeriesBean> seriesBeans = new ArrayList<>();
-        SeriesBean seriesBean;
-
+    public List<SeriesBean> getFavouriteSeries() {
         List<Series> favouriteSeries = UserLogin.getInstance().getReader().getFavourites();
-
-        for(Series series : favouriteSeries){
-            seriesBean = new SeriesBean();
-            seriesBean.setTitle(series.getTitle());
-            seriesBean.setAuthor(series.getAuthor());
-            seriesBean.setChapters(series.getChapters());
-
-            seriesBeans.add(seriesBean);
-            seriesBean.setCover(series.getCover());
-        }
-
-
-        return seriesBeans;
+        return getSeriesBeans(favouriteSeries);
     }
 
-    public List<SeriesBean> getToReadSeries(){
+    public List<SeriesBean> getToReadSeries() {
+        List<Series> toReadSeries = UserLogin.getInstance().getReader().getToRead();
+        return getSeriesBeans(toReadSeries);
+    }
+
+    public List<SeriesBean> getLatestSeries() {
+        SeriesDAO seriesdao = new SeriesDAO();
+        List<Series> latestSeries = seriesdao.retriveLatestSeries();
+        return getSeriesBeans(latestSeries);
+    }
+
+    public List<SeriesBean> getPublishedSeries() {
+        List<Series> publishedSeries = UserLogin.getInstance().getAuthor().getPublishedSeries();
+        return getSeriesBeans(publishedSeries);
+    }
+
+    private List<SeriesBean> getSeriesBeans(List<Series> series) {
+
         List<SeriesBean> seriesBeans = new ArrayList<>();
         SeriesBean seriesBean;
-
-        List<Series> toReadSeries = UserLogin.getInstance().getReader().getToRead();
-
-        for(Series series : toReadSeries){
+        for (Series serie : series){
             seriesBean = new SeriesBean();
-            seriesBean.setTitle(series.getTitle());
-            seriesBean.setAuthor(series.getAuthor());
-            seriesBean.setChapters(series.getChapters());
-            seriesBeans.add(seriesBean);
-            seriesBean.setCover(series.getCover());
-        }
-
-
-        return seriesBeans;
-
-    }
-
-    public List<SeriesBean> getLatestSeries(){
-
-        ArrayList<SeriesBean> seriesBeans = new ArrayList<>();
-        SeriesBean seriesBean;
-
-        SeriesDAO seriesdao = new SeriesDAO();
-
-        List<Series> latestSeries = seriesdao.retriveLatestSeries();
-
-        for(Series series : latestSeries){
-            seriesBean = new SeriesBean();
-            seriesBean.setTitle(series.getTitle());
-            seriesBean.setAuthor(series.getAuthor());
-            seriesBean.setChapters(series.getChapters());
-            System.out.println("ARRIVATO DOPO GET CHAPTERS");
-            seriesBean.setCover(series.getCover());
+            seriesBean.setTitle(serie.getTitle());
+            seriesBean.setAuthor(serie.getAuthor());
+            seriesBean.setChapters(serie.getChapters());
+            seriesBean.setCover(serie.getCover());
             seriesBeans.add(seriesBean);
         }
 
@@ -81,6 +51,7 @@ public class ResearchController {
     }
 
 
+    //boh
     public List<BadgeBean> getUserBadges() {
 
         ArrayList<BadgeBean> badgeBeans = new ArrayList<>();
@@ -88,7 +59,7 @@ public class ResearchController {
 
         List<Badge> badges = UserLogin.getInstance().getReader().getBadges();
 
-        for(Badge badge : badges){
+        for (Badge badge : badges) {
             badgeBean = new BadgeBean();
             badgeBean.setIcon(badge.getIcon());
             badgeBean.setName(badge.getName());
@@ -99,35 +70,4 @@ public class ResearchController {
         return badgeBeans;
     }
 
-    public AuthorBean getAuthor(AccountBean accountBean) {
-        AuthorBean authorBean = new AuthorBean();
-
-        AuthorDAO authorDAO = new AuthorDAO();
-        Author author = authorDAO.retrieveAuthorWithoutPassword(accountBean.getUsername());
-
-        authorBean.setFirstName(author.getFirstName());
-        authorBean.setLastName(author.getLastName());
-        authorBean.setUsername(author.getUsername());
-        authorBean.setProPic(author.getProPic());
-        System.out.println("[RESEARCH] Author has propic : "+author.getProPic());
-
-        return authorBean;
-
-    }
-
-    public List<AuthorBean> getFollowedAuthors() {
-        List<AuthorBean> authorBeans = new ArrayList<>();
-        AuthorBean authorBean;
-        System.out.println("[RESEARCH] Prima del for.");
-        for(Author author : UserLogin.getInstance().getReader().getFollowedAuthors()){
-            System.out.println("RESEARCH CONTR] Primo author : "+author.getUsername());
-            authorBean = new AuthorBean();
-            authorBean.setUsername(author.getUsername());
-            authorBean.setProPic(author.getProPic());
-            authorBean.setFirstName(author.getFirstName());
-            authorBean.setLastName(author.getLastName());
-            authorBeans.add(authorBean);
-        }
-        return authorBeans;
-    }
 }

@@ -126,67 +126,6 @@ public class AccountDAO {
 
     }
 
-    public List<String> retrieveCredentials(String username) {
-        Statement stmt=null;
-        Connection conn=null;
-
-        String foundFirstName;
-        String foundLastName;
-        String foundUsername;
-        String foundEmail;
-
-        List<String> credentialList = new ArrayList<>();
-
-
-        try {
-            conn= DriverManager.getConnection(DB_URL,USER,PASS);
-
-            stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE,ResultSet.CONCUR_READ_ONLY);
-            ResultSet rs = Queries.retreiveCredentials(stmt,username);
-
-            if (!rs.first()){
-                throw new Exception("No username Found matching with email or username: "+ username);
-
-            }
-            rs.first();
-
-            //verificare se la password � corretta
-             foundFirstName = rs.getString("firstname");
-             credentialList.add(foundFirstName);
-             foundLastName = rs.getString("lastname");
-             credentialList.add(foundLastName);
-             foundUsername = rs.getString("username");
-             credentialList.add(foundUsername);
-             foundEmail = rs.getString("email");
-             credentialList.add(foundEmail);
-
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
-        } catch (Exception throwables) {
-            throwables.printStackTrace();
-        } finally {
-            try {
-                if (stmt != null)
-                    stmt.close();
-            } catch (SQLException se2) {
-                //TO-DO
-            }
-            try {
-                if (conn != null)
-                    conn.close();
-            } catch (SQLException se) {
-                se.printStackTrace();
-            }
-
-
-        }
-        return credentialList;
-
-
-
-
-    }
-
     public void registerNewAccount(String firstName, String lastName, String username, String email, String password, String role) throws AlreadyUsedUsernameException{
         Statement stmt=null;
         Connection conn=null;

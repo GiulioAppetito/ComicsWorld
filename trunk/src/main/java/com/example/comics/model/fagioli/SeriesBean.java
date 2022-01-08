@@ -50,8 +50,8 @@ public class SeriesBean {
             chapterBean.setId(chapter.getId());
             chapterBean.setReviews(chapter.getReviews());
             chapterBean.setDescription(chapter.getDescription());
+            chapterBean.setAverageRating(chapter.getAverageRating());
             chapterBeans.add(chapterBean);
-
         }
 
         return chapterBeans;

@@ -42,11 +42,13 @@ public class ReviewBean {
         this.propic = propic;
     }
 
-    public String getRating() {
-        return String.valueOf(rating);
+    public int getRating() {
+        return rating;
     }
 
     public void setRating(int rating) {
         this.rating = rating;
     }
+
+
 }

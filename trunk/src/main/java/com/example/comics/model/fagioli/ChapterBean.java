@@ -12,6 +12,7 @@ public class ChapterBean {
     private Integer id;
     private Image cover;
     private List<Review> reviews;
+    private int averageRating;
     private String description;
 
     public String getTitle() {
@@ -20,8 +21,6 @@ public class ChapterBean {
     public void setTitle(String title) {
         this.title = title;
     }
-
-
 
     public Integer getId() {
         return id;
@@ -55,7 +54,6 @@ public class ChapterBean {
 
         return reviewBeans;
     }
-
     public void setReviews(List<Review> reviews) {
         this.reviews = reviews;
     }
@@ -65,5 +63,14 @@ public class ChapterBean {
     }
     public String getDescription(){
         return this.description;
+    }
+
+
+    public int getAverageRating() {
+        return averageRating;
+    }
+
+    public void setAverageRating(int averageRating) {
+        this.averageRating = averageRating;
     }
 }

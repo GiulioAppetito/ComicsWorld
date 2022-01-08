@@ -29,9 +29,9 @@ public class StatisticsControllerG {
     }
 
     @FXML
-    public void openStatisticsReading() {
+    public void openStatisticsFollowers() {
         FxmlLoader object = new FxmlLoader();
-        Pane view = object.getPage("statisticsreading");
+        Pane view = object.getPage("statisticsfollowers");
         mainPane.setCenter(view);
     }
 }

@@ -6,6 +6,7 @@ import javafx.scene.image.Image;
 import javafx.scene.text.Text;
 
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -14,7 +15,8 @@ public class Chapter extends ChapterSubject {
     private String title;
     private Integer id;
     private Date publishingDate;
-    private List<Review> reviews;
+    private List<Review> reviews = new ArrayList<>();
+    private int averageRating;
     private Image cover;
     private String description;
 
@@ -28,6 +30,7 @@ public class Chapter extends ChapterSubject {
         } catch (ReviewsNotFoundException e) {
             e.printStackTrace();
         }
+        this.averageRating = calculateAverageRating();
     }
 
     public String getTitle() {
@@ -78,4 +81,29 @@ public class Chapter extends ChapterSubject {
     public void setId(Integer id) {
         this.id = id;
     }
+
+    public int calculateAverageRating() {
+        averageRating = 0;
+        int count = 0;
+
+        for(Review review : reviews){
+            averageRating = averageRating + review.getRating();
+            count++;
+        }
+
+        if(count==0){
+            return count;
+        }
+
+        return averageRating/count;
+    }
+
+    public int getAverageRating(){
+        return averageRating;
+    }
+
+    public void setAverageRating(int newAverage){
+        this.averageRating = newAverage;
+    }
+
 }
