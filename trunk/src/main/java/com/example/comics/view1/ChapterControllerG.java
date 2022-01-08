@@ -475,7 +475,7 @@ public class ChapterControllerG implements ReviewObserver {
         reviewBean.setChapter(chapterBean.getTitle());
         //e magari anche la foto
         PostReviewController postReviewController = new PostReviewController();
-        postReviewController.post(reviewBean, seriesBean);
+        postReviewController.post(reviewBean, chapterBean, seriesBean);
 
         paneInsertReview.setVisible(false);
     }
