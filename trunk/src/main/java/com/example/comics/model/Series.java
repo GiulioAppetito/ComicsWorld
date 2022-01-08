@@ -135,7 +135,7 @@ public class Series {
 	public void addReview(String chapterTitle, String reviewComment, int rating) {
 		for(int i=0; i< chapters.size(); i++){
 			if(chapters.get(i).getTitle().equals(chapterTitle)){
-				chapters.get(i).addReview(reviewComment, rating, UserLogin.getInstance().getReader().getUsername());
+				chapters.get(i).addReview(this, reviewComment, rating, UserLogin.getInstance().getReader().getUsername());
 			}
 		}
 	}

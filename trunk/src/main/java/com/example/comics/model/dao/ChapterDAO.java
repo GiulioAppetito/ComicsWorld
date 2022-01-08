@@ -84,14 +84,6 @@ public class ChapterDAO {
 
     }
 
-    public void addReview(Review review, Chapter chapter, Series series) {
-        try {
-            ReviewDAO.saveReview(review, chapter, series);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
-
     public void saveChapter(Chapter chapter,String seriesTitle) {
         Statement stmt = null;
         Connection conn = null;

@@ -1,6 +1,7 @@
 package com.example.comics.model;
 
 import com.example.comics.model.dao.ChapterDAO;
+import com.example.comics.model.dao.ReviewDAO;
 import com.example.comics.model.dao.ReviewsNotFoundException;
 import javafx.scene.image.Image;
 import javafx.scene.text.Text;
@@ -39,7 +40,6 @@ public class Chapter extends ChapterSubject {
         this.title = title;
     }
 
-
     public Date getPublishingDate() {
         return publishingDate;
     }
@@ -68,9 +68,15 @@ public class Chapter extends ChapterSubject {
         this.description = description;
     }
 
-    public void addReview(String comment, int rating, String username){
+    public void addReview(Series series, String comment, int rating, String username){
         Review review = new Review(comment, rating, username);
         reviews.add(review);
+        ReviewDAO reviewDAO = new ReviewDAO();
+        try {
+            reviewDAO.saveReview(review,this, series);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     public int calculateAverageRating() {
@@ -91,10 +97,6 @@ public class Chapter extends ChapterSubject {
 
     public int getAverageRating(){
         return averageRating;
-    }
-
-    public void setAverageRating(int newAverage){
-        this.averageRating = newAverage;
     }
 
 }
