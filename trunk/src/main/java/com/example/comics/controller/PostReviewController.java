@@ -18,6 +18,8 @@ public class PostReviewController extends ReviewSubject {
 
         //controllare obiettivi
         checkObjectives(series);
+
+        //notifica observers
         notifyObservers(reviewBean);
 
     }
