@@ -15,15 +15,16 @@ public class PostReviewController extends ReviewSubject {
         Review review = new Review(comment,reviewer);
         review.setChapter(reviewBean.getChapter());
         review.setRating(reviewBean.getRating());
-        //salvataggio sul DB
-        saveReview(review, seriesBean.getTitle());
 
-        //aggiorna model
+        //salvataggio sul DB
+        SeriesDAO seriesDAO = new SeriesDAO();
+        Series series = seriesDAO.retrieveSeries(seriesBean.getTitle());
+        saveReview(review, series);
+
+        //aggiorna user
         UserLogin.getInstance().getReader().addPublishedReview(review);
 
         //controllare obiettivi
-        SeriesDAO seriesDAO = new SeriesDAO();
-        Series series = seriesDAO.retrieveSeries(seriesBean.getTitle());
         checkObjectives(series);
 
         notifyObservers(reviewBean);
@@ -66,9 +67,11 @@ public class PostReviewController extends ReviewSubject {
 
     }
 
-    private void saveReview(Review review, String seriesTitle) {
+    private void saveReview(Review review, Series series) {
+
+        //series.addReview(review, review.getChapter());
         SeriesDAO seriesDAO = new SeriesDAO();
-        seriesDAO.addReviewToChapter(review, seriesTitle);
+        seriesDAO.addReviewToChapter(review, series.getTitle());
     }
 
 }

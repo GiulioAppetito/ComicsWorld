@@ -33,7 +33,7 @@ public class ReviewDAO {
             rs.first();
             do{
                 reviewItem = new Review(rs.getString("comment"),rs.getString("user"));
-                reviewItem.setRating(rs.getString("rating"));
+                reviewItem.setRating(Integer.valueOf(rs.getString("rating")));
                 reviewsList.add(reviewItem);
 
             }while(rs.next());
@@ -71,7 +71,7 @@ public class ReviewDAO {
             rs.first();
             do{
                 reviewItem = new Review(rs.getString("comment"),rs.getString("user"));
-                reviewItem.setRating(rs.getString("rating"));
+                reviewItem.setRating(Integer.valueOf(rs.getString("rating")));
                 reviewsList.add(reviewItem);
 
             }while(rs.next());

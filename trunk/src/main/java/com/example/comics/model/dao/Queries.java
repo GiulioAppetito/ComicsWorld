@@ -125,7 +125,7 @@ public class Queries {
 
     }
 
-    public static ResultSet retreiveReader(Statement stmt, String identifier, String password) throws SQLException {
+    public static ResultSet retrieveUser(Statement stmt, String identifier, String password) throws SQLException {
         String selectStatement = String.format("SELECT * FROM users WHERE (username = '%s' OR email = '%s')  AND password = '%s'",identifier,identifier,password);
         System.out.println(selectStatement);
         return stmt.executeQuery(selectStatement);

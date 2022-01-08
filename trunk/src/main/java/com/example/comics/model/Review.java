@@ -5,7 +5,7 @@ public class Review {
     private String comment;
     private String username;
     private String chapter;
-    private String rating;
+    private int rating;
 
     public Review(String comment, String username){
             this.comment = comment;
@@ -28,11 +28,11 @@ public class Review {
         this.chapter = chapter;
     }
 
-    public String getRating() {
+    public int getRating() {
         return rating;
     }
 
-    public void setRating(String rating) {
+    public void setRating(int rating) {
         this.rating = rating;
     }
 }

@@ -25,7 +25,7 @@
                     <Font name="Berlin Sans FB" size="18.0" />
                 </font></Button>
             <Separator prefWidth="200.0" />
-            <Button fx:id="btnReadings" mnemonicParsing="false" onAction="#openStatisticsReading" prefHeight="58.0" prefWidth="185.0" styleClass="button2" stylesheets="@../../../../css/fullpackstyling.css" text="Readings">
+            <Button fx:id="btnReadings" mnemonicParsing="false" onAction="#openStatisticsFollowers" prefHeight="58.0" prefWidth="185.0" styleClass="button2" stylesheets="@../../../../css/fullpackstyling.css" text="Followers">
                 <font>
                     <Font name="Berlin Sans FB" size="18.0" />
                 </font></Button>

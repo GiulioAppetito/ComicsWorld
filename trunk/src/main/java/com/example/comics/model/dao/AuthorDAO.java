@@ -26,7 +26,7 @@ public class AuthorDAO {
         try {
             conn = DriverManager.getConnection(DB_URL, USER, PASS);
             stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
-            ResultSet rs = Queries.retreiveReader(stmt, identifier, password);
+            ResultSet rs = Queries.retrieveUser(stmt, identifier, password);
 
             if (!rs.first()) {
                 return null;
@@ -39,8 +39,9 @@ public class AuthorDAO {
             author = new Author(publishedSeries);
             author.setFirstName(rs.getString("firstname"));
             author.setUsername(rs.getString("username"));
-            author.setLastName(rs.getString(rs.getString("email")));
             author.setPassword(rs.getString("password"));
+            author.setEmail(rs.getString("email"));
+            author.setLastName(rs.getString("lastname"));
 
             Blob bl = rs.getBlob("propic");
             InputStream inputStream = bl.getBinaryStream();
