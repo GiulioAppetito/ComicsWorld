@@ -130,5 +130,14 @@ public class Series {
 	public void setAuthor(Author author) {
 		this.author = author;
 	}
+
+	public void addReview(String chapterTitle, String reviewComment, int rating) {
+			for(int i=0; i< chapters.size(); i++){
+				if(chapters.get(i).getTitle().equals(chapterTitle)){
+					chapters.get(i).addReview(this, reviewComment, rating, UserLogin.getInstance().getReader().getUsername());
+				}
+			}
+
+	}
 }
 

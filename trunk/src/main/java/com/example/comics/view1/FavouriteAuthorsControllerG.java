@@ -2,7 +2,6 @@ package com.example.comics.view1;
 
 import com.example.comics.controller.ResearchController;
 import com.example.comics.model.UserLogin;
-import com.example.comics.model.fagioli.AccountBean;
 import com.example.comics.model.fagioli.AuthorBean;
 import com.example.comics.model.fagioli.SeriesBean;
 import com.example.comics.model.Author;

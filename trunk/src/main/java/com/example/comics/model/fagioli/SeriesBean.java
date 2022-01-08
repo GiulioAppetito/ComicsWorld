@@ -56,7 +56,6 @@ public class SeriesBean {
         for(Chapter chapter : this.chapters){
             chapterBean = new ChapterBean();
             chapterBean.setTitle(chapter.getTitle());
-            chapterBean.setId(chapter.getId());
             chapterBean.setReviews(chapter.getReviews());
             chapterBean.setDescription(chapter.getDescription());
             chapterBean.setAverageRating(chapter.getAverageRating());

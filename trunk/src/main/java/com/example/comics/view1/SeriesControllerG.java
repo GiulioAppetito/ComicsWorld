@@ -3,8 +3,6 @@ package com.example.comics.view1;
 import com.example.comics.controller.FavouritesController;
 import com.example.comics.controller.ResearchController;
 import com.example.comics.controller.ToReadController;
-import com.example.comics.model.fagioli.AccountBean;
-import com.example.comics.model.fagioli.AuthorBean;
 import com.example.comics.model.fagioli.ChapterBean;
 import com.example.comics.model.fagioli.SeriesBean;
 import javafx.event.EventHandler;
@@ -117,11 +115,7 @@ public class SeriesControllerG {
         btnBack.setOnAction(event -> {
             HomeFactory homeFactory = new HomeFactory();
             HomeControllerG homeControllerG = homeFactory.getHomeControllerG();
-            try {
-                homeControllerG.openFeed();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
+            homeControllerG.openFeed();
         });
 
     }
