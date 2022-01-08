@@ -43,13 +43,11 @@ public class AuthorDAO {
             SeriesDAO seriesDAO = new SeriesDAO();
             List<Series> publishedSeries = seriesDAO.retrievePublishedSeries(author);
             author.setPublishedSeries(publishedSeries);
-            System.out.println("Serie pubblicate: " + publishedSeries.get(0).getTitle());
 
             Blob bl = rs.getBlob("proPic");
             InputStream inputStream = bl.getBinaryStream();
             Image image = new Image(inputStream);
             author.setProPic(image);
-            System.out.println("[AuthorDAO] Inited author with pic : "+author.getProPic());
 
         } catch (SQLException throwables) {
             throwables.printStackTrace();
@@ -98,7 +96,6 @@ public class AuthorDAO {
 
             Image image = new Image(inputStream);
             author.setProPic(image);
-            System.out.println("[AuthorDAO] Inited author with pic : "+author.getProPic());
 
         } catch (SQLException throwables) {
             throwables.printStackTrace();
@@ -129,7 +126,7 @@ public class AuthorDAO {
                         ResultSet.CONCUR_READ_ONLY);
 
                 // In pratica i risultati delle query possono essere visti come un Array Associativo o un Map
-               // Queries.saveSeries(stmt,series);
+                // Queries.saveSeries(stmt,series);
                 stmt.close();
             } catch (SQLException throwables) {
                 throwables.printStackTrace();
