@@ -22,9 +22,6 @@ public class Series {
 	private Genres genre2;
 	private Genres genre3;
 
-	public Series(){
-		//costruttore di default
-	}
 
 	public Series(String title){
 		this.title = title;

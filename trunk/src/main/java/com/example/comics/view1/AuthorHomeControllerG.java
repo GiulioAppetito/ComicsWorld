@@ -108,6 +108,7 @@ public class AuthorHomeControllerG  extends HomeControllerG implements AccountOb
     }
 
 
+    @Override
     public void changeCenter(Pane pane){
         mainPane.setCenter(pane);
     }
