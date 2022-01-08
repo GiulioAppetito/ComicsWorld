@@ -43,7 +43,6 @@ public class ChapterDAO {
                 chapterID = rs.getInt("chapter_id");
                 chapterSeries = rs.getString("series_title");
                 chapter = new Chapter(chapterTitle);
-                chapter.setId(chapterID);
                 chapter.setDescription(rs.getString("chapterDescription"));
 
                 chaptersList.add(chapter);
@@ -83,14 +82,6 @@ public class ChapterDAO {
         ReviewDAO reviewDAO = new ReviewDAO();
         return reviewDAO.retrieveReviews(chapter);
 
-    }
-
-    public void addReview(Review review, String seriesTitle) {
-        try {
-            ReviewDAO.saveReview(review, seriesTitle);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
     }
 
     public void saveChapter(Chapter chapter,String seriesTitle) {

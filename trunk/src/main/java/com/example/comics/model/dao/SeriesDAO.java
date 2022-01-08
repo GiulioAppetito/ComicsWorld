@@ -351,58 +351,9 @@ public class SeriesDAO {
         return chapterDAO.retriveChapters(seriesTitle);
     }
 
-    public void addReviewToChapter(Review review, String seriesTitle) {
-        ChapterDAO chapterDAO = new ChapterDAO();
-        chapterDAO.addReview(review, seriesTitle);
-    }
-
     public List<Objective> retrieveObjectives(Series series) {
         ObjectiveDAO objectiveDAO = new ObjectiveDAO();
         return objectiveDAO.retrieveSeriesObjectives(series);
     }
-
-    public List<Review> retrieveReviewsByReader(String username) {
-
-        Statement stmt = null;
-        Connection conn = null;
-
-        List<Review> reviews = new ArrayList<>();
-        Review review;
-
-        try {
-            conn = DriverManager.getConnection(DB_URL, USER, PASS);
-            stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
-            ResultSet rs = Queries.retrieveReviewsByReader(stmt,username);
-
-            if (!rs.first()) {
-                throw new Exception("No reviews Found ");
-            }
-            rs.first();
-
-            do {
-                review = new Review(rs.getString("comment"), rs.getString("user"));
-                review.setChapter(rs.getString("chapter_id"));
-                reviews.add(review);
-
-            } while (rs.next());
-
-
-        } catch (SQLException throwables) {
-            throwables.printStackTrace();
-        }catch (Exception e) {
-            e.printStackTrace();
-        } finally{
-            try {
-                assert conn != null;
-                conn.close();
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
-        }
-
-        return reviews;
-
-    }
-
 
 }

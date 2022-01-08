@@ -1,5 +1,6 @@
 package com.example.comics.controller;
 
+import com.example.comics.model.fagioli.ChapterBean;
 import com.example.comics.model.fagioli.ObjectiveBean;
 import com.example.comics.model.fagioli.ReviewBean;
 import com.example.comics.model.*;
@@ -8,26 +9,19 @@ import com.example.comics.model.fagioli.SeriesBean;
 
 public class PostReviewController extends ReviewSubject {
 
-    public void post(ReviewBean reviewBean, SeriesBean seriesBean) {
-
-        String reviewer = reviewBean.getUsername();
-        String comment = reviewBean.getComment();
-        Review review = new Review(comment,reviewer);
-        review.setChapter(reviewBean.getChapter());
-        review.setRating(reviewBean.getRating());
+    public void post(ReviewBean reviewBean, ChapterBean chapterBean, SeriesBean seriesBean) {
 
         //salvataggio sul DB
         SeriesDAO seriesDAO = new SeriesDAO();
         Series series = seriesDAO.retrieveSeries(seriesBean.getTitle());
-        saveReview(review, series);
-
-        //aggiorna user
-        UserLogin.getInstance().getReader().addPublishedReview(review);
+        series.addReview(chapterBean.getTitle(), reviewBean.getComment(), reviewBean.getRating());
 
         //controllare obiettivi
         checkObjectives(series);
 
+        //notifica observers
         notifyObservers(reviewBean);
+
     }
 
     private void checkObjectives(Series series) {
@@ -65,13 +59,6 @@ public class PostReviewController extends ReviewSubject {
         }
         //azione a seguito del controllo
 
-    }
-
-    private void saveReview(Review review, Series series) {
-
-        //series.addReview(review, review.getChapter());
-        SeriesDAO seriesDAO = new SeriesDAO();
-        seriesDAO.addReviewToChapter(review, series.getTitle());
     }
 
 }

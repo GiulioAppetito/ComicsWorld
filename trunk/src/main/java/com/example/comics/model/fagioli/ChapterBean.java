@@ -8,8 +8,6 @@ import java.util.List;
 public class ChapterBean {
 
     private String title;
-
-    private Integer id;
     private Image cover;
     private List<Review> reviews;
     private int averageRating;
@@ -20,13 +18,6 @@ public class ChapterBean {
     }
     public void setTitle(String title) {
         this.title = title;
-    }
-
-    public Integer getId() {
-        return id;
-    }
-    public void setId(Integer id) {
-        this.id = id;
     }
 
     public Image getCover() {

@@ -89,13 +89,7 @@ public class ReaderHomeControllerG extends HomeControllerG implements AccountObs
         btnToRead.setOnAction(event -> openToRead());
         btnReading.setOnAction(event -> openReading());
         userBox.setOnMouseClicked(event -> openProfile());
-        homeIcon.setOnMouseClicked(event -> {
-            try {
-                openFeed();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        });
+        homeIcon.setOnMouseClicked(event -> openFeed());
 
     }
 
@@ -181,24 +175,8 @@ public class ReaderHomeControllerG extends HomeControllerG implements AccountObs
     }
 
 
-    public void openFeed() throws IOException {
-
-        FeedControllerG feedControllerG = new FeedControllerG();
-        FXMLLoader loader = new FXMLLoader();
-
-        URL fxmlLocation = HomeControllerG.class.getResource("feed.fxml");
-        loader.setLocation(fxmlLocation);
-        loader.setController(feedControllerG);
-
-        Pane view = loader.load();
-        feedControllerG.init();
-
-        mainPane.setCenter(view);
-
-        resetButtons();
-    }
-
-    private void resetButtons(){
+    @Override
+    public void resetButtons(){
         btnSettings.setStyle(STYLE);
         btnCategories.setStyle(STYLE);
         btnFav.setStyle(STYLE);

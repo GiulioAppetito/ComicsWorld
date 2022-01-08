@@ -1,9 +1,9 @@
 package com.example.comics.model;
 
 import com.example.comics.model.dao.ChapterDAO;
+import com.example.comics.model.dao.ReviewDAO;
 import com.example.comics.model.dao.ReviewsNotFoundException;
 import javafx.scene.image.Image;
-import javafx.scene.text.Text;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -13,7 +13,6 @@ import java.util.List;
 public class Chapter extends ChapterSubject {
 
     private String title;
-    private Integer id;
     private Date publishingDate;
     private List<Review> reviews = new ArrayList<>();
     private int averageRating;
@@ -39,7 +38,6 @@ public class Chapter extends ChapterSubject {
     public void setTitle(String title) {
         this.title = title;
     }
-
 
     public Date getPublishingDate() {
         return publishingDate;
@@ -69,17 +67,16 @@ public class Chapter extends ChapterSubject {
         this.description = description;
     }
 
-    public void addReview(String comment, String username){
-        Review review = new Review(comment, username);
+    public void addReview(Series series, String comment, int rating, String username){
+        Review review = new Review(comment, rating, username);
         reviews.add(review);
-
-    }
-
-    public Integer getId() {
-        return id;
-    }
-    public void setId(Integer id) {
-        this.id = id;
+        ReviewDAO reviewDAO = new ReviewDAO();
+        try {
+            reviewDAO.saveReview(review,this, series);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        this.averageRating = calculateAverageRating();
     }
 
     public int calculateAverageRating() {
@@ -100,10 +97,6 @@ public class Chapter extends ChapterSubject {
 
     public int getAverageRating(){
         return averageRating;
-    }
-
-    public void setAverageRating(int newAverage){
-        this.averageRating = newAverage;
     }
 
 }

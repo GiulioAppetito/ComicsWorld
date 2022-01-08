@@ -78,13 +78,11 @@ public class ReaderDAO {
             List<Series> favSeries = seriesDAO.retrieveFavouriteSeries(username);
             List<Series> toReadSeries = seriesDAO.retrieveToReadSeries(username);
             List<Series> readingSeries = seriesDAO.retrieveReadingSeries(username);
-            List<Review> reviews = seriesDAO.retrieveReviewsByReader(username);
 
             AuthorDAO authorDAO = new AuthorDAO();
             List<Author> followedAuthors = authorDAO.retreiveFollowedAuthorsByReader(username);
 
-
-            reader = new Reader(favSeries, toReadSeries, readingSeries, reviews, username,followedAuthors);
+            reader = new Reader(favSeries, toReadSeries, readingSeries, username,followedAuthors);
 
             reader.setFirstName(rs.getString("firstname"));
             reader.setLastName(rs.getString("lastname"));
