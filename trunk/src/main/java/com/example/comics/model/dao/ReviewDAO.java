@@ -25,7 +25,7 @@ public class ReviewDAO {
             ResultSet rs = Queries.retreiveReviewsByChapter(stmt, chapter);
 
             if(!rs.first()){
-                throw new ReviewsNotFoundException();
+                return reviewsList;
             }
             rs.first();
             do{
