@@ -23,14 +23,12 @@ public class ChapterDAO {
         List<Chapter> chaptersList = new ArrayList<>();
 
         String chapterTitle;
-        Integer chapterID;
-        String chapterSeries;
-
         Chapter chapter;
 
         try {
             conn = DriverManager.getConnection(DB_URL, USER, PASS);
             stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
+            System.out.println("ChapterDAO: sto andando a recuperare i capitoli");
             ResultSet rs = Queries.retriveChapters(stmt, seriesTitle);
 
             if (!rs.first()) {
@@ -40,7 +38,6 @@ public class ChapterDAO {
 
             do {
                 chapterTitle = rs.getString("chapter_title");
-                chapterSeries = rs.getString("series_title");
                 chapter = new Chapter(chapterTitle);
                 chapter.setDescription(rs.getString("chapterDescription"));
 

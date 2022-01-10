@@ -25,9 +25,10 @@ public class Series {
 	public Series(String title, Author author){
 		this.title = title;
 		this.author = author;
-		SeriesDAO seriesDAO = new SeriesDAO();
-		this.chapters = seriesDAO.retriveChapters(title);
+		ChapterDAO chapterDAO = new ChapterDAO();
+		this.chapters = chapterDAO.retriveChapters(title);
 		//inizializzazione obiettivi dal db
+		SeriesDAO seriesDAO = new SeriesDAO();
 		this.objectives = seriesDAO.retrieveObjectives(this);
 		if(objectives==null){
 			objectives = new ArrayList<>();

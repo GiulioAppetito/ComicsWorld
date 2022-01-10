@@ -62,7 +62,6 @@ public class SeriesControllerG {
         btnAuthor.setText(seriesBean.getAuthor().getUsername());
 
         btnAuthor.setOnAction(event -> openAuthor(seriesBean));
-
         List<ChapterBean> listOfChapters = seriesBean.getChapters();
 
         for (ChapterBean chapterBean : listOfChapters) {

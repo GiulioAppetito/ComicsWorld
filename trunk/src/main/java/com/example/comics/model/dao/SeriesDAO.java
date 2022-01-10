@@ -138,6 +138,7 @@ public class SeriesDAO {
             rs.first();
 
             do {
+                System.out.println("seriesDAO1");
                 series = new Series(rs.getString("title"), author);
 
                 Blob bl = rs.getBlob("cover");
@@ -188,7 +189,8 @@ public class SeriesDAO {
             ResultSet rs = Queries.retriveReadingSeries(stmt, user);
 
             if (!rs.first()) {
-                throw new Exception("No series Found ");
+                System.out.println("No series in: reading");
+                return seriesList;
             }
             rs.first();
 
@@ -251,6 +253,7 @@ public class SeriesDAO {
 
                 AuthorDAO authorDAO = new AuthorDAO();
                 author = authorDAO.retrieveAuthorWithoutPassword(rs.getString("author"));
+                System.out.println("seriesDAO2");
                 series = new Series(title, author);
                 Blob bl = rs.getBlob("cover");
                 InputStream inputStream = bl.getBinaryStream();
@@ -308,6 +311,7 @@ public class SeriesDAO {
 
                 AuthorDAO authorDAO = new AuthorDAO();
                 author = authorDAO.retrieveAuthorWithoutPassword(rs.getString("author"));
+                System.out.println("seriesDAO3");
                 series = new Series(rs.getString("title"), author);
 
                 Blob bl = rs.getBlob("cover");
@@ -315,10 +319,8 @@ public class SeriesDAO {
                 Image image = new Image(inputStream);
                 series.setCover(image);
 
-
-
-                series.setAuthor(author);
                 seriesList.add(series);
+
             } while (rs.next());
 
 
@@ -345,10 +347,6 @@ public class SeriesDAO {
         return seriesList;
     }
 
-    public List<Chapter> retriveChapters(String seriesTitle) {
-        ChapterDAO chapterDAO = new ChapterDAO();
-        return chapterDAO.retriveChapters(seriesTitle);
-    }
 
     public List<Objective> retrieveObjectives(Series series) {
         ObjectiveDAO objectiveDAO = new ObjectiveDAO();

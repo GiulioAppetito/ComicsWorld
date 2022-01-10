@@ -12,15 +12,12 @@ public class ToReadController {
 
     public boolean isSeriesAddedToRead(SeriesBean seriesBean){
 
-        Author author = new Author();
-        author.setUsername(seriesBean.getAuthor().getUsername());
-        author.setPublishedSeries(seriesBean.getAuthor().getPublishedSeries());
-        author.setFirstName(seriesBean.getAuthor().getFirstName());
-        author.setLastName(seriesBean.getAuthor().getLastName());
-        author.setProPic(seriesBean.getAuthor().getProPic());
-
-        Series series = new Series(seriesBean.getTitle(), author);
-        series.setCover(seriesBean.getCover());
+        Series series = null;
+        for(Series series1 : seriesBean.getAuthor().getPublishedSeries()){
+            if(series1.getTitle().equals(seriesBean.getTitle())){
+                series = series1;
+            }
+        }
 
         return UserLogin.getInstance().getReader().wantsToRead(series);
 
@@ -28,16 +25,12 @@ public class ToReadController {
 
     public void addSeriesToToRead(SeriesBean seriesBean) {
 
-        Author author = new Author();
-        author.setUsername(seriesBean.getAuthor().getUsername());
-        author.setPublishedSeries(seriesBean.getAuthor().getPublishedSeries());
-        author.setFirstName(seriesBean.getAuthor().getFirstName());
-        author.setLastName(seriesBean.getAuthor().getLastName());
-        author.setProPic(seriesBean.getAuthor().getProPic());
-
-        Series series = new Series(seriesBean.getTitle(), author);
-        series.setCover(seriesBean.getCover());
-        //poi altri dettagli
+        Series series = null;
+        for(Series series1 : seriesBean.getAuthor().getPublishedSeries()){
+            if(series1.getTitle().equals(seriesBean.getTitle())){
+                series = series1;
+            }
+        }
 
         UserLogin.getInstance().getReader().addSeriesToToRead(series);
 
@@ -52,17 +45,12 @@ public class ToReadController {
     public void removeSeriesFromToRead(SeriesBean seriesBean) {
 
 
-        Author author = new Author();
-        author.setUsername(seriesBean.getAuthor().getUsername());
-        author.setPublishedSeries(seriesBean.getAuthor().getPublishedSeries());
-        author.setFirstName(seriesBean.getAuthor().getFirstName());
-        author.setLastName(seriesBean.getAuthor().getLastName());
-        author.setProPic(seriesBean.getAuthor().getProPic());
-
-        Series series = new Series(seriesBean.getTitle(), author);
-
-        series.setCover(seriesBean.getCover());
-        //poi altri dettagli
+        Series series = null;
+        for(Series series1 : seriesBean.getAuthor().getPublishedSeries()){
+            if(series1.getTitle().equals(seriesBean.getTitle())){
+                series = series1;
+            }
+        }
 
         UserLogin.getInstance().getReader().removeSeriesFromToRead(series);
 

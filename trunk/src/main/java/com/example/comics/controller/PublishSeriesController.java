@@ -23,6 +23,7 @@ public class PublishSeriesController {
         author.setLastName(seriesBean.getAuthor().getLastName());
         author.setProPic(seriesBean.getAuthor().getProPic());
 
+        System.out.println("PUBSERIESCON");
         Series series = new Series(seriesBean.getTitle(), author);
 
         series.setGenre1(seriesBean.getGenre1());

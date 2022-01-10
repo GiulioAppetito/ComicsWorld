@@ -11,34 +11,24 @@ public class FavouritesController {
 
     public boolean isSeriesFavourite(SeriesBean seriesBean) {
 
-        Author author = new Author();
-        author.setUsername(seriesBean.getAuthor().getUsername());
-        author.setPublishedSeries(seriesBean.getAuthor().getPublishedSeries());
-        author.setFirstName(seriesBean.getAuthor().getFirstName());
-        author.setLastName(seriesBean.getAuthor().getLastName());
-        author.setProPic(seriesBean.getAuthor().getProPic());
-
-        Series series = new Series(seriesBean.getTitle(), author);
-        series.setCover(seriesBean.getCover());
-        series.setAuthor(series.getAuthor());
+        Series series = null;
+        for(Series series1 : seriesBean.getAuthor().getPublishedSeries()){
+            if(series1.getTitle().equals(seriesBean.getTitle())){
+                series = series1;
+            }
+        }
 
         return UserLogin.getInstance().getReader().likesThisSeries(series);
-
-
     }
 
     public void addSeriesToFavourites(SeriesBean seriesBean) {
 
-        Author author = new Author();
-        author.setUsername(seriesBean.getAuthor().getUsername());
-        author.setPublishedSeries(seriesBean.getAuthor().getPublishedSeries());
-        author.setFirstName(seriesBean.getAuthor().getFirstName());
-        author.setLastName(seriesBean.getAuthor().getLastName());
-        author.setProPic(seriesBean.getAuthor().getProPic());
-
-        Series series = new Series(seriesBean.getTitle(), author);
-        series.setCover(seriesBean.getCover());
-        //poi altri dettagli
+        Series series = null;
+        for(Series series1 : seriesBean.getAuthor().getPublishedSeries()){
+            if(series1.getTitle().equals(seriesBean.getTitle())){
+                series = series1;
+            }
+        }
 
         ReaderDAO readerDAO = new ReaderDAO();
         readerDAO.addSeriesToFavourites(series, UserLogin.getInstance().getReader());
@@ -49,17 +39,12 @@ public class FavouritesController {
 
     public void removeSeriesFromFavourites(SeriesBean seriesBean) {
 
-
-        Author author = new Author();
-        author.setUsername(seriesBean.getAuthor().getUsername());
-        author.setPublishedSeries(seriesBean.getAuthor().getPublishedSeries());
-        author.setFirstName(seriesBean.getAuthor().getFirstName());
-        author.setLastName(seriesBean.getAuthor().getLastName());
-        author.setProPic(seriesBean.getAuthor().getProPic());
-
-        Series series = new Series(seriesBean.getTitle(), author);
-        series.setCover(seriesBean.getCover());
-        //poi altri dettagli
+        Series series = null;
+        for(Series series1 : seriesBean.getAuthor().getPublishedSeries()){
+            if(series1.getTitle().equals(seriesBean.getTitle())){
+                series = series1;
+            }
+        }
 
         ReaderDAO readerDAO = new ReaderDAO();
         readerDAO.removeSeriesFromFavourites(series, UserLogin.getInstance().getReader());
