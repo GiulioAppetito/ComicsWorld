@@ -3,9 +3,9 @@ package com.example.comics.model;
 import com.example.comics.model.dao.ChapterDAO;
 import com.example.comics.model.dao.ReviewDAO;
 import com.example.comics.model.dao.ReviewsNotFoundException;
+import com.example.comics.model.fagioli.ReviewBean;
 import javafx.scene.image.Image;
 
-import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -19,7 +19,7 @@ public class Chapter extends ChapterSubject {
     private Image cover;
     private String description;
 
-    public Chapter(String title) throws SQLException {
+    public Chapter(String title){
 
         this.title = title;
         //delego la responsabilità di creator delle review del chapter al chapterDAO che farà il retrieve delle review
@@ -77,6 +77,15 @@ public class Chapter extends ChapterSubject {
             e.printStackTrace();
         }
         this.averageRating = calculateAverageRating();
+
+
+        //SBAGLIATISSIMO!!!!!:
+        ReviewBean reviewBean = new ReviewBean();
+        reviewBean.setRating(rating);
+        reviewBean.setComment(comment);
+        reviewBean.setUsername(username);
+
+        notifyObserversNewReview(reviewBean);
     }
 
     public int calculateAverageRating() {

@@ -23,8 +23,8 @@ public class FavouriteAuthorsControllerG {
 
     @FXML
     public void initialize(){
-        ResearchController researchController = new ResearchController();
-        List<AuthorBean> listOfCards = researchController.getFollowedAuthors(UserLogin.getInstance().getReader());
+
+        List<Author> listOfCards = UserLogin.getInstance().getReader().getFollowedAuthors();
         int size = listOfCards.size();
         int columns = 3;
         int i=1;
@@ -55,7 +55,7 @@ public class FavouriteAuthorsControllerG {
 
     }
 
-    public void openAuthor(AuthorBean authorBean) throws IOException {
+    public void openAuthor(Author author) throws IOException {
         AuthorFromOutsideControllerG authorFromOutsideControllerG = new AuthorFromOutsideControllerG();
         FXMLLoader loader = new FXMLLoader();
 
@@ -67,7 +67,7 @@ public class FavouriteAuthorsControllerG {
         HomeControllerG homeControllerG = homeFactory.getHomeControllerG();
         homeControllerG.changeCenter(loader.load());
 
-        authorFromOutsideControllerG.init(authorBean);
+        authorFromOutsideControllerG.init(author);
 
     }
 

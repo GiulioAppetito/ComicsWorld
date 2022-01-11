@@ -1,12 +1,9 @@
 package com.example.comics.view1;
 
 import com.example.comics.controller.PostReviewController;
+import com.example.comics.model.*;
 import com.example.comics.model.fagioli.ChapterBean;
-import com.example.comics.model.fagioli.ObjectiveBean;
 import com.example.comics.model.fagioli.ReviewBean;
-import com.example.comics.model.ReviewObserver;
-import com.example.comics.model.ReviewSubject;
-import com.example.comics.model.UserLogin;
 import com.example.comics.model.fagioli.SeriesBean;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -20,7 +17,7 @@ import javafx.scene.layout.VBox;
 import java.io.IOException;
 import java.util.List;
 
-public class ChapterControllerG implements ReviewObserver {
+public class ChapterControllerG implements ChapterObserver, AccountObserver {
 
     @FXML
     private VBox vbReviews;
@@ -347,7 +344,8 @@ public class ChapterControllerG implements ReviewObserver {
 
     public void init(ChapterBean chapterBean, SeriesBean seriesBean){
 
-        ReviewSubject.attach(this);
+        ChapterSubject.attach(this);
+        AccountSubject.attach(this);
 
         lblAuthor.setText("autore");
         lblChapterTitle.setText(chapterBean.getTitle());
@@ -486,8 +484,10 @@ public class ChapterControllerG implements ReviewObserver {
 
     }
 
+
+    //QUESTA VA RIFATTA
     @Override
-    public void update(ReviewBean reviewBean) {
+    public void updateReviews(ReviewBean reviewBean) {
         //add della review sulla lista
         FXMLLoader fxmlLoader = new FXMLLoader();
         fxmlLoader.setLocation(getClass().getResource("review.fxml"));
@@ -503,12 +503,17 @@ public class ChapterControllerG implements ReviewObserver {
     }
 
     @Override
-    public void achievedObjective(ObjectiveBean objectiveBean) {
-        //mostra panel con vittoria badge
+    public void update() {
+        Badge latestBadge = new Badge();
+        //per i badges, vado a prendere il badge vinto dal profilo utente
+        for(Badge badge : UserLogin.getInstance().getReader().getBadges()){
+            latestBadge = badge;
+        }
+
         newBadgeWonPane.setVisible(true);
-        lblBadgeName.setText(objectiveBean.getBadgeName());
-        lblBadgeSeries.setText(objectiveBean.getSeriesTitle());
-        badgeIconView.setImage(objectiveBean.getBadgeIcon());
+        lblBadgeName.setText(latestBadge.getName());
+        badgeIconView.setImage(latestBadge.getIcon());
 
     }
+
 }

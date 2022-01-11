@@ -9,10 +9,6 @@
 <?import javafx.scene.text.Font?>
 
 <HBox prefHeight="90.0" prefWidth="810.0" spacing="15.0" stylesheets="@../../../../css/fullpackstyling.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.comics.view1.CategoryCardControllerG">
-    <styleClass>
-        <String fx:value="panes" />
-        <String fx:value="white-background" />
-    </styleClass>
     <ImageView fitHeight="72.0" fitWidth="119.0" pickOnBounds="true" preserveRatio="true">
         <HBox.margin>
             <Insets bottom="10.0" left="20.0" top="15.0" />
@@ -28,4 +24,9 @@
             <Font size="18.0" />
         </font>
     </Label>
+   <styleClass>
+      <String fx:value="white-background" />
+      <String fx:value="oval-layout" />
+      <String fx:value="button2" />
+   </styleClass>
 </HBox>

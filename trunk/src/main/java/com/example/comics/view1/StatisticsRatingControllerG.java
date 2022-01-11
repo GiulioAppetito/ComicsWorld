@@ -11,7 +11,7 @@ import java.util.List;
 public class StatisticsRatingControllerG {
 
     @FXML
-    private BarChart<?, ?> barChartRatings;
+    private BarChart<? extends String, ? extends Number> barChartRatings;
 
 
     public void initialize(){
@@ -19,7 +19,8 @@ public class StatisticsRatingControllerG {
         ResearchController researchController = new ResearchController();
         List<SeriesBean> publishedSeries = researchController.getPublishedSeries();
 
-        StatisticsController statisticsController = new StatisticsController();
+        //StatisticsController statisticsController = new StatisticsController();
+
         //Defining the y Axis
         NumberAxis yAxis = new NumberAxis(0, 5, 1);
         yAxis.setLabel("Rating units");
@@ -30,9 +31,12 @@ public class StatisticsRatingControllerG {
         //series1.setName();
 
         for(SeriesBean series : publishedSeries) {
-            System.out.println(series.getTitle());
-            int rating = statisticsController.seriesAverageRating(series);
-            series1.getData().add(new XYChart.Data(series.getTitle(), rating));
+            //System.out.println(series.getTitle());
+            //int rating = statisticsController.seriesAverageRating(series);
+
+            //series1.getData().add(new XYChart.Data(series.getTitle(), rating));
+
+            series1.getData().add(new XYChart.Data(series.getTitle(), series.getAverageRating()));
         }
 
         //Setting the XYChart.Series objects to area chart

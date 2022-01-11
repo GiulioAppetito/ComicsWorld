@@ -5,29 +5,65 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox alignment="CENTER" prefHeight="236.0" prefWidth="167.0" stylesheets="@../../../../css/fullpackstyling.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.comics.view1.VCardControllerG">
+<VBox alignment="CENTER" prefHeight="270.0" prefWidth="180.0" stylesheets="@../../../../css/fullpackstyling.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.comics.view1.VCardControllerG">
     <styleClass>
         <String fx:value="white-background" />
         <String fx:value="oval-layout" />
       <String fx:value="button2" />
     </styleClass>
-   <ImageView fx:id="comicCover" fitHeight="188.0" fitWidth="124.0" pickOnBounds="true" preserveRatio="true">
+   <ImageView fx:id="comicCover" fitHeight="171.0" fitWidth="115.0" pickOnBounds="true" preserveRatio="true">
       <image>
          <Image url="@../../../../img/download.jpg" />
       </image>
       <VBox.margin>
-         <Insets top="20.0" />
+         <Insets top="5.0" />
       </VBox.margin>
    </ImageView>
-    <Label fx:id="comicName" alignment="CENTER" prefHeight="38.0" prefWidth="107.0" text="Spiderman">
+   <HBox prefHeight="30.0" prefWidth="178.0">
+      <children>
+         <ImageView fx:id="imgStar1" fitHeight="29.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+               <Image url="@../../../../img/full-star.png" />
+            </image>
+         </ImageView>
+         <ImageView fx:id="imgStar2" fitHeight="29.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+               <Image url="@../../../../img/full-star.png" />
+            </image>
+         </ImageView>
+         <ImageView fx:id="imgStar3" fitHeight="29.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+               <Image url="@../../../../img/full-star.png" />
+            </image>
+         </ImageView>
+         <ImageView fx:id="imgStar4" fitHeight="29.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+               <Image url="@../../../../img/full-star.png" />
+            </image>
+         </ImageView>
+         <ImageView fx:id="imgStar5" fitHeight="29.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+               <Image url="@../../../../img/full-star.png" />
+            </image>
+         </ImageView>
+      </children>
+      <VBox.margin>
+         <Insets top="5.0" />
+      </VBox.margin>
+      <padding>
+         <Insets left="15.0" right="15.0" />
+      </padding>
+   </HBox>
+    <Label fx:id="comicName" alignment="CENTER" prefHeight="26.0" prefWidth="178.0" text="Spiderman">
         <font>
             <Font name="Berlin Sans FB" size="14.0" />
         </font>
       <VBox.margin>
-         <Insets bottom="10.0" top="10.0" />
+         <Insets bottom="7.0" />
       </VBox.margin>
     </Label>
 </VBox>

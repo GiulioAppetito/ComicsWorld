@@ -57,7 +57,7 @@ public class FeedControllerG{
             try {
                 VBox card = fxmlLoader.load();
                 VCardControllerG cardController = fxmlLoader.getController();
-                cardController.setData(latestSeries.get(j).getTitle(),latestSeries.get(j).getCover());
+                cardController.setData(latestSeries.get(j));
 
                 int finalJ = j;
                 card.setOnMouseClicked(event -> {

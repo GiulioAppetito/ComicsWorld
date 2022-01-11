@@ -1,22 +1,24 @@
 package com.example.comics.model;
 
+import com.example.comics.model.fagioli.ReviewBean;
+
 import java.util.ArrayList;
 
 public abstract class ChapterSubject {
 
-    private static ArrayList<AccountObserver> observers = new ArrayList<>();
+    private static ArrayList<ChapterObserver> observers = new ArrayList<>();
 
-    public static void attach(AccountObserver observer){
+    public static void attach(ChapterObserver observer){
         observers.add(observer);
     }
 
-    public void detach(AccountObserver observer){
+    public void detach(ChapterObserver observer){
         observers.remove(observer);
     }
 
-    public void notifyObservers(){
-        for (AccountObserver observer : observers) {
-            observer.update();
+    public void notifyObserversNewReview(ReviewBean reviewBean){
+        for (ChapterObserver observer : observers) {
+            observer.updateReviews(reviewBean);
         }
     }
 

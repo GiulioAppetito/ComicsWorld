@@ -22,6 +22,9 @@ public class AuthorHomeControllerG  extends HomeControllerG implements AccountOb
     private BorderPane mainPane;
 
     @FXML
+    private Label lblTitle;
+
+    @FXML
     private ImageView homeIcon;
 
     @FXML
@@ -76,6 +79,7 @@ public class AuthorHomeControllerG  extends HomeControllerG implements AccountOb
 
         openFeed();
 
+        lblTitle.setOnMouseClicked(event -> openFeed());
         smallProPic.setImage(UserLogin.getInstance().getAccount().getProPic());
         System.out.println("INITED WITH PIC "+UserLogin.getInstance().getAccount().getProPic());
         lblName.setText(UserLogin.getInstance().getAccount().getUsername());

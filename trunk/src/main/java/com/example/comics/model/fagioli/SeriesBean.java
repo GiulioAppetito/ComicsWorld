@@ -13,7 +13,10 @@ public class SeriesBean {
     private String title;
     private Image cover;
     private Author author;
+    private int averageRating;
+
     private List<Chapter> chapters = new ArrayList<>();
+
     private Genres genre1;
     private Genres genre2;
     private Genres genre3;
@@ -33,15 +36,9 @@ public class SeriesBean {
         this.cover = cover;
     }
 
-    public AuthorBean getAuthor() {
-        AuthorBean authorBean = new AuthorBean();
-        authorBean.setPublishedSeries(author.getPublishedSeries());
-        authorBean.setLastName(author.getLastName());
-        authorBean.setFirstName(author.getFirstName());
-        authorBean.setProPic(author.getProPic());
-        authorBean.setUsername(author.getUsername());
+    public Author getAuthor() {
 
-        return authorBean;
+        return author;
     }
 
     public void setAuthor(Author author) {
@@ -91,5 +88,13 @@ public class SeriesBean {
 
     public void setGenre3(Genres genre3) {
         this.genre3 = genre3;
+    }
+
+    public int getAverageRating() {
+        return averageRating;
+    }
+
+    public void setAverageRating(int averageRating) {
+        this.averageRating = averageRating;
     }
 }

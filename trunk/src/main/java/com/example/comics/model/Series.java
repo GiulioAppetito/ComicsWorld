@@ -15,9 +15,11 @@ public class Series {
 	private String title;
 	private Image cover;
 	private String publishingHouse;
+	private int averageRating;
 	private final List<Chapter> chapters;
 	private List<Character> characters;
 	private List<Objective> objectives;
+
 	private Genres genre1;
 	private Genres genre2;
 	private Genres genre3;
@@ -33,6 +35,8 @@ public class Series {
 		if(objectives==null){
 			objectives = new ArrayList<>();
 		}
+
+		this.averageRating = calculateAverageRating();
 	}
 
 	public String getTitle() {
@@ -41,8 +45,6 @@ public class Series {
 	public void setTitle(String name) {
 		this.title = name;
 	}
-
-
 
 	public String getPublishingHouse() {
 		return publishingHouse;
@@ -95,6 +97,14 @@ public class Series {
 		this.genre3 = genre3;
 	}
 
+	public Author getAuthor() {
+		return author;
+	}
+
+	public void setAuthor(Author author) {
+		this.author = author;
+	}
+
 	public void addChapter(String chapterTitle, Image chapterCover, String chapterDescription) throws SQLException {
 		Chapter chapter = new Chapter(chapterTitle);
 		chapter.setDescription(chapterDescription);
@@ -125,14 +135,6 @@ public class Series {
 		return numOfReviews;
 	}
 
-	public Author getAuthor() {
-		return author;
-	}
-
-	public void setAuthor(Author author) {
-		this.author = author;
-	}
-
 	public void addReview(String chapterTitle, String reviewComment, int rating) {
 			for(int i=0; i< chapters.size(); i++){
 				if(chapters.get(i).getTitle().equals(chapterTitle)){
@@ -140,6 +142,27 @@ public class Series {
 				}
 			}
 
+	}
+
+	public int calculateAverageRating(){
+		int average = 0;
+		int count = 0;
+		for(Chapter chapter : this.chapters){
+			average = average + chapter.getAverageRating();
+			count++;
+		}
+		if(count==0){
+			return count;
+		}
+		return average/count;
+	}
+
+	public int getAverageRating() {
+		return this.averageRating;
+	}
+
+	public void setAverageRating(int averageRating) {
+		this.averageRating = averageRating;
 	}
 }
 

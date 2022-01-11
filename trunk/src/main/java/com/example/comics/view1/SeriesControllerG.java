@@ -1,22 +1,17 @@
 package com.example.comics.view1;
 
 import com.example.comics.controller.FavouritesController;
-import com.example.comics.controller.ResearchController;
 import com.example.comics.controller.ToReadController;
 import com.example.comics.model.UserLogin;
 import com.example.comics.model.fagioli.ChapterBean;
 import com.example.comics.model.fagioli.SeriesBean;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
 import javafx.scene.control.ButtonBar;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
-import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
-import tools.FxmlLoader;
 
 import java.io.IOException;
 import java.net.URL;

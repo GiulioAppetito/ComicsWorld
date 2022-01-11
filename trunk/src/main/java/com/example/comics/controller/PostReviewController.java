@@ -1,5 +1,6 @@
 package com.example.comics.controller;
 
+import com.example.comics.controller.externalBoundaries.BoundarySendEmail;
 import com.example.comics.model.fagioli.ChapterBean;
 import com.example.comics.model.fagioli.ObjectiveBean;
 import com.example.comics.model.fagioli.ReviewBean;
@@ -7,7 +8,7 @@ import com.example.comics.model.*;
 import com.example.comics.model.dao.SeriesDAO;
 import com.example.comics.model.fagioli.SeriesBean;
 
-public class PostReviewController extends ReviewSubject {
+public class PostReviewController{
 
     public void post(ReviewBean reviewBean, ChapterBean chapterBean, SeriesBean seriesBean) {
 
@@ -18,9 +19,6 @@ public class PostReviewController extends ReviewSubject {
 
         //controllare obiettivi
         checkObjectives(series);
-
-        //notifica observers
-        notifyObservers(reviewBean);
 
     }
 
@@ -39,19 +37,17 @@ public class PostReviewController extends ReviewSubject {
                         //aggiungo badge alla lista e salvo sul DB + assegno badge
                         UserLogin.getInstance().getReader().addAchievedBadge(objective.getBadge());
 
-                        ObjectiveBean objectiveBean = new ObjectiveBean();
-                        objectiveBean.setBadge(objective.getBadge());
-                        objectiveBean.setLevel(objective.getLevel());
-                        objectiveBean.setSeriesTitle((objective.getSeriesTitle()));
-
                         //genero discount code
                         DiscountCode discountCode = new DiscountCode(objective.getDiscount());
                         UserLogin.getInstance().getReader().addDiscountCode(discountCode);
 
-                        //notifica di badge
-                        notifyAchievedReviewObjective(objectiveBean);
-
                         //discount code : arriva la mail
+                        //genero discount code
+
+                        //invio mail
+                        BoundarySendEmail boundarySendEmail = new BoundarySendEmail();
+                        boundarySendEmail.sendEmail(UserLogin.getInstance().getAccount(), discountCode);
+
                     }
                 }
             }
