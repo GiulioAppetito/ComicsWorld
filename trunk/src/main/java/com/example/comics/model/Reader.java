@@ -70,6 +70,7 @@ public class Reader extends Account{
         this.badges.add(badge);
         ReaderDAO readerDAO = new ReaderDAO();
         readerDAO.saveAchievedBadge(badge, this);
+        notifyObservers();
     }
 
     public void addDiscountCode(DiscountCode discountCode) {

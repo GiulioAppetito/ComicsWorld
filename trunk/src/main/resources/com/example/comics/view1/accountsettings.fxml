@@ -36,7 +36,7 @@
                </VBox.margin>
             </Label>
             <HBox alignment="CENTER">
-               <Label fx:id="lblFirstName" alignment="CENTER" prefHeight="51.0" prefWidth="164.0" text="Anastasia" textAlignment="CENTER">
+               <Label fx:id="lblFirstName" alignment="CENTER" prefHeight="51.0" prefWidth="237.0" text="Anastasia" textAlignment="CENTER">
                   <font>
                      <Font name="Berlin Sans FB" size="24.0" />
                   </font>
@@ -61,7 +61,7 @@
                </VBox.margin>
             </Label>
             <HBox alignment="CENTER">
-               <Label fx:id="lblLastName" alignment="CENTER" prefHeight="51.0" prefWidth="164.0" text="Brinati" textAlignment="CENTER">
+               <Label fx:id="lblLastName" alignment="CENTER" prefHeight="51.0" prefWidth="232.0" text="Brinati" textAlignment="CENTER">
                   <font>
                      <Font name="Berlin Sans FB" size="24.0" />
                   </font>
@@ -86,7 +86,7 @@
                </VBox.margin>
             </Label>
             <HBox alignment="CENTER">
-               <Label fx:id="lblEmail" alignment="CENTER" prefHeight="51.0" prefWidth="321.0" text="anastasia.brinati@uniroma2.eu" textAlignment="CENTER">
+               <Label fx:id="lblEmail" alignment="CENTER" prefHeight="51.0" prefWidth="421.0" text="anastasia.brinati@uniroma2.eu" textAlignment="CENTER">
                   <font>
                      <Font name="Berlin Sans FB" size="24.0" />
                   </font>

@@ -3,6 +3,7 @@ package com.example.comics.view1;
 import com.example.comics.controller.ResearchController;
 import com.example.comics.model.AccountObserver;
 import com.example.comics.model.AccountSubject;
+import com.example.comics.model.Badge;
 import com.example.comics.model.UserLogin;
 import com.example.comics.model.fagioli.BadgeBean;
 import javafx.fxml.FXML;
@@ -49,8 +50,7 @@ public class ReaderProfileControllerG implements AccountObserver {
 
     public void loadBadges(){
 
-        ResearchController researchController = new ResearchController();
-        List<BadgeBean> listOfBadges = researchController.getUserBadges();
+        List<Badge> listOfBadges = UserLogin.getInstance().getReader().getBadges();
         int columns=3;
         int i=1;
 

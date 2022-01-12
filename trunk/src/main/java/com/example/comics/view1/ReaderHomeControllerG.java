@@ -22,6 +22,8 @@ public class ReaderHomeControllerG extends HomeControllerG implements AccountObs
     @FXML
     private ImageView proPic;
 
+    @FXML
+    private Label lblTitle;
 
     @FXML
     private BorderPane mainPane;
@@ -71,9 +73,9 @@ public class ReaderHomeControllerG extends HomeControllerG implements AccountObs
 
         openFeed();
 
+        lblTitle.setOnMouseClicked(event -> openFeed());
         lblName.setText(UserLogin.getInstance().getAccount().getUsername());
         proPic.setImage(UserLogin.getInstance().getAccount().getProPic());
-        System.out.println("INITED WITH PIC " + UserLogin.getInstance().getAccount().getProPic());
 
         btnFav.setOnAction(event -> openFavourites());
         btnCategories.setOnAction(event -> {

@@ -30,7 +30,7 @@ public class FavouriteComicsControllerG {
             try {
                 VBox card = fxmlLoader.load();
                 VCardControllerG cardController = fxmlLoader.getController();
-                cardController.setData(listOfCards.get(j).getTitle(),listOfCards.get(j).getCover());
+                cardController.setData(listOfCards.get(j));
 
                 int finalJ = j;
                 card.setOnMouseClicked(event -> {

@@ -2,11 +2,7 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.MenuButton?>
-<?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.ScrollPane?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
@@ -21,31 +17,14 @@
             <Insets left="40.0" top="15.0" />
          </VBox.margin>
          <children>
-            <VBox alignment="CENTER">
-               <children>
-                  <Label prefHeight="10.0" prefWidth="118.0" text="Filter your research: " textFill="#6e40ff" />
-               </children>
-            </VBox>
-            <MenuButton fx:id="btnFilter" mnemonicParsing="false" prefHeight="47.0" prefWidth="61.0" styleClass="transparent" stylesheets="@../../../../css/fullpackstyling.css">
-              <items>
-                <MenuItem mnemonicParsing="false" text="Action 1" />
-                <MenuItem mnemonicParsing="false" text="Action 2" />
-              </items>
-               <graphic>
-                  <ImageView fitHeight="39.0" fitWidth="63.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../../../../img/filters.png" />
-                     </image>
-                  </ImageView>
-               </graphic>
-            </MenuButton>
+            <VBox alignment="CENTER" />
          </children>
       </HBox>
       <Pane prefHeight="230.0" prefWidth="909.0" styleClass="transparent" stylesheets="@../../../../css/fullpackstyling.css">
          <VBox.margin>
             <Insets left="30.0" right="30.0" top="10.0" />
          </VBox.margin>
-         <Label prefHeight="74.0" prefWidth="437.0" text="Ads">
+         <Label prefHeight="60.0" prefWidth="437.0" text="Ads">
             <font>
                <Font name="Berlin Sans FB" size="24.0" />
             </font>

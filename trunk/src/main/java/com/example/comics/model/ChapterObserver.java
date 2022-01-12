@@ -1,5 +1,8 @@
 package com.example.comics.model;
 
+
+import com.example.comics.model.fagioli.ReviewBean;
+
 public interface ChapterObserver {
-    public void update();
+    public void updateReviews(ReviewBean review);
 }
