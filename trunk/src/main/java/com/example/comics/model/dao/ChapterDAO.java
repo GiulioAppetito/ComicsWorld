@@ -1,9 +1,6 @@
 package com.example.comics.model.dao;
 
-import com.example.comics.model.Chapter;
-import com.example.comics.model.Reader;
-import com.example.comics.model.Review;
-import com.example.comics.model.Series;
+import com.example.comics.model.*;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -20,6 +17,10 @@ public class ChapterDAO {
         Statement stmt = null;
         Connection conn = null;
 
+        Connection conn2 = null;
+        Statement stmt2 = null;
+
+
         List<Chapter> chaptersList = new ArrayList<>();
 
         String chapterTitle;
@@ -31,6 +32,10 @@ public class ChapterDAO {
             System.out.println("ChapterDAO: sto andando a recuperare i capitoli");
             ResultSet rs = Queries.retriveChapters(stmt, seriesTitle);
 
+            conn2 = DriverManager.getConnection(DB_URL, USER, PASS);
+            stmt2 = conn2.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
+            ResultSet rs2;
+
             if (!rs.first()) {
                 return chaptersList;
             }
@@ -41,8 +46,15 @@ public class ChapterDAO {
                 chapter = new Chapter(chapterTitle);
                 chapter.setDescription(rs.getString("chapterDescription"));
 
+                rs2 = Queries.isChapterRead(stmt2,chapterTitle, UserLogin.getInstance().getReader());
+                //il capitolo non è letto
+                chapter.setRead(rs2.first());
+
+
                 chaptersList.add(chapter);
             } while (rs.next());
+
+
 
 
         } catch (SQLException throwables) {
@@ -68,13 +80,13 @@ public class ChapterDAO {
         return chaptersList;
     }
 
-    public List<Review> retrieveReviewsByReader(Series series, Reader reader) throws ReviewsNotFoundException{
+    public List<Review> retrieveReviewsByReader(Series series, Reader reader) {
         ReviewDAO reviewDAO = new ReviewDAO();
         return reviewDAO.retrieveReviewsByReaderAndSeries(series,reader);
 
     }
 
-    public List<Review> retrieveReviews(String chapter) throws ReviewsNotFoundException{
+    public List<Review> retrieveReviews(String chapter) {
         ReviewDAO reviewDAO = new ReviewDAO();
         return reviewDAO.retrieveReviews(chapter);
 

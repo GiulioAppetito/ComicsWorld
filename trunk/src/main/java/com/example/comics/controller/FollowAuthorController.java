@@ -2,10 +2,9 @@ package com.example.comics.controller;
 
 import com.example.comics.model.Author;
 import com.example.comics.model.UserLogin;
-import com.example.comics.model.dao.AuthorDAO;
 import com.example.comics.model.dao.ReaderDAO;
 import com.example.comics.model.fagioli.AuthorBean;
-import com.example.comics.model.fagioli.ReaderBean;
+import com.example.comics.view1.bean1.AuthorBean1;
 
 public class FollowAuthorController {
 
@@ -46,8 +45,6 @@ public class FollowAuthorController {
 
         ReaderDAO readerDAO = new ReaderDAO();
         readerDAO.removeFollowedAuthor(UserLogin.getInstance().getReader(), author);
-
-
 
     }
 }

@@ -1,11 +1,9 @@
 package com.example.comics.view1;
 
 import com.example.comics.controller.FollowAuthorController;
-import com.example.comics.controller.ResearchController;
 import com.example.comics.model.UserLogin;
-import com.example.comics.model.fagioli.AccountBean;
 import com.example.comics.model.fagioli.AuthorBean;
-import com.example.comics.model.fagioli.SeriesBean;
+import com.example.comics.view1.bean1.AuthorBean1;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -39,20 +37,20 @@ public class AuthorFromOutsideControllerG {
     @FXML
     private Label lblAuthorPlaceHolder;
 
-    public void init(AuthorBean authorBean){
+    public void init(AuthorBean authorBean1){
 
-        lblAuthorUsername.setText(authorBean.getUsername());
+        lblAuthorUsername.setText(authorBean1.getUsername());
         //lblAuthorPlaceHolder.setText(authorBean.getUsername());
-        lblName.setText(authorBean.getFirstName() + " " + authorBean.getLastName());
-        proPicProfile.setImage(authorBean.getProPic());
+        lblName.setText(authorBean1.getFirstName() + " " + authorBean1.getLastName());
+        proPicProfile.setImage(authorBean1.getProPic());
         //display serie autore che stanno nel bean
 
         if(UserLogin.getInstance().getAccount().getRole()!="author") {
             FollowAuthorController followAuthorController = new FollowAuthorController();
-            if (followAuthorController.isAuthorFollowed(authorBean)) {
-                setBtnToUnfollow(authorBean);
+            if (followAuthorController.isAuthorFollowed(authorBean1)) {
+                setBtnToUnfollow(authorBean1);
             } else {
-                setBtnToFollow(authorBean);
+                setBtnToFollow(authorBean1);
             }
         }else{
             btnFollow.setVisible(false);
@@ -62,26 +60,26 @@ public class AuthorFromOutsideControllerG {
 
     }
 
-    private void setBtnToUnfollow(AuthorBean authorBean){
+    private void setBtnToUnfollow(AuthorBean authorBean1){
         btnFollow.setText("Unfollow");
-        btnFollow.setOnAction(actionEvent -> unfollowAuthor(authorBean));
+        btnFollow.setOnAction(actionEvent -> unfollowAuthor(authorBean1));
     }
 
-    private void setBtnToFollow(AuthorBean authorBean){
-        btnFollow.setOnAction(actionEvent -> followAuthor(authorBean));
+    private void setBtnToFollow(AuthorBean authorBean1){
+        btnFollow.setOnAction(actionEvent -> followAuthor(authorBean1));
         btnFollow.setText("Follow");
     }
 
-    private void unfollowAuthor(AuthorBean authorBean) {
+    private void unfollowAuthor(AuthorBean authorBean1) {
         FollowAuthorController followAuthorController = new FollowAuthorController();
-        followAuthorController.unfollowAuthor(authorBean);
-        setBtnToFollow(authorBean);
+        followAuthorController.unfollowAuthor(authorBean1);
+        setBtnToFollow(authorBean1);
     }
 
-    private void followAuthor(AuthorBean authorBean) {
+    private void followAuthor(AuthorBean authorBean1) {
         FollowAuthorController followAuthorController = new FollowAuthorController();
-        followAuthorController.followAuthor(authorBean);
-        setBtnToUnfollow(authorBean);
+        followAuthorController.followAuthor(authorBean1);
+        setBtnToUnfollow(authorBean1);
     }
 
 }

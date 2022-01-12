@@ -2,60 +2,29 @@ package com.example.comics.model.fagioli;
 
 import javafx.scene.image.Image;
 
-public class AccountBean {
+public interface AccountBean {
 
-    private String firstName;
-    private String lastName;
-    private String email;
-    private String password;
-    private String username;
-    private Image proPic;
+    String getFirstName();
 
-    public String getFirstName() {
-        return firstName;
-    }
+    void setFirstName(String firstName);
 
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
+    String getLastName();
 
-    public String getLastName() {
-        return lastName;
-    }
+    void setLastName(String lastName);
 
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
+    String getEmail();
 
-    public String getEmail() {
-        return email;
-    }
+    void setEmail(String email);
 
-    public void setEmail(String email) {
-        this.email = email;
-    }
+    String getPassword();
 
-    public String getPassword() {
-        return password;
-    }
+    void setPassword(String password);
 
-    public void setPassword(String password) {
-        this.password = password;
-    }
+    String getUsername();
 
-    public String getUsername() {
-        return username;
-    }
+    void setUsername(String username);
 
-    public void setUsername(String username) {
-        this.username = username;
-    }
+    Image getProPic();
 
-    public Image getProPic() {
-        return this.proPic;
-    }
-
-    public void setProPic(Image proPic){
-        this.proPic = proPic;
-    }
+    void setProPic(Image proPic);
 }

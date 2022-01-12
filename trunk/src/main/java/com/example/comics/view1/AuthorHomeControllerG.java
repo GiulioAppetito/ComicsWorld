@@ -13,6 +13,7 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import tools.FxmlLoader;
 
+
 import java.io.IOException;
 import java.net.URL;
 
@@ -89,6 +90,7 @@ public class AuthorHomeControllerG  extends HomeControllerG implements AccountOb
             }
         });
         btnStatistics.setOnAction(event -> openStatistics());
+
         btnSettings.setOnAction(event -> openSettings());
         btnTop.setOnAction(event -> openTop());
         btnMyCharacters.setOnAction(event -> openMyCharacters());

@@ -1,14 +1,10 @@
 package com.example.comics.model.fagioli;
 
-public class ReaderBean {
+public interface ReaderBean {
 
-    private String username;
 
-    public String getUsername() {
-        return username;
-    }
+    String getUsername();
 
-    public void setUsername(String username) {
-        this.username = username;
-    }
+    void setUsername(String username);
+
 }

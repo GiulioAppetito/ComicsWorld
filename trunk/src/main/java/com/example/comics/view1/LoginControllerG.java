@@ -5,6 +5,8 @@ import com.example.comics.controller.RegistrationController;
 import com.example.comics.model.fagioli.LoginBean;
 import com.example.comics.model.fagioli.RegistrationBean;
 import com.example.comics.model.UserLogin;
+import com.example.comics.view1.bean1.LoginBean1;
+import com.example.comics.view1.bean1.RegistrationBean1;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -15,7 +17,6 @@ import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
-import java.io.IOException;
 import java.net.URL;
 
 
@@ -97,7 +98,7 @@ public class LoginControllerG {
 
     public void clickRegisterButton(){
 
-        RegistrationBean registrationBean = new RegistrationBean();
+        RegistrationBean registrationBean = new RegistrationBean1();
 
         registrationBean.setFirstName(textFieldName.getText());
         registrationBean.setLastName(textFieldSurname.getText());
@@ -153,7 +154,7 @@ public class LoginControllerG {
     }
 
     public void login(ActionEvent event) throws Exception {
-        LoginBean loginBean = new LoginBean();
+        LoginBean loginBean = new LoginBean1();
 
         loginBean.setEmail(tfEmail.getText());
         loginBean.setPassword(tfPassword.getText());

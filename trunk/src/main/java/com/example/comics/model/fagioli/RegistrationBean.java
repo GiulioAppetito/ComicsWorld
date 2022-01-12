@@ -1,60 +1,28 @@
 package com.example.comics.model.fagioli;
 
-public class RegistrationBean {
-
-    private String firstName;
-    private String lastName;
-    private String username;
-    private String password;
-    private String email;
-    private String role;
+public interface RegistrationBean {
 
 
-    public String getFirstName() {
-        return firstName;
-    }
+    String getFirstName();
 
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
+    void setFirstName(String firstName);
 
-    public String getLastName() {
-        return lastName;
-    }
+    String getLastName();
 
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
+    void setLastName(String lastName);
 
-    public String getUsername() {
-        return username;
-    }
+    String getUsername();
 
-    public void setUsername(String username) {
-        this.username = username;
-    }
+    void setUsername(String username);
 
-    public String getPassword() {
-        return password;
-    }
+    String getPassword();
 
-    public void setPassword(String password) {
-        this.password = password;
-    }
+    void setPassword(String password);
+    String getEmail();
 
-    public String getEmail() {
-        return email;
-    }
+    void setEmail(String email);
 
-    public void setEmail(String email) {
-        this.email = email;
-    }
+    String getRole();
 
-    public String getRole() {
-        return role;
-    }
-
-    public void setRole(String role) {
-        this.role = role;
-    }
+    void setRole(String role);
 }

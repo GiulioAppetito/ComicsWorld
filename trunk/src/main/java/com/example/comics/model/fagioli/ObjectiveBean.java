@@ -4,39 +4,23 @@ import com.example.comics.model.Badge;
 import com.example.comics.model.Levels;
 import javafx.scene.image.Image;
 
-public class ObjectiveBean {
-
-    private Badge badge;
-    private Levels level;
-    private String seriesTitle;
+public interface ObjectiveBean {
 
 
+    String getLevel();
 
-    public String getLevel() {
-        return level.toString();
-    }
+    void setLevel(Levels level);
 
-    public void setLevel(Levels level) {
-        this.level = level;
-    }
 
-    public Image getBadgeIcon() {
-        return badge.getIcon();
-    }
+    Image getBadgeIcon();
 
-    public String getBadgeName(){
-        return badge.getName();
-    }
 
-    public void setBadge(Badge badge) {
-        this.badge = badge;
-    }
+    String getBadgeName();
 
-    public String getSeriesTitle() {
-        return seriesTitle;
-    }
 
-    public void setSeriesTitle(String seriesTitle) {
-        this.seriesTitle = seriesTitle;
-    }
+    void setBadge(Badge badge);
+
+    String getSeriesTitle();
+
+    void setSeriesTitle(String seriesTitle);
 }

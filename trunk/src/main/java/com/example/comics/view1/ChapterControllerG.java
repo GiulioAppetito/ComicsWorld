@@ -1,5 +1,6 @@
 package com.example.comics.view1;
 
+import com.example.comics.controller.MarkChapterAsReadController;
 import com.example.comics.controller.PostReviewController;
 import com.example.comics.model.fagioli.ChapterBean;
 import com.example.comics.model.fagioli.ObjectiveBean;
@@ -7,6 +8,7 @@ import com.example.comics.model.fagioli.ReviewBean;
 import com.example.comics.model.ReviewObserver;
 import com.example.comics.model.ReviewSubject;
 import com.example.comics.model.UserLogin;
+import com.example.comics.view1.bean1.ReviewBean1;
 import com.example.comics.model.fagioli.SeriesBean;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -34,6 +36,8 @@ public class ChapterControllerG implements ReviewObserver {
     @FXML
     private Pane paneInsertReview;
 
+    @FXML
+    private Button btnChapterRead;
 
     @FXML
     private ImageView badgeIconView;
@@ -354,11 +358,18 @@ public class ChapterControllerG implements ReviewObserver {
         taDescription.setText(chapterBean.getDescription());
         taDescription.setEditable(false);
 
+        if(!chapterBean.isRead()){
+            btnChapterRead.setOnAction(event -> markChapterAsRead(seriesBean,chapterBean));
+        }else{
+            btnChapterRead.setOnAction(event -> removeChapterFromRead(seriesBean,chapterBean));
+        }
+
         chapterCoverIV.setImage(chapterBean.getCover());
 
         btnCloseEditor.setOnAction(event -> closeEditor());
         btnCloseBadge.setOnAction(event -> closeBadgeWon());
         btnAddReview.setOnAction(event -> openEditor());
+        btnChapterRead.setOnAction(event -> markChapterAsRead(seriesBean,chapterBean));
 
 
         paneInsertReview.setVisible(false);
@@ -459,13 +470,23 @@ public class ChapterControllerG implements ReviewObserver {
         imgStar55.setOnMouseClicked(event -> fiveStars());
     }
 
+    private void removeChapterFromRead(SeriesBean seriesBean, ChapterBean chapterBean) {
+    }
+
+    private void markChapterAsRead(SeriesBean seriesBean,ChapterBean chapterBean) {
+        MarkChapterAsReadController controller = new MarkChapterAsReadController();
+        controller.markChapterAsRead(seriesBean,chapterBean);
+
+
+    }
+
     public void closeBadgeWon() {
         newBadgeWonPane.setVisible(false);
     }
 
     public void postReview(ChapterBean chapterBean, SeriesBean seriesBean){
 
-        ReviewBean reviewBean = new ReviewBean();
+        ReviewBean reviewBean = new ReviewBean1();
         reviewBean.setComment(txtAreaComment.getText());
         reviewBean.setUsername(UserLogin.getInstance().getAccount().getUsername());
         reviewBean.setRating(reviewRating);

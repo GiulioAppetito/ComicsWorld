@@ -2,7 +2,6 @@ package com.example.comics.model;
 
 import com.example.comics.model.dao.ChapterDAO;
 import com.example.comics.model.dao.ReviewDAO;
-import com.example.comics.model.dao.ReviewsNotFoundException;
 import javafx.scene.image.Image;
 
 import java.sql.SQLException;
@@ -18,17 +17,15 @@ public class Chapter extends ChapterSubject {
     private int averageRating;
     private Image cover;
     private String description;
+    private boolean isRead;
 
     public Chapter(String title) throws SQLException {
 
         this.title = title;
         //delego la responsabilità di creator delle review del chapter al chapterDAO che farà il retrieve delle review
         ChapterDAO chapterDAO = new ChapterDAO();
-        try {
-            this.reviews = chapterDAO.retrieveReviews(title);
-        } catch (ReviewsNotFoundException e) {
-            e.printStackTrace();
-        }
+
+        this.reviews = chapterDAO.retrieveReviews(title);
         this.averageRating = calculateAverageRating();
     }
 
@@ -99,4 +96,11 @@ public class Chapter extends ChapterSubject {
         return averageRating;
     }
 
+    public boolean isRead() {
+        return isRead;
+    }
+
+    public void setRead(boolean read) {
+        isRead = read;
+    }
 }

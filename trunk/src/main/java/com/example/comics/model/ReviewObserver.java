@@ -7,4 +7,6 @@ public interface ReviewObserver {
     void update(ReviewBean reviewBean);
 
     void achievedObjective(ObjectiveBean objectiveBean);
+
+
 }

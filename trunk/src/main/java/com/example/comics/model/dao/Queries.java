@@ -223,4 +223,15 @@ public class Queries {
         stmt.executeUpdate(deleteStatement);
     }
 
+    public static void addReadChapter(Statement stmt,Reader reader, Series series, String title) throws SQLException {
+        String insertStatement = String.format("INSERT INTO readChapters (reader,chapter,series) values ('%s', '%s','%s')",reader.getUsername(),title,series.getTitle());
+        System.out.println(insertStatement);
+        stmt.executeUpdate(insertStatement);
+    }
+
+    public static ResultSet isChapterRead(Statement stmt, String chapterTitle, Reader reader) throws SQLException {
+        String selectStatement = String.format("SELECT * FROM readChapters WHERE (reader = '%s' AND chapter='%s')  ",reader.getUsername(),chapterTitle);
+        System.out.println(selectStatement);
+        return stmt.executeQuery(selectStatement);
+    }
 }

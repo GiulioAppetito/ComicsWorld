@@ -117,7 +117,7 @@
                                  </ImageView>
                               </graphic>
                            </Button>
-                           <Button mnemonicParsing="false" prefHeight="84.0" prefWidth="157.0" stylesheets="@../../../../css/fullpackstyling.css">
+                           <Button fx:id="btnChapterRead" mnemonicParsing="false" prefHeight="84.0" prefWidth="157.0" stylesheets="@../../../../css/fullpackstyling.css">
                               <font>
                                  <Font name="Berlin Sans FB" size="24.0" />
                               </font>
@@ -317,7 +317,7 @@
          <StackPane.margin>
             <Insets />
          </StackPane.margin>
-         <VBox prefHeight="385.0" prefWidth="448.0">
+         <VBox fx:id="vb" prefHeight="385.0" prefWidth="448.0">
             <HBox>
                <VBox.margin>
                   <Insets top="20.0" />

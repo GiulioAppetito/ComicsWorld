@@ -2,53 +2,37 @@ package com.example.comics.model.fagioli;
 
 import javafx.scene.image.ImageView;
 
-public class ReviewBean {
+public interface ReviewBean {
 
-    private String comment;
-    private String username;
-    private String chapter;
-    private ImageView propic;
-    private int rating;
 
-    public String getComment() {
-        return comment;
-    }
+    String getComment();
 
-    public void setComment(String comment) {
-        this.comment = comment;
-    }
 
-    public String getUsername() {
-        return username;
-    }
+    void setComment(String comment);
 
-    public void setUsername(String username) {
-        this.username = username;
-    }
+    String getUsername();
 
-    public String getChapter() {
-        return chapter;
-    }
 
-    public void setChapter(String chapter) {
-        this.chapter = chapter;
-    }
+    void setUsername(String username);
 
-    public ImageView getPropic() {
-        return propic;
-    }
 
-    public void setPropic(ImageView propic) {
-        this.propic = propic;
-    }
+    String getChapter();
 
-    public int getRating() {
-        return rating;
-    }
 
-    public void setRating(int rating) {
-        this.rating = rating;
-    }
+    void setChapter(String chapter);
+
+
+    ImageView getPropic();
+
+
+    void setPropic(ImageView propic);
+
+
+    int getRating();
+
+
+    void setRating(int rating);
+
 
 
 }

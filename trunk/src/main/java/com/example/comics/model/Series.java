@@ -1,7 +1,6 @@
 package com.example.comics.model;
 
 import com.example.comics.model.dao.ChapterDAO;
-import com.example.comics.model.dao.ReviewsNotFoundException;
 import com.example.comics.model.dao.SeriesDAO;
 import javafx.scene.image.Image;
 
@@ -110,12 +109,8 @@ public class Series {
 		ChapterDAO chapterDAO = new ChapterDAO();
 
 		List<Review> reviews = null;
-		try {
-			reviews = chapterDAO.retrieveReviewsByReader(this, reader);
-		} catch (ReviewsNotFoundException e) {
-			e.printStackTrace();
-		}
 
+		reviews = chapterDAO.retrieveReviewsByReader(this, reader);
 
 		for(Review review: reviews){
 			if(review.getUsername().equals(reader.getUsername())){

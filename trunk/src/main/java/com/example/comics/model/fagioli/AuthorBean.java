@@ -1,57 +1,19 @@
 package com.example.comics.model.fagioli;
 
-import com.example.comics.model.Badge;
-import com.example.comics.model.Character;
 import com.example.comics.model.Series;
 import javafx.scene.image.Image;
 
 import java.util.List;
 
-public class AuthorBean {
-
-    private List<Series> publishedSeries;
-    private String firstName;
-    private String lastName;
-    private String username;
-    private Image proPic;
-
-    public List<Series> getPublishedSeries() {
-        return publishedSeries;
-    }
-
-    public void setPublishedSeries(List<Series> publishedSeries) {
-        this.publishedSeries = publishedSeries;
-    }
-
-    public String getFirstName() {
-        return firstName;
-    }
-
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
-
-    public String getLastName() {
-        return lastName;
-    }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
-
-    public String getUsername() {
-        return username;
-    }
-
-    public void setUsername(String username) {
-        this.username = username;
-    }
-
-    public Image getProPic() {
-        return this.proPic;
-    }
-
-    public void setProPic(Image image){
-        this.proPic=image;
-    }
+public interface AuthorBean {
+    List<Series> getPublishedSeries();
+    void setPublishedSeries(List<Series> publishedSeries);
+    String getFirstName();
+    void setFirstName(String firstName);
+    String getLastName();
+    void setLastName(String lastName);
+    String getUsername();
+    void setUsername(String username);
+    Image getProPic();
+    void setProPic(Image image);
 }

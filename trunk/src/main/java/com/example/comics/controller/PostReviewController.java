@@ -2,6 +2,7 @@ package com.example.comics.controller;
 
 import com.example.comics.model.fagioli.ChapterBean;
 import com.example.comics.model.fagioli.ObjectiveBean;
+import com.example.comics.view1.bean1.ObjectiveBean1;
 import com.example.comics.model.fagioli.ReviewBean;
 import com.example.comics.model.*;
 import com.example.comics.model.dao.SeriesDAO;
@@ -22,6 +23,7 @@ public class PostReviewController extends ReviewSubject {
         //notifica observers
         notifyObservers(reviewBean);
 
+
     }
 
     private void checkObjectives(Series series) {
@@ -39,7 +41,7 @@ public class PostReviewController extends ReviewSubject {
                         //aggiungo badge alla lista e salvo sul DB + assegno badge
                         UserLogin.getInstance().getReader().addAchievedBadge(objective.getBadge());
 
-                        ObjectiveBean objectiveBean = new ObjectiveBean();
+                        ObjectiveBean objectiveBean = new ObjectiveBean1();
                         objectiveBean.setBadge(objective.getBadge());
                         objectiveBean.setLevel(objective.getLevel());
                         objectiveBean.setSeriesTitle((objective.getSeriesTitle()));
