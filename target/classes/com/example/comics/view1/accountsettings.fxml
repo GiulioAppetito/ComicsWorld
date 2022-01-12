@@ -12,9 +12,9 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="729.0" prefWidth="600.0" styleClass="transparent" stylesheets="@../../../../css/fullpackstyling.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.comics.view1.AccountSettingsControllerG">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="729.0" prefWidth="600.0" styleClass="transparent" stylesheets="@../../../../css/css1/fullpackstyling.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.comics.view1.AccountSettingsControllerG">
    <HBox prefHeight="729.0" prefWidth="600.0">
-      <Pane prefHeight="650.0" prefWidth="520.0" stylesheets="@../../../../css/fullpackstyling.css">
+      <Pane prefHeight="650.0" prefWidth="520.0" stylesheets="@../../../../css/css1/fullpackstyling.css">
          <HBox.margin>
             <Insets bottom="40.0" left="40.0" right="40.0" top="40.0" />
          </HBox.margin>
@@ -47,7 +47,7 @@
                <Button mnemonicParsing="false" onAction="#editFirstName" styleClass="transparent">
                   <graphic>
                      <ImageView fitHeight="33.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true">
-                        <Image url="@../../../../img/matita.png" />
+                        <Image url="@../../../../img/img1/matita.png" />
                      </ImageView>
                   </graphic>
                </Button>
@@ -72,7 +72,7 @@
                <Button mnemonicParsing="false" onAction="#editLastName" styleClass="transparent">
                   <graphic>
                      <ImageView fitHeight="33.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true">
-                        <Image url="@../../../../img/matita.png" />
+                        <Image url="@../../../../img/img1/matita.png" />
                      </ImageView>
                   </graphic>
                </Button>
@@ -97,12 +97,12 @@
                <Button mnemonicParsing="false" onAction="#editEmail" styleClass="transparent">
                   <graphic>
                      <ImageView fitHeight="33.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true">
-                        <Image url="@../../../../img/matita.png" />
+                        <Image url="@../../../../img/img1/matita.png" />
                      </ImageView>
                   </graphic>
                </Button>
             </HBox>
-            <Button alignment="CENTER" mnemonicParsing="false" prefHeight="84.0" prefWidth="290.0" stylesheets="@../../../../css/fullpackstyling.css" text="Change password">
+            <Button alignment="CENTER" mnemonicParsing="false" prefHeight="84.0" prefWidth="290.0" stylesheets="@../../../../css/css1/fullpackstyling.css" text="Change password">
                <font>
                   <Font name="Berlin Sans FB" size="24.0" />
                </font>
@@ -113,7 +113,7 @@
                </styleClass>
                <graphic>
                   <ImageView fitHeight="45.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true">
-                     <Image url="@../../../../img/lock.png" />
+                     <Image url="@../../../../img/img1/lock.png" />
                   </ImageView>
                </graphic>
                <VBox.margin>
@@ -123,7 +123,7 @@
          </VBox>
       </Pane>
    </HBox>
-   <Pane fx:id="paneEditFirstName" layoutX="78.0" layoutY="228.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="227.0" prefWidth="454.0" styleClass="linear-grad" stylesheets="@../../../../css/fullpackstyling.css">
+   <Pane fx:id="paneEditFirstName" layoutX="78.0" layoutY="228.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="227.0" prefWidth="454.0" styleClass="linear-grad" stylesheets="@../../../../css/css1/fullpackstyling.css">
       <children>
          <VBox prefHeight="227.0" prefWidth="456.0">
             <children>
@@ -140,7 +140,7 @@
                            <Insets left="20.0" />
                         </padding>
                      </Label>
-                     <Button fx:id="btnCloseEditorFirstName" alignment="CENTER_RIGHT" mnemonicParsing="false" onAction="#closeEditor" prefHeight="50.0" prefWidth="82.0" stylesheets="@../../../../css/fullpackstyling.css" text="X" textAlignment="CENTER" textFill="WHITE">
+                     <Button fx:id="btnCloseEditorFirstName" alignment="CENTER_RIGHT" mnemonicParsing="false" onAction="#closeEditor" prefHeight="50.0" prefWidth="82.0" stylesheets="@../../../../css/css1/fullpackstyling.css" text="X" textAlignment="CENTER" textFill="WHITE">
                         <font>
                            <Font name="Berlin Sans FB" size="24.0" />
                         </font>
@@ -165,7 +165,7 @@
                </TextArea>
                <HBox alignment="CENTER" prefHeight="50.0" prefWidth="450.0">
                   <children>
-                     <Button fx:id="btnSaveFirstName" alignment="CENTER_RIGHT" mnemonicParsing="false" onAction="#saveFirstName" prefHeight="50.0" prefWidth="90.0" stylesheets="@../../../../css/fullpackstyling.css" text="Save" textAlignment="CENTER" textFill="WHITE">
+                     <Button fx:id="btnSaveFirstName" alignment="CENTER_RIGHT" mnemonicParsing="false" onAction="#saveFirstName" prefHeight="50.0" prefWidth="90.0" stylesheets="@../../../../css/css1/fullpackstyling.css" text="Save" textAlignment="CENTER" textFill="WHITE">
                         <font>
                            <Font name="Berlin Sans FB" size="24.0" />
                         </font>
@@ -187,7 +187,7 @@
          <Insets right="30.0" />
       </padding>
    </Pane>
-   <Pane fx:id="paneEditEmail" layoutX="77.0" layoutY="228.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="227.0" prefWidth="456.0" styleClass="linear-grad" stylesheets="@../../../../css/fullpackstyling.css">
+   <Pane fx:id="paneEditEmail" layoutX="77.0" layoutY="228.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="227.0" prefWidth="456.0" styleClass="linear-grad" stylesheets="@../../../../css/css1/fullpackstyling.css">
       <children>
          <VBox prefHeight="227.0" prefWidth="456.0">
             <children>
@@ -204,7 +204,7 @@
                            <Insets left="20.0" />
                         </padding>
                      </Label>
-                     <Button fx:id="btnCloseEditorEmail" alignment="CENTER_RIGHT" mnemonicParsing="false" onAction="#closeEditor" prefHeight="50.0" prefWidth="82.0" stylesheets="@../../../../css/fullpackstyling.css" text="X" textAlignment="CENTER" textFill="WHITE">
+                     <Button fx:id="btnCloseEditorEmail" alignment="CENTER_RIGHT" mnemonicParsing="false" onAction="#closeEditor" prefHeight="50.0" prefWidth="82.0" stylesheets="@../../../../css/css1/fullpackstyling.css" text="X" textAlignment="CENTER" textFill="WHITE">
                         <font>
                            <Font name="Berlin Sans FB" size="24.0" />
                         </font>
@@ -229,7 +229,7 @@
                </TextArea>
                <HBox alignment="CENTER" prefHeight="50.0" prefWidth="450.0">
                   <children>
-                     <Button fx:id="btnSaveEmail" alignment="CENTER_RIGHT" mnemonicParsing="false" onAction="#saveEmail" prefHeight="50.0" prefWidth="90.0" stylesheets="@../../../../css/fullpackstyling.css" text="Save" textAlignment="CENTER" textFill="WHITE">
+                     <Button fx:id="btnSaveEmail" alignment="CENTER_RIGHT" mnemonicParsing="false" onAction="#saveEmail" prefHeight="50.0" prefWidth="90.0" stylesheets="@../../../../css/css1/fullpackstyling.css" text="Save" textAlignment="CENTER" textFill="WHITE">
                         <font>
                            <Font name="Berlin Sans FB" size="24.0" />
                         </font>
@@ -251,7 +251,7 @@
          <Insets right="30.0" />
       </padding>
    </Pane>
-   <Pane fx:id="paneEditLastName" layoutX="77.0" layoutY="228.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="227.0" prefWidth="454.0" styleClass="linear-grad" stylesheets="@../../../../css/fullpackstyling.css">
+   <Pane fx:id="paneEditLastName" layoutX="77.0" layoutY="228.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="227.0" prefWidth="454.0" styleClass="linear-grad" stylesheets="@../../../../css/css1/fullpackstyling.css">
       <children>
          <VBox prefHeight="227.0" prefWidth="456.0">
             <children>
@@ -268,7 +268,7 @@
                            <Insets left="20.0" />
                         </padding>
                      </Label>
-                     <Button fx:id="btnCloseEditorLastName" alignment="CENTER_RIGHT" mnemonicParsing="false" onAction="#closeEditor" prefHeight="50.0" prefWidth="82.0" stylesheets="@../../../../css/fullpackstyling.css" text="X" textAlignment="CENTER" textFill="WHITE">
+                     <Button fx:id="btnCloseEditorLastName" alignment="CENTER_RIGHT" mnemonicParsing="false" onAction="#closeEditor" prefHeight="50.0" prefWidth="82.0" stylesheets="@../../../../css/css1/fullpackstyling.css" text="X" textAlignment="CENTER" textFill="WHITE">
                         <font>
                            <Font name="Berlin Sans FB" size="24.0" />
                         </font>
@@ -293,7 +293,7 @@
                </TextArea>
                <HBox alignment="CENTER" prefHeight="50.0" prefWidth="450.0">
                   <children>
-                     <Button fx:id="btnSaveLastName" alignment="CENTER_RIGHT" mnemonicParsing="false" onAction="#saveLastName" prefHeight="50.0" prefWidth="90.0" stylesheets="@../../../../css/fullpackstyling.css" text="Save" textAlignment="CENTER" textFill="WHITE">
+                     <Button fx:id="btnSaveLastName" alignment="CENTER_RIGHT" mnemonicParsing="false" onAction="#saveLastName" prefHeight="50.0" prefWidth="90.0" stylesheets="@../../../../css/css1/fullpackstyling.css" text="Save" textAlignment="CENTER" textFill="WHITE">
                         <font>
                            <Font name="Berlin Sans FB" size="24.0" />
                         </font>

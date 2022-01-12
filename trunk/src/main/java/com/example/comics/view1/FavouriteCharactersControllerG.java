@@ -1,7 +1,7 @@
 package com.example.comics.view1;
 
-import com.example.comics.model.fagioli.SeriesBean;
 import com.example.comics.model.Character;
+import com.example.comics.model.fagioli.SeriesBean;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.layout.GridPane;

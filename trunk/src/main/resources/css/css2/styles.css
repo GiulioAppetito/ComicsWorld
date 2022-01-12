@@ -1,0 +1,259 @@
+.white-background{
+    -fx-background-color: #fff;
+}
+
+.wallpaper{
+    -fx-background-image: url('fakebg3.jpg');
+    -fx-background-size: 400
+
+}
+
+
+.keyboard
+{
+    -fx-background-color : #8d8d8d;
+    -fx-background-radius :  0 0 35 35;
+}
+.keyboard:hover
+{
+    -fx-background-color : #D2D2D2 ;
+    -fx-background-radius :  20;
+}
+.keyboard:pressed
+{
+    -fx-background-color : #C2C2C2 ;
+    -fx-background-radius :  20;
+}
+.keyboard:focused
+{
+    -fx-background-color :#5DADE2 ;
+    -fx-background-radius :  20;
+
+}
+
+.transparent{
+    -fx-background-color: rgba(0,0,0,0);
+}
+
+.darkButton
+{
+    -fx-background-color : #393351;
+    -fx-background-radius :  30;
+    -fx-text-fill: white;
+}
+.darkButton:hover
+{
+    -fx-background-color : #524A7B ;
+    -fx-background-radius :  30;
+}
+.darkButton:pressed
+{
+    -fx-background-color : #2F2B43 ;
+    -fx-background-radius :  30;
+}
+
+
+
+
+
+
+
+
+
+.buttonEdit {
+}
+.buttonEdit:hover
+{
+    -fx-background-color : #8ec7ff;
+    -fx-background-radius :  20;
+}
+.buttonEdit:pressed
+{
+    -fx-background-color : #2c92ff;
+    -fx-background-radius :  20;
+}
+
+
+.lateral
+{
+    -fx-background-color: white;
+
+}
+.lateral:hover
+{
+    -fx-background-color : #D2D2D2 ;
+    -fx-background-radius :  20;
+}
+.lateral:pressed
+{
+    -fx-background-color : #C2C2C2 ;
+    -fx-background-radius :  20;
+}
+.lateral:focused
+{
+    -fx-background-color :#5DADE2 ;
+    -fx-background-radius :  25;
+
+}
+
+
+.linear-grad
+{
+    -fx-background-color: linear-gradient(to bottom left, #A868A0, #2D75E8);
+    -fx-background-radius: 25;
+}
+
+.highlighted-background{
+    -fx-background-color: #ACACE6;
+}
+
+
+.default-background{
+    -fx-background-color: #D7D7D7;
+}
+
+.round-layout{
+    -fx-border-radius:50;
+    -fx-border-color:#D7D7D7;
+}
+
+.oval-layout{
+    -fx-border-radius:25;
+    -fx-border-color:#D7D7D7;
+}
+
+.round-corners{
+    -fx-border-radius: 200;
+}
+
+
+
+.selected{
+    -fx-background-color:#F3F3F3;
+}
+
+
+.glass{
+    -fx-effect: dropshadow(one-pass-box, #eaeaea,10,10,5,5);
+}
+
+.buttonCancel
+{
+    -fx-background-color : #E2E2E2;
+    -fx-background-radius :  20;
+}
+.buttonCancel:hover
+{
+    -fx-background-color : #D2D2D2 ;
+    -fx-background-radius :  20;
+}
+.buttonCancel:pressed
+{
+    -fx-background-color : #d25b5b;
+    -fx-background-radius :  20;
+}
+
+.buttonLogin
+{
+    -fx-background-color : #E2E2E2;
+    -fx-background-radius :  20;
+}
+.buttonLogin:hover
+{
+    -fx-background-color : #D2D2D2 ;
+    -fx-background-radius :  20;
+}
+.buttonLogin:pressed
+{
+    -fx-background-color : #2c92ff;
+    -fx-background-radius :  20;
+}
+
+.background-display{
+    -fx-background-color: #c7c7c7;
+}
+
+.panes
+{
+    -fx-background-color : #ffffff;
+    -fx-background-radius :  20;
+}
+.panes:hover
+{
+
+}
+
+.gradient2
+{
+    -fx-background-color: linear-gradient(to bottom left, #ffffff, #8d8d8d);
+    -fx-background-radius: 25;
+}
+
+
+.scroll-pane{
+    -fx-background-color:transparent;
+}
+
+.scroll-pane > .viewport {
+    -fx-background-color: transparent;
+}
+/*
+/* The main scrollbar **track** CSS class  */
+.table-view .scroll-bar:horizontal .track,
+.table-view .scroll-bar:vertical .track{
+    -fx-background-color: transparent;
+    -fx-border-color:derive(  #2D75E8,80%);
+    -fx-background-radius: 2em;
+    -fx-border-radius:2em;
+}
+
+/* The main scrollbar **thumb** CSS class which we drag every time (movable) */
+.table-view .scroll-bar:horizontal .thumb,
+.table-view .scroll-bar:vertical .thumb {
+    -fx-background-color:derive( #2D75E8,90%);
+    -fx-background-insets: 2, 0, 0;
+    -fx-background-radius: 2em;
+
+}
+
+/* chart properties */
+.chart {
+    -fx-padding: 10px;
+    -fx-background-color: transparent;
+    -fx-legend-visible: false;
+}
+.chart-plot-background {
+    -fx-background-color:transparent;
+}
+
+.chart-pie {
+    -fx-border-color: derive(-fx-pie-color, 1%);
+    -fx-border-width: 0px;
+}
+
+.onlyhover:hover{
+    -fx-background-color : #D2D2D2 ;
+    -fx-background-radius :  20;
+}
+
+.buttonprofile
+{
+    -fx-background-color : #ffffff;
+    -fx-background-radius :  20;
+}
+.buttonprofile:hover
+{
+    -fx-background-color : #D2D2D2 ;
+    -fx-background-radius :  20;
+}
+.buttonprofile:pressed
+{
+    -fx-background-color : #5DADE2 ;
+    -fx-background-radius :  20;
+}
+.buttonprofile:focused
+{
+    -fx-background-color :#5DADE2 ;
+    -fx-background-radius :  20;
+
+}

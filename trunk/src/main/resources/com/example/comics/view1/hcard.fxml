@@ -9,21 +9,21 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="120.0" prefWidth="200.0" stylesheets="@../../../../css/fullpackstyling.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.comics.view1.AdControllerG">
+<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="120.0" prefWidth="200.0" stylesheets="@../../../../css/css1/fullpackstyling.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.comics.view1.AdControllerG">
     <styleClass>
         <String fx:value="white-background" />
         <String fx:value="oval-layout" />
       <String fx:value="linear-grad" />
       <String fx:value="button2" />
     </styleClass>
-    <HBox prefHeight="60.0" prefWidth="198.0" stylesheets="@../../../../css/fullpackstyling.css">
+    <HBox prefHeight="60.0" prefWidth="198.0" stylesheets="@../../../../css/css1/fullpackstyling.css">
         <ImageView fx:id="comicCover" fitHeight="103.0" fitWidth="89.0" pickOnBounds="true" preserveRatio="true">
             
           <HBox.margin>
               <Insets bottom="5.0" left="20.0" top="5.0" />
           </HBox.margin>
          <image>
-            <Image url="@../../../../img/download%20(2).jpg" />
+            <Image url="@../../../../img/img1/download%20(2).jpg" />
          </image>
 
         </ImageView>

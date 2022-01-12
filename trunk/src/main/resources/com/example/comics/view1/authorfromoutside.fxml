@@ -14,13 +14,13 @@
 
 <Pane xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <Pane layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="729.0" prefWidth="980.0" styleClass="transparent" stylesheets="@../../../../css/fullpackstyling.css">
+      <Pane layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="729.0" prefWidth="980.0" styleClass="transparent" stylesheets="@../../../../css/css1/fullpackstyling.css">
          <children>
             <BorderPane fx:id="mainPane">
                <center>
                   <HBox prefHeight="729.0" prefWidth="980.0">
                      <children>
-                        <Pane prefHeight="649.0" prefWidth="457.0" stylesheets="@../../../../css/fullpackstyling.css">
+                        <Pane prefHeight="649.0" prefWidth="457.0" stylesheets="@../../../../css/css1/fullpackstyling.css">
                            <HBox.margin>
                               <Insets bottom="40.0" left="40.0" right="40.0" top="40.0" />
                            </HBox.margin>
@@ -39,14 +39,14 @@
                                        <children>
                                           <ImageView fx:id="proPicProfile" fitHeight="241.0" fitWidth="275.0" pickOnBounds="true" preserveRatio="true">
                                              <image>
-                                                <Image url="@../../../../img/flat-business-man-user-profile-avatar-icon-vector-4333097.jpg" />
+                                                <Image url="@../../../../img/img1/flat-business-man-user-profile-avatar-icon-vector-4333097.jpg" />
                                              </image>
                                           </ImageView>
                                        </children>
                                     </HBox>
                                     <HBox alignment="CENTER" prefHeight="55.0" prefWidth="452.0">
                                        <children>
-                                          <Button fx:id="btnFollow" mnemonicParsing="false" prefHeight="63.0" prefWidth="187.0" stylesheets="@../../../../css/fullpackstyling.css" text="Unfollow">
+                                          <Button fx:id="btnFollow" mnemonicParsing="false" prefHeight="63.0" prefWidth="187.0" stylesheets="@../../../../css/css1/fullpackstyling.css" text="Unfollow">
                                              <font>
                                                 <Font name="Berlin Sans FB" size="24.0" />
                                              </font>
@@ -58,7 +58,7 @@
                                              <graphic>
                                                 <ImageView fitHeight="45.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true">
                                                    <image>
-                                                      <Image url="@../../../../img/icons8-add-reminder-96.png" />
+                                                      <Image url="@../../../../img/img1/icons8-add-reminder-96.png" />
                                                    </image>
                                                 </ImageView>
                                              </graphic>
@@ -100,7 +100,7 @@
                               </VBox>
                            </children>
                         </Pane>
-                        <Pane prefHeight="649.0" prefWidth="457.0" stylesheets="@../../../../css/fullpackstyling.css">
+                        <Pane prefHeight="649.0" prefWidth="457.0" stylesheets="@../../../../css/css1/fullpackstyling.css">
                            <styleClass>
                               <String fx:value="panes" />
                               <String fx:value="oval-layout" />

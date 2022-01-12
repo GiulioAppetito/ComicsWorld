@@ -4,6 +4,7 @@ import com.example.comics.controller.PublishChapterController;
 import com.example.comics.model.Series;
 import com.example.comics.model.UserLogin;
 import com.example.comics.model.fagioli.ChapterBean;
+import com.example.comics.view1.beans.ChapterBean1;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
@@ -55,7 +56,7 @@ public class PublishChapterControllerG {
         String chapterDescription = taDescription.getText();
         String seriesTitle = choiceBoxSeries.getValue();
 
-        ChapterBean chapterBean = new ChapterBean();
+        ChapterBean chapterBean = new ChapterBean1();
         chapterBean.setTitle(chapterTitle);
         chapterBean.setCover(chapterCover);
         chapterBean.setDescription(chapterDescription);

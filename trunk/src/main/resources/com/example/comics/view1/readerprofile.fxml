@@ -14,9 +14,9 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="729.0" prefWidth="980.0" styleClass="transparent" stylesheets="@../../../../css/fullpackstyling.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.comics.view1.ReaderProfileControllerG">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="729.0" prefWidth="980.0" styleClass="transparent" stylesheets="@../../../../css/css1/fullpackstyling.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.comics.view1.ReaderProfileControllerG">
    <HBox prefHeight="729.0" prefWidth="980.0">
-      <Pane prefHeight="649.0" prefWidth="457.0" stylesheets="@../../../../css/fullpackstyling.css">
+      <Pane prefHeight="649.0" prefWidth="457.0" stylesheets="@../../../../css/css1/fullpackstyling.css">
          <HBox.margin>
             <Insets bottom="40.0" left="40.0" right="40.0" top="40.0" />
          </HBox.margin>
@@ -35,12 +35,12 @@
                      <Insets />
                   </HBox.margin>
                   <ImageView fx:id="ivProPic" fitHeight="234.0" fitWidth="221.0" pickOnBounds="true" preserveRatio="true">
-                     <Image url="@../../../../img/flat-business-woman-user-profile-avatar-icon-vector-4334111.jpg" />
+                     <Image url="@../../../../img/img1/flat-business-woman-user-profile-avatar-icon-vector-4334111.jpg" />
                   </ImageView>
                </VBox>
             </HBox>
             <HBox alignment="CENTER" prefHeight="63.0" prefWidth="432.0" spacing="60.0">
-               <Button alignment="CENTER" mnemonicParsing="false" prefHeight="63.0" prefWidth="143.0" stylesheets="@../../../../css/fullpackstyling.css" text="Edit">
+               <Button alignment="CENTER" mnemonicParsing="false" prefHeight="63.0" prefWidth="143.0" stylesheets="@../../../../css/css1/fullpackstyling.css" text="Edit">
                   <font>
                      <Font name="Berlin Sans FB" size="24.0" />
                   </font>
@@ -51,7 +51,7 @@
                   </styleClass>
                   <graphic>
                      <ImageView fitHeight="45.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true">
-                        <Image url="@../../../../img/matita.png" />
+                        <Image url="@../../../../img/img1/matita.png" />
                      </ImageView>
                   </graphic>
                   <HBox.margin>
@@ -90,7 +90,7 @@
          </VBox>
       </Pane>
       <VBox prefHeight="729.0" prefWidth="453.0">
-         <Pane prefHeight="208.0" prefWidth="369.0" stylesheets="@../../../../css/fullpackstyling.css">
+         <Pane prefHeight="208.0" prefWidth="369.0" stylesheets="@../../../../css/css1/fullpackstyling.css">
             <VBox.margin>
                <Insets bottom="40.0" left="40.0" right="40.0" top="40.0" />
             </VBox.margin>
@@ -115,7 +115,7 @@
                <String fx:value="glass" />
             </styleClass>
          </Pane>
-         <Pane prefHeight="377.0" prefWidth="308.0" stylesheets="@../../../../css/fullpackstyling.css">
+         <Pane prefHeight="377.0" prefWidth="308.0" stylesheets="@../../../../css/css1/fullpackstyling.css">
             <VBox.margin>
                <Insets bottom="40.0" left="40.0" right="40.0" top="40.0" />
             </VBox.margin>

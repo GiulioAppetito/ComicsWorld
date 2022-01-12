@@ -20,7 +20,7 @@
             <VBox alignment="CENTER" />
          </children>
       </HBox>
-      <Pane prefHeight="230.0" prefWidth="909.0" styleClass="transparent" stylesheets="@../../../../css/fullpackstyling.css">
+      <Pane prefHeight="230.0" prefWidth="909.0" styleClass="transparent" stylesheets="@../../../../css/css1/fullpackstyling.css">
          <VBox.margin>
             <Insets left="30.0" right="30.0" top="10.0" />
          </VBox.margin>
@@ -32,7 +32,7 @@
                <Insets left="20.0" />
             </padding>
          </Label>
-          <ScrollPane layoutX="14.0" layoutY="64.0" prefHeight="146.0" prefWidth="883.0" stylesheets="@../../../../css/fullpackstyling.css" vbarPolicy="NEVER">
+          <ScrollPane layoutX="14.0" layoutY="64.0" prefHeight="146.0" prefWidth="883.0" stylesheets="@../../../../css/css1/fullpackstyling.css" vbarPolicy="NEVER">
               <HBox fx:id="hbAds" prefHeight="126.0" prefWidth="882.0" spacing="5.0" styleClass="transparent">
                <opaqueInsets>
                   <Insets />
@@ -42,7 +42,7 @@
                </padding></HBox>
           </ScrollPane>
       </Pane>
-      <Pane prefHeight="399.0" prefWidth="909.0" styleClass="transparent" stylesheets="@../../../../css/fullpackstyling.css">
+      <Pane prefHeight="399.0" prefWidth="909.0" styleClass="transparent" stylesheets="@../../../../css/css1/fullpackstyling.css">
          <VBox.margin>
             <Insets bottom="30.0" left="30.0" right="30.0" top="15.0" />
          </VBox.margin>
@@ -54,7 +54,7 @@
                <Insets left="20.0" />
             </padding>
          </Label>
-          <ScrollPane hbarPolicy="NEVER" layoutX="14.0" layoutY="74.0" prefHeight="312.0" prefWidth="892.0" stylesheets="@../../../../css/fullpackstyling.css" vbarPolicy="ALWAYS">
+          <ScrollPane hbarPolicy="NEVER" layoutX="14.0" layoutY="74.0" prefHeight="312.0" prefWidth="892.0" stylesheets="@../../../../css/css1/fullpackstyling.css" vbarPolicy="ALWAYS">
               <GridPane fx:id="feedGrid" alignment="CENTER" hgap="20.0" prefHeight="310.0" prefWidth="867.0" styleClass="transparent" vgap="20.0">
                   <rowConstraints>
                       <RowConstraints minHeight="10.0" prefHeight="150.0" vgrow="SOMETIMES" />

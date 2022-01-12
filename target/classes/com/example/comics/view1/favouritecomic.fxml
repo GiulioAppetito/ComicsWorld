@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<HBox prefHeight="90.0" prefWidth="600.0" spacing="15.0" stylesheets="@../../../../css/fullpackstyling.css" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.comics.view1.CategoryController">
+<HBox prefHeight="90.0" prefWidth="600.0" spacing="15.0" stylesheets="@../../../../css/css1/fullpackstyling.css" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.comics.view1.CategoryController">
     <styleClass>
         <String fx:value="oval-layout" />
         <String fx:value="transparent" />
@@ -17,7 +17,7 @@
             <Insets bottom="10.0" left="20.0" top="15.0" />
         </HBox.margin>
 
-        <Image url="@../../../../img/3.jpg" />
+        <Image url="@../../../../img/img1/3.jpg" />
     </ImageView>
     <Label fx:id="categoryName" alignment="CENTER" prefHeight="32.0" prefWidth="179.0" text="Spiderman">
         <HBox.margin>

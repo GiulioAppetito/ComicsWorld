@@ -12,9 +12,9 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="729.0" prefWidth="600.0" styleClass="transparent" stylesheets="@../../../../css/fullpackstyling.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.comics.view1.ProfileSettingsControllerG">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="729.0" prefWidth="600.0" styleClass="transparent" stylesheets="@../../../../css/css1/fullpackstyling.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.comics.view1.ProfileSettingsControllerG">
    <HBox prefHeight="729.0" prefWidth="600.0">
-      <Pane prefHeight="650.0" prefWidth="520.0" stylesheets="@../../../../css/fullpackstyling.css">
+      <Pane prefHeight="650.0" prefWidth="520.0" stylesheets="@../../../../css/css1/fullpackstyling.css">
          <HBox.margin>
             <Insets bottom="40.0" left="40.0" right="40.0" top="40.0" />
          </HBox.margin>
@@ -32,16 +32,16 @@
                   <Insets />
                </VBox.margin>
                <ImageView fx:id="imgProPic" fitHeight="221.0" fitWidth="220.0" pickOnBounds="true" preserveRatio="true">
-                  <Image url="@../../../../img/flat-business-man-user-profile-avatar-icon-vector-4333097.jpg" />
+                  <Image url="@../../../../img/img1/flat-business-man-user-profile-avatar-icon-vector-4333097.jpg" />
                   <HBox.margin>
                      <Insets left="25.0" />
                   </HBox.margin>
                </ImageView>
-               <Button fx:id="btnEditProPic" mnemonicParsing="false" onAction="#editProPic" styleClass="transparent" stylesheets="@../../../../css/fullpackstyling.css">
+               <Button fx:id="btnEditProPic" mnemonicParsing="false" onAction="#editProPic" styleClass="transparent" stylesheets="@../../../../css/css1/fullpackstyling.css">
                   <graphic>
                      <ImageView fitHeight="33.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true">
                         <image>
-                           <Image url="@../../../../img/matita.png" />
+                           <Image url="@../../../../img/img1/matita.png" />
                         </image>
                      </ImageView>
                   </graphic>
@@ -64,11 +64,11 @@
                      <Insets left="25.0" />
                   </HBox.margin>
                </Label>
-               <Button fx:id="btnEditUsername" mnemonicParsing="false" onAction="#editUsername" styleClass="transparent" stylesheets="@../../../../css/fullpackstyling.css">
+               <Button fx:id="btnEditUsername" mnemonicParsing="false" onAction="#editUsername" styleClass="transparent" stylesheets="@../../../../css/css1/fullpackstyling.css">
                   <graphic>
                      <ImageView fitHeight="33.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true">
                         <image>
-                           <Image url="@../../../../img/matita.png" />
+                           <Image url="@../../../../img/img1/matita.png" />
                         </image>
                      </ImageView>
                   </graphic>
@@ -85,7 +85,7 @@
          </styleClass>
       </Pane>
    </HBox>
-   <Pane fx:id="paneEditProPic" layoutX="68.0" layoutY="153.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="369.0" prefWidth="464.0" styleClass="linear-grad" stylesheets="@../../../../css/fullpackstyling.css">
+   <Pane fx:id="paneEditProPic" layoutX="68.0" layoutY="153.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="369.0" prefWidth="464.0" styleClass="linear-grad" stylesheets="@../../../../css/css1/fullpackstyling.css">
       <children>
          <VBox prefHeight="369.0" prefWidth="464.0">
             <children>
@@ -102,7 +102,7 @@
                            <Insets left="20.0" />
                         </padding>
                      </Label>
-                     <Button fx:id="btnCloseEditorProPic" alignment="CENTER_RIGHT" mnemonicParsing="false" onAction="#closeEditor" prefHeight="49.0" prefWidth="65.0" stylesheets="@../../../../css/fullpackstyling.css" text="X" textAlignment="CENTER" textFill="WHITE">
+                     <Button fx:id="btnCloseEditorProPic" alignment="CENTER_RIGHT" mnemonicParsing="false" onAction="#closeEditor" prefHeight="49.0" prefWidth="65.0" stylesheets="@../../../../css/css1/fullpackstyling.css" text="X" textAlignment="CENTER" textFill="WHITE">
                         <font>
                            <Font name="Berlin Sans FB" size="24.0" />
                         </font>
@@ -127,7 +127,7 @@
                </TextArea>
                <HBox alignment="CENTER">
                   <children>
-                     <Button alignment="CENTER_RIGHT" mnemonicParsing="false" prefHeight="50.0" prefWidth="82.0" stylesheets="@../../../../css/fullpackstyling.css" text="Save" textAlignment="CENTER" textFill="WHITE">
+                     <Button alignment="CENTER_RIGHT" mnemonicParsing="false" prefHeight="50.0" prefWidth="82.0" stylesheets="@../../../../css/css1/fullpackstyling.css" text="Save" textAlignment="CENTER" textFill="WHITE">
                         <font>
                            <Font name="Berlin Sans FB" size="24.0" />
                         </font>
@@ -147,7 +147,7 @@
          </VBox>
       </children>
    </Pane>
-   <Pane fx:id="paneEditUsername" layoutX="68.0" layoutY="218.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="227.0" prefWidth="464.0" styleClass="linear-grad" stylesheets="@../../../../css/fullpackstyling.css">
+   <Pane fx:id="paneEditUsername" layoutX="68.0" layoutY="218.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="227.0" prefWidth="464.0" styleClass="linear-grad" stylesheets="@../../../../css/css1/fullpackstyling.css">
       <children>
          <VBox prefHeight="227.0" prefWidth="464.0">
             <children>
@@ -164,7 +164,7 @@
                            <Insets left="20.0" />
                         </padding>
                      </Label>
-                     <Button fx:id="btnCloseEditorUsername" alignment="CENTER_RIGHT" mnemonicParsing="false" onAction="#closeEditor" prefHeight="49.0" prefWidth="65.0" stylesheets="@../../../../css/fullpackstyling.css" text="X" textAlignment="CENTER" textFill="WHITE">
+                     <Button fx:id="btnCloseEditorUsername" alignment="CENTER_RIGHT" mnemonicParsing="false" onAction="#closeEditor" prefHeight="49.0" prefWidth="65.0" stylesheets="@../../../../css/css1/fullpackstyling.css" text="X" textAlignment="CENTER" textFill="WHITE">
                         <font>
                            <Font name="Berlin Sans FB" size="24.0" />
                         </font>
@@ -189,7 +189,7 @@
                </TextArea>
                <HBox alignment="CENTER">
                   <children>
-                     <Button fx:id="btnSaveUsername" alignment="CENTER_RIGHT" mnemonicParsing="false" onAction="#saveUsername" prefHeight="50.0" prefWidth="90.0" stylesheets="@../../../../css/fullpackstyling.css" text="Save" textAlignment="CENTER" textFill="WHITE">
+                     <Button fx:id="btnSaveUsername" alignment="CENTER_RIGHT" mnemonicParsing="false" onAction="#saveUsername" prefHeight="50.0" prefWidth="90.0" stylesheets="@../../../../css/css1/fullpackstyling.css" text="Save" textAlignment="CENTER" textFill="WHITE">
                         <font>
                            <Font name="Berlin Sans FB" size="24.0" />
                         </font>

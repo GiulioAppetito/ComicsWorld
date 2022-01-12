@@ -11,12 +11,12 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="729.0" prefWidth="600.0" styleClass="transparent" stylesheets="@../../../../css/fullpackstyling.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="729.0" prefWidth="600.0" styleClass="transparent" stylesheets="@../../../../css/css1/fullpackstyling.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
    <HBox prefHeight="729.0" prefWidth="600.0">
       <opaqueInsets>
          <Insets />
       </opaqueInsets>
-      <Pane prefHeight="650.0" prefWidth="520.0" stylesheets="@../../../../css/fullpackstyling.css">
+      <Pane prefHeight="650.0" prefWidth="520.0" stylesheets="@../../../../css/css1/fullpackstyling.css">
          <HBox.margin>
             <Insets bottom="40.0" left="40.0" right="40.0" top="40.0" />
          </HBox.margin>
@@ -42,10 +42,10 @@
                   <HBox.margin>
                      <Insets left="20.0" />
                   </HBox.margin>
-                  <Image url="@../../../../img/spidey.png" />
+                  <Image url="@../../../../img/img1/spidey.png" />
                </ImageView>
                <ImageView fitHeight="33.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true">
-                  <Image url="@../../../../img/icons8-modificare-96.png" />
+                  <Image url="@../../../../img/img1/icons8-modificare-96.png" />
                </ImageView>
             </HBox>
             <Label alignment="CENTER" prefHeight="52.0" prefWidth="520.0" text="Favourite Genres" textAlignment="CENTER" textFill="#0b0404">
@@ -56,9 +56,9 @@
                   <Insets top="30.0" />
                </VBox.margin>
             </Label>
-            <HBox alignment="CENTER" styleClass="transparent" stylesheets="@../../../../css/fullpackstyling.css">
-               <ScrollPane prefHeight="200.0" prefWidth="472.0" styleClass="transparent" stylesheets="@../../../../css/fullpackstyling.css">
-                  <VBox prefHeight="200.0" prefWidth="454.0" styleClass="transparent" stylesheets="@../../../../css/fullpackstyling.css">
+            <HBox alignment="CENTER" styleClass="transparent" stylesheets="@../../../../css/css1/fullpackstyling.css">
+               <ScrollPane prefHeight="200.0" prefWidth="472.0" styleClass="transparent" stylesheets="@../../../../css/css1/fullpackstyling.css">
+                  <VBox prefHeight="200.0" prefWidth="454.0" styleClass="transparent" stylesheets="@../../../../css/css1/fullpackstyling.css">
                      <HBox prefHeight="76.0" prefWidth="454.0">
                         <Label alignment="CENTER" prefHeight="76.0" prefWidth="510.0" text="Action" />
                         <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="75.0" prefWidth="223.0" text="X" />

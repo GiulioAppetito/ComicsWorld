@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" stylesheets="@../../../../css/fullpackstyling.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.comics.view1.AboutUsSettingsController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" stylesheets="@../../../../css/css1/fullpackstyling.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.comics.view1.AboutUsSettingsController">
    <Label alignment="CENTER" prefHeight="132.0" prefWidth="600.0" text="About Us">
       <font>
          <Font name="Berlin Sans FB" size="24.0" />
@@ -19,7 +19,7 @@
          <VBox prefHeight="206.0" prefWidth="151.0">
             <children>
                <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
-                  <Image url="@../../../../img/flat-business-woman-user-profile-avatar-icon-vector-4334111.jpg" />
+                  <Image url="@../../../../img/img1/flat-business-woman-user-profile-avatar-icon-vector-4334111.jpg" />
                </ImageView>
                <Label alignment="CENTER" prefHeight="21.0" prefWidth="150.0" text="Anastasia Brinati">
                   <font>
@@ -37,7 +37,7 @@
          <VBox prefHeight="234.0" prefWidth="151.0">
             <children>
                <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
-                  <Image url="@../../../../img/flat-business-man-user-profile-avatar-icon-vector-4333097.jpg" />
+                  <Image url="@../../../../img/img1/flat-business-man-user-profile-avatar-icon-vector-4333097.jpg" />
                </ImageView>
                <Label alignment="CENTER" prefHeight="21.0" prefWidth="150.0" text="Giulio Appetito">
                   <font>

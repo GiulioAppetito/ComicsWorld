@@ -22,11 +22,11 @@
 
 <StackPane xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.comics.view1.PublishSeriesControllerG">
    <children>
-      <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="729.0" prefWidth="980.0" styleClass="transparent" stylesheets="@../../../../css/fullpackstyling.css">
+      <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="729.0" prefWidth="980.0" styleClass="transparent" stylesheets="@../../../../css/css1/fullpackstyling.css">
          <children>
             <HBox prefHeight="729.0" prefWidth="980.0">
                <children>
-                  <Pane prefHeight="649.0" prefWidth="457.0" stylesheets="@../../../../css/fullpackstyling.css">
+                  <Pane prefHeight="649.0" prefWidth="457.0" stylesheets="@../../../../css/css1/fullpackstyling.css">
                      <HBox.margin>
                         <Insets bottom="40.0" left="40.0" right="40.0" top="40.0" />
                      </HBox.margin>
@@ -38,7 +38,7 @@
                      <children>
                         <VBox prefHeight="649.0" prefWidth="452.0">
                            <children>
-                              <Button fx:id="btnBack" mnemonicParsing="false" prefHeight="51.0" prefWidth="81.0" stylesheets="@../../../../css/fullpackstyling.css">
+                              <Button fx:id="btnBack" mnemonicParsing="false" prefHeight="51.0" prefWidth="81.0" stylesheets="@../../../../css/css1/fullpackstyling.css">
                                  <font>
                                     <Font name="Berlin Sans FB" size="24.0" />
                                  </font>
@@ -50,7 +50,7 @@
                                  <graphic>
                                     <ImageView fitHeight="32.0" fitWidth="39.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
-                                          <Image url="@../../../../img/back.png" />
+                                          <Image url="@../../../../img/img1/back.png" />
                                        </image>
                                     </ImageView>
                                  </graphic>
@@ -65,7 +65,7 @@
                                  <children>
                                     <ImageView fx:id="comicCover" fitHeight="261.0" fitWidth="466.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
-                                          <Image url="@../../../../img/download.jpg" />
+                                          <Image url="@../../../../img/img1/download.jpg" />
                                        </image>
                                     </ImageView>
                                  </children>
@@ -181,7 +181,7 @@
                   </Pane>
                   <VBox prefHeight="729.0" prefWidth="453.0">
                      <children>
-                        <Pane prefHeight="225.0" prefWidth="368.0" stylesheets="@../../../../css/fullpackstyling.css">
+                        <Pane prefHeight="225.0" prefWidth="368.0" stylesheets="@../../../../css/css1/fullpackstyling.css">
                            <VBox.margin>
                               <Insets bottom="40.0" left="40.0" right="40.0" top="40.0" />
                            </VBox.margin>
@@ -216,7 +216,7 @@
                               </VBox>
                            </children>
                         </Pane>
-                        <Pane prefHeight="186.0" prefWidth="368.0" stylesheets="@../../../../css/fullpackstyling.css">
+                        <Pane prefHeight="186.0" prefWidth="368.0" stylesheets="@../../../../css/css1/fullpackstyling.css">
                            <VBox.margin>
                               <Insets bottom="40.0" left="40.0" right="40.0" top="20.0" />
                            </VBox.margin>
@@ -301,7 +301,7 @@
                               </VBox>
                            </children>
                         </Pane>
-                        <Pane prefHeight="225.0" prefWidth="368.0" stylesheets="@../../../../css/fullpackstyling.css">
+                        <Pane prefHeight="225.0" prefWidth="368.0" stylesheets="@../../../../css/css1/fullpackstyling.css">
                            <styleClass>
                               <String fx:value="panes" />
                               <String fx:value="glass" />
@@ -338,13 +338,13 @@
             </HBox>
          </children>
       </Pane>
-      <Pane fx:id="objectivesPane" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="508.0" prefWidth="648.0" style="-fx-background-color: lightgrey;" stylesheets="@../../../../css/fullpackstyling.css">
+      <Pane fx:id="objectivesPane" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="508.0" prefWidth="648.0" style="-fx-background-color: lightgrey;" stylesheets="@../../../../css/css1/fullpackstyling.css">
          <styleClass>
             <String fx:value="panes" />
             <String fx:value="glass" />
          </styleClass>
          <children>
-            <VBox prefHeight="506.0" prefWidth="648.0" styleClass="linear-grad" stylesheets="@../../../../css/fullpackstyling.css">
+            <VBox prefHeight="506.0" prefWidth="648.0" styleClass="linear-grad" stylesheets="@../../../../css/css1/fullpackstyling.css">
                <children>
                   <HBox>
                      <children>
@@ -356,7 +356,7 @@
                               <Insets left="20.0" />
                            </padding>
                         </Label>
-                        <Button fx:id="btnApplyObjectives" alignment="CENTER_RIGHT" mnemonicParsing="false" prefHeight="48.0" prefWidth="141.0" stylesheets="@../../../../css/fullpackstyling.css" text="Apply" textAlignment="CENTER" textFill="WHITE">
+                        <Button fx:id="btnApplyObjectives" alignment="CENTER_RIGHT" mnemonicParsing="false" prefHeight="48.0" prefWidth="141.0" stylesheets="@../../../../css/css1/fullpackstyling.css" text="Apply" textAlignment="CENTER" textFill="WHITE">
                            <font>
                               <Font name="Berlin Sans FB" size="24.0" />
                            </font>
@@ -372,7 +372,7 @@
                               <Insets left="220.0" top="2.0" />
                            </HBox.margin>
                         </Button>
-                        <Button fx:id="btnCloseObjectivesPane1" alignment="CENTER_RIGHT" mnemonicParsing="false"  prefHeight="49.0" prefWidth="73.0" stylesheets="@../../../../css/fullpackstyling.css" text="X" textAlignment="CENTER" textFill="WHITE">
+                        <Button fx:id="btnCloseObjectivesPane1" alignment="CENTER_RIGHT" mnemonicParsing="false" prefHeight="49.0" prefWidth="73.0" stylesheets="@../../../../css/css1/fullpackstyling.css" text="X" textAlignment="CENTER" textFill="WHITE">
                            <font>
                               <Font name="Berlin Sans FB" size="24.0" />
                            </font>

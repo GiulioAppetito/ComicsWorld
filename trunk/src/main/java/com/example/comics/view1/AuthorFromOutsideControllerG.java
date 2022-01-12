@@ -1,12 +1,8 @@
 package com.example.comics.view1;
 
 import com.example.comics.controller.FollowAuthorController;
-import com.example.comics.controller.ResearchController;
-import com.example.comics.model.Author;
 import com.example.comics.model.UserLogin;
-import com.example.comics.model.fagioli.AccountBean;
 import com.example.comics.model.fagioli.AuthorBean;
-import com.example.comics.model.fagioli.SeriesBean;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -40,26 +36,19 @@ public class AuthorFromOutsideControllerG {
     @FXML
     private Label lblAuthorPlaceHolder;
 
-    public void init(Author author){
+    public void init(AuthorBean authorBean){
 
-        lblAuthorUsername.setText(author.getUsername());
+        lblAuthorUsername.setText(authorBean.getUsername());
         //lblAuthorPlaceHolder.setText(authorBean.getUsername());
-        lblName.setText(author.getFirstName() + " " + author.getLastName());
-        proPicProfile.setImage(author.getProPic());
+        lblName.setText(authorBean.getFirstName() + " " + authorBean.getLastName());
+        proPicProfile.setImage(authorBean.getProPic());
         //display serie autore che stanno nel bean
 
         if(UserLogin.getInstance().getAccount().getRole()!="author") {
             FollowAuthorController followAuthorController = new FollowAuthorController();
-            AuthorBean authorBean = new AuthorBean();
-            authorBean.setUsername(author.getUsername());
             if (followAuthorController.isAuthorFollowed(authorBean)) {
                 setBtnToUnfollow(authorBean);
             } else {
-                authorBean.setFirstName(author.getFirstName());
-                authorBean.setLastName(author.getLastName());
-                authorBean.setProPic(author.getProPic());
-                authorBean.setPublishedSeries(author.getPublishedSeries());
-
                 setBtnToFollow(authorBean);
             }
         }else{

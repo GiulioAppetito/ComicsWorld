@@ -19,11 +19,11 @@
     <children>
         <Pane>
             <children>
-                <Pane layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="729.0" prefWidth="980.0" styleClass="transparent" stylesheets="@../../../../css/fullpackstyling.css">
+                <Pane layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="729.0" prefWidth="980.0" styleClass="transparent" stylesheets="@../../../../css/css1/fullpackstyling.css">
                     <children>
                         <HBox prefHeight="729.0" prefWidth="980.0">
                             <children>
-                                <Pane prefHeight="649.0" prefWidth="457.0" stylesheets="@../../../../css/fullpackstyling.css">
+                                <Pane prefHeight="649.0" prefWidth="457.0" stylesheets="@../../../../css/css1/fullpackstyling.css">
                                     <HBox.margin>
                                         <Insets bottom="40.0" left="40.0" right="40.0" top="40.0" />
                                     </HBox.margin>
@@ -40,10 +40,10 @@
                                                         <Insets left="140.0" top="40.0" />
                                                     </VBox.margin>
                                                     <image>
-                                                        <Image url="@../../../../img/download.jpg" />
+                                                        <Image url="@../../../../img/img1/download.jpg" />
                                                     </image>
                                                 </ImageView>
-                                    <Button fx:id="btnChangeCover" mnemonicParsing="false" prefHeight="59.0" prefWidth="205.0" stylesheets="@../../../../css/fullpackstyling.css" text="Change cover">
+                                    <Button fx:id="btnChangeCover" mnemonicParsing="false" prefHeight="59.0" prefWidth="205.0" stylesheets="@../../../../css/css1/fullpackstyling.css" text="Change cover">
                                        <font>
                                           <Font name="Berlin Sans FB" size="18.0" />
                                        </font>
@@ -55,7 +55,7 @@
                                        <graphic>
                                           <ImageView fitHeight="45.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true">
                                              <image>
-                                                <Image url="@../../../../img/icons8-paint-palette-96.png" />
+                                                <Image url="@../../../../img/img1/icons8-paint-palette-96.png" />
                                              </image>
                                           </ImageView>
                                        </graphic>
@@ -109,7 +109,7 @@
                                 </Pane>
                                 <VBox prefHeight="729.0" prefWidth="453.0">
                                     <children>
-                                        <Pane prefHeight="227.0" prefWidth="368.0" stylesheets="@../../../../css/fullpackstyling.css">
+                                        <Pane prefHeight="227.0" prefWidth="368.0" stylesheets="@../../../../css/css1/fullpackstyling.css">
                                             <VBox.margin>
                                                 <Insets bottom="40.0" left="40.0" right="40.0" top="40.0" />
                                             </VBox.margin>
@@ -133,12 +133,12 @@
                                                 </VBox>
                                             </children>
                                         </Pane>
-                                        <Pane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="98.0" prefWidth="251.0" styleClass="panes" stylesheets="@../../../../css/fullpackstyling.css">
+                                        <Pane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="98.0" prefWidth="251.0" styleClass="panes" stylesheets="@../../../../css/css1/fullpackstyling.css">
                                             <VBox.margin>
                                                 <Insets left="90.0" top="30.0" />
                                             </VBox.margin>
                                             <children>
-                                                <Button fx:id="btnPublishChapter" mnemonicParsing="false" prefHeight="98.0" prefWidth="258.0" stylesheets="@../../../../css/fullpackstyling.css" text="Publish chapter">
+                                                <Button fx:id="btnPublishChapter" mnemonicParsing="false" prefHeight="98.0" prefWidth="258.0" stylesheets="@../../../../css/css1/fullpackstyling.css" text="Publish chapter">
                                                     <font>
                                                         <Font name="Berlin Sans FB" size="28.0" />
                                                     </font>

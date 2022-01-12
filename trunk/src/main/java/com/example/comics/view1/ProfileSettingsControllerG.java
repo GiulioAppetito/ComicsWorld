@@ -5,6 +5,7 @@ import com.example.comics.controller.CustomizeProfileController;
 import com.example.comics.model.AccountObserver;
 import com.example.comics.model.fagioli.ProfileBean;
 import com.example.comics.model.UserLogin;
+import com.example.comics.view1.beans.ProfileBean1;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -74,7 +75,7 @@ public class ProfileSettingsControllerG implements AccountObserver {
 
     @FXML
     public void saveUsername(){
-        ProfileBean profileBean = new ProfileBean();
+        ProfileBean profileBean = new ProfileBean1();
         profileBean.setUsername(taNewUsername.getText());
 
         CustomizeProfileController customizeProfileController = new CustomizeProfileController();

@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox alignment="CENTER" prefHeight="236.0" prefWidth="167.0" stylesheets="@../../../../css/fullpackstyling.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.comics.view1.VCardControllerG">
+<VBox alignment="CENTER" prefHeight="236.0" prefWidth="167.0" stylesheets="@../../../../css/css1/fullpackstyling.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.comics.view1.VCardControllerG">
     <styleClass>
         <String fx:value="white-background" />
         <String fx:value="oval-layout" />
@@ -16,7 +16,7 @@
     </styleClass>
     <ImageView fitHeight="188.0" fitWidth="124.0" pickOnBounds="true" preserveRatio="true">
         <image>
-            <Image url="@../../../../img/spidey3.jpg" />
+            <Image url="@../../../../img/img1/spidey3.jpg" />
         </image>
         <VBox.margin>
             <Insets top="20.0" />

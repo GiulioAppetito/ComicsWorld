@@ -2,6 +2,7 @@ package com.example.comics.view1;
 
 import com.example.comics.controller.ResearchController;
 import com.example.comics.model.fagioli.SeriesBean;
+import com.example.comics.model.fagioli.bundle.SeriesBundle;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.layout.GridPane;
@@ -19,8 +20,8 @@ public class FavouriteComicsControllerG {
     public void initialize(){
 
         ResearchController researchController = new ResearchController();
-        //poi ovviamente sarà na cosa diversa da latest
         List<SeriesBean> listOfCards = researchController.getFavouriteSeries();
+
         int size = listOfCards.size();
         int columns = 3;
         int i=1;

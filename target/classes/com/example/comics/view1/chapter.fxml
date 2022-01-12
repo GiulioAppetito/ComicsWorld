@@ -17,232 +17,9 @@
 
 <!--suppress XmlPathReference -->
 
-<StackPane xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
+<StackPane xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <AnchorPane prefHeight="400.0" prefWidth="600.0">
-         <Pane layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="729.0" prefWidth="980.0" styleClass="transparent" stylesheets="@../../../../css/fullpackstyling.css">
-            <HBox prefHeight="729.0" prefWidth="980.0">
-               <Pane prefHeight="649.0" prefWidth="457.0" stylesheets="@../../../../css/fullpackstyling.css">
-                  <HBox.margin>
-                     <Insets bottom="40.0" left="40.0" right="40.0" top="40.0" />
-                  </HBox.margin>
-                  <styleClass>
-                     <String fx:value="panes" />
-                     <String fx:value="oval-layout" />
-                     <String fx:value="glass" />
-                  </styleClass>
-                  <VBox prefHeight="649.0" prefWidth="452.0">
-                     <ImageView fx:id="chapterCoverIV" fitHeight="261.0" fitWidth="160.0" pickOnBounds="true" preserveRatio="true">
-                        <VBox.margin>
-                           <Insets left="140.0" top="20.0" />
-                        </VBox.margin>
-                        <Image url="@../../../../img/download%20(1).jpg" />
-                     </ImageView>
-                     <Label fx:id="lblChapterTitle" alignment="CENTER" prefHeight="74.0" prefWidth="615.0" text="Chapter 2">
-                        <font>
-                           <Font name="Berlin Sans FB" size="24.0" />
-                        </font>
-                     </Label>
-                     <Label fx:id="lblAuthor" alignment="CENTER" prefHeight="74.0" prefWidth="615.0" text="Stan Lee">
-                        <font>
-                           <Font name="Berlin Sans FB" size="24.0" />
-                        </font>
-                     </Label>
-                     <Label fx:id="lblChapterId" alignment="CENTER" prefHeight="74.0" prefWidth="615.0" text="Marvel">
-                        <font>
-                           <Font name="Berlin Sans FB" size="24.0" />
-                        </font>
-                     </Label>
-                     <Label alignment="CENTER" prefHeight="74.0" prefWidth="615.0" text="May,1962">
-                        <font>
-                           <Font name="Berlin Sans FB" size="24.0" />
-                        </font>
-                     </Label>
-                     <Label alignment="CENTER" prefHeight="74.0" prefWidth="615.0">
-                        <font>
-                           <Font name="Berlin Sans FB" size="24.0" />
-                        </font>
-                     </Label>
-                     <HBox prefWidth="393.0" spacing="20.0">
-                        <VBox.margin>
-                           <Insets bottom="20.0" left="20.0" right="20.0" />
-                        </VBox.margin>
-                        <children>
-                           <Button mnemonicParsing="false" prefHeight="84.0" prefWidth="157.0" stylesheets="@../../../../css/fullpackstyling.css">
-                              <font>
-                                 <Font name="Berlin Sans FB" size="24.0" />
-                              </font>
-                              <styleClass>
-                                 <String fx:value="oval-layout" />
-                                 <String fx:value="transparent" />
-                                 <String fx:value="buttonEdit" />
-                              </styleClass>
-                              <graphic>
-                                 <ImageView fitHeight="45.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true">
-                                    <image>
-                                       <Image url="file:/C:/Users/biril/IdeaProjects/ComicsWorld/trunk/src/main/resources/img/like.png" />
-                                    </image>
-                                 </ImageView>
-                              </graphic>
-                           </Button>
-                           <Button mnemonicParsing="false" prefHeight="84.0" prefWidth="157.0" stylesheets="@../../../../css/fullpackstyling.css">
-                              <font>
-                                 <Font name="Berlin Sans FB" size="24.0" />
-                              </font>
-                              <styleClass>
-                                 <String fx:value="oval-layout" />
-                                 <String fx:value="transparent" />
-                                 <String fx:value="buttonEdit" />
-                              </styleClass>
-                              <graphic>
-                                 <ImageView fitHeight="45.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true">
-                                    <Image url="@../../../../img/icons8-libro-96.png" />
-                                 </ImageView>
-                              </graphic>
-                           </Button>
-                           <Button mnemonicParsing="false" prefHeight="84.0" prefWidth="157.0" stylesheets="@../../../../css/fullpackstyling.css">
-                              <font>
-                                 <Font name="Berlin Sans FB" size="24.0" />
-                              </font>
-                              <styleClass>
-                                 <String fx:value="oval-layout" />
-                                 <String fx:value="transparent" />
-                                 <String fx:value="buttonEdit" />
-                              </styleClass>
-                              <graphic>
-                                 <ImageView fitHeight="45.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true">
-                                    <image>
-                                       <Image url="@../../../../img/icons8-book-reading-96.png" />
-                                    </image>
-                                 </ImageView>
-                              </graphic>
-                           </Button>
-                           <Button mnemonicParsing="false" prefHeight="84.0" prefWidth="157.0" stylesheets="@../../../../css/fullpackstyling.css">
-                              <font>
-                                 <Font name="Berlin Sans FB" size="24.0" />
-                              </font>
-                              <styleClass>
-                                 <String fx:value="oval-layout" />
-                                 <String fx:value="transparent" />
-                                 <String fx:value="buttonEdit" />
-                              </styleClass>
-                              <graphic>
-                                 <ImageView fitHeight="45.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true">
-                                    <Image url="@../../../../img/icons8-segno-di-spunta-96.png" />
-                                 </ImageView>
-                              </graphic>
-                           </Button>
-                        </children>
-                     </HBox>
-                  </VBox>
-                  <Button fx:id="btnBack" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="51.0" prefWidth="81.0" stylesheets="@../../../../css/fullpackstyling.css">
-                     <font>
-                        <Font name="Berlin Sans FB" size="24.0" />
-                     </font>
-                     <styleClass>
-                        <String fx:value="oval-layout" />
-                        <String fx:value="transparent" />
-                        <String fx:value="buttonEdit" />
-                     </styleClass>
-                     <graphic>
-                        <ImageView fitHeight="32.0" fitWidth="39.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../../../../img/back.png" />
-                           </image>
-                        </ImageView>
-                     </graphic>
-                  </Button>
-               </Pane>
-               <VBox prefHeight="729.0" prefWidth="453.0">
-                  <Pane prefHeight="227.0" prefWidth="368.0" stylesheets="@../../../../css/fullpackstyling.css">
-                     <VBox.margin>
-                        <Insets bottom="40.0" left="40.0" right="40.0" top="40.0" />
-                     </VBox.margin>
-                     <styleClass>
-                        <String fx:value="panes" />
-                        <String fx:value="glass" />
-                     </styleClass>
-                     <children>
-                        <VBox prefHeight="200.0" prefWidth="368.0">
-                           <children>
-                              <Label prefHeight="74.0" prefWidth="615.0" text="Description">
-                                 <font>
-                                    <Font name="Berlin Sans FB" size="24.0" />
-                                 </font>
-                                 <VBox.margin>
-                                    <Insets left="20.0" />
-                                 </VBox.margin>
-                              </Label>
-                              <TextArea fx:id="taDescription" prefHeight="295.0" prefWidth="368.0" />
-                              <ScrollPane hbarPolicy="NEVER" prefHeight="125.0" prefWidth="368.0">
-                                 <VBox.margin>
-                                    <Insets bottom="10.0" left="10.0" right="10.0" />
-                                 </VBox.margin>
-                              </ScrollPane>
-                           </children>
-                        </VBox>
-                     </children>
-                  </Pane>
-                  <Pane prefHeight="377.0" prefWidth="308.0" stylesheets="@../../../../css/fullpackstyling.css">
-                     <VBox.margin>
-                        <Insets bottom="40.0" left="40.0" right="40.0" top="40.0" />
-                     </VBox.margin>
-                     <styleClass>
-                        <String fx:value="panes" />
-                        <String fx:value="glass" />
-                     </styleClass>
-                     <children>
-                        <VBox prefHeight="369.0" prefWidth="368.0">
-                           <children>
-                              <HBox>
-                                 <children>
-                                    <Label prefHeight="74.0" prefWidth="246.0" text="Reviews">
-                                       <font>
-                                          <Font name="Berlin Sans FB" size="24.0" />
-                                       </font>
-                                       <padding>
-                                          <Insets left="20.0" />
-                                       </padding>
-                                    </Label>
-                                    <Button fx:id="btnAddReview" mnemonicParsing="false" prefHeight="62.0" prefWidth="291.0" stylesheets="@../../../../css/fullpackstyling.css" text="Add a review">
-                                       <font>
-                                          <Font name="Berlin Sans FB" size="18.0" />
-                                       </font>
-                                       <styleClass>
-                                          <String fx:value="oval-layout" />
-                                          <String fx:value="transparent" />
-                                          <String fx:value="buttonEdit" />
-                                       </styleClass>
-                                       <graphic>
-                                          <ImageView fitHeight="42.0" fitWidth="56.0" pickOnBounds="true" preserveRatio="true">
-                                             <image>
-                                                <Image url="@../../../../img/matita.png" />
-                                             </image>
-                                          </ImageView>
-                                       </graphic>
-                                       <HBox.margin>
-                                          <Insets right="10.0" top="5.0" />
-                                       </HBox.margin>
-                                    </Button>
-                                 </children>
-                              </HBox>
-                              <ScrollPane hbarPolicy="NEVER" prefHeight="265.0" prefWidth="348.0" styleClass="transparent">
-                                 <VBox.margin>
-                                    <Insets left="10.0" right="10.0" />
-                                 </VBox.margin>
-                                 <content>
-                                    <VBox fx:id="vbReviews" prefHeight="262.0" prefWidth="346.0" spacing="5.0" styleClass="transparent" stylesheets="@../../../../css/fullpackstyling.css" />
-                                 </content>
-                              </ScrollPane>
-                           </children>
-                        </VBox>
-                     </children>
-                  </Pane>
-               </VBox>
-            </HBox>
-         </Pane>
-      </AnchorPane>
-      <Pane fx:id="newBadgeWonPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="252.0" prefWidth="366.0" styleClass="linear-grad" stylesheets="@../../../../css/fullpackstyling.css">
+      <Pane fx:id="newBadgeWonPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="252.0" prefWidth="366.0" styleClass="linear-grad" stylesheets="@../../../../css/css1/fullpackstyling.css">
          <children>
             <VBox prefHeight="252.0" prefWidth="362.0">
                <children>
@@ -259,7 +36,7 @@
                               <Insets left="20.0" />
                            </padding>
                         </Label>
-                        <Button fx:id="btnCloseBadge" alignment="CENTER_RIGHT" mnemonicParsing="false" prefHeight="49.0" prefWidth="65.0" stylesheets="@../../../../css/fullpackstyling.css" text="X" textAlignment="CENTER" textFill="WHITE">
+                        <Button fx:id="btnCloseBadge" alignment="CENTER_RIGHT" mnemonicParsing="false" prefHeight="49.0" prefWidth="65.0" stylesheets="@../../../../css/css1/fullpackstyling.css" text="X" textAlignment="CENTER" textFill="WHITE">
                            <font>
                               <Font name="Berlin Sans FB" size="24.0" />
                            </font>
@@ -284,7 +61,7 @@
                      <children>
                         <ImageView fx:id="badgeIconView" fitHeight="127.0" fitWidth="128.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../../../../img/download%20(2).png" />
+                              <Image url="@../../../../img/img1/download%20(2).png" />
                            </image>
                         </ImageView>
                         <VBox prefHeight="127.0" prefWidth="201.0">
@@ -313,7 +90,7 @@
             </VBox>
          </children>
       </Pane>
-      <Pane fx:id="paneInsertReview" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="473.0" prefWidth="460.0" styleClass="linear-grad" stylesheets="@../../../../css/fullpackstyling.css">
+      <Pane fx:id="paneInsertReview" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="473.0" prefWidth="460.0" styleClass="linear-grad" stylesheets="@../../../../css/css1/fullpackstyling.css">
          <StackPane.margin>
             <Insets />
          </StackPane.margin>
@@ -333,7 +110,7 @@
                      <Insets left="5.0" />
                   </HBox.margin>
                </Label>
-               <Button fx:id="btnCloseEditor" alignment="CENTER_RIGHT" mnemonicParsing="false" prefHeight="50.0" prefWidth="57.0" stylesheets="@../../../../css/fullpackstyling.css" text="X" textAlignment="CENTER" textFill="WHITE">
+               <Button fx:id="btnCloseEditor" alignment="CENTER_RIGHT" mnemonicParsing="false" prefHeight="50.0" prefWidth="57.0" stylesheets="@../../../../css/css1/fullpackstyling.css" text="X" textAlignment="CENTER" textFill="WHITE">
                   <font>
                      <Font name="Berlin Sans FB" size="24.0" />
                   </font>
@@ -369,7 +146,7 @@
                            <graphic>
                               <ImageView fx:id="imgStar11" fitHeight="69.0" fitWidth="59.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@../../../../img/full-star3.png" />
+                                    <Image url="@../../../../img/img1/full-star3.png" />
                                  </image>
                               </ImageView>
                            </graphic>
@@ -381,7 +158,7 @@
                            <graphic>
                               <ImageView fx:id="imgStar12" fitHeight="69.0" fitWidth="59.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@../../../../img/empty-star3.png" />
+                                    <Image url="@../../../../img/img1/empty-star3.png" />
                                  </image>
                               </ImageView>
                            </graphic>
@@ -393,7 +170,7 @@
                            <graphic>
                               <ImageView fx:id="imgStar13" fitHeight="69.0" fitWidth="59.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@../../../../img/empty-star3.png" />
+                                    <Image url="@../../../../img/img1/empty-star3.png" />
                                  </image>
                               </ImageView>
                            </graphic>
@@ -405,7 +182,7 @@
                            <graphic>
                               <ImageView fx:id="imgStar14" fitHeight="69.0" fitWidth="59.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@../../../../img/empty-star3.png" />
+                                    <Image url="@../../../../img/img1/empty-star3.png" />
                                  </image>
                               </ImageView>
                            </graphic>
@@ -417,7 +194,7 @@
                            <graphic>
                               <ImageView fx:id="imgStar15" fitHeight="69.0" fitWidth="59.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@../../../../img/empty-star3.png" />
+                                    <Image url="@../../../../img/img1/empty-star3.png" />
                                  </image>
                               </ImageView>
                            </graphic>
@@ -433,7 +210,7 @@
                            <graphic>
                               <ImageView fx:id="imgStar21" fitHeight="69.0" fitWidth="59.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@../../../../img/full-star3.png" />
+                                    <Image url="@../../../../img/img1/full-star3.png" />
                                  </image>
                               </ImageView>
                            </graphic>
@@ -445,7 +222,7 @@
                            <graphic>
                               <ImageView fx:id="imgStar22" fitHeight="69.0" fitWidth="59.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@../../../../img/full-star3.png" />
+                                    <Image url="@../../../../img/img1/full-star3.png" />
                                  </image>
                               </ImageView>
                            </graphic>
@@ -457,7 +234,7 @@
                            <graphic>
                               <ImageView fx:id="imgStar23" fitHeight="69.0" fitWidth="59.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@../../../../img/empty-star3.png" />
+                                    <Image url="@../../../../img/img1/empty-star3.png" />
                                  </image>
                               </ImageView>
                            </graphic>
@@ -469,7 +246,7 @@
                            <graphic>
                               <ImageView fx:id="imgStar24" fitHeight="69.0" fitWidth="59.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@../../../../img/empty-star3.png" />
+                                    <Image url="@../../../../img/img1/empty-star3.png" />
                                  </image>
                               </ImageView>
                            </graphic>
@@ -481,7 +258,7 @@
                            <graphic>
                               <ImageView fx:id="imgStar25" fitHeight="69.0" fitWidth="59.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@../../../../img/empty-star3.png" />
+                                    <Image url="@../../../../img/img1/empty-star3.png" />
                                  </image>
                               </ImageView>
                            </graphic>
@@ -497,7 +274,7 @@
                            <graphic>
                               <ImageView fx:id="imgStar31" fitHeight="69.0" fitWidth="59.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@../../../../img/full-star3.png" />
+                                    <Image url="@../../../../img/img1/full-star3.png" />
                                  </image>
                               </ImageView>
                            </graphic>
@@ -509,7 +286,7 @@
                            <graphic>
                               <ImageView fx:id="imgStar32" fitHeight="69.0" fitWidth="59.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@../../../../img/full-star3.png" />
+                                    <Image url="@../../../../img/img1/full-star3.png" />
                                  </image>
                               </ImageView>
                            </graphic>
@@ -521,7 +298,7 @@
                            <graphic>
                               <ImageView fx:id="imgStar33" fitHeight="69.0" fitWidth="59.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@../../../../img/full-star3.png" />
+                                    <Image url="@../../../../img/img1/full-star3.png" />
                                  </image>
                               </ImageView>
                            </graphic>
@@ -533,7 +310,7 @@
                            <graphic>
                               <ImageView fx:id="imgStar34" fitHeight="69.0" fitWidth="59.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@../../../../img/empty-star3.png" />
+                                    <Image url="@../../../../img/img1/empty-star3.png" />
                                  </image>
                               </ImageView>
                            </graphic>
@@ -545,7 +322,7 @@
                            <graphic>
                               <ImageView fx:id="imgStar35" fitHeight="69.0" fitWidth="59.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@../../../../img/empty-star3.png" />
+                                    <Image url="@../../../../img/img1/empty-star3.png" />
                                  </image>
                               </ImageView>
                            </graphic>
@@ -561,7 +338,7 @@
                            <graphic>
                               <ImageView fx:id="imgStar41" fitHeight="69.0" fitWidth="59.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@../../../../img/full-star3.png" />
+                                    <Image url="@../../../../img/img1/full-star3.png" />
                                  </image>
                               </ImageView>
                            </graphic>
@@ -573,7 +350,7 @@
                            <graphic>
                               <ImageView fx:id="imgStar42" fitHeight="69.0" fitWidth="59.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@../../../../img/full-star3.png" />
+                                    <Image url="@../../../../img/img1/full-star3.png" />
                                  </image>
                               </ImageView>
                            </graphic>
@@ -585,7 +362,7 @@
                            <graphic>
                               <ImageView fx:id="imgStar43" fitHeight="69.0" fitWidth="59.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@../../../../img/full-star3.png" />
+                                    <Image url="@../../../../img/img1/full-star3.png" />
                                  </image>
                               </ImageView>
                            </graphic>
@@ -597,7 +374,7 @@
                            <graphic>
                               <ImageView fx:id="imgStar44" fitHeight="69.0" fitWidth="59.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@../../../../img/full-star3.png" />
+                                    <Image url="@../../../../img/img1/full-star3.png" />
                                  </image>
                               </ImageView>
                            </graphic>
@@ -609,7 +386,7 @@
                            <graphic>
                               <ImageView fx:id="imgStar45" fitHeight="69.0" fitWidth="59.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@../../../../img/empty-star3.png" />
+                                    <Image url="@../../../../img/img1/empty-star3.png" />
                                  </image>
                               </ImageView>
                            </graphic>
@@ -625,7 +402,7 @@
                            <graphic>
                               <ImageView fx:id="imgStar51" fitHeight="69.0" fitWidth="59.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@../../../../img/full-star3.png" />
+                                    <Image url="@../../../../img/img1/full-star3.png" />
                                  </image>
                               </ImageView>
                            </graphic>
@@ -637,7 +414,7 @@
                            <graphic>
                               <ImageView fx:id="imgStar52" fitHeight="69.0" fitWidth="59.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@../../../../img/full-star3.png" />
+                                    <Image url="@../../../../img/img1/full-star3.png" />
                                  </image>
                               </ImageView>
                            </graphic>
@@ -649,7 +426,7 @@
                            <graphic>
                               <ImageView fx:id="imgStar53" fitHeight="69.0" fitWidth="59.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@../../../../img/full-star3.png" />
+                                    <Image url="@../../../../img/img1/full-star3.png" />
                                  </image>
                               </ImageView>
                            </graphic>
@@ -661,7 +438,7 @@
                            <graphic>
                               <ImageView fx:id="imgStar54" fitHeight="69.0" fitWidth="59.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@../../../../img/full-star3.png" />
+                                    <Image url="@../../../../img/img1/full-star3.png" />
                                  </image>
                               </ImageView>
                            </graphic>
@@ -673,7 +450,7 @@
                            <graphic>
                               <ImageView fx:id="imgStar55" fitHeight="69.0" fitWidth="59.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@../../../../img/full-star3.png" />
+                                    <Image url="@../../../../img/img1/full-star3.png" />
                                  </image>
                               </ImageView>
                            </graphic>
@@ -689,7 +466,7 @@
                            <graphic>
                               <ImageView fx:id="imgStar01" fitHeight="80.0" fitWidth="59.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@../../../../img/empty-star3.png" />
+                                    <Image url="@../../../../img/img1/empty-star3.png" />
                                  </image>
                               </ImageView>
                            </graphic>
@@ -701,7 +478,7 @@
                            <graphic>
                               <ImageView fx:id="imgStar02" fitHeight="69.0" fitWidth="59.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@../../../../img/empty-star3.png" />
+                                    <Image url="@../../../../img/img1/empty-star3.png" />
                                  </image>
                               </ImageView>
                            </graphic>
@@ -713,7 +490,7 @@
                            <graphic>
                               <ImageView fx:id="imgStar03" fitHeight="69.0" fitWidth="59.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@../../../../img/empty-star3.png" />
+                                    <Image url="@../../../../img/img1/empty-star3.png" />
                                  </image>
                               </ImageView>
                            </graphic>
@@ -725,7 +502,7 @@
                            <graphic>
                               <ImageView fx:id="imgStar04" fitHeight="69.0" fitWidth="59.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@../../../../img/empty-star3.png" />
+                                    <Image url="@../../../../img/img1/empty-star3.png" />
                                  </image>
                               </ImageView>
                            </graphic>
@@ -737,7 +514,7 @@
                            <graphic>
                               <ImageView fx:id="imgStar05" fitHeight="69.0" fitWidth="59.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@../../../../img/empty-star3.png" />
+                                    <Image url="@../../../../img/img1/empty-star3.png" />
                                  </image>
                               </ImageView>
                            </graphic>
@@ -747,7 +524,7 @@
                </children>
             </StackPane>
          </VBox>
-         <Button fx:id="btnPostReview" layoutX="147.0" layoutY="393.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="178.0" stylesheets="@../../../../css/fullpackstyling.css" text="Post" textFill="WHITE">
+         <Button fx:id="btnPostReview" layoutX="147.0" layoutY="393.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="178.0" stylesheets="@../../../../css/css1/fullpackstyling.css" text="Post" textFill="WHITE">
             <font>
                <Font name="Berlin Sans FB" size="24.0" />
             </font>
@@ -759,7 +536,7 @@
             <graphic>
                <ImageView fitHeight="41.0" fitWidth="37.0" pickOnBounds="true" preserveRatio="true">
                   <image>
-                     <Image url="@../../../../img/post2.png" />
+                     <Image url="@../../../../img/img1/post2.png" />
                   </image>
                </ImageView>
             </graphic>
@@ -768,5 +545,198 @@
             </padding>
          </Button>
       </Pane>
+      <AnchorPane prefHeight="400.0" prefWidth="600.0">
+         <Pane layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="729.0" prefWidth="980.0" styleClass="transparent" stylesheets="@../../../../css/css1/fullpackstyling.css">
+            <HBox prefHeight="729.0" prefWidth="980.0">
+               <Pane prefHeight="649.0" prefWidth="457.0" stylesheets="@../../../../css/css1/fullpackstyling.css">
+                  <HBox.margin>
+                     <Insets bottom="40.0" left="40.0" right="40.0" top="40.0" />
+                  </HBox.margin>
+                  <styleClass>
+                     <String fx:value="panes" />
+                     <String fx:value="oval-layout" />
+                     <String fx:value="glass" />
+                  </styleClass>
+                  <VBox prefHeight="649.0" prefWidth="452.0">
+                     <ImageView fx:id="chapterCoverIV" fitHeight="261.0" fitWidth="160.0" pickOnBounds="true" preserveRatio="true">
+                        <VBox.margin>
+                           <Insets left="140.0" top="20.0" />
+                        </VBox.margin>
+                        <Image url="@../../../../img/img1/download%20(1).jpg" />
+                     </ImageView>
+                     <Label fx:id="lblChapterTitle" alignment="CENTER" prefHeight="74.0" prefWidth="615.0" text="Chapter 2">
+                        <font>
+                           <Font name="Berlin Sans FB" size="24.0" />
+                        </font>
+                     </Label>
+                     <Label fx:id="lblAuthor" alignment="CENTER" prefHeight="74.0" prefWidth="615.0" text="Stan Lee">
+                        <font>
+                           <Font name="Berlin Sans FB" size="24.0" />
+                        </font>
+                     </Label>
+                     <Label fx:id="lblChapterId" alignment="CENTER" prefHeight="74.0" prefWidth="615.0" text="Marvel">
+                        <font>
+                           <Font name="Berlin Sans FB" size="24.0" />
+                        </font>
+                     </Label>
+                     <Label alignment="CENTER" prefHeight="74.0" prefWidth="615.0" text="May,1962">
+                        <font>
+                           <Font name="Berlin Sans FB" size="24.0" />
+                        </font>
+                     </Label>
+                     <Label alignment="CENTER" prefHeight="74.0" prefWidth="615.0">
+                        <font>
+                           <Font name="Berlin Sans FB" size="24.0" />
+                        </font>
+                     </Label>
+                     <HBox prefWidth="393.0" spacing="20.0">
+                        <VBox.margin>
+                           <Insets bottom="20.0" left="20.0" right="20.0" />
+                        </VBox.margin>
+                        <children>
+                           <Button mnemonicParsing="false" prefHeight="63.0" prefWidth="195.0" stylesheets="@../../../../css/css1/fullpackstyling.css" text="Buy on Amazon">
+                              <font>
+                                 <Font name="Berlin Sans FB" size="18.0" />
+                              </font>
+                              <styleClass>
+                                 <String fx:value="oval-layout" />
+                                 <String fx:value="transparent" />
+                                 <String fx:value="buttonEdit" />
+                              </styleClass>
+                              <graphic>
+                                 <ImageView fitHeight="45.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                       <Image url="@../../../../img/img1/coin.png" />
+                                    </image>
+                                 </ImageView>
+                              </graphic>
+                           </Button>
+                           <Button mnemonicParsing="false" prefHeight="63.0" prefWidth="195.0" stylesheets="@../../../../css/css1/fullpackstyling.css" text="Mark as Read">
+                              <font>
+                                 <Font name="Berlin Sans FB" size="18.0" />
+                              </font>
+                              <styleClass>
+                                 <String fx:value="oval-layout" />
+                                 <String fx:value="transparent" />
+                                 <String fx:value="buttonEdit" />
+                              </styleClass>
+                              <graphic>
+                                 <ImageView fitHeight="45.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                       <Image url="@../../../../img/img1/icons8-book-reading-96.png" />
+                                    </image>
+                                 </ImageView>
+                              </graphic>
+                           </Button>
+                        </children>
+                     </HBox>
+                  </VBox>
+                  <Button fx:id="btnBack" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="51.0" prefWidth="81.0" stylesheets="@../../../../css/css1/fullpackstyling.css">
+                     <font>
+                        <Font name="Berlin Sans FB" size="24.0" />
+                     </font>
+                     <styleClass>
+                        <String fx:value="oval-layout" />
+                        <String fx:value="transparent" />
+                        <String fx:value="buttonEdit" />
+                     </styleClass>
+                     <graphic>
+                        <ImageView fitHeight="32.0" fitWidth="39.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../../img/img1/back.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+               </Pane>
+               <VBox prefHeight="729.0" prefWidth="453.0">
+                  <Pane prefHeight="227.0" prefWidth="368.0" stylesheets="@../../../../css/css1/fullpackstyling.css">
+                     <VBox.margin>
+                        <Insets bottom="40.0" left="40.0" right="40.0" top="40.0" />
+                     </VBox.margin>
+                     <styleClass>
+                        <String fx:value="panes" />
+                        <String fx:value="glass" />
+                     </styleClass>
+                     <children>
+                        <VBox prefHeight="200.0" prefWidth="368.0">
+                           <children>
+                              <Label prefHeight="74.0" prefWidth="615.0" text="Description">
+                                 <font>
+                                    <Font name="Berlin Sans FB" size="24.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets left="20.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <TextArea fx:id="taDescription" prefHeight="295.0" prefWidth="368.0" />
+                              <ScrollPane hbarPolicy="NEVER" prefHeight="125.0" prefWidth="368.0">
+                                 <VBox.margin>
+                                    <Insets bottom="10.0" left="10.0" right="10.0" />
+                                 </VBox.margin>
+                              </ScrollPane>
+                           </children>
+                        </VBox>
+                     </children>
+                  </Pane>
+                  <Pane prefHeight="377.0" prefWidth="308.0" stylesheets="@../../../../css/css1/fullpackstyling.css">
+                     <VBox.margin>
+                        <Insets bottom="40.0" left="40.0" right="40.0" top="40.0" />
+                     </VBox.margin>
+                     <styleClass>
+                        <String fx:value="panes" />
+                        <String fx:value="glass" />
+                     </styleClass>
+                     <children>
+                        <VBox prefHeight="369.0" prefWidth="368.0">
+                           <children>
+                              <HBox>
+                                 <children>
+                                    <Label prefHeight="74.0" prefWidth="246.0" text="Reviews">
+                                       <font>
+                                          <Font name="Berlin Sans FB" size="24.0" />
+                                       </font>
+                                       <padding>
+                                          <Insets left="20.0" />
+                                       </padding>
+                                    </Label>
+                                    <Button fx:id="btnAddReview" mnemonicParsing="false" prefHeight="62.0" prefWidth="291.0" stylesheets="@../../../../css/css1/fullpackstyling.css" text="Add a review">
+                                       <font>
+                                          <Font name="Berlin Sans FB" size="18.0" />
+                                       </font>
+                                       <styleClass>
+                                          <String fx:value="oval-layout" />
+                                          <String fx:value="transparent" />
+                                          <String fx:value="buttonEdit" />
+                                       </styleClass>
+                                       <graphic>
+                                          <ImageView fitHeight="42.0" fitWidth="56.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../../../../img/img1/matita.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                       <HBox.margin>
+                                          <Insets right="10.0" top="5.0" />
+                                       </HBox.margin>
+                                    </Button>
+                                 </children>
+                              </HBox>
+                              <ScrollPane hbarPolicy="NEVER" prefHeight="265.0" prefWidth="348.0" styleClass="transparent">
+                                 <VBox.margin>
+                                    <Insets left="10.0" right="10.0" />
+                                 </VBox.margin>
+                                 <content>
+                                    <VBox fx:id="vbReviews" prefHeight="262.0" prefWidth="346.0" spacing="5.0" styleClass="transparent" stylesheets="@../../../../css/css1/fullpackstyling.css" />
+                                 </content>
+                              </ScrollPane>
+                           </children>
+                        </VBox>
+                     </children>
+                  </Pane>
+               </VBox>
+            </HBox>
+         </Pane>
+      </AnchorPane>
    </children>
 </StackPane>

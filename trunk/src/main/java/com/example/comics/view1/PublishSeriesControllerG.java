@@ -1,14 +1,6 @@
 package com.example.comics.view1;
 
-import com.example.comics.controller.PublishSeriesController;
-import com.example.comics.model.Chapter;
 import com.example.comics.model.Genres;
-import com.example.comics.model.Levels;
-import com.example.comics.model.UserLogin;
-import com.example.comics.model.dao.SeriesDAO;
-import com.example.comics.model.fagioli.ObjectiveBean;
-import com.example.comics.model.fagioli.SeriesBean;
-import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
@@ -16,8 +8,6 @@ import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
-
-import java.util.List;
 
 
 public class PublishSeriesControllerG {

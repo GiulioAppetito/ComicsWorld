@@ -13,6 +13,6 @@ module com.example.coomics {
 
     exports com.example.comics.view1;
     opens com.example.comics.view1 to javafx.fxml;
-    exports com.example.comics.controller;
-    opens com.example.comics.controller to javafx.fxml;
+    exports com.example.comics.view2;
+    opens com.example.comics.view2 to javafx.fxml;
 }

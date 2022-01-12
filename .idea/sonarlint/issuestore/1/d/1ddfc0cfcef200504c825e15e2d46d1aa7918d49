@@ -1,0 +1,4 @@
+
+Z	java:S106"9Replace this use of System.out or System.err by a logger.(†Ó¶˜ÿÿÿÿÿ8û«ÓÕä/
+e
+java:S2095Z"HUse try-with-resources or close this "Connection" in a "finally" clause.(»¥ÏÉ8û«ÓÕä/

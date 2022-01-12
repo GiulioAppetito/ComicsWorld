@@ -1,0 +1,6 @@
+
+‰
+java:S1130N"lRemove the declaration of thrown exception 'java.io.IOException', as it cannot be thrown from method's body.(ğšé…8Œ¦óÛä/
+U	java:S106T"9Replace this use of System.out or System.err by a logger.(ï²ï«8Œ¦óÛä/
+U	java:S106f"9Replace this use of System.out or System.err by a logger.(£Í×8Œ¦óÛä/
+Y	java:S125Ä"<This block of commented-out lines of code should be removed.(³‘˜¾8Œ¦óÛä/

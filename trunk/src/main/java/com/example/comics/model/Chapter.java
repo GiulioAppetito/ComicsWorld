@@ -4,6 +4,7 @@ import com.example.comics.model.dao.ChapterDAO;
 import com.example.comics.model.dao.ReviewDAO;
 import com.example.comics.model.dao.ReviewsNotFoundException;
 import com.example.comics.model.fagioli.ReviewBean;
+import com.example.comics.model.fagioli.bundle.ReviewBundle;
 import javafx.scene.image.Image;
 
 import java.util.ArrayList;
@@ -78,9 +79,7 @@ public class Chapter extends ChapterSubject {
         }
         this.averageRating = calculateAverageRating();
 
-
-        //SBAGLIATISSIMO!!!!!:
-        ReviewBean reviewBean = new ReviewBean();
+        ReviewBean reviewBean = new ReviewBundle();
         reviewBean.setRating(rating);
         reviewBean.setComment(comment);
         reviewBean.setUsername(username);

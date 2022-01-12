@@ -23,11 +23,11 @@
    <children>
       <Pane>
          <children>
-            <Pane layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="729.0" prefWidth="980.0" styleClass="transparent" stylesheets="@../../../../css/fullpackstyling.css">
+            <Pane layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="729.0" prefWidth="980.0" styleClass="transparent" stylesheets="@../../../../css/css1/fullpackstyling.css">
                <children>
                   <HBox prefHeight="729.0" prefWidth="980.0">
                      <children>
-                        <Pane prefHeight="649.0" prefWidth="457.0" stylesheets="@../../../../css/fullpackstyling.css">
+                        <Pane prefHeight="649.0" prefWidth="457.0" stylesheets="@../../../../css/css1/fullpackstyling.css">
                            <HBox.margin>
                               <Insets bottom="40.0" left="40.0" right="40.0" top="40.0" />
                            </HBox.margin>
@@ -39,7 +39,7 @@
                            <children>
                               <VBox prefHeight="649.0" prefWidth="452.0">
                                  <children>
-                                    <Button fx:id="btnBack" mnemonicParsing="false" prefHeight="51.0" prefWidth="81.0" stylesheets="@../../../../css/fullpackstyling.css">
+                                    <Button fx:id="btnBack" mnemonicParsing="false" prefHeight="51.0" prefWidth="81.0" stylesheets="@../../../../css/css1/fullpackstyling.css">
                                        <font>
                                           <Font name="Berlin Sans FB" size="24.0" />
                                        </font>
@@ -51,7 +51,7 @@
                                        <graphic>
                                           <ImageView fitHeight="32.0" fitWidth="39.0" pickOnBounds="true" preserveRatio="true">
                                              <image>
-                                                <Image url="@../../../../img/back.png" />
+                                                <Image url="@../../../../img/img1/back.png" />
                                              </image>
                                           </ImageView>
                                        </graphic>
@@ -64,7 +64,7 @@
                                           <Insets left="140.0" />
                                        </VBox.margin>
                                        <image>
-                                          <Image url="@../../../../img/download.jpg" />
+                                          <Image url="@../../../../img/img1/download.jpg" />
                                        </image>
                                     </ImageView>
                                     <VBox>
@@ -141,7 +141,7 @@
                         </Pane>
                         <VBox prefHeight="729.0" prefWidth="453.0">
                            <children>
-                              <Pane prefHeight="227.0" prefWidth="368.0" stylesheets="@../../../../css/fullpackstyling.css">
+                              <Pane prefHeight="227.0" prefWidth="368.0" stylesheets="@../../../../css/css1/fullpackstyling.css">
                                  <VBox.margin>
                                     <Insets bottom="40.0" left="40.0" right="40.0" top="40.0" />
                                  </VBox.margin>
@@ -165,7 +165,7 @@
                                     </VBox>
                                  </children>
                               </Pane>
-                              <Pane prefHeight="144.0" prefWidth="368.0" stylesheets="@../../../../css/fullpackstyling.css">
+                              <Pane prefHeight="144.0" prefWidth="368.0" stylesheets="@../../../../css/css1/fullpackstyling.css">
                                  <VBox.margin>
                                     <Insets bottom="40.0" left="40.0" right="40.0" top="40.0" />
                                  </VBox.margin>
@@ -192,7 +192,7 @@
                                                 <Insets bottom="10.0" left="20.0" />
                                              </VBox.margin>
                                           </Label>
-                                          <Button fx:id="btnAddObjectives" mnemonicParsing="false" prefHeight="59.0" prefWidth="205.0" stylesheets="@../../../../css/fullpackstyling.css" text="Add objectives">
+                                          <Button fx:id="btnAddObjectives" mnemonicParsing="false" prefHeight="59.0" prefWidth="205.0" stylesheets="@../../../../css/css1/fullpackstyling.css" text="Add objectives">
                                              <font>
                                                 <Font name="Berlin Sans FB" size="18.0" />
                                              </font>
@@ -204,7 +204,7 @@
                                              <graphic>
                                                 <ImageView fitHeight="45.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true">
                                                    <image>
-                                                      <Image url="@../../../../img/post.png" />
+                                                      <Image url="@../../../../img/img1/post.png" />
                                                    </image>
                                                 </ImageView>
                                              </graphic>
@@ -216,12 +216,12 @@
                                     </VBox>
                                  </children>
                               </Pane>
-                              <Pane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="98.0" prefWidth="251.0" styleClass="panes" stylesheets="@../../../../css/fullpackstyling.css">
+                              <Pane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="98.0" prefWidth="251.0" styleClass="panes" stylesheets="@../../../../css/css1/fullpackstyling.css">
                                  <VBox.margin>
                                     <Insets left="90.0" top="30.0" />
                                  </VBox.margin>
                                  <children>
-                                    <Button fx:id="btnPublishSeries" mnemonicParsing="false" prefHeight="98.0" prefWidth="258.0" stylesheets="@../../../../css/fullpackstyling.css" text="Publish series">
+                                    <Button fx:id="btnPublishSeries" mnemonicParsing="false" prefHeight="98.0" prefWidth="258.0" stylesheets="@../../../../css/css1/fullpackstyling.css" text="Publish series">
                                        <font>
                                           <Font name="Berlin Sans FB" size="28.0" />
                                        </font>
@@ -262,7 +262,7 @@
                               <Insets left="20.0" />
                            </padding>
                         </Label>
-                        <Button fx:id="btnCloseObjectives" mnemonicParsing="false" prefHeight="51.0" prefWidth="49.0" stylesheets="@../../../../css/fullpackstyling.css" textFill="WHITE">
+                        <Button fx:id="btnCloseObjectives" mnemonicParsing="false" prefHeight="51.0" prefWidth="49.0" stylesheets="@../../../../css/css1/fullpackstyling.css" textFill="WHITE">
                            <font>
                               <Font name="Berlin Sans FB" size="18.0" />
                            </font>
@@ -274,7 +274,7 @@
                            <graphic>
                               <ImageView fitHeight="32.0" fitWidth="39.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@../../../../img/icons8-close-64.png" />
+                                    <Image url="@../../../../img/img1/icons8-close-64.png" />
                                  </image>
                               </ImageView>
                            </graphic>
@@ -752,7 +752,7 @@
                   </HBox>
                </children>
             </VBox>
-            <Button fx:id="btnApplyObjectives" layoutX="517.0" layoutY="486.0" mnemonicParsing="false" prefHeight="51.0" prefWidth="130.0" stylesheets="@../../../../css/fullpackstyling.css" text="Apply" textFill="WHITE">
+            <Button fx:id="btnApplyObjectives" layoutX="517.0" layoutY="486.0" mnemonicParsing="false" prefHeight="51.0" prefWidth="130.0" stylesheets="@../../../../css/css1/fullpackstyling.css" text="Apply" textFill="WHITE">
                <font>
                   <Font name="Berlin Sans FB" size="18.0" />
                </font>
@@ -764,15 +764,15 @@
                <graphic>
                   <ImageView fitHeight="32.0" fitWidth="39.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../../../../img/icons8-segno-di-spunta-96.png" />
+                        <Image url="@../../../../img/img1/icons8-segno-di-spunta-96.png" />
                      </image>
                   </ImageView>
                </graphic>
             </Button>
          </children>
          <stylesheets>
-            <URL value="@../../../../css/fullpackstyling.css" />
-            <URL value="@../../../../css/fullpackstyling.css" />
+            <URL value="@../../../../css/css1/fullpackstyling.css" />
+            <URL value="@../../../../css/css1/fullpackstyling.css" />
          </stylesheets>
       </Pane>
    </children>

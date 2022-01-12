@@ -1,8 +1,8 @@
 package com.example.comics.view1;
 
 import com.example.comics.controller.ResearchController;
-import com.example.comics.model.fagioli.SeriesBean;
 import com.example.comics.model.Advertisement;
+import com.example.comics.model.fagioli.SeriesBean;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.MenuButton;
@@ -49,6 +49,7 @@ public class FeedControllerG{
 
     public void init() {
 
+        System.out.println("feed init");
         int size = latestSeries.size();
         int i=1;
         for(int j=0; j<size; j++) {
@@ -58,6 +59,7 @@ public class FeedControllerG{
                 VBox card = fxmlLoader.load();
                 VCardControllerG cardController = fxmlLoader.getController();
                 cardController.setData(latestSeries.get(j));
+                System.out.println("feedControllerG, latestSeries: " + latestSeries.get(j));
 
                 int finalJ = j;
                 card.setOnMouseClicked(event -> {

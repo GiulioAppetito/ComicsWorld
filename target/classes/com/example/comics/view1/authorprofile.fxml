@@ -12,11 +12,11 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="729.0" prefWidth="980.0" styleClass="transparent" stylesheets="@../../../../css/fullpackstyling.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.comics.view1.AuthorProfileControllerG">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="729.0" prefWidth="980.0" styleClass="transparent" stylesheets="@../../../../css/css1/fullpackstyling.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.comics.view1.AuthorProfileControllerG">
    <BorderPane fx:id="mainPane">
       <center>
           <HBox prefHeight="729.0" prefWidth="980.0">
-              <Pane prefHeight="649.0" prefWidth="457.0" stylesheets="@../../../../css/fullpackstyling.css">
+              <Pane prefHeight="649.0" prefWidth="457.0" stylesheets="@../../../../css/css1/fullpackstyling.css">
                   <HBox.margin>
                       <Insets bottom="40.0" left="40.0" right="40.0" top="40.0" />
                   </HBox.margin>
@@ -31,11 +31,11 @@
                               <Insets top="20.0" />
                           </VBox.margin>
                            <ImageView fx:id="proPicProfile" fitHeight="241.0" fitWidth="275.0" pickOnBounds="true" preserveRatio="true">
-                               <Image url="@../../../../img/flat-business-man-user-profile-avatar-icon-vector-4333097.jpg" />
+                               <Image url="@../../../../img/img1/flat-business-man-user-profile-avatar-icon-vector-4333097.jpg" />
                            </ImageView>
                       </HBox>
                       <HBox alignment="CENTER" prefHeight="55.0" prefWidth="452.0">
-                          <Button fx:id="btnEdit" mnemonicParsing="false" onAction="#edit" prefHeight="63.0" prefWidth="165.0" stylesheets="@../../../../css/fullpackstyling.css" text="Edit">
+                          <Button fx:id="btnEdit" mnemonicParsing="false" onAction="#edit" prefHeight="63.0" prefWidth="165.0" stylesheets="@../../../../css/css1/fullpackstyling.css" text="Edit">
                               <font>
                                   <Font name="Berlin Sans FB" size="24.0" />
                               </font>
@@ -46,7 +46,7 @@
                               </styleClass>
                               <graphic>
                                   <ImageView fitHeight="45.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true">
-                                      <Image url="@../../../../img/matita.png" />
+                                      <Image url="@../../../../img/img1/matita.png" />
                                   </ImageView>
                               </graphic>
                               <HBox.margin>
@@ -86,7 +86,7 @@
               </Pane>
               <VBox prefHeight="729.0" prefWidth="417.0">
                <children>
-                  <Pane prefHeight="135.0" prefWidth="337.0" stylesheets="@../../../../css/fullpackstyling.css">
+                  <Pane prefHeight="135.0" prefWidth="337.0" stylesheets="@../../../../css/css1/fullpackstyling.css">
                      <styleClass>
                         <String fx:value="panes" />
                         <String fx:value="glass" />
@@ -106,7 +106,7 @@
                                     <Insets left="20.0" top="10.0" />
                                  </VBox.margin>
                               </Label>
-                              <Button fx:id="btnNewSeries" alignment="CENTER" mnemonicParsing="false" onAction="#publishNewSerie" prefHeight="91.0" prefWidth="91.0" stylesheets="@../../../../css/fullpackstyling.css" text="+">
+                              <Button fx:id="btnNewSeries" alignment="CENTER" mnemonicParsing="false" onAction="#publishNewSerie" prefHeight="91.0" prefWidth="91.0" stylesheets="@../../../../css/css1/fullpackstyling.css" text="+">
                                  <VBox.margin>
                                     <Insets bottom="10.0" left="100.0" right="5.0" top="10.0" />
                                  </VBox.margin>
@@ -123,7 +123,7 @@
                         </VBox>
                      </children>
                   </Pane>
-                  <Pane prefHeight="135.0" prefWidth="337.0" stylesheets="@../../../../css/fullpackstyling.css">
+                  <Pane prefHeight="135.0" prefWidth="337.0" stylesheets="@../../../../css/css1/fullpackstyling.css">
                      <styleClass>
                         <String fx:value="panes" />
                         <String fx:value="glass" />
@@ -140,7 +140,7 @@
                                     <Insets left="20.0" top="10.0" />
                                  </VBox.margin>
                               </Label>
-                              <Button fx:id="btnNewChapter" alignment="CENTER" mnemonicParsing="false" prefHeight="91.0" prefWidth="91.0" stylesheets="@../../../../css/fullpackstyling.css" text="+">
+                              <Button fx:id="btnNewChapter" alignment="CENTER" mnemonicParsing="false" prefHeight="91.0" prefWidth="91.0" stylesheets="@../../../../css/css1/fullpackstyling.css" text="+">
                                  <VBox.margin>
                                     <Insets bottom="10.0" left="100.0" right="5.0" top="10.0" />
                                  </VBox.margin>

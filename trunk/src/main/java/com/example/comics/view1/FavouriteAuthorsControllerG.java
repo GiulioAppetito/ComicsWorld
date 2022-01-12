@@ -4,8 +4,6 @@ import com.example.comics.controller.ResearchController;
 import com.example.comics.model.UserLogin;
 import com.example.comics.model.fagioli.AuthorBean;
 import com.example.comics.model.fagioli.SeriesBean;
-import com.example.comics.model.Author;
-import com.example.comics.model.Series;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.layout.GridPane;
@@ -13,7 +11,6 @@ import javafx.scene.layout.VBox;
 
 import java.io.IOException;
 import java.net.URL;
-import java.util.ArrayList;
 import java.util.List;
 
 public class FavouriteAuthorsControllerG {
@@ -23,8 +20,8 @@ public class FavouriteAuthorsControllerG {
 
     @FXML
     public void initialize(){
-
-        List<Author> listOfCards = UserLogin.getInstance().getReader().getFollowedAuthors();
+        ResearchController researchController = new ResearchController();
+        List<AuthorBean> listOfCards = researchController.getFollowedAuthors();
         int size = listOfCards.size();
         int columns = 3;
         int i=1;
@@ -55,7 +52,7 @@ public class FavouriteAuthorsControllerG {
 
     }
 
-    public void openAuthor(Author author) throws IOException {
+    public void openAuthor(AuthorBean authorBean) throws IOException {
         AuthorFromOutsideControllerG authorFromOutsideControllerG = new AuthorFromOutsideControllerG();
         FXMLLoader loader = new FXMLLoader();
 
@@ -67,7 +64,7 @@ public class FavouriteAuthorsControllerG {
         HomeControllerG homeControllerG = homeFactory.getHomeControllerG();
         homeControllerG.changeCenter(loader.load());
 
-        authorFromOutsideControllerG.init(author);
+        authorFromOutsideControllerG.init(authorBean);
 
     }
 

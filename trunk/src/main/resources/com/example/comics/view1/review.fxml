@@ -10,13 +10,13 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="109.0" prefWidth="330.0" styleClass="transparent" stylesheets="@../../../../css/fullpackstyling.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.comics.view1.ReviewControllerG">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="109.0" prefWidth="330.0" styleClass="transparent" stylesheets="@../../../../css/css1/fullpackstyling.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.comics.view1.ReviewControllerG">
    <children>
-      <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="109.0" prefWidth="330.0" styleClass="oval-layout" stylesheets="@../../../../css/fullpackstyling.css">
+      <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="109.0" prefWidth="330.0" styleClass="oval-layout" stylesheets="@../../../../css/css1/fullpackstyling.css">
          <children>
             <ImageView fx:id="ivProPic" fitHeight="84.0" fitWidth="77.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../../../img/flat-business-woman-user-profile-avatar-icon-vector-4334111.jpg" />
+                  <Image url="@../../../../img/img1/flat-business-woman-user-profile-avatar-icon-vector-4334111.jpg" />
                </image>
                <HBox.margin>
                   <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
@@ -42,27 +42,27 @@
                      <children>
                         <ImageView fx:id="imgStar1" fitHeight="38.0" fitWidth="43.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../../../../img/full-star.png" />
+                              <Image url="@../../../../img/img1/full-star.png" />
                            </image>
                         </ImageView>
                         <ImageView fx:id="imgStar2" fitHeight="38.0" fitWidth="43.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../../../../img/full-star.png" />
+                              <Image url="@../../../../img/img1/full-star.png" />
                            </image>
                         </ImageView>
                         <ImageView fx:id="imgStar3" fitHeight="38.0" fitWidth="43.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../../../../img/full-star.png" />
+                              <Image url="@../../../../img/img1/full-star.png" />
                            </image>
                         </ImageView>
                         <ImageView fx:id="imgStar4" fitHeight="38.0" fitWidth="43.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../../../../img/full-star.png" />
+                              <Image url="@../../../../img/img1/full-star.png" />
                            </image>
                         </ImageView>
                         <ImageView fx:id="imgStar5" fitHeight="38.0" fitWidth="43.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../../../../img/full-star.png" />
+                              <Image url="@../../../../img/img1/full-star.png" />
                            </image>
                         </ImageView>
                      </children>

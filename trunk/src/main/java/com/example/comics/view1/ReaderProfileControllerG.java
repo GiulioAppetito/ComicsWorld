@@ -3,7 +3,6 @@ package com.example.comics.view1;
 import com.example.comics.controller.ResearchController;
 import com.example.comics.model.AccountObserver;
 import com.example.comics.model.AccountSubject;
-import com.example.comics.model.Badge;
 import com.example.comics.model.UserLogin;
 import com.example.comics.model.fagioli.BadgeBean;
 import javafx.fxml.FXML;
@@ -23,6 +22,7 @@ public class ReaderProfileControllerG implements AccountObserver {
 
     @FXML
     private GridPane gpCharacter;
+
     @FXML
     private ImageView ivProPic;
 
@@ -50,7 +50,8 @@ public class ReaderProfileControllerG implements AccountObserver {
 
     public void loadBadges(){
 
-        List<Badge> listOfBadges = UserLogin.getInstance().getReader().getBadges();
+        ResearchController researchController = new ResearchController();
+        List<BadgeBean> listOfBadges = researchController.getUserBadges();
         int columns=3;
         int i=1;
 
@@ -61,7 +62,7 @@ public class ReaderProfileControllerG implements AccountObserver {
             try {
                 VBox card = fxmlLoader.load();
                 BadgeCardControllerG badgeCardControllerG = fxmlLoader.getController();
-                badgeCardControllerG.setData(listOfBadges.get(j).getName(), listOfBadges.get(j).getIcon());
+                badgeCardControllerG.setData(listOfBadges.get(j));
                 gpBadges.add(card, j%columns, i);
                 if(j%columns == columns -1 ){
                     i++;

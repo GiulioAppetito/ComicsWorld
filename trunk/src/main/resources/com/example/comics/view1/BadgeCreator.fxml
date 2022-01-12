@@ -11,9 +11,9 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<Pane prefHeight="652.0" prefWidth="749.0" styleClass="transparent" stylesheets="@../../../../css/fullpackstyling.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.comics.view1.BadgeCreatorControllerG">
+<Pane prefHeight="652.0" prefWidth="749.0" styleClass="transparent" stylesheets="@../../../../css/css1/fullpackstyling.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.comics.view1.BadgeCreatorControllerG">
    <children>
-      <BorderPane layoutX="52.0" layoutY="39.0" prefHeight="589.0" prefWidth="630.0" stylesheets="@../../../../css/fullpackstyling.css">
+      <BorderPane layoutX="52.0" layoutY="39.0" prefHeight="589.0" prefWidth="630.0" stylesheets="@../../../../css/css1/fullpackstyling.css">
          <top>
             <HBox prefHeight="66.0" prefWidth="572.0" BorderPane.alignment="CENTER">
                <children>
@@ -22,7 +22,7 @@
                      <graphic>
                         <ImageView fitHeight="45.0" fitWidth="53.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../../../../img/yellow.png" />
+                              <Image url="@../../../../img/img1/yellow.png" />
                            </image>
                         </ImageView>
                      </graphic>
@@ -31,7 +31,7 @@
                      <graphic>
                         <ImageView fitHeight="45.0" fitWidth="53.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../../../../img/orange.png" />
+                              <Image url="@../../../../img/img1/orange.png" />
                            </image>
                         </ImageView>
                      </graphic>
@@ -40,7 +40,7 @@
                      <graphic>
                         <ImageView fitHeight="45.0" fitWidth="53.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../../../../img/red.png" />
+                              <Image url="@../../../../img/img1/red.png" />
                            </image>
                         </ImageView>
                      </graphic>
@@ -49,7 +49,7 @@
                      <graphic>
                         <ImageView fitHeight="45.0" fitWidth="53.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../../../../img/purple.png" />
+                              <Image url="@../../../../img/img1/purple.png" />
                            </image>
                         </ImageView>
                      </graphic>
@@ -58,7 +58,7 @@
                      <graphic>
                         <ImageView fitHeight="45.0" fitWidth="53.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../../../../img/blue.png" />
+                              <Image url="@../../../../img/img1/blue.png" />
                            </image>
                         </ImageView>
                      </graphic>
@@ -67,7 +67,7 @@
                      <graphic>
                         <ImageView fitHeight="45.0" fitWidth="53.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../../../../img/green.png" />
+                              <Image url="@../../../../img/img1/green.png" />
                            </image>
                         </ImageView>
                      </graphic>
@@ -82,7 +82,7 @@
                      <graphic>
                         <ImageView fitHeight="45.0" fitWidth="53.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../../../../img/character.png" />
+                              <Image url="@../../../../img/img1/character.png" />
                            </image>
                         </ImageView>
                      </graphic>
@@ -91,7 +91,7 @@
                      <graphic>
                         <ImageView fitHeight="45.0" fitWidth="53.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../../../../img/icons8-animazione-96.png" />
+                              <Image url="@../../../../img/img1/icons8-animazione-96.png" />
                            </image>
                         </ImageView>
                      </graphic>
@@ -100,7 +100,7 @@
                      <graphic>
                         <ImageView fitHeight="45.0" fitWidth="53.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../../../../img/bender.png" />
+                              <Image url="@../../../../img/img1/bender.png" />
                            </image>
                         </ImageView>
                      </graphic>
@@ -109,7 +109,7 @@
                      <graphic>
                         <ImageView fitHeight="45.0" fitWidth="53.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../../../../img/walterwhite.png" />
+                              <Image url="@../../../../img/img1/walterwhite.png" />
                            </image>
                         </ImageView>
                      </graphic>
@@ -118,7 +118,7 @@
                      <graphic>
                         <ImageView fitHeight="45.0" fitWidth="53.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../../../../img/shrek.png" />
+                              <Image url="@../../../../img/img1/shrek.png" />
                            </image>
                         </ImageView>
                      </graphic>
@@ -129,7 +129,7 @@
          <center>
             <Pane prefHeight="466.0" prefWidth="520.0" BorderPane.alignment="CENTER">
                <children>
-                  <Button alignment="CENTER" layoutX="92.0" layoutY="43.0" mnemonicParsing="false" prefHeight="312.0" prefWidth="349.0" styleClass="buttonLogin" stylesheets="@../../../../css/fullpackstyling.css" text="O">
+                  <Button alignment="CENTER" layoutX="92.0" layoutY="43.0" mnemonicParsing="false" prefHeight="312.0" prefWidth="349.0" styleClass="buttonLogin" stylesheets="@../../../../css/css1/fullpackstyling.css" text="O">
                      <font>
                         <Font name="Wingdings 2" size="150.0" />
                      </font>

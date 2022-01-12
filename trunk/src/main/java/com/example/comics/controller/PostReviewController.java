@@ -2,7 +2,6 @@ package com.example.comics.controller;
 
 import com.example.comics.controller.externalBoundaries.BoundarySendEmail;
 import com.example.comics.model.fagioli.ChapterBean;
-import com.example.comics.model.fagioli.ObjectiveBean;
 import com.example.comics.model.fagioli.ReviewBean;
 import com.example.comics.model.*;
 import com.example.comics.model.dao.SeriesDAO;

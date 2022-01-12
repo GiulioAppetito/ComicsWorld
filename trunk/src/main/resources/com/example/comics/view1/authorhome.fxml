@@ -17,9 +17,9 @@
 <?import javafx.scene.paint.Stop?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane fx:id="mainPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" style="-fx-background-color: white;" styleClass="wallpaper" stylesheets="@../../../../css/fullpackstyling.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane fx:id="mainPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" style="-fx-background-color: white;" styleClass="wallpaper" stylesheets="@../../../../css/css1/fullpackstyling.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
     <top>
-        <HBox prefHeight="60.0" prefWidth="1191.0" stylesheets="@../../../../css/fullpackstyling.css" BorderPane.alignment="CENTER">
+        <HBox prefHeight="60.0" prefWidth="1191.0" stylesheets="@../../../../css/css1/fullpackstyling.css" BorderPane.alignment="CENTER">
             <Label fx:id="lblTitle" alignment="CENTER" prefHeight="60.0" prefWidth="238.0" text="ComicsWorld" textAlignment="CENTER">
                 <font>
                     <Font name="Berlin Sans FB Demi Bold" size="35.0" />
@@ -54,14 +54,14 @@
                     <Insets bottom="10.0" left="10.0" top="20.0" />
                 </HBox.margin>
             </TextField>
-            <Button mnemonicParsing="false" prefHeight="23.0" prefWidth="36.0" stylesheets="@../../../../css/fullpackstyling.css">
+            <Button mnemonicParsing="false" prefHeight="23.0" prefWidth="36.0" stylesheets="@../../../../css/css1/fullpackstyling.css">
                 <HBox.margin>
                     <Insets right="20.0" top="20.0" />
                 </HBox.margin>
                 <graphic>
                     <ImageView fitHeight="13.0" fitWidth="23.0" pickOnBounds="true" preserveRatio="true">
                         <image>
-                            <Image url="@../../../../img/search.png" />
+                            <Image url="@../../../../img/img1/search.png" />
                         </image></ImageView>
                 </graphic>
                 <styleClass>
@@ -75,7 +75,7 @@
                     <Insets />
                 </HBox.margin>
                 <ImageView fx:id="homeIcon" fitHeight="40.0" fitWidth="40.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
-                    <Image url="@../../../../img/icons8-home-page-96.png" />
+                    <Image url="@../../../../img/img1/icons8-home-page-96.png" />
                 </ImageView>
                 <padding>
                     <Insets top="40.0" />
@@ -92,7 +92,7 @@
                 </Label>
             <ImageView fx:id="smallProPic" fitHeight="82.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../../../img/flat-business-man-user-profile-avatar-icon-vector-4333097.jpg" />
+                  <Image url="@../../../../img/img1/flat-business-man-user-profile-avatar-icon-vector-4333097.jpg" />
                </image>
             </ImageView>
             </HBox>
@@ -118,26 +118,26 @@
                         <Insets left="10.0" />
                     </VBox.margin>
                 </Label>
-                <Button fx:id="btnCategories" mnemonicParsing="false" prefHeight="78.0" prefWidth="230.0" styleClass="lateral" stylesheets="@../../../../css/fullpackstyling.css" text="Categories">
+                <Button fx:id="btnCategories" mnemonicParsing="false" prefHeight="78.0" prefWidth="230.0" styleClass="lateral" stylesheets="@../../../../css/css1/fullpackstyling.css" text="Categories">
                     <font>
                         <Font name="Berlin Sans FB" size="18.0" />
                     </font>
                     <graphic>
                         <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
                             <image>
-                                <Image url="@../../../../img/icons8-classificare-96.png" />
+                                <Image url="@../../../../img/img1/icons8-classificare-96.png" />
                             </image>
                         </ImageView>
                     </graphic>
                 </Button>
-                <Button fx:id="btnTop" mnemonicParsing="false" prefHeight="78.0" prefWidth="230.0" styleClass="lateral" stylesheets="@../../../../css/fullpackstyling.css" text="Top comics">
+                <Button fx:id="btnTop" mnemonicParsing="false" prefHeight="78.0" prefWidth="230.0" styleClass="lateral" stylesheets="@../../../../css/css1/fullpackstyling.css" text="Top comics">
                     <font>
                         <Font name="Berlin Sans FB" size="18.0" />
                     </font>
                     <graphic>
                         <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
                             <image>
-                                <Image url="@../../../../img/icons8-classifica-96.png" />
+                                <Image url="@../../../../img/img1/icons8-classifica-96.png" />
                             </image>
                         </ImageView>
                     </graphic>
@@ -151,26 +151,26 @@
                         <Insets left="10.0" />
                     </VBox.margin>
                 </Label>
-                <Button fx:id="btnMySeries" alignment="CENTER" mnemonicParsing="false" prefHeight="78.0" prefWidth="230.0" styleClass="lateral" stylesheets="@../../../../css/fullpackstyling.css" text="My series">
+                <Button fx:id="btnMySeries" alignment="CENTER" mnemonicParsing="false" prefHeight="78.0" prefWidth="230.0" styleClass="lateral" stylesheets="@../../../../css/css1/fullpackstyling.css" text="My series">
                     <font>
                         <Font name="Berlin Sans FB" size="18.0" />
                     </font>
                     <graphic>
                         <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
                             <image>
-                                <Image url="@../../../../img/icons8-cartella-preferiti-96.png" />
+                                <Image url="@../../../../img/img1/icons8-cartella-preferiti-96.png" />
                             </image>
                         </ImageView>
                     </graphic>
                 </Button>
-                <Button fx:id="btnMyCharacters" mnemonicParsing="false" prefHeight="78.0" prefWidth="254.0" styleClass="lateral" stylesheets="@../../../../css/fullpackstyling.css" text="My characters">
+                <Button fx:id="btnMyCharacters" mnemonicParsing="false" prefHeight="78.0" prefWidth="254.0" styleClass="lateral" stylesheets="@../../../../css/css1/fullpackstyling.css" text="My characters">
                     <font>
                         <Font name="Berlin Sans FB" size="18.0" />
                     </font>
                     <graphic>
                         <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
                             <image>
-                                <Image url="@../../../../img/character.png" />
+                                <Image url="@../../../../img/img1/character.png" />
                             </image>
                         </ImageView>
                     </graphic>
@@ -190,14 +190,14 @@
                         <Insets left="10.0" />
                     </VBox.margin>
                 </Label>
-                <Button fx:id="btnSettings" mnemonicParsing="false" prefHeight="78.0" prefWidth="230.0" styleClass="lateral" stylesheets="@../../../../css/fullpackstyling.css" text="Settings">
+                <Button fx:id="btnSettings" mnemonicParsing="false" prefHeight="78.0" prefWidth="230.0" styleClass="lateral" stylesheets="@../../../../css/css1/fullpackstyling.css" text="Settings">
                     <font>
                         <Font name="Berlin Sans FB" size="18.0" />
                     </font>
                     <graphic>
                         <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
                             <image>
-                                <Image url="@../../../../img/icons8-impostazioni-96.png" />
+                                <Image url="@../../../../img/img1/icons8-impostazioni-96.png" />
                             </image>
                         </ImageView>
                     </graphic>
@@ -205,14 +205,14 @@
                         <Insets left="-15.0" />
                     </padding>
                 </Button>
-            <Button fx:id="btnStatistics" mnemonicParsing="false" prefHeight="78.0" prefWidth="230.0" styleClass="lateral" stylesheets="@../../../../css/fullpackstyling.css" text="Statistics">
+            <Button fx:id="btnStatistics" mnemonicParsing="false" prefHeight="78.0" prefWidth="230.0" styleClass="lateral" stylesheets="@../../../../css/css1/fullpackstyling.css" text="Statistics">
                <font>
                   <Font name="Berlin Sans FB" size="18.0" />
                </font>
                <graphic>
                   <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../../../../img/statistics.png" />
+                        <Image url="@../../../../img/img1/statistics.png" />
                      </image>
                   </ImageView>
                </graphic>

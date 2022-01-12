@@ -10,7 +10,7 @@
 
 <BorderPane fx:id="mainPane" prefHeight="729.0" prefWidth="980.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.comics.view1.SettingsControllerG">
    <left>
-      <VBox fx:id="settingsBox" prefHeight="400" prefWidth="185.0" styleClass="transparent" stylesheets="@../../../../css/fullpackstyling.css" BorderPane.alignment="CENTER">
+      <VBox fx:id="settingsBox" prefHeight="400" prefWidth="185.0" styleClass="transparent" stylesheets="@../../../../css/css1/fullpackstyling.css" BorderPane.alignment="CENTER">
 
          <padding>
             <Insets bottom="20.0" top="20.0" />
@@ -20,17 +20,17 @@
             <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
          </BorderPane.margin>
 
-         <Button fx:id="btnProfile" mnemonicParsing="false" onAction="#openProfileSettings" prefHeight="58.0" prefWidth="185.0" styleClass="button2" stylesheets="@../../../../css/fullpackstyling.css" text="Profile">
+         <Button fx:id="btnProfile" mnemonicParsing="false" onAction="#openProfileSettings" prefHeight="58.0" prefWidth="185.0" styleClass="button2" stylesheets="@../../../../css/css1/fullpackstyling.css" text="Profile">
             <font>
                <Font name="Berlin Sans FB" size="18.0" />
             </font></Button>
          <Separator prefWidth="200.0" />
-         <Button fx:id="accountsettings" mnemonicParsing="false" onAction="#openAccountSettings" prefHeight="58.0" prefWidth="185.0" styleClass="button2" stylesheets="@../../../../css/fullpackstyling.css" text="Account">
+         <Button fx:id="accountsettings" mnemonicParsing="false" onAction="#openAccountSettings" prefHeight="58.0" prefWidth="185.0" styleClass="button2" stylesheets="@../../../../css/css1/fullpackstyling.css" text="Account">
             <font>
                <Font name="Berlin Sans FB" size="18.0" />
             </font></Button>
          <Separator prefWidth="200.0" />
-         <Button fx:id="preferencessettings" mnemonicParsing="false" onAction="#openPreferencesSettings" prefHeight="58.0" prefWidth="185.0" styleClass="button2" stylesheets="@../../../../css/fullpackstyling.css" text="Preferences">
+         <Button fx:id="preferencessettings" mnemonicParsing="false" onAction="#openPreferencesSettings" prefHeight="58.0" prefWidth="185.0" styleClass="button2" stylesheets="@../../../../css/css1/fullpackstyling.css" text="Preferences">
             <font>
                <Font name="Berlin Sans FB" size="18.0" />
             </font></Button>

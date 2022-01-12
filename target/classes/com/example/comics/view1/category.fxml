@@ -13,15 +13,15 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="690.0" prefWidth="834.0" styleClass="transparent" stylesheets="@../../../../css/fullpackstyling.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.comics.view1.CategoryController">
+<AnchorPane prefHeight="690.0" prefWidth="834.0" styleClass="transparent" stylesheets="@../../../../css/css1/fullpackstyling.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.comics.view1.CategoryController">
     <HBox alignment="CENTER" layoutX="14.0" layoutY="20.0" prefHeight="50.0" prefWidth="804.0">
-        <Button mnemonicParsing="false" onAction="#back" prefHeight="58.0" prefWidth="94.0" styleClass="button2" stylesheets="@../../../../css/fullpackstyling.css">
+        <Button mnemonicParsing="false" onAction="#back" prefHeight="58.0" prefWidth="94.0" styleClass="button2" stylesheets="@../../../../css/css1/fullpackstyling.css">
            <padding>
                <Insets bottom="-20.0" top="-20.0" />
            </padding>
            <graphic>
                <ImageView fitHeight="32.0" fitWidth="78.0" pickOnBounds="true" preserveRatio="true">
-                   <Image url="@../../../../img/back.png" />
+                   <Image url="@../../../../img/img1/back.png" />
                </ImageView>
            </graphic>
         </Button>

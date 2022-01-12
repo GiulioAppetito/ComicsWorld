@@ -5,6 +5,7 @@ import com.example.comics.model.*;
 import com.example.comics.model.fagioli.ChapterBean;
 import com.example.comics.model.fagioli.ReviewBean;
 import com.example.comics.model.fagioli.SeriesBean;
+import com.example.comics.view1.beans.ReviewBean1;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
@@ -463,7 +464,7 @@ public class ChapterControllerG implements ChapterObserver, AccountObserver {
 
     public void postReview(ChapterBean chapterBean, SeriesBean seriesBean){
 
-        ReviewBean reviewBean = new ReviewBean();
+        ReviewBean reviewBean = new ReviewBean1();
         reviewBean.setComment(txtAreaComment.getText());
         reviewBean.setUsername(UserLogin.getInstance().getAccount().getUsername());
         reviewBean.setRating(reviewRating);

@@ -2,10 +2,8 @@ package com.example.comics.controller;
 
 import com.example.comics.model.Author;
 import com.example.comics.model.UserLogin;
-import com.example.comics.model.dao.AuthorDAO;
 import com.example.comics.model.dao.ReaderDAO;
 import com.example.comics.model.fagioli.AuthorBean;
-import com.example.comics.model.fagioli.ReaderBean;
 
 public class FollowAuthorController {
 
