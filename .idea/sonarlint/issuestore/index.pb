@@ -27,8 +27,6 @@ y
 Itrunk/src/main/java/com/example/comics/view1/BadgeCreatorControllerG.java,e\8\e88e29f7a2a68e164194f897e31feb5d745f335c
 {
 Ktrunk/src/main/java/com/example/comics/view1/BadgesSettingsControllerG.java,d\9\d915cda3aaecc707aadae3092ff345b8601edfd2
-v
-Ftrunk/src/main/java/com/example/comics/view1/CharacterControllerG.java,b\d\bd1950108fad9faa006d9ad66c18b531098bf500
 
 Otrunk/src/main/java/com/example/comics/view1/PreferencesSettingsController.java,3\5\3534f485c3bc1958f43d06b2f9d983c4e7758f87
 u
@@ -2067,8 +2065,6 @@ o
 ?trunk/src/main/java/com/example/comics/model/dao/ReviewDAO.java,1\f\1f22ec19cc659cc2aa28f863a5054710a31b5996
 m
 =trunk/src/main/java/com/example/comics/model/dao/Queries.java,f\3\f3a37695c77dad5023ee85e5787ca9de0b649080
-p
-@trunk/src/main/java/com/example/comics/model/dao/ChapterDAO.java,1\d\1ddfc0cfcef200504c825e15e2d46d1aa7918d49
 o
 ?trunk/src/main/java/com/example/comics/model/dao/SeriesDAO.java,1\a\1a268b5783fdf4518ee179aca9664c3642aacf6e
 w
@@ -2093,8 +2089,6 @@ q
 Atrunk/src/main/java/com/example/comics/model/ChapterObserver.java,2\3\23130c14c97aeffd28a4358cea3f734706d5d187
 p
 @trunk/src/main/java/com/example/comics/model/ChapterSubject.java,c\b\cbef2f5c28e0525fe37bc3006eb93dd3e76f3b3d
-h
-8trunk/src/main/java/com/example/comics/model/Reader.java,3\e\3eba6c3a37f9370082944319cedcfebca37815ca
 w
 Gtrunk/src/main/java/com/example/comics/view1/ReaderHomeControllerG.java,e\c\ec2e8050235c1d9d3918ef5543b9bf4b12855c12
 h

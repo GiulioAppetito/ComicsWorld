@@ -1,9 +1,0 @@
-
-G
-java:S5413‹")Verify that "remove()" is used correctly.(À‚ò€8‰¦óÛä/
-e
-java:S1128"CRemove this unused import 'com.example.comics.model.dao.AuthorDAO'.(Üˆ¡ıÿÿÿÿ8‰¦óÛä/
-M
-java:S1128"0Remove this unused import 'java.util.ArrayList'.(÷‰îƒ8‰¦óÛä/
-H
-java:S1068"+Remove this unused "reading" private field.(‡ˆĞò8‰¦óÛä/
