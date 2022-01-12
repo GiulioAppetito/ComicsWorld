@@ -1,9 +1,14 @@
 package com.example.comics.view1;
 
+import com.example.comics.controller.MarkChapterAsReadController;
 import com.example.comics.controller.PostReviewController;
-import com.example.comics.model.*;
 import com.example.comics.model.fagioli.ChapterBean;
+import com.example.comics.model.fagioli.ObjectiveBean;
 import com.example.comics.model.fagioli.ReviewBean;
+import com.example.comics.model.ReviewObserver;
+import com.example.comics.model.ReviewSubject;
+import com.example.comics.model.UserLogin;
+import com.example.comics.view1.bean1.ReviewBean1;
 import com.example.comics.model.fagioli.SeriesBean;
 import com.example.comics.view1.beans.ReviewBean1;
 import javafx.fxml.FXML;
@@ -18,7 +23,7 @@ import javafx.scene.layout.VBox;
 import java.io.IOException;
 import java.util.List;
 
-public class ChapterControllerG implements ChapterObserver, AccountObserver {
+public class ChapterControllerG implements ReviewObserver {
 
     @FXML
     private VBox vbReviews;
@@ -32,6 +37,8 @@ public class ChapterControllerG implements ChapterObserver, AccountObserver {
     @FXML
     private Pane paneInsertReview;
 
+    @FXML
+    private Button btnChapterRead;
 
     @FXML
     private ImageView badgeIconView;
@@ -345,19 +352,25 @@ public class ChapterControllerG implements ChapterObserver, AccountObserver {
 
     public void init(ChapterBean chapterBean, SeriesBean seriesBean){
 
-        ChapterSubject.attach(this);
-        AccountSubject.attach(this);
+        ReviewSubject.attach(this);
 
         lblAuthor.setText("autore");
         lblChapterTitle.setText(chapterBean.getTitle());
         taDescription.setText(chapterBean.getDescription());
         taDescription.setEditable(false);
 
+        if(!chapterBean.isRead()){
+            btnChapterRead.setOnAction(event -> markChapterAsRead(seriesBean,chapterBean));
+        }else{
+            btnChapterRead.setOnAction(event -> removeChapterFromRead(seriesBean,chapterBean));
+        }
+
         chapterCoverIV.setImage(chapterBean.getCover());
 
         btnCloseEditor.setOnAction(event -> closeEditor());
         btnCloseBadge.setOnAction(event -> closeBadgeWon());
         btnAddReview.setOnAction(event -> openEditor());
+        btnChapterRead.setOnAction(event -> markChapterAsRead(seriesBean,chapterBean));
 
 
         paneInsertReview.setVisible(false);
@@ -458,6 +471,16 @@ public class ChapterControllerG implements ChapterObserver, AccountObserver {
         imgStar55.setOnMouseClicked(event -> fiveStars());
     }
 
+    private void removeChapterFromRead(SeriesBean seriesBean, ChapterBean chapterBean) {
+    }
+
+    private void markChapterAsRead(SeriesBean seriesBean,ChapterBean chapterBean) {
+        MarkChapterAsReadController controller = new MarkChapterAsReadController();
+        controller.markChapterAsRead(seriesBean,chapterBean);
+
+
+    }
+
     public void closeBadgeWon() {
         newBadgeWonPane.setVisible(false);
     }
@@ -485,10 +508,8 @@ public class ChapterControllerG implements ChapterObserver, AccountObserver {
 
     }
 
-
-    //QUESTA VA RIFATTA
     @Override
-    public void updateReviews(ReviewBean reviewBean) {
+    public void update(ReviewBean reviewBean) {
         //add della review sulla lista
         FXMLLoader fxmlLoader = new FXMLLoader();
         fxmlLoader.setLocation(getClass().getResource("review.fxml"));
@@ -504,17 +525,12 @@ public class ChapterControllerG implements ChapterObserver, AccountObserver {
     }
 
     @Override
-    public void update() {
-        Badge latestBadge = new Badge();
-        //per i badges, vado a prendere il badge vinto dal profilo utente
-        for(Badge badge : UserLogin.getInstance().getReader().getBadges()){
-            latestBadge = badge;
-        }
-
+    public void achievedObjective(ObjectiveBean objectiveBean) {
+        //mostra panel con vittoria badge
         newBadgeWonPane.setVisible(true);
-        lblBadgeName.setText(latestBadge.getName());
-        badgeIconView.setImage(latestBadge.getIcon());
+        lblBadgeName.setText(objectiveBean.getBadgeName());
+        lblBadgeSeries.setText(objectiveBean.getSeriesTitle());
+        badgeIconView.setImage(objectiveBean.getBadgeIcon());
 
     }
-
 }

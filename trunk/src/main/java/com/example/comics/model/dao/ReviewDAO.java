@@ -12,7 +12,7 @@ public class ReviewDAO {
     private static final String PASS = "passwordanastasia";
     private static final String DB_URL = "jdbc:mysql://comics-world.ce9t0fxhansh.eu-west-2.rds.amazonaws.com:3306/ComicsWorld?autoReconnect=true&useSSL=false";
 
-    public List<Review> retrieveReviews(String chapter) throws ReviewsNotFoundException {
+    public List<Review> retrieveReviews(String chapter)  {
         Statement stmt = null;
         Connection conn = null;
 
@@ -35,7 +35,7 @@ public class ReviewDAO {
             }while(rs.next());
 
         } catch (SQLException throwables) {
-            throw new ReviewsNotFoundException();
+           return reviewsList;
         }finally{
             assert conn!=null;
             try {
@@ -49,7 +49,7 @@ public class ReviewDAO {
 
     }
 
-    public List<Review> retrieveReviewsByReaderAndSeries(Series series, Reader reader) throws ReviewsNotFoundException {
+    public List<Review> retrieveReviewsByReaderAndSeries(Series series, Reader reader)  {
         Statement stmt = null;
         Connection conn = null;
 
@@ -62,7 +62,7 @@ public class ReviewDAO {
             ResultSet rs = Queries.retrieveReviewsByReaderAndSeries(stmt, series.getTitle(), reader.getUsername());
 
             if(!rs.first()){
-                throw new ReviewsNotFoundException();
+                return reviewsList;
             }
             rs.first();
             do{
@@ -72,7 +72,7 @@ public class ReviewDAO {
             }while(rs.next());
 
         } catch (SQLException throwables) {
-            throw new ReviewsNotFoundException();
+            return reviewsList;
         }finally{
             assert conn!=null;
             try {
