@@ -2063,14 +2063,8 @@ y
 Itrunk/src/main/java/com/example/comics/view1/CategoryCardControllerG.java,7\a\7abe2fa6ba04c0b4f11be7d3e6be76fedd46bd94
 o
 ?trunk/src/main/java/com/example/comics/model/dao/ReviewDAO.java,1\f\1f22ec19cc659cc2aa28f863a5054710a31b5996
-m
-=trunk/src/main/java/com/example/comics/model/dao/Queries.java,f\3\f3a37695c77dad5023ee85e5787ca9de0b649080
-o
-?trunk/src/main/java/com/example/comics/model/dao/SeriesDAO.java,1\a\1a268b5783fdf4518ee179aca9664c3642aacf6e
 w
 Gtrunk/src/main/java/com/example/comics/view1/StatisticsControllerG.java,9\5\95761a20162375edf28c29d3b2274ef1674b8d9e
-k
-;trunk/src/main/java/com/example/comics/model/UserLogin.java,5\d\5dfc908745a1c7e70c463f0eeb83fb14a2777e53
 h
 8trunk/src/main/java/com/example/comics/model/Review.java,0\e\0ebc34990087772f77f2d53656d86f7b14bc71d7
 Z
@@ -2091,5 +2085,3 @@ p
 @trunk/src/main/java/com/example/comics/model/ChapterSubject.java,c\b\cbef2f5c28e0525fe37bc3006eb93dd3e76f3b3d
 w
 Gtrunk/src/main/java/com/example/comics/view1/ReaderHomeControllerG.java,e\c\ec2e8050235c1d9d3918ef5543b9bf4b12855c12
-h
-8trunk/src/main/java/com/example/comics/model/Series.java,c\8\c8bcf65e561109814ec36c1d5eccfe66f4067141

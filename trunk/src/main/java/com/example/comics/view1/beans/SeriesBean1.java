@@ -1,6 +1,5 @@
 package com.example.comics.view1.beans;
 
-import com.example.comics.model.Chapter;
 import com.example.comics.model.Genres;
 import com.example.comics.model.fagioli.AuthorBean;
 import com.example.comics.model.fagioli.ChapterBean;
@@ -14,6 +13,8 @@ public class SeriesBean1 implements SeriesBean {
     private String title;
     private Image cover;
     private AuthorBean authorBean;
+    private List<ChapterBean> chapterBeans;
+    private int rating;
 
     @Override
     public String getTitle() {
@@ -47,11 +48,12 @@ public class SeriesBean1 implements SeriesBean {
 
     @Override
     public List<ChapterBean> getChapters() {
-        return null;
+        return chapterBeans;
     }
 
     @Override
     public void setChapters(List<ChapterBean> chapterBeans){
+        this.chapterBeans = chapterBeans;
     }
 
     @Override
@@ -76,9 +78,10 @@ public class SeriesBean1 implements SeriesBean {
 
     @Override
     public void setAverageRating(int averageRating) {
+        this.rating = averageRating;
     }
     @Override
     public int getAverageRating() {
-        return 0;
+        return rating;
     }
 }

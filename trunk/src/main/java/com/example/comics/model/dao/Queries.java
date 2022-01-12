@@ -10,32 +10,27 @@ public class Queries {
 
     public static void updateCredentials(Statement stmt, String newName, String newSurname, String oldUsername, String newUsername) throws SQLException {
         String updateStatement = String.format("UPDATE users set firstname='%s', lastname='%s', username='%s' WHERE username = '%s' ", newName,newSurname,newUsername,oldUsername);
-        System.out.println(updateStatement);
         stmt.executeUpdate(updateStatement);
     }
 
     public static ResultSet retreiveCredentials(Statement stmt, String username) throws SQLException {
         String query = String.format("SELECT * FROM users WHERE username = '%s'", username);
-        System.out.println(query);
         return stmt.executeQuery(query);
 
     }
 
     public static void updateEmail(Statement stmt, String newEmail, String password) throws SQLException {
         String updateStatement = String.format("UPDATE users set email='%s' WHERE password = '%s' ", newEmail, password);
-        System.out.println(updateStatement);
         stmt.executeUpdate(updateStatement);
     }
 
     public static ResultSet retriveLatestSeries(Statement stmt) throws SQLException {
         String selectStatement = String.format("SELECT * FROM series");
-        System.out.println(selectStatement);
         return stmt.executeQuery(selectStatement);
     }
 
     public static ResultSet retrieveSeries(Statement stmt, String title) throws SQLException {
         String selectStatement = String.format("SELECT * FROM series where title = '%s'", title);
-        System.out.println(selectStatement);
         return stmt.executeQuery(selectStatement);
     }
 
@@ -47,7 +42,6 @@ public class Queries {
 
     public static ResultSet retrivePublishedSeries(Statement stmt, String user) throws SQLException {
         String selectStatement = String.format("SELECT * from series where author = '%s' ", user);
-        System.out.println(selectStatement);
         return stmt.executeQuery(selectStatement);
     }
 
@@ -229,8 +223,8 @@ public class Queries {
         stmt.executeUpdate(insertStatement);
     }
 
-    public static ResultSet isChapterRead(Statement stmt, String chapterTitle, Reader reader) throws SQLException {
-        String selectStatement = String.format("SELECT * FROM readChapters WHERE (reader = '%s' AND chapter='%s')  ",reader.getUsername(),chapterTitle);
+    public static ResultSet isChapterRead(Statement stmt, String chapterTitle, String reader) throws SQLException {
+        String selectStatement = String.format("SELECT * FROM readChapters WHERE (reader = '%s' AND chapter='%s')  ",reader,chapterTitle);
         System.out.println(selectStatement);
         return stmt.executeQuery(selectStatement);
     }

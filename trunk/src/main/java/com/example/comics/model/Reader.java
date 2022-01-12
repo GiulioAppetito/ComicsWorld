@@ -19,7 +19,6 @@ public class Reader extends Account{
     public Reader(List<Series> favourites, List<Series> toRead, List<Series> reading, String username,List<Author> followedAuthors){
 
         this.setUsername(username);
-
         this.favourites = favourites;
         this.toRead = toRead;
         this.reading = reading;

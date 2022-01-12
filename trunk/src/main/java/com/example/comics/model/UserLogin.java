@@ -9,6 +9,7 @@ public class UserLogin{
 
     private static UserLogin instance = null;
     private static Account account;
+    private static String username;
 
     private static Reader reader;
     private static Author author;
@@ -22,6 +23,8 @@ public class UserLogin{
         return instance;
     }
 
+    public String getUsername() { return username; }
+
     public Account getAccount() {
         return account;
     }
@@ -34,16 +37,18 @@ public class UserLogin{
         return author;
     }
 
-    public static boolean createAccount(String email, String password, String role){
+    public static boolean createAccount(String credential, String password, String role){
+
+        username = credential;
 
         if(role.equals("author")){
             AuthorDAO authorDAO = new AuthorDAO();
-            UserLogin.author = authorDAO.retrieveAuthor(email, password);
+            UserLogin.author = authorDAO.retrieveAuthor(username, password);
             UserLogin.account = author;
 
         }else if(role.equals("reader")){
             ReaderDAO readerDAO = new ReaderDAO();
-            UserLogin.reader = readerDAO.retrieveReader(email, password);
+            UserLogin.reader = readerDAO.retrieveReader(username, password);
             UserLogin.account = reader;
 
         }else{

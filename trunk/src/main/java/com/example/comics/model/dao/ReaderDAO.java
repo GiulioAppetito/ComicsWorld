@@ -82,7 +82,7 @@ public class ReaderDAO {
             AuthorDAO authorDAO = new AuthorDAO();
             List<Author> followedAuthors = authorDAO.retreiveFollowedAuthorsByReader(username);
 
-            reader = new Reader(favSeries, toReadSeries, readingSeries, username,followedAuthors);
+            reader = new Reader(favSeries, toReadSeries, readingSeries, username, followedAuthors);
 
             reader.setFirstName(rs.getString("firstname"));
             reader.setLastName(rs.getString("lastname"));
