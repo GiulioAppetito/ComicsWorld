@@ -3,6 +3,7 @@ package com.example.comics.model.fagioli.bundle;
 import com.example.comics.model.Author;
 import com.example.comics.model.Chapter;
 import com.example.comics.model.Genres;
+import com.example.comics.model.fagioli.AuthorBean;
 import com.example.comics.model.fagioli.ChapterBean;
 import com.example.comics.model.fagioli.SeriesBean;
 import com.example.comics.view1.beans.ChapterBean1;
@@ -15,9 +16,9 @@ public class SeriesBundle implements SeriesBean {
 
     private String title;
     private Image cover;
-    private Author author;
+    private AuthorBean authorBean;
     private int averageRating;
-    private List<Chapter> chapters = new ArrayList<>();
+    private List<ChapterBean> chapterBeans = new ArrayList<>();
     private Genres genre1;
     private Genres genre2;
     private Genres genre3;
@@ -38,39 +39,27 @@ public class SeriesBundle implements SeriesBean {
     }
 
     public AuthorBundle getAuthor() {
-        AuthorBundle authorBean = new AuthorBundle();
-        authorBean.setPublishedSeries(author.getPublishedSeries());
-        authorBean.setLastName(author.getLastName());
-        authorBean.setFirstName(author.getFirstName());
-        authorBean.setProPic(author.getProPic());
-        authorBean.setUsername(author.getUsername());
+        AuthorBundle authorBundle = new AuthorBundle();
+        authorBundle.setPublishedSeries(authorBean.getPublishedSeries());
+        authorBundle.setLastName(authorBean.getLastName());
+        authorBundle.setFirstName(authorBean.getFirstName());
+        authorBundle.setProPic(authorBean.getProPic());
+        authorBundle.setUsername(authorBean.getUsername());
 
-        return authorBean;
+        return authorBundle;
     }
 
-    public void setAuthor(Author author) {
-        this.author = author;
+    @Override
+    public void setAuthor(AuthorBean authorBean) {
+        this.authorBean = authorBean;
     }
 
     public List<ChapterBean> getChapters(){
-
-        ArrayList<ChapterBean> chapterBeans = new ArrayList<>();
-        ChapterBundle chapterBundle;
-
-        for(Chapter chapter : this.chapters){
-            chapterBundle = new ChapterBundle();
-            chapterBundle.setTitle(chapter.getTitle());
-            chapterBundle.setReviews(chapter.getReviews());
-            chapterBundle.setDescription(chapter.getDescription());
-            chapterBundle.setAverageRating(chapter.getAverageRating());
-            chapterBeans.add(chapterBundle);
-        }
-
         return chapterBeans;
     }
 
-    public void setChapters(List<Chapter> chapters) {
-        this.chapters = chapters;
+    public void setChapters(List<ChapterBean> chaptersBean) {
+        this.chapterBeans = chaptersBean;
     }
 
     public Genres getGenre1() {
@@ -104,4 +93,5 @@ public class SeriesBundle implements SeriesBean {
     public void setAverageRating(int averageRating) {
         this.averageRating = averageRating;
     }
+
 }

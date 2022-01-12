@@ -19,7 +19,9 @@ public interface ChapterBean {
     public void setDescription(String chapterDescription);
     public String getDescription();
 
-
     public int getAverageRating();
     public void setAverageRating(int averageRating);
+
+    public void setRead(Boolean read);
+    public Boolean getRead();
 }

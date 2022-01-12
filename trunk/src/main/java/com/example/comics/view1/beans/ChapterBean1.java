@@ -13,6 +13,9 @@ public class ChapterBean1 implements ChapterBean {
     private String title;
     private Image cover;
     private List<ReviewBean> reviews = new ArrayList<>();
+    private int rating;
+    private String description;
+    private Boolean isRead;
 
     @Override
     public String getTitle() {
@@ -44,21 +47,31 @@ public class ChapterBean1 implements ChapterBean {
 
     @Override
     public void setDescription(String chapterDescription) {
-
+        this.description = chapterDescription;
     }
 
     @Override
     public String getDescription() {
-        return null;
+        return description;
     }
 
     @Override
     public int getAverageRating() {
-        return 0;
+        return this.rating;
     }
 
     @Override
     public void setAverageRating(int averageRating) {
+        this.rating = averageRating;
+    }
 
+    @Override
+    public void setRead(Boolean read) {
+        this.isRead = read;
+    }
+
+    @Override
+    public Boolean getRead() {
+        return this.isRead;
     }
 }

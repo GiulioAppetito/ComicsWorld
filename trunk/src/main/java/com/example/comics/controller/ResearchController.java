@@ -5,6 +5,7 @@ import com.example.comics.model.fagioli.*;
 import com.example.comics.model.dao.SeriesDAO;
 import com.example.comics.model.fagioli.bundle.AuthorBundle;
 import com.example.comics.model.fagioli.bundle.BadgeBundle;
+import com.example.comics.model.fagioli.bundle.ChapterBundle;
 import com.example.comics.model.fagioli.bundle.SeriesBundle;
 
 import java.util.ArrayList;
@@ -41,10 +42,31 @@ public class ResearchController {
         SeriesBundle seriesBundle;
         for(Series series : seriesList){
             seriesBundle = new SeriesBundle();
-            seriesBundle.setAuthor(series.getAuthor());
+
+            AuthorBundle authorBundle = new AuthorBundle();
+            authorBundle.setFirstName(series.getAuthor().getFirstName());
+            authorBundle.setLastName(series.getAuthor().getLastName());
+            authorBundle.setPublishedSeries(series.getAuthor().getPublishedSeries());
+            authorBundle.setUsername(series.getAuthor().getUsername());
+            authorBundle.setProPic(series.getAuthor().getProPic());
+            seriesBundle.setAuthor(authorBundle);
+
             seriesBundle.setCover(series.getCover());
             seriesBundle.setTitle(series.getTitle());
-            seriesBundle.setChapters(series.getChapters());
+
+            List<ChapterBean> chapterBeans = new ArrayList<>();
+            ChapterBundle chapterBundle;
+            for(Chapter chapter : series.getChapters()){
+                chapterBundle = new ChapterBundle();
+                chapterBundle.setTitle(chapter.getTitle());
+                chapterBundle.setAverageRating(chapter.getAverageRating());
+                chapterBundle.setDescription(chapter.getDescription());
+                chapterBundle.setReviews(chapter.getReviews());
+                chapterBundle.setCover(chapter.getCover());
+                chapterBundle.setRead(chapter.getRead());
+                chapterBeans.add(chapterBundle);
+            }
+            seriesBundle.setChapters(chapterBeans);
             seriesBundle.setAverageRating(series.getAverageRating());
             seriesBeans.add(seriesBundle);
         }

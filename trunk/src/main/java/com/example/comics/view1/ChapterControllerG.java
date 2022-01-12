@@ -6,11 +6,9 @@ import com.example.comics.model.fagioli.ChapterBean;
 import com.example.comics.model.fagioli.ObjectiveBean;
 import com.example.comics.model.fagioli.ReviewBean;
 import com.example.comics.model.ReviewObserver;
-import com.example.comics.model.ReviewSubject;
 import com.example.comics.model.UserLogin;
 import com.example.comics.view1.bean1.ReviewBean1;
 import com.example.comics.model.fagioli.SeriesBean;
-import com.example.comics.view1.beans.ReviewBean1;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
@@ -352,14 +350,12 @@ public class ChapterControllerG implements ReviewObserver {
 
     public void init(ChapterBean chapterBean, SeriesBean seriesBean){
 
-        ReviewSubject.attach(this);
-
         lblAuthor.setText("autore");
         lblChapterTitle.setText(chapterBean.getTitle());
         taDescription.setText(chapterBean.getDescription());
         taDescription.setEditable(false);
 
-        if(!chapterBean.isRead()){
+        if(!chapterBean.getRead()){
             btnChapterRead.setOnAction(event -> markChapterAsRead(seriesBean,chapterBean));
         }else{
             btnChapterRead.setOnAction(event -> removeChapterFromRead(seriesBean,chapterBean));

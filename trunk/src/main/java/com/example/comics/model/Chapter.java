@@ -2,7 +2,6 @@ package com.example.comics.model;
 
 import com.example.comics.model.dao.ChapterDAO;
 import com.example.comics.model.dao.ReviewDAO;
-import com.example.comics.model.dao.ReviewsNotFoundException;
 import com.example.comics.model.fagioli.ReviewBean;
 import com.example.comics.model.fagioli.bundle.ReviewBundle;
 import javafx.scene.image.Image;
@@ -19,17 +18,15 @@ public class Chapter extends ChapterSubject {
     private int averageRating;
     private Image cover;
     private String description;
+    private Boolean isRead;
 
     public Chapter(String title){
 
         this.title = title;
         //delego la responsabilità di creator delle review del chapter al chapterDAO che farà il retrieve delle review
         ChapterDAO chapterDAO = new ChapterDAO();
-        try {
-            this.reviews = chapterDAO.retrieveReviews(title);
-        } catch (ReviewsNotFoundException e) {
-            e.printStackTrace();
-        }
+        this.reviews = chapterDAO.retrieveReviews(title);
+
         this.averageRating = calculateAverageRating();
     }
 
@@ -107,4 +104,11 @@ public class Chapter extends ChapterSubject {
         return averageRating;
     }
 
+    public Boolean getRead() {
+        return isRead;
+    }
+
+    public void setRead(Boolean read) {
+        isRead = read;
+    }
 }

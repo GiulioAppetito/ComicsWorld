@@ -1,4 +1,4 @@
-package com.example.comics.view1.bean1;
+package com.example.comics.view1.beans;
 
 import com.example.comics.model.fagioli.BadgeBean;
 import javafx.scene.image.Image;

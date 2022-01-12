@@ -1,6 +1,5 @@
 package com.example.comics.view1.beans;
 
-import com.example.comics.model.Author;
 import com.example.comics.model.Chapter;
 import com.example.comics.model.Genres;
 import com.example.comics.model.fagioli.AuthorBean;
@@ -12,29 +11,39 @@ import java.util.List;
 
 public class SeriesBean1 implements SeriesBean {
 
+    private String title;
+    private Image cover;
+    private AuthorBean authorBean;
+
     @Override
     public String getTitle() {
-        return null;
+        return title;
     }
 
     @Override
-    public void setTitle(String title) {}
+    public void setTitle(String title) {
+        this.title = title;
+    }
 
     @Override
     public Image getCover() {
-        return null;
+        return cover;
     }
 
     @Override
-    public void setCover(Image cover){}
+    public void setCover(Image cover){
+        this.cover = cover;
+    }
 
     @Override
     public AuthorBean getAuthor() {
-        return null;
+        return authorBean;
     }
 
     @Override
-    public void setAuthor(Author author){}
+    public void setAuthor(AuthorBean authorBean){
+        this.authorBean = authorBean;
+    }
 
     @Override
     public List<ChapterBean> getChapters() {
@@ -42,7 +51,7 @@ public class SeriesBean1 implements SeriesBean {
     }
 
     @Override
-    public void setChapters(List<Chapter> chapters){
+    public void setChapters(List<ChapterBean> chapterBeans){
     }
 
     @Override

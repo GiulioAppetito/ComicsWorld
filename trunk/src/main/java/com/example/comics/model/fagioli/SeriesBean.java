@@ -1,7 +1,5 @@
 package com.example.comics.model.fagioli;
 
-import com.example.comics.model.Author;
-import com.example.comics.model.Chapter;
 import com.example.comics.model.Genres;
 import javafx.scene.image.Image;
 import java.util.List;
@@ -18,11 +16,11 @@ public interface SeriesBean {
 
     public AuthorBean getAuthor();
 
-    public void setAuthor(Author author);
+    public void setAuthor(AuthorBean authorBean);
 
     public List<ChapterBean> getChapters();
 
-    public void setChapters(List<Chapter> chapters);
+    public void setChapters(List<ChapterBean> chaptersBean);
 
     public Genres getGenre1();
 
