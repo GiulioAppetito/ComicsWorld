@@ -90,7 +90,11 @@ public class PublishChapterControllerG {
         chapterBean.setDescription(chapterDescription);
 
         chapterBean.setCover(chapterCover);
-        chapterBean.setCoverPath(imageCoverPath);
+        try {
+            chapterBean.setCoverInputStream(new FileInputStream(imageCoverPath));
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
 
 
         PublishChapterController publishChapterController = new PublishChapterController();

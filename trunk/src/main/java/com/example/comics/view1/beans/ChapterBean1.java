@@ -5,6 +5,7 @@ import com.example.comics.model.fagioli.ChapterBean;
 import com.example.comics.model.fagioli.ReviewBean;
 import javafx.scene.image.Image;
 
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -16,7 +17,7 @@ public class ChapterBean1 implements ChapterBean {
     private int rating;
     private String description;
     private Boolean isRead;
-    private String coverPath;
+    private InputStream coverStream;
 
     @Override
     public String getTitle() {
@@ -77,12 +78,14 @@ public class ChapterBean1 implements ChapterBean {
     }
 
     @Override
-    public String getCoverPath() {
-        return this.coverPath;
+    public InputStream getCoverInputStream() {
+        return this.coverStream;
     }
 
     @Override
-    public void setCoverPath(String path) {
-        this.coverPath = path;
+    public void setCoverInputStream(InputStream stream) {
+        this.coverStream = stream;
     }
+
+
 }

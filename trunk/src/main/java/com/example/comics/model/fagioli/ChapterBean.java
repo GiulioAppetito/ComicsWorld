@@ -2,6 +2,8 @@ package com.example.comics.model.fagioli;
 
 import com.example.comics.model.Review;
 import javafx.scene.image.Image;
+
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -25,6 +27,6 @@ public interface ChapterBean {
     void setRead(Boolean read);
     Boolean getRead();
 
-    String getCoverPath();
-    void setCoverPath(String path);
+    InputStream getCoverInputStream();
+    void setCoverInputStream(InputStream stream);
 }

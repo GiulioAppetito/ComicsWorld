@@ -104,7 +104,7 @@ public class ChapterDAO {
 
     }
 
-    public void saveChapter(Chapter chapter,String seriesTitle,String coverPath) {
+    public void saveChapter(Chapter chapter,String seriesTitle,InputStream coverInputStream) {
         Statement stmt = null;
         Connection conn = null;
 
@@ -114,7 +114,7 @@ public class ChapterDAO {
             conn = DriverManager.getConnection(DB_URL, USER, PASS);
 
             // STEP 4.2: creazione ed esecuzione della query
-            Queries.insertChapter(conn,chapter,seriesTitle,coverPath);
+            Queries.insertChapter(conn,chapter,seriesTitle,coverInputStream);
 
 
         } catch (SQLException throwables) {

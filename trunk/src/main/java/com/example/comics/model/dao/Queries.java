@@ -189,15 +189,14 @@ public class Queries {
         stmt.executeUpdate(insertStatement);
     }
 
-    public static void insertChapter(Connection connection, Chapter chapter,String seriesTitle,String coverPath) throws SQLException, IOException {
+    public static void insertChapter(Connection connection, Chapter chapter,String seriesTitle,InputStream coverInputStream) throws SQLException, IOException {
         PreparedStatement pstmt = connection.prepareStatement("INSERT INTO chapters (series_title,chapter_title,chapterDescription,chapterCover) values (?, ?,?,?)");
         pstmt.setString(1, seriesTitle);
         pstmt.setString(2,chapter.getTitle());
         pstmt.setString(3,chapter.getDescription());
 
         //Inserting Blob type
-        InputStream in = new FileInputStream(coverPath);
-        pstmt.setBlob(4, in);
+        pstmt.setBlob(4, coverInputStream);
         //Executing the statement
         pstmt.execute();
 
