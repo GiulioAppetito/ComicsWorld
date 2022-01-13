@@ -13,7 +13,7 @@ public class ObjectiveDAO {
     private static final String DB_URL = "jdbc:mysql://comics-world.ce9t0fxhansh.eu-west-2.rds.amazonaws.com:3306/ComicsWorld?autoReconnect=true&useSSL=false";
 
 
-    public List<Objective> retrieveSeriesObjectives(Series series){
+    public List<Objective> retrieveSeriesObjectives(String series){
         Statement stmt = null;
         Connection conn = null;
 
@@ -23,10 +23,10 @@ public class ObjectiveDAO {
         try {
             conn = DriverManager.getConnection(DB_URL, USER, PASS);
             stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
-            ResultSet rs = Queries.retreiveObjectivesBySeries(stmt, series.getTitle());
+            ResultSet rs = Queries.retreiveObjectivesBySeries(stmt, series);
 
             if (!rs.first()) {
-                System.out.println("No objectives found on series : "+series.getTitle());
+                System.out.println("No objectives found on series : "+series);
                 return objectives;
             }
             rs.first();

@@ -1,6 +1,6 @@
 package com.example.comics.model;
 
-public abstract class Objective {
+public abstract class Objective extends ObjectiveSubject{
 
     private int id;
     private Levels level;
@@ -16,7 +16,7 @@ public abstract class Objective {
         this.level = level;
     }
 
-    public abstract boolean achieveObjective(int input);
+    public abstract boolean achieveObjective(int input, Badge badge);
     public abstract String getType();
 
     public Badge getBadge() {

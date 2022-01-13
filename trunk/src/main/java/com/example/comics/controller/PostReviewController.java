@@ -27,11 +27,10 @@ public class PostReviewController{
 
         //controllo degli obiettivi
         for(Objective objective : series.getObjectives()){
-
             if(objective.getType().equals("reviewsObjective")){
-                if(objective.achieveObjective(numOfReviews)){
-                    //controllo che il lettore non abbia già raggiunto questo obiettivo confrontando i badge
-                    if(!UserLogin.getInstance().getReader().hasAchievedThisBadge(objective.getBadge())){
+                //controllo che il lettore non abbia già raggiunto questo obiettivo confrontando i badge
+                if(!UserLogin.getInstance().getReader().hasAchievedThisBadge(objective.getBadge())){
+                    if(objective.achieveObjective(numOfReviews, objective.getBadge())){
 
                         //aggiungo badge alla lista e salvo sul DB + assegno badge
                         UserLogin.getInstance().getReader().addAchievedBadge(objective.getBadge());
@@ -50,10 +49,7 @@ public class PostReviewController{
                     }
                 }
             }
-
         }
-        //azione a seguito del controllo
-
     }
 
 }

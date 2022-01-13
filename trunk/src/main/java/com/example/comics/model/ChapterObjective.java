@@ -10,12 +10,12 @@ public class ChapterObjective extends Objective{
     }
 
     @Override
-    public boolean achieveObjective(int input) {
+    public boolean achieveObjective(int input, Badge badge) {
         return false;
     }
 
     @Override
-    public String getType() {
+    public final String getType() {
         return "chapterObjective";
     }
 

@@ -31,7 +31,7 @@ public class Series {
 		this.chapters = chapterDAO.retriveChapters(title);
 		//inizializzazione obiettivi dal db
 		SeriesDAO seriesDAO = new SeriesDAO();
-		this.objectives = seriesDAO.retrieveObjectives(this);
+		this.objectives = seriesDAO.retrieveObjectives(title);
 		if(objectives==null){
 			objectives = new ArrayList<>();
 		}

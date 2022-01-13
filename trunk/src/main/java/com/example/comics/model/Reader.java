@@ -1,11 +1,9 @@
 package com.example.comics.model;
 
-import com.example.comics.model.dao.AuthorDAO;
 import com.example.comics.model.dao.BadgeDAO;
 import com.example.comics.model.dao.ReaderDAO;
 
 import java.sql.SQLException;
-import java.util.ArrayList;
 import java.util.List;
 
 public class Reader extends Account{
@@ -69,7 +67,6 @@ public class Reader extends Account{
         this.badges.add(badge);
         ReaderDAO readerDAO = new ReaderDAO();
         readerDAO.saveAchievedBadge(badge, this);
-        notifyObservers();
     }
 
     public void addDiscountCode(DiscountCode discountCode) {

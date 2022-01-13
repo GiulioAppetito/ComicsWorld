@@ -92,4 +92,5 @@ public class ReaderProfileControllerG implements AccountObserver {
         lblName.setText(UserLogin.getInstance().getAccount().getFirstName());
         lblUsername.setText(UserLogin.getInstance().getAccount().getUsername());
     }
+
 }

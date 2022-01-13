@@ -1,6 +1,8 @@
 package com.example.comics.model;
 
 
+import com.example.comics.model.fagioli.bundle.BadgeBundle;
+
 public class ReviewsObjective extends Objective{
 
     private int requiredReviews;
@@ -11,12 +13,20 @@ public class ReviewsObjective extends Objective{
     }
 
     @Override
-    public boolean achieveObjective(int readersReviews){
-        return readersReviews >= requiredReviews;
+    public boolean achieveObjective(int readersReviews, Badge badge){
+        Boolean win = (readersReviews >= requiredReviews);
+        if(win == true){
+            BadgeBundle badgeBundle = new BadgeBundle();
+            System.out.println("vittoria badge");
+            badgeBundle.setIcon(badge.getIcon());
+            badgeBundle.setName(badge.getName());
+            notifyObserversNewBadge(badgeBundle);
+        }
+        return win;
     }
 
     @Override
-    public String getType() {
+    public final String getType() {
         return "reviewsObjective";
     }
 
@@ -26,4 +36,5 @@ public class ReviewsObjective extends Objective{
     public void setRequiredReviews(int num){
         this.requiredReviews = num;
     }
+
 }
