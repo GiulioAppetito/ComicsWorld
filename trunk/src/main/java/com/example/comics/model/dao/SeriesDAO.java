@@ -32,7 +32,7 @@ public class SeriesDAO {
             ResultSet rs = Queries.retriveFavouriteSeries(stmt, user);
 
             if (!rs.first()) {
-                throw new Exception("No series Found ");
+                return seriesList;
             }
             rs.first();
 
@@ -82,7 +82,7 @@ public class SeriesDAO {
             ResultSet rs = Queries.retriveToReadSeries(stmt, user);
 
             if (!rs.first()) {
-                throw new Exception("No series Found ");
+                return seriesList;
             }
             rs.first();
 

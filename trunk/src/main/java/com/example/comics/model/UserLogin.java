@@ -4,6 +4,7 @@ import com.example.comics.model.dao.AccountDAO;
 import com.example.comics.model.dao.AlreadyUsedUsernameException;
 import com.example.comics.model.dao.AuthorDAO;
 import com.example.comics.model.dao.ReaderDAO;
+import com.example.comics.model.exceptions.FailedRegistrationException;
 
 public class UserLogin{
 
@@ -60,7 +61,7 @@ public class UserLogin{
     }
 
 
-    public void register(String firstName, String lastName, String username, String email, String password, String role) throws AlreadyUsedUsernameException {
+    public void register(String firstName, String lastName, String username, String email, String password, String role) throws FailedRegistrationException {
         AccountDAO dao = new AccountDAO();
         dao.registerNewAccount(firstName,lastName,username,email,password,role);
     }

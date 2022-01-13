@@ -110,8 +110,8 @@
                   <Insets left="50.0" />
                </VBox.margin>
                <children>
-                  <RadioButton fx:id="radioBtnReader" mnemonicParsing="false" onAction="#readerSelected" text="Reader" />
-                  <RadioButton fx:id="radioBtnAuthor" mnemonicParsing="false" onAction="#authorSelected" text="Author">
+                  <RadioButton fx:id="radioBtnReader" mnemonicParsing="false"  text="Reader" />
+                  <RadioButton fx:id="radioBtnAuthor" mnemonicParsing="false"  text="Author">
                      <HBox.margin>
                         <Insets left="30.0" />
                      </HBox.margin>
@@ -134,7 +134,7 @@
                             <String fx:value="buttonCancel" />
                         </styleClass>
                     </Button>
-                    <Button fx:id="registerButton" mnemonicParsing="false" onAction="#clickRegisterButton" prefHeight="76.0" prefWidth="186.0" stylesheets="@../../../../css/css1/fullpackstyling.css" text="Register">
+                    <Button fx:id="registerButton" mnemonicParsing="false"  prefHeight="76.0" prefWidth="186.0" stylesheets="@../../../../css/css1/fullpackstyling.css" text="Register">
                         <font>
                             <Font name="Berlin Sans FB" size="24.0" />
                         </font>
@@ -155,7 +155,7 @@
             </VBox>
         </center>
     </BorderPane>
-   <Pane fx:id="errorPane" prefHeight="100.0" prefWidth="290.0" stylesheets="@../../../../css/css1/fullpackstyling.css">
+   <Pane fx:id="errorPane" prefHeight="100.0" prefWidth="290.0" style="-fx-background-color: red;" stylesheets="@../../../../css/css1/fullpackstyling.css">
       <StackPane.margin>
          <Insets bottom="250.0" left="80.0" right="80.0" top="300.0" />
       </StackPane.margin>
@@ -165,7 +165,10 @@
       </styleClass>
       <children>
          <Button fx:id="btnCloseErrorMessage" layoutX="238.0" layoutY="14.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="38.0" styleClass="button2" text="X" />
-         <Label fx:id="errorPaneLabel" alignment="CENTER" layoutX="18.0" layoutY="7.0" prefHeight="99.0" prefWidth="219.0" text="Wrong Credentials!" />
+         <Label fx:id="errorPaneLabel" alignment="CENTER" layoutX="14.0" prefHeight="111.0" prefWidth="221.0" text="Wrong Credentials!" textFill="WHITE">
+            <font>
+               <Font name="Berlin Sans FB" size="20.0" />
+            </font></Label>
       </children>
    </Pane>
 </StackPane>

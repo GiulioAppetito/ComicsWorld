@@ -1,5 +1,8 @@
 package com.example.comics.model.dao;
 
+import com.example.comics.model.exceptions.FailedLoginException;
+import com.example.comics.model.exceptions.FailedRegistrationException;
+
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -10,7 +13,7 @@ public class AccountDAO {
     private static final String DB_URL = "jdbc:mysql://comics-world.ce9t0fxhansh.eu-west-2.rds.amazonaws.com:3306/ComicsWorld?autoReconnect=true&useSSL=false";
 
 
-    public String verifyCredentials(String credential,String password) throws Exception {
+    public String verifyCredentials(String credential,String password) throws FailedLoginException {
 
         //dichiarazioni
         Statement stmt=null;
@@ -21,10 +24,10 @@ public class AccountDAO {
             conn= DriverManager.getConnection(DB_URL,USER,PASS);
 
             stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE,ResultSet.CONCUR_READ_ONLY);
-            ResultSet rs = Queries.checkSignedUserByEmail(stmt, credential, password);
+            ResultSet rs = Queries.checkSignedUserByEmail(stmt, credential);
 
             if (!rs.first()){
-                throw new Exception("No username Found matching with email or username: "+ credential);
+                throw new FailedLoginException("Username not registered!");
             }
             rs.first();
             do{
@@ -32,13 +35,17 @@ public class AccountDAO {
                 String foundPassword=rs.getString("password");
                 if(foundPassword.equals(password)) {
                     role = rs.getString("role");
+                }else{
+                    throw new FailedLoginException("Wrong password!");
                 }
 
 
             }while(rs.next());
-            return role;
 
-        }finally {
+
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        } finally {
             try {
                 if (stmt != null)
                     stmt.close();
@@ -53,6 +60,7 @@ public class AccountDAO {
             }
 
         }
+        return role;
 
 
     }
@@ -126,7 +134,7 @@ public class AccountDAO {
 
     }
 
-    public void registerNewAccount(String firstName, String lastName, String username, String email, String password, String role) throws AlreadyUsedUsernameException{
+    public void registerNewAccount(String firstName, String lastName, String username, String email, String password, String role) throws FailedRegistrationException {
         Statement stmt=null;
         Connection conn=null;
 
@@ -137,7 +145,7 @@ public class AccountDAO {
 
         }
         catch (SQLException se) {
-            se.printStackTrace();
+            throw new FailedRegistrationException("Username is already used.");
         }
         finally {
             try {
