@@ -60,25 +60,25 @@ public class LoginControllerG2 {
             String role = UserLogin.getInstance().getAccount().getRole();
 
             if(role.equals("reader")) {
-                ReaderHomeControllerG readerHomeControllerG = ReaderHomeControllerG.getInstance();
+                FeedControllerG2 feedControllerG2 = FeedControllerG2.getInstance();
 
-                fxmlLocation = ReaderHomeControllerG.class.getResource("readerhome.fxml");
+                fxmlLocation = FeedControllerG2.class.getResource("feed2.fxml");
                 loader.setLocation(fxmlLocation);
-                loader.setController(readerHomeControllerG);
+                loader.setController(feedControllerG2);
                 scene = new Scene(loader.load());
-                readerHomeControllerG.init();
+                feedControllerG2.init();
             }
             else{
-                AuthorHomeControllerG authorHomeControllerG = AuthorHomeControllerG.getInstance();
+                FeedControllerG2 feedControllerG2 = FeedControllerG2.getInstance();
 
-                fxmlLocation = AuthorHomeControllerG.class.getResource("authorhome.fxml");
+                fxmlLocation = FeedControllerG2.class.getResource("feed2.fxml");
                 loader.setLocation(fxmlLocation);
-                loader.setController(authorHomeControllerG);
+                loader.setController(feedControllerG2);
                 scene = new Scene(loader.load());
-                authorHomeControllerG.init();
+                feedControllerG2.init();
             }
 
-            stage.setTitle("ComicsWorld");
+            stage.setTitle("ComicsWorld Mobile");
             stage.setScene(scene);
             stage.show();
 

@@ -4,7 +4,6 @@ import com.example.comics.controller.PostReviewController;
 import com.example.comics.model.fagioli.ChapterBean;
 import com.example.comics.model.fagioli.ObjectiveBean;
 import com.example.comics.model.fagioli.ReviewBean;
-import com.example.comics.model.ReviewObserver;
 import com.example.comics.model.ReviewSubject;
 import com.example.comics.model.UserLogin;
 import javafx.fxml.FXML;

@@ -7,6 +7,7 @@ import javafx.fxml.FXML;
 import javafx.scene.chart.*;
 
 import java.util.List;
+import java.util.concurrent.ConcurrentSkipListSet;
 
 public class StatisticsRatingControllerG {
 
@@ -31,8 +32,9 @@ public class StatisticsRatingControllerG {
 
         for(SeriesBean series : publishedSeries) {
             System.out.println(series.getTitle());
-            int rating = statisticsController.seriesAverageRating(series);
-            series1.getData().add(new XYChart.Data(series.getTitle(), rating));
+            //int rating = statisticsController.seriesAverageRating(series);
+            System.out.println("StRaCoG averageRating per series: " + series.getAverageRating());
+            series1.getData().add(new XYChart.Data(series.getTitle(), series.getAverageRating()));
         }
 
         //Setting the XYChart.Series objects to area chart

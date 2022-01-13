@@ -21,8 +21,16 @@ public class StatisticsControllerG {
     @FXML
     private VBox settingsBox;
 
+    private static final String STYLE = ".button2";
+
+    public void initialize(){
+        openStatisticsRating();
+    }
+
     @FXML
     public void openStatisticsRating() {
+        btnRatings.setStyle("-fx-background-color : #5DADE2");
+        btnReadings.setStyle(STYLE);
         FxmlLoader object = new FxmlLoader();
         Pane view = object.getPage("statisticsrating");
         mainPane.setCenter(view);
@@ -30,6 +38,8 @@ public class StatisticsControllerG {
 
     @FXML
     public void openStatisticsFollowers() {
+        btnReadings.setStyle("-fx-background-color : #5DADE2");
+        btnRatings.setStyle(STYLE);
         FxmlLoader object = new FxmlLoader();
         Pane view = object.getPage("statisticsfollowers");
         mainPane.setCenter(view);
