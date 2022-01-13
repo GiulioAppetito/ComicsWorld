@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox alignment="CENTER" prefHeight="151.0" prefWidth="280.0" stylesheets="@../../../../css/css1/fullpackstyling.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.comics.view2.SeriesCardControllerG">
+   <styleClass>
+      <String fx:value="white-background" />
+      <String fx:value="oval-layout" />
+      <String fx:value="button2" />
+   </styleClass>
+   <children>
+      <HBox prefHeight="124.0" prefWidth="274.0">
+         <VBox.margin>
+            <Insets bottom="8.0" top="8.0" />
+         </VBox.margin>
+         <children>
+            <ImageView fx:id="comicCover" fitHeight="123.0" fitWidth="101.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../img/img1/download.jpg" />
+               </image>
+            </ImageView>
+            <VBox prefHeight="93.0" prefWidth="178.0">
+               <children>
+                  <Label fx:id="comicName" alignment="CENTER" prefHeight="29.0" prefWidth="276.0" text="Spiderman">
+                     <font>
+                        <Font name="Berlin Sans FB" size="14.0" />
+                     </font>
+                  </Label>
+                  <HBox prefHeight="55.0" prefWidth="272.0">
+                     <children>
+                        <ImageView fx:id="imgStar1" fitHeight="29.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../../img/img1/full-star.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="imgStar2" fitHeight="29.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../../img/img1/full-star.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="imgStar3" fitHeight="29.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../../img/img1/full-star.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="imgStar4" fitHeight="29.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../../img/img1/full-star.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="imgStar5" fitHeight="29.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../../img/img1/full-star.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                     <padding>
+                        <Insets left="15.0" right="15.0" />
+                     </padding>
+                  </HBox>
+               </children>
+               <HBox.margin>
+                  <Insets top="20.0" />
+               </HBox.margin>
+            </VBox>
+         </children>
+         <padding>
+            <Insets left="20.0" />
+         </padding>
+      </HBox>
+   </children>
+</VBox>

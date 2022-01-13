@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox prefHeight="72.0" prefWidth="67.0" stylesheets="@../../../../css/css2/styles.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.comics.view2.AdControllerG2">
+   <children>
+      <HBox>
+         <children>
+            <ImageView fx:id="comicCover" fitHeight="50.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../img/img2/copertina_ad.jpg" />
+               </image>
+            </ImageView>
+            <VBox alignment="CENTER" prefHeight="42.0" prefWidth="41.0">
+               <children>
+                  <Label text="20%" />
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+      <Label fx:id="lblcomicName" prefHeight="16.0" prefWidth="66.0" text="Name">
+         <font>
+            <Font size="11.0" />
+         </font>
+      </Label>
+   </children>
+</VBox>

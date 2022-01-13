@@ -1,6 +1,9 @@
 .white-background{
     -fx-background-color: #fff;
 }
+.header-background{
+    -fx-background-color: #b17ee0;
+}
 
 .wallpaper{
     -fx-background-image: url('fakebg3.jpg');
@@ -16,19 +19,8 @@
 }
 .keyboard:hover
 {
-    -fx-background-color : #D2D2D2 ;
-    -fx-background-radius :  20;
-}
-.keyboard:pressed
-{
-    -fx-background-color : #C2C2C2 ;
-    -fx-background-radius :  20;
-}
-.keyboard:focused
-{
-    -fx-background-color :#5DADE2 ;
-    -fx-background-radius :  20;
-
+    -fx-background-color : #363636;
+    -fx-background-radius :  0 0 35 35;
 }
 
 .transparent{

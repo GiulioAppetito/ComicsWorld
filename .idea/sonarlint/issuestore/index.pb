@@ -25,8 +25,6 @@ Itrunk/src/main/java/com/example/comics/view1/BadgeCreatorControllerG.java,e\8\
 Ktrunk/src/main/java/com/example/comics/view1/BadgesSettingsControllerG.java,d\9\d915cda3aaecc707aadae3092ff345b8601edfd2
 
 Otrunk/src/main/java/com/example/comics/view1/PreferencesSettingsController.java,3\5\3534f485c3bc1958f43d06b2f9d983c4e7758f87
-u
-Etrunk/src/main/java/com/example/comics/view1/SettingsControllerG.java,7\9\79ea4a4cd75fb8046c2b9cdeda07ca97f4d2afa6
 A
 comando batch.txt,e\c\ec904f9bcd6fb051ee00b231734dbc0e5d956b96
 H
@@ -2059,12 +2057,8 @@ y
 Itrunk/src/main/java/com/example/comics/view1/CategoryCardControllerG.java,7\a\7abe2fa6ba04c0b4f11be7d3e6be76fedd46bd94
 o
 ?trunk/src/main/java/com/example/comics/model/dao/ReviewDAO.java,1\f\1f22ec19cc659cc2aa28f863a5054710a31b5996
-w
-Gtrunk/src/main/java/com/example/comics/view1/StatisticsControllerG.java,9\5\95761a20162375edf28c29d3b2274ef1674b8d9e
 h
 8trunk/src/main/java/com/example/comics/model/Review.java,0\e\0ebc34990087772f77f2d53656d86f7b14bc71d7
-Z
-*.scannerwork/scanner-report/source-364.txt,5\1\5199e06b0b3ec1171afb2dfda6328e7925967fd0
 r
 Btrunk/src/main/java/com/example/comics/model/ChapterObjective.java,b\3\b3eec645610f52f5ca30fb3f4a1f138583d83fc4
 q
@@ -2077,16 +2071,10 @@ w
 Gtrunk/src/main/java/com/example/comics/view1/AuthorHomeControllerG.java,a\a\aacf7a587fd8f65b28db22fa4798ed6f14282a41
 q
 Atrunk/src/main/java/com/example/comics/model/ChapterObserver.java,2\3\23130c14c97aeffd28a4358cea3f734706d5d187
-p
-@trunk/src/main/java/com/example/comics/model/ChapterSubject.java,c\b\cbef2f5c28e0525fe37bc3006eb93dd3e76f3b3d
-w
-Gtrunk/src/main/java/com/example/comics/view1/ReaderHomeControllerG.java,e\c\ec2e8050235c1d9d3918ef5543b9bf4b12855c12
 ‹
 [trunk/src/main/java/com/example/comics/controller/externalBoundaries/BoundarySendEmail.java,0\c\0cb68fe898f259d3f7f7e237ee087112e166b6ff
 s
 Ctrunk/src/main/java/com/example/comics/view1/ToReadControllerG.java,a\f\af51d298954fbb57ad158824154a1019417de095
-{
-Ktrunk/src/main/java/com/example/comics/controller/StatisticsController.java,0\2\0266bfbfd780a571572d9c4df9b7ccec5d1ca795
 ;
 Coomics.iml,e\e\ee9c7419ca187f5eb005ec5f6bcb3934bb03ee34
 7
@@ -2095,8 +2083,6 @@ i
 9trunk/src/main/java/com/example/comics/model/Account.java,9\a\9a56b31fe52b942392371e7a8bc9f9ad131d226e
 f
 6trunk/src/main/java/com/example/comics/view1/Main.java,4\f\4fac817cac1c690fe55eef1a8c0e48877f7cdb73
-p
-@trunk/src/main/java/com/example/comics/model/dao/AccountDAO.java,f\9\f9fbbecf4bd6d3b71d8b4a6360b3ecba6bd88d4b
 u
 Etrunk/src/main/java/com/example/comics/model/fagioli/AccountBean.java,a\5\a5cf89bb8bc9b320572341689a43bdd3972e0503
 t
@@ -2143,8 +2129,6 @@ w
 Gtrunk/src/main/java/com/example/comics/model/fagioli/ObjectiveBean.java,a\e\ae91919e907ece49d105c546ec30b6670ff6219a
 v
 Ftrunk/src/main/java/com/example/comics/view1/beans/ObjectiveBean1.java,2\8\28171cbbb0ca19ed3dfa06de314921ad48b51454
-{
-Ktrunk/src/main/java/com/example/comics/controller/PostReviewController.java,a\1\a19cf71aec895bab12bf5df544290229107f8b95
 u
 Etrunk/src/main/java/com/example/comics/model/fagioli/ProfileBean.java,3\1\319a75db0d22880bf299081b55bb1ae7f375ccc4
 t
@@ -2173,20 +2157,12 @@ s
 Ctrunk/src/main/java/com/example/comics/view1/beans/ReviewBean1.java,3\2\3245b769fe299e7605b5f5d89ddbf313f56d1e2b
 }
 Mtrunk/src/main/java/com/example/comics/model/fagioli/bundle/ReviewBundle.java,0\3\031cef5abcc1b8da78068a3cb39472437a990edd
-}
-Mtrunk/src/main/java/com/example/comics/view1/StatisticsRatingControllerG.java,5\a\5aac75394d3cc7c119b16d8979d3f95dee37e383
 w
 Gtrunk/src/main/java/com/example/comics/controller/ToReadController.java,1\c\1c3ec2f83de973c2309989978a5802f8217b0e4a
-r
-Btrunk/src/main/java/com/example/comics/view1/VCardControllerG.java,1\7\17dccfd2fa1976234d4229aa2c91c053f3f2b1ff
 v
 Ftrunk/src/main/java/com/example/comics/view1/CharacterControllerG.java,b\d\bd1950108fad9faa006d9ad66c18b531098bf500
-q
-Atrunk/src/main/java/com/example/comics/view1/FeedControllerG.java,3\0\30f770410a71ec3e410810c53c6e2891d29a24c5
 r
 Btrunk/src/main/java/com/example/comics/view1/beans/BadgeBean1.java,f\1\f18e5483fab09a9041c604562695458ba096c628
-i
-9trunk/src/main/java/com/example/comics/model/Chapter.java,e\e\ee53f251e6fa246c2de20c960c4d267b1c885842
 u
 Etrunk/src/main/java/com/example/comics/model/fagioli/ChapterBean.java,1\0\10ff9f5e6d454fce4bc8188b948cd60f08d61d27
 t
@@ -2205,16 +2181,10 @@ s
 Ctrunk/src/main/java/com/example/comics/view1/SeriesControllerG.java,9\e\9e35f99e41cf6d6aa41349eee274243f957b0813
 o
 ?trunk/src/main/java/com/example/comics/model/dao/AuthorDAO.java,b\9\b9de5122434cae66700037895ef8a2dc8e8a42e8
-s
-Ctrunk/src/main/java/com/example/comics/view2/LoginControllerG2.java,1\e\1e7b544f2c19e9490bc5f6c5bfe8bb802f713d05
 v
 Ftrunk/src/main/java/com/example/comics/controller/LoginController.java,5\2\52c8d0ece5ecea5be79349a3b18d789e37c95ad8
-h
-8trunk/src/main/java/com/example/comics/model/Series.java,c\8\c8bcf65e561109814ec36c1d5eccfe66f4067141
 o
 ?trunk/src/main/java/com/example/comics/model/dao/SeriesDAO.java,1\a\1a268b5783fdf4518ee179aca9664c3642aacf6e
-t
-Dtrunk/src/main/java/com/example/comics/view1/ChapterControllerG.java,0\0\0001f7e92c2791823074c36e4a3485140d2f11e6
 p
 @trunk/src/main/java/com/example/comics/model/dao/ChapterDAO.java,1\d\1ddfc0cfcef200504c825e15e2d46d1aa7918d49
 m

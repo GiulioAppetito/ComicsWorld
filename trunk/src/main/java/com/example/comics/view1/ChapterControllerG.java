@@ -2,10 +2,11 @@ package com.example.comics.view1;
 
 import com.example.comics.controller.MarkChapterAsReadController;
 import com.example.comics.controller.PostReviewController;
+import com.example.comics.model.ChapterObserver;
+import com.example.comics.model.ChapterSubject;
 import com.example.comics.model.fagioli.ChapterBean;
 import com.example.comics.model.fagioli.ObjectiveBean;
 import com.example.comics.model.fagioli.ReviewBean;
-import com.example.comics.model.ReviewObserver;
 import com.example.comics.model.UserLogin;
 import com.example.comics.model.fagioli.SeriesBean;
 import com.example.comics.view1.beans.ReviewBean1;
@@ -21,7 +22,7 @@ import javafx.scene.layout.VBox;
 import java.io.IOException;
 import java.util.List;
 
-public class ChapterControllerG implements ReviewObserver {
+public class ChapterControllerG implements ChapterObserver{
 
     @FXML
     private VBox vbReviews;
@@ -350,6 +351,7 @@ public class ChapterControllerG implements ReviewObserver {
 
     public void init(ChapterBean chapterBean, SeriesBean seriesBean){
 
+        ChapterSubject.attach(this);
         lblAuthor.setText("autore");
         lblChapterTitle.setText(chapterBean.getTitle());
         taDescription.setText(chapterBean.getDescription());
@@ -504,8 +506,17 @@ public class ChapterControllerG implements ReviewObserver {
 
     }
 
+    public void achievedObjective(ObjectiveBean objectiveBean) {
+        //mostra panel con vittoria badge
+        newBadgeWonPane.setVisible(true);
+        lblBadgeName.setText(objectiveBean.getBadgeName());
+        lblBadgeSeries.setText(objectiveBean.getSeriesTitle());
+        badgeIconView.setImage(objectiveBean.getBadgeIcon());
+
+    }
+
     @Override
-    public void update(ReviewBean reviewBean) {
+    public void updateReviews(ReviewBean reviewBean) {
         //add della review sulla lista
         FXMLLoader fxmlLoader = new FXMLLoader();
         fxmlLoader.setLocation(getClass().getResource("review.fxml"));
@@ -518,15 +529,5 @@ public class ChapterControllerG implements ReviewObserver {
         } catch (IOException e) {
             e.printStackTrace();
         }
-    }
-
-    @Override
-    public void achievedObjective(ObjectiveBean objectiveBean) {
-        //mostra panel con vittoria badge
-        newBadgeWonPane.setVisible(true);
-        lblBadgeName.setText(objectiveBean.getBadgeName());
-        lblBadgeSeries.setText(objectiveBean.getSeriesTitle());
-        badgeIconView.setImage(objectiveBean.getBadgeIcon());
-
     }
 }
