@@ -45,9 +45,12 @@ public class AuthorDAO {
             author.setPublishedSeries(publishedSeries);
 
             Blob bl = rs.getBlob("proPic");
-            InputStream inputStream = bl.getBinaryStream();
-            Image image = new Image(inputStream);
-            author.setProPic(image);
+            if(bl != null){
+                InputStream inputStream = bl.getBinaryStream();
+                Image image = new Image(inputStream);
+                author.setProPic(image);
+            }
+
 
         } catch (SQLException throwables) {
             throwables.printStackTrace();
