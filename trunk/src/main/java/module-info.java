@@ -10,6 +10,7 @@ module com.example.coomics {
     requires org.kordamp.bootstrapfx.core;
     requires javafx.graphics;
     requires java.sql;
+    requires java.desktop;
 
     exports com.example.comics.view1;
     opens com.example.comics.view1 to javafx.fxml;

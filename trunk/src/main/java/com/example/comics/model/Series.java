@@ -104,13 +104,14 @@ public class Series {
 		this.author = author;
 	}
 
-	public void addChapter(String chapterTitle, Image chapterCover, String chapterDescription) throws SQLException {
+	public void addChapter(String chapterTitle, Image chapterCover, String chapterDescription, String coverPath) throws SQLException {
 		Chapter chapter = new Chapter(chapterTitle);
 		chapter.setDescription(chapterDescription);
+		chapter.setCover(chapterCover);
 		this.chapters.add(chapter);
 
 		ChapterDAO chapterDAO = new ChapterDAO();
-		chapterDAO.saveChapter(chapter,this.title);
+		chapterDAO.saveChapter(chapter,this.title,coverPath);
 	}
 
 	public int getNumberOfReviews(Reader reader) {
@@ -136,7 +137,6 @@ public class Series {
 					chapters.get(i).addReview(this, reviewComment, rating, UserLogin.getInstance().getReader().getUsername());
 				}
 			}
-
 	}
 
 	public int calculateAverageRating(){

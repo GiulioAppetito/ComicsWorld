@@ -9,9 +9,15 @@ import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.stage.FileChooser;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
+import java.awt.image.BufferedImage;
 
 public class PublishChapterControllerG {
 
@@ -38,8 +44,11 @@ public class PublishChapterControllerG {
     @FXML
     private Button btnPublishChapter;
 
+    String imageCoverPath;
+
     public void initialize(){
-        btnPublishChapter.setOnAction(actionEvent -> publishChapter());
+        btnPublishChapter.setOnAction(event -> publishChapter());
+        btnChangeCover.setOnAction(event -> changeCover());
 
         List<Series> publishedSeries = UserLogin.getInstance().getAuthor().getPublishedSeries();
         List<String> seriesTitles = new ArrayList<>();
@@ -49,6 +58,26 @@ public class PublishChapterControllerG {
         choiceBoxSeries.getItems().setAll(seriesTitles);
 
     }
+
+    private void changeCover() {
+        FileChooser fc = new FileChooser();
+        fc.getExtensionFilters().add(new FileChooser.ExtensionFilter("*.png","*.png"));
+        File f = fc.showOpenDialog(null);
+        if(f!=null){
+            imageCoverPath = f.getAbsolutePath();
+            System.out.println("Cover path is : "+imageCoverPath);
+            InputStream inputStream = null;
+            try {
+                inputStream = new FileInputStream(imageCoverPath);
+            } catch (FileNotFoundException e) {
+                e.printStackTrace();
+            }
+            Image cover = new Image(inputStream);
+            ivComicCover.setImage(cover);
+        }
+
+    }
+
     public void publishChapter(){
         System.out.println("Publishing chapter...");
         String chapterTitle = tfChapterTitle.getText();
@@ -58,8 +87,11 @@ public class PublishChapterControllerG {
 
         ChapterBean chapterBean = new ChapterBean1();
         chapterBean.setTitle(chapterTitle);
-        chapterBean.setCover(chapterCover);
         chapterBean.setDescription(chapterDescription);
+
+        chapterBean.setCover(chapterCover);
+        chapterBean.setCoverPath(imageCoverPath);
+
 
         PublishChapterController publishChapterController = new PublishChapterController();
         publishChapterController.publishChapter(chapterBean,seriesTitle);

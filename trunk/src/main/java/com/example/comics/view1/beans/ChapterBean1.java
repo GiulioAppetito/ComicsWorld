@@ -12,10 +12,11 @@ public class ChapterBean1 implements ChapterBean {
 
     private String title;
     private Image cover;
-    private List<ReviewBean> reviews = new ArrayList<>();
+    private final List<ReviewBean> reviews = new ArrayList<>();
     private int rating;
     private String description;
     private Boolean isRead;
+    private String coverPath;
 
     @Override
     public String getTitle() {
@@ -73,5 +74,15 @@ public class ChapterBean1 implements ChapterBean {
     @Override
     public Boolean getRead() {
         return this.isRead;
+    }
+
+    @Override
+    public String getCoverPath() {
+        return this.coverPath;
+    }
+
+    @Override
+    public void setCoverPath(String path) {
+        this.coverPath = path;
     }
 }

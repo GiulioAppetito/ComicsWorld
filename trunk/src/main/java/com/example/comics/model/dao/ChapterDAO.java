@@ -1,7 +1,12 @@
 package com.example.comics.model.dao;
 
 import com.example.comics.model.*;
+import javafx.scene.image.Image;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStream;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -45,6 +50,13 @@ public class ChapterDAO {
                 chapterTitle = rs.getString("chapter_title");
                 chapter = new Chapter(chapterTitle);
                 chapter.setDescription(rs.getString("chapterDescription"));
+                Blob bl = rs.getBlob("chapterCover");
+                if(bl != null){
+                    InputStream inputStream = bl.getBinaryStream();
+                    Image image = new Image(inputStream);
+                    chapter.setCover(image);
+                }
+
 
                 rs2 = Queries.isChapterRead(stmt2,chapterTitle, UserLogin.getInstance().getUsername());
                 //il capitolo non è letto
@@ -92,7 +104,7 @@ public class ChapterDAO {
 
     }
 
-    public void saveChapter(Chapter chapter,String seriesTitle) {
+    public void saveChapter(Chapter chapter,String seriesTitle,String coverPath) {
         Statement stmt = null;
         Connection conn = null;
 
@@ -102,11 +114,13 @@ public class ChapterDAO {
             conn = DriverManager.getConnection(DB_URL, USER, PASS);
 
             // STEP 4.2: creazione ed esecuzione della query
-            stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
-            Queries.insertChapter(stmt,chapter,seriesTitle);
+            Queries.insertChapter(conn,chapter,seriesTitle,coverPath);
+
 
         } catch (SQLException throwables) {
             throwables.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
 }

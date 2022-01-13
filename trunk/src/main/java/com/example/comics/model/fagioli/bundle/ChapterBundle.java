@@ -85,6 +85,16 @@ public class ChapterBundle implements ChapterBean {
     }
 
     @Override
+    public String getCoverPath() {
+        return null;
+    }
+
+    @Override
+    public void setCoverPath(String path) {
+
+    }
+
+    @Override
     public void setRead(Boolean read) {
         isRead = read;
     }

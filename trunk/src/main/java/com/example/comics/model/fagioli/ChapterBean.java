@@ -7,21 +7,24 @@ import java.util.List;
 
 public interface ChapterBean {
 
-    public String getTitle();
-    public void setTitle(String title) ;
+    String getTitle();
+    void setTitle(String title) ;
 
-    public Image getCover();
-    public void setCover(Image cover);
+    Image getCover();
+    void setCover(Image cover);
 
-    public List<ReviewBean> getReviews();
-    public void setReviews(List<Review> reviews);
+    List<ReviewBean> getReviews();
+    void setReviews(List<Review> reviews);
 
-    public void setDescription(String chapterDescription);
-    public String getDescription();
+    void setDescription(String chapterDescription);
+    String getDescription();
 
-    public int getAverageRating();
-    public void setAverageRating(int averageRating);
+    int getAverageRating();
+    void setAverageRating(int averageRating);
 
-    public void setRead(Boolean read);
-    public Boolean getRead();
+    void setRead(Boolean read);
+    Boolean getRead();
+
+    String getCoverPath();
+    void setCoverPath(String path);
 }

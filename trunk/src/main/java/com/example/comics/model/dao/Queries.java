@@ -1,8 +1,15 @@
 package com.example.comics.model.dao;
 
 import com.example.comics.model.*;
+import com.example.comics.model.Reader;
+import javafx.scene.image.Image;
+import tools.MyObjectOutput;
 
+import java.awt.image.BufferedImage;
+import java.io.*;
+import java.nio.file.Files;
 import java.sql.*;
+import java.util.Locale;
 
 public class Queries {
 
@@ -182,10 +189,18 @@ public class Queries {
         stmt.executeUpdate(insertStatement);
     }
 
-    public static void insertChapter(Statement stmt, Chapter chapter,String seriesTitle) throws SQLException {
-        String insertStatement = String.format("INSERT INTO chapters (series_title,chapter_title,chapterDescription) values ('%s', '%s','%s')", seriesTitle, chapter.getTitle(),chapter.getDescription());
-        System.out.println(insertStatement);
-        stmt.executeUpdate(insertStatement);
+    public static void insertChapter(Connection connection, Chapter chapter,String seriesTitle,String coverPath) throws SQLException, IOException {
+        PreparedStatement pstmt = connection.prepareStatement("INSERT INTO chapters (series_title,chapter_title,chapterDescription,chapterCover) values (?, ?,?,?)");
+        pstmt.setString(1, seriesTitle);
+        pstmt.setString(2,chapter.getTitle());
+        pstmt.setString(3,chapter.getDescription());
+
+        //Inserting Blob type
+        InputStream in = new FileInputStream(coverPath);
+        pstmt.setBlob(4, in);
+        //Executing the statement
+        pstmt.execute();
+
     }
 
     public static ResultSet retreiveAuthor(Statement stmt, String username) throws SQLException {
@@ -219,7 +234,7 @@ public class Queries {
     }
 
     public static ResultSet isChapterRead(Statement stmt, String chapterTitle, String reader) throws SQLException {
-        String selectStatement = String.format("SELECT * FROM readChapters WHERE (reader = '%s' AND chapter='%s')  ",reader,chapterTitle);
+        String selectStatement = String.format("SELECT * FROM readChapters WHERE (reader = '%s' AND chapter='%s')",reader,chapterTitle);
         System.out.println(selectStatement);
         return stmt.executeQuery(selectStatement);
     }

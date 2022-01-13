@@ -37,7 +37,7 @@
                                             <children>
                                                 <ImageView fx:id="ivComicCover" fitHeight="261.0" fitWidth="466.0" pickOnBounds="true" preserveRatio="true">
                                                     <VBox.margin>
-                                                        <Insets left="140.0" top="40.0" />
+                                                        <Insets left="140.0" right="625.0" top="40.0" />
                                                     </VBox.margin>
                                                     <image>
                                                         <Image url="@../../../../img/img1/download.jpg" />

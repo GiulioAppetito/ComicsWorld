@@ -1,7 +1,6 @@
 package com.example.comics.model;
 
 import com.example.comics.model.dao.AccountDAO;
-import com.example.comics.model.dao.AlreadyUsedUsernameException;
 import com.example.comics.model.dao.AuthorDAO;
 import com.example.comics.model.dao.ReaderDAO;
 import com.example.comics.model.exceptions.FailedRegistrationException;

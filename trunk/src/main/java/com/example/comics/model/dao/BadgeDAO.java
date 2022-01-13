@@ -23,6 +23,9 @@ public class BadgeDAO {
             conn = DriverManager.getConnection(DB_URL, USER, PASS);
             stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
             ResultSet rs = Queries.retreiveBadgeByID(stmt, badgeID);
+            if(!rs.first()){
+                return associatedBadge;
+            }
             rs.first();
             associatedBadge = new Badge();
             associatedBadge.setName(rs.getString("badgeName"));
@@ -30,9 +33,12 @@ public class BadgeDAO {
             associatedBadge.setId(rs.getInt("badgeID"));
 
             Blob bl = rs.getBlob("badgeIcon");
-            InputStream inputStream = bl.getBinaryStream();
-            Image image = new Image(inputStream);
-            associatedBadge.setIcon(image);
+            if(bl!=null){
+                InputStream inputStream = bl.getBinaryStream();
+                Image image = new Image(inputStream);
+                associatedBadge.setIcon(image);
+            }
+
 
 
 

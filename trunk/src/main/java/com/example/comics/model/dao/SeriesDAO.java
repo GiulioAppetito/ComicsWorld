@@ -347,7 +347,6 @@ public class SeriesDAO {
         return seriesList;
     }
 
-
     public List<Objective> retrieveObjectives(Series series) {
         ObjectiveDAO objectiveDAO = new ObjectiveDAO();
         return objectiveDAO.retrieveSeriesObjectives(series);
