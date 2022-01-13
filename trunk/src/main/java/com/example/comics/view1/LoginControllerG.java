@@ -2,6 +2,8 @@ package com.example.comics.view1;
 
 import com.example.comics.controller.LoginController;
 import com.example.comics.controller.RegistrationController;
+import com.example.comics.model.exceptions.FailedLoginException;
+import com.example.comics.model.exceptions.FailedRegistrationException;
 import com.example.comics.model.fagioli.LoginBean;
 import com.example.comics.model.fagioli.RegistrationBean;
 import com.example.comics.model.UserLogin;
@@ -49,6 +51,8 @@ public class LoginControllerG {
     @FXML
     private Button btnBackToLogin;
     @FXML
+    private Button registerButton;
+    @FXML
     private Button btnCancelForm;
     @FXML
     private TextField textFieldEmail;
@@ -84,6 +88,7 @@ public class LoginControllerG {
 
         });
         btnBackToRegister.setOnAction(event -> clickRegister());
+        registerButton.setOnAction(event -> clickRegisterButton());
         btnBackToLogin.setOnAction(event -> clickLogin());
         btnCancelForm.setOnAction(event -> cancelForm());
         btnCancel.setOnAction(event -> clickCancel());
@@ -94,6 +99,7 @@ public class LoginControllerG {
     public void clickRegister(){
         loginPane.setVisible(false);
         registrationPane.setVisible(true);
+        cancelForm();
     }
 
     public void clickRegisterButton(){
@@ -113,16 +119,12 @@ public class LoginControllerG {
         }
 
         RegistrationController registrationController = new RegistrationController();
-        if(registrationController.registerNewAccount(registrationBean) == false){
-            //registrazione fallita
-            errorPaneLabel.setText("Username already exists!");
+        try{
+            registrationController.registerNewAccount(registrationBean);
+        }catch(FailedRegistrationException e){
+            showErrorMessage(e.getMessage());
             textFieldUsername.setText("");
-            errorPane.setVisible(true);
-        }else{
-            clickLogin();
         }
-
-
 
     }
 
@@ -130,6 +132,7 @@ public class LoginControllerG {
     public void clickLogin(){
         loginPane.setVisible(true);
         registrationPane.setVisible(false);
+        clickCancel();
     }
 
     public void authorSelected(){
@@ -160,48 +163,48 @@ public class LoginControllerG {
         loginBean.setPassword(tfPassword.getText());
 
         LoginController loginController = new LoginController();
+        try {
+            if (loginController.login(loginBean)) {
+                Stage stage = new Stage();
+                FXMLLoader loader = new FXMLLoader();
+                URL fxmlLocation;
+                Scene scene;
 
-        if(loginController.login(loginBean)) {
-            Stage stage = new Stage();
-            FXMLLoader loader = new FXMLLoader();
-            URL fxmlLocation;
-            Scene scene;
+                String role = UserLogin.getInstance().getAccount().getRole();
 
-            String role = UserLogin.getInstance().getAccount().getRole();
+                if (role.equals("reader")) {
+                    ReaderHomeControllerG readerHomeControllerG = ReaderHomeControllerG.getInstance();
 
-            if(role.equals("reader")) {
-                ReaderHomeControllerG readerHomeControllerG = ReaderHomeControllerG.getInstance();
+                    fxmlLocation = ReaderHomeControllerG.class.getResource("readerhome.fxml");
+                    loader.setLocation(fxmlLocation);
+                    loader.setController(readerHomeControllerG);
+                    scene = new Scene(loader.load());
+                    readerHomeControllerG.init();
+                } else {
+                    AuthorHomeControllerG authorHomeControllerG = AuthorHomeControllerG.getInstance();
 
-                fxmlLocation = ReaderHomeControllerG.class.getResource("readerhome.fxml");
-                loader.setLocation(fxmlLocation);
-                loader.setController(readerHomeControllerG);
-                scene = new Scene(loader.load());
-                readerHomeControllerG.init();
+                    fxmlLocation = AuthorHomeControllerG.class.getResource("authorhome.fxml");
+                    loader.setLocation(fxmlLocation);
+                    loader.setController(authorHomeControllerG);
+                    scene = new Scene(loader.load());
+                    authorHomeControllerG.init();
+                }
+
+                stage.setTitle("ComicsWorld");
+                stage.setScene(scene);
+                stage.show();
+                ((Stage) ((Node) event.getSource()).getScene().getWindow()).close();
+            } else {
+                clickCancel();
             }
-            else{
-                AuthorHomeControllerG authorHomeControllerG = AuthorHomeControllerG.getInstance();
-
-                fxmlLocation = AuthorHomeControllerG.class.getResource("authorhome.fxml");
-                loader.setLocation(fxmlLocation);
-                loader.setController(authorHomeControllerG);
-                scene = new Scene(loader.load());
-                authorHomeControllerG.init();
-            }
-
-            stage.setTitle("ComicsWorld");
-            stage.setScene(scene);
-            stage.show();
-
-
-            ((Stage) ((Node) event.getSource()).getScene().getWindow()).close();
-        }
-        else{
-            clickCancel();
+        }catch(FailedLoginException e){
+            showErrorMessage(e.getMessage());
         }
     }
 
-    private void showErrorMessage() {
+    private void showErrorMessage(String message) {
         errorPane.setVisible(true);
+        errorPaneLabel.setText(message);
     }
 
     void closeErrorMessage() {

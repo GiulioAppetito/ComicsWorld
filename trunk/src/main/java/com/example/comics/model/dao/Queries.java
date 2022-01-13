@@ -65,15 +65,15 @@ public class Queries {
         return stmt.executeQuery(selectStatement);
     }
 
-    public static ResultSet checkSignedUserByEmail(Statement stmt, String credential, String password) throws SQLException {
-        String selectStatement = String.format("SELECT * FROM users WHERE (email = '%s' OR username = '%s') AND password = '%s'", credential, credential, password);
+    public static ResultSet checkSignedUserByEmail(Statement stmt, String credential) throws SQLException {
+        String selectStatement = String.format("SELECT * FROM users WHERE (email = '%s' OR username = '%s')", credential, credential);
         System.out.println(selectStatement);
         return stmt.executeQuery(selectStatement);
     }
 
-    public static void addProfile(Statement stmt, String firstName, String lastName, String username, String email, String password, String role) throws AlreadyUsedUsernameException {
+    public static void addProfile(Statement stmt, String firstName, String lastName, String username, String email, String password, String role) throws SQLException {
 
-        try{
+
 /*
             File file = new File("immagine.jpg");
             InputStream fin = new java.io.FileInputStream(file);
@@ -91,12 +91,7 @@ public class Queries {
             //pstmt.setString(1, file.getName());
             //pstmt.setBinaryStream (2, fin, fileLength);
             //pstmt.executeUpdate();*/
-        }
-        catch (SQLIntegrityConstraintViolationException e){
-            throw new AlreadyUsedUsernameException();
-        } catch (SQLException throwables) {
-            throwables.printStackTrace();
-        }
+
     }
 
     public static ResultSet retrieveReviewsByReaderAndSeries(Statement stmt, String seriesTitle, String user) throws SQLException {

@@ -90,13 +90,11 @@ public class ReaderDAO {
             reader.setEmail(rs.getString("email"));
 
             Blob bl = rs.getBlob("proPic");
-            InputStream inputStream = bl.getBinaryStream();
-            Image image = new Image(inputStream);
-            reader.setProPic(image);
-
-
-
-
+            if(bl != null){
+                InputStream inputStream = bl.getBinaryStream();
+                Image image = new Image(inputStream);
+                reader.setProPic(image);
+            }
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }

@@ -62,7 +62,9 @@ public class BadgeDAO {
             conn = DriverManager.getConnection(DB_URL, USER, PASS);
             stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
             ResultSet rs = Queries.retrieveBadgesByReader(stmt, username);
-
+            if(!rs.first()){
+                return achievedBadges;
+            }
             rs.first();
 
             do{
