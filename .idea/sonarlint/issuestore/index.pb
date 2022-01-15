@@ -57,8 +57,6 @@ q
 Atrunk/src/main/java/com/example/comics/view1/HomeControllerG.java,6\5\65170d991c764b5bfea3b63bba16114a7d073d7c
 w
 Gtrunk/src/main/java/com/example/comics/view1/ReaderHomeControllerG.java,e\c\ec2e8050235c1d9d3918ef5543b9bf4b12855c12
-{
-Ktrunk/src/main/java/com/example/comics/controller/PostReviewController.java,a\1\a19cf71aec895bab12bf5df544290229107f8b95
 t
 Dtrunk/src/main/java/com/example/comics/view1/beans/ProfileBean1.java,1\8\1838e81a049b7d3183f080e27244428bf1cc8686
 u
