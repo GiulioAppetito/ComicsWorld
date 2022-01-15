@@ -65,7 +65,7 @@ public class AccountDAO {
 
     }
 
-    public void changeCredentials(String newName, String newSurname, String newUsername, String oldUsername){
+    public void changeCredentials(String newName, String newSurname, String email, String newUsername){
 
         Statement stmt=null;
         Connection conn=null;
@@ -75,7 +75,7 @@ public class AccountDAO {
             conn= DriverManager.getConnection(DB_URL,USER,PASS);
 
             stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE,ResultSet.CONCUR_READ_ONLY);
-            Queries.updateCredentials(stmt, newName, newSurname, oldUsername, newUsername);
+            Queries.updateCredentials(stmt, newName, newSurname, email, newUsername);
 
 
         }
@@ -101,7 +101,7 @@ public class AccountDAO {
 
     }
 
-    public void changeEmail(String newEmail, String password){
+    public void changeUsername(String newUsername, String oldUsername){
 
         Statement stmt=null;
         Connection conn=null;
@@ -111,7 +111,7 @@ public class AccountDAO {
             conn= DriverManager.getConnection(DB_URL,USER,PASS);
 
             stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE,ResultSet.CONCUR_READ_ONLY);
-            Queries.updateEmail(stmt, newEmail, password);
+            Queries.updateUsername(stmt, newUsername, oldUsername);
 
 
         } catch (SQLException e) {

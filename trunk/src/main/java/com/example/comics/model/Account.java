@@ -98,7 +98,8 @@ public abstract class Account extends AccountSubject {
                 this.setUsername(newCredential);
                 break;
             case "firstname":
-                this.setFirstName(newCredential);
+                System.out.println("[Account] Sto cambiando il firstname in: " + newCredential);
+                this.firstName = newCredential;
                 break;
             case "lastname":
                 this.setLastName(newCredential);
@@ -113,6 +114,7 @@ public abstract class Account extends AccountSubject {
                 break;
 
         }
+        notifyObservers();
     }
 
     public void changeProPic(Image imageView){}

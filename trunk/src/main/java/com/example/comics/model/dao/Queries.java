@@ -15,8 +15,8 @@ public class Queries {
 
     private Queries(){}
 
-    public static void updateCredentials(Statement stmt, String newName, String newSurname, String oldUsername, String newUsername) throws SQLException {
-        String updateStatement = String.format("UPDATE users set firstname='%s', lastname='%s', username='%s' WHERE username = '%s' ", newName,newSurname,newUsername,oldUsername);
+    public static void updateCredentials(Statement stmt, String newName, String newSurname, String newEmail, String oldUsername) throws SQLException {
+        String updateStatement = String.format("UPDATE users set firstname='%s', lastname='%s', email='%s' WHERE username = '%s' ", newName,newSurname,newEmail,oldUsername);
         stmt.executeUpdate(updateStatement);
     }
 
@@ -26,8 +26,8 @@ public class Queries {
 
     }
 
-    public static void updateEmail(Statement stmt, String newEmail, String password) throws SQLException {
-        String updateStatement = String.format("UPDATE users set email='%s' WHERE password = '%s' ", newEmail, password);
+    public static void updateUsername(Statement stmt, String newUsername, String oldUsername) throws SQLException {
+        String updateStatement = String.format("UPDATE users SET username = '%s' WHERE username = '%s' ", newUsername, oldUsername);
         stmt.executeUpdate(updateStatement);
     }
 

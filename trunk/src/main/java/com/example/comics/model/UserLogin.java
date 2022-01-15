@@ -5,7 +5,7 @@ import com.example.comics.model.dao.AuthorDAO;
 import com.example.comics.model.dao.ReaderDAO;
 import com.example.comics.model.exceptions.FailedRegistrationException;
 
-public class UserLogin{
+public class UserLogin implements AccountObserver{
 
     private static UserLogin instance = null;
     private static Account account;
@@ -65,4 +65,8 @@ public class UserLogin{
         dao.registerNewAccount(firstName,lastName,username,email,password,role);
     }
 
+    @Override
+    public void update() {
+        username = account.getUsername();
+    }
 }

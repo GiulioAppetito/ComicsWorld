@@ -344,6 +344,10 @@ public class ChapterControllerG implements ChapterObserver, ObjectiveObserver {
     }
 
 
+    private static final String STYLE = ".button2";
+    private static final String STYLE2 = "-fx-background-color: #5DADE2; -fx-background-radius: 20";
+
+
     public void init(ChapterBean chapterBean, SeriesBean seriesBean){
 
         ChapterSubject.attach(this);
@@ -354,8 +358,10 @@ public class ChapterControllerG implements ChapterObserver, ObjectiveObserver {
         taDescription.setEditable(false);
 
         if(!chapterBean.getRead()){
+            btnChapterRead.setStyle(STYLE2);
             btnChapterRead.setOnAction(event -> markChapterAsRead(seriesBean,chapterBean));
         }else{
+            btnChapterRead.setStyle(STYLE);
             btnChapterRead.setOnAction(event -> removeChapterFromRead(seriesBean,chapterBean));
         }
 
@@ -466,13 +472,14 @@ public class ChapterControllerG implements ChapterObserver, ObjectiveObserver {
     }
 
     private void removeChapterFromRead(SeriesBean seriesBean, ChapterBean chapterBean) {
+        //TO-DO
+        btnChapterRead.setStyle(STYLE);
     }
 
     private void markChapterAsRead(SeriesBean seriesBean,ChapterBean chapterBean) {
         MarkChapterAsReadController controller = new MarkChapterAsReadController();
         controller.markChapterAsRead(seriesBean,chapterBean);
-
-
+        btnChapterRead.setStyle(STYLE2);
     }
 
     public void closeBadgeWon() {

@@ -60,9 +60,7 @@ public class AccountSettingsControllerG implements AccountObserver {
 
     @FXML
     public void initialize(){
-        paneEditEmail.setVisible(false);
-        paneEditFirstName.setVisible(false);
-        paneEditLastName.setVisible(false);
+        closeEditor();
 
         lblFirstName.setText(UserLogin.getInstance().getAccount().getFirstName());
         lblLastName.setText(UserLogin.getInstance().getAccount().getLastName());
@@ -94,6 +92,7 @@ public class AccountSettingsControllerG implements AccountObserver {
 
         CustomizeProfileController customizeProfileController = new CustomizeProfileController();
         customizeProfileController.changeFirstName(accountBean);
+
     }
 
     @FXML

@@ -10,35 +10,31 @@ public class CustomizeProfileController {
 
     public void changeUsername(ProfileBean profileBean){
         AccountDAO accountDAO = new AccountDAO();
-        accountDAO.changeCredentials(UserLogin.getInstance().getAccount().getFirstName(), UserLogin.getInstance().getAccount().getLastName(), profileBean.getUsername(), UserLogin.getInstance().getAccount().getUsername());
+        System.out.println("Sto cambiando l'username di : " + UserLogin.getInstance().getAccount().getUsername() + "in " + profileBean.getUsername());
+        accountDAO.changeUsername(profileBean.getUsername(), UserLogin.getInstance().getAccount().getUsername());
         UserLogin.getInstance().getAccount().changeCredential("username", profileBean.getUsername());
-        UserLogin.getInstance().getAccount().notifyObservers();
     }
 
     public void changeProPic(ProfileBean profileBean){
         UserLogin.getInstance().getAccount().changeProPic(profileBean.getProPic());
-        UserLogin.getInstance().getAccount().notifyObservers();
     }
 
     public void changeEmail(AccountBean accountBean){
         AccountDAO accountDAO = new AccountDAO();
-        accountDAO.changeEmail(accountBean.getEmail(), accountBean.getPassword());
+        accountDAO.changeCredentials(UserLogin.getInstance().getAccount().getFirstName(), UserLogin.getInstance().getAccount().getLastName(), accountBean.getEmail(), UserLogin.getInstance().getAccount().getUsername());
         UserLogin.getInstance().getAccount().changeCredential("email", accountBean.getEmail());
-        UserLogin.getInstance().getAccount().notifyObservers();
     }
 
     public void changeFirstName(AccountBean accountBean){
         AccountDAO accountDAO = new AccountDAO();
-        accountDAO.changeCredentials(accountBean.getFirstName(), accountBean.getLastName(), accountBean.getEmail(), UserLogin.getInstance().getAccount().getUsername());
-        UserLogin.getInstance().getAccount().changeCredential("firstName", accountBean.getFirstName());
-        UserLogin.getInstance().getAccount().notifyObservers();
+        accountDAO.changeCredentials(accountBean.getFirstName(), UserLogin.getInstance().getAccount().getLastName(), UserLogin.getInstance().getAccount().getEmail(), UserLogin.getInstance().getAccount().getUsername());
+        UserLogin.getInstance().getAccount().changeCredential("firstname", accountBean.getFirstName());
     }
 
     public void changeLastName(AccountBean accountBean){
         AccountDAO accountDAO = new AccountDAO();
-        accountDAO.changeCredentials(accountBean.getFirstName(), accountBean.getLastName(), accountBean.getEmail(), UserLogin.getInstance().getAccount().getUsername());
-        UserLogin.getInstance().getAccount().changeCredential("lastName", accountBean.getLastName());
-        UserLogin.getInstance().getAccount().notifyObservers();
+        accountDAO.changeCredentials(UserLogin.getInstance().getAccount().getFirstName(), accountBean.getLastName(), UserLogin.getInstance().getAccount().getEmail(), UserLogin.getInstance().getAccount().getUsername());
+        UserLogin.getInstance().getAccount().changeCredential("lastname", accountBean.getLastName());
     }
 
 }
