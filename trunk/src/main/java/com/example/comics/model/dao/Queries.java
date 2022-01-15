@@ -2,14 +2,8 @@ package com.example.comics.model.dao;
 
 import com.example.comics.model.*;
 import com.example.comics.model.Reader;
-import javafx.scene.image.Image;
-import tools.MyObjectOutput;
-
-import java.awt.image.BufferedImage;
 import java.io.*;
-import java.nio.file.Files;
 import java.sql.*;
-import java.util.Locale;
 
 public class Queries {
 
@@ -18,12 +12,6 @@ public class Queries {
     public static void updateCredentials(Statement stmt, String newName, String newSurname, String newEmail, String oldUsername) throws SQLException {
         String updateStatement = String.format("UPDATE users set firstname='%s', lastname='%s', email='%s' WHERE username = '%s' ", newName,newSurname,newEmail,oldUsername);
         stmt.executeUpdate(updateStatement);
-    }
-
-    public static ResultSet retreiveCredentials(Statement stmt, String username) throws SQLException {
-        String query = String.format("SELECT * FROM users WHERE username = '%s'", username);
-        return stmt.executeQuery(query);
-
     }
 
     public static void updateUsername(Statement stmt, String newUsername, String oldUsername) throws SQLException {
