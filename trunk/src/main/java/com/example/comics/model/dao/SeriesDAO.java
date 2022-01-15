@@ -253,7 +253,7 @@ public class SeriesDAO {
 
                 AuthorDAO authorDAO = new AuthorDAO();
                 author = authorDAO.retrieveAuthorWithoutPassword(rs.getString("author"));
-                System.out.println("seriesDAO2");
+                System.out.println("seriesDAO: recupero serie singola");
                 series = new Series(title, author);
                 Blob bl = rs.getBlob("cover");
                 InputStream inputStream = bl.getBinaryStream();
@@ -311,7 +311,7 @@ public class SeriesDAO {
 
                 AuthorDAO authorDAO = new AuthorDAO();
                 author = authorDAO.retrieveAuthorWithoutPassword(rs.getString("author"));
-                System.out.println("seriesDAO3");
+                System.out.println("seriesDAO: recupero serie latest");
                 series = new Series(rs.getString("title"), author);
 
                 Blob bl = rs.getBlob("cover");

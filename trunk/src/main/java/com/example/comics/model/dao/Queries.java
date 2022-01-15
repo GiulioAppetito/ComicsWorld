@@ -55,7 +55,7 @@ public class Queries {
 
 
     public static ResultSet retriveChapters(Statement stmt, String seriesTitle) throws SQLException {
-        String selectStatement = String.format("SELECT * FROM chapters WHERE seriesTitle = '%s' ", seriesTitle);
+        String selectStatement = String.format("SELECT * FROM chapters WHERE series_title = '%s' ", seriesTitle);
         System.out.println(selectStatement);
         return stmt.executeQuery(selectStatement);
     }
@@ -75,7 +75,7 @@ public class Queries {
     }
 
     public static ResultSet retrieveReviewsByReaderAndSeries(Statement stmt, String seriesTitle, String user) throws SQLException {
-        String selectStatement = String.format("SELECT * FROM review WHERE seriesTitle = '%s' AND user = '%s' ", seriesTitle, user);
+        String selectStatement = String.format("SELECT * FROM review WHERE series_title = '%s' AND user = '%s' ", seriesTitle, user);
         System.out.println(selectStatement);
         return stmt.executeQuery(selectStatement);
 

@@ -136,14 +136,10 @@ public class ReaderHomeControllerG extends HomeControllerG implements AccountObs
         btnTop.setStyle(STYLE2);
     }
 
+    @Override
     public void openSettings() {
-        FxmlLoader object = new FxmlLoader();
-        Pane view = object.getPage("settings");
-        mainPane.setCenter(view);
-
-        resetButtons();
+        super.openSettings();
         btnSettings.setStyle(STYLE2);
-
     }
 
     public void openCategories() throws IOException {

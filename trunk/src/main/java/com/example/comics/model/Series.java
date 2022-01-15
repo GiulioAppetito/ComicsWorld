@@ -144,8 +144,10 @@ public class Series {
 		int average = 0;
 		int count = 0;
 		for(Chapter chapter : this.chapters){
-			average = average + chapter.getAverageRating();
-			count++;
+			if(!(chapter.getAverageRating() == 0)){
+				average = average + chapter.getAverageRating();
+				count++;
+			}
 		}
 		if(count==0){
 			return count;

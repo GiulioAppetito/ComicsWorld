@@ -2,6 +2,7 @@ package com.example.comics.view1;
 
 import javafx.fxml.FXMLLoader;
 import javafx.scene.layout.Pane;
+import tools.FxmlLoader;
 
 import java.io.IOException;
 import java.net.URL;
@@ -31,6 +32,14 @@ public abstract class HomeControllerG {
         changeCenter(view);
 
         resetButtons();
-    };
+    }
+
+    public void openSettings() {
+        FxmlLoader object = new FxmlLoader();
+        Pane view = object.getPage("settings");
+
+        changeCenter(view);
+        resetButtons();
+    }
 
 }

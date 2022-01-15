@@ -119,8 +119,6 @@ public class ChapterDAO {
 
         } catch (SQLException throwables) {
             throwables.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
         }
     }
 }

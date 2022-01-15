@@ -7,6 +7,7 @@ import com.example.comics.model.UserLogin;
 import com.example.comics.model.fagioli.BadgeBean;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
@@ -32,10 +33,15 @@ public class ReaderProfileControllerG implements AccountObserver {
     @FXML
     private Label lblUsername;
 
+    @FXML
+    private Button btnEdit;
+
+
 
     @FXML
     public void initialize() {
 
+        btnEdit.setOnAction(event -> openSettings());
         lblName.setText(UserLogin.getInstance().getAccount().getFirstName());
         lblUsername.setText(UserLogin.getInstance().getAccount().getLastName());
         ivProPic.setImage(UserLogin.getInstance().getAccount().getProPic());
@@ -45,6 +51,12 @@ public class ReaderProfileControllerG implements AccountObserver {
         loadBadges();
         loadFavouriteCharacter();
 
+    }
+
+    private void openSettings() {
+        HomeFactory homeFactory = new HomeFactory();
+        HomeControllerG homeControllerG = homeFactory.getHomeControllerG();
+        homeControllerG.openSettings();
     }
 
 

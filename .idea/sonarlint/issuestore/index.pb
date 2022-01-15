@@ -1,6 +1,4 @@
 
-r
-Btrunk/src/main/java/com/example/comics/view1/VCardControllerG.java,1\7\17dccfd2fa1976234d4229aa2c91c053f3f2b1ff
 {
 Ktrunk/src/main/java/com/example/comics/controller/StatisticsController.java,0\2\0266bfbfd780a571572d9c4df9b7ccec5d1ca795
 Z
@@ -21,8 +19,6 @@ Gtrunk/src/main/java/com/example/comics/view1/StatisticsControllerG.java,9\5\95
 Mtrunk/src/main/java/com/example/comics/view1/StatisticsRatingControllerG.java,5\a\5aac75394d3cc7c119b16d8979d3f95dee37e383
 p
 @trunk/src/main/java/com/example/comics/model/ChapterSubject.java,c\b\cbef2f5c28e0525fe37bc3006eb93dd3e76f3b3d
-i
-9trunk/src/main/java/com/example/comics/model/Chapter.java,e\e\ee53f251e6fa246c2de20c960c4d267b1c885842
 q
 Atrunk/src/main/java/com/example/comics/model/AccountObserver.java,8\a\8a9da835aba02ae3f87aedfcf50281d6f92a3e08
 |
@@ -39,12 +35,6 @@ s
 Ctrunk/src/main/java/com/example/comics/model/ObjectiveObserver.java,f\f\ff7b49ca35edd2f57fd4540229e2268038e011fb
 h
 8trunk/src/main/java/com/example/comics/model/Reader.java,3\e\3eba6c3a37f9370082944319cedcfebca37815ca
-z
-Jtrunk/src/main/java/com/example/comics/view1/ReaderProfileControllerG.java,9\d\9d55d09a3bc1211493d2067fe3a33b4ff83ca9f4
-h
-8trunk/src/main/java/com/example/comics/model/Series.java,c\8\c8bcf65e561109814ec36c1d5eccfe66f4067141
-o
-?trunk/src/main/java/com/example/comics/model/dao/SeriesDAO.java,1\a\1a268b5783fdf4518ee179aca9664c3642aacf6e
 r
 Btrunk/src/main/java/com/example/comics/model/ReviewsObjective.java,8\6\86cce63a53e7a442e2b5a265b13e8961f22996cd
 r
@@ -53,10 +43,6 @@ r
 Btrunk/src/main/java/com/example/comics/model/dao/ObjectiveDAO.java,c\7\c7045f6d6870d3973d5b81168efa0837b642c85d
 q
 Atrunk/src/main/java/com/example/comics/view1/FeedControllerG.java,3\0\30f770410a71ec3e410810c53c6e2891d29a24c5
-q
-Atrunk/src/main/java/com/example/comics/view1/HomeControllerG.java,6\5\65170d991c764b5bfea3b63bba16114a7d073d7c
-w
-Gtrunk/src/main/java/com/example/comics/view1/ReaderHomeControllerG.java,e\c\ec2e8050235c1d9d3918ef5543b9bf4b12855c12
 t
 Dtrunk/src/main/java/com/example/comics/view1/beans/ProfileBean1.java,1\8\1838e81a049b7d3183f080e27244428bf1cc8686
 u
