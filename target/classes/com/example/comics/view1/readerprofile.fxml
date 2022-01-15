@@ -40,7 +40,7 @@
                </VBox>
             </HBox>
             <HBox alignment="CENTER" prefHeight="63.0" prefWidth="432.0" spacing="60.0">
-               <Button alignment="CENTER" mnemonicParsing="false" prefHeight="63.0" prefWidth="143.0" stylesheets="@../../../../css/css1/fullpackstyling.css" text="Edit">
+               <Button fx:id="btnEdit" alignment="CENTER" mnemonicParsing="false" prefHeight="63.0" prefWidth="143.0" stylesheets="@../../../../css/css1/fullpackstyling.css" text="Edit">
                   <font>
                      <Font name="Berlin Sans FB" size="24.0" />
                   </font>

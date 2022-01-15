@@ -14,7 +14,7 @@ import tools.FxmlLoader;
 import java.io.IOException;
 import java.net.URL;
 
-public class ReaderHomeControllerG extends HomeControllerG implements AccountObserver {
+public class ReaderHomeControllerG extends HomeControllerG implements AccountObserver{
 
     @FXML
     private HBox userBox;
@@ -188,4 +188,5 @@ public class ReaderHomeControllerG extends HomeControllerG implements AccountObs
     public void update() {
         lblName.setText(UserLogin.getInstance().getAccount().getUsername());
     }
+
 }
