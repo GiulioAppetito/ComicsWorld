@@ -47,7 +47,7 @@ public class Queries {
     }
 
     public static ResultSet retriveReadingSeries(Statement stmt, String user) throws SQLException {
-        String selectStatement = String.format("SELECT * from userReadChapters where user = '%s' ", user);
+        String selectStatement = String.format("SELECT * from userReadChapters where reader = '%s' ", user);
         System.out.println(selectStatement);
         return stmt.executeQuery(selectStatement);
     }

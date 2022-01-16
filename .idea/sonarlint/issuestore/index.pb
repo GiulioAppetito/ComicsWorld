@@ -47,8 +47,6 @@ p
 @trunk/src/main/java/com/example/comics/model/dao/AccountDAO.java,f\9\f9fbbecf4bd6d3b71d8b4a6360b3ecba6bd88d4b
 |
 Ltrunk/src/main/java/com/example/comics/view1/AccountSettingsControllerG.java,0\f\0fc27c6cd671a8ceecf31e5699deb2fe6ce56f4d
-t
-Dtrunk/src/main/java/com/example/comics/view1/ChapterControllerG.java,0\0\0001f7e92c2791823074c36e4a3485140d2f11e6
 k
 ;trunk/src/main/java/com/example/comics/model/UserLogin.java,5\d\5dfc908745a1c7e70c463f0eeb83fb14a2777e53
 r
