@@ -10,7 +10,6 @@ public class CustomizeProfileController {
 
     public void changeUsername(ProfileBean profileBean){
         AccountDAO accountDAO = new AccountDAO();
-        System.out.println("Sto cambiando l'username di : " + UserLogin.getInstance().getAccount().getUsername() + "in " + profileBean.getUsername());
         accountDAO.changeUsername(profileBean.getUsername(), UserLogin.getInstance().getAccount().getUsername());
         UserLogin.getInstance().getAccount().changeCredential("username", profileBean.getUsername());
     }

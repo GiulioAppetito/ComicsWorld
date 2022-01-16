@@ -1,0 +1,25 @@
+
+—
+AX4p3TYXN_NvlT0OUdCV	java:S112ó"FDefine and throw a dedicated exception instead of using a generic one.(İÒìÌúÿÿÿÿ2AnastasiaBrinati@github8€‰ğÎâ/
+—
+AX4p3TYXN_NvlT0OUdCU	java:S112³"FDefine and throw a dedicated exception instead of using a generic one.(İÒìÌúÿÿÿÿ2AnastasiaBrinati@github8€‰ğÎâ/
+L
+java:S1481~"*Remove this unused "title" local variable.(Íâ½Ôûÿÿÿÿ8ï¥Âéå/
+[	java:S106"9Replace this use of System.out or System.err by a logger.(¥ıàÇüÿÿÿÿ8ï¥Âéå/
+[	java:S106À"9Replace this use of System.out or System.err by a logger.(ûÜ©çûÿÿÿÿ8ï¥Âéå/
+N
+java:S1481è"+Remove this unused "genre1" local variable.(¦¶Å¦ùÿÿÿÿ8ï¥Âéå/
+N
+java:S1481é"+Remove this unused "genre2" local variable.(š¼¥Öÿÿÿÿÿ8ï¥Âéå/
+I
+java:S1481ê"+Remove this unused "genre3" local variable.(ìŸÜ”8ï¥Âéå/
+Y	java:S125ø"<This block of commented-out lines of code should be removed.(†‘¿ä8ï¥Âéå/
+V	java:S106€"9Replace this use of System.out or System.err by a logger.(•Á†Õ8ï¥Âéå/
+Y	java:S125†"<This block of commented-out lines of code should be removed.(È€Ğœ8ï¥Âéå/
+[	java:S106º"9Replace this use of System.out or System.err by a logger.(ç§¸ÿÿÿÿÿ8ï¥Âéå/
+i
+java:S1192"FDefine a constant instead of duplicating this literal "title" 3 times.(ÕµÂŸÿÿÿÿÿ8ï¥Âéå/
+d
+java:S1192"FDefine a constant instead of duplicating this literal "cover" 3 times.(ë¹¸8ï¥Âéå/
+i
+java:S1192("GDefine a constant instead of duplicating this literal "series" 3 times.(œË±Òıÿÿÿÿ8ï¥Âéå/

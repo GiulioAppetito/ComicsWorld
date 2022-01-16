@@ -182,7 +182,7 @@
                   </ImageView>
                </graphic>
                <padding>
-                  <Insets left="-20.0" />
+                  <Insets left="-25.0" />
                </padding>
             </Button>
             <Button fx:id="btnReading" mnemonicParsing="false" prefHeight="78.0" prefWidth="254.0" styleClass="lateral" stylesheets="@../../../../css/css1/fullpackstyling.css" text="Reading">
@@ -193,6 +193,24 @@
                   <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../../../../img/img1/icons8-comics-magazine-96.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+               <padding>
+                  <Insets left="-15.0" />
+               </padding>
+            </Button>
+            <Button fx:id="btnFollowing" alignment="CENTER" mnemonicParsing="false" prefHeight="78.0" prefWidth="230.0" styleClass="lateral" stylesheets="@../../../../css/css1/fullpackstyling.css" text="Following">
+               <font>
+                  <Font name="Berlin Sans FB" size="18.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../img/img1/icons8-utente-uomo-cerchiato-96.png" />
                      </image>
                   </ImageView>
                </graphic>
