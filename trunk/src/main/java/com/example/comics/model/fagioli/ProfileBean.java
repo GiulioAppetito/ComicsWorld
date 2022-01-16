@@ -2,14 +2,20 @@ package com.example.comics.model.fagioli;
 
 import javafx.scene.image.Image;
 
+import java.io.InputStream;
+
 public interface ProfileBean {
 
-    public String getUsername();
+    String getUsername();
 
-    public void setUsername(String username);
+    void setUsername(String username);
 
-    public Image getProPic();
+    Image getProPic();
 
-    public void setProPic(Image proPic);
+    void setProPic(Image proPic);
+
+    void setInputStream(InputStream inputStream);
+
+    InputStream getInputStream();
 
 }

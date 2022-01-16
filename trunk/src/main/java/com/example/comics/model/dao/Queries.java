@@ -68,7 +68,7 @@ public class Queries {
 
     public static void addProfile(Statement stmt, String firstName, String lastName, String username, String email, String password, String role) throws SQLException {
 
-            String insertStatement = String.format("INSERT INTO `users`(firstname,lastname,username,email,password,role) VALUES ('%s','%s','%s','%s','%s','%s')", firstName,lastName,username,email,password,role);
+            String insertStatement = String.format("INSERT INTO users (firstname,lastname,username,email,password,role) VALUES ('%s','%s','%s','%s','%s','%s')", firstName,lastName,username,email,password,role);
             System.out.println(insertStatement);
             stmt.executeUpdate(insertStatement);
 
@@ -101,7 +101,7 @@ public class Queries {
     }
 
     public static int saveReview(Statement stmt, Review review, Chapter chapter, Series series) throws SQLException {
-        String insertStatement = String.format("INSERT INTO review (user, comment, seriesTitle, chapter_title, rating) VALUES ('%s','%s','%s','%s','%s')", review.getUsername(), review.getComment(), series.getTitle(), chapter.getTitle(), review.getRating());
+        String insertStatement = String.format("INSERT INTO review (user, comment, series_title, chapter_title, rating) VALUES ('%s','%s','%s','%s','%s')", review.getUsername(), review.getComment(), series.getTitle(), chapter.getTitle(), review.getRating());
         System.out.println(insertStatement);
         stmt.executeUpdate(insertStatement);
         return 0;
@@ -164,8 +164,7 @@ public class Queries {
 
     public static void insertChapter(Connection connection, Chapter chapter,String seriesTitle,InputStream coverInputStream) throws SQLException{
         
-        
-        PreparedStatement pstmt = connection.prepareStatement("INSERT INTO chapters (seriesTitle,chapter_title,chapterDescription,chapterCover) values (?, ?,?,?)");
+        PreparedStatement pstmt = connection.prepareStatement("INSERT INTO chapters (series_title,chapter_title,chapterDescription,chapterCover) values (?, ?,?,?)");
         try{
         pstmt.setString(1, seriesTitle);
         pstmt.setString(2,chapter.getTitle());
@@ -175,6 +174,7 @@ public class Queries {
         pstmt.setBlob(4, coverInputStream);
         //Executing the statement
         pstmt.execute();
+        System.out.println(pstmt);
         }
         catch (Exception e){
             //TO-DO
@@ -218,5 +218,23 @@ public class Queries {
         String selectStatement = String.format("SELECT * FROM readChapters WHERE (reader = '%s' AND chapter='%s')",reader,chapterTitle);
         System.out.println(selectStatement);
         return stmt.executeQuery(selectStatement);
+    }
+
+    public static void updateUserProPic(Connection conn, InputStream inputStream, Reader reader) throws SQLException {
+        PreparedStatement pstmt = conn.prepareStatement("UPDATE users SET propic = ? WHERE username = ?");
+        try{
+            //Inserting Blob type
+            pstmt.setBlob(1, inputStream);
+            pstmt.setString(2,reader.getUsername());
+            //Executing the statement
+            pstmt.execute();
+            System.out.println(pstmt);
+        }
+        catch (Exception e){
+            //TO-DO
+        }
+        finally {
+            pstmt.close();
+        }
     }
 }

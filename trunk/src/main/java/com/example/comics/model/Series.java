@@ -112,21 +112,18 @@ public class Series {
 		this.chapters.add(chapter);
 
 		ChapterDAO chapterDAO = new ChapterDAO();
+		System.out.println("**** [Series] I'm calling chapterDAO ****");
 		chapterDAO.saveChapter(chapter,this.title,inputStream);
 	}
 
 	public int getNumberOfReviews(Reader reader) {
 		int numOfReviews = 0;
 
-		ChapterDAO chapterDAO = new ChapterDAO();
-
-		List<Review> reviews = null;
-
-		reviews = chapterDAO.retrieveReviewsByReader(this, reader);
-
-		for(Review review: reviews){
-			if(review.getUsername().equals(reader.getUsername())){
-				numOfReviews++;
+		for(Chapter chapter : this.chapters){
+			for(Review review : chapter.getReviews()){
+				if(review.getUsername().equals(reader.getUsername())){
+					numOfReviews++;
+				}
 			}
 		}
 		return numOfReviews;

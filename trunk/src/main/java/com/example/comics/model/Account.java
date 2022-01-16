@@ -70,6 +70,7 @@ public abstract class Account extends AccountSubject {
 
     public void setProPic(Image proPic) {
         this.proPic = proPic;
+        notifyObservers();
     }
 
     public String getEmail() {

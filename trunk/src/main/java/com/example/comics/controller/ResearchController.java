@@ -49,6 +49,7 @@ public class ResearchController {
             authorBundle.setPublishedSeries(series.getAuthor().getPublishedSeries());
             authorBundle.setUsername(series.getAuthor().getUsername());
             authorBundle.setProPic(series.getAuthor().getProPic());
+            authorBundle.setEmail(series.getAuthor().getEmail());
             seriesBundle.setAuthor(authorBundle);
 
             seriesBundle.setCover(series.getCover());

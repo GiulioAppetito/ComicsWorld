@@ -13,6 +13,7 @@ public class AuthorBundle implements AuthorBean {
     private String lastName;
     private String username;
     private Image proPic;
+    private String email;
 
     public List<Series> getPublishedSeries() {
         return publishedSeries;
@@ -52,5 +53,15 @@ public class AuthorBundle implements AuthorBean {
 
     public void setProPic(Image image){
         this.proPic=image;
+    }
+
+    @Override
+    public String getEmail() {
+        return this.email;
+    }
+
+    @Override
+    public void setEmail(String email) {
+        this.email = email;
     }
 }

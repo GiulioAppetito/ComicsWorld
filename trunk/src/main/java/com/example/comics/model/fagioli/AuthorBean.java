@@ -7,19 +7,22 @@ import java.util.List;
 
 public interface AuthorBean {
 
-    public void setPublishedSeries(List<Series> publishedSeries);
-    public List<Series> getPublishedSeries();
+    void setPublishedSeries(List<Series> publishedSeries);
+    List<Series> getPublishedSeries();
 
-    public void setFirstName(String firstName);
-    public String getFirstName();
+    void setFirstName(String firstName);
+    String getFirstName();
 
-    public String getLastName();
-    public void setLastName(String lastName);
+    String getLastName();
+    void setLastName(String lastName);
 
-    public String getUsername();
-    public void setUsername(String username);
+    String getUsername();
+    void setUsername(String username);
 
-    public Image getProPic();
-    public void setProPic(Image image);
+    Image getProPic();
+    void setProPic(Image image);
+
+    String getEmail();
+    void setEmail(String email);
 
 }

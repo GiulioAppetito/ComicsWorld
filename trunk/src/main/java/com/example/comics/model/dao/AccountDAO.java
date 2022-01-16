@@ -1,8 +1,10 @@
 package com.example.comics.model.dao;
 
+import com.example.comics.model.Reader;
 import com.example.comics.model.exceptions.FailedLoginException;
 import com.example.comics.model.exceptions.FailedRegistrationException;
 
+import java.io.InputStream;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -145,6 +147,7 @@ public class AccountDAO {
 
         }
         catch (SQLException se) {
+            System.out.println(se.getMessage());
             throw new FailedRegistrationException("Username is already used.");
         }
         finally {
@@ -163,4 +166,24 @@ public class AccountDAO {
 
         }
     }
+
+    public void changeProPic(InputStream inputStream, Reader reader) {
+        Statement stmt = null;
+        Connection conn = null;
+
+        try {
+            System.out.println("**** [AccountDAO] doing changeProPic() ****");
+
+            // STEP 3: apertura connessione
+            conn = DriverManager.getConnection(DB_URL, USER, PASS);
+
+            // STEP 4.2: creazione ed esecuzione della query
+            Queries.updateUserProPic(conn,inputStream,reader);
+
+
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+    }
+
 }
