@@ -41,6 +41,7 @@ public class Reader extends Account{
         return toRead;
     }
 
+    public List<Series> getReading(){ return reading; }
 
     public boolean hasAchievedThisBadge(Badge badge) {
 

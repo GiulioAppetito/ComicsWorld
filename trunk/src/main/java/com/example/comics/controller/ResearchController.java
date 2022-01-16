@@ -23,6 +23,11 @@ public class ResearchController {
         return getSeriesBeans(toReadSeries);
     }
 
+    public List<SeriesBean> getReadingSeries() {
+        List<Series> toReadSeries = UserLogin.getInstance().getReader().getReading();
+        return getSeriesBeans(toReadSeries);
+    }
+
     public List<SeriesBean> getLatestSeries() {
         SeriesDAO seriesdao = new SeriesDAO();
         List<Series> latestSeries = seriesdao.retriveLatestSeries();

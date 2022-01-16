@@ -47,7 +47,7 @@ public class Queries {
     }
 
     public static ResultSet retriveReadingSeries(Statement stmt, String user) throws SQLException {
-        String selectStatement = String.format("SELECT * from userReadingSeries where user = '%s' ", user);
+        String selectStatement = String.format("SELECT * from userReadChapters where user = '%s' ", user);
         System.out.println(selectStatement);
         return stmt.executeQuery(selectStatement);
     }
@@ -76,12 +76,6 @@ public class Queries {
 
     public static ResultSet retrieveReviewsByReaderAndSeries(Statement stmt, String seriesTitle, String user) throws SQLException {
         String selectStatement = String.format("SELECT * FROM review WHERE series_title = '%s' AND user = '%s' ", seriesTitle, user);
-        System.out.println(selectStatement);
-        return stmt.executeQuery(selectStatement);
-
-    }
-    public static ResultSet retrieveReviewsByReader(Statement stmt, String user) throws SQLException {
-        String selectStatement = String.format("SELECT * FROM review WHERE user = '%s' ", user);
         System.out.println(selectStatement);
         return stmt.executeQuery(selectStatement);
 
@@ -209,13 +203,13 @@ public class Queries {
     }
 
     public static void addReadChapter(Statement stmt,Reader reader, Series series, String title) throws SQLException {
-        String insertStatement = String.format("INSERT INTO readChapters (reader,chapter,series) values ('%s', '%s','%s')",reader.getUsername(),title,series.getTitle());
+        String insertStatement = String.format("INSERT INTO userReadChapters (reader,chapter,series) values ('%s', '%s','%s')",reader.getUsername(),title,series.getTitle());
         System.out.println(insertStatement);
         stmt.executeUpdate(insertStatement);
     }
 
     public static ResultSet isChapterRead(Statement stmt, String chapterTitle, String reader) throws SQLException {
-        String selectStatement = String.format("SELECT * FROM readChapters WHERE (reader = '%s' AND chapter='%s')",reader,chapterTitle);
+        String selectStatement = String.format("SELECT * FROM userReadChapters WHERE (reader = '%s' AND chapter='%s')",reader,chapterTitle);
         System.out.println(selectStatement);
         return stmt.executeQuery(selectStatement);
     }

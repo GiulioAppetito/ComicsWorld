@@ -29,8 +29,6 @@ r
 Btrunk/src/main/java/com/example/comics/model/ChapterObjective.java,b\3\b3eec645610f52f5ca30fb3f4a1f138583d83fc4
 k
 ;trunk/src/main/java/com/example/comics/model/Objective.java,3\8\385df1ff7a57b7c35d66812611318ab3dc7e6bf1
-h
-8trunk/src/main/java/com/example/comics/model/Reader.java,3\e\3eba6c3a37f9370082944319cedcfebca37815ca
 r
 Btrunk/src/main/java/com/example/comics/model/ReviewsObjective.java,8\6\86cce63a53e7a442e2b5a265b13e8961f22996cd
 r
@@ -61,18 +59,12 @@ p
 @trunk/src/main/java/com/example/comics/model/dao/ChapterDAO.java,1\d\1ddfc0cfcef200504c825e15e2d46d1aa7918d49
 q
 Atrunk/src/main/java/com/example/comics/view1/HomeControllerG.java,6\5\65170d991c764b5bfea3b63bba16114a7d073d7c
-m
-=trunk/src/main/java/com/example/comics/model/dao/Queries.java,f\3\f3a37695c77dad5023ee85e5787ca9de0b649080
 z
 Jtrunk/src/main/java/com/example/comics/view1/ReaderProfileControllerG.java,9\d\9d55d09a3bc1211493d2067fe3a33b4ff83ca9f4
-o
-?trunk/src/main/java/com/example/comics/model/dao/SeriesDAO.java,1\a\1a268b5783fdf4518ee179aca9664c3642aacf6e
 p
 @trunk/src/main/java/com/example/comics/model/ChapterSubject.java,c\b\cbef2f5c28e0525fe37bc3006eb93dd3e76f3b3d
 {
 Ktrunk/src/main/java/com/example/comics/controller/PostReviewController.java,a\1\a19cf71aec895bab12bf5df544290229107f8b95
-y
-Itrunk/src/main/java/com/example/comics/controller/ResearchController.java,2\6\2631e9287909fea85acc2c091fa23962f532d491
 }
 Mtrunk/src/main/java/com/example/comics/model/fagioli/bundle/SeriesBundle.java,b\0\b08a4901f886c59525d1979a32f15e78295be438
 t
