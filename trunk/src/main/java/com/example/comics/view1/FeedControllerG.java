@@ -2,6 +2,7 @@ package com.example.comics.view1;
 
 import com.example.comics.controller.ResearchController;
 import com.example.comics.model.Advertisement;
+import com.example.comics.model.SeriesObserver;
 import com.example.comics.model.fagioli.SeriesBean;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -25,7 +26,6 @@ public class FeedControllerG{
 
     @FXML
     private MenuButton btnFilter;
-
 
     private static FeedControllerG instance;
     private static List<SeriesBean> latestSeries;
@@ -59,7 +59,6 @@ public class FeedControllerG{
                 VBox card = fxmlLoader.load();
                 VCardControllerG cardController = fxmlLoader.getController();
                 cardController.setData(latestSeries.get(j));
-                System.out.println("feedControllerG, latestSeries: " + latestSeries.get(j));
 
                 int finalJ = j;
                 card.setOnMouseClicked(event -> {
@@ -106,7 +105,7 @@ public class FeedControllerG{
         SeriesControllerG serieControllerG = new SeriesControllerG();
         FXMLLoader loader = new FXMLLoader();
 
-        URL fxmlLocation = CharacterControllerG.class.getResource("serie.fxml");
+        URL fxmlLocation = SeriesControllerG.class.getResource("serie.fxml");
         loader.setLocation(fxmlLocation);
         loader.setController(serieControllerG);
 

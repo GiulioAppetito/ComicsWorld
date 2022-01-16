@@ -2,25 +2,28 @@ package com.example.comics.view1;
 
 import com.example.comics.controller.ResearchController;
 import com.example.comics.model.fagioli.SeriesBean;
-import com.example.comics.model.fagioli.bundle.SeriesBundle;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.control.Button;
+import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
+import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
+import tools.FxmlLoader;
 
 import java.io.IOException;
 import java.net.URL;
 import java.util.List;
 
-public class FavouriteComicsControllerG {
-    @FXML
-    private GridPane gpFavComic;
+public class ReadingControllerG {
 
+    @FXML
+    private GridPane gpComic;
 
     public void initialize(){
 
         ResearchController researchController = new ResearchController();
-        List<SeriesBean> listOfCards = researchController.getFavouriteSeries();
+        List<SeriesBean> listOfCards = researchController.getReadingSeries();
 
         int size = listOfCards.size();
         int columns = 3;
@@ -42,7 +45,7 @@ public class FavouriteComicsControllerG {
                     }
                 });
 
-                gpFavComic.add(card,j%columns,i);
+                gpComic.add(card,j%columns,i);
                 if(j%columns == columns-1){
                     i++;
                 }
@@ -59,7 +62,7 @@ public class FavouriteComicsControllerG {
         SeriesControllerG serieController = new SeriesControllerG();
         FXMLLoader loader = new FXMLLoader();
 
-        URL fxmlLocation = CharacterControllerG.class.getResource("serie.fxml");
+        URL fxmlLocation = FavouritesControllerG.class.getResource("serie.fxml");
         loader.setLocation(fxmlLocation);
         loader.setController(serieController);
 
@@ -69,4 +72,5 @@ public class FavouriteComicsControllerG {
         serieController.setData(seriesBean);
 
     }
+
 }

@@ -59,7 +59,7 @@ public class ToReadControllerG {
         SeriesControllerG serieController = new SeriesControllerG();
         FXMLLoader loader = new FXMLLoader();
 
-        URL fxmlLocation = CharacterControllerG.class.getResource("serie.fxml");
+        URL fxmlLocation = ToReadControllerG.class.getResource("serie.fxml");
         loader.setLocation(fxmlLocation);
         loader.setController(serieController);
 

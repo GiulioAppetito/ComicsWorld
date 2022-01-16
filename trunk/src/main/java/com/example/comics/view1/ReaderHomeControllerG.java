@@ -14,7 +14,7 @@ import tools.FxmlLoader;
 import java.io.IOException;
 import java.net.URL;
 
-public class ReaderHomeControllerG extends HomeControllerG implements AccountObserver {
+public class ReaderHomeControllerG extends HomeControllerG implements AccountObserver{
 
     @FXML
     private HBox userBox;
@@ -36,6 +36,9 @@ public class ReaderHomeControllerG extends HomeControllerG implements AccountObs
 
     @FXML
     private Button btnReading;
+
+    @FXML
+    private Button btnFollowing;
 
     @FXML
     private Button btnSettings;
@@ -79,6 +82,7 @@ public class ReaderHomeControllerG extends HomeControllerG implements AccountObs
         System.out.println(" ***** [HomeCOntrollerGReader] Your proPic is : "+proPic.getImage());
 
         btnFav.setOnAction(event -> openFavourites());
+        btnFollowing.setOnAction(event-> openFollowing());
         btnCategories.setOnAction(event -> {
             try {
                 openCategories();
@@ -93,6 +97,15 @@ public class ReaderHomeControllerG extends HomeControllerG implements AccountObs
         userBox.setOnMouseClicked(event -> openProfile());
         homeIcon.setOnMouseClicked(event -> openFeed());
 
+    }
+
+    private void openFollowing() {
+        FxmlLoader object = new FxmlLoader();
+        Pane view = object.getPage("followingauthors");
+        mainPane.setCenter(view);
+
+        resetButtons();
+        btnFollowing.setStyle(STYLE2);
     }
 
     public void openReading() {
@@ -163,13 +176,11 @@ public class ReaderHomeControllerG extends HomeControllerG implements AccountObs
 
     public void openFavourites() {
         FxmlLoader object = new FxmlLoader();
-        Pane view = object.getPage("favourites");
+        Pane view = object.getPage("favouritecomics");
         mainPane.setCenter(view);
 
         resetButtons();
         btnFav.setStyle(STYLE2);
-
-        System.out.println("[ReaderHomeControllerG] Clicked favourites.");
     }
 
 
@@ -177,6 +188,7 @@ public class ReaderHomeControllerG extends HomeControllerG implements AccountObs
     public void resetButtons(){
         btnSettings.setStyle(STYLE);
         btnCategories.setStyle(STYLE);
+        btnFollowing.setStyle(STYLE);
         btnFav.setStyle(STYLE);
         btnReading.setStyle(STYLE);
         btnTop.setStyle(STYLE);
@@ -191,4 +203,5 @@ public class ReaderHomeControllerG extends HomeControllerG implements AccountObs
         lblName.setText(UserLogin.getInstance().getAccount().getUsername());
         proPic.setImage(UserLogin.getInstance().getAccount().getProPic());
     }
+
 }

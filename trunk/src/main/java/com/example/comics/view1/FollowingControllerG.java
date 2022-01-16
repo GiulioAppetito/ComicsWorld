@@ -13,10 +13,10 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.List;
 
-public class FavouriteAuthorsControllerG {
+public class FollowingControllerG {
 
     @FXML
-    private GridPane gpFavAuthors;
+    private GridPane gpFollowing;
 
     @FXML
     public void initialize(){
@@ -26,7 +26,6 @@ public class FavouriteAuthorsControllerG {
         int columns = 3;
         int i=1;
         for(int j=0; j<size; j++) {
-            System.out.println("[FAV AUTH CONTR G] NEl ciclo for : "+listOfCards.get(j).getUsername());
             FXMLLoader fxmlLoader = new FXMLLoader();
             fxmlLoader.setLocation(getClass().getResource("authorcard.fxml"));
             try {
@@ -41,7 +40,7 @@ public class FavouriteAuthorsControllerG {
                 });
                 FollowedAuthorCardControllerG followedAuthorsControllerG= fxmlLoader.getController();
                 followedAuthorsControllerG.setData(listOfCards.get(j).getProPic(),listOfCards.get(j).getUsername());
-                gpFavAuthors.add(card,j%columns,i);
+                gpFollowing.add(card,j%columns,i);
                 if(j%columns == columns-1){
                     i++;
                 }
@@ -56,7 +55,7 @@ public class FavouriteAuthorsControllerG {
         AuthorFromOutsideControllerG authorFromOutsideControllerG = new AuthorFromOutsideControllerG();
         FXMLLoader loader = new FXMLLoader();
 
-        URL fxmlLocation = CharacterControllerG.class.getResource("authorfromoutside.fxml");
+        URL fxmlLocation = FollowingControllerG.class.getResource("authorfromoutside.fxml");
         loader.setLocation(fxmlLocation);
         loader.setController(authorFromOutsideControllerG);
 
@@ -65,25 +64,6 @@ public class FavouriteAuthorsControllerG {
         homeControllerG.changeCenter(loader.load());
 
         authorFromOutsideControllerG.init(authorBean);
-
-    }
-
-
-
-    public void openSerie(SeriesBean seriesBean) throws IOException {
-
-        SeriesControllerG serieController = new SeriesControllerG();
-        FXMLLoader loader = new FXMLLoader();
-
-        URL fxmlLocation = CharacterControllerG.class.getResource("serie.fxml");
-        loader.setLocation(fxmlLocation);
-        loader.setController(serieController);
-
-        HomeFactory homeFactory = new HomeFactory();
-        HomeControllerG homeControllerG = homeFactory.getHomeControllerG();
-        homeControllerG.changeCenter(loader.load());
-
-        serieController.setData(seriesBean);
 
     }
 

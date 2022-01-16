@@ -9,7 +9,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Series {
+public class Series extends SeriesSubject{
 
 	private Author author;
 	private String title;
@@ -36,7 +36,7 @@ public class Series {
 			objectives = new ArrayList<>();
 		}
 
-		this.averageRating = calculateAverageRating();
+		calculateAverageRating();
 	}
 
 	public String getTitle() {
@@ -135,21 +135,26 @@ public class Series {
 					chapters.get(i).addReview(this, reviewComment, rating, UserLogin.getInstance().getReader().getUsername());
 				}
 			}
+			calculateAverageRating();
 	}
 
-	public int calculateAverageRating(){
+	public void calculateAverageRating(){
 		int average = 0;
 		int count = 0;
 		for(Chapter chapter : this.chapters){
-			if(!(chapter.getAverageRating() == 0)){
+			if(chapter.getAverageRating() != 0){
 				average = average + chapter.getAverageRating();
 				count++;
 			}
 		}
 		if(count==0){
-			return count;
+			averageRating = 0;
 		}
-		return average/count;
+		else{
+			averageRating = average/count;
+		}
+
+		notifyObservers();
 	}
 
 	public int getAverageRating() {

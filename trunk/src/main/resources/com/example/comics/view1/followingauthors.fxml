@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.RowConstraints?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="729.0" prefWidth="600.0" styleClass="transparent" stylesheets="@../../../../css/css1/fullpackstyling.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.comics.view1.FavouritesControllerG">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="729.0" prefWidth="600.0" styleClass="transparent" stylesheets="@../../../../css/css1/fullpackstyling.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.comics.view1.FollowingControllerG">
    <children>
       <HBox prefHeight="729.0" prefWidth="600.0">
          <children>
@@ -18,7 +18,7 @@
                <children>
                   <ScrollPane hbarPolicy="NEVER" layoutX="16.0" layoutY="19.0" prefHeight="621.0" prefWidth="490.0" stylesheets="@../../../../css/css1/fullpackstyling.css">
                      <content>
-                        <GridPane fx:id="gpFavComic" hgap="30.0" prefHeight="11.0" prefWidth="472.0" vgap="30.0">
+                        <GridPane fx:id="gpFollowing" hgap="30.0" prefHeight="11.0" prefWidth="472.0" vgap="30.0">
                            <rowConstraints>
                               <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                            </rowConstraints>
