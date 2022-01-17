@@ -10,6 +10,7 @@ import com.example.comics.model.fagioli.bundle.SeriesBundle;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 public class ResearchController {
 
@@ -38,6 +39,12 @@ public class ResearchController {
     public List<SeriesBean> getPublishedSeries() {
         List<Series> publishedSeries = UserLogin.getInstance().getAuthor().getPublishedSeries();
         return getSeriesBeans(publishedSeries);
+    }
+
+    public List<SeriesBean> getCategorySeries(Genres genres){
+        SeriesDAO seriesDAO = new SeriesDAO();
+        List<Series> series = seriesDAO.retrieveSeriesFromCategory(genres);
+        return getSeriesBeans(series);
     }
 
     private List<SeriesBean> getSeriesBeans(List<Series> seriesList) {

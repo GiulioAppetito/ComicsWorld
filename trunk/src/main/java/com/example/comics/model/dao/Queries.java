@@ -95,7 +95,7 @@ public class Queries {
     }
 
     public static int saveReview(Statement stmt, Review review, Chapter chapter, Series series) throws SQLException {
-        String insertStatement = String.format("INSERT INTO review (user, comment, seriesTitle, chapter_title, rating) VALUES ('%s','%s','%s','%s','%s')", review.getUsername(), review.getComment(), series.getTitle(), chapter.getTitle(), review.getRating());
+        String insertStatement = String.format("INSERT INTO review (user, comment, series_title, chapter_title, rating) VALUES ('%s','%s','%s','%s','%s')", review.getUsername(), review.getComment(), series.getTitle(), chapter.getTitle(), review.getRating());
         System.out.println(insertStatement);
         stmt.executeUpdate(insertStatement);
         return 0;
@@ -247,5 +247,10 @@ public class Queries {
             pstmt.close();
             pstmt2.close();
         }
+    }
+
+    public static ResultSet retrieveCategorySeries(Statement stmt, Genres genre) throws SQLException {
+        String selectStatement = String.format("SELECT * FROM series WHERE genre1 = '%s' OR genre2 = '%s' OR genre3 = '%s'", genre.name(), genre.name(), genre.name());
+        return stmt.executeQuery(selectStatement);
     }
 }

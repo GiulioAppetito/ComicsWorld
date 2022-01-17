@@ -7,13 +7,13 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="690.0" prefWidth="834.0" styleClass="transparent" stylesheets="@../../../../css/css1/fullpackstyling.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.comics.view1.CategoryController">
+<AnchorPane prefHeight="690.0" prefWidth="834.0" styleClass="transparent" stylesheets="@../../../../css/css1/fullpackstyling.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.comics.view1.CategoryControllerG">
     <HBox alignment="CENTER" layoutX="14.0" layoutY="20.0" prefHeight="50.0" prefWidth="804.0">
         <Button mnemonicParsing="false" onAction="#back" prefHeight="58.0" prefWidth="94.0" styleClass="button2" stylesheets="@../../../../css/css1/fullpackstyling.css">
            <padding>
@@ -26,7 +26,7 @@
            </graphic>
         </Button>
         <Pane prefHeight="50.0" prefWidth="178.0" HBox.hgrow="ALWAYS" />
-      <Label fx:id="lblcategory" prefHeight="50.0" prefWidth="146.0" text="&lt;category&gt;">
+      <Label fx:id="lblcategory" alignment="CENTER" contentDisplay="CENTER" prefHeight="50.0" prefWidth="238.0" text="&lt;category&gt;">
          <font>
             <Font name="Berlin Sans FB" size="24.0" />
          </font>
@@ -36,11 +36,28 @@
       </Label>
       <Pane prefHeight="50.0" prefWidth="330.0" />
     </HBox>
-    <ScrollPane hbarPolicy="NEVER" layoutX="14.0" layoutY="92.0" prefHeight="586.0" prefWidth="804.0">
-        <GridPane prefHeight="22.0" prefWidth="797.0" styleClass="transparent">
-            <columnConstraints>
-                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-            </columnConstraints>
-        </GridPane>
-    </ScrollPane>
+   <Pane layoutX="10.0" layoutY="82.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="657.0" prefWidth="815.0" styleClass="transparent" stylesheets="@../../../../css/css1/fullpackstyling.css">
+      <children>
+         <HBox prefHeight="657.0" prefWidth="815.0">
+            <children>
+               <Pane prefHeight="577.0" prefWidth="752.0" styleClass="transparent" stylesheets="@../../../../css/css1/fullpackstyling.css">
+                  <HBox.margin>
+                     <Insets bottom="40.0" left="40.0" right="40.0" top="40.0" />
+                  </HBox.margin>
+                  <children>
+                     <ScrollPane hbarPolicy="NEVER" layoutX="16.0" layoutY="19.0" prefHeight="545.0" prefWidth="701.0" stylesheets="@../../../../css/css1/fullpackstyling.css">
+                        <content>
+                           <GridPane fx:id="gpComic" hgap="30.0" prefHeight="186.0" prefWidth="683.0" vgap="30.0">
+                              <rowConstraints>
+                                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              </rowConstraints>
+                           </GridPane>
+                        </content>
+                     </ScrollPane>
+                  </children>
+               </Pane>
+            </children>
+         </HBox>
+      </children>
+   </Pane>
 </AnchorPane>

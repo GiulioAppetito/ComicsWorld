@@ -287,6 +287,65 @@ public class SeriesDAO {
         return series;
     }
 
+    public List<Series> retrieveSeriesFromCategory(Genres genre){
+
+        Statement stmt = null;
+        Connection conn = null;
+
+        List<Series> seriesList = new ArrayList<>();
+
+        Author author;
+        Series series;
+
+        try {
+            conn = DriverManager.getConnection(DB_URL, USER, PASS);
+
+            stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
+            ResultSet rs = Queries.retrieveCategorySeries(stmt, genre);
+
+            if (!rs.first()) {
+                throw new Exception("No series Found ");
+            }
+            rs.first();
+            do {
+
+                AuthorDAO authorDAO = new AuthorDAO();
+                author = authorDAO.retrieveAuthorWithoutPassword(rs.getString("author"));
+                System.out.println("seriesDAO: retrieve series from category");
+                series = new Series(rs.getString("title"), author);
+
+                Blob bl = rs.getBlob("cover");
+                InputStream inputStream = bl.getBinaryStream();
+                Image image = new Image(inputStream);
+                series.setCover(image);
+
+                seriesList.add(series);
+
+            } while (rs.next());
+
+
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                if (stmt != null)
+                    stmt.close();
+            } catch (SQLException se2) {
+                //TO-DO
+            }
+            try {
+                if (conn != null)
+                    conn.close();
+            } catch (SQLException se) {
+                se.printStackTrace();
+            }
+
+        }
+        return seriesList;
+    }
+
     public Series retreiveSeriesWithAuthor(String title,Author author){
         Statement stmt = null;
         Connection conn = null;
