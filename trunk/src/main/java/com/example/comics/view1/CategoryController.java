@@ -16,9 +16,10 @@ public class CategoryController {
     }
 
     public void back(){
-        ReaderHomeControllerG readerHomeControllerG = ReaderHomeControllerG.getInstance();
+        HomeFactory homeFactory = new HomeFactory();
+        HomeControllerG homeControllerG = homeFactory.getHomeControllerG();
         try {
-            readerHomeControllerG.openCategories();
+            homeControllerG.openCategories();
         } catch (IOException e) {
             e.printStackTrace();
         }

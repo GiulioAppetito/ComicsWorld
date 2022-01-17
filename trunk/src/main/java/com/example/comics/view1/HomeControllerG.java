@@ -42,4 +42,20 @@ public abstract class HomeControllerG {
         resetButtons();
     }
 
+    public void openCategories() throws IOException {
+        CategoriesControllerG categoriesControllerG = new CategoriesControllerG();
+        FXMLLoader loader = new FXMLLoader();
+
+        URL fxmlLocation = HomeControllerG.class.getResource("categories.fxml");
+        loader.setLocation(fxmlLocation);
+        loader.setController(categoriesControllerG);
+
+        Pane view = loader.load();
+        categoriesControllerG.init();
+
+        changeCenter(view);
+
+        resetButtons();
+    }
+
 }

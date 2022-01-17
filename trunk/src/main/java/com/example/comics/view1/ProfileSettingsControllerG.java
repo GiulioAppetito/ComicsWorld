@@ -80,6 +80,7 @@ public class ProfileSettingsControllerG implements AccountObserver {
         CustomizeProfileController controller = new CustomizeProfileController();
         ProfileBean profileBean = new ProfileBean1();
         profileBean.setInputStream(inputStream);
+        profileBean.setProPic(imgProPic.getImage());
         controller.changeProPic(profileBean);
 
     }

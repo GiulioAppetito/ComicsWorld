@@ -78,18 +78,12 @@ public class ReaderHomeControllerG extends HomeControllerG implements AccountObs
 
         lblTitle.setOnMouseClicked(event -> openFeed());
         lblName.setText(UserLogin.getInstance().getAccount().getUsername());
-        proPic.setImage(UserLogin.getInstance().getAccount().getProPic());
+        proPic.setImage(UserLogin.getInstance().getReader().getProPic());
         System.out.println(" ***** [HomeCOntrollerGReader] Your proPic is : "+proPic.getImage());
 
         btnFav.setOnAction(event -> openFavourites());
         btnFollowing.setOnAction(event-> openFollowing());
-        btnCategories.setOnAction(event -> {
-            try {
-                openCategories();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        });
+        btnCategories.setOnAction(event -> openCategories());
         btnSettings.setOnAction(event -> openSettings());
         btnTop.setOnAction(event -> openTop());
         btnToRead.setOnAction(event -> openToRead());
@@ -156,21 +150,13 @@ public class ReaderHomeControllerG extends HomeControllerG implements AccountObs
         btnSettings.setStyle(STYLE2);
     }
 
-    public void openCategories() throws IOException {
-
-        CategoriesControllerG categoriesControllerG = new CategoriesControllerG();
-        FXMLLoader loader = new FXMLLoader();
-
-        URL fxmlLocation = HomeControllerG.class.getResource("categories.fxml");
-        loader.setLocation(fxmlLocation);
-        loader.setController(categoriesControllerG);
-
-        Pane view = loader.load();
-        categoriesControllerG.init();
-
-        mainPane.setCenter(view);
-
-        resetButtons();
+    @Override
+    public void openCategories(){
+        try {
+            super.openCategories();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
         btnCategories.setStyle(STYLE2);
     }
 

@@ -168,7 +168,6 @@ public class AccountDAO {
     }
 
     public void changeProPic(InputStream inputStream, Reader reader) {
-        Statement stmt = null;
         Connection conn = null;
 
         try {
