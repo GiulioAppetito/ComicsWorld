@@ -24,9 +24,9 @@ public class SeriesControllerG {
 
     @FXML
     public Button btnAddToFav;
+
     @FXML
     private ButtonBar buttonBarAuthor;
-
 
     @FXML
     public Button btnAddToRead;
@@ -37,12 +37,8 @@ public class SeriesControllerG {
     @FXML
     private VBox vbChapters;
 
-
     @FXML
     private Button btnAuthor;
-
-
-
 
     @FXML
     private Label lblTitle;
@@ -145,8 +141,8 @@ public class SeriesControllerG {
         ToReadController toReadController = new ToReadController();
         toReadController.removeSeriesFromToRead(seriesBean);
         btnAddToRead.setOnAction(event -> addSeriesToToRead(seriesBean));
-        btnAddToFav.setStyle(STYLE1);
-        btnAddToFav.setText("Add to toRead");
+        btnAddToRead.setStyle(STYLE1);
+        btnAddToRead.setText("Add to toRead");
 
     }
 
