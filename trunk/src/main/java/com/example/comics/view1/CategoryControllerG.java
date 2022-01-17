@@ -11,6 +11,7 @@ import javafx.scene.layout.VBox;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.List;
 
 public class CategoryControllerG {
@@ -20,9 +21,11 @@ public class CategoryControllerG {
     @FXML
     public GridPane gpComic;
 
-    public void init(Genres genre) {
+
+    public void init(Genres genres) {
+
         ResearchController researchController = new ResearchController();
-        List<SeriesBean> series = researchController.getCategorySeries(genre);
+        List<SeriesBean> series = researchController.getCategorySeries(genres);
 
         int columns = 3;
         int i=1;
@@ -51,6 +54,7 @@ public class CategoryControllerG {
                 e.printStackTrace();
             }
         }
+
     }
 
     public void openSerie(SeriesBean seriesBean) throws IOException {
