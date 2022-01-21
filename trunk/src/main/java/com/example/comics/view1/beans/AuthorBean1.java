@@ -8,6 +8,8 @@ import java.util.List;
 
 public class AuthorBean1 implements AuthorBean {
 
+    private String email;
+
     @Override
     public void setPublishedSeries(List<Series> publishedSeries) {
 
@@ -56,5 +58,15 @@ public class AuthorBean1 implements AuthorBean {
     @Override
     public void setProPic(Image image) {
 
+    }
+
+    @Override
+    public String getEmail() {
+        return this.email;
+    }
+
+    @Override
+    public void setEmail(String email) {
+        this.email = email;
     }
 }

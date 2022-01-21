@@ -49,11 +49,12 @@ public class ReaderDAO {
             reader.setPassword(rs.getString("password"));
             reader.setEmail(rs.getString("email"));
 
-            Blob bl = rs.getBlob("proPic");
+            Blob bl = rs.getBlob("propic");
             if(bl != null){
                 InputStream inputStream = bl.getBinaryStream();
                 Image image = new Image(inputStream);
                 reader.setProPic(image);
+                System.out.println(" ******* [ReaderDAO - retreiveReader] I got propic : "+image);
             }
         } catch (SQLException throwables) {
             throwables.printStackTrace();

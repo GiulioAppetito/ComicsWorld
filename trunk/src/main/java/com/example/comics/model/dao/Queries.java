@@ -68,9 +68,9 @@ public class Queries {
 
     public static void addProfile(Statement stmt, String firstName, String lastName, String username, String email, String password, String role) throws SQLException {
 
-            String insertStatement = String.format("INSERT INTO `users`(firstname,lastname,username,email,password,role) VALUES ('%s','%s','%s','%s','%s','%s')", firstName,lastName,username,email,password,role);
-            System.out.println(insertStatement);
-            stmt.executeUpdate(insertStatement);
+        String insertStatement = String.format("INSERT INTO `users`(firstname,lastname,username,email,password,role) VALUES ('%s','%s','%s','%s','%s','%s')", firstName,lastName,username,email,password,role);
+        System.out.println(insertStatement);
+        stmt.executeUpdate(insertStatement);
 
     }
 
@@ -95,7 +95,7 @@ public class Queries {
     }
 
     public static int saveReview(Statement stmt, Review review, Chapter chapter, Series series) throws SQLException {
-        String insertStatement = String.format("INSERT INTO review (user, comment, seriesTitle, chapter_title, rating) VALUES ('%s','%s','%s','%s','%s')", review.getUsername(), review.getComment(), series.getTitle(), chapter.getTitle(), review.getRating());
+        String insertStatement = String.format("INSERT INTO review (user, comment, series_title, chapter_title, rating) VALUES ('%s','%s','%s','%s','%s')", review.getUsername(), review.getComment(), series.getTitle(), chapter.getTitle(), review.getRating());
         System.out.println(insertStatement);
         stmt.executeUpdate(insertStatement);
         return 0;
@@ -157,18 +157,18 @@ public class Queries {
     }
 
     public static void insertChapter(Connection connection, Chapter chapter,String seriesTitle,InputStream coverInputStream) throws SQLException{
-        
-        
+
+
         PreparedStatement pstmt = connection.prepareStatement("INSERT INTO chapters (seriesTitle,chapter_title,chapterDescription,chapterCover) values (?, ?,?,?)");
         try{
-        pstmt.setString(1, seriesTitle);
-        pstmt.setString(2,chapter.getTitle());
-        pstmt.setString(3,chapter.getDescription());
+            pstmt.setString(1, seriesTitle);
+            pstmt.setString(2,chapter.getTitle());
+            pstmt.setString(3,chapter.getDescription());
 
-        //Inserting Blob type
-        pstmt.setBlob(4, coverInputStream);
-        //Executing the statement
-        pstmt.execute();
+            //Inserting Blob type
+            pstmt.setBlob(4, coverInputStream);
+            //Executing the statement
+            pstmt.execute();
         }
         catch (Exception e){
             //TO-DO
@@ -211,6 +211,46 @@ public class Queries {
     public static ResultSet isChapterRead(Statement stmt, String chapterTitle, String reader) throws SQLException {
         String selectStatement = String.format("SELECT * FROM userReadChapters WHERE (reader = '%s' AND chapter='%s')",reader,chapterTitle);
         System.out.println(selectStatement);
+        return stmt.executeQuery(selectStatement);
+    }
+
+    public static void updateUserProPic(Connection conn, InputStream inputStream, Reader reader) throws SQLException {
+        PreparedStatement pstmt = conn.prepareStatement("DELETE FROM users WHERE username = ?");
+        try{
+            //Inserting Blob type
+            pstmt.setString(1,reader.getUsername());
+            //Executing the statement
+            pstmt.execute();
+            System.out.println(pstmt);
+        }
+        catch (Exception e){
+            //TO-DO
+        }
+        PreparedStatement pstmt2 = conn.prepareStatement("INSERT INTO users (username,firstname,lastname,role,email,password,propic) VALUES (?,?,?,?,?,?,?)");
+        try{
+            //Inserting Blob type
+            pstmt2.setBlob(7, inputStream);
+            pstmt2.setString(1,reader.getUsername());
+            pstmt2.setString(2,reader.getFirstName());
+            pstmt2.setString(3,reader.getLastName());
+            pstmt2.setString(4,"reader");
+            pstmt2.setString(5,reader.getEmail());
+            pstmt2.setString(6,reader.getPassword());
+            //Executing the statement
+            pstmt2.execute();
+            System.out.println(pstmt2);
+        }
+        catch (Exception e){
+            //TO-DO
+        }
+        finally {
+            pstmt.close();
+            pstmt2.close();
+        }
+    }
+
+    public static ResultSet retrieveCategorySeries(Statement stmt, Genres genre) throws SQLException {
+        String selectStatement = String.format("SELECT * FROM series WHERE genre1 = '%s' OR genre2 = '%s' OR genre3 = '%s'", genre.name(), genre.name(), genre.name());
         return stmt.executeQuery(selectStatement);
     }
 }

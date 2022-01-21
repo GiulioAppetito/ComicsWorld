@@ -1,6 +1,7 @@
 package com.example.comics.controller;
 
 
+import com.example.comics.model.Account;
 import com.example.comics.model.fagioli.AccountBean;
 import com.example.comics.model.fagioli.ProfileBean;
 import com.example.comics.model.UserLogin;
@@ -16,6 +17,8 @@ public class CustomizeProfileController {
 
     public void changeProPic(ProfileBean profileBean){
         UserLogin.getInstance().getAccount().changeProPic(profileBean.getProPic());
+        AccountDAO accountDAO = new AccountDAO();
+        accountDAO.changeProPic(profileBean.getInputStream(),UserLogin.getInstance().getReader());
     }
 
     public void changeEmail(AccountBean accountBean){

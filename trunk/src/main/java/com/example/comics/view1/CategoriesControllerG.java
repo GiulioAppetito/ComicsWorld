@@ -102,14 +102,14 @@ public class CategoriesControllerG {
                 HBox categoryBox = fxmlLoader.load();
                 categoryBox.setOnMouseClicked(event -> {
                     try {
-                        openCategory(categoryName);
+                        openCategory(category);
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
                 });
 
                 CategoryCardControllerG categoryCardController = fxmlLoader.getController();
-                categoryCardController.setData(categoryName);
+                categoryCardController.setData(category.name());
 
                 switch (categoryName.substring(0,1)) {
                     case "A" -> boxA.getChildren().add(categoryBox);
@@ -150,16 +150,17 @@ public class CategoriesControllerG {
 
     }
 
-    private void openCategory(String categoryName) throws IOException {
+    private void openCategory(Genres category) throws IOException {
 
         FXMLLoader loader = new FXMLLoader();
 
-        URL fxmlLocation = CategoryController.class.getResource("category.fxml");
+        URL fxmlLocation = CategoryControllerG.class.getResource("category.fxml");
         loader.setLocation(fxmlLocation);
         Pane view = loader.load();
 
-        CategoryController categoryController = loader.getController();
-        categoryController.setData(categoryName);
+        CategoryControllerG categoryController = loader.getController();
+        categoryController.setData(category);
+        categoryController.init(category);
 
         HomeFactory homeFactory = new HomeFactory();
         HomeControllerG homeControllerG = homeFactory.getHomeControllerG();

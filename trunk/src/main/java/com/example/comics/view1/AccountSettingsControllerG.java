@@ -5,58 +5,72 @@ import com.example.comics.model.AccountSubject;
 import com.example.comics.controller.CustomizeProfileController;
 import com.example.comics.model.fagioli.AccountBean;
 import com.example.comics.model.UserLogin;
+import com.example.comics.model.fagioli.ProfileBean;
 import com.example.comics.view1.beans.AccountBean1;
+import com.example.comics.view1.beans.ProfileBean1;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
+import javafx.stage.FileChooser;
+
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.InputStream;
 
 public class AccountSettingsControllerG implements AccountObserver {
     @FXML
-    private Button btnCloseEditorEmail;
+    private Label lblFirstName;
 
     @FXML
-    private Button btnCloseEditorFirstName;
+    private Button btnEditProPic;
 
     @FXML
-    private Button btnCloseEditorLastName;
-
-    @FXML
-    private Button btnSaveEmail;
-
-    @FXML
-    private Button btnSaveFirstName;
-
-    @FXML
-    private Button btnSaveLastName;
-
-    @FXML
-    private Pane paneEditEmail;
-
-    @FXML
-    private Pane paneEditFirstName;
-
-    @FXML
-    private Pane paneEditLastName;
-
-    @FXML
-    private TextArea taNewEmail;
-
-    @FXML
-    private TextArea taNewFirstName;
-
-    @FXML
-    private TextArea taNewLastName;
+    private Label lblLastName;
 
     @FXML
     private Label lblEmail;
 
     @FXML
-    private Label lblFirstName;
+    private Pane paneEditFirstName;
 
     @FXML
-    private Label lblLastName;
+    private Button btnCloseEditorFirstName;
+
+    @FXML
+    private TextArea taNewFirstName;
+
+    @FXML
+    private Button btnSaveFirstName;
+
+    @FXML
+    private Pane paneEditEmail;
+
+    @FXML
+    private Button btnCloseEditorEmail;
+
+    @FXML
+    private TextArea taNewEmail;
+
+    @FXML
+    private Button btnSaveEmail;
+
+    @FXML
+    private Pane paneEditLastName;
+
+    @FXML
+    private Button btnCloseEditorLastName;
+
+    @FXML
+    private TextArea taNewLastName;
+
+    @FXML
+    private Button btnSaveLastName;
+
 
     @FXML
     public void initialize(){
@@ -65,11 +79,12 @@ public class AccountSettingsControllerG implements AccountObserver {
         lblFirstName.setText(UserLogin.getInstance().getAccount().getFirstName());
         lblLastName.setText(UserLogin.getInstance().getAccount().getLastName());
         lblEmail.setText(UserLogin.getInstance().getAccount().getEmail());
-
         //stessa cosa con la propic
 
         AccountSubject.attach(this);
     }
+
+
 
     @FXML
     void editFirstName(){
@@ -132,8 +147,6 @@ public class AccountSettingsControllerG implements AccountObserver {
         paneEditEmail.setVisible(false);
         paneEditLastName.setVisible(false);
         paneEditFirstName.setVisible(false);
-
-
         lblFirstName.setText(UserLogin.getInstance().getAccount().getFirstName());
         lblLastName.setText(UserLogin.getInstance().getAccount().getLastName());
         lblEmail.setText(UserLogin.getInstance().getAccount().getEmail());

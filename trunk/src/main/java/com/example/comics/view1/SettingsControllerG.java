@@ -12,13 +12,9 @@ public class SettingsControllerG {
     @FXML
     private Button btnProfile;
     @FXML
-    private VBox settingsBox;
-    @FXML
     private BorderPane mainPane;
     @FXML
     private Button accountsettings;
-    @FXML
-    private Button preferencessettings;
     @FXML
     private Button aboutussettings;
 
@@ -33,7 +29,6 @@ public class SettingsControllerG {
 
         btnProfile.setStyle(BLU_STYLE);
         accountsettings.setStyle(STYLE);
-        preferencessettings.setStyle(STYLE);
         aboutussettings.setStyle(STYLE);
 
         FxmlLoader object = new FxmlLoader();
@@ -45,7 +40,6 @@ public class SettingsControllerG {
 
         btnProfile.setStyle(STYLE);
         accountsettings.setStyle(BLU_STYLE);
-        preferencessettings.setStyle(STYLE);
         aboutussettings.setStyle(STYLE);
 
         FxmlLoader object = new FxmlLoader();
@@ -53,23 +47,10 @@ public class SettingsControllerG {
         mainPane.setCenter(view);
     }
 
-    public void openPreferencesSettings() {
-
-        btnProfile.setStyle(STYLE);
-        accountsettings.setStyle(STYLE);
-        preferencessettings.setStyle(BLU_STYLE);
-        aboutussettings.setStyle(STYLE);
-
-        FxmlLoader object = new FxmlLoader();
-        Pane view = object.getPage("preferencessettings");
-        mainPane.setCenter(view);
-    }
-
     public void openAboutUsSettings() {
 
         btnProfile.setStyle(STYLE);
         accountsettings.setStyle(STYLE);
-        preferencessettings.setStyle(STYLE);
         aboutussettings.setStyle(BLU_STYLE);
 
         FxmlLoader object = new FxmlLoader();

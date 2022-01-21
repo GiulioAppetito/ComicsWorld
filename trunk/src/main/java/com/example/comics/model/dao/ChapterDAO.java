@@ -109,6 +109,7 @@ public class ChapterDAO {
         Connection conn = null;
 
         try {
+            System.out.println("**** [ChapterDAO] doing saveChapter ****");
 
             // STEP 3: apertura connessione
             conn = DriverManager.getConnection(DB_URL, USER, PASS);

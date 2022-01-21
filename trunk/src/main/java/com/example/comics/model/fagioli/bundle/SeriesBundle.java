@@ -45,6 +45,7 @@ public class SeriesBundle implements SeriesBean {
         authorBundle.setFirstName(authorBean.getFirstName());
         authorBundle.setProPic(authorBean.getProPic());
         authorBundle.setUsername(authorBean.getUsername());
+        authorBundle.setEmail(authorBean.getEmail());
 
         return authorBundle;
     }

@@ -83,11 +83,7 @@ public class AuthorHomeControllerG  extends HomeControllerG implements AccountOb
 
         btnMySeries.setOnAction(event -> openMySeries());
         btnCategories.setOnAction(event -> {
-            try {
-                openCategories();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
+            openCategories();
         });
         btnStatistics.setOnAction(event -> openStatistics());
 
@@ -136,21 +132,13 @@ public class AuthorHomeControllerG  extends HomeControllerG implements AccountOb
 
     }
 
-    public void openCategories() throws IOException {
-
-        CategoriesControllerG categoriesControllerG = new CategoriesControllerG();
-        FXMLLoader loader = new FXMLLoader();
-
-        URL fxmlLocation = HomeControllerG.class.getResource("categories.fxml");
-        loader.setLocation(fxmlLocation);
-        loader.setController(categoriesControllerG);
-
-        Pane view = loader.load();
-        categoriesControllerG.init();
-
-        mainPane.setCenter(view);
-
-        resetButtons();
+    @Override
+    public void openCategories(){
+        try {
+            super.openCategories();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
         btnCategories.setStyle(STYLE2);
     }
 
