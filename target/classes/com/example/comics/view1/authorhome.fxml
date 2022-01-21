@@ -163,24 +163,6 @@
                         </ImageView>
                     </graphic>
                 </Button>
-                <Button fx:id="btnMyCharacters" mnemonicParsing="false" prefHeight="78.0" prefWidth="254.0" styleClass="lateral" stylesheets="@../../../../css/css1/fullpackstyling.css" text="My characters">
-                    <font>
-                        <Font name="Berlin Sans FB" size="18.0" />
-                    </font>
-                    <graphic>
-                        <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
-                            <image>
-                                <Image url="@../../../../img/img1/character.png" />
-                            </image>
-                        </ImageView>
-                    </graphic>
-                    <VBox.margin>
-                        <Insets />
-                    </VBox.margin>
-                    <padding>
-                        <Insets left="-10.0" />
-                    </padding>
-                </Button>
                 <Separator prefWidth="200.0" />
                 <Label prefHeight="37.0" prefWidth="254.0" text="Settings">
                     <font>
