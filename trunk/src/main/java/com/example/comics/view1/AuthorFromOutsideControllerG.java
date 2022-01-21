@@ -10,20 +10,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.BorderPane;
 
 public class AuthorFromOutsideControllerG {
-    @FXML
-    private BorderPane mainPane;
 
-    @FXML
-    private ImageView proPicProfile;
-
-    @FXML
-    private Button btnEdit;
-
-    @FXML
-    private Label lblName;
-
-    @FXML
-    private Label lblUsername;
     @FXML
     private Button btnFollow;
 
@@ -31,10 +18,13 @@ public class AuthorFromOutsideControllerG {
     private Label lblAuthorUsername;
 
     @FXML
-    private Label lblName1;
+    private Label lblName;
 
     @FXML
-    private Label lblAuthorPlaceHolder;
+    private BorderPane mainPane;
+
+    @FXML
+    private ImageView proPicProfile;
 
     public void init(AuthorBean authorBean){
 
