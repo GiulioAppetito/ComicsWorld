@@ -37,6 +37,7 @@ public class PublishSeriesController {
                 objective = new ChapterObjective(badge,discount,objectiveBean.getRequirement());
             }
             objective.setLevel(Levels.valueOf(objectiveBean.getLevel()));
+            objective.setRequirement(objectiveBean.getRequirement());
             objectives.add(objective);
             objectiveBadgeHM.put(objective,objectiveBean.getBadgeIconInputStream());
         }

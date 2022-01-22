@@ -20,6 +20,16 @@ public class ReviewsObjective extends Objective{
 
 
     @Override
+    public void setRequirement(int requirement) {
+        this.requiredReviews = requirement;
+    }
+
+    @Override
+    public int getRequirement() {
+        return requiredReviews;
+    }
+
+    @Override
     public boolean achieveObjective(int readersReviews, Badge badge){
         Boolean win = (readersReviews >= requiredReviews);
         if(win == true){

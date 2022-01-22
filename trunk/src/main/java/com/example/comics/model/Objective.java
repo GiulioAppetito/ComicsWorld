@@ -8,6 +8,9 @@ public abstract class Objective extends ObjectiveSubject{
     protected Badge badge;
     private String seriesTitle;
 
+    public abstract void setRequirement(int requirement);
+    public abstract int getRequirement();
+
 
     public Levels getLevel() {
         return level;

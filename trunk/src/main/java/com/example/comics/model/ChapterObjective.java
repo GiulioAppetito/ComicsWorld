@@ -16,6 +16,16 @@ public class ChapterObjective extends Objective{
     }
 
     @Override
+    public void setRequirement(int requirement) {
+        this.requiredChapters = requirement;
+    }
+
+    @Override
+    public int getRequirement() {
+        return this.requiredChapters;
+    }
+
+    @Override
     public boolean achieveObjective(int input, Badge badge) {
         return false;
     }

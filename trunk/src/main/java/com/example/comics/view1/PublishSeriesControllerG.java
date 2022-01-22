@@ -221,6 +221,7 @@ public class PublishSeriesControllerG {
             objectiveBean.setType(choiceBoxTypeB.getValue());
             objectiveBean.setDiscountBean(discountBean1);
             objectiveBean.setBadgeBean(badgeBean1);
+            objectiveBean.setRequirement(Integer.parseInt(tfTargetNumberB.getText()));
             try {
                 objectiveBean.setBadgeIconInputStream(new FileInputStream(badgeIconPathB));
             } catch (FileNotFoundException e) {
@@ -244,6 +245,7 @@ public class PublishSeriesControllerG {
             objectiveBean.setType(choiceBoxTypeI.getValue());
             objectiveBean.setDiscountBean(discountBean1);
             objectiveBean.setBadgeBean(badgeBean1);
+            objectiveBean.setRequirement(Integer.parseInt(tfTargetNumberI.getText()));
             try {
                 objectiveBean.setBadgeIconInputStream(new FileInputStream(badgeIconPathI));
             } catch (FileNotFoundException e) {
@@ -267,6 +269,7 @@ public class PublishSeriesControllerG {
             objectiveBean.setType(choiceBoxTypeE.getValue());
             objectiveBean.setDiscountBean(discountBean1);
             objectiveBean.setBadgeBean(badgeBean1);
+            objectiveBean.setRequirement(Integer.parseInt(tfTargetNumberE.getText()));
             try {
                 objectiveBean.setBadgeIconInputStream(new FileInputStream(badgeIconPathE));
             } catch (FileNotFoundException e) {
