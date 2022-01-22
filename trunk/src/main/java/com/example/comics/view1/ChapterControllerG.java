@@ -369,16 +369,17 @@ public class ChapterControllerG implements ChapterObserver, ObjectiveObserver {
 
         btnCloseEditor.setOnAction(event -> closeEditor());
         btnCloseBadge.setOnAction(event -> closeBadgeWon());
-        btnAddReview.setOnAction(event -> openEditor());
         btnChapterRead.setOnAction(event -> markChapterAsRead(seriesBean,chapterBean));
-
 
         paneInsertReview.setVisible(false);
         newBadgeWonPane.setVisible(false);
-
-
         btnPostReview.setOnAction(event -> postReview(chapterBean, seriesBean));
 
+        if(UserLogin.getInstance().getAccount().getRole().equals("reader")) {
+            btnAddReview.setOnAction(event -> openEditor());
+        }else{
+            btnAddReview.setVisible(false);
+        }
         List<ReviewBean> listOfReviews = chapterBean.getReviews();
 
         for (ReviewBean reviewBean : listOfReviews) {

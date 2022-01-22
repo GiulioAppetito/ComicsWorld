@@ -47,14 +47,10 @@ public class AuthorHomeControllerG  extends HomeControllerG implements AccountOb
     private Button btnMySeries;
 
     @FXML
-    private Button btnMyCharacters;
-
-    @FXML
     private Button btnSettings;
 
     @FXML
     private Button btnStatistics;
-
 
     @FXML
     private ImageView smallProPic;
@@ -93,7 +89,6 @@ public class AuthorHomeControllerG  extends HomeControllerG implements AccountOb
 
         btnSettings.setOnAction(event -> openSettings());
         btnTop.setOnAction(event -> openTop());
-        btnMyCharacters.setOnAction(event -> openMyCharacters());
         userBox.setOnMouseClicked(event -> openProfile());
         homeIcon.setOnMouseClicked(event -> openFeed());
 
@@ -116,15 +111,6 @@ public class AuthorHomeControllerG  extends HomeControllerG implements AccountOb
         mainPane.setCenter(pane);
     }
 
-
-    public void openMyCharacters() {
-        FxmlLoader object = new FxmlLoader();
-        Pane view = object.getPage("authormycharacter");
-        mainPane.setCenter(view);
-
-        resetButtons();
-        btnMyCharacters.setStyle(STYLE2);
-    }
 
     public void openTop(){
         FxmlLoader object = new FxmlLoader();
@@ -181,7 +167,6 @@ public class AuthorHomeControllerG  extends HomeControllerG implements AccountOb
         btnSettings.setStyle(STYLE);
         btnCategories.setStyle(STYLE);
         btnMySeries.setStyle(STYLE);
-        btnMyCharacters.setStyle(STYLE);
         btnTop.setStyle(STYLE);
         //btnMyBadges.setStyle(STYLE);
         btnStatistics.setStyle(STYLE);
