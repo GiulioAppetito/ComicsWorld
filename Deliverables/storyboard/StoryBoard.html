@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="ISO-8859-1">
+        <title>ComicsWorld's storyboard</title>
+        <script>
+            window.onload = function(){
+                var img = document.getElementById('image');
+                img.setAttribute("src", "home.PNG");
+                img.setAttribute("alt", "homepage");
+            }
+            function moveTo(src,alt,id){
+                var img = document.getElementById('image');
+                    img.setAttribute("src", src);
+                    img.setAttribute("alt", alt);
+            }
+        </script>
+    </head>
+    <body>
+        <img id=image>
+        <div style="display: flex; background: purple; width:1280px; justify-content: space-evenly;">
+	
+	    <input type="button"  id=home value="Go to home" onclick="moveTo('home.PNG','homepage',this.id)">
+	    <input type="button"  id=categories value="Go to categories" onclick="moveTo('categories.PNG','categories-page',this.id)">
+            <input type="button"  id=accountsettings value="Go to accountsettings" onclick="moveTo('accountsettings.PNG','settings-account-page',this.id)">
+            <input type="button"  id=profilesettings value="Go to profilesettings" onclick="moveTo('profilesettings.PNG','settings-profile-page',this.id)">
+            <input type="button"  id=series value="Go to series" onclick="moveTo('series.png','series-page',this.id)">
+	    <input type="button"  id=chapter value="Go to chapter" onclick="moveTo('chapter.png','chapter-page',this.id)">
+
+        </div>
+    </body>
+</html>
