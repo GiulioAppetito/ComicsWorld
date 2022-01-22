@@ -377,10 +377,11 @@ public class SeriesDAO {
                 System.out.println("seriesDAO: recupero serie singola con author");
                 series = new Series(title, author);
                 Blob bl = rs.getBlob("cover");
-                InputStream inputStream = bl.getBinaryStream();
-                Image image = new Image(inputStream);
-                series.setCover(image);
-
+                if(bl!=null) {
+                    InputStream inputStream = bl.getBinaryStream();
+                    Image image = new Image(inputStream);
+                    series.setCover(image);
+                }
 
                 //series.setGenre1(genre1);
                 // series.setGenre2(genre2);
@@ -438,10 +439,11 @@ public class SeriesDAO {
                 series = new Series(rs.getString("title"), author);
 
                 Blob bl = rs.getBlob("cover");
-                InputStream inputStream = bl.getBinaryStream();
-                Image image = new Image(inputStream);
-                series.setCover(image);
-
+                if(bl!=null) {
+                    InputStream inputStream = bl.getBinaryStream();
+                    Image image = new Image(inputStream);
+                    series.setCover(image);
+                }
                 seriesList.add(series);
 
             } while (rs.next());

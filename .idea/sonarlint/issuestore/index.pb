@@ -91,8 +91,6 @@ o
 ?trunk/src/main/java/com/example/comics/model/dao/ReaderDAO.java,3\b\3bd4551b66716af31be8aa022e406ebae2bc3845
 t
 Dtrunk/src/main/java/com/example/comics/view1/ReadingControllerG.java,c\f\cfbb7ef6413152c3bf22790c0db6628eb2e393e5
-o
-?trunk/src/main/java/com/example/comics/model/dao/SeriesDAO.java,1\a\1a268b5783fdf4518ee179aca9664c3642aacf6e
 w
 Gtrunk/src/main/java/com/example/comics/view1/ReaderHomeControllerG.java,e\c\ec2e8050235c1d9d3918ef5543b9bf4b12855c12
 ‚
@@ -101,3 +99,17 @@ w
 Gtrunk/src/main/java/com/example/comics/view1/FavouritesControllerG.java,7\9\795114fd6bd048af9c0d63656a226aa152a5de1c
 }
 Mtrunk/src/main/java/com/example/comics/view1/StatisticsRatingControllerG.java,5\a\5aac75394d3cc7c119b16d8979d3f95dee37e383
+s
+Ctrunk/src/main/java/com/example/comics/view1/SeriesControllerG.java,9\e\9e35f99e41cf6d6aa41349eee274243f957b0813
+w
+Gtrunk/src/main/java/com/example/comics/view1/AuthorHomeControllerG.java,a\a\aacf7a587fd8f65b28db22fa4798ed6f14282a41
+{
+Ktrunk/src/main/java/com/example/comics/view1/AuthorMySeriesControllerG.java,b\2\b27a590d209dda0992a05dcda0b9152c02944b17
+m
+=trunk/src/main/java/com/example/comics/model/dao/Queries.java,f\3\f3a37695c77dad5023ee85e5787ca9de0b649080
+y
+Itrunk/src/main/java/com/example/comics/controller/ResearchController.java,2\6\2631e9287909fea85acc2c091fa23962f532d491
+t
+Dtrunk/src/main/java/com/example/comics/view1/ChapterControllerG.java,0\0\0001f7e92c2791823074c36e4a3485140d2f11e6
+~
+Ntrunk/src/main/java/com/example/comics/view1/AuthorFromOutsideControllerG.java,2\4\24fd798da996c23705c0bf981cc9d7ebd245574d
