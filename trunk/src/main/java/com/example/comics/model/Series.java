@@ -39,6 +39,11 @@ public class Series extends SeriesSubject{
 		calculateAverageRating();
 	}
 
+	public Series(){
+		this.chapters = new ArrayList<>();
+		this.objectives = new ArrayList<>();
+	}
+
 	public String getTitle() {
 		return title;
 	}

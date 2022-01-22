@@ -1,11 +1,14 @@
 package com.example.comics.model.dao;
 
 import com.example.comics.model.*;
+import com.example.comics.model.fagioli.ObjectiveBean;
 import javafx.scene.image.Image;
 
 import java.io.InputStream;
 import java.sql.*;
 import java.util.ArrayList;
+import java.util.Dictionary;
+import java.util.HashMap;
 import java.util.List;
 
 public class SeriesDAO {
@@ -142,9 +145,12 @@ public class SeriesDAO {
                 series = new Series(rs.getString("title"), author);
 
                 Blob bl = rs.getBlob("cover");
-                InputStream inputStream = bl.getBinaryStream();
-                Image image = new Image(inputStream);
-                series.setCover(image);
+                if(bl!=null){
+                    InputStream inputStream = bl.getBinaryStream();
+                    Image image = new Image(inputStream);
+                    series.setCover(image);
+
+                }
 
                 seriesList.add(series);
             } while (rs.next());
@@ -377,11 +383,10 @@ public class SeriesDAO {
                 System.out.println("seriesDAO: recupero serie singola con author");
                 series = new Series(title, author);
                 Blob bl = rs.getBlob("cover");
-                if(bl!=null) {
-                    InputStream inputStream = bl.getBinaryStream();
-                    Image image = new Image(inputStream);
-                    series.setCover(image);
-                }
+                InputStream inputStream = bl.getBinaryStream();
+                Image image = new Image(inputStream);
+                series.setCover(image);
+
 
                 //series.setGenre1(genre1);
                 // series.setGenre2(genre2);
@@ -428,7 +433,7 @@ public class SeriesDAO {
             ResultSet rs = Queries.retriveLatestSeries(stmt);
 
             if (!rs.first()) {
-                throw new Exception("No series Found ");
+                return seriesList;
             }
             rs.first();
             do {
@@ -439,11 +444,13 @@ public class SeriesDAO {
                 series = new Series(rs.getString("title"), author);
 
                 Blob bl = rs.getBlob("cover");
-                if(bl!=null) {
+                if(bl != null){
                     InputStream inputStream = bl.getBinaryStream();
                     Image image = new Image(inputStream);
                     series.setCover(image);
                 }
+
+
                 seriesList.add(series);
 
             } while (rs.next());
@@ -477,4 +484,63 @@ public class SeriesDAO {
         return objectiveDAO.retrieveSeriesObjectives(series);
     }
 
+    public void savePublishedSeries(Series series, InputStream seriesCoverInputStream, HashMap<Objective,InputStream> hashMap) {
+        Statement stmt = null;
+        Connection conn = null;
+        int bagdeID = 0;
+        try {
+
+            // STEP 3: apertura connessione
+            conn = DriverManager.getConnection(DB_URL, USER, PASS);
+            stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
+            // STEP 4.2: creazione ed esecuzione della query
+            Queries.insertSeries(conn,series,seriesCoverInputStream);
+            for(Objective objective : series.getObjectives()){
+
+
+                Queries.insertBadge(conn,objective.getBadge(),hashMap.get(objective));
+
+                //retreive last insert id in badge
+                ResultSet rs = Queries.getAllBadges(stmt);
+                if(!rs.first()){
+                    bagdeID = 0;
+                }
+                rs.first();
+                bagdeID = 0;
+                do{
+                    bagdeID = rs.getInt("badgeID");
+                }while(rs.next());
+                System.out.println(" HERE IS BADGEID = "+bagdeID);
+
+                int id = bagdeID;
+                Queries.insertObjective(stmt,objective,series,id);
+            }
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }finally {
+            try {
+                conn.close();
+                stmt.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    public Series createSeries(Author author, String title, Genres genre1, Genres genre2, Genres genre3, Image cover, InputStream coverInputStream, List<Objective> objectives,HashMap<Objective,InputStream> badgeIconHM) {
+        Series series;
+        series = new Series();
+        series.setAuthor(author);
+        series.setTitle(title);
+        series.setGenre1(genre1);
+        series.setGenre2(genre2);
+        series.setGenre3(genre3);
+        series.setCover(cover);
+        series.setObjectives(objectives);
+
+        savePublishedSeries(series,coverInputStream,badgeIconHM);
+
+        return series;
+
+    }
 }

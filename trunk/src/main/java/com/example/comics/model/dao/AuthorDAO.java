@@ -91,7 +91,6 @@ public class AuthorDAO {
             author.setUsername(rs.getString("username"));
             author.setLastName(rs.getString("lastname"));
             author.setEmail(rs.getString("email"));
-            author.setPassword(rs.getString("password"));
 
             SeriesDAO seriesDAO = new SeriesDAO();
             List<Series> publishedSeries = seriesDAO.retrievePublishedSeries(author);
@@ -99,10 +98,12 @@ public class AuthorDAO {
 
 
             Blob bl = rs.getBlob("proPic");
-            InputStream inputStream = bl.getBinaryStream();
+            if(bl != null){
+                InputStream inputStream = bl.getBinaryStream();
+                Image image = new Image(inputStream);
+                author.setProPic(image);
+            }
 
-            Image image = new Image(inputStream);
-            author.setProPic(image);
 
         } catch (SQLException throwables) {
             throwables.printStackTrace();
@@ -117,36 +118,6 @@ public class AuthorDAO {
 
         return author;
     }
-
-    public void savePublishedSeries(Series series) {
-
-            // STEP 1: dichiarazioni
-            Statement stmt = null;
-            Connection conn = null;
-
-            try {
-
-                conn = DriverManager.getConnection(DB_URL, USER, PASS);
-
-                // STEP 4.1: creazione ed esecuzione della query
-                stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE,
-                        ResultSet.CONCUR_READ_ONLY);
-
-                // In pratica i risultati delle query possono essere visti come un Array Associativo o un Map
-                // Queries.saveSeries(stmt,series);
-                stmt.close();
-            } catch (SQLException throwables) {
-                throwables.printStackTrace();
-            }finally {
-                try {
-                    assert conn != null;
-                    conn.close();
-                } catch (SQLException | NullPointerException e) {
-                    e.printStackTrace();
-                }
-            }
-    }
-
 
     public List<Author> retreiveFollowedAuthorsByReader(String username) {
         Statement stmt = null;
@@ -177,5 +148,17 @@ public class AuthorDAO {
 
         return followedAuthors;
 
+    }
+
+
+    public Author createAuthor(String username, List<Series> publishedSeries, String firstName, String lastName, Image proPic) {
+        Author author = new Author();
+        author.setUsername(username);
+        author.setPublishedSeries(publishedSeries);
+        author.setFirstName(firstName);
+        author.setLastName(lastName);
+        author.setProPic(proPic);
+
+        return author;
     }
 }

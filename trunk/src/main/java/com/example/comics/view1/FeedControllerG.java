@@ -78,7 +78,6 @@ public class FeedControllerG{
             }
         }
 
-
         //load the ads panel
 
         List<Advertisement> listOfAds = new ArrayList<>(addAds());

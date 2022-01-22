@@ -64,9 +64,12 @@ public class AuthorProfileControllerG implements AccountObserver {
     @FXML
     public void edit(){
 
-        ReaderHomeControllerG.getInstance().openSettings();
+        HomeFactory homeFactory = new HomeFactory();
+        HomeControllerG homeControllerG = homeFactory.getHomeControllerG();
+        homeControllerG.openSettings();
 
     }
+
 
     @FXML
     private void publishNewSerie(){

@@ -6,6 +6,7 @@ import com.example.comics.model.fagioli.ChapterBean;
 import com.example.comics.model.fagioli.SeriesBean;
 import javafx.scene.image.Image;
 
+import java.io.InputStream;
 import java.util.List;
 
 public class SeriesBean1 implements SeriesBean {
@@ -15,6 +16,10 @@ public class SeriesBean1 implements SeriesBean {
     private AuthorBean authorBean;
     private List<ChapterBean> chapterBeans;
     private int rating;
+    private InputStream coverInputStream;
+    Genres genre1;
+    Genres genre2;
+    Genres genre3;
 
     @Override
     public String getTitle() {
@@ -34,6 +39,16 @@ public class SeriesBean1 implements SeriesBean {
     @Override
     public void setCover(Image cover){
         this.cover = cover;
+    }
+
+    @Override
+    public InputStream getCoverInputStream() {
+        return this.coverInputStream;
+    }
+
+    @Override
+    public void setCoverInputStream(InputStream inputStream) {
+        this.coverInputStream = inputStream;
     }
 
     @Override
@@ -58,22 +73,22 @@ public class SeriesBean1 implements SeriesBean {
 
     @Override
     public Genres getGenre1() {
-        return null;
+        return this.genre1;
     }
     @Override
-    public void setGenre1(Genres genre1) {}
+    public void setGenre1(Genres genre1) {this.genre1 = genre1;}
     @Override
     public Genres getGenre2() {
-        return null;
+        return this.genre2;
     }
     @Override
-    public void setGenre2(Genres genre2){}
+    public void setGenre2(Genres genre2){ this.genre2 = genre2;}
     @Override
     public Genres getGenre3() {
-        return null;
+        return this.genre3;
     }
     @Override
-    public void setGenre3(Genres genre3){}
+    public void setGenre3(Genres genre3){this.genre3 = genre3;}
 
 
     @Override

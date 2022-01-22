@@ -106,7 +106,7 @@ public class BoundarySendEmail {
 
             // Send message
             Transport.send(message);
-            System.out.println("Sent message successfully....");
+            System.out.println("Sent discount code email succesfully to "+to);
 
         } catch (MessagingException mex) {
             mex.printStackTrace();

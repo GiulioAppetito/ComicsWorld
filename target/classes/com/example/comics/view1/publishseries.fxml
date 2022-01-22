@@ -67,6 +67,26 @@
                                           <Image url="@../../../../img/img1/download.jpg" />
                                        </image>
                                     </ImageView>
+                                    <Button fx:id="btnChangeCover" mnemonicParsing="false" prefHeight="59.0" prefWidth="205.0" stylesheets="@../../../../css/css1/fullpackstyling.css" text="Change cover">
+                                       <font>
+                                          <Font name="Berlin Sans FB" size="18.0" />
+                                       </font>
+                                       <styleClass>
+                                          <String fx:value="oval-layout" />
+                                          <String fx:value="transparent" />
+                                          <String fx:value="buttonEdit" />
+                                       </styleClass>
+                                       <graphic>
+                                          <ImageView fitHeight="45.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../../../../img/img1/icons8-paint-palette-96.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                       <VBox.margin>
+                                          <Insets left="120.0" top="10.0" />
+                                       </VBox.margin>
+                                    </Button>
                                     <VBox>
                                        <VBox.margin>
                                           <Insets left="40.0" top="40.0" />
@@ -436,7 +456,11 @@
                                           <Font name="Berlin Sans FB" size="18.0" />
                                        </font>
                                     </Label>
-                                    <ChoiceBox prefWidth="150.0" />
+                                    <Button fx:id="btnBadgeIconB" mnemonicParsing="false" text="Set icon">
+                                       <font>
+                                          <Font name="Berlin Sans FB" size="14.0" />
+                                       </font>
+                                    </Button>
                                  </children>
                               </HBox>
                            </children>
@@ -592,7 +616,11 @@
                                           <Font name="Berlin Sans FB" size="18.0" />
                                        </font>
                                     </Label>
-                                    <ChoiceBox prefWidth="150.0" />
+                                    <Button fx:id="btnBadgeIconI" mnemonicParsing="false" text="Set icon">
+                                       <font>
+                                          <Font name="Berlin Sans FB" size="14.0" />
+                                       </font>
+                                    </Button>
                                  </children>
                               </HBox>
                            </children>
@@ -743,7 +771,11 @@
                                           <Font name="Berlin Sans FB" size="18.0" />
                                        </font>
                                     </Label>
-                                    <ChoiceBox prefWidth="150.0" />
+                                    <Button fx:id="btnBadgeIconE" mnemonicParsing="false" text="Set icon">
+                                       <font>
+                                          <Font name="Berlin Sans FB" size="14.0" />
+                                       </font>
+                                    </Button>
                                  </children>
                               </HBox>
                            </children>
