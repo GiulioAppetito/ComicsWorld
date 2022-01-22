@@ -12,6 +12,13 @@ public class ReviewsObjective extends Objective{
         this.discount = discount;
     }
 
+    public ReviewsObjective(Badge badge, Discount discount, int requiredReviews){
+        this.badge = badge;
+        this.discount = discount;
+        this.requiredReviews = requiredReviews;
+    }
+
+
     @Override
     public boolean achieveObjective(int readersReviews, Badge badge){
         Boolean win = (readersReviews >= requiredReviews);

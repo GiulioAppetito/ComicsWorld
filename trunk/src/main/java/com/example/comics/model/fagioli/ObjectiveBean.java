@@ -1,23 +1,39 @@
 package com.example.comics.model.fagioli;
 
 import com.example.comics.model.Badge;
+import com.example.comics.model.Discount;
 import com.example.comics.model.Levels;
 import javafx.scene.image.Image;
 
+import java.io.InputStream;
+
 public interface ObjectiveBean {
 
-    public String getLevel();
+    String getLevel();
+    void setLevel(Levels level);
 
-    public void setLevel(Levels level);
+    void setBadgeBean(BadgeBean badgeBean);
+    BadgeBean getBadgeBean();
 
-    public Image getBadgeIcon();
+    String getType();
+    void setType(String type);
 
-    public String getBadgeName();
+    Image getBadgeIcon();
+    String getBadgeName();
+    void setBadge(Badge badge);
 
-    public void setBadge(Badge badge);
+    String getSeriesTitle();
+    void setSeriesTitle(String seriesTitle);
 
-    public String getSeriesTitle();
+    DiscountBean getDiscountBean();
+    void setDiscountBean(DiscountBean discountBean);
 
-    public void setSeriesTitle(String seriesTitle);
+    void setRequirement(int requirement);
+    int getRequirement();
+
+    void setBadgeIconInputStream(InputStream inputStream);
+    InputStream getBadgeIconInputStream();
+
+
 
 }

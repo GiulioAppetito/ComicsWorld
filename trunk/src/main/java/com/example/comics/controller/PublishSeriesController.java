@@ -1,39 +1,53 @@
 package com.example.comics.controller;
 
-import com.example.comics.model.Author;
-import com.example.comics.model.Series;
-import com.example.comics.model.UserLogin;
+import com.example.comics.model.*;
 import com.example.comics.model.dao.AuthorDAO;
+import com.example.comics.model.dao.SeriesDAO;
 import com.example.comics.model.fagioli.ObjectiveBean;
 import com.example.comics.model.fagioli.SeriesBean;
 
+import java.io.InputStream;
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 public class PublishSeriesController {
 
     public void publishSeries(SeriesBean seriesBean, List<ObjectiveBean>objectiveBeans){
 
-        Author author = new Author();
-        author.setUsername(seriesBean.getAuthor().getUsername());
-        author.setPublishedSeries(seriesBean.getAuthor().getPublishedSeries());
-        author.setFirstName(seriesBean.getAuthor().getFirstName());
-        author.setLastName(seriesBean.getAuthor().getLastName());
-        author.setProPic(seriesBean.getAuthor().getProPic());
+        Series series;
+        SeriesDAO seriesDAO = new SeriesDAO();
 
-        System.out.println("PUBSERIESCON");
-        Series series = new Series(seriesBean.getTitle(), author);
+        HashMap<Objective, InputStream> objectiveBadgeHM = new HashMap<>();
 
-        series.setGenre1(seriesBean.getGenre1());
-        series.setGenre2(seriesBean.getGenre2());
-        series.setGenre3(seriesBean.getGenre3());
+        List<Objective> objectives = new ArrayList<>();
+        Objective objective;
 
+        for(ObjectiveBean objectiveBean : objectiveBeans){
+            Badge badge = new Badge();
+            badge.setName(objectiveBean.getBadgeBean().getName());
+            badge.setIcon(objectiveBean.getBadgeBean().getIcon());
+
+            Discount discount = new Discount(objectiveBean.getDiscountBean().getPercentage());
+            discount.setLimitDays(objectiveBean.getDiscountBean().getLimitDays());
+
+            if(objectiveBean.getType().equals("reviews")){
+                objective = new ReviewsObjective(badge, discount,objectiveBean.getRequirement());
+            }else{
+                objective = new ChapterObjective(badge,discount,objectiveBean.getRequirement());
+            }
+            objective.setLevel(Levels.valueOf(objectiveBean.getLevel()));
+            objectives.add(objective);
+            objectiveBadgeHM.put(objective,objectiveBean.getBadgeIconInputStream());
+        }
+
+        //istanziazione e salvataggio su DB
+        series = seriesDAO.createSeries(UserLogin.getInstance().getAuthor(),seriesBean.getTitle(),seriesBean.getGenre1(),seriesBean.getGenre2(),seriesBean.getGenre3(),seriesBean.getCover(),seriesBean.getCoverInputStream(), objectives,objectiveBadgeHM);
 
         //aggiunta della serie all'autore
         UserLogin.getInstance().getAuthor().addPublishedSeries(series);
 
-        //salvataggio sul DB
-        AuthorDAO authorDAO = new AuthorDAO();
-        authorDAO.savePublishedSeries(series);
+
 
     }
 }

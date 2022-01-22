@@ -159,7 +159,7 @@ public class Queries {
     public static void insertChapter(Connection connection, Chapter chapter,String seriesTitle,InputStream coverInputStream) throws SQLException{
 
 
-        PreparedStatement pstmt = connection.prepareStatement("INSERT INTO chapters (seriesTitle,chapter_title,chapterDescription,chapterCover) values (?, ?,?,?)");
+        PreparedStatement pstmt = connection.prepareStatement("INSERT INTO chapters (series_title,chapter_title,chapterDescription,chapterCover) values (?, ?,?,?)");
         try{
             pstmt.setString(1, seriesTitle);
             pstmt.setString(2,chapter.getTitle());
@@ -167,6 +167,7 @@ public class Queries {
 
             //Inserting Blob type
             pstmt.setBlob(4, coverInputStream);
+            System.out.println(pstmt);
             //Executing the statement
             pstmt.execute();
         }
@@ -252,5 +253,80 @@ public class Queries {
     public static ResultSet retrieveCategorySeries(Statement stmt, Genres genre) throws SQLException {
         String selectStatement = String.format("SELECT * FROM series WHERE genre1 = '%s' OR genre2 = '%s' OR genre3 = '%s'", genre.name(), genre.name(), genre.name());
         return stmt.executeQuery(selectStatement);
+    }
+
+    public static void insertSeries(Connection conn, Series series, InputStream seriesCoverInputStream) throws SQLException {
+        PreparedStatement pstmt = conn.prepareStatement("INSERT INTO series (title,author,genre1,genre2,genre3,cover) values (?,?,?,?,?,?)");
+        try{
+            pstmt.setString(1, series.getTitle());
+            pstmt.setString(2,series.getAuthor().getUsername());
+            pstmt.setString(3,series.getGenre1().name());
+            pstmt.setString(4,series.getGenre2().name());
+            pstmt.setString(5,series.getGenre3().name());
+
+            //Inserting Blob type
+            pstmt.setBlob(6, seriesCoverInputStream);
+            System.out.println(pstmt);
+            //Executing the statement
+            pstmt.execute();
+        }
+        catch (Exception e){
+            //TO-DO
+        }
+        finally {
+            pstmt.close();
+        }
+    }
+
+    public static void insertObjective(Statement stmt, Objective objective,Series series,int bagdeID) throws SQLException {
+        int limitDays = objective.getDiscount().getLimitDays();
+        String seriesTitle = series.getTitle();
+        String level = objective.getLevel().toString();
+        String type ;
+        switch (objective.getType()){
+            case "reviewsObjective":
+                type =  "reviews";
+                break;
+            case "chaptersObjective":
+                type = "chapters";
+                break;
+            default:
+                type = "";
+        }
+
+        Float discountPercentage = objective.getDiscount().getPercentage();
+
+        String insertStatement = String.format("INSERT INTO objectives (limitDays,level,type,seriesTitle,discountPercentage,associatedBadgeID) values ('%s', '%s','%s','%s','%s','%d')",limitDays,level,type,seriesTitle,discountPercentage,bagdeID);
+        System.out.println(insertStatement);
+        stmt.executeUpdate(insertStatement);
+    }
+
+    public static void insertBadge(Connection conn,Badge badge,InputStream badgeIconStream) throws SQLException {
+
+
+        PreparedStatement pstmt = conn.prepareStatement("INSERT INTO badges (badgeName,badgeIcon) values (?, ?)");
+        try{
+            pstmt.setString(1, badge.getName());
+
+            //Inserting Blob type
+            pstmt.setBlob(2, badgeIconStream);
+            System.out.println(pstmt);
+
+            //Executing the statement
+            pstmt.execute();
+        }
+        catch (Exception e){
+            //TO-DO
+        }
+        finally {
+            pstmt.close();
+        }
+    }
+
+    public static ResultSet getAllBadges(Statement stmt) throws SQLException {
+        String selectStatement = String.format("SELECT * FROM badges");
+        System.out.println(selectStatement);
+        return stmt.executeQuery(selectStatement);
+
     }
 }

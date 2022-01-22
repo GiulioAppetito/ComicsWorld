@@ -9,6 +9,7 @@ import com.example.comics.model.fagioli.SeriesBean;
 import com.example.comics.view1.beans.ChapterBean1;
 import javafx.scene.image.Image;
 
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -22,6 +23,7 @@ public class SeriesBundle implements SeriesBean {
     private Genres genre1;
     private Genres genre2;
     private Genres genre3;
+    private InputStream coverInputStream;
 
 
     public String getTitle() {
@@ -36,6 +38,16 @@ public class SeriesBundle implements SeriesBean {
     }
     public void setCover(Image cover) {
         this.cover = cover;
+    }
+
+    @Override
+    public InputStream getCoverInputStream() {
+        return this.coverInputStream;
+    }
+
+    @Override
+    public void setCoverInputStream(InputStream inputStream) {
+        this.coverInputStream = coverInputStream;
     }
 
     public AuthorBundle getAuthor() {

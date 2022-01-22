@@ -2,40 +2,46 @@ package com.example.comics.model.fagioli;
 
 import com.example.comics.model.Genres;
 import javafx.scene.image.Image;
+
+import java.io.InputStream;
 import java.util.List;
 
 public interface SeriesBean {
 
-    public String getTitle();
+    String getTitle();
 
-    public void setTitle(String title);
+    void setTitle(String title);
 
-    public Image getCover();
+    Image getCover();
 
-    public void setCover(Image cover);
+    void setCover(Image cover);
 
-    public AuthorBean getAuthor();
+    InputStream getCoverInputStream();
 
-    public void setAuthor(AuthorBean authorBean);
+    void setCoverInputStream(InputStream inputStream);
 
-    public List<ChapterBean> getChapters();
+    AuthorBean getAuthor();
 
-    public void setChapters(List<ChapterBean> chaptersBean);
+    void setAuthor(AuthorBean authorBean);
 
-    public Genres getGenre1();
+    List<ChapterBean> getChapters();
 
-    public void setGenre1(Genres genre1);
+    void setChapters(List<ChapterBean> chaptersBean);
 
-    public Genres getGenre2();
+    Genres getGenre1();
 
-    public void setGenre2(Genres genre2);
+    void setGenre1(Genres genre1);
 
-    public Genres getGenre3();
+    Genres getGenre2();
 
-    public void setGenre3(Genres genre3);
+    void setGenre2(Genres genre2);
 
-    public void setAverageRating(int averageRating);
+    Genres getGenre3();
 
-    public int getAverageRating();
+    void setGenre3(Genres genre3);
+
+    void setAverageRating(int averageRating);
+
+    int getAverageRating();
 
 }
