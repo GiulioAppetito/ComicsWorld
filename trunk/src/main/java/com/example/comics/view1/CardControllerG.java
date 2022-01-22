@@ -5,13 +5,12 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 
-public class VCardControllerG {
+public class CardControllerG {
 
     @FXML
     public ImageView comicCover;
     @FXML
     public Label comicName;
-
     @FXML
     private ImageView imgStar1;
     @FXML
@@ -26,7 +25,6 @@ public class VCardControllerG {
     public void setData(SeriesBean seriesBean) {
         comicName.setText(seriesBean.getTitle());
         comicCover.setImage(seriesBean.getCover());
-        System.out.println("Vcardcontroller: rating serie: " + seriesBean.getAverageRating());
         switch (seriesBean.getAverageRating()){
             case 1:
                 imgStar1.setVisible(true);

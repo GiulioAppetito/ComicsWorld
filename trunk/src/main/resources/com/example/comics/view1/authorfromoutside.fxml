@@ -126,7 +126,7 @@
                                           <Insets bottom="20.0" left="5.0" right="5.0" />
                                        </VBox.margin>
                                        <content>
-                                          <VBox prefHeight="590.0" prefWidth="364.0" />
+                                          <VBox fx:id="vBoxSeries" prefHeight="590.0" prefWidth="364.0" />
                                        </content>
                                     </ScrollPane>
                                  </children>

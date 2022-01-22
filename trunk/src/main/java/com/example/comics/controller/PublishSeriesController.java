@@ -1,7 +1,6 @@
 package com.example.comics.controller;
 
 import com.example.comics.model.*;
-import com.example.comics.model.dao.AuthorDAO;
 import com.example.comics.model.dao.SeriesDAO;
 import com.example.comics.model.fagioli.ObjectiveBean;
 import com.example.comics.model.fagioli.SeriesBean;

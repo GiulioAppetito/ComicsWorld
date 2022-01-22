@@ -2,7 +2,6 @@ package com.example.comics.view1;
 
 import com.example.comics.controller.ResearchController;
 import com.example.comics.model.Advertisement;
-import com.example.comics.model.SeriesObserver;
 import com.example.comics.model.fagioli.SeriesBean;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -57,7 +56,7 @@ public class FeedControllerG{
             fxmlLoader.setLocation(getClass().getResource("vcard.fxml"));
             try {
                 VBox card = fxmlLoader.load();
-                VCardControllerG cardController = fxmlLoader.getController();
+                CardControllerG cardController = fxmlLoader.getController();
                 cardController.setData(latestSeries.get(j));
 
                 int finalJ = j;
@@ -85,7 +84,7 @@ public class FeedControllerG{
         for (Advertisement listOfAd : listOfAds) {
 
             FXMLLoader fxmlLoader = new FXMLLoader();
-            fxmlLoader.setLocation(getClass().getResource("hcard.fxml"));
+            fxmlLoader.setLocation(getClass().getResource("adcard.fxml"));
             try {
                 VBox vbAd = fxmlLoader.load();
                 AdControllerG adController = fxmlLoader.getController();

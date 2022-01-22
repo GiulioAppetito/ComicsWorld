@@ -10,7 +10,6 @@ import com.example.comics.model.fagioli.bundle.SeriesBundle;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Locale;
 
 public class ResearchController {
 
@@ -35,8 +34,13 @@ public class ResearchController {
         return getSeriesBeans(latestSeries);
     }
 
-    public List<SeriesBean> getPublishedSeries() {
+    public List<SeriesBean> getPublishedSeries(){
         List<Series> publishedSeries = UserLogin.getInstance().getAuthor().getPublishedSeries();
+        return getSeriesBeans(publishedSeries);
+    }
+
+    public List<SeriesBean> getPublishedSeries(AuthorBean authorBean) {
+        List<Series> publishedSeries = authorBean.getPublishedSeries();
         return getSeriesBeans(publishedSeries);
     }
 

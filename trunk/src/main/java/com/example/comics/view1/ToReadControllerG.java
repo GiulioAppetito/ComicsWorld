@@ -30,7 +30,7 @@ public class ToReadControllerG {
             fxmlLoader.setLocation(getClass().getResource("vcard.fxml"));
             try {
                 VBox card = fxmlLoader.load();
-                VCardControllerG cardController = fxmlLoader.getController();
+                CardControllerG cardController = fxmlLoader.getController();
                 cardController.setData(listOfCards.get(j));
 
                 int finalJ = j;

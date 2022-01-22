@@ -358,10 +358,10 @@ public class ChapterControllerG implements ChapterObserver, ObjectiveObserver {
         taDescription.setEditable(false);
 
         if(!chapterBean.getRead()){
-            btnChapterRead.setStyle(STYLE2);
+            btnChapterRead.setStyle(STYLE);
             btnChapterRead.setOnAction(event -> markChapterAsRead(seriesBean,chapterBean));
         }else{
-            btnChapterRead.setStyle(STYLE);
+            btnChapterRead.setStyle(STYLE2);
             btnChapterRead.setOnAction(event -> removeChapterFromRead(seriesBean,chapterBean));
         }
 

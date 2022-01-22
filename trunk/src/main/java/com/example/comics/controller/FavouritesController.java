@@ -9,44 +9,38 @@ public class FavouritesController {
 
     public boolean isSeriesFavourite(SeriesBean seriesBean) {
 
-        Series series = null;
-        for(Series series1 : seriesBean.getAuthor().getPublishedSeries()){
-            if(series1.getTitle().equals(seriesBean.getTitle())){
-                series = series1;
+        for(Series series : seriesBean.getAuthor().getPublishedSeries()){
+            if(series.getTitle().equals(seriesBean.getTitle())){
+                return UserLogin.getInstance().getReader().likesThisSeries(series);
             }
         }
 
-        return UserLogin.getInstance().getReader().likesThisSeries(series);
+        return false;
     }
 
     public void addSeriesToFavourites(SeriesBean seriesBean) {
 
-        Series series = null;
-        for(Series series1 : seriesBean.getAuthor().getPublishedSeries()){
-            if(series1.getTitle().equals(seriesBean.getTitle())){
-                series = series1;
+        for(Series series : seriesBean.getAuthor().getPublishedSeries()){
+            if(series.getTitle().equals(seriesBean.getTitle())){
+                ReaderDAO readerDAO = new ReaderDAO();
+                readerDAO.addSeriesToFavourites(series, UserLogin.getInstance().getReader());
+
+                UserLogin.getInstance().getReader().addSeriesToFavourites(series);
             }
         }
-
-        ReaderDAO readerDAO = new ReaderDAO();
-        readerDAO.addSeriesToFavourites(series, UserLogin.getInstance().getReader());
-
-        UserLogin.getInstance().getReader().addSeriesToFavourites(series);
 
     }
 
     public void removeSeriesFromFavourites(SeriesBean seriesBean) {
 
-        Series series = null;
-        for(Series series1 : seriesBean.getAuthor().getPublishedSeries()){
-            if(series1.getTitle().equals(seriesBean.getTitle())){
-                series = series1;
+        for(Series series : seriesBean.getAuthor().getPublishedSeries()){
+            if(series.getTitle().equals(seriesBean.getTitle())){
+                ReaderDAO readerDAO = new ReaderDAO();
+                readerDAO.removeSeriesFromFavourites(series, UserLogin.getInstance().getReader());
+
+                UserLogin.getInstance().getReader().removeSeriesFromFavourites(series);
             }
         }
 
-        ReaderDAO readerDAO = new ReaderDAO();
-        readerDAO.removeSeriesFromFavourites(series, UserLogin.getInstance().getReader());
-
-        UserLogin.getInstance().getReader().removeSeriesFromFavourites(series);
     }
 }

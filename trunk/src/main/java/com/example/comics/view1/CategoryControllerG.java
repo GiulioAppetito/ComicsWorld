@@ -11,7 +11,6 @@ import javafx.scene.layout.VBox;
 
 import java.io.IOException;
 import java.net.URL;
-import java.util.ArrayList;
 import java.util.List;
 
 public class CategoryControllerG {
@@ -34,7 +33,7 @@ public class CategoryControllerG {
             fxmlLoader.setLocation(getClass().getResource("vcard.fxml"));
             try {
                 VBox card = fxmlLoader.load();
-                VCardControllerG cardController = fxmlLoader.getController();
+                CardControllerG cardController = fxmlLoader.getController();
                 cardController.setData(series.get(j));
 
                 int finalJ = j;

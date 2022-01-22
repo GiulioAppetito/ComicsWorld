@@ -4,12 +4,8 @@ import com.example.comics.controller.ResearchController;
 import com.example.comics.model.fagioli.SeriesBean;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.control.Button;
-import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
-import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
-import tools.FxmlLoader;
 
 import java.io.IOException;
 import java.net.URL;
@@ -33,7 +29,7 @@ public class ReadingControllerG {
             fxmlLoader.setLocation(getClass().getResource("vcard.fxml"));
             try {
                 VBox card = fxmlLoader.load();
-                VCardControllerG cardController = fxmlLoader.getController();
+                CardControllerG cardController = fxmlLoader.getController();
                 cardController.setData(listOfCards.get(j));
 
                 int finalJ = j;
