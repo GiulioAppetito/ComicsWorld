@@ -61,7 +61,7 @@ public class PublishChapterControllerG {
 
     private void changeCover() {
         FileChooser fc = new FileChooser();
-        fc.getExtensionFilters().add(new FileChooser.ExtensionFilter("*.png","*.png"));
+        fc.getExtensionFilters().add(new FileChooser.ExtensionFilter("*.jpg,*.png","*.jpg","*.png"));
         File f = fc.showOpenDialog(null);
         if(f!=null){
             imageCoverPath = f.getAbsolutePath();
