@@ -4,64 +4,27 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.layout.GridPane?>
-<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.RowConstraints?>
-<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
 <Pane prefHeight="729.0" prefWidth="980.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
-   <VBox layoutX="10.0" layoutY="10.0" prefHeight="719.0" prefWidth="969.0">
-      <HBox>
-         <VBox.margin>
-            <Insets left="40.0" top="15.0" />
-         </VBox.margin>
-         <children>
-            <VBox alignment="CENTER" />
-         </children>
-      </HBox>
-      <Pane prefHeight="230.0" prefWidth="909.0" styleClass="transparent" stylesheets="@../../../../css/css1/fullpackstyling.css">
-         <VBox.margin>
-            <Insets left="30.0" right="30.0" top="10.0" />
-         </VBox.margin>
-         <Label prefHeight="60.0" prefWidth="437.0" text="Ads">
-            <font>
-               <Font name="Berlin Sans FB" size="24.0" />
-            </font>
-            <padding>
-               <Insets left="20.0" />
-            </padding>
-         </Label>
-          <ScrollPane layoutX="14.0" layoutY="64.0" prefHeight="146.0" prefWidth="883.0" stylesheets="@../../../../css/css1/fullpackstyling.css" vbarPolicy="NEVER">
-              <HBox fx:id="hbAds" prefHeight="126.0" prefWidth="882.0" spacing="5.0" styleClass="transparent">
-               <opaqueInsets>
-                  <Insets />
-               </opaqueInsets>
-               <padding>
-                  <Insets left="5.0" right="5.0" top="5.0" />
-               </padding></HBox>
-          </ScrollPane>
-      </Pane>
-      <Pane prefHeight="399.0" prefWidth="909.0" styleClass="transparent" stylesheets="@../../../../css/css1/fullpackstyling.css">
-         <VBox.margin>
-            <Insets bottom="30.0" left="30.0" right="30.0" top="15.0" />
-         </VBox.margin>
-         <Label prefHeight="74.0" prefWidth="437.0" text="Latest comics">
-            <font>
-               <Font name="Berlin Sans FB" size="24.0" />
-            </font>
-            <padding>
-               <Insets left="20.0" />
-            </padding>
-         </Label>
-          <ScrollPane hbarPolicy="NEVER" layoutX="14.0" layoutY="74.0" prefHeight="312.0" prefWidth="892.0" stylesheets="@../../../../css/css1/fullpackstyling.css" vbarPolicy="ALWAYS">
-              <GridPane fx:id="feedGrid" alignment="CENTER" hgap="20.0" prefHeight="310.0" prefWidth="867.0" styleClass="transparent" vgap="20.0">
-                  <rowConstraints>
-                      <RowConstraints minHeight="10.0" prefHeight="150.0" vgrow="SOMETIMES" />
-                  </rowConstraints>
-              </GridPane>
-          </ScrollPane>
-
-      </Pane>
-   </VBox>
+   <Pane layoutX="40.400001525878906" layoutY="25.200000762939453" prefHeight="689.0" prefWidth="909.0" styleClass="transparent" stylesheets="@../../../../css/css1/fullpackstyling.css">
+      <Label prefHeight="74.0" prefWidth="437.0" text="Latest comics">
+         <font>
+            <Font name="Berlin Sans FB" size="24.0" />
+         </font>
+         <padding>
+            <Insets left="20.0" />
+         </padding>
+      </Label>
+       <ScrollPane hbarPolicy="NEVER" layoutX="14.0" layoutY="74.0" prefHeight="602.0" prefWidth="882.0" stylesheets="@../../../../css/css1/fullpackstyling.css" vbarPolicy="ALWAYS">
+           <GridPane fx:id="feedGrid" alignment="CENTER" hgap="20.0" prefHeight="46.0" prefWidth="798.0" styleClass="transparent" vgap="20.0">
+               <rowConstraints>
+                   <RowConstraints minHeight="10.0" prefHeight="150.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+           </GridPane>
+       </ScrollPane>
+   
+   </Pane>
 </Pane>

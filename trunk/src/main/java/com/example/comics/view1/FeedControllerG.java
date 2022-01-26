@@ -20,12 +20,6 @@ public class FeedControllerG{
     @FXML
     public GridPane feedGrid;
 
-    @FXML
-    private HBox hbAds;
-
-    @FXML
-    private MenuButton btnFilter;
-
     private static FeedControllerG instance;
     private static List<SeriesBean> latestSeries;
 
@@ -68,34 +62,14 @@ public class FeedControllerG{
                     }
                 });
 
-                feedGrid.add(card,j%5,i);
-                if(j%5 == 4){
+                feedGrid.add(card,j%4,i);
+                if(j%4 == 3){
                     i++;
                 }
             } catch (IOException e) {
                 e.printStackTrace();
             }
         }
-
-        //load the ads panel
-
-        List<Advertisement> listOfAds = new ArrayList<>(addAds());
-
-        for (Advertisement listOfAd : listOfAds) {
-
-            FXMLLoader fxmlLoader = new FXMLLoader();
-            fxmlLoader.setLocation(getClass().getResource("adcard.fxml"));
-            try {
-                VBox vbAd = fxmlLoader.load();
-                AdControllerG adController = fxmlLoader.getController();
-                adController.setData(listOfAd);
-                vbAd.setOnMouseClicked(event -> System.out.println("Clicked ad"));
-                hbAds.getChildren().add(vbAd);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        }
-
     }
 
     public void openSerie(SeriesBean seriesBean) throws IOException {
@@ -112,24 +86,6 @@ public class FeedControllerG{
         homeControllerG.changeCenter(loader.load());
 
         serieControllerG.setData(seriesBean);
-
-    }
-
-    private List<Advertisement> addAds(){
-
-        List<Advertisement> la = new ArrayList<>();
-        int i;
-        int n = 7;
-
-
-        for(i=0; i<n; i++){
-            Advertisement ad = new Advertisement();
-            ad.setTitle("Ad n°" + i);
-            la.add(ad);
-        }
-
-
-        return la;
 
     }
 
