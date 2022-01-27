@@ -18,6 +18,12 @@ public class FeedControllerG2 {
 
 
     @FXML
+    private ImageView cover;
+
+    @FXML
+    private Label title;
+
+    @FXML
     private VBox boxFeed;
 
     @FXML

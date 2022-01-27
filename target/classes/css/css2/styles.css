@@ -8,10 +8,25 @@
     -fx-background-color: #c28bf5;
 }
 
+.menu-button{
+    -fx-background-color: #c28bf5;
+}
+.menu-button:hover
+ {
+     -fx-background-color : #9b55dc;
+     -fx-background-radius :  30;
+ }
+.menu-button:pressed
+{
+    -fx-background-color : #9b55dc;
+    -fx-background-radius :  30;
+}
+
+
+
 .wallpaper{
     -fx-background-image: url('fakebg3.jpg');
     -fx-background-size: 400
-
 }
 
 

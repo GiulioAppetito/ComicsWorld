@@ -64,6 +64,53 @@
                         <Insets />
                      </VBox.margin>
                      <children>
+                        <VBox fx:id="vBoxSerie" prefHeight="200.0" prefWidth="100.0" styleClass="white-background">
+                           <children>
+                              <HBox alignment="CENTER" prefHeight="93.0" prefWidth="286.0">
+                                 <children>
+                                    <Label fx:id="title" prefHeight="43.0" prefWidth="31.0" text="Title">
+                                       <font>
+                                          <Font name="System Bold" size="14.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </HBox>
+                              <VBox prefHeight="434.0" prefWidth="271.0" spacing="5.0">
+                                 <children>
+                                    <HBox alignment="CENTER">
+                                       <children>
+                                          <ImageView fx:id="cover" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../../../../img/img2/copertina_ad.jpg" />
+                                             </image>
+                                          </ImageView>
+                                          <VBox prefHeight="137.0" prefWidth="126.0">
+                                             <children>
+                                                <HBox alignment="CENTER" prefHeight="39.0" prefWidth="102.0">
+                                                   <children>
+                                                      <Button alignment="CENTER" mnemonicParsing="false" prefHeight="46.0" prefWidth="94.0" styleClass="transparent">
+                                                         <graphic>
+                                                            <ImageView fitHeight="38.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
+                                                               <image>
+                                                                  <Image url="@../../../../img/img2/icons8-heart-64.png" />
+                                                               </image>
+                                                            </ImageView>
+                                                         </graphic>
+                                                      </Button>
+                                                   </children>
+                                                </HBox>
+                                             </children>
+                                          </VBox>
+                                       </children>
+                                    </HBox>
+                                    <Label prefHeight="65.0" prefWidth="290.0" text="DESCRITION" />
+                                 </children>
+                              </VBox>
+                           </children>
+                           <padding>
+                              <Insets bottom="5.0" />
+                           </padding>
+                        </VBox>
                         <VBox fx:id="boxProfile" prefHeight="439.0" prefWidth="286.0" styleClass="white-background">
                            <children>
                               <HBox alignment="CENTER">
@@ -200,18 +247,18 @@
                            <children>
                               <VBox fx:id="readerMenu">
                                  <children>
-                                    <Button fx:id="btnFav" mnemonicParsing="false" prefHeight="46.0" prefWidth="206.0" styleClass="menu-background" text="Favourites" textFill="WHITE" />
-                                    <Button fx:id="btnToRead" mnemonicParsing="false" prefHeight="46.0" prefWidth="206.0" styleClass="menu-background" text="ToRead" textFill="WHITE" />
-                                    <Button fx:id="btnReading" mnemonicParsing="false" prefHeight="46.0" prefWidth="206.0" styleClass="menu-background" text="Reading" textFill="WHITE" />
-                                    <Button fx:id="btnFollowing" mnemonicParsing="false" prefHeight="46.0" prefWidth="206.0" styleClass="menu-background" text="Following" textFill="WHITE" />
-                                    <Button fx:id="btnMyBadges" mnemonicParsing="false" prefHeight="46.0" prefWidth="206.0" styleClass="menu-background" text="MyBadges" textFill="WHITE" />
+                                    <Button fx:id="btnFav" mnemonicParsing="false" prefHeight="46.0" prefWidth="206.0" styleClass="menu-button" text="Favourites" textFill="WHITE" />
+                                    <Button fx:id="btnToRead" mnemonicParsing="false" prefHeight="46.0" prefWidth="206.0" styleClass="menu-button" text="ToRead" textFill="WHITE" />
+                                    <Button fx:id="btnReading" mnemonicParsing="false" prefHeight="46.0" prefWidth="206.0" styleClass="menu-button" text="Reading" textFill="WHITE" />
+                                    <Button fx:id="btnFollowing" mnemonicParsing="false" prefHeight="46.0" prefWidth="206.0" styleClass="menu-button" text="Following" textFill="WHITE" />
+                                    <Button fx:id="btnMyBadges" mnemonicParsing="false" prefHeight="46.0" prefWidth="206.0" styleClass="menu-button" text="MyBadges" textFill="WHITE" />
                                  </children>
                               </VBox>
-                              <Button fx:id="btnSettings" layoutY="396.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="206.0" styleClass="menu-background" text="Settings" textFill="WHITE" />
+                              <Button fx:id="btnSettings" layoutY="396.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="206.0" styleClass="menu-button" text="Settings" textFill="WHITE" />
                               <VBox fx:id="authorMenu" layoutX="-1.0" layoutY="1.0" prefHeight="94.0" prefWidth="206.0">
                                  <children>
-                                    <Button fx:id="btnMySeries" mnemonicParsing="false" prefHeight="46.0" prefWidth="206.0" styleClass="menu-background" text="My Series" textFill="WHITE" />
-                                    <Button fx:id="btnStatistics" mnemonicParsing="false" prefHeight="46.0" prefWidth="206.0" styleClass="menu-background" text="Statistics" textFill="WHITE" />
+                                    <Button fx:id="btnMySeries" mnemonicParsing="false" prefHeight="46.0" prefWidth="206.0" styleClass="menu-button" text="My Series" textFill="WHITE" />
+                                    <Button fx:id="btnStatistics" mnemonicParsing="false" prefHeight="46.0" prefWidth="206.0" styleClass="menu-button" text="Statistics" textFill="WHITE" />
                                  </children>
                               </VBox>
                            </children>
