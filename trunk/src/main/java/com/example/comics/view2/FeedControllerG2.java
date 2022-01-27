@@ -1,24 +1,17 @@
 package com.example.comics.view2;
 
 import com.example.comics.controller.ResearchController;
-import com.example.comics.model.Advertisement;
 import com.example.comics.model.UserLogin;
 import com.example.comics.model.fagioli.SeriesBean;
-import com.example.comics.view1.*;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 
 import java.io.IOException;
-import java.net.URL;
-import java.sql.Blob;
-import java.util.ArrayList;
 import java.util.List;
 
 public class FeedControllerG2 {
@@ -90,8 +83,29 @@ public class FeedControllerG2 {
     @FXML
     private Button btnStatistics;
 
+    //favourites
+    @FXML
+    private VBox vBoxFav;
 
-    private static boolean openMenu = true;
+    @FXML
+    private VBox vBoxFavSeries;
+
+    //toread
+    @FXML
+    private VBox vBoxToRead;
+
+    @FXML
+    private VBox vBoxToReadSeries;
+
+    //reading
+    @FXML
+    private VBox vBoxReading;
+
+    @FXML
+    private VBox vBoxReadingSeries;
+
+
+    private boolean openMenu = true;
     private static FeedControllerG2 instance;
     private static List<SeriesBean> latestSeries;
 
@@ -115,8 +129,11 @@ public class FeedControllerG2 {
     public void init() {
 
         openFeed();
-        initProfile();
         openMenu();
+        initProfile();
+        initFav();
+        initToRead();
+        initReading();
 
         btnProfile.setOnAction(event -> openProfile());
         btnFeed.setOnAction(event -> openFeed());
@@ -139,47 +156,85 @@ public class FeedControllerG2 {
         btnStatistics.setOnAction(event -> openStats());
         btnMySeries.setOnAction(event -> openMySeries());
 
-        int size = latestSeries.size();
-        for(int j=0; j<size; j++) {
+        displayListOfSeries(latestSeries, vBoxSeries);
+
+    }
+
+    private void initFav() {
+        ResearchController researchController = new ResearchController();
+        List<SeriesBean> favouriteSeries = researchController.getFavouriteSeries();
+        displayListOfSeries(favouriteSeries, vBoxFavSeries);
+    }
+    private void initToRead(){
+        ResearchController researchController = new ResearchController();
+        List<SeriesBean> toReadSeries = researchController.getToReadSeries();
+        displayListOfSeries(toReadSeries, vBoxToReadSeries);
+    }
+    private void initReading(){
+        ResearchController researchController = new ResearchController();
+        List<SeriesBean> readingSeries = researchController.getReadingSeries();
+        displayListOfSeries(readingSeries, vBoxReadingSeries);
+    }
+
+    private void displayListOfSeries(List<SeriesBean> series, VBox box){
+
+        int size = series.size();
+        for(int j=0; j<size; j++){
             FXMLLoader fxmlLoader = new FXMLLoader();
             fxmlLoader.setLocation(getClass().getResource("seriesCard.fxml"));
             try {
                 VBox card = fxmlLoader.load();
                 SeriesCardControllerG cardController = fxmlLoader.getController();
-                cardController.setData(latestSeries.get(j));
+                cardController.setData(series.get(j));
 
                 int finalJ = j;
                 card.setOnMouseClicked(event -> {
                     try {
-                        openSerie(latestSeries.get(finalJ));
+                        openSerie(series.get(finalJ));
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
                 });
 
-                vBoxSeries.getChildren().add(card);
+                box.getChildren().add(card);
 
             } catch (IOException e) {
                 e.printStackTrace();
             }
         }
-
     }
 
     //reader
     private void openFav() {
+        openMenu();
+        boxProfile.setVisible(false);
+        boxFeed.setVisible(false);
+        vBoxFav.setVisible(true);
+        vBoxToRead.setVisible(false);
+        vBoxReading.setVisible(false);
     }
     private void openFollowing() {
     }
     private void openReading() {
+        openMenu();
+        boxProfile.setVisible(false);
+        boxFeed.setVisible(false);
+        vBoxFav.setVisible(false);
+        vBoxToRead.setVisible(false);
+        vBoxReading.setVisible(true);
     }
     private void openToRead() {
+        openMenu();
+        boxProfile.setVisible(false);
+        boxFeed.setVisible(false);
+        vBoxFav.setVisible(false);
+        vBoxToRead.setVisible(true);
+        vBoxReading.setVisible(false);
     }
     //author
     private void openStats(){
     }
     private void openMySeries(){
-
     }
 
     private void openSettings() {
@@ -189,11 +244,17 @@ public class FeedControllerG2 {
     public void openProfile(){
         boxProfile.setVisible(true);
         boxFeed.setVisible(false);
+        vBoxFav.setVisible(false);
+        vBoxToRead.setVisible(false);
+        vBoxReading.setVisible(false);
     }
 
     public void openFeed(){
         boxProfile.setVisible(false);
         boxFeed.setVisible(true);
+        vBoxFav.setVisible(false);
+        vBoxToRead.setVisible(false);
+        vBoxReading.setVisible(false);
     }
 
     public void openSerie(SeriesBean seriesBean) throws IOException {}

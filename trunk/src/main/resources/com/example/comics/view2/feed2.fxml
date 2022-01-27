@@ -16,9 +16,9 @@
 
 <AnchorPane prefHeight="665.0" prefWidth="400.0" styleClass="wallpaper" stylesheets="@../../../../css/css2/styles.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <VBox layoutX="57.0" layoutY="65.0" prefWidth="286.0">
+      <VBox layoutX="57.0" layoutY="65.0" prefHeight="579.0" prefWidth="286.0">
          <children>
-            <VBox prefHeight="521.0" prefWidth="286.0" styleClass="white-background">
+            <VBox prefHeight="522.0" prefWidth="286.0" styleClass="white-background">
                <children>
                   <HBox prefHeight="62.0" prefWidth="286.0" styleClass="header-background">
                      <children>
@@ -59,42 +59,12 @@
                         </VBox>
                      </children>
                   </HBox>
-                  <StackPane>
+                  <StackPane prefHeight="450.0" prefWidth="286.0">
                      <VBox.margin>
-                        <Insets top="20.0" />
+                        <Insets />
                      </VBox.margin>
                      <children>
-                        <VBox fx:id="boxFeed">
-                           <children>
-                              <HBox alignment="CENTER" prefHeight="26.0" prefWidth="270.0">
-                                 <children>
-                                    <TextField alignment="TOP_LEFT" prefHeight="26.0" prefWidth="348.0" promptText="Search">
-                                       <HBox.margin>
-                                          <Insets left="20.0" />
-                                       </HBox.margin>
-                                    </TextField>
-                                    <ImageView fitHeight="25.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
-                                       <HBox.margin>
-                                          <Insets right="20.0" />
-                                       </HBox.margin>
-                                       <image>
-                                          <Image url="@../../../../img/img2/search.png" />
-                                       </image>
-                                    </ImageView>
-                                 </children>
-                              </HBox>
-                              <VBox prefHeight="401.0" prefWidth="286.0">
-                                 <children>
-                                    <ScrollPane hbarPolicy="NEVER" prefHeight="397.0" prefWidth="286.0" styleClass="scroll-bar" vbarPolicy="ALWAYS">
-                                       <content>
-                                          <VBox fx:id="vBoxSeries" prefHeight="267.0" prefWidth="270.0" />
-                                       </content>
-                                    </ScrollPane>
-                                 </children>
-                              </VBox>
-                           </children>
-                        </VBox>
-                        <VBox fx:id="boxProfile" prefHeight="200.0" prefWidth="286.0">
+                        <VBox fx:id="boxProfile" prefHeight="439.0" prefWidth="286.0" styleClass="white-background">
                            <children>
                               <HBox alignment="CENTER">
                                  <children>
@@ -136,9 +106,96 @@
                               </VBox>
                            </children>
                         </VBox>
-                        <Pane fx:id="paneMenu" styleClass="menu-background">
+                        <VBox fx:id="vBoxFav" prefHeight="200.0" prefWidth="100.0" styleClass="white-background">
+                           <children>
+                              <HBox alignment="CENTER">
+                                 <children>
+                                    <Label prefHeight="38.0" prefWidth="59.0" text="Favourites" />
+                                 </children>
+                              </HBox>
+                              <ScrollPane hbarPolicy="NEVER" prefHeight="409.0" prefWidth="286.0">
+                                 <content>
+                                    <VBox fx:id="vBoxFavSeries" prefHeight="434.0" prefWidth="271.0" spacing="5.0" />
+                                 </content>
+                              </ScrollPane>
+                           </children>
+                           <padding>
+                              <Insets bottom="5.0" />
+                           </padding>
+                        </VBox>
+                        <VBox fx:id="vBoxToRead" prefHeight="200.0" prefWidth="100.0" styleClass="white-background">
+                           <children>
+                              <HBox alignment="CENTER">
+                                 <children>
+                                    <Label prefHeight="38.0" prefWidth="41.0" text="toRead" />
+                                 </children>
+                              </HBox>
+                              <ScrollPane hbarPolicy="NEVER" prefHeight="409.0" prefWidth="286.0">
+                                 <content>
+                                    <VBox fx:id="vBoxToReadSeries" prefHeight="434.0" prefWidth="271.0" spacing="5.0" />
+                                 </content>
+                              </ScrollPane>
+                           </children>
+                           <padding>
+                              <Insets bottom="5.0" />
+                           </padding>
+                        </VBox>
+                        <VBox fx:id="vBoxReading" prefHeight="200.0" prefWidth="100.0" styleClass="white-background">
+                           <children>
+                              <HBox alignment="CENTER">
+                                 <children>
+                                    <Label prefHeight="34.0" prefWidth="47.0" text="Reading" />
+                                 </children>
+                              </HBox>
+                              <ScrollPane hbarPolicy="NEVER" prefHeight="409.0" prefWidth="286.0">
+                                 <content>
+                                    <VBox fx:id="vBoxReadingSeries" prefHeight="434.0" prefWidth="271.0" spacing="5.0" />
+                                 </content>
+                              </ScrollPane>
+                           </children>
+                           <padding>
+                              <Insets bottom="5.0" />
+                           </padding>
+                        </VBox>
+                        <VBox fx:id="boxFeed" styleClass="white-background">
+                           <children>
+                              <HBox alignment="CENTER" prefHeight="26.0" prefWidth="270.0">
+                                 <children>
+                                    <TextField alignment="TOP_LEFT" prefHeight="26.0" prefWidth="348.0" promptText="Search">
+                                       <HBox.margin>
+                                          <Insets left="20.0" />
+                                       </HBox.margin>
+                                    </TextField>
+                                    <ImageView fitHeight="25.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+                                       <HBox.margin>
+                                          <Insets right="20.0" />
+                                       </HBox.margin>
+                                       <image>
+                                          <Image url="@../../../../img/img2/search.png" />
+                                       </image>
+                                    </ImageView>
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets bottom="5.0" top="5.0" />
+                                 </VBox.margin>
+                              </HBox>
+                              <VBox prefHeight="415.0" prefWidth="286.0">
+                                 <children>
+                                    <ScrollPane hbarPolicy="NEVER" prefHeight="402.0" prefWidth="286.0" styleClass="scroll-bar" vbarPolicy="ALWAYS">
+                                       <content>
+                                          <VBox fx:id="vBoxSeries" prefHeight="267.0" prefWidth="270.0" />
+                                       </content>
+                                    </ScrollPane>
+                                 </children>
+                              </VBox>
+                           </children>
                            <StackPane.margin>
-                              <Insets right="80.0" top="-20.0" />
+                              <Insets bottom="5.0" />
+                           </StackPane.margin>
+                        </VBox>
+                        <Pane fx:id="paneMenu" prefHeight="440.0" prefWidth="206.0" styleClass="menu-background">
+                           <StackPane.margin>
+                              <Insets right="80.0" />
                            </StackPane.margin>
                            <children>
                               <VBox fx:id="readerMenu">
@@ -151,7 +208,7 @@
                                  </children>
                               </VBox>
                               <Button fx:id="btnSettings" layoutY="396.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="206.0" styleClass="menu-background" text="Settings" textFill="WHITE" />
-                              <VBox fx:id="authorMenu" layoutX="-1.0" prefHeight="95.0" prefWidth="206.0">
+                              <VBox fx:id="authorMenu" layoutX="-1.0" layoutY="1.0" prefHeight="94.0" prefWidth="206.0">
                                  <children>
                                     <Button fx:id="btnMySeries" mnemonicParsing="false" prefHeight="46.0" prefWidth="206.0" styleClass="menu-background" text="My Series" textFill="WHITE" />
                                     <Button fx:id="btnStatistics" mnemonicParsing="false" prefHeight="46.0" prefWidth="206.0" styleClass="menu-background" text="Statistics" textFill="WHITE" />
