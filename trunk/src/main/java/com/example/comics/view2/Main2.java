@@ -5,6 +5,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
+import javax.swing.*;
 import java.io.IOException;
 import java.net.URL;
 
@@ -28,6 +29,7 @@ public class Main2 extends Application {
         stage.setMaxHeight(705);
         stage.setMaxWidth(425);
         stage.show();
+
 
     }
 

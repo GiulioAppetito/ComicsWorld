@@ -9,6 +9,8 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
@@ -18,88 +20,147 @@
          <children>
             <VBox prefHeight="521.0" prefWidth="286.0" styleClass="white-background">
                <children>
-                  <HBox prefHeight="60.0" prefWidth="286.0" styleClass="header-background">
+                  <HBox prefHeight="62.0" prefWidth="286.0" styleClass="header-background">
                      <children>
                         <VBox alignment="CENTER" prefHeight="43.0" prefWidth="41.0">
                            <children>
-                              <ImageView fitHeight="34.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@../../../../img/img2/menu.png" />
-                                 </image>
-                              </ImageView>
+                              <Button fx:id="btnMenu" mnemonicParsing="false" styleClass="transparent">
+                                 <graphic>
+                                    <ImageView fitHeight="34.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../../../img/img2/menu.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
                            </children>
                         </VBox>
                         <VBox alignment="CENTER" prefHeight="60.0" prefWidth="203.0">
                            <children>
-                              <Label prefHeight="49.0" prefWidth="60.0" text="CW" textFill="WHITE">
+                              <Button fx:id="btnFeed" mnemonicParsing="false" styleClass="transparent" text="CW" textFill="WHITE">
                                  <font>
                                     <Font name="Berlin Sans FB Bold" size="36.0" />
                                  </font>
-                              </Label>
+                              </Button>
                            </children>
                         </VBox>
                         <VBox alignment="CENTER" prefHeight="43.0" prefWidth="41.0">
                            <children>
-                              <ImageView fitHeight="34.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@../../../../img/img2/user.png" />
-                                 </image>
-                              </ImageView>
+                              <Button fx:id="btnProfile" mnemonicParsing="false" styleClass="transparent">
+                                 <graphic>
+                                    <ImageView fitHeight="34.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../../../img/img2/user.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
                            </children>
                         </VBox>
                      </children>
                   </HBox>
-                  <HBox alignment="CENTER" prefHeight="26.0" prefWidth="270.0">
+                  <StackPane>
                      <VBox.margin>
                         <Insets top="20.0" />
                      </VBox.margin>
                      <children>
-                        <TextField alignment="TOP_LEFT" prefHeight="26.0" prefWidth="348.0" promptText="Search">
-                           <HBox.margin>
-                              <Insets left="20.0" />
-                           </HBox.margin>
-                        </TextField>
-                        <ImageView fitHeight="25.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
-                           <HBox.margin>
-                              <Insets right="20.0" />
-                           </HBox.margin>
-                           <image>
-                              <Image url="@../../../../img/img2/search.png" />
-                           </image>
-                        </ImageView>
+                        <VBox fx:id="boxFeed">
+                           <children>
+                              <HBox alignment="CENTER" prefHeight="26.0" prefWidth="270.0">
+                                 <children>
+                                    <TextField alignment="TOP_LEFT" prefHeight="26.0" prefWidth="348.0" promptText="Search">
+                                       <HBox.margin>
+                                          <Insets left="20.0" />
+                                       </HBox.margin>
+                                    </TextField>
+                                    <ImageView fitHeight="25.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+                                       <HBox.margin>
+                                          <Insets right="20.0" />
+                                       </HBox.margin>
+                                       <image>
+                                          <Image url="@../../../../img/img2/search.png" />
+                                       </image>
+                                    </ImageView>
+                                 </children>
+                              </HBox>
+                              <VBox prefHeight="401.0" prefWidth="286.0">
+                                 <children>
+                                    <ScrollPane hbarPolicy="NEVER" prefHeight="397.0" prefWidth="286.0" styleClass="scroll-bar" vbarPolicy="ALWAYS">
+                                       <content>
+                                          <VBox fx:id="vBoxSeries" prefHeight="267.0" prefWidth="270.0" />
+                                       </content>
+                                    </ScrollPane>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </VBox>
+                        <VBox fx:id="boxProfile" prefHeight="200.0" prefWidth="286.0">
+                           <children>
+                              <HBox alignment="CENTER">
+                                 <children>
+                                    <ImageView fx:id="propic" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../../../img/img2/flat-business-woman-user-profile-avatar-icon-vector-4334111.jpg" />
+                                       </image>
+                                    </ImageView>
+                                 </children>
+                              </HBox>
+                              <VBox prefHeight="291.0" prefWidth="286.0">
+                                 <children>
+                                    <HBox alignment="CENTER" prefHeight="50.0" prefWidth="286.0">
+                                       <children>
+                                          <Label fx:id="lblFirstName" text="Nome" />
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER" prefHeight="42.0" prefWidth="286.0">
+                                       <children>
+                                          <Label fx:id="lblLastName" text="Cognome" />
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER" prefHeight="44.0" prefWidth="286.0">
+                                       <children>
+                                          <Label fx:id="lblDate" text="mm-dd-yyyy" />
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER" prefHeight="54.0" prefWidth="286.0">
+                                       <children>
+                                          <Label text="Label" />
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER" prefHeight="60.0" prefWidth="286.0">
+                                       <children>
+                                          <Label text="Label" />
+                                       </children>
+                                    </HBox>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </VBox>
+                        <Pane fx:id="paneMenu" styleClass="menu-background">
+                           <StackPane.margin>
+                              <Insets right="80.0" top="-20.0" />
+                           </StackPane.margin>
+                           <children>
+                              <VBox fx:id="readerMenu">
+                                 <children>
+                                    <Button fx:id="btnFav" mnemonicParsing="false" prefHeight="46.0" prefWidth="206.0" styleClass="menu-background" text="Favourites" textFill="WHITE" />
+                                    <Button fx:id="btnToRead" mnemonicParsing="false" prefHeight="46.0" prefWidth="206.0" styleClass="menu-background" text="ToRead" textFill="WHITE" />
+                                    <Button fx:id="btnReading" mnemonicParsing="false" prefHeight="46.0" prefWidth="206.0" styleClass="menu-background" text="Reading" textFill="WHITE" />
+                                    <Button fx:id="btnFollowing" mnemonicParsing="false" prefHeight="46.0" prefWidth="206.0" styleClass="menu-background" text="Following" textFill="WHITE" />
+                                    <Button fx:id="btnMyBadges" mnemonicParsing="false" prefHeight="46.0" prefWidth="206.0" styleClass="menu-background" text="MyBadges" textFill="WHITE" />
+                                 </children>
+                              </VBox>
+                              <Button fx:id="btnSettings" layoutY="396.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="206.0" styleClass="menu-background" text="Settings" textFill="WHITE" />
+                              <VBox fx:id="authorMenu" layoutX="-1.0" prefHeight="95.0" prefWidth="206.0">
+                                 <children>
+                                    <Button fx:id="btnMySeries" mnemonicParsing="false" prefHeight="46.0" prefWidth="206.0" styleClass="menu-background" text="My Series" textFill="WHITE" />
+                                    <Button fx:id="btnStatistics" mnemonicParsing="false" prefHeight="46.0" prefWidth="206.0" styleClass="menu-background" text="Statistics" textFill="WHITE" />
+                                 </children>
+                              </VBox>
+                           </children>
+                        </Pane>
                      </children>
-                  </HBox>
-                  <HBox prefHeight="20.0" prefWidth="290.0">
-                     <VBox.margin>
-                        <Insets left="5.0" top="3.0" />
-                     </VBox.margin>
-                     <children>
-                        <Label prefHeight="20.0" prefWidth="75.0" text="Ads" textFill="#737373" />
-                     </children>
-                  </HBox>
-                  <VBox prefHeight="107.0" prefWidth="286.0">
-                     <children>
-                        <ScrollPane hbarPolicy="ALWAYS" prefHeight="200.0" prefWidth="200.0" vbarPolicy="NEVER" VBox.vgrow="NEVER">
-                           <content>
-                              <HBox fx:id="hBoxAds" prefHeight="91.0" prefWidth="284.0" spacing="20.0" />
-                           </content>
-                        </ScrollPane>
-                     </children>
-                  </VBox>
-                  <HBox prefHeight="10.0" prefWidth="286.0">
-                     <children>
-                        <Label prefHeight="13.0" prefWidth="74.0" text="Latest Series" textFill="#737373" />
-                     </children>
-                  </HBox>
-                  <VBox prefHeight="266.0" prefWidth="286.0">
-                     <children>
-                        <ScrollPane hbarPolicy="NEVER" prefHeight="267.0" prefWidth="286.0" vbarPolicy="ALWAYS">
-                           <content>
-                              <VBox fx:id="vBoxSeries" prefHeight="267.0" prefWidth="270.0" />
-                           </content>
-                        </ScrollPane>
-                     </children>
-                  </VBox>
+                  </StackPane>
                </children>
             </VBox>
             <VBox prefHeight="50.0" prefWidth="286.0" styleClass="keyboard">

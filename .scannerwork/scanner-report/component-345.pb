@@ -1,1 +1,1 @@
-� 2javaX'hr8trunk/src/main/java/com/example/comics/model/Review.java
+� 2javaX'hr8trunk/src/com.example.comics.view3.main/java/com/example/comics/model/Review.java

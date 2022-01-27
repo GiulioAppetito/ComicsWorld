@@ -3,8 +3,6 @@ package com.example.comics.view2;
 import com.example.comics.controller.LoginController;
 import com.example.comics.model.UserLogin;
 import com.example.comics.model.fagioli.LoginBean;
-import com.example.comics.view1.AuthorHomeControllerG;
-import com.example.comics.view1.ReaderHomeControllerG;
 import com.example.comics.view2.beans.LoginBean2;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -59,7 +57,6 @@ public class LoginControllerG2 {
 
             String role = UserLogin.getInstance().getAccount().getRole();
 
-            if(role.equals("reader")) {
                 FeedControllerG2 feedControllerG2 = FeedControllerG2.getInstance();
 
                 fxmlLocation = FeedControllerG2.class.getResource("feed2.fxml");
@@ -67,19 +64,12 @@ public class LoginControllerG2 {
                 loader.setController(feedControllerG2);
                 scene = new Scene(loader.load());
                 feedControllerG2.init();
-            }
-            else{
-                FeedControllerG2 feedControllerG2 = FeedControllerG2.getInstance();
 
-                fxmlLocation = FeedControllerG2.class.getResource("feed2.fxml");
-                loader.setLocation(fxmlLocation);
-                loader.setController(feedControllerG2);
-                scene = new Scene(loader.load());
-                feedControllerG2.init();
-            }
 
             stage.setTitle("ComicsWorld Mobile");
             stage.setScene(scene);
+            stage.setMaxHeight(705);
+            stage.setMaxWidth(425);
             stage.show();
 
 

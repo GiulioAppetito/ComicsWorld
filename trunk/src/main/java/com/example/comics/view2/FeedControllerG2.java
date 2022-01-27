@@ -2,12 +2,17 @@ package com.example.comics.view2;
 
 import com.example.comics.controller.ResearchController;
 import com.example.comics.model.Advertisement;
+import com.example.comics.model.UserLogin;
 import com.example.comics.model.fagioli.SeriesBean;
 import com.example.comics.view1.*;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
+import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 
 import java.io.IOException;
@@ -18,18 +23,80 @@ import java.util.List;
 
 public class FeedControllerG2 {
 
+
     @FXML
-    private HBox hBoxAds;
+    private VBox boxFeed;
+
+    @FXML
+    private VBox boxProfile;
 
     @FXML
     private VBox vBoxSeries;
 
+    @FXML
+    private Button btnMenu;
+
+    @FXML
+    private Button btnProfile;
+
+    @FXML
+    private Button btnFeed;
+
+    //user profile
+    @FXML
+    private Label lblDate;
+
+    @FXML
+    private Label lblFirstName;
+
+    @FXML
+    private Label lblLastName;
+
+    @FXML
+    private ImageView propic;
+
+    @FXML
+    private Pane paneMenu;
+
+    //reader menu
+    @FXML
+    private VBox readerMenu;
+
+    @FXML
+    private Button btnMyBadges;
+
+    @FXML
+    private Button btnReading;
+
+    @FXML
+    private Button btnSettings;
+
+    @FXML
+    private Button btnToRead;
+
+    @FXML
+    private Button btnFav;
+
+    @FXML
+    private Button btnFollowing;
+
+    //author menu
+    @FXML
+    private VBox authorMenu;
+
+    @FXML
+    private Button btnMySeries;
+
+    @FXML
+    private Button btnStatistics;
+
+
+    private static boolean openMenu = true;
     private static FeedControllerG2 instance;
     private static List<SeriesBean> latestSeries;
 
     private FeedControllerG2(){
         loadLatestSeries();
-        //load ads
     }
 
     public static synchronized FeedControllerG2 getInstance(){
@@ -47,7 +114,31 @@ public class FeedControllerG2 {
 
     public void init() {
 
-        System.out.println("feed2 init");
+        openFeed();
+        initProfile();
+        openMenu();
+
+        btnProfile.setOnAction(event -> openProfile());
+        btnFeed.setOnAction(event -> openFeed());
+        btnMenu.setOnAction(event -> openMenu());
+        btnSettings.setOnAction(event -> openSettings());
+
+        if(UserLogin.getInstance().getAccount().getRole().equals("reader")){
+            readerMenu();
+        }else{
+            authorMenu();
+        }
+
+        //reader menu
+        btnFav.setOnAction(event -> openFav());
+        btnFollowing.setOnAction(event -> openFollowing());
+        btnReading.setOnAction(event -> openReading());
+        btnToRead.setOnAction(event -> openToRead());
+
+        //author menu
+        btnStatistics.setOnAction(event -> openStats());
+        btnMySeries.setOnAction(event -> openMySeries());
+
         int size = latestSeries.size();
         for(int j=0; j<size; j++) {
             FXMLLoader fxmlLoader = new FXMLLoader();
@@ -73,63 +164,64 @@ public class FeedControllerG2 {
             }
         }
 
+    }
 
-        //load the ads panel
+    //reader
+    private void openFav() {
+    }
+    private void openFollowing() {
+    }
+    private void openReading() {
+    }
+    private void openToRead() {
+    }
+    //author
+    private void openStats(){
+    }
+    private void openMySeries(){
 
-        List<Advertisement> listOfAds = new ArrayList<>(addAds());
+    }
 
-        for (Advertisement ad : listOfAds) {
+    private void openSettings() {
+        //TO-DO
+    }
 
-            FXMLLoader fxmlLoader = new FXMLLoader();
-            fxmlLoader.setLocation(getClass().getResource("adCard.fxml"));
-            try {
-                VBox vbAd = fxmlLoader.load();
-                AdControllerG2 adController2 = fxmlLoader.getController();
-                adController2.setData(ad);
-                vbAd.setOnMouseClicked(event -> System.out.println("Clicked ad"));
-                hBoxAds.getChildren().add(vbAd);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
+    public void openProfile(){
+        boxProfile.setVisible(true);
+        boxFeed.setVisible(false);
+    }
+
+    public void openFeed(){
+        boxProfile.setVisible(false);
+        boxFeed.setVisible(true);
+    }
+
+    public void openSerie(SeriesBean seriesBean) throws IOException {}
+
+    private void initProfile(){
+        lblFirstName.setText(UserLogin.getInstance().getAccount().getFirstName());
+        lblLastName.setText(UserLogin.getInstance().getAccount().getLastName());
+        propic.setImage(UserLogin.getInstance().getAccount().getProPic());
+    }
+
+    private void openMenu(){
+        if(openMenu){
+            paneMenu.setVisible(false);
+            openMenu = false;
+            return;
         }
-
+        paneMenu.setVisible(true);
+        openMenu = true;
     }
 
-    public void openSerie(SeriesBean seriesBean) throws IOException {
-/*
-        SeriesControllerG serieControllerG = new SeriesControllerG();
-        FXMLLoader loader = new FXMLLoader();
-
-        URL fxmlLocation = CharacterControllerG.class.getResource("serie.fxml");
-        loader.setLocation(fxmlLocation);
-        loader.setController(serieControllerG);
-
-        HomeFactory homeFactory = new HomeFactory();
-        HomeControllerG homeControllerG = homeFactory.getHomeControllerG();
-        homeControllerG.changeCenter(loader.load());
-
-        serieControllerG.setData(seriesBean);
- */
+    private void readerMenu(){
+        readerMenu.setVisible(true);
+        authorMenu.setVisible(false);
     }
 
-
-    private List<Advertisement> addAds(){
-
-        List<Advertisement> la = new ArrayList<>();
-        int i;
-        int n = 10;
-
-
-        for(i=0; i<n; i++){
-            Advertisement ad = new Advertisement();
-            ad.setTitle("Ad n°" + i);
-            la.add(ad);
-        }
-
-
-        return la;
-
+    private void authorMenu(){
+        readerMenu.setVisible(false);
+        authorMenu.setVisible(true);
     }
-
 
 }

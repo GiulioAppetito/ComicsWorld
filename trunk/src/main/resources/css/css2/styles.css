@@ -4,6 +4,9 @@
 .header-background{
     -fx-background-color: #b17ee0;
 }
+.menu-background{
+    -fx-background-color: #c28bf5;
+}
 
 .wallpaper{
     -fx-background-image: url('fakebg3.jpg');
@@ -190,7 +193,7 @@
     -fx-background-color: transparent;
 }
 /*
-/* The main scrollbar **track** CSS class  */
+/* The com.example.comics.view3.main scrollbar **track** CSS class  */
 .table-view .scroll-bar:horizontal .track,
 .table-view .scroll-bar:vertical .track{
     -fx-background-color: transparent;
@@ -199,7 +202,7 @@
     -fx-border-radius:2em;
 }
 
-/* The main scrollbar **thumb** CSS class which we drag every time (movable) */
+/* The com.example.comics.view3.main scrollbar **thumb** CSS class which we drag every time (movable) */
 .table-view .scroll-bar:horizontal .thumb,
 .table-view .scroll-bar:vertical .thumb {
     -fx-background-color:derive( #2D75E8,90%);

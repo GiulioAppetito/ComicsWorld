@@ -33,7 +33,7 @@ Date:   Sat Jan 22 13:47:15 2022 +0100
     # Conflicts:
     #       target/classes/com/example/comics/model/dao/Queries.class
     #       target/classes/com/example/comics/model/dao/SeriesDAO.class
-    #       trunk/src/main/java/com/example/comics/model/dao/SeriesDAO.java
+    #       trunk/src/com.example.comics.view3.main/java/com/example/comics/model/dao/SeriesDAO.java
 
 commit 11f30130545528ac75c32e77a89049df19c48b6d
 Author: Giulio <giulio.appetito.ga@gmail.com>
@@ -276,26 +276,26 @@ Date:   Wed Jan 12 13:20:01 2022 +0100
     #       target/classes/com/example/comics/view1/ChapterControllerG.class
     #       target/classes/com/example/comics/view1/SeriesControllerG.class
     #       target/classes/com/example/comics/view1/chapter.fxml
-    #       trunk/src/main/java/com/example/comics/controller/FollowAuthorController.java
-    #       trunk/src/main/java/com/example/comics/controller/PostReviewController.java
-    #       trunk/src/main/java/com/example/comics/controller/ResearchController.java
-    #       trunk/src/main/java/com/example/comics/model/Chapter.java
-    #       trunk/src/main/java/com/example/comics/model/fagioli/AccountBean.java
-    #       trunk/src/main/java/com/example/comics/model/fagioli/AuthorBean.java
-    #       trunk/src/main/java/com/example/comics/model/fagioli/BadgeBean.java
-    #       trunk/src/main/java/com/example/comics/model/fagioli/ChapterBean.java
-    #       trunk/src/main/java/com/example/comics/model/fagioli/LoginBean.java
-    #       trunk/src/main/java/com/example/comics/model/fagioli/ObjectiveBean.java
-    #       trunk/src/main/java/com/example/comics/model/fagioli/ProfileBean.java
-    #       trunk/src/main/java/com/example/comics/model/fagioli/ReaderBean.java
-    #       trunk/src/main/java/com/example/comics/model/fagioli/RegistrationBean.java
-    #       trunk/src/main/java/com/example/comics/model/fagioli/ReviewBean.java
-    #       trunk/src/main/java/com/example/comics/model/fagioli/SeriesBean.java
-    #       trunk/src/main/java/com/example/comics/view1/AuthorFromOutsideControllerG.java
-    #       trunk/src/main/java/com/example/comics/view1/FavouriteAuthorsControllerG.java
-    #       trunk/src/main/java/com/example/comics/view1/LoginControllerG.java
-    #       trunk/src/main/java/com/example/comics/view1/PublishChapterControllerG.java
-    #       trunk/src/main/resources/com/example/comics/view1/chapter.fxml
+    #       trunk/src/com.example.comics.view3.main/java/com/example/comics/controller/FollowAuthorController.java
+    #       trunk/src/com.example.comics.view3.main/java/com/example/comics/controller/PostReviewController.java
+    #       trunk/src/com.example.comics.view3.main/java/com/example/comics/controller/ResearchController.java
+    #       trunk/src/com.example.comics.view3.main/java/com/example/comics/model/Chapter.java
+    #       trunk/src/com.example.comics.view3.main/java/com/example/comics/model/fagioli/AccountBean.java
+    #       trunk/src/com.example.comics.view3.main/java/com/example/comics/model/fagioli/AuthorBean.java
+    #       trunk/src/com.example.comics.view3.main/java/com/example/comics/model/fagioli/BadgeBean.java
+    #       trunk/src/com.example.comics.view3.main/java/com/example/comics/model/fagioli/ChapterBean.java
+    #       trunk/src/com.example.comics.view3.main/java/com/example/comics/model/fagioli/LoginBean.java
+    #       trunk/src/com.example.comics.view3.main/java/com/example/comics/model/fagioli/ObjectiveBean.java
+    #       trunk/src/com.example.comics.view3.main/java/com/example/comics/model/fagioli/ProfileBean.java
+    #       trunk/src/com.example.comics.view3.main/java/com/example/comics/model/fagioli/ReaderBean.java
+    #       trunk/src/com.example.comics.view3.main/java/com/example/comics/model/fagioli/RegistrationBean.java
+    #       trunk/src/com.example.comics.view3.main/java/com/example/comics/model/fagioli/ReviewBean.java
+    #       trunk/src/com.example.comics.view3.main/java/com/example/comics/model/fagioli/SeriesBean.java
+    #       trunk/src/com.example.comics.view3.main/java/com/example/comics/view1/AuthorFromOutsideControllerG.java
+    #       trunk/src/com.example.comics.view3.main/java/com/example/comics/view1/FavouriteAuthorsControllerG.java
+    #       trunk/src/com.example.comics.view3.main/java/com/example/comics/view1/LoginControllerG.java
+    #       trunk/src/com.example.comics.view3.main/java/com/example/comics/view1/PublishChapterControllerG.java
+    #       trunk/src/com.example.comics.view3.main/resources/com/example/comics/view1/chapter.fxml
 
 commit 3fed5f48a13e3d645565287666ac61c1bd1467d8
 Author: Anastasia <anastasia.brinati@students.uniroma2.eu>
@@ -320,14 +320,14 @@ Date:   Wed Jan 12 09:03:50 2022 +0100
     #       target/classes/com/example/comics/view1/AuthorHomeControllerG.class
     #       target/classes/com/example/comics/view1/ChapterControllerG.class
     #       target/classes/com/example/comics/view1/SeriesControllerG.class
-    #       trunk/src/main/java/com/example/comics/controller/PostReviewController.java
-    #       trunk/src/main/java/com/example/comics/controller/ResearchController.java
-    #       trunk/src/main/java/com/example/comics/model/Chapter.java
-    #       trunk/src/main/java/com/example/comics/model/ReviewObserver.java
-    #       trunk/src/main/java/com/example/comics/model/fagioli/SeriesBean.java
-    #       trunk/src/main/java/com/example/comics/view1/AuthorFromOutsideControllerG.java
-    #       trunk/src/main/java/com/example/comics/view1/ChapterControllerG.java
-    #       trunk/src/main/java/com/example/comics/view1/FavouriteAuthorsControllerG.java
+    #       trunk/src/com.example.comics.view3.main/java/com/example/comics/controller/PostReviewController.java
+    #       trunk/src/com.example.comics.view3.main/java/com/example/comics/controller/ResearchController.java
+    #       trunk/src/com.example.comics.view3.main/java/com/example/comics/model/Chapter.java
+    #       trunk/src/com.example.comics.view3.main/java/com/example/comics/model/ReviewObserver.java
+    #       trunk/src/com.example.comics.view3.main/java/com/example/comics/model/fagioli/SeriesBean.java
+    #       trunk/src/com.example.comics.view3.main/java/com/example/comics/view1/AuthorFromOutsideControllerG.java
+    #       trunk/src/com.example.comics.view3.main/java/com/example/comics/view1/ChapterControllerG.java
+    #       trunk/src/com.example.comics.view3.main/java/com/example/comics/view1/FavouriteAuthorsControllerG.java
 
 commit 088d0687f65c8f659b0f87cc63c40bb6e5b6c8f7
 Author: Giulio <giulio.appetito.ga@gmail.com>
@@ -397,7 +397,7 @@ Date:   Sat Jan 8 17:54:53 2022 +0100
     Merge remote-tracking branch 'origin/master'
     
     # Conflicts:
-    #       trunk/src/main/java/com/example/comics/model/Series.java
+    #       trunk/src/com.example.comics.view3.main/java/com/example/comics/model/Series.java
 
 commit 62689907bc22b8a0cd45f91e99598669fccd5cca
 Author: Giulio <giulio.appetito.ga@gmail.com>
@@ -432,7 +432,7 @@ Date:   Sat Jan 8 17:45:18 2022 +0100
     #       target/classes/com/example/comics/model/dao/SeriesDAO.class
     #       target/classes/com/example/comics/view1/FavouriteAuthorsControllerG.class
     #       target/classes/com/example/comics/view1/SeriesControllerG.class
-    #       trunk/src/main/java/com/example/comics/model/Series.java
+    #       trunk/src/com.example.comics.view3.main/java/com/example/comics/model/Series.java
 
 commit 9baa3bc0967c59cf149f584bf02f16a3211a217b
 Author: Giulio <giulio.appetito.ga@gmail.com>
@@ -508,9 +508,9 @@ Date:   Sat Jan 8 14:59:24 2022 +0100
     #       target/classes/com/example/comics/model/dao/Queries.class
     #       target/classes/com/example/comics/model/dao/ReaderDAO.class
     #       target/classes/com/example/comics/view1/readerhome.fxml
-    #       trunk/src/main/java/com/example/comics/controller/ResearchController.java
-    #       trunk/src/main/java/com/example/comics/model/dao/AuthorDAO.java
-    #       trunk/src/main/resources/com/example/comics/view1/readerhome.fxml
+    #       trunk/src/com.example.comics.view3.main/java/com/example/comics/controller/ResearchController.java
+    #       trunk/src/com.example.comics.view3.main/java/com/example/comics/model/dao/AuthorDAO.java
+    #       trunk/src/com.example.comics.view3.main/resources/com/example/comics/view1/readerhome.fxml
 
 commit ffc0bb4e6faffc2885a8e3dc5daa4693ffe2d3d1
 Author: Anastasia <anastasia.brinati@students.uniroma2.eu>
@@ -580,13 +580,13 @@ Date:   Wed Jan 5 16:01:22 2022 +0100
     #       target/classes/com/example/comics/view1/AuthorProfileControllerG.class
     #       target/classes/com/example/comics/view1/ChapterControllerG.class
     #       target/classes/com/example/comics/view1/SeriesControllerG.class
-    #       trunk/src/main/java/com/example/comics/model/Chapter.java
-    #       trunk/src/main/java/com/example/comics/model/Series.java
-    #       trunk/src/main/java/com/example/comics/model/dao/Queries.java
-    #       trunk/src/main/java/com/example/comics/model/dao/SeriesDAO.java
-    #       trunk/src/main/java/com/example/comics/view1/AuthorProfileControllerG.java
-    #       trunk/src/main/java/com/example/comics/view1/ChapterControllerG.java
-    #       trunk/src/main/java/com/example/comics/view1/SeriesControllerG.java
+    #       trunk/src/com.example.comics.view3.main/java/com/example/comics/model/Chapter.java
+    #       trunk/src/com.example.comics.view3.main/java/com/example/comics/model/Series.java
+    #       trunk/src/com.example.comics.view3.main/java/com/example/comics/model/dao/Queries.java
+    #       trunk/src/com.example.comics.view3.main/java/com/example/comics/model/dao/SeriesDAO.java
+    #       trunk/src/com.example.comics.view3.main/java/com/example/comics/view1/AuthorProfileControllerG.java
+    #       trunk/src/com.example.comics.view3.main/java/com/example/comics/view1/ChapterControllerG.java
+    #       trunk/src/com.example.comics.view3.main/java/com/example/comics/view1/SeriesControllerG.java
 
 commit 054be438a630086c70e3bba6e887cd5c49ac53e6
 Author: Giulio <giulio.appetito.ga@gmail.com>
@@ -751,9 +751,9 @@ Date:   Thu Dec 30 16:28:36 2021 +0100
     Merge remote-tracking branch 'origin/master'
     
     # Conflicts:
-    #       trunk/src/main/java/com/example/comics/fagioli/ChapterBean.java
-    #       trunk/src/main/java/com/example/comics/fagioli/SeriesBean.java
-    #       trunk/src/main/java/com/example/comics/model/dao/ChapterDAO.java
+    #       trunk/src/com.example.comics.view3.main/java/com/example/comics/fagioli/ChapterBean.java
+    #       trunk/src/com.example.comics.view3.main/java/com/example/comics/fagioli/SeriesBean.java
+    #       trunk/src/com.example.comics.view3.main/java/com/example/comics/model/dao/ChapterDAO.java
 
 commit bea8043bbdaa949bab4e340990b87fadfa3bc7c9
 Author: Anastasia <anastasia.brinati@students.uniroma2.eu>
@@ -814,8 +814,8 @@ Date:   Tue Dec 28 11:57:12 2021 +0100
     # Conflicts:
     #       target/classes/com/example/comics/model/Objective.class
     #       target/classes/com/example/comics/view1/ChapterControllerG.class
-    #       trunk/src/main/java/com/example/comics/model/Reader.java
-    #       trunk/src/main/java/com/example/comics/model/dao/ReaderDAO.java
+    #       trunk/src/com.example.comics.view3.main/java/com/example/comics/model/Reader.java
+    #       trunk/src/com.example.comics.view3.main/java/com/example/comics/model/dao/ReaderDAO.java
 
 commit ff59e0a00f6dfc40271bab32d2ea7455172cbf9d
 Author: Giulio <giulio.appetito.ga@gmail.com>
@@ -878,7 +878,7 @@ Date:   Sun Dec 26 14:34:32 2021 +0100
     #       target/classes/com/example/comics/model/Series.class
     #       target/classes/com/example/comics/model/dao/Queries.class
     #       target/classes/com/example/comics/model/dao/SeriesDAO.class
-    #       trunk/src/main/java/com/example/comics/model/dao/SeriesDAO.java
+    #       trunk/src/com.example.comics.view3.main/java/com/example/comics/model/dao/SeriesDAO.java
 
 commit 5e77387bc8e7b9c5d6642e9b638cfb810ad43f1b
 Author: Giulio <giulio.appetito.ga@gmail.com>
@@ -992,8 +992,8 @@ Date:   Tue Dec 14 15:02:50 2021 +0100
     #       target/classes/com/example/comics/model/Series.class
     #       target/classes/com/example/comics/model/dao/Queries.class
     #       target/classes/com/example/comics/view1/CategoriesControllerG.class
-    #       trunk/src/main/java/com/example/comics/model/Chapter.java
-    #       trunk/src/main/java/com/example/comics/model/Series.java
+    #       trunk/src/com.example.comics.view3.main/java/com/example/comics/model/Chapter.java
+    #       trunk/src/com.example.comics.view3.main/java/com/example/comics/model/Series.java
 
 commit 6433a3607627e1cc0cfb68f602bd46cdc27fb5a9
 Author: Anastasia <anastasia.brinati@students.uniroma2.eu>
@@ -1205,7 +1205,7 @@ Date:   Tue Nov 30 12:29:22 2021 +0100
     
     # Conflicts:
     #       target/classes/css/fullpackstyling.css
-    #       trunk/src/main/resources/css/fullpackstyling.css
+    #       trunk/src/com.example.comics.view3.main/resources/css/fullpackstyling.css
 
 commit be038abb87b67a0b67e63d2cdf125953b4f5bb43
 Author: Anastasia <anastasia.brinati@students.uniroma2.eu>
@@ -1301,7 +1301,7 @@ Date:   Thu Nov 25 12:25:35 2021 +0100
     # Conflicts:
     #       target/classes/com/example/comics/view1/FavouriteAuthorsControllerG.class
     #       target/classes/com/example/comics/view1/feed.fxml
-    #       trunk/src/main/resources/com/example/comics/view1/home.fxml
+    #       trunk/src/com.example.comics.view3.main/resources/com/example/comics/view1/home.fxml
 
 commit 8865cc879923ce9d90cf8207d3566bdaa23acf5f
 Author: Anastasia <anastasia.brinati@students.uniroma2.eu>
@@ -1881,8 +1881,8 @@ Date:   Wed Nov 10 14:14:11 2021 +0100
     Merge remote-tracking branch 'origin/master'
     
     # Conflicts:
-    #       src/main/resources/com/example/comics/view1/feed.fxml
-    #       src/main/resources/com/example/comics/view1/hcard.fxml
+    #       src/com.example.comics.view3.main/resources/com/example/comics/view1/feed.fxml
+    #       src/com.example.comics.view3.main/resources/com/example/comics/view1/hcard.fxml
     #       target/classes/com/example/comics/FeedControllerG.class
     #       target/classes/com/example/comics/view1/feed.fxml
     #       target/classes/com/example/comics/view1/hcard.fxml
@@ -1919,8 +1919,8 @@ Date:   Wed Nov 10 08:36:37 2021 +0100
     Merge remote-tracking branch 'origin/master'
     
     # Conflicts:
-    #       src/main/resources/com/example/comics/feed.fxml
-    #       src/main/resources/css/fullpackstyling.css
+    #       src/com.example.comics.view3.main/resources/com/example/comics/feed.fxml
+    #       src/com.example.comics.view3.main/resources/css/fullpackstyling.css
     #       target/classes/com/example/comics/FeedControllerG.class
     #       target/classes/com/example/comics/HomeControllerG.class
     #       target/classes/com/example/comics/feed.fxml
@@ -2025,9 +2025,9 @@ Date:   Mon Nov 8 08:33:47 2021 +0100
     Merge remote-tracking branch 'origin/master'
     
     # Conflicts:
-    #       src/main/java/com/example/comics/FeedController.java
-    #       src/main/resources/com/example/comics/categories.fxml
-    #       src/main/resources/com/example/comics/feed.fxml
+    #       src/com.example.comics.view3.main/java/com/example/comics/FeedController.java
+    #       src/com.example.comics.view3.main/resources/com/example/comics/categories.fxml
+    #       src/com.example.comics.view3.main/resources/com/example/comics/feed.fxml
     #       target/classes/com/example/comics/FeedController.class
     #       target/classes/com/example/comics/categories.fxml
     #       target/classes/com/example/comics/comicchapter.fxml
@@ -2350,7 +2350,7 @@ Date:   Wed Oct 27 17:23:52 2021 +0200
     Merge remote-tracking branch 'origin/master'
     
     # Conflicts:
-    #       src/main/resources/com/example/coomics/home.fxml
+    #       src/com.example.comics.view3.main/resources/com/example/coomics/home.fxml
     #       target/classes/com/example/coomics/home.fxml
     #       target/classes/module-info.class
 
@@ -2483,8 +2483,8 @@ Date:   Mon Oct 25 09:50:56 2021 +0200
     Merge remote-tracking branch 'origin/master'
     
     # Conflicts:
-    #       src/main/resources/com/example/coomics/home.fxml
-    #       src/main/resources/com/example/coomics/settings.fxml
+    #       src/com.example.comics.view3.main/resources/com/example/coomics/home.fxml
+    #       src/com.example.comics.view3.main/resources/com/example/coomics/settings.fxml
     #       target/classes/com/example/coomics/home.fxml
     #       target/classes/css/fullpackstyling.css
 

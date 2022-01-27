@@ -3,12 +3,6 @@ Z
 *.scannerwork/scanner-report/source-364.txt,5\1\5199e06b0b3ec1171afb2dfda6328e7925967fd0
 p
 @trunk/src/main/java/com/example/comics/view2/AdControllerG2.java,7\d\7d391f2070b56ad346a42a2fbb91b77f6b5f0099
-r
-Btrunk/src/main/java/com/example/comics/view2/FeedControllerG2.java,7\b\7b0422c54b82c7983178cbae05dfa5d9d950e7e1
-s
-Ctrunk/src/main/java/com/example/comics/view2/LoginControllerG2.java,1\e\1e7b544f2c19e9490bc5f6c5bfe8bb802f713d05
-w
-Gtrunk/src/main/java/com/example/comics/view2/SeriesCardControllerG.java,1\b\1be915d2c3d65af39b55d9dce686f6b35d8ed7a0
 u
 Etrunk/src/main/java/com/example/comics/view1/SettingsControllerG.java,7\9\79ea4a4cd75fb8046c2b9cdeda07ca97f4d2afa6
 w
