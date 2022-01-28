@@ -14,10 +14,18 @@ public class MarkChapterAsReadController {
         SeriesDAO seriesDAO = new SeriesDAO();
 
         series = seriesDAO.retrieveSeries(seriesBean.getTitle());
-        UserLogin.getInstance().getReader().markChapter(series,chapterBean.getTitle());
 
-        ReaderDAO readerDAO = new ReaderDAO();
-        readerDAO.saveReadChapter(series, chapterBean.getTitle());
-        
+        Thread t1 = new Thread(()->{
+             UserLogin.getInstance().getReader().markChapter(series,chapterBean.getTitle());
+        });
+
+        Thread t2 = new Thread(()-> {
+            ReaderDAO readerDAO = new ReaderDAO();
+            readerDAO.saveReadChapter(series, chapterBean.getTitle());
+        });
+
+        t1.start();
+        t2.start();
+
     }
 }

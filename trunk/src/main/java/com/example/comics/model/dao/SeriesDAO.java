@@ -4,6 +4,7 @@ import com.example.comics.model.*;
 import com.example.comics.model.fagioli.ObjectiveBean;
 import javafx.scene.image.Image;
 
+import java.io.IOException;
 import java.io.InputStream;
 import java.sql.*;
 import java.util.ArrayList;
@@ -423,8 +424,6 @@ public class SeriesDAO {
 
         List<Series> seriesList = new ArrayList<>();
 
-        Author author;
-        Series series;
 
         try {
             conn = DriverManager.getConnection(DB_URL, USER, PASS);
@@ -437,21 +436,23 @@ public class SeriesDAO {
             }
             rs.first();
             do {
+                    try{
+                        Author author;
+                        Series series;
+                        AuthorDAO authorDAO = new AuthorDAO();
+                        author = authorDAO.retrieveAuthorWithoutPassword(rs.getString("author"));
+                        series = new Series(rs.getString("title"), author);
 
-                AuthorDAO authorDAO = new AuthorDAO();
-                author = authorDAO.retrieveAuthorWithoutPassword(rs.getString("author"));
-                System.out.println("seriesDAO: recupero serie latest");
-                series = new Series(rs.getString("title"), author);
-
-                Blob bl = rs.getBlob("cover");
-                if(bl != null){
-                    InputStream inputStream = bl.getBinaryStream();
-                    Image image = new Image(inputStream);
-                    series.setCover(image);
-                }
-
-
-                seriesList.add(series);
+                        Blob bl = rs.getBlob("cover");
+                        if(bl != null){
+                            InputStream inputStream = bl.getBinaryStream();
+                            Image image = new Image(inputStream);
+                            series.setCover(image);
+                        }
+                        seriesList.add(series);
+                    } catch (SQLException throwables) {
+                        throwables.printStackTrace();
+                    }
 
             } while (rs.next());
 
@@ -496,7 +497,6 @@ public class SeriesDAO {
             // STEP 4.2: creazione ed esecuzione della query
             Queries.insertSeries(conn,series,seriesCoverInputStream);
             for(Objective objective : series.getObjectives()){
-
 
                 Queries.insertBadge(conn,objective.getBadge(),hashMap.get(objective));
 

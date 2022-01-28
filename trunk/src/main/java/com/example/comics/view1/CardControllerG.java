@@ -1,5 +1,6 @@
 package com.example.comics.view1;
 
+import com.example.comics.controller.StatisticsController;
 import com.example.comics.model.fagioli.SeriesBean;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
@@ -25,7 +26,10 @@ public class CardControllerG {
     public void setData(SeriesBean seriesBean) {
         comicName.setText(seriesBean.getTitle());
         comicCover.setImage(seriesBean.getCover());
-        switch (seriesBean.getAverageRating()){
+
+        StatisticsController statisticsController = new StatisticsController();
+        switch (statisticsController.seriesAverageRating(seriesBean).intValue()){
+
             case 1:
                 imgStar1.setVisible(true);
                 imgStar2.setVisible(false);
@@ -62,11 +66,11 @@ public class CardControllerG {
                 imgStar5.setVisible(true);
                 break;
             default:
-                imgStar1.setVisible(false);
+                imgStar1.setVisible(true);
                 imgStar2.setVisible(false);
-                imgStar3.setVisible(false);
+                imgStar3.setVisible(true);
                 imgStar4.setVisible(false);
-                imgStar5.setVisible(false);
+                imgStar5.setVisible(true);
                 break;
         }
     }

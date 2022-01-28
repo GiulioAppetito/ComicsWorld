@@ -1,9 +1,11 @@
 package com.example.comics.view1;
 
+import com.example.comics.controller.BuyComicController;
 import com.example.comics.controller.MarkChapterAsReadController;
 import com.example.comics.controller.PostReviewController;
 import com.example.comics.model.*;
 import com.example.comics.model.fagioli.*;
+import com.example.comics.view1.beans.ChapterBean1;
 import com.example.comics.view1.beans.ReviewBean1;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -336,6 +338,10 @@ public class ChapterControllerG implements ChapterObserver, ObjectiveObserver {
     @FXML
     private TextArea taDescription;
 
+
+    @FXML
+    private Button btnBuyComics;
+
     private int reviewRating = 0;
 
     @FXML
@@ -347,6 +353,8 @@ public class ChapterControllerG implements ChapterObserver, ObjectiveObserver {
     private static final String STYLE = ".button2";
     private static final String STYLE2 = "-fx-background-color: #5DADE2; -fx-background-radius: 20";
 
+    private String chapterSeries;
+
 
     public void init(ChapterBean chapterBean, SeriesBean seriesBean){
 
@@ -356,6 +364,7 @@ public class ChapterControllerG implements ChapterObserver, ObjectiveObserver {
         lblChapterTitle.setText(chapterBean.getTitle());
         taDescription.setText(chapterBean.getDescription());
         taDescription.setEditable(false);
+        chapterSeries = seriesBean.getTitle();
 
         if(!chapterBean.getRead()){
             btnChapterRead.setStyle(STYLE);
@@ -374,6 +383,7 @@ public class ChapterControllerG implements ChapterObserver, ObjectiveObserver {
         paneInsertReview.setVisible(false);
         newBadgeWonPane.setVisible(false);
         btnPostReview.setOnAction(event -> postReview(chapterBean, seriesBean));
+        btnBuyComics.setOnAction(event -> buyComics(chapterBean,seriesBean));
 
         if(UserLogin.getInstance().getAccount().getRole().equals("reader")) {
             btnAddReview.setOnAction(event -> openEditor());
@@ -472,6 +482,11 @@ public class ChapterControllerG implements ChapterObserver, ObjectiveObserver {
         imgStar55.setOnMouseClicked(event -> fiveStars());
     }
 
+    private void buyComics(ChapterBean chapterBean,SeriesBean seriesBean) {
+        BuyComicController buyComicController = new BuyComicController();
+        buyComicController.init(chapterBean,seriesBean);
+    }
+
     private void removeChapterFromRead(SeriesBean seriesBean, ChapterBean chapterBean) {
         //TO-DO
         btnChapterRead.setStyle(STYLE);
@@ -493,6 +508,7 @@ public class ChapterControllerG implements ChapterObserver, ObjectiveObserver {
         reviewBean.setComment(txtAreaComment.getText());
         reviewBean.setUsername(UserLogin.getInstance().getAccount().getUsername());
         reviewBean.setRating(reviewRating);
+        System.out.println("[Chapter Controller G] Rating : "+reviewRating);
         reviewBean.setChapter(chapterBean.getTitle());
         //e magari anche la foto
         PostReviewController postReviewController = new PostReviewController();
@@ -532,6 +548,7 @@ public class ChapterControllerG implements ChapterObserver, ObjectiveObserver {
         newBadgeWonPane.setVisible(true);
         lblBadgeName.setText(badgeBean.getName());
         badgeIconView.setImage(badgeBean.getIcon());
+        lblBadgeSeries.setText(chapterSeries);
     }
 
 }

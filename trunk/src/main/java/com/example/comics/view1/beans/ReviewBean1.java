@@ -44,12 +44,15 @@ public class ReviewBean1 implements ReviewBean {
         this.propic = propic;
     }
 
+    @Override
     public int getRating() {
-        return rating;
+        return this.rating;
     }
 
+    @Override
     public void setRating(int rating) {
         this.rating = rating;
     }
+
 
 }

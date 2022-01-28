@@ -10,7 +10,7 @@ import javax.mail.*;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 
-public class BoundarySendEmail {
+public class PostReviewAuthorBoundary {
 
     private static final String FROM = "comicsworldISPW@gmail.com";
     private static final String HOST  = "smtp.gmail.com";
@@ -76,7 +76,6 @@ public class BoundarySendEmail {
             mex.printStackTrace();
         }
     }
-
 
     public void sendEmailForDiscountCode(Reader reader, Series series, DiscountCode discountCode) {
 

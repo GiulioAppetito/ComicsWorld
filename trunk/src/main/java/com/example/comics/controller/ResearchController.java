@@ -122,6 +122,7 @@ public class ResearchController {
             authorBundle.setUsername(followedAuthors.get(i).getUsername());
             authorBundle.setFirstName(followedAuthors.get(i).getFirstName());
             authorBundle.setLastName(followedAuthors.get(i).getLastName());
+            authorBundle.setEmail(followedAuthors.get(i).getEmail());
             authorBundle.setProPic(followedAuthors.get(i).getProPic());
             authorBundle.setPublishedSeries(followedAuthors.get(i).getPublishedSeries());
             authorBeans.add(authorBundle);
@@ -129,4 +130,5 @@ public class ResearchController {
 
         return authorBeans;
     }
+
 }

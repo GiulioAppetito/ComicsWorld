@@ -41,9 +41,6 @@ public class AuthorHomeControllerG  extends HomeControllerG implements AccountOb
     private Button btnCategories;
 
     @FXML
-    private Button btnTop;
-
-    @FXML
     private Button btnMySeries;
 
     @FXML
@@ -88,7 +85,6 @@ public class AuthorHomeControllerG  extends HomeControllerG implements AccountOb
         btnStatistics.setOnAction(event -> openStatistics());
 
         btnSettings.setOnAction(event -> openSettings());
-        btnTop.setOnAction(event -> openTop());
         userBox.setOnMouseClicked(event -> openProfile());
         homeIcon.setOnMouseClicked(event -> openFeed());
 
@@ -118,7 +114,6 @@ public class AuthorHomeControllerG  extends HomeControllerG implements AccountOb
         mainPane.setCenter(view);
 
         resetButtons();
-        btnTop.setStyle(STYLE2);
     }
 
     public void openSettings() {
@@ -167,8 +162,6 @@ public class AuthorHomeControllerG  extends HomeControllerG implements AccountOb
         btnSettings.setStyle(STYLE);
         btnCategories.setStyle(STYLE);
         btnMySeries.setStyle(STYLE);
-        btnTop.setStyle(STYLE);
-        //btnMyBadges.setStyle(STYLE);
         btnStatistics.setStyle(STYLE);
     }
 

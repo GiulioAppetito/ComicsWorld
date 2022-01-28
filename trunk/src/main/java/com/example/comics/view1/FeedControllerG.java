@@ -1,6 +1,7 @@
 package com.example.comics.view1;
 
 import com.example.comics.controller.ResearchController;
+import com.example.comics.controller.StatisticsController;
 import com.example.comics.model.Advertisement;
 import com.example.comics.model.fagioli.SeriesBean;
 import javafx.fxml.FXML;
@@ -52,6 +53,7 @@ public class FeedControllerG{
                 VBox card = fxmlLoader.load();
                 CardControllerG cardController = fxmlLoader.getController();
                 cardController.setData(latestSeries.get(j));
+
 
                 int finalJ = j;
                 card.setOnMouseClicked(event -> {

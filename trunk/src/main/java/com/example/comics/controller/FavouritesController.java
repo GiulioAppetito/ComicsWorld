@@ -22,10 +22,14 @@ public class FavouritesController {
 
         for(Series series : seriesBean.getAuthor().getPublishedSeries()){
             if(series.getTitle().equals(seriesBean.getTitle())){
-                ReaderDAO readerDAO = new ReaderDAO();
-                readerDAO.addSeriesToFavourites(series, UserLogin.getInstance().getReader());
+                new Thread(()->{
+                    ReaderDAO readerDAO = new ReaderDAO();
+                    readerDAO.addSeriesToFavourites(series, UserLogin.getInstance().getReader());
+                }).start();
 
-                UserLogin.getInstance().getReader().addSeriesToFavourites(series);
+                new Thread(()->{
+                    UserLogin.getInstance().getReader().addSeriesToFavourites(series);
+                }).start();
             }
         }
 
@@ -35,6 +39,7 @@ public class FavouritesController {
 
         for(Series series : seriesBean.getAuthor().getPublishedSeries()){
             if(series.getTitle().equals(seriesBean.getTitle())){
+
                 ReaderDAO readerDAO = new ReaderDAO();
                 readerDAO.removeSeriesFromFavourites(series, UserLogin.getInstance().getReader());
 

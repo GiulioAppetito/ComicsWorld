@@ -6,7 +6,7 @@ import java.util.ArrayList;
 
 public abstract class ChapterSubject {
 
-    private static ArrayList<ChapterObserver> observers = new ArrayList<>();
+    private static final ArrayList<ChapterObserver> observers = new ArrayList<>();
 
     public static void attach(ChapterObserver observer){
         observers.add(observer);
@@ -18,7 +18,8 @@ public abstract class ChapterSubject {
 
     public void notifyObserversNewReview(ReviewBean reviewBean){
         for (ChapterObserver observer : observers) {
-            observer.updateReviews(reviewBean);
+                observer.updateReviews(reviewBean);
+
         }
     }
 

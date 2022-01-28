@@ -1,5 +1,6 @@
 package com.example.comics.controller;
 
+import com.example.comics.controller.mailBoundary.FollowAuthorBoundary;
 import com.example.comics.model.Author;
 import com.example.comics.model.UserLogin;
 import com.example.comics.model.dao.ReaderDAO;
@@ -14,6 +15,7 @@ public class FollowAuthorController {
         author.setFirstName(authorBean.getFirstName());
         author.setLastName(authorBean.getLastName());
         author.setProPic(authorBean.getProPic());
+        author.setEmail(authorBean.getEmail());
 
         UserLogin.getInstance().getReader().addFollowedAuthor(author);
         System.out.println("[FOLLOW AUTHOR CONTROLLER] Author followed : "+author.getUsername());
@@ -23,8 +25,9 @@ public class FollowAuthorController {
         readerDAO.saveFollowedAuthor(author);
         System.out.println("[FOLLOW AUTHOR CONTROLLER] Saved author followed : "+author.getUsername());
 
-        //eventuale logica addizionale
-
+        //comunicazione con la boundary dell'autore
+        FollowAuthorBoundary followAuthorBoundary = new FollowAuthorBoundary();
+        followAuthorBoundary.sendEmailForNewFollower(author,UserLogin.getInstance().getReader());
 
     }
 

@@ -46,8 +46,6 @@ public class ReaderHomeControllerG extends HomeControllerG implements AccountObs
     @FXML
     private Button btnToRead;
 
-    @FXML
-    private Button btnTop;
 
     @FXML
     private ImageView homeIcon;
@@ -85,7 +83,6 @@ public class ReaderHomeControllerG extends HomeControllerG implements AccountObs
         btnFollowing.setOnAction(event-> openFollowing());
         btnCategories.setOnAction(event -> openCategories());
         btnSettings.setOnAction(event -> openSettings());
-        btnTop.setOnAction(event -> openTop());
         btnToRead.setOnAction(event -> openToRead());
         btnReading.setOnAction(event -> openReading());
         userBox.setOnMouseClicked(event -> openProfile());
@@ -135,14 +132,6 @@ public class ReaderHomeControllerG extends HomeControllerG implements AccountObs
 
     }
 
-    public void openTop(){
-        FxmlLoader object = new FxmlLoader();
-        Pane view = object.getPage("topcomics");
-        mainPane.setCenter(view);
-
-        resetButtons();
-        btnTop.setStyle(STYLE2);
-    }
 
     @Override
     public void openSettings() {
@@ -177,7 +166,6 @@ public class ReaderHomeControllerG extends HomeControllerG implements AccountObs
         btnFollowing.setStyle(STYLE);
         btnFav.setStyle(STYLE);
         btnReading.setStyle(STYLE);
-        btnTop.setStyle(STYLE);
         btnToRead.setStyle(STYLE);
 
     }

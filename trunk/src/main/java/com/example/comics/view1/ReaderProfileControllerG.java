@@ -22,9 +22,6 @@ public class ReaderProfileControllerG implements AccountObserver {
     private GridPane gpBadges;
 
     @FXML
-    private GridPane gpCharacter;
-
-    @FXML
     private ImageView ivProPic;
 
     @FXML
@@ -49,8 +46,6 @@ public class ReaderProfileControllerG implements AccountObserver {
         AccountSubject.attach(this);
 
         loadBadges();
-        loadFavouriteCharacter();
-
     }
 
     private void openSettings() {
@@ -86,17 +81,7 @@ public class ReaderProfileControllerG implements AccountObserver {
 
     }
 
-    public void loadFavouriteCharacter(){
-        //dummy init
-        FXMLLoader fxmlLoader = new FXMLLoader();
-        fxmlLoader.setLocation(getClass().getResource("favouritecharacteritem.fxml"));
-        try {
-            VBox card = fxmlLoader.load();
-            gpCharacter.add(card, 0, 1);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
+
 
 
     @Override

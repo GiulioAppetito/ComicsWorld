@@ -140,6 +140,7 @@ public class Reader extends Account{
 
     public void markChapter(Series series,String chapterTitle){
         addSeriesToReading(series);
+        removeSeriesFromToRead(series);
         for(Chapter chapter : series.getChapters()){
             if(chapter.getTitle().equals(chapterTitle)){
                 chapter.setRead(true);

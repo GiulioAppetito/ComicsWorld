@@ -1,6 +1,6 @@
 package com.example.comics.controller;
 
-import com.example.comics.controller.mailBoundary.BoundarySendEmail;
+import com.example.comics.controller.mailBoundary.PostReviewAuthorBoundary;
 import com.example.comics.model.fagioli.ChapterBean;
 import com.example.comics.model.fagioli.ReviewBean;
 import com.example.comics.model.*;
@@ -18,24 +18,27 @@ public class PostReviewController{
         author.setProPic(seriesBean.getAuthor().getProPic());
         author.setLastName(seriesBean.getAuthor().getLastName());
         author.setEmail(seriesBean.getAuthor().getEmail());
-        System.out.println("RESCON: ecco l'email dell'autore: " + author.getEmail());
         author.setPublishedSeries(seriesBean.getAuthor().getPublishedSeries());
 
         SeriesDAO seriesDAO = new SeriesDAO();
         Series series = seriesDAO.retreiveSeriesWithAuthor(seriesBean.getTitle(),author);
         series.addReview(chapterBean.getTitle(), reviewBean.getComment(), reviewBean.getRating());
 
-        //controllare obiettivi
-        checkObjectives(series);
+        new Thread(()->{
+            //controllare obiettivi
+            checkObjectives(series);
+        }).start();
 
-
-        //invio mail all'autore di una nuova review
-        BoundarySendEmail boundarySendEmail = new BoundarySendEmail();
-        boundarySendEmail.sendEmailForNewReviewPosted(series.getAuthor());
-
+        new Thread(()->{
+            //invio mail all'autore di una nuova review
+            PostReviewAuthorBoundary postReviewAuthorBoundary = new PostReviewAuthorBoundary();
+            postReviewAuthorBoundary.sendEmailForNewReviewPosted(series.getAuthor());
+        }).start();
     }
 
     private void checkObjectives(Series series) {
+
+
         //numero di review del lettore
         int numOfReviews = series.getNumberOfReviews(UserLogin.getInstance().getReader());
 
@@ -47,20 +50,19 @@ public class PostReviewController{
                     if(objective.achieveObjective(numOfReviews, objective.getBadge())){
 
                         //aggiungo badge alla lista e salvo sul DB + assegno badge
-                        UserLogin.getInstance().getReader().addAchievedBadge(objective.getBadge());
+                        new Thread(()->{
+                            UserLogin.getInstance().getReader().addAchievedBadge(objective.getBadge());
+                        }).start();
 
                         //genero discount code
                         DiscountCode discountCode = new DiscountCode(objective.getDiscount());
                         UserLogin.getInstance().getReader().addDiscountCode(discountCode);
 
-                        //discount code : arriva la mail
-                        //genero discount code
-
-
                         //invio mail al lettore del codice sconto
-                        BoundarySendEmail boundarySendEmail = new BoundarySendEmail();
-                        boundarySendEmail.sendEmailForDiscountCode(UserLogin.getInstance().getReader(), series, discountCode);
-
+                        new Thread(()->{
+                            PostReviewAuthorBoundary postReviewAuthorBoundary = new PostReviewAuthorBoundary();
+                            postReviewAuthorBoundary.sendEmailForDiscountCode(UserLogin.getInstance().getReader(), series, discountCode);
+                        }).start();
 
                     }
                 }

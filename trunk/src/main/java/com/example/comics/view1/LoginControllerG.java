@@ -22,6 +22,7 @@ import javafx.stage.Stage;
 import java.net.URL;
 
 
+
 public class LoginControllerG {
 
     @FXML
@@ -82,6 +83,7 @@ public class LoginControllerG {
         {
             try {
                 login(event);
+
             } catch (Exception e) {
                 e.printStackTrace();
             }

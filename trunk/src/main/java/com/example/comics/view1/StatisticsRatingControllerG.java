@@ -31,11 +31,9 @@ public class StatisticsRatingControllerG {
         XYChart.Series series1 = new XYChart.Series();
         //series1.setName();
 
-        for(SeriesBean series : publishedSeries) {
-            System.out.println(series.getTitle());
-            //int rating = statisticsController.seriesAverageRating(series);
-            System.out.println("StRaCoG averageRating per series: " + series.getAverageRating());
-            series1.getData().add(new XYChart.Data(series.getTitle(), series.getAverageRating()));
+        for(SeriesBean seriesBean : publishedSeries) {
+            Float rating = statisticsController.seriesAverageRating(seriesBean);
+            series1.getData().add(new XYChart.Data(seriesBean.getTitle(), seriesBean.getAverageRating()));
         }
 
         //Setting the XYChart.Series objects to area chart

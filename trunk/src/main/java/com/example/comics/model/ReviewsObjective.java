@@ -38,6 +38,7 @@ public class ReviewsObjective extends Objective{
             badgeBundle.setIcon(badge.getIcon());
             badgeBundle.setName(badge.getName());
             notifyObserversNewBadge(badgeBundle);
+
         }
         return win;
     }
