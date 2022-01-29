@@ -54,19 +54,8 @@ public class FavouritesControllerG {
 
 
     public void openSerie(SeriesBean seriesBean) throws IOException {
-
-        SeriesControllerG serieController = new SeriesControllerG();
-        FXMLLoader loader = new FXMLLoader();
-
-        URL fxmlLocation = FavouritesControllerG.class.getResource("serie.fxml");
-        loader.setLocation(fxmlLocation);
-        loader.setController(serieController);
-
         ReaderHomeControllerG readerHomeControllerG = ReaderHomeControllerG.getInstance();
-        readerHomeControllerG.changeCenter(loader.load());
-
-        serieController.setData(seriesBean);
-
+        readerHomeControllerG.openSeries(seriesBean);
     }
 
 }

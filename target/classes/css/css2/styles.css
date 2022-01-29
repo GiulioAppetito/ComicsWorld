@@ -22,8 +22,6 @@
     -fx-background-radius :  30;
 }
 
-
-
 .wallpaper{
     -fx-background-image: url('fakebg3.jpg');
     -fx-background-size: 400

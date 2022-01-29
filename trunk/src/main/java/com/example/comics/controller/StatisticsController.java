@@ -23,6 +23,9 @@ public class StatisticsController {
             }
         }
 
+        if(numReviews == 0f){
+            return 0f;
+        }
         return ratingSum / numReviews;
     }
 }

@@ -2,7 +2,6 @@ package com.example.comics.view1;
 
 import com.example.comics.controller.FollowAuthorController;
 import com.example.comics.controller.ResearchController;
-import com.example.comics.model.Series;
 import com.example.comics.model.UserLogin;
 import com.example.comics.model.fagioli.AuthorBean;
 import com.example.comics.model.fagioli.SeriesBean;
@@ -75,7 +74,9 @@ public class AuthorFromOutsideControllerG {
     }
 
     private void openSerie(SeriesBean seriesBean) {
-
+        HomeFactory homeFactory = new HomeFactory();
+        HomeControllerG homeControllerG = homeFactory.getHomeControllerG();
+        homeControllerG.openSeries(seriesBean);
     }
 
     private void setBtnToUnfollow(AuthorBean authorBean){

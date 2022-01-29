@@ -1,5 +1,6 @@
 package com.example.comics.view1;
 
+import com.example.comics.model.fagioli.SeriesBean;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.layout.Pane;
 import tools.FxmlLoader;
@@ -58,4 +59,22 @@ public abstract class HomeControllerG {
         resetButtons();
     }
 
+    public void openSeries(SeriesBean seriesBean){
+        SeriesControllerG serieControllerG = new SeriesControllerG();
+        HomeFactory homeFactory = new HomeFactory();
+
+        URL fxmlLocation = SeriesControllerG.class.getResource("serie.fxml");
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(fxmlLocation);
+        loader.setController(serieControllerG);
+
+        HomeControllerG homeControllerG = homeFactory.getHomeControllerG();
+        try {
+            homeControllerG.changeCenter(loader.load());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        serieControllerG.setData(seriesBean);
+    }
 }

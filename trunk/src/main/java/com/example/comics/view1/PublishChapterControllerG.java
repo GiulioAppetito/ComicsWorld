@@ -44,7 +44,7 @@ public class PublishChapterControllerG {
     @FXML
     private Button btnPublishChapter;
 
-    String imageCoverPath;
+    private String imageCoverPath;
 
     public void initialize(){
         btnPublishChapter.setOnAction(event -> publishChapter());

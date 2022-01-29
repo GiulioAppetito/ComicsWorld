@@ -75,20 +75,9 @@ public class FeedControllerG{
     }
 
     public void openSerie(SeriesBean seriesBean) throws IOException {
-
-        SeriesControllerG serieControllerG = new SeriesControllerG();
-        FXMLLoader loader = new FXMLLoader();
-
-        URL fxmlLocation = SeriesControllerG.class.getResource("serie.fxml");
-        loader.setLocation(fxmlLocation);
-        loader.setController(serieControllerG);
-
         HomeFactory homeFactory = new HomeFactory();
         HomeControllerG homeControllerG = homeFactory.getHomeControllerG();
-        homeControllerG.changeCenter(loader.load());
-
-        serieControllerG.setData(seriesBean);
-
+        homeControllerG.openSeries(seriesBean);
     }
 
 }

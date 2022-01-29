@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.PieChart?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.TextField?>
@@ -64,46 +66,39 @@
                         <Insets />
                      </VBox.margin>
                      <children>
-                        <VBox fx:id="vBoxSerie" prefHeight="200.0" prefWidth="100.0" styleClass="white-background">
+                        <VBox fx:id="vBoxMySeries" prefHeight="200.0" prefWidth="100.0" styleClass="white-background">
                            <children>
-                              <HBox alignment="CENTER" prefHeight="93.0" prefWidth="286.0">
+                              <HBox alignment="CENTER" prefHeight="39.0" prefWidth="286.0">
                                  <children>
-                                    <Label fx:id="title" prefHeight="43.0" prefWidth="31.0" text="Title">
-                                       <font>
-                                          <Font name="System Bold" size="14.0" />
-                                       </font>
-                                    </Label>
+                                    <Label prefHeight="18.0" prefWidth="55.0" text="My Series" />
                                  </children>
+                                 <VBox.margin>
+                                    <Insets bottom="10.0" top="10.0" />
+                                 </VBox.margin>
                               </HBox>
-                              <VBox prefHeight="434.0" prefWidth="271.0" spacing="5.0">
+                              <VBox>
                                  <children>
-                                    <HBox alignment="CENTER">
+                                    <HBox alignment="CENTER" prefHeight="47.0" prefWidth="286.0">
                                        <children>
-                                          <ImageView fx:id="cover" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
-                                             <image>
-                                                <Image url="@../../../../img/img2/copertina_ad.jpg" />
-                                             </image>
-                                          </ImageView>
-                                          <VBox prefHeight="137.0" prefWidth="126.0">
-                                             <children>
-                                                <HBox alignment="CENTER" prefHeight="39.0" prefWidth="102.0">
-                                                   <children>
-                                                      <Button alignment="CENTER" mnemonicParsing="false" prefHeight="46.0" prefWidth="94.0" styleClass="transparent">
-                                                         <graphic>
-                                                            <ImageView fitHeight="38.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
-                                                               <image>
-                                                                  <Image url="@../../../../img/img2/icons8-heart-64.png" />
-                                                               </image>
-                                                            </ImageView>
-                                                         </graphic>
-                                                      </Button>
-                                                   </children>
-                                                </HBox>
-                                             </children>
-                                          </VBox>
+                                          <Button fx:id="btnAddNewSeries" mnemonicParsing="false" prefHeight="42.0" prefWidth="158.0" styleClass="menu-button" text="Add New Series" textFill="WHITE">
+                                             <graphic>
+                                                <ImageView fitHeight="32.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@../../../../img/img2/icons8-add-50.png" />
+                                                   </image>
+                                                </ImageView>
+                                             </graphic>
+                                          </Button>
                                        </children>
+                                       <VBox.margin>
+                                          <Insets bottom="10.0" />
+                                       </VBox.margin>
                                     </HBox>
-                                    <Label prefHeight="65.0" prefWidth="290.0" text="DESCRITION" />
+                                    <ScrollPane hbarPolicy="NEVER" prefHeight="409.0" prefWidth="286.0">
+                                       <content>
+                                          <VBox fx:id="vBoxMySeriesSeries" prefHeight="434.0" prefWidth="271.0" spacing="5.0" />
+                                       </content>
+                                    </ScrollPane>
                                  </children>
                               </VBox>
                            </children>
@@ -239,6 +234,291 @@
                            <StackPane.margin>
                               <Insets bottom="5.0" />
                            </StackPane.margin>
+                        </VBox>
+                        <VBox fx:id="vBoxFollowing" prefHeight="200.0" prefWidth="100.0" styleClass="white-background">
+                           <children>
+                              <HBox alignment="CENTER">
+                                 <children>
+                                    <Label prefHeight="34.0" prefWidth="52.0" text="Following" />
+                                 </children>
+                              </HBox>
+                              <ScrollPane hbarPolicy="NEVER" prefHeight="409.0" prefWidth="286.0">
+                                 <content>
+                                    <VBox fx:id="vBoxFollowingAuthors" prefHeight="434.0" prefWidth="271.0" spacing="5.0" />
+                                 </content>
+                              </ScrollPane>
+                           </children>
+                           <padding>
+                              <Insets bottom="5.0" />
+                           </padding>
+                        </VBox>
+                        <VBox fx:id="vBoxStats" prefHeight="200.0" prefWidth="100.0" styleClass="white-background">
+                           <children>
+                              <HBox alignment="CENTER">
+                                 <children>
+                                    <Label prefHeight="37.0" prefWidth="51.0" text="Statistics" />
+                                 </children>
+                              </HBox>
+                              <VBox prefHeight="406.0" prefWidth="286.0" spacing="5.0">
+                                 <children>
+                                    <PieChart fx:id="ratingChart" prefHeight="406.0" prefWidth="286.0" />
+                                    <HBox alignment="CENTER">
+                                       <VBox.margin>
+                                          <Insets top="-60.0" />
+                                       </VBox.margin>
+                                       <children>
+                                          <ChoiceBox fx:id="seriesPicker" prefWidth="150.0" />
+                                       </children>
+                                    </HBox>
+                                 </children>
+                              </VBox>
+                           </children>
+                           <padding>
+                              <Insets bottom="5.0" />
+                           </padding>
+                        </VBox>
+                        <VBox fx:id="vBoxSettings" prefHeight="200.0" prefWidth="100.0" styleClass="white-background">
+                           <children>
+                              <HBox alignment="CENTER" prefHeight="51.0" prefWidth="286.0">
+                                 <children>
+                                    <Label prefHeight="34.0" prefWidth="46.0" text="Settings" />
+                                 </children>
+                              </HBox>
+                              <VBox prefHeight="414.0" prefWidth="286.0" spacing="5.0">
+                                 <children>
+                                    <HBox prefHeight="29.0" prefWidth="286.0">
+                                       <children>
+                                          <Label prefHeight="37.0" prefWidth="122.0" text="First Name:">
+                                             <font>
+                                                <Font name="System Bold" size="12.0" />
+                                             </font>
+                                          </Label>
+                                          <Label prefHeight="30.0" prefWidth="168.0" text="first name" />
+                                          <ImageView fitHeight="29.0" fitWidth="33.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../../../../img/img2/icons8-pencil-drawing-24.png" />
+                                             </image>
+                                          </ImageView>
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets left="10.0" right="10.0" />
+                                       </VBox.margin>
+                                    </HBox>
+                                    <HBox prefHeight="29.0" prefWidth="286.0">
+                                       <children>
+                                          <Label prefHeight="37.0" prefWidth="122.0" text="Last Name:">
+                                             <font>
+                                                <Font name="System Bold" size="12.0" />
+                                             </font>
+                                          </Label>
+                                          <Label prefHeight="30.0" prefWidth="168.0" text="last name" />
+                                          <ImageView fitHeight="29.0" fitWidth="33.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../../../../img/img2/icons8-pencil-drawing-24.png" />
+                                             </image>
+                                          </ImageView>
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets left="10.0" right="10.0" />
+                                       </VBox.margin>
+                                    </HBox>
+                                    <HBox prefHeight="29.0" prefWidth="286.0">
+                                       <children>
+                                          <Label prefHeight="37.0" prefWidth="122.0" text="Username:">
+                                             <font>
+                                                <Font name="System Bold" size="12.0" />
+                                             </font>
+                                          </Label>
+                                          <Label prefHeight="30.0" prefWidth="166.0" text="username" />
+                                          <ImageView fitHeight="29.0" fitWidth="33.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../../../../img/img2/icons8-pencil-drawing-24.png" />
+                                             </image>
+                                          </ImageView>
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets left="10.0" right="10.0" />
+                                       </VBox.margin>
+                                    </HBox>
+                                    <HBox prefHeight="29.0" prefWidth="286.0">
+                                       <children>
+                                          <Label prefHeight="37.0" prefWidth="122.0" text="Birthday:">
+                                             <font>
+                                                <Font name="System Bold" size="12.0" />
+                                             </font>
+                                          </Label>
+                                          <Label prefHeight="30.0" prefWidth="170.0" text="mm-dd-yyyy" />
+                                          <ImageView fitHeight="29.0" fitWidth="33.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../../../../img/img2/icons8-pencil-drawing-24.png" />
+                                             </image>
+                                          </ImageView>
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets left="10.0" right="10.0" />
+                                       </VBox.margin>
+                                    </HBox>
+                                    <HBox prefHeight="29.0" prefWidth="286.0">
+                                       <children>
+                                          <Label prefHeight="37.0" prefWidth="122.0" text="Email:">
+                                             <font>
+                                                <Font name="System Bold" size="12.0" />
+                                             </font>
+                                          </Label>
+                                          <Label prefHeight="30.0" prefWidth="170.0" text="email" />
+                                          <ImageView fitHeight="29.0" fitWidth="33.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../../../../img/img2/icons8-pencil-drawing-24.png" />
+                                             </image>
+                                          </ImageView>
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets left="10.0" right="10.0" />
+                                       </VBox.margin>
+                                    </HBox>
+                                    <HBox prefHeight="29.0" prefWidth="286.0">
+                                       <children>
+                                          <Label prefHeight="37.0" prefWidth="122.0" text="Password:">
+                                             <font>
+                                                <Font name="System Bold" size="12.0" />
+                                             </font>
+                                          </Label>
+                                          <Label prefHeight="30.0" prefWidth="176.0" text="password" />
+                                          <ImageView fitHeight="29.0" fitWidth="33.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../../../../img/img2/icons8-pencil-drawing-24.png" />
+                                             </image>
+                                          </ImageView>
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets left="10.0" right="10.0" />
+                                       </VBox.margin>
+                                    </HBox>
+                                 </children>
+                              </VBox>
+                           </children>
+                           <padding>
+                              <Insets bottom="5.0" />
+                           </padding>
+                        </VBox>
+                        <VBox fx:id="vBoxSerie" prefHeight="200.0" prefWidth="100.0" styleClass="white-background">
+                           <children>
+                              <HBox alignment="CENTER" prefHeight="93.0" prefWidth="286.0">
+                                 <children>
+                                    <Label fx:id="title" prefHeight="43.0" prefWidth="110.0" text="Title">
+                                       <font>
+                                          <Font name="System Bold" size="14.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </HBox>
+                              <VBox prefHeight="434.0" prefWidth="271.0" spacing="5.0">
+                                 <children>
+                                    <HBox alignment="CENTER">
+                                       <children>
+                                          <ImageView fx:id="cover" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../../../../img/img2/copertina_ad.jpg" />
+                                             </image>
+                                          </ImageView>
+                                          <VBox prefHeight="137.0" prefWidth="126.0">
+                                             <children>
+                                                <HBox alignment="CENTER" prefHeight="39.0" prefWidth="102.0">
+                                                   <children>
+                                                      <Button fx:id="btnLikeSerie" alignment="TOP_LEFT" mnemonicParsing="false" prefHeight="46.0" prefWidth="94.0" styleClass="transparent" text="Like">
+                                                         <graphic>
+                                                            <ImageView fitHeight="38.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
+                                                               <image>
+                                                                  <Image url="@../../../../img/img2/icons8-heart-64.png" />
+                                                               </image>
+                                                            </ImageView>
+                                                         </graphic>
+                                                      </Button>
+                                                   </children>
+                                                </HBox>
+                                                <HBox alignment="CENTER" prefHeight="39.0" prefWidth="102.0">
+                                                   <children>
+                                                      <Button fx:id="btnReadingSerie" alignment="CENTER" mnemonicParsing="false" prefHeight="46.0" prefWidth="94.0" styleClass="transparent" text="Reading">
+                                                         <graphic>
+                                                            <ImageView fitHeight="38.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
+                                                               <image>
+                                                                  <Image url="@../../../../img/img2/icons8-book-reading-48.png" />
+                                                               </image>
+                                                            </ImageView>
+                                                         </graphic>
+                                                      </Button>
+                                                   </children>
+                                                </HBox>
+                                                <HBox alignment="CENTER" prefHeight="39.0" prefWidth="102.0">
+                                                   <children>
+                                                      <Button fx:id="btnToReadSerie" alignment="TOP_LEFT" mnemonicParsing="false" prefHeight="46.0" prefWidth="94.0" styleClass="transparent" text="To read">
+                                                         <graphic>
+                                                            <ImageView fitHeight="38.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
+                                                               <image>
+                                                                  <Image url="@../../../../img/img2/icons8-address-book-48.png" />
+                                                               </image>
+                                                            </ImageView>
+                                                         </graphic>
+                                                      </Button>
+                                                   </children>
+                                                </HBox>
+                                                <HBox alignment="CENTER" prefHeight="34.0" prefWidth="126.0">
+                                                   <children>
+                                                      <Button fx:id="author" alignment="TOP_LEFT" mnemonicParsing="false" prefHeight="29.0" prefWidth="94.0" styleClass="transparent" text="Author">
+                                                         <graphic>
+                                                            <ImageView fitHeight="31.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
+                                                               <image>
+                                                                  <Image url="@../../../../img/img2/icons8-body-type-overweight-50.png" />
+                                                               </image>
+                                                            </ImageView>
+                                                         </graphic>
+                                                      </Button>
+                                                   </children>
+                                                   <VBox.margin>
+                                                      <Insets />
+                                                   </VBox.margin>
+                                                </HBox>
+                                             </children>
+                                          </VBox>
+                                       </children>
+                                    </HBox>
+                                    <VBox prefHeight="237.0" prefWidth="286.0">
+                                       <children>
+                                          <Label prefHeight="12.0" prefWidth="286.0" text="Chapters">
+                                             <VBox.margin>
+                                                <Insets left="10.0" top="10.0" />
+                                             </VBox.margin>
+                                          </Label>
+                                          <HBox prefHeight="210.0" prefWidth="286.0">
+                                             <children>
+                                                <ScrollPane hbarPolicy="NEVER" prefHeight="229.0" prefWidth="286.0" vbarPolicy="ALWAYS">
+                                                   <content>
+                                                      <Pane>
+                                                         <children>
+                                                            <VBox fx:id="vBoxChapters" prefHeight="226.0" prefWidth="270.0" spacing="5.0">
+                                                               <padding>
+                                                                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                               </padding>
+                                                            </VBox>
+                                                            <VBox fx:id="boxNoChapters" prefHeight="210.0" prefWidth="266.0">
+                                                               <children>
+                                                                  <Label alignment="CENTER" prefHeight="210.0" prefWidth="268.0" text="No chapters yet" />
+                                                               </children>
+                                                            </VBox>
+                                                         </children>
+                                                      </Pane>
+                                                   </content>
+                                                </ScrollPane>
+                                             </children>
+                                          </HBox>
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </VBox>
+                           </children>
+                           <padding>
+                              <Insets bottom="5.0" />
+                           </padding>
                         </VBox>
                         <Pane fx:id="paneMenu" prefHeight="440.0" prefWidth="206.0" styleClass="menu-background">
                            <StackPane.margin>

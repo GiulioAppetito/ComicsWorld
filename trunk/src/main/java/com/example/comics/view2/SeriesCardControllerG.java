@@ -1,5 +1,6 @@
 package com.example.comics.view2;
 
+import com.example.comics.controller.StatisticsController;
 import com.example.comics.model.fagioli.SeriesBean;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
@@ -20,8 +21,8 @@ public class SeriesCardControllerG {
     public void setData(SeriesBean seriesBean){
         comicName.setText(seriesBean.getTitle());
         comicCover.setImage(seriesBean.getCover());
-        System.out.println("SeriesCardControllerG: ecco il rating delle serie: " + seriesBean.getAverageRating() + "percentuale" + seriesBean.getAverageRating()/100);
-        ratingBar.setProgress(seriesBean.getAverageRating());
+        StatisticsController statisticsController = new StatisticsController();
+        ratingBar.setProgress(statisticsController.seriesAverageRating(seriesBean));
     }
 
 }
