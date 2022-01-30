@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox alignment="CENTER" prefHeight="179.0" prefWidth="138.0" stylesheets="@../../../../css/css1/fullpackstyling.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.comics.view2.AuthorCardControllerG">
+   <styleClass>
+      <String fx:value="white-background" />
+      <String fx:value="oval-layout" />
+      <String fx:value="button2" />
+   </styleClass>
+   <children>
+      <VBox>
+         <children>
+            <Label fx:id="authorName" alignment="CENTER" prefHeight="29.0" prefWidth="276.0" text="Author">
+               <font>
+                  <Font name="Berlin Sans FB" size="14.0" />
+               </font>
+            </Label>
+            <HBox alignment="CENTER">
+               <children>
+                  <ImageView fx:id="authorProPic" fitHeight="123.0" fitWidth="101.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../img/img1/flat-business-man-user-profile-avatar-icon-vector-4333097.jpg" />
+                     </image>
+                  </ImageView>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</VBox>
