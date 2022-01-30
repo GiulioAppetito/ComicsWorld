@@ -94,10 +94,14 @@ public class Reader extends Account{
     }
 
     public void removeSeriesFromFavourites(Series series) {
-        for (int i = this.toRead.size() - 1; i >= 0; i--) {
+        for (int i = this.favourites.size() - 1; i >= 0; i--) {
             if(favourites.get(i).getTitle().equals(series.getTitle())){
                 this.favourites.remove(i);
             }
+        }
+
+        for (int i = this.favourites.size() - 1; i >= 0; i--) {
+            System.out.println(favourites.get(i).getTitle());
         }
     }
 

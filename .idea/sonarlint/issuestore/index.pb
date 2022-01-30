@@ -11,8 +11,6 @@ Gtrunk/src/main/java/com/example/comics/view2/AuthorCardControllerG.java,5\8\58
 Ntrunk/src/main/java/com/example/comics/view1/AuthorFromOutsideControllerG.java,2\4\24fd798da996c23705c0bf981cc9d7ebd245574d
 x
 Htrunk/src/main/java/com/example/comics/view2/ChapterCardControllerG.java,d\c\dc9731744785a3f758fa8988154bdffd9cb8c788
-w
-Gtrunk/src/main/java/com/example/comics/view1/FavouritesControllerG.java,7\9\795114fd6bd048af9c0d63656a226aa152a5de1c
 q
 Atrunk/src/main/java/com/example/comics/view1/FeedControllerG.java,3\0\30f770410a71ec3e410810c53c6e2891d29a24c5
 q

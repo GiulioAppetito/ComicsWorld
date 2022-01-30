@@ -1,10 +1,11 @@
 package com.example.comics.model;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Author extends Account{
 
-    private List<Series> publishedSeries;
+    private List<Series> publishedSeries = new ArrayList<>();
     private List<Badge> badges;
     private List<Character> characters;
 

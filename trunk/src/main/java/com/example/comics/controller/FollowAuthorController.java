@@ -41,14 +41,12 @@ public class FollowAuthorController {
     }
 
     public void unfollowAuthor(AuthorBean authorBean) {
+        System.out.println("removing author from followed");
         Author author = new Author();
         author.setUsername(authorBean.getUsername());
         UserLogin.getInstance().getReader().unfollowAuthor(author);
 
         ReaderDAO readerDAO = new ReaderDAO();
         readerDAO.removeFollowedAuthor(UserLogin.getInstance().getReader(), author);
-
-
-
     }
 }
