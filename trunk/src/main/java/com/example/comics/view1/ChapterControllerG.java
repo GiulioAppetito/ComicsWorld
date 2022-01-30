@@ -484,7 +484,7 @@ public class ChapterControllerG implements ChapterObserver, ObjectiveObserver {
 
     private void buyComics(ChapterBean chapterBean,SeriesBean seriesBean) {
         BuyComicController buyComicController = new BuyComicController();
-        buyComicController.init(chapterBean,seriesBean);
+        buyComicController.buyComic(chapterBean,seriesBean);
     }
 
     private void removeChapterFromRead(SeriesBean seriesBean, ChapterBean chapterBean) {

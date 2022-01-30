@@ -1,6 +1,6 @@
 package com.example.comics.controller;
 
-import com.example.comics.controller.mailBoundary.FollowAuthorBoundary;
+import com.example.comics.controller.boundaries.FollowAuthorBoundary;
 import com.example.comics.model.Author;
 import com.example.comics.model.UserLogin;
 import com.example.comics.model.dao.ReaderDAO;

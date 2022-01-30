@@ -1,0 +1,121 @@
+.buttonBuy
+{
+    -fx-background-color : #FF9900;
+    -fx-background-radius :  45 45 45 45;
+}
+.buttonBuy:hover
+{
+    -fx-background-color : #ff8800;
+    -fx-background-radius :  45 45 45 45;
+}
+.buttonBuy:pressed
+{
+    -fx-background-color : #ff7700 ;
+    -fx-background-radius :  45 45 45 45;
+}
+
+.button2
+{
+    -fx-background-color : #E2E2E2;
+    -fx-background-radius :  20;
+}
+.button2:hover
+{
+    -fx-background-color : #D2D2D2 ;
+    -fx-background-radius :  20;
+}
+.button2:pressed
+{
+    -fx-background-color : #C2C2C2 ;
+    -fx-background-radius :  20;
+}
+.button2:focused
+{
+    -fx-background-color :#5DADE2 ;
+    -fx-background-radius :  20;
+}
+
+.button2
+{
+    -fx-background-color : #E2E2E2;
+    -fx-background-radius :  20;
+}
+.button2:hover
+{
+    -fx-background-color : #D2D2D2 ;
+    -fx-background-radius :  20;
+}
+.button2:pressed
+{
+    -fx-background-color : #5DADE2 ;
+    -fx-background-radius :  20;
+}
+.button2:focused
+{
+    -fx-background-color :#5DADE2 ;
+    -fx-background-radius :  20;
+
+}
+
+.lateral
+{
+    -fx-background-color: white;
+
+}
+.lateral:hover
+{
+    -fx-background-color : #D2D2D2 ;
+    -fx-background-radius :  20;
+}
+.lateral:pressed
+{
+    -fx-background-color : #C2C2C2 ;
+    -fx-background-radius :  20;
+}
+.lateral:focused
+{
+    -fx-background-color :#5DADE2 ;
+    -fx-background-radius :  25;
+
+}
+
+.linear-grad
+{
+    -fx-background-color: linear-gradient(to bottom left, #A868A0, #2D75E8);
+    -fx-background-radius: 25;
+}
+
+.white-background{
+    -fx-background-color: #fff;
+}
+
+
+.highlighted-background{
+    -fx-background-color: #ACACE6;
+}
+
+
+.default-background{
+    -fx-background-color: #D7D7D7;
+}
+
+.transparent{
+    -fx-background-color: rgba(0,0,0,0);
+}
+
+.round-layout{
+    -fx-border-radius:50;
+    -fx-border-color:#D7D7D7;
+}
+
+.oval-layout{
+    -fx-border-radius:25;
+    -fx-border-color:#D7D7D7;
+}
+
+.round-corners{
+    -fx-border-radius: 200;
+}
+.glass{
+    -fx-effect: dropshadow(one-pass-box, #eaeaea,10,10,5,5);
+}

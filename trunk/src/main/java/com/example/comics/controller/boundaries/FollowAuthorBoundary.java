@@ -1,17 +1,13 @@
-package com.example.comics.controller.mailBoundary;
+package com.example.comics.controller.boundaries;
 
 import com.example.comics.model.Author;
-import com.example.comics.model.DiscountCode;
 import com.example.comics.model.Reader;
-import com.example.comics.model.Series;
-
-import java.util.*;
 import javax.mail.*;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
+import java.util.Properties;
 
-public class PostReviewAuthorBoundary {
-
+public class FollowAuthorBoundary {
     private static final String FROM = "comicsworldISPW@gmail.com";
     private static final String HOST  = "smtp.gmail.com";
     private static final String PASSWORD = "bhccvubcmpzggdbn";
@@ -44,7 +40,7 @@ public class PostReviewAuthorBoundary {
 
     }
 
-    public void sendEmailForNewReviewPosted(Author author) {
+    public void sendEmailForNewFollower(Author author,Reader reader) {
 
         // Recipient's email ID needs to be mentioned.
         String to = author.getEmail();
@@ -59,15 +55,14 @@ public class PostReviewAuthorBoundary {
             // Set From: header field of the header.
             message.setFrom(new InternetAddress(FROM));
 
-
             // Set To: header field of the header.
             message.addRecipient(javax.mail.Message.RecipientType.TO, new InternetAddress(to));
 
             // Set Subject: header field
-            message.setSubject("New review just posted!");
+            message.setSubject("New follower!");
 
             // Now set the actual message
-            message.setText("Hello from ComicsWorld! Your series just received a new review ;)");
+            message.setText("Hello from ComicsWorld! User "+reader.getUsername()+" is now following you.");
 
             // Send message
             Transport.send(message);
@@ -77,38 +72,4 @@ public class PostReviewAuthorBoundary {
         }
     }
 
-    public void sendEmailForDiscountCode(Reader reader, Series series, DiscountCode discountCode) {
-
-        // Recipient's email ID needs to be mentioned.
-        String to = reader.getEmail();
-        // Get the default Session object.
-        Session session = inizializeProperties();
-
-        try {
-            // Create a default MimeMessage object.
-            MimeMessage message = new MimeMessage(session);
-
-            // Set From: header field of the header.
-            message.setFrom(new InternetAddress(FROM));
-
-
-            // Set To: header field of the header.
-            message.addRecipient(javax.mail.Message.RecipientType.TO, new InternetAddress(to));
-
-            // Set Subject: header field
-            message.setSubject("New discount code just received!");
-
-            // Now set the actual message
-            message.setText("Hello from ComicsWorld! Your review just allowed you to receive a new badge! Check it out on your profile" +
-                    "Use the following code" + discountCode.getCode() + " to purchase from " + series.getTitle() + ", with a " + discountCode.getDiscount().getPercentage() +
-                            "% off (up to " + discountCode.getDiscount().getLimitDays() + " days)");
-
-            // Send message
-            Transport.send(message);
-            System.out.println("Sent discount code email succesfully to "+to);
-
-        } catch (MessagingException mex) {
-            mex.printStackTrace();
-        }
-    }
 }

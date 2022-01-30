@@ -91,7 +91,7 @@
                                              <children>
                                                 <HBox alignment="CENTER" prefHeight="39.0" prefWidth="102.0">
                                                    <children>
-                                                      <Button fx:id="btnFollow" alignment="TOP_LEFT" mnemonicParsing="false" prefHeight="39.0" prefWidth="84.0" styleClass="transparent" text="Follow">
+                                                      <Button fx:id="btnFollow" alignment="TOP_LEFT" mnemonicParsing="false" prefHeight="39.0" prefWidth="98.0" styleClass="transparent" text="Follow">
                                                          <graphic>
                                                             <ImageView fitHeight="38.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
                                                                <image>

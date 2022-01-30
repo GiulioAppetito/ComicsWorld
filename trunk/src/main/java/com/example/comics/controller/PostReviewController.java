@@ -1,6 +1,6 @@
 package com.example.comics.controller;
 
-import com.example.comics.controller.mailBoundary.PostReviewAuthorBoundary;
+import com.example.comics.controller.boundaries.PostReviewBoundary;
 import com.example.comics.model.fagioli.ChapterBean;
 import com.example.comics.model.fagioli.ReviewBean;
 import com.example.comics.model.*;
@@ -31,7 +31,7 @@ public class PostReviewController{
 
         new Thread(()->{
             //invio mail all'autore di una nuova review
-            PostReviewAuthorBoundary postReviewAuthorBoundary = new PostReviewAuthorBoundary();
+            PostReviewBoundary postReviewAuthorBoundary = new PostReviewBoundary();
             postReviewAuthorBoundary.sendEmailForNewReviewPosted(series.getAuthor());
         }).start();
     }
@@ -55,12 +55,15 @@ public class PostReviewController{
                         }).start();
 
                         //genero discount code
+                        //NO!!!
+                        //chiedo ad amazon di generarne uno
+                        //o magari ne assegno uno che amazon mi ha assegnato
                         DiscountCode discountCode = new DiscountCode(objective.getDiscount());
                         UserLogin.getInstance().getReader().addDiscountCode(discountCode);
 
                         //invio mail al lettore del codice sconto
                         new Thread(()->{
-                            PostReviewAuthorBoundary postReviewAuthorBoundary = new PostReviewAuthorBoundary();
+                            PostReviewBoundary postReviewAuthorBoundary = new PostReviewBoundary();
                             postReviewAuthorBoundary.sendEmailForDiscountCode(UserLogin.getInstance().getReader(), series, discountCode);
                         }).start();
 
