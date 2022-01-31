@@ -99,6 +99,7 @@ public class FakeAmazonControllerG {
         if(discountCode==""){
             //dummy buy
         }
+
         boolean isCodeValid = fakeAmazon.isDiscountCodeValid(discountCode);
 
         if (isCodeValid) {

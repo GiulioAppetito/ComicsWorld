@@ -25,15 +25,13 @@ public class PostReviewController{
         series.addReview(chapterBean.getTitle(), reviewBean.getComment(), reviewBean.getRating());
 
         new Thread(()->{
-            //controllare obiettivi
-            checkObjectives(series);
-        }).start();
-
-        new Thread(()->{
             //invio mail all'autore di una nuova review
             PostReviewBoundary postReviewAuthorBoundary = new PostReviewBoundary();
             postReviewAuthorBoundary.sendEmailForNewReviewPosted(series.getAuthor());
         }).start();
+
+        //controllare obiettivi
+        checkObjectives(series);
     }
 
     private void checkObjectives(Series series) {
@@ -50,9 +48,7 @@ public class PostReviewController{
                     if(objective.achieveObjective(numOfReviews, objective.getBadge())){
 
                         //aggiungo badge alla lista e salvo sul DB + assegno badge
-                        new Thread(()->{
-                            UserLogin.getInstance().getReader().addAchievedBadge(objective.getBadge());
-                        }).start();
+                        new Thread(()-> UserLogin.getInstance().getReader().addAchievedBadge(objective.getBadge())).start();
 
                         //genero discount code
                         //NO!!!

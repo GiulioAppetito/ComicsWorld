@@ -11,15 +11,6 @@ public class BuyComicController {
         BuyComicBoundary buyComicBoundary = new BuyComicBoundary();
         buyComicBoundary.buyThisComic(chapterBean,seriesBean);
 
-        //contattare la boundary che poi contatterà amazon e gli chiederà di elaborare parte del caso d'uso
-        //attendere (O RICEVERE) risposta
-        // che eventualmente la boundary dovrà elaborare dinuovo in una risposta
-        //e poi il controller applicativo farà cose
-        //tipo invio mail con successo per l'acquisto
-        //tipo controllo se si è vinto qualche badge
-        //(anche se abbiamo detto no perché somiglia troppo a postReview poi)
-        //ed infine rispondere sulla piattaforma stessa magari esce il pop up sulla view
-        //quindi serve una risposta o un observer che notifichi
     }
 
     //ma serve davvero che facciamo amazon?
