@@ -12,7 +12,7 @@
         <compilerSettings />
         <compilerArguments>
           <option name="languageVersion" value="1.6" />
-          <option name="apiVersion" value="1.6" />
+          <option name="apiVersion" value="1.5" />
           <option name="pluginOptions">
             <array />
           </option>
@@ -51,6 +51,9 @@
     <orderEntry type="library" name="activation" level="project" />
     <orderEntry type="library" name="mail" level="project" />
     <orderEntry type="library" name="tornadofx-1.7.20" level="project" />
+    <orderEntry type="library" name="tornadofx-1.7.201" level="project" />
+    <orderEntry type="library" name="tornadofx-controlsfx-0.1.1" level="project" />
+    <orderEntry type="library" name="tornadofx-controlsfx-0.1.11" level="project" />
     <orderEntry type="library" name="Maven: org.openjfx:javafx-controls:17.0.0.1" level="project" />
     <orderEntry type="library" name="Maven: org.openjfx:javafx-controls:win:17.0.0.1" level="project" />
     <orderEntry type="library" name="Maven: org.openjfx:javafx-graphics:17.0.0.1" level="project" />
@@ -87,8 +90,5 @@
     <orderEntry type="library" name="Maven: org.jetbrains.kotlin:kotlin-stdlib-jre8:1.1.2" level="project" />
     <orderEntry type="library" name="Maven: org.jetbrains.kotlin:kotlin-stdlib-jre7:1.1.2" level="project" />
     <orderEntry type="library" name="Maven: org.jetbrains.kotlin:kotlin-reflect:1.1.2" level="project" />
-    <orderEntry type="library" name="tornadofx-1.7.201" level="project" />
-    <orderEntry type="library" name="tornadofx-controlsfx-0.1.1" level="project" />
-    <orderEntry type="library" name="tornadofx-controlsfx-0.1.11" level="project" />
   </component>
 </module>
