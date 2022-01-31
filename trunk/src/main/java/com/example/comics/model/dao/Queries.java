@@ -95,7 +95,7 @@ public class Queries {
     }
 
     public static int saveReview(Statement stmt, Review review, Chapter chapter, Series series) throws SQLException {
-        String insertStatement = String.format("INSERT INTO review (user, comment, series_title, chapter_title, rating) VALUES ('%s','%s','%s','%s','%s')", review.getReader().getUsername(), review.getComment(), series.getTitle(), chapter.getTitle(), review.getRating());
+        String insertStatement = String.format("INSERT INTO review (user, comment, series_title, chapter_title, rating) VALUES ('%s','%s','%s','%s','%s')", review.getAccount().getUsername(), review.getComment(), series.getTitle(), chapter.getTitle(), review.getRating());
         System.out.println(insertStatement);
         stmt.executeUpdate(insertStatement);
         return 0;

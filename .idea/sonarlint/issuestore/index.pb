@@ -12,8 +12,6 @@ Ntrunk/src/main/java/com/example/comics/view1/AuthorFromOutsideControllerG.java
 x
 Htrunk/src/main/java/com/example/comics/view2/ChapterCardControllerG.java,d\c\dc9731744785a3f758fa8988154bdffd9cb8c788
 q
-Atrunk/src/main/java/com/example/comics/view1/FeedControllerG.java,3\0\30f770410a71ec3e410810c53c6e2891d29a24c5
-q
 Atrunk/src/main/java/com/example/comics/view1/HomeControllerG.java,6\5\65170d991c764b5bfea3b63bba16114a7d073d7c
 {
 Ktrunk/src/main/java/com/example/comics/view1/PublishChapterControllerG.java,0\c\0cb0924298542915457c5ca35266c9f6965efc56

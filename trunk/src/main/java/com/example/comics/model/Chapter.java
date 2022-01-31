@@ -79,7 +79,7 @@ public class Chapter extends ChapterSubject {
         ReviewBean reviewBean = new ReviewBundle();
         reviewBean.setRating(rating);
         reviewBean.setComment(comment);
-        reviewBean.setReader(reader);
+        reviewBean.setAccount(reader);
 
         notifyObserversNewReview(reviewBean);
     }

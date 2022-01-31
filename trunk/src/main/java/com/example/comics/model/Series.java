@@ -125,7 +125,7 @@ public class Series extends SeriesSubject{
 
 		for(Chapter chapter : this.chapters){
 			for(Review review : chapter.getReviews()){
-				if(review.getReader().getUsername().equals(reader.getUsername())){
+				if(review.getAccount().getUsername().equals(reader.getUsername())){
 					numOfReviews++;
 				}
 			}
