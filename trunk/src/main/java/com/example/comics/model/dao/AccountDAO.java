@@ -1,8 +1,12 @@
 package com.example.comics.model.dao;
 
+import com.example.comics.model.Account;
+import com.example.comics.model.Author;
 import com.example.comics.model.Reader;
+import com.example.comics.model.Series;
 import com.example.comics.model.exceptions.FailedLoginException;
 import com.example.comics.model.exceptions.FailedRegistrationException;
+import javafx.scene.image.Image;
 
 import java.io.InputStream;
 import java.sql.*;
@@ -183,6 +187,52 @@ public class AccountDAO {
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
+    }
+
+    public Account retriveReviewAuthor(String username){
+        Statement stmt = null;
+        Connection conn = null;
+
+        Author author = null;
+
+        try {
+
+            conn = DriverManager.getConnection(DB_URL, USER, PASS);
+            stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
+            ResultSet rs = Queries.retreiveAuthor(stmt, username);
+
+            if (!rs.first()) {
+                return null;
+            }
+            rs.first();
+
+            author = new Author();
+            author.setFirstName(rs.getString("firstname"));
+            author.setLastName(rs.getString("lastname"));
+            author.setUsername(rs.getString("username"));
+            author.setEmail(rs.getString("email"));
+
+
+            Blob bl = rs.getBlob("proPic");
+            if(bl != null){
+                InputStream inputStream = bl.getBinaryStream();
+                Image image = new Image(inputStream);
+                author.setProPic(image);
+            }
+
+
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        } finally{
+            try {
+                assert conn != null;
+                conn.close();
+            } catch (SQLException | NullPointerException e) {
+                e.printStackTrace();
+            }
+        }
+
+        return author;
     }
 
 }

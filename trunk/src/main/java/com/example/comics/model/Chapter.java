@@ -65,8 +65,8 @@ public class Chapter extends ChapterSubject {
         this.description = description;
     }
 
-    public void addReview(Series series, String comment, int rating, String username){
-        Review review = new Review(comment, rating, username);
+    public void addReview(Series series, String comment, int rating, Reader reader){
+        Review review = new Review(comment, rating, reader);
         reviews.add(review);
         ReviewDAO reviewDAO = new ReviewDAO();
         try {
@@ -79,7 +79,7 @@ public class Chapter extends ChapterSubject {
         ReviewBean reviewBean = new ReviewBundle();
         reviewBean.setRating(rating);
         reviewBean.setComment(comment);
-        reviewBean.setUsername(username);
+        reviewBean.setReader(reader);
 
         notifyObserversNewReview(reviewBean);
     }

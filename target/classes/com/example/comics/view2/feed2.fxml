@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.String?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.chart.PieChart?>
 <?import javafx.scene.control.Button?>
@@ -19,9 +20,9 @@
 
 <AnchorPane prefHeight="665.0" prefWidth="400.0" styleClass="wallpaper" stylesheets="@../../../../css/css2/styles.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <VBox layoutX="57.0" layoutY="65.0" prefHeight="579.0" prefWidth="286.0">
+      <VBox layoutX="57.0" layoutY="65.0" prefHeight="578.0" prefWidth="286.0">
          <children>
-            <VBox prefHeight="522.0" prefWidth="286.0" styleClass="white-background">
+            <VBox prefHeight="581.0" prefWidth="286.0">
                <children>
                   <HBox prefHeight="62.0" prefWidth="286.0" styleClass="header-background">
                      <children>
@@ -62,12 +63,134 @@
                         </VBox>
                      </children>
                   </HBox>
-                  <StackPane prefHeight="450.0" prefWidth="286.0">
+                  <StackPane prefHeight="519.0" prefWidth="286.0" styleClass="keyboard">
                      <VBox.margin>
                         <Insets />
                      </VBox.margin>
                      <children>
-                        <VBox fx:id="vBoxAuthorFromOutside" prefHeight="200.0" prefWidth="100.0" styleClass="white-background">
+                        <VBox fx:id="vBoxChapter" prefHeight="200.0" prefWidth="100.0">
+                           <children>
+                              <HBox alignment="CENTER" prefHeight="49.0" prefWidth="286.0">
+                                 <children>
+                                    <Label fx:id="chapterTitle" prefHeight="29.0" prefWidth="110.0" text="Title">
+                                       <font>
+                                          <Font name="System Bold" size="14.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </HBox>
+                              <VBox prefHeight="434.0" prefWidth="271.0" spacing="5.0" styleClass="keyboard">
+                                 <children>
+                                    <HBox alignment="CENTER">
+                                       <children>
+                                          <ImageView fx:id="chapterCover" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../../../../img/img2/copertina_ad.jpg" />
+                                             </image>
+                                          </ImageView>
+                                          <VBox prefHeight="137.0" prefWidth="126.0">
+                                             <children>
+                                                <HBox alignment="CENTER" prefHeight="39.0" prefWidth="102.0">
+                                                   <children>
+                                                      <Button fx:id="btnReadChapter" alignment="TOP_LEFT" mnemonicParsing="false" prefHeight="46.0" prefWidth="94.0" styleClass="transparent" text="Read">
+                                                         <graphic>
+                                                            <ImageView fitHeight="38.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
+                                                               <image>
+                                                                  <Image url="@../../../../img/img2/icons8-book-reading-48.png" />
+                                                               </image>
+                                                            </ImageView>
+                                                         </graphic>
+                                                      </Button>
+                                                   </children>
+                                                </HBox>
+                                                <Separator prefWidth="200.0" styleClass="menu-background" />
+                                                <HBox alignment="CENTER" prefHeight="39.0" prefWidth="102.0">
+                                                   <children>
+                                                      <Button fx:id="btnBuy" alignment="CENTER" mnemonicParsing="false" prefHeight="48.0" prefWidth="111.0" styleClass="menu-button" text="Buy">
+                                                         <graphic>
+                                                            <ImageView fitHeight="31.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
+                                                               <image>
+                                                                  <Image url="@../../../../img/img2/icons8-fast-cart-60.png" />
+                                                               </image>
+                                                            </ImageView>
+                                                         </graphic>
+                                                      </Button>
+                                                   </children>
+                                                   <VBox.margin>
+                                                      <Insets top="25.0" />
+                                                   </VBox.margin>
+                                                </HBox>
+                                                <HBox alignment="CENTER" prefHeight="39.0" prefWidth="114.0">
+                                                   <children>
+                                                      <Button fx:id="btnPostReview" alignment="CENTER" mnemonicParsing="false" prefHeight="40.0" prefWidth="112.0" styleClass="menu-button" text="Post Review">
+                                                         <graphic>
+                                                            <ImageView fitHeight="38.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
+                                                               <image>
+                                                                  <Image url="@../../../../img/img2/icons8-quill-pen-60.png" />
+                                                               </image>
+                                                            </ImageView>
+                                                         </graphic>
+                                                      </Button>
+                                                   </children>
+                                                   <VBox.margin>
+                                                      <Insets top="5.0" />
+                                                   </VBox.margin>
+                                                </HBox>
+                                             </children>
+                                          </VBox>
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER" prefHeight="150.0" prefWidth="286.0">
+                                       <VBox.margin>
+                                          <Insets />
+                                       </VBox.margin>
+                                       <children>
+                                          <Label fx:id="description" prefHeight="71.0" prefWidth="223.0" text="Description bla bla \n ciao" />
+                                       </children>
+                                    </HBox>
+                                    <VBox prefHeight="281.0" prefWidth="286.0" styleClass="keyboard">
+                                       <children>
+                                          <Label prefHeight="12.0" prefWidth="286.0" text="Reviews">
+                                             <VBox.margin>
+                                                <Insets left="10.0" top="10.0" />
+                                             </VBox.margin>
+                                          </Label>
+                                          <HBox prefHeight="170.0" prefWidth="286.0">
+                                             <children>
+                                                <ScrollPane hbarPolicy="NEVER" prefHeight="159.0" prefWidth="289.0" styleClass="keyboard" vbarPolicy="ALWAYS">
+                                                   <content>
+                                                      <Pane prefHeight="193.0" prefWidth="270.0">
+                                                         <children>
+                                                            <VBox fx:id="vBoxReviews" prefHeight="226.0" prefWidth="270.0" spacing="5.0">
+                                                               <padding>
+                                                                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                               </padding>
+                                                            </VBox>
+                                                            <VBox fx:id="boxNoReviews" prefHeight="177.0" prefWidth="266.0">
+                                                               <children>
+                                                                  <Label alignment="CENTER" prefHeight="166.0" prefWidth="266.0" text="No reviews yet" />
+                                                               </children>
+                                                            </VBox>
+                                                         </children>
+                                                      </Pane>
+                                                   </content>
+                                                </ScrollPane>
+                                             </children>
+                                          </HBox>
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </VBox>
+                           </children>
+                           <padding>
+                              <Insets bottom="5.0" />
+                           </padding>
+                           <styleClass>
+                              <String fx:value="white-background" />
+                              <String fx:value="keyboard" />
+                           </styleClass>
+                        </VBox>
+                        <VBox fx:id="vBoxAuthorFromOutside" prefHeight="200.0" prefWidth="100.0">
                            <children>
                               <HBox alignment="CENTER" prefHeight="93.0" prefWidth="286.0">
                                  <children>
@@ -107,14 +230,14 @@
                                           </VBox>
                                        </children>
                                     </HBox>
-                                    <VBox prefHeight="237.0" prefWidth="286.0">
+                                    <VBox prefHeight="263.0" prefWidth="286.0">
                                        <children>
                                           <Label prefHeight="12.0" prefWidth="286.0" text="Original Series">
                                              <VBox.margin>
                                                 <Insets left="10.0" top="10.0" />
                                              </VBox.margin>
                                           </Label>
-                                          <HBox prefHeight="210.0" prefWidth="286.0">
+                                          <HBox prefHeight="222.0" prefWidth="286.0">
                                              <children>
                                                 <ScrollPane hbarPolicy="NEVER" prefHeight="229.0" prefWidth="286.0" vbarPolicy="ALWAYS">
                                                    <content>
@@ -144,8 +267,52 @@
                            <padding>
                               <Insets bottom="5.0" />
                            </padding>
+                           <styleClass>
+                              <String fx:value="white-background" />
+                              <String fx:value="keyboard" />
+                           </styleClass>
                         </VBox>
-                        <VBox fx:id="vBoxSerie" prefHeight="200.0" prefWidth="100.0" styleClass="white-background">
+                        <VBox fx:id="boxFeed">
+                           <children>
+                              <HBox alignment="CENTER" prefHeight="26.0" prefWidth="270.0">
+                                 <children>
+                                    <TextField alignment="TOP_LEFT" prefHeight="26.0" prefWidth="348.0" promptText="Search">
+                                       <HBox.margin>
+                                          <Insets left="20.0" />
+                                       </HBox.margin>
+                                    </TextField>
+                                    <ImageView fitHeight="25.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+                                       <HBox.margin>
+                                          <Insets right="20.0" />
+                                       </HBox.margin>
+                                       <image>
+                                          <Image url="@../../../../img/img2/search.png" />
+                                       </image>
+                                    </ImageView>
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets bottom="5.0" top="5.0" />
+                                 </VBox.margin>
+                              </HBox>
+                              <VBox prefHeight="482.0" prefWidth="286.0">
+                                 <children>
+                                    <ScrollPane hbarPolicy="NEVER" prefHeight="442.0" prefWidth="286.0" styleClass="scroll-bar" vbarPolicy="ALWAYS">
+                                       <content>
+                                          <VBox fx:id="vBoxSeries" prefHeight="267.0" prefWidth="270.0" />
+                                       </content>
+                                    </ScrollPane>
+                                 </children>
+                              </VBox>
+                           </children>
+                           <StackPane.margin>
+                              <Insets bottom="5.0" />
+                           </StackPane.margin>
+                           <styleClass>
+                              <String fx:value="white-background" />
+                              <String fx:value="keyboard" />
+                           </styleClass>
+                        </VBox>
+                        <VBox fx:id="vBoxSerie" prefHeight="200.0" prefWidth="100.0">
                            <children>
                               <HBox alignment="CENTER" prefHeight="93.0" prefWidth="286.0">
                                  <children>
@@ -214,16 +381,16 @@
                                           </VBox>
                                        </children>
                                     </HBox>
-                                    <VBox prefHeight="237.0" prefWidth="286.0">
+                                    <VBox prefHeight="286.0" prefWidth="286.0" styleClass="keyboard">
                                        <children>
                                           <Label prefHeight="12.0" prefWidth="286.0" text="Chapters">
                                              <VBox.margin>
                                                 <Insets left="10.0" top="10.0" />
                                              </VBox.margin>
                                           </Label>
-                                          <HBox prefHeight="210.0" prefWidth="286.0">
+                                          <HBox prefHeight="220.0" prefWidth="286.0" styleClass="keyboard">
                                              <children>
-                                                <ScrollPane hbarPolicy="NEVER" prefHeight="229.0" prefWidth="286.0" vbarPolicy="ALWAYS">
+                                                <ScrollPane hbarPolicy="NEVER" prefHeight="214.0" prefWidth="286.0" vbarPolicy="ALWAYS">
                                                    <content>
                                                       <Pane>
                                                          <children>
@@ -251,8 +418,12 @@
                            <padding>
                               <Insets bottom="5.0" />
                            </padding>
+                           <styleClass>
+                              <String fx:value="white-background" />
+                              <String fx:value="keyboard" />
+                           </styleClass>
                         </VBox>
-                        <VBox fx:id="vBoxMySeries" prefHeight="200.0" prefWidth="100.0" styleClass="white-background">
+                        <VBox fx:id="vBoxMySeries" prefHeight="200.0" prefWidth="100.0">
                            <children>
                               <HBox alignment="CENTER" prefHeight="39.0" prefWidth="286.0">
                                  <children>
@@ -262,9 +433,9 @@
                                     <Insets bottom="10.0" top="10.0" />
                                  </VBox.margin>
                               </HBox>
-                              <VBox>
+                              <VBox prefHeight="490.0" prefWidth="286.0">
                                  <children>
-                                    <HBox alignment="CENTER" prefHeight="47.0" prefWidth="286.0">
+                                    <HBox alignment="CENTER" prefHeight="31.0" prefWidth="286.0">
                                        <children>
                                           <Button fx:id="btnAddNewSeries" mnemonicParsing="false" prefHeight="42.0" prefWidth="158.0" styleClass="menu-button" text="Add New Series" textFill="WHITE">
                                              <graphic>
@@ -277,22 +448,23 @@
                                           </Button>
                                        </children>
                                        <VBox.margin>
-                                          <Insets bottom="10.0" />
+                                          <Insets />
                                        </VBox.margin>
                                     </HBox>
-                                    <ScrollPane hbarPolicy="NEVER" prefHeight="409.0" prefWidth="286.0">
+                                    <ScrollPane hbarPolicy="NEVER" prefHeight="396.0" prefWidth="286.0">
                                        <content>
-                                          <VBox fx:id="vBoxMySeriesSeries" prefHeight="434.0" prefWidth="271.0" spacing="5.0" />
+                                          <VBox fx:id="vBoxMySeriesSeries" prefHeight="438.0" prefWidth="271.0" spacing="5.0" />
                                        </content>
                                     </ScrollPane>
                                  </children>
                               </VBox>
                            </children>
-                           <padding>
-                              <Insets bottom="5.0" />
-                           </padding>
+                           <styleClass>
+                              <String fx:value="white-background" />
+                              <String fx:value="keyboard" />
+                           </styleClass>
                         </VBox>
-                        <VBox fx:id="boxProfile" prefHeight="439.0" prefWidth="286.0" styleClass="white-background">
+                        <VBox fx:id="boxProfile" prefHeight="439.0" prefWidth="286.0">
                            <children>
                               <HBox alignment="CENTER">
                                  <children>
@@ -333,112 +505,96 @@
                                  </children>
                               </VBox>
                            </children>
+                           <styleClass>
+                              <String fx:value="white-background" />
+                              <String fx:value="keyboard" />
+                           </styleClass>
                         </VBox>
-                        <VBox fx:id="vBoxFav" prefHeight="200.0" prefWidth="100.0" styleClass="white-background">
+                        <VBox fx:id="vBoxFav" prefHeight="200.0" prefWidth="100.0">
                            <children>
                               <HBox alignment="CENTER">
                                  <children>
                                     <Label prefHeight="38.0" prefWidth="59.0" text="Favourites" />
                                  </children>
                               </HBox>
-                              <ScrollPane hbarPolicy="NEVER" prefHeight="409.0" prefWidth="286.0">
+                              <ScrollPane hbarPolicy="NEVER" prefHeight="436.0" prefWidth="286.0">
                                  <content>
-                                    <VBox fx:id="vBoxFavSeries" prefHeight="434.0" prefWidth="271.0" spacing="5.0" />
+                                    <VBox fx:id="vBoxFavSeries" prefHeight="456.0" prefWidth="271.0" spacing="5.0" />
                                  </content>
                               </ScrollPane>
                            </children>
                            <padding>
                               <Insets bottom="5.0" />
                            </padding>
+                           <styleClass>
+                              <String fx:value="white-background" />
+                              <String fx:value="keyboard" />
+                           </styleClass>
                         </VBox>
-                        <VBox fx:id="vBoxToRead" prefHeight="200.0" prefWidth="100.0" styleClass="white-background">
+                        <VBox fx:id="vBoxToRead" prefHeight="200.0" prefWidth="100.0">
                            <children>
                               <HBox alignment="CENTER">
                                  <children>
                                     <Label prefHeight="38.0" prefWidth="41.0" text="toRead" />
                                  </children>
                               </HBox>
-                              <ScrollPane hbarPolicy="NEVER" prefHeight="409.0" prefWidth="286.0">
+                              <ScrollPane hbarPolicy="NEVER" prefHeight="440.0" prefWidth="286.0">
                                  <content>
-                                    <VBox fx:id="vBoxToReadSeries" prefHeight="434.0" prefWidth="271.0" spacing="5.0" />
+                                    <VBox fx:id="vBoxToReadSeries" prefHeight="454.0" prefWidth="271.0" spacing="5.0" />
                                  </content>
                               </ScrollPane>
                            </children>
                            <padding>
                               <Insets bottom="5.0" />
                            </padding>
+                           <styleClass>
+                              <String fx:value="white-background" />
+                              <String fx:value="keyboard" />
+                           </styleClass>
                         </VBox>
-                        <VBox fx:id="vBoxReading" prefHeight="200.0" prefWidth="100.0" styleClass="white-background">
+                        <VBox fx:id="vBoxReading" prefHeight="200.0" prefWidth="100.0">
                            <children>
                               <HBox alignment="CENTER">
                                  <children>
                                     <Label prefHeight="34.0" prefWidth="47.0" text="Reading" />
                                  </children>
                               </HBox>
-                              <ScrollPane hbarPolicy="NEVER" prefHeight="409.0" prefWidth="286.0">
+                              <ScrollPane hbarPolicy="NEVER" prefHeight="444.0" prefWidth="286.0">
                                  <content>
-                                    <VBox fx:id="vBoxReadingSeries" prefHeight="434.0" prefWidth="271.0" spacing="5.0" />
+                                    <VBox fx:id="vBoxReadingSeries" prefHeight="458.0" prefWidth="271.0" spacing="5.0" />
                                  </content>
                               </ScrollPane>
                            </children>
                            <padding>
                               <Insets bottom="5.0" />
                            </padding>
+                           <styleClass>
+                              <String fx:value="white-background" />
+                              <String fx:value="keyboard" />
+                           </styleClass>
                         </VBox>
-                        <VBox fx:id="boxFeed" styleClass="white-background">
-                           <children>
-                              <HBox alignment="CENTER" prefHeight="26.0" prefWidth="270.0">
-                                 <children>
-                                    <TextField alignment="TOP_LEFT" prefHeight="26.0" prefWidth="348.0" promptText="Search">
-                                       <HBox.margin>
-                                          <Insets left="20.0" />
-                                       </HBox.margin>
-                                    </TextField>
-                                    <ImageView fitHeight="25.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
-                                       <HBox.margin>
-                                          <Insets right="20.0" />
-                                       </HBox.margin>
-                                       <image>
-                                          <Image url="@../../../../img/img2/search.png" />
-                                       </image>
-                                    </ImageView>
-                                 </children>
-                                 <VBox.margin>
-                                    <Insets bottom="5.0" top="5.0" />
-                                 </VBox.margin>
-                              </HBox>
-                              <VBox prefHeight="415.0" prefWidth="286.0">
-                                 <children>
-                                    <ScrollPane hbarPolicy="NEVER" prefHeight="402.0" prefWidth="286.0" styleClass="scroll-bar" vbarPolicy="ALWAYS">
-                                       <content>
-                                          <VBox fx:id="vBoxSeries" prefHeight="267.0" prefWidth="270.0" />
-                                       </content>
-                                    </ScrollPane>
-                                 </children>
-                              </VBox>
-                           </children>
-                           <StackPane.margin>
-                              <Insets bottom="5.0" />
-                           </StackPane.margin>
-                        </VBox>
-                        <VBox fx:id="vBoxFollowing" prefHeight="200.0" prefWidth="100.0" styleClass="white-background">
+                        <VBox fx:id="vBoxFollowing" prefHeight="200.0" prefWidth="100.0">
                            <children>
                               <HBox alignment="CENTER">
                                  <children>
                                     <Label prefHeight="34.0" prefWidth="52.0" text="Following" />
                                  </children>
                               </HBox>
-                              <ScrollPane hbarPolicy="NEVER" prefHeight="409.0" prefWidth="286.0">
+                              <ScrollPane hbarPolicy="NEVER" prefHeight="437.0" prefWidth="286.0">
                                  <content>
-                                    <VBox fx:id="vBoxFollowingAuthors" prefHeight="434.0" prefWidth="271.0" spacing="5.0" />
+                                    <VBox fx:id="vBoxFollowingAuthors" prefHeight="450.0" prefWidth="271.0" spacing="5.0" />
                                  </content>
                               </ScrollPane>
                            </children>
                            <padding>
                               <Insets bottom="5.0" />
                            </padding>
+                           <styleClass>
+                              <String fx:value="white-background" />
+                              <String fx:value="keyboard" />
+                           </styleClass>
                         </VBox>
-                        <VBox fx:id="vBoxStats" prefHeight="200.0" prefWidth="100.0" styleClass="white-background">
+                        <VBox fx:id="vBoxStats" prefHeight="200.0" prefWidth="100.0">
                            <children>
                               <HBox alignment="CENTER">
                                  <children>
@@ -462,8 +618,12 @@
                            <padding>
                               <Insets bottom="5.0" />
                            </padding>
+                           <styleClass>
+                              <String fx:value="white-background" />
+                              <String fx:value="keyboard" />
+                           </styleClass>
                         </VBox>
-                        <VBox fx:id="vBoxSettings" prefHeight="200.0" prefWidth="100.0" styleClass="white-background">
+                        <VBox fx:id="vBoxSettings" prefHeight="200.0" prefWidth="100.0">
                            <children>
                               <HBox alignment="CENTER" prefHeight="51.0" prefWidth="286.0">
                                  <children>
@@ -586,10 +746,14 @@
                            <padding>
                               <Insets bottom="5.0" />
                            </padding>
+                           <styleClass>
+                              <String fx:value="white-background" />
+                              <String fx:value="keyboard" />
+                           </styleClass>
                         </VBox>
-                        <Pane fx:id="paneMenu" prefHeight="440.0" prefWidth="206.0" styleClass="menu-background">
+                        <Pane fx:id="paneMenu" prefHeight="512.0" prefWidth="206.0">
                            <StackPane.margin>
-                              <Insets right="80.0" />
+                              <Insets bottom="-1.0" right="80.0" />
                            </StackPane.margin>
                            <children>
                               <VBox fx:id="readerMenu">
@@ -601,7 +765,11 @@
                                     <Button fx:id="btnMyBadges" mnemonicParsing="false" prefHeight="46.0" prefWidth="206.0" styleClass="menu-button" text="MyBadges" textFill="WHITE" />
                                  </children>
                               </VBox>
-                              <Button fx:id="btnSettings" layoutY="396.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="206.0" styleClass="menu-button" text="Settings" textFill="WHITE" />
+                              <Button fx:id="btnSettings" layoutY="449.0" mnemonicParsing="false" prefHeight="54.0" prefWidth="206.0" text="Settings" textFill="WHITE">
+                                 <styleClass>
+                                    <String fx:value="menu-button" />
+                                    <String fx:value="menu-keyboard" />
+                                 </styleClass></Button>
                               <VBox fx:id="authorMenu" layoutX="-1.0" layoutY="1.0" prefHeight="94.0" prefWidth="206.0">
                                  <children>
                                     <Button fx:id="btnMySeries" mnemonicParsing="false" prefHeight="46.0" prefWidth="206.0" styleClass="menu-button" text="My Series" textFill="WHITE" />
@@ -609,30 +777,18 @@
                                  </children>
                               </VBox>
                            </children>
+                           <styleClass>
+                              <String fx:value="menu-background" />
+                              <String fx:value="menu-keyboard" />
+                           </styleClass>
                         </Pane>
                      </children>
                   </StackPane>
                </children>
-            </VBox>
-            <VBox prefHeight="50.0" prefWidth="286.0" styleClass="keyboard">
-               <children>
-                  <HBox prefHeight="42.0" prefWidth="286.0">
-                     <VBox.margin>
-                        <Insets />
-                     </VBox.margin>
-                     <children>
-                        <Button mnemonicParsing="false" prefHeight="54.0" prefWidth="86.0" styleClass="transparent">
-                           <graphic>
-                              <ImageView fitHeight="48.0" fitWidth="56.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@../../../../img/img2/back.png" />
-                                 </image>
-                              </ImageView>
-                           </graphic>
-                        </Button>
-                     </children>
-                  </HBox>
-               </children>
+               <styleClass>
+                  <String fx:value="white-background" />
+                  <String fx:value="keyboard" />
+               </styleClass>
             </VBox>
          </children>
       </VBox>

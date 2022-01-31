@@ -7,11 +7,6 @@ public class ReviewsObjective extends Objective{
 
     private int requiredReviews;
 
-    public ReviewsObjective(Badge badge, Discount discount){
-        this.badge = badge;
-        this.discount = discount;
-    }
-
     public ReviewsObjective(Badge badge, Discount discount, int requiredReviews){
         this.badge = badge;
         this.discount = discount;

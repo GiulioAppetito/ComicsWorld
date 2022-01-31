@@ -1,34 +1,48 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import javafx.geometry.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.image.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="509.0" prefWidth="719.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane prefHeight="509.0" prefWidth="719.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <VBox layoutX="-2.0" prefHeight="523.0" prefWidth="726.0">
          <children>
             <HBox>
                <children>
-                  <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="70.0" prefWidth="726.0" style="-fx-background-color: #092036;">
+                  <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="70.0" prefWidth="726.0" style="-fx-background-color: #232F3E;">
                      <children>
                         <Label layoutX="12.0" layoutY="2.0" prefHeight="63.0" prefWidth="269.0" text="FakeAmazon" textFill="WHITE">
                            <font>
-                              <Font name="Bauhaus 93" size="32.0" />
+                              <Font name="Berlin Sans FB" size="30.0" />
                            </font>
                            <padding>
                               <Insets left="50.0" />
                            </padding>
                         </Label>
-                        <ImageView fitHeight="63.0" fitWidth="63.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="63.0" fitWidth="73.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../../../../img/img1/coin2.png" />
+                              <Image url="@../../../../img/amazon/icons8-amazon-96-white.png" />
                            </image>
                         </ImageView>
+                        <Button fx:id="btnClose" layoutX="668.0" layoutY="14.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="44.0" styleClass="transparent" stylesheets="@../../../../css/amazonCSS/amazon.css" text="X" textFill="WHITE">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Button>
                      </children>
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
                   </Pane>
                </children>
             </HBox>
@@ -47,7 +61,7 @@
                         <Insets left="20.0" right="20.0" />
                      </HBox.margin>
                      <children>
-                        <Label fx:id="lblChapter" text="Chapter">
+                        <Label fx:id="lblChapter" prefHeight="27.0" prefWidth="389.0" text="Chapter 01">
                            <font>
                               <Font name="Berlin Sans FB" size="24.0" />
                            </font>
@@ -55,7 +69,7 @@
                               <Insets bottom="10.0" />
                            </VBox.margin>
                         </Label>
-                        <Label fx:id="lblSeries" text="Series">
+                        <Label fx:id="lblSeries" prefHeight="59.0" prefWidth="390.0" text="One Punch Man">
                            <font>
                               <Font name="Berlin Sans FB" size="24.0" />
                            </font>
@@ -63,44 +77,72 @@
                               <Insets bottom="10.0" />
                            </VBox.margin>
                         </Label>
-                        <Label text="Insert a discount code: ">
-                           <font>
-                              <Font name="Berlin Sans FB" size="18.0" />
-                           </font>
-                           <VBox.margin>
-                              <Insets bottom="5.0" />
-                           </VBox.margin>
-                        </Label>
-                        <TextField fx:id="tfDiscountCode" prefHeight="25.0" prefWidth="150.0" promptText="Discount code">
-                           <VBox.margin>
-                              <Insets bottom="30.0" right="220.0" />
-                           </VBox.margin>
-                        </TextField>
-                        <Button fx:id="btnBuy" mnemonicParsing="false" prefHeight="63.0" prefWidth="187.0" stylesheets="@../../../../css/css1/fullpackstyling.css" text="Buy">
+                        <Label fx:id="lblPrice" prefHeight="59.0" prefWidth="390.0" text="4,90 $">
                            <font>
                               <Font name="Berlin Sans FB" size="24.0" />
                            </font>
-                           <styleClass>
-                              <String fx:value="oval-layout" />
-                              <String fx:value="transparent" />
-                              <String fx:value="buttonEdit" />
-                           </styleClass>
-                           <graphic>
-                              <ImageView fitHeight="45.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@../../../../img/img1/coin.png" />
-                                 </image>
-                              </ImageView>
-                           </graphic>
+                        </Label>
+                        <VBox prefHeight="158.0" prefWidth="389.0">
                            <VBox.margin>
-                              <Insets left="200.0" top="150.0" />
+                              <Insets top="60.0" />
                            </VBox.margin>
-                        </Button>
+                           <children>
+                              <Label text="Insert card number: ">
+                                 <font>
+                                    <Font name="Berlin Sans FB" size="16.0" />
+                                 </font>
+                              </Label>
+                              <HBox alignment="CENTER">
+                                 <children>
+                                    <TextField fx:id="tfCard" prefHeight="26.0" prefWidth="230.0" promptText="XXXX-XXXX-XXX" />
+                                 </children>
+                              </HBox>
+                              <Label text="Insert a discount code: ">
+                                 <font>
+                                    <Font name="Berlin Sans FB" size="16.0" />
+                                 </font>
+                              </Label>
+                              <HBox alignment="CENTER" prefHeight="26.0" prefWidth="378.0">
+                                 <VBox.margin>
+                                    <Insets bottom="30.0" top="5.0" />
+                                 </VBox.margin>
+                                 <children>
+                                    <TextField fx:id="tfDiscountCode" prefHeight="26.0" prefWidth="230.0" promptText="Discount code" />
+                                 </children>
+                              </HBox>
+                              <HBox alignment="CENTER" prefHeight="36.0" prefWidth="385.0">
+                                 <VBox.margin>
+                                    <Insets top="10.0" />
+                                 </VBox.margin>
+                                 <children>
+                                    <Button fx:id="btnBuy" mnemonicParsing="false" prefHeight="63.0" prefWidth="187.0" stylesheets="@../../../../css/amazonCSS/amazon.css" text="Buy now">
+                                       <font>
+                                          <Font name="Berlin Sans FB" size="16.0" />
+                                       </font>
+                                       <styleClass>
+                                          <String fx:value="oval-layout" />
+                                          <String fx:value="buttonBuy" />
+                                       </styleClass>
+                                    </Button>
+                                 </children>
+                              </HBox>
+                           </children>
+                        </VBox>
                      </children>
                   </VBox>
                </children>
             </HBox>
          </children>
       </VBox>
+      <Pane fx:id="errorPane" layoutX="184.0" layoutY="224.0" prefHeight="90.0" prefWidth="378.0" style="-fx-background-color: #FF9900;" styleClass="button2" stylesheets="@../../../../css/amazonCSS/amazon.css">
+         <children>
+            <Label layoutX="123.0" layoutY="-2.0" prefHeight="97.0" prefWidth="133.0" text="Discount Code not valid" />
+            <Button fx:id="btnCloseErrorPane" layoutX="334.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="44.0" styleClass="transparent" text="x">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Button>
+         </children>
+      </Pane>
    </children>
 </AnchorPane>

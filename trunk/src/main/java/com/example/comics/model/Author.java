@@ -7,7 +7,6 @@ public class Author extends Account{
 
     private List<Series> publishedSeries = new ArrayList<>();
     private List<Badge> badges;
-    private List<Character> characters;
 
     public Author(){
         //dummy
@@ -40,11 +39,5 @@ public class Author extends Account{
         this.badges = badges;
     }
 
-    public List<Character> getCharacters() {
-        return characters;
-    }
 
-    public void setCharacters(List<Character> characters) {
-        this.characters = characters;
-    }
 }

@@ -506,10 +506,9 @@ public class ChapterControllerG implements ChapterObserver, ObjectiveObserver {
 
         ReviewBean reviewBean = new ReviewBean1();
         reviewBean.setComment(txtAreaComment.getText());
-        reviewBean.setUsername(UserLogin.getInstance().getAccount().getUsername());
+        reviewBean.setReader(UserLogin.getInstance().getReader());
         reviewBean.setRating(reviewRating);
         System.out.println("[Chapter Controller G] Rating : "+reviewRating);
-        reviewBean.setChapter(chapterBean.getTitle());
         //e magari anche la foto
         PostReviewController postReviewController = new PostReviewController();
         postReviewController.post(reviewBean, chapterBean, seriesBean);

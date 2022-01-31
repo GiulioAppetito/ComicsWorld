@@ -16,7 +16,7 @@
 <?import javafx.scene.paint.Stop?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane fx:id="mainPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" style="-fx-background-color: white;" styleClass="wallpaper" stylesheets="@../../../../css/css1/fullpackstyling.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane fx:id="mainPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" style="-fx-background-color: white;" styleClass="wallpaper" stylesheets="@../../../../css/css1/fullpackstyling.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
    <top>
       <HBox prefHeight="60.0" prefWidth="1191.0" stylesheets="@../../../../css/css1/fullpackstyling.css" BorderPane.alignment="CENTER">
          <Label fx:id="lblTitle" alignment="CENTER" prefHeight="60.0" prefWidth="238.0" text="ComicsWorld" textAlignment="CENTER">
@@ -57,7 +57,7 @@
             <children>
                <ImageView fitHeight="39.0" fitWidth="63.0" pickOnBounds="true" preserveRatio="true">
                   <image>
-                     <Image url="@../../../../img/img1/filters.png" />
+                     <Image url="@../../../../img/img1/search.png" />
                   </image>
                   <VBox.margin>
                      <Insets top="3.0" />
@@ -70,24 +70,14 @@
             <HBox.margin>
                <Insets />
             </HBox.margin>
-            <ImageView fx:id="homeIcon" fitHeight="40.0" fitWidth="40.0" layoutX="39.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="homeIcon" fitHeight="40.0" fitWidth="40.0" layoutX="14.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
                <Image url="@../../../../img/img1/icons8-home-page-96.png" />
             </ImageView>
-            <Pane layoutY="4.0" prefHeight="52.0" prefWidth="39.0" />
             <padding>
                <Insets top="40.0" />
             </padding>
          </Pane>
-         <HBox fx:id="userBox" prefHeight="60.0" prefWidth="230.0">
-            <Button mnemonicParsing="false" prefHeight="67.0" prefWidth="66.0" styleClass="transparent">
-               <graphic>
-                  <ImageView fitHeight="45.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../../../../img/img1/icons8-add-reminder-96.png" />
-                     </image>
-                  </ImageView>
-               </graphic>
-            </Button>
+         <HBox fx:id="userBox" prefHeight="60.0" prefWidth="179.0">
             <Label fx:id="lblName" alignment="CENTER_RIGHT" prefHeight="60.0" prefWidth="104.0" text="Anastasia">
                <font>
                   <Font name="Berlin Sans FB" size="18.0" />

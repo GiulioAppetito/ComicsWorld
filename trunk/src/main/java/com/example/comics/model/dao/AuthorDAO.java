@@ -149,16 +149,4 @@ public class AuthorDAO {
         return followedAuthors;
 
     }
-
-
-    public Author createAuthor(String username, List<Series> publishedSeries, String firstName, String lastName, Image proPic) {
-        Author author = new Author();
-        author.setUsername(username);
-        author.setPublishedSeries(publishedSeries);
-        author.setFirstName(firstName);
-        author.setLastName(lastName);
-        author.setProPic(proPic);
-
-        return author;
-    }
 }

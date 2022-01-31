@@ -1,7 +1,9 @@
 package com.example.comics.model.dao;
 
 import com.example.comics.model.*;
+import javafx.scene.image.Image;
 
+import java.io.InputStream;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -29,7 +31,10 @@ public class ReviewDAO {
             }
             rs.first();
             do{
-                reviewItem = new Review(rs.getString("comment"),Integer.valueOf(rs.getString("rating")),rs.getString("user"));
+                AccountDAO accountDAO = new AccountDAO();
+                Account account = accountDAO.retriveReviewAuthor(rs.getString("user"));
+
+                reviewItem = new Review(rs.getString("comment"),Integer.valueOf(rs.getString("rating")),account);
                 reviewsList.add(reviewItem);
 
             }while(rs.next());
@@ -49,42 +54,6 @@ public class ReviewDAO {
 
     }
 
-    public List<Review> retrieveReviewsByReaderAndSeries(Series series, Reader reader)  {
-        Statement stmt = null;
-        Connection conn = null;
-
-        List<Review> reviewsList = new ArrayList<>();
-        Review reviewItem;
-
-        try {
-            conn = DriverManager.getConnection(DB_URL, USER, PASS);
-            stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
-            ResultSet rs = Queries.retrieveReviewsByReaderAndSeries(stmt, series.getTitle(), reader.getUsername());
-
-            if(!rs.first()){
-                return reviewsList;
-            }
-            rs.first();
-            do{
-                reviewItem = new Review(rs.getString("comment"),Integer.valueOf(rs.getString("rating")),rs.getString("user"));
-                reviewsList.add(reviewItem);
-
-            }while(rs.next());
-
-        } catch (SQLException throwables) {
-            return reviewsList;
-        }finally{
-            assert conn!=null;
-            try {
-                conn.close();
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
-        }
-
-        return reviewsList;
-
-    }
 
     public void saveReview(Review review, Chapter chapter, Series series) throws Exception {
         // STEP 1: dichiarazioni
@@ -106,4 +75,5 @@ public class ReviewDAO {
             conn.close();
         }
     }
+
 }

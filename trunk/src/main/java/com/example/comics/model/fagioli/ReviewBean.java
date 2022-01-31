@@ -1,28 +1,17 @@
 package com.example.comics.model.fagioli;
 
-import javafx.scene.image.ImageView;
+import com.example.comics.model.Account;
 
 public interface ReviewBean {
 
-    public String getComment();
+    String getComment();
+    void setComment(String comment);
 
-    public void setComment(String comment);
+    Account getAccount();
+    void setAccount(Account account);
 
-    public String getUsername();
-
-    public void setUsername(String username);
-
-    public String getChapter();
-
-    public void setChapter(String chapter);
-
-    public ImageView getPropic();
-
-    public void setPropic(ImageView propic);
-
-    public int getRating();
-
-    public void setRating(int rating);
+    int getRating();
+    void setRating(int rating);
 
 
 }

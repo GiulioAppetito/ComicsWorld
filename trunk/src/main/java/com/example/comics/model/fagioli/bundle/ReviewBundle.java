@@ -1,63 +1,39 @@
 package com.example.comics.model.fagioli.bundle;
 
+import com.example.comics.model.Account;
 import com.example.comics.model.fagioli.ReviewBean;
-import javafx.scene.image.ImageView;
 
 public class ReviewBundle implements ReviewBean {
 
     private String comment;
-    private String username;
     private int rating;
+    private Account account;
 
     @Override
     public String getComment() {
         return this.comment;
     }
-
     @Override
     public void setComment(String comment) {
         this.comment = comment;
     }
 
     @Override
-    public String getUsername() {
-        return this.username;
+    public Account getAccount() {
+        return account;
     }
-
     @Override
-    public void setUsername(String username) {
-        this.username = username;
+    public void setAccount(Account account) {
+        this.account = account;
     }
 
     @Override
     public int getRating() {
         return this.rating;
     }
-
     @Override
     public void setRating(int rating) {
         this.rating = rating;
     }
 
-
-
-
-    @Override
-    public String getChapter() {
-        return null;
-    }
-    @Override
-    public void setChapter(String chapter) {
-
-    }
-
-    @Override
-    public ImageView getPropic() {
-        return null;
-    }
-
-    @Override
-    public void setPropic(ImageView propic) {
-
-    }
 }

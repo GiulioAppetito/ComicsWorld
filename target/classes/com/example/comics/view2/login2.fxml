@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.String?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
@@ -13,9 +12,9 @@
 
 <AnchorPane prefHeight="665.0" prefWidth="400.0" styleClass="wallpaper" stylesheets="@../../../../css/css2/styles.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <VBox layoutX="57.0" layoutY="65.0">
+      <VBox layoutX="57.0" layoutY="65.0" prefHeight="580.0" prefWidth="286.0">
          <children>
-            <VBox prefHeight="521.0" prefWidth="286.0" styleClass="white-background">
+            <VBox prefHeight="578.0" prefWidth="286.0">
                <children>
                   <Label alignment="CENTER" prefHeight="69.0" prefWidth="286.0" text="ComicsWorld" textAlignment="CENTER">
                      <font>
@@ -71,26 +70,10 @@
                      </children>
                   </HBox>
                </children>
-            </VBox>
-            <VBox prefHeight="50.0" prefWidth="286.0" styleClass="keyboard">
-               <children>
-                  <HBox prefHeight="42.0" prefWidth="286.0">
-                     <VBox.margin>
-                        <Insets />
-                     </VBox.margin>
-                     <children>
-                        <Button mnemonicParsing="false" prefHeight="54.0" prefWidth="86.0" styleClass="transparent">
-                           <graphic>
-                              <ImageView fitHeight="48.0" fitWidth="56.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@../../../../img/img2/back.png" />
-                                 </image>
-                              </ImageView>
-                           </graphic>
-                        </Button>
-                     </children>
-                  </HBox>
-               </children>
+               <styleClass>
+                  <String fx:value="white-background" />
+                  <String fx:value="keyboard" />
+               </styleClass>
             </VBox>
          </children>
       </VBox>

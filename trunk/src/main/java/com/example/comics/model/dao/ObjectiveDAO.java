@@ -40,7 +40,7 @@ public class ObjectiveDAO {
                 String seriesTitle = rs.getString("seriesTitle");
 
                 if(rs.getString("type").equals("reviews")){
-                    ReviewsObjective reviewsObjective = new ReviewsObjective(badge,discount);
+                    ReviewsObjective reviewsObjective = new ReviewsObjective(badge,discount, rs.getInt("number"));
                     reviewsObjective.setSeriesTitle(seriesTitle);
                     reviewsObjective.setId(rs.getInt("objective_id"));
                     switch (rs.getString("level")){
@@ -57,7 +57,6 @@ public class ObjectiveDAO {
                             break;
                     }
 
-                    reviewsObjective.setRequiredReviews(rs.getInt("number"));
                     objectives.add(reviewsObjective);
 
 

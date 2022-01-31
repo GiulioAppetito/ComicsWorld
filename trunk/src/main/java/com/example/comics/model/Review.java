@@ -3,23 +3,21 @@ package com.example.comics.model;
 public class Review {
 
     private String comment;
-    private String username;
+    private Account account;
     private int rating;
 
-    public Review(String comment, int rating, String username){
+    public Review(String comment, int rating, Account account){
             this.comment = comment;
-            this.username = username;
+            this.account = account;
             this.rating = rating;
     }
 
     public String getComment() {
         return comment;
     }
-
-    public String getUsername() {
-        return username;
+    public Account getAccount() {
+        return account;
     }
-
     public int getRating() {
         return rating;
     }

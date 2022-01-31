@@ -14,12 +14,10 @@
 .menu-button:hover
  {
      -fx-background-color : #9b55dc;
-     -fx-background-radius :  30;
  }
 .menu-button:pressed
 {
     -fx-background-color : #9b55dc;
-    -fx-background-radius :  30;
 }
 
 .wallpaper{
@@ -30,14 +28,23 @@
 
 .keyboard
 {
-    -fx-background-color : #8d8d8d;
     -fx-background-radius :  0 0 35 35;
 }
 .keyboard:hover
 {
-    -fx-background-color : #363636;
     -fx-background-radius :  0 0 35 35;
 }
+
+
+.menu-keyboard
+{
+    -fx-background-radius :  0 0 0 35;
+}
+.menu-keyboard:hover
+{
+    -fx-background-radius :  0 0 0 35;
+}
+
 
 .transparent{
     -fx-background-color: rgba(0,0,0,0);
@@ -45,18 +52,18 @@
 
 .darkButton
 {
-    -fx-background-color : #393351;
+    -fx-background-color : #9b55dc;
     -fx-background-radius :  30;
     -fx-text-fill: white;
 }
 .darkButton:hover
 {
-    -fx-background-color : #524A7B ;
+    -fx-background-color : #874bbe;
     -fx-background-radius :  30;
 }
 .darkButton:pressed
 {
-    -fx-background-color : #2F2B43 ;
+    -fx-background-color : #6c3693;
     -fx-background-radius :  30;
 }
 

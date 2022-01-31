@@ -24,7 +24,6 @@ public class ChapterBundle implements ChapterBean {
     public String getTitle() {
         return this.title;
     }
-
     @Override
     public void setTitle(String title) {
         this.title = title;
@@ -34,7 +33,6 @@ public class ChapterBundle implements ChapterBean {
     public Image getCover() {
         return this.cover;
     }
-
     @Override
     public void setCover(Image cover) {
         this.cover = cover;
@@ -49,13 +47,12 @@ public class ChapterBundle implements ChapterBean {
             reviewBundle = new ReviewBundle();
             reviewBundle.setComment(review.getComment());
             reviewBundle.setRating(review.getRating());
-            reviewBundle.setUsername(review.getUsername());
+            reviewBundle.setAccount(review.getAccount());
             reviewBeans.add(reviewBundle);
         }
 
         return reviewBeans;
     }
-
     @Override
     public void setReviews(List<Review> reviews) {
         this.reviews = reviews;
@@ -65,7 +62,6 @@ public class ChapterBundle implements ChapterBean {
     public void setDescription(String chapterDescription) {
         this.description = chapterDescription;
     }
-
     @Override
     public String getDescription() {
         return this.description;
@@ -75,7 +71,6 @@ public class ChapterBundle implements ChapterBean {
     public int getAverageRating() {
         return this.rating;
     }
-
     @Override
     public void setAverageRating(int averageRating) {
         this.rating = rating;
@@ -85,20 +80,18 @@ public class ChapterBundle implements ChapterBean {
     public Boolean getRead() {
         return isRead;
     }
+    @Override
+    public void setRead(Boolean read) {
+        isRead = read;
+    }
 
     @Override
     public InputStream getCoverInputStream() {
         return this.coverStream;
     }
-
     @Override
     public void setCoverInputStream(InputStream stream) {
         this.coverStream = stream;
     }
 
-
-    @Override
-    public void setRead(Boolean read) {
-        isRead = read;
-    }
 }

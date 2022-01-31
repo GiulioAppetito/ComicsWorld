@@ -92,12 +92,6 @@ public class ChapterDAO {
         return chaptersList;
     }
 
-    public List<Review> retrieveReviewsByReader(Series series, Reader reader) {
-        ReviewDAO reviewDAO = new ReviewDAO();
-        return reviewDAO.retrieveReviewsByReaderAndSeries(series,reader);
-
-    }
-
     public List<Review> retrieveReviews(String chapter) {
         ReviewDAO reviewDAO = new ReviewDAO();
         return reviewDAO.retrieveReviews(chapter);

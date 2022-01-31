@@ -17,7 +17,6 @@ public class Series extends SeriesSubject{
 	private String publishingHouse;
 	private int averageRating;
 	private final List<Chapter> chapters;
-	private List<Character> characters;
 	private List<Objective> objectives;
 
 	private Genres genre1;
@@ -126,7 +125,7 @@ public class Series extends SeriesSubject{
 
 		for(Chapter chapter : this.chapters){
 			for(Review review : chapter.getReviews()){
-				if(review.getUsername().equals(reader.getUsername())){
+				if(review.getReader().getUsername().equals(reader.getUsername())){
 					numOfReviews++;
 				}
 			}
@@ -137,7 +136,7 @@ public class Series extends SeriesSubject{
 	public void addReview(String chapterTitle, String reviewComment, int rating) {
 			for(int i=0; i< chapters.size(); i++){
 				if(chapters.get(i).getTitle().equals(chapterTitle)){
-					chapters.get(i).addReview(this, reviewComment, rating, UserLogin.getInstance().getReader().getUsername());
+					chapters.get(i).addReview(this, reviewComment, rating, UserLogin.getInstance().getReader());
 				}
 			}
 			calculateAverageRating();
