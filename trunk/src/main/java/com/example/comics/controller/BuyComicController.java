@@ -6,6 +6,7 @@ import com.example.comics.model.Author;
 import com.example.comics.model.DiscountCode;
 import com.example.comics.model.UserLogin;
 import com.example.comics.model.dao.AuthorDAO;
+import com.example.comics.model.dao.DiscountCodeDAO;
 import com.example.comics.model.exceptions.DiscountCodeException;
 import com.example.comics.model.exceptions.InvalidPaymentException;
 import com.example.comics.model.fagioli.AccountBean;
@@ -30,19 +31,22 @@ public class BuyComicController {
 
         //nel caso va tutto a buon fine ...
 
-            //chiamo altra boundary per la carta
-            AccountBean accountBean = new AccountBundle();
-            accountBean.setFirstName(UserLogin.getInstance().getAccount().getFirstName());
-            accountBean.setLastName(UserLogin.getInstance().getAccount().getLastName());
-            BuyComicBoundary buyComicBoundary = new BuyComicBoundary();
-            buyComicBoundary.convalidPayment(accountBean);
+        //chiamo altra boundary per la carta
+        AccountBean accountBean = new AccountBundle();
+        accountBean.setFirstName(UserLogin.getInstance().getAccount().getFirstName());
+        accountBean.setLastName(UserLogin.getInstance().getAccount().getLastName());
 
-            //mail all'autore
-            BuyComicsAuthorBoundary buyComicsAuthorBoundary = new BuyComicsAuthorBoundary();
-            buyComicsAuthorBoundary.sendEmailForSoldChapter(seriesBean);
+        BuyComicBoundary buyComicBoundary = new BuyComicBoundary();
+        buyComicBoundary.convalidPayment(accountBean);
 
-            //cancella discount code
-            UserLogin.getInstance().getReader().removeDiscountCode(discountCode);
+        //mail all'autore
+        BuyComicsAuthorBoundary buyComicsAuthorBoundary = new BuyComicsAuthorBoundary();
+        buyComicsAuthorBoundary.sendEmailForSoldChapter(seriesBean);
+
+        //cancella discount code
+        UserLogin.getInstance().getReader().removeDiscountCode(discountCode);
+        DiscountCodeDAO discountCodeDAO = new DiscountCodeDAO();
+        discountCodeDAO.deleteDiscountCode(UserLogin.getInstance().getReader(),discountCode);
 
 
 
