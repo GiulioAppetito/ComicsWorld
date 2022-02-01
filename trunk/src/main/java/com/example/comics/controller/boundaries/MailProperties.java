@@ -11,6 +11,10 @@ public abstract class MailProperties {
     protected static final String HOST  = "smtp.gmail.com";
     protected static final String PASSWORD = "bhccvubcmpzggdbn";
 
+    protected MailProperties(){
+        //costruttore
+    }
+
     protected static Session initializeProperties(){
         // Get system properties
         Properties properties = System.getProperties();
