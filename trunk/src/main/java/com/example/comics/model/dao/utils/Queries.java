@@ -328,4 +328,9 @@ public class Queries {
         String selectStatement = String.format("SELECT * FROM discountCodes WHERE (username = '%s')  ",username);
         return stmt.executeQuery(selectStatement);
     }
+
+    public static void deleteDiscountCode(Statement stmt, Reader reader, DiscountCode discountCode) throws SQLException {
+        String selectStatement = String.format("DELETE FROM discountCodes WHERE (username = '%s' AND code = '%s')  ",reader.getUsername(),discountCode.getCode());
+        stmt.executeQuery(selectStatement);
+    }
 }

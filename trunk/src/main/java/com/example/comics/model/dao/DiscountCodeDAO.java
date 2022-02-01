@@ -103,4 +103,25 @@ public class DiscountCodeDAO {
             conn.close();
         }
     }
+
+    public void deleteDiscountCode(Reader reader,DiscountCode discountCode) {
+        Statement stmt = null;
+        Connection conn = null;
+
+        try {
+            conn = DriverManager.getConnection(DB_URL, USER, PASS);
+            stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
+            Queries.deleteDiscountCode(stmt,reader,discountCode);
+
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        } finally {
+            assert conn!=null;
+            try {
+                conn.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+    }
 }
