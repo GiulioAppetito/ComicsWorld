@@ -1,6 +1,7 @@
 package com.example.comics.model;
 
 import com.example.comics.model.dao.BadgeDAO;
+import com.example.comics.model.dao.DiscountCodeDAO;
 import com.example.comics.model.dao.ReaderDAO;
 
 import java.sql.SQLException;
@@ -8,19 +9,21 @@ import java.util.List;
 
 public class Reader extends Account{
 
-    private List<Series> favourites;
-    private List<Series> toRead;
-    private List<Series> reading;
-    private List<Badge> badges;
-    private List<Author> followedAuthors;
+    private final List<Series> favourites;
+    private final List<Series> toRead;
+    private final List<Series> reading;
+    private final List<Badge> badges;
+    private final List<Author> followedAuthors;
+    private List<DiscountCode> discountCodes;
 
-    public Reader(List<Series> favourites, List<Series> toRead, List<Series> reading, String username,List<Author> followedAuthors){
+    public Reader(List<Series> favourites, List<Series> toRead, List<Series> reading, String username,List<Author> followedAuthors, List<DiscountCode> discountCodes){
 
         this.setUsername(username);
         this.favourites = favourites;
         this.toRead = toRead;
         this.reading = reading;
         this.followedAuthors = followedAuthors;
+        this.discountCodes = discountCodes;
 
         BadgeDAO badgesDAO = new BadgeDAO();
         this.badges = badgesDAO.retrieveAchievedBadges(username);
@@ -63,7 +66,6 @@ public class Reader extends Account{
         return this.badges;
     }
 
-
     public void addAchievedBadge(Badge badge) {
         this.badges.add(badge);
         ReaderDAO readerDAO = new ReaderDAO();
@@ -71,9 +73,10 @@ public class Reader extends Account{
     }
 
     public void addDiscountCode(DiscountCode discountCode) {
-        ReaderDAO readerDAO = new ReaderDAO();
+        DiscountCodeDAO discountCodeDAO = new DiscountCodeDAO();
         try {
-            readerDAO.saveObtainedDiscountCode(discountCode,this);
+            System.out.println("[READER] Saving discount code.");
+            discountCodeDAO.saveObtainedDiscountCode(discountCode,this);
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -98,6 +101,10 @@ public class Reader extends Account{
             if(favourites.get(i).getTitle().equals(series.getTitle())){
                 this.favourites.remove(i);
             }
+        }
+
+        for (int i = this.favourites.size() - 1; i >= 0; i--) {
+            System.out.println(favourites.get(i).getTitle());
         }
     }
 
@@ -155,5 +162,30 @@ public class Reader extends Account{
             }
         }
         this.reading.add(seriesToAdd);
+    }
+
+    public List<DiscountCode> getDiscountCodes() {
+        return discountCodes;
+    }
+
+    public void setDiscountCodes(List<DiscountCode> discountCodes) {
+        this.discountCodes = discountCodes;
+    }
+
+    public void removeDiscountCode(String code) {
+        for(DiscountCode discountCode : discountCodes){
+            if(discountCode.getCode().equals(code)){
+                discountCodes.remove(discountCode);
+            }
+        }
+    }
+
+    public DiscountCode getDiscountCodeByCode(String code) {
+        for(DiscountCode discountCode : discountCodes){
+            if(discountCode.getCode().equals(code)){
+                return discountCode;
+            }
+        }
+        return null;
     }
 }

@@ -24,13 +24,13 @@ public class PostReviewController{
         Series series = seriesDAO.retreiveSeriesWithAuthor(seriesBean.getTitle(),author);
         series.addReview(chapterBean.getTitle(), reviewBean.getComment(), reviewBean.getRating());
 
+        //invio mail all'autore di una nuova review
         new Thread(()->{
-            //invio mail all'autore di una nuova review
             PostReviewBoundary postReviewAuthorBoundary = new PostReviewBoundary();
             postReviewAuthorBoundary.sendEmailForNewReviewPosted(series.getAuthor());
         }).start();
 
-        //controllare obiettivi
+        //controllo obiettivi
         checkObjectives(series);
     }
 
@@ -44,21 +44,18 @@ public class PostReviewController{
         for(Objective objective : series.getObjectives()){
             if((objective.getType().equals("reviewsObjective"))&&(!UserLogin.getInstance().getReader().hasAchievedThisBadge(objective.getBadge()))&&(objective.achieveObjective(numOfReviews, objective.getBadge()))){
 
-                        //aggiungo badge alla lista e salvo sul DB + assegno badge
-                        new Thread(()-> UserLogin.getInstance().getReader().addAchievedBadge(objective.getBadge())).start();
+                //aggiungo badge alla lista e salvo sul DB + assegno badge
+                new Thread(()-> UserLogin.getInstance().getReader().addAchievedBadge(objective.getBadge())).start();
 
-                        //genero discount code
-                        DiscountCode discountCode = new DiscountCode(objective.getDiscount());
-                        UserLogin.getInstance().getReader().addDiscountCode(discountCode);
+                //genero discount code
+                DiscountCode discountCode = new DiscountCode(objective.getDiscount());
+                UserLogin.getInstance().getReader().addDiscountCode(discountCode);
 
-                        //invio mail al lettore del codice sconto
-                        new Thread(()->{
-                            PostReviewBoundary postReviewAuthorBoundary = new PostReviewBoundary();
-                            postReviewAuthorBoundary.sendEmailForDiscountCode(UserLogin.getInstance().getReader(), series, discountCode);
-                        }).start();
-
-
-
+                //invio mail al lettore del codice sconto
+                new Thread(()->{
+                    PostReviewBoundary postReviewAuthorBoundary = new PostReviewBoundary();
+                    postReviewAuthorBoundary.sendEmailForDiscountCode(UserLogin.getInstance().getReader(), series, discountCode);
+                }).start();
             }
         }
     }

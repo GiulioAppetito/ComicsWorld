@@ -1,15 +1,18 @@
 package com.example.comics.controller.boundaries;
 
-import com.example.comics.model.fagioli.ChapterBean;
-import com.example.comics.model.fagioli.SeriesBean;
+import com.example.comics.fakepaypal.FakePayPalControllerG;
+import com.example.comics.model.exceptions.InvalidPaymentException;
+import com.example.comics.model.fagioli.AccountBean;
+
 public class BuyComicBoundary {
 
     public BuyComicBoundary(){
         //costruttore
     }
 
-    public void buyThisComic(ChapterBean chapterBean, SeriesBean seriesBean) {
+
+    public void convalidPayment(AccountBean accountBean) throws InvalidPaymentException {
+        FakePayPalControllerG fakePayPalControllerG = new FakePayPalControllerG(accountBean.getFirstName(),accountBean.getLastName());
 
     }
-
 }

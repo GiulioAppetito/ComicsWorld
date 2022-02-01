@@ -1,6 +1,7 @@
 package com.example.comics.model.dao;
 
 import com.example.comics.model.*;
+import com.example.comics.model.dao.utils.Queries;
 
 import java.sql.*;
 import java.util.ArrayList;

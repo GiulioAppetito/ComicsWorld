@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="509.0" prefWidth="719.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1">
+    <children>
+        <VBox layoutX="-2.0" prefHeight="523.0" prefWidth="726.0">
+            <children>
+                <HBox>
+                    <children>
+                        <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="70.0" prefWidth="726.0" style="-fx-background-color: lightgrey;">
+                            <children>
+                                <Label layoutX="12.0" layoutY="2.0" prefHeight="63.0" prefWidth="269.0" text="FakePayPal">
+                                    <font>
+                                        <Font name="Berlin Sans FB" size="30.0" />
+                                    </font>
+                                    <padding>
+                                        <Insets left="50.0" />
+                                    </padding>
+                           <textFill>
+                              <LinearGradient endX="1.0" endY="1.0">
+                                 <stops>
+                                    <Stop>
+                                       <color>
+                                          <Color red="0.04660087823867798" green="0.0829678326845169" blue="0.5921052694320679" />
+                                       </color>
+                                    </Stop>
+                                    <Stop offset="1.0">
+                                       <color>
+                                          <Color green="0.30000001192092896" blue="1.0" />
+                                       </color>
+                                    </Stop>
+                                 </stops>
+                              </LinearGradient>
+                           </textFill>
+                                </Label>
+                                <ImageView fitHeight="63.0" fitWidth="73.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@../../../../img/img1/coin2.png" />
+                                    </image>
+                                </ImageView>
+                                <Button fx:id="btnClose" layoutX="668.0" layoutY="14.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="44.0" styleClass="transparent" stylesheets="@../../../../css/amazonCSS/amazon.css" text="X" textFill="WHITE">
+                                    <font>
+                                        <Font size="16.0" />
+                                    </font>
+                                </Button>
+                            </children>
+                            <HBox.margin>
+                                <Insets />
+                            </HBox.margin>
+                        </Pane>
+                    </children>
+                </HBox>
+                <HBox>
+                    <VBox.margin>
+                        <Insets left="70.0" top="50.0" />
+                    </VBox.margin>
+                    <children>
+                        <VBox prefHeight="337.0" prefWidth="438.0">
+                            <HBox.margin>
+                                <Insets left="20.0" right="20.0" />
+                            </HBox.margin>
+                            <children>
+                                <Label fx:id="lblChapter" prefHeight="27.0" prefWidth="389.0" text="Chapter 01">
+                                    <font>
+                                        <Font name="Berlin Sans FB" size="24.0" />
+                                    </font>
+                                    <VBox.margin>
+                                        <Insets bottom="10.0" />
+                                    </VBox.margin>
+                                </Label>
+                                <Label fx:id="lblSeries" prefHeight="59.0" prefWidth="390.0" text="One Punch Man">
+                                    <font>
+                                        <Font name="Berlin Sans FB" size="24.0" />
+                                    </font>
+                                    <VBox.margin>
+                                        <Insets bottom="10.0" />
+                                    </VBox.margin>
+                                </Label>
+                                <Label fx:id="lblPrice" prefHeight="59.0" prefWidth="390.0" text="4,90 $">
+                                    <font>
+                                        <Font name="Berlin Sans FB" size="24.0" />
+                                    </font>
+                                </Label>
+                                <VBox prefHeight="158.0" prefWidth="389.0">
+                                    <VBox.margin>
+                                        <Insets top="60.0" />
+                                    </VBox.margin>
+                                    <children>
+                                        <Label text="Insert card number: ">
+                                            <font>
+                                                <Font name="Berlin Sans FB" size="16.0" />
+                                            </font>
+                                        </Label>
+                                        <HBox alignment="CENTER">
+                                            <children>
+                                                <TextField fx:id="tfCard" prefHeight="26.0" prefWidth="230.0" promptText="XXXX-XXXX-XXX" />
+                                            </children>
+                                        </HBox>
+                                        <HBox alignment="CENTER" prefHeight="26.0" prefWidth="378.0">
+                                            <VBox.margin>
+                                                <Insets bottom="30.0" top="5.0" />
+                                            </VBox.margin>
+                                        </HBox>
+                                        <HBox alignment="CENTER" prefHeight="36.0" prefWidth="385.0">
+                                            <VBox.margin>
+                                                <Insets top="10.0" />
+                                            </VBox.margin>
+                                            <children>
+                                                <Button fx:id="btnBuy" mnemonicParsing="false" prefHeight="63.0" prefWidth="187.0" stylesheets="@../../../../css/amazonCSS/amazon.css" text="Buy now">
+                                                    <font>
+                                                        <Font name="Berlin Sans FB" size="16.0" />
+                                                    </font>
+                                                    <styleClass>
+                                                        <String fx:value="oval-layout" />
+                                                        <String fx:value="buttonBuy" />
+                                                    </styleClass>
+                                                </Button>
+                                            </children>
+                                        </HBox>
+                                    </children>
+                                </VBox>
+                            </children>
+                        </VBox>
+                    </children>
+                </HBox>
+            </children>
+        </VBox>
+        <Pane fx:id="errorPane" layoutX="184.0" layoutY="224.0" prefHeight="90.0" prefWidth="378.0" style="-fx-background-color: #FF9900;" styleClass="button2" stylesheets="@../../../../css/amazonCSS/amazon.css">
+            <children>
+                <Label layoutX="123.0" layoutY="-2.0" prefHeight="97.0" prefWidth="133.0" text="Discount Code not valid" />
+                <Button fx:id="btnCloseErrorPane" layoutX="334.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="44.0" styleClass="transparent" text="x">
+                    <font>
+                        <Font size="16.0" />
+                    </font>
+                </Button>
+            </children>
+        </Pane>
+    </children>
+</AnchorPane>

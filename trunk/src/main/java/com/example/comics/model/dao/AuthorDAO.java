@@ -2,6 +2,7 @@ package com.example.comics.model.dao;
 
 import com.example.comics.model.Author;
 import com.example.comics.model.Series;
+import com.example.comics.model.dao.utils.Queries;
 import javafx.scene.image.Image;
 
 import java.io.InputStream;
