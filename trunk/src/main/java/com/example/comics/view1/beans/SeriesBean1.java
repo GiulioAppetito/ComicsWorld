@@ -5,6 +5,7 @@ import com.example.comics.model.fagioli.AuthorBean;
 import com.example.comics.model.fagioli.ChapterBean;
 import com.example.comics.model.fagioli.SeriesBean;
 import javafx.scene.image.Image;
+import javafx.scene.text.Text;
 
 import java.io.InputStream;
 import java.util.List;
@@ -17,9 +18,10 @@ public class SeriesBean1 implements SeriesBean {
     private List<ChapterBean> chapterBeans;
     private int rating;
     private InputStream coverInputStream;
-    Genres genre1;
-    Genres genre2;
-    Genres genre3;
+    private Genres genre1;
+    private Genres genre2;
+    private Genres genre3;
+    private String description;
 
     @Override
     public String getTitle() {
@@ -98,5 +100,15 @@ public class SeriesBean1 implements SeriesBean {
     @Override
     public int getAverageRating() {
         return rating;
+    }
+
+    @Override
+    public String getDescription() {
+        return description;
+    }
+
+    @Override
+    public void setDescription(String description) {
+        this.description = description;
     }
 }

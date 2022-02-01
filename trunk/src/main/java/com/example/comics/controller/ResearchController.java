@@ -69,6 +69,7 @@ public class ResearchController {
 
             seriesBundle.setCover(series.getCover());
             seriesBundle.setTitle(series.getTitle());
+            seriesBundle.setDescription(series.getDescription());
 
             List<ChapterBean> chapterBeans = new ArrayList<>();
             ChapterBundle chapterBundle;
