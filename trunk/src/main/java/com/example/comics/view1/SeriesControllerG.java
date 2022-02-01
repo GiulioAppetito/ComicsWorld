@@ -86,7 +86,7 @@ public class SeriesControllerG {
             }
         }
 
-        if(UserLogin.getInstance().getAccount().getRole().equals("author")) {
+        if(UserLogin.getInstance().getAccount().getRole().equals("reader")) {
 
             FavouritesController favouritesController = new FavouritesController();
             if (favouritesController.isSeriesFavourite(seriesBean)) {
