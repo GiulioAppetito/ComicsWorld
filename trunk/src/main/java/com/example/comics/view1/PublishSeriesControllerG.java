@@ -1,11 +1,8 @@
 package com.example.comics.view1;
 
-import com.example.comics.controller.PublishChapterController;
 import com.example.comics.controller.PublishSeriesController;
 import com.example.comics.model.Genres;
 import com.example.comics.model.Levels;
-import com.example.comics.model.Series;
-import com.example.comics.model.UserLogin;
 import com.example.comics.model.fagioli.*;
 import com.example.comics.view1.beans.*;
 import javafx.fxml.FXML;
@@ -18,12 +15,8 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
 import javafx.stage.FileChooser;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.InputStream;
+import java.io.*;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 
 
@@ -122,6 +115,10 @@ public class PublishSeriesControllerG {
     @FXML
     private Button btnChangeCover;
 
+    private static final String CHAPTERS = "CHAPTER";
+    private static final String REVIEWS = "REVIEWS";
+    private static final String PNG = "*.png";
+
     String imageCoverPath;
     String badgeIconPathB;
     String badgeIconPathI;
@@ -145,56 +142,74 @@ public class PublishSeriesControllerG {
         choiceBoxGenre1.getItems().setAll(Genres.values());
         choiceBoxGenre2.getItems().setAll(Genres.values());
         choiceBoxGenre3.getItems().setAll(Genres.values());
-        choiceBoxTypeB.getItems().setAll("REVIEWS","CHAPTERS");
-        choiceBoxTypeI.getItems().setAll("REVIEWS","CHAPTERS");
-        choiceBoxTypeE.getItems().setAll("REVIEWS","CHAPTERS");
+        choiceBoxTypeB.getItems().setAll(REVIEWS,CHAPTERS);
+        choiceBoxTypeI.getItems().setAll(REVIEWS,CHAPTERS);
+        choiceBoxTypeE.getItems().setAll(REVIEWS,CHAPTERS);
 
     }
 
     private void changeBagdeIconI() {
         FileChooser fc = new FileChooser();
-        fc.getExtensionFilters().add(new FileChooser.ExtensionFilter("*.png","*.png"));
+        fc.getExtensionFilters().add(new FileChooser.ExtensionFilter(PNG,PNG));
         File f = fc.showOpenDialog(null);
         if(f!=null){
             badgeIconPathI = f.getAbsolutePath();
-            System.out.println("Cover path is : "+badgeIconPathI);
             InputStream inputStream = null;
             try {
                 inputStream = new FileInputStream(badgeIconPathI);
             } catch (FileNotFoundException e) {
                 e.printStackTrace();
+            } finally {
+                try {
+                    assert inputStream!=null;
+                    inputStream.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
             }
         }
     }
 
     private void changeBagdeIconB() {
         FileChooser fc = new FileChooser();
-        fc.getExtensionFilters().add(new FileChooser.ExtensionFilter("*.png","*.png"));
+        fc.getExtensionFilters().add(new FileChooser.ExtensionFilter(PNG,PNG));
         File f = fc.showOpenDialog(null);
         if(f!=null){
             badgeIconPathB = f.getAbsolutePath();
-            System.out.println("Cover path is : "+badgeIconPathB);
             InputStream inputStream = null;
             try {
                 inputStream = new FileInputStream(badgeIconPathB);
             } catch (FileNotFoundException e) {
                 e.printStackTrace();
+            }finally {
+                try {
+                    assert inputStream!=null;
+                    inputStream.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
             }
         }
     }
 
     private void changeBagdeIconE() {
         FileChooser fc = new FileChooser();
-        fc.getExtensionFilters().add(new FileChooser.ExtensionFilter("*.png","*.png"));
+        fc.getExtensionFilters().add(new FileChooser.ExtensionFilter(PNG,PNG));
         File f = fc.showOpenDialog(null);
         if(f!=null){
             badgeIconPathE = f.getAbsolutePath();
-            System.out.println("Cover path is : "+badgeIconPathE);
             InputStream inputStream = null;
             try {
                 inputStream = new FileInputStream(badgeIconPathE);
             } catch (FileNotFoundException e) {
                 e.printStackTrace();
+            }finally {
+                try {
+                    assert inputStream!=null;
+                    inputStream.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
             }
         }
     }
@@ -207,7 +222,6 @@ public class PublishSeriesControllerG {
         BadgeBean badgeBean1;
 
         if(isThisObjectiveCompiled(Levels.BEGINNER)){
-            System.out.println("[PUB SER CONTR] Adding objective with level : "+Levels.BEGINNER);
             discountBean1 = new DiscountBean1();
             discountBean1.setPercentage(Float.parseFloat(tfDiscountPercB.getText()));
             discountBean1.setLimitDays(Integer.parseInt(tfDiscountDaysB.getText()));
@@ -231,7 +245,6 @@ public class PublishSeriesControllerG {
             objectiveBeanList.add(objectiveBean);
         }
         if(isThisObjectiveCompiled(Levels.INTERMEDIATE)){
-            System.out.println("[PUB SER CONTR] Adding objective with level : "+Levels.INTERMEDIATE);
             discountBean1 = new DiscountBean1();
             discountBean1.setPercentage(Float.parseFloat(tfDiscountPercI.getText()));
             discountBean1.setLimitDays(Integer.parseInt(tfDiscountDaysI.getText()));
@@ -255,7 +268,6 @@ public class PublishSeriesControllerG {
             objectiveBeanList.add(objectiveBean);
         }
         if(isThisObjectiveCompiled(Levels.EXPERT)){
-            System.out.println("[PUB SER CONTR] Adding objective with level : "+Levels.EXPERT);
             discountBean1 = new DiscountBean1();
             discountBean1.setPercentage(Float.parseFloat(tfDiscountPercE.getText()));
             discountBean1.setLimitDays(Integer.parseInt(tfDiscountDaysE.getText()));
@@ -283,12 +295,8 @@ public class PublishSeriesControllerG {
     }
 
     private void publishSeries() {
-        System.out.println("Publishing series...");
         String seriesTitle = tfTitle.getText();
-        Image chapterCover = ivComicCover.getImage();
-        String description = taDescription.getText();
         Genres genre1 = choiceBoxGenre1.getValue();
-        System.out.println("[P S Contr] Genre1 : "+genre1);
         Genres genre2 = choiceBoxGenre2.getValue();
         Genres genre3 = choiceBoxGenre3.getValue();
 
@@ -314,13 +322,13 @@ public class PublishSeriesControllerG {
     private boolean isThisObjectiveCompiled(Levels level){
         switch (level){
             case BEGINNER -> {
-                return !(choiceBoxTypeB.getValue() == null) && !(tfDiscountPercB.getText() == null) && !(tfDiscountDaysB.getText() == null) && !(tfBadgeNameB.getText() == null) && !(tfTargetNumberB.getText() == null);
+                return !(choiceBoxTypeB.getValue().equals("")) && !(tfDiscountPercB.getText().equals("")) && !(tfDiscountDaysB.getText().equals("")) && !(tfBadgeNameB.getText().equals("")) && !(tfTargetNumberB.getText().equals(""));
             }
             case INTERMEDIATE -> {
-                return !(choiceBoxTypeI.getValue() == null) && !(tfDiscountPercI.getText() == null) && !(tfDiscountDaysI.getText() == null) && !(tfBadgeNameI.getText() == null) && !(tfTargetNumberI.getText() == null);
+                return !(choiceBoxTypeI.getValue().equals("")) && !(tfDiscountPercI.getText().equals("")) && !(tfDiscountDaysI.getText().equals("")) && !(tfBadgeNameI.getText().equals("")) && !(tfTargetNumberI.getText().equals(""));
             }
             case EXPERT -> {
-                return !(choiceBoxTypeE.getValue() == null) && !(tfDiscountPercE.getText() == null) && !(tfDiscountDaysE.getText() == null) && !(tfBadgeNameE.getText() == null) && !(tfTargetNumberE.getText() == null);
+                return !(choiceBoxTypeE.getValue().equals("")) && !(tfDiscountPercE.getText().equals("")) && !(tfDiscountDaysE.getText().equals("")) && !(tfBadgeNameE.getText().equals("")) && !(tfTargetNumberE.getText().equals(""));
             }
             default -> {
                 return false;
@@ -338,11 +346,10 @@ public class PublishSeriesControllerG {
 
     private void changeCover() {
         FileChooser fc = new FileChooser();
-        fc.getExtensionFilters().add(new FileChooser.ExtensionFilter("*.png,*.jpg","*.jpg","*.png"));
+        fc.getExtensionFilters().add(new FileChooser.ExtensionFilter(PNG,"*.jpg","*.jpg",PNG));
         File f = fc.showOpenDialog(null);
         if(f!=null){
             imageCoverPath = f.getAbsolutePath();
-            System.out.println("Cover path is : "+imageCoverPath);
             InputStream inputStream = null;
             try {
                 inputStream = new FileInputStream(imageCoverPath);

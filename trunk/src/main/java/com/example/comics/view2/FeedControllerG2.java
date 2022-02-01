@@ -291,11 +291,11 @@ public class FeedControllerG2 {
         int actualSize = chapters.size();
         
         box.getChildren().clear();
-        
+
+        boxNoChapters.setVisible(false);
         if(actualSize==0){
             boxNoChapters.setVisible(true);
-        }else{
-            boxNoChapters.setVisible(false);
+            return;
         }
         for(int j=0; j<actualSize; j++){
             FXMLLoader fxmlLoader = new FXMLLoader();
@@ -319,12 +319,11 @@ public class FeedControllerG2 {
         box.getChildren().clear();
         int actualSize = reviews.size();
 
+        boxNoReviews.setVisible(false);
         if(actualSize==0){
             boxNoReviews.setVisible(true);
-        }else{
-            boxNoReviews.setVisible(false);
+            return;
         }
-
         for(int j=0; j<actualSize; j++){
             FXMLLoader fxmlLoader = new FXMLLoader();
             fxmlLoader.setLocation(getClass().getResource("reviewCard.fxml"));

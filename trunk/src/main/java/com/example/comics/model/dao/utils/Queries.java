@@ -181,37 +181,36 @@ public class Queries {
 
     public static ResultSet retreiveAuthor(Statement stmt, String username) throws SQLException {
         String selectStatement = String.format("SELECT * FROM users WHERE (username = '%s')  ",username);
-        System.out.println(selectStatement);
         return stmt.executeQuery(selectStatement);
     }
 
     public static void addFollowedAuthor(Statement stmt, Author author) throws SQLException {
         String insertStatement = String.format("INSERT INTO followedAuthors (reader,author) values ('%s', '%s')", UserLogin.getInstance().getAccount().getUsername(), author.getUsername());
-        System.out.println(insertStatement);
+
         stmt.executeUpdate(insertStatement);
     }
 
     public static ResultSet retreiveFollowedAuthors(Statement stmt, String readerUsername) throws SQLException {
         String selectStatement = String.format("SELECT * FROM followedAuthors WHERE (reader = '%s')  ",readerUsername);
-        System.out.println(selectStatement);
+
         return stmt.executeQuery(selectStatement);
     }
 
     public static void removeFollowedAuthor(Statement stmt, Reader reader,Author author) throws SQLException {
         String deleteStatement = String.format("DELETE FROM followedAuthors WHERE reader = '%s' AND author = '%s'", reader.getUsername(), author.getUsername());
-        System.out.println(deleteStatement);
+
         stmt.executeUpdate(deleteStatement);
     }
 
     public static void addReadChapter(Statement stmt,Reader reader, Series series, String title) throws SQLException {
         String insertStatement = String.format("INSERT INTO userReadChapters (reader,chapter,series) values ('%s', '%s','%s')",reader.getUsername(),title,series.getTitle());
-        System.out.println(insertStatement);
+
         stmt.executeUpdate(insertStatement);
     }
 
     public static ResultSet isChapterRead(Statement stmt, String chapterTitle, String reader) throws SQLException {
         String selectStatement = String.format("SELECT * FROM userReadChapters WHERE (reader = '%s' AND chapter='%s')",reader,chapterTitle);
-        System.out.println(selectStatement);
+
         return stmt.executeQuery(selectStatement);
     }
 
