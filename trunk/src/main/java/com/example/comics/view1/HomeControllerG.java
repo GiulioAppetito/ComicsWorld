@@ -10,6 +10,8 @@ import java.net.URL;
 
 public abstract class HomeControllerG {
 
+    private static final String FEED = "feed";
+
     public abstract void changeCenter(Pane pane);
 
     public abstract void resetButtons();
@@ -18,7 +20,7 @@ public abstract class HomeControllerG {
         FeedControllerG feedControllerG = FeedControllerG.getInstance();
         FXMLLoader loader = new FXMLLoader();
 
-        URL fxmlLocation = HomeControllerG.class.getResource("feed.fxml");
+        URL fxmlLocation = HomeControllerG.class.getResource(FEED + ".fxml");
         loader.setLocation(fxmlLocation);
         loader.setController(feedControllerG);
 

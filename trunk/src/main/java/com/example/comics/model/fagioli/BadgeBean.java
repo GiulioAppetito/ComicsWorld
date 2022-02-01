@@ -4,10 +4,10 @@ import javafx.scene.image.Image;
 
 public interface BadgeBean {
 
-    public String getName();
-    public void setName(String name);
+    String getName();
+    void setName(String name);
 
-    public Image getIcon();
-    public void setIcon(Image icon);
+    Image getIcon();
+    void setIcon(Image icon);
 
 }

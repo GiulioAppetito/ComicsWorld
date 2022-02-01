@@ -8,7 +8,6 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
 
 import java.io.IOException;
-import java.net.URL;
 import java.util.List;
 
 public class ReadingControllerG {
@@ -33,13 +32,7 @@ public class ReadingControllerG {
                 cardController.setData(listOfCards.get(j));
 
                 int finalJ = j;
-                card.setOnMouseClicked(event -> {
-                    try {
-                        openSerie(listOfCards.get(finalJ));
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
-                });
+                card.setOnMouseClicked(event -> openSerie(listOfCards.get(finalJ)));
 
                 gpComic.add(card,j%columns,i);
                 if(j%columns == columns-1){
@@ -53,7 +46,7 @@ public class ReadingControllerG {
     }
 
 
-    public void openSerie(SeriesBean seriesBean) throws IOException {
+    public void openSerie(SeriesBean seriesBean){
         ReaderHomeControllerG readerHomeControllerG = ReaderHomeControllerG.getInstance();
         readerHomeControllerG.openSeries(seriesBean);
     }

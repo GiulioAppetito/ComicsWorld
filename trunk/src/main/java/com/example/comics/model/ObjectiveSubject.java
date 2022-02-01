@@ -18,7 +18,6 @@ public abstract class ObjectiveSubject {
 
     public void notifyObserversNewBadge(BadgeBundle badgeBundle){
         for (ObjectiveObserver observer : observers) {
-            System.out.println("sto notificando");
             observer.update(badgeBundle);
         }
     }

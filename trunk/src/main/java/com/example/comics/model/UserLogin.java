@@ -5,11 +5,10 @@ import com.example.comics.model.dao.AuthorDAO;
 import com.example.comics.model.dao.ReaderDAO;
 import com.example.comics.model.exceptions.FailedRegistrationException;
 
-public class UserLogin implements AccountObserver{
+public class UserLogin{
 
     private static UserLogin instance = null;
     private static Account account;
-    private static String username;
 
     private static Reader reader;
     private static Author author;
@@ -22,8 +21,6 @@ public class UserLogin implements AccountObserver{
         }
         return instance;
     }
-
-    public String getUsername() { return username; }
 
     public Account getAccount() {
         return account;
@@ -39,16 +36,16 @@ public class UserLogin implements AccountObserver{
 
     public static boolean createAccount(String credential, String password, String role){
 
-        username = credential;
-
+        UserLogin.account = new Author();
         if(role.equals("author")){
             AuthorDAO authorDAO = new AuthorDAO();
-            UserLogin.author = authorDAO.retrieveAuthor(username, password);
+            UserLogin.author = authorDAO.retrieveAuthor(credential, password);
             UserLogin.account = author;
 
         }else if(role.equals("reader")){
             ReaderDAO readerDAO = new ReaderDAO();
-            UserLogin.reader = readerDAO.retrieveReader(username, password);
+            UserLogin.account.setUsername(credential);
+            UserLogin.reader = readerDAO.retrieveReader(credential, password);
             UserLogin.account = reader;
 
         }else{
@@ -65,8 +62,4 @@ public class UserLogin implements AccountObserver{
         dao.registerNewAccount(firstName,lastName,username,email,password,role);
     }
 
-    @Override
-    public void update() {
-        username = account.getUsername();
-    }
 }

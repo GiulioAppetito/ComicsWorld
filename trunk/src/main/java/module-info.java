@@ -13,9 +13,6 @@ module com.example.coomics {
     requires java.desktop;
     requires javax.jms;
     requires mail;
-    requires kotlin.stdlib;
-    requires tornadofx;
-    requires tornadofx.controlsfx;
 
     exports com.example.comics.view1;
     opens com.example.comics.view1 to javafx.fxml;

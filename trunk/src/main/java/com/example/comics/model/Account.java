@@ -99,7 +99,6 @@ public abstract class Account extends AccountSubject {
                 this.setUsername(newCredential);
                 break;
             case "firstname":
-                System.out.println("[Account] Sto cambiando il firstname in: " + newCredential);
                 this.firstName = newCredential;
                 break;
             case "lastname":

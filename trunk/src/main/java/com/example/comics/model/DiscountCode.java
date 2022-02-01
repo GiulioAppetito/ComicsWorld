@@ -1,6 +1,7 @@
 package com.example.comics.model;
 
 import java.time.LocalDateTime;
+import java.util.Random;
 
 public class DiscountCode {
 
@@ -20,7 +21,8 @@ public class DiscountCode {
         StringBuilder generatedCode = new StringBuilder();
         int random;
         for(int i=0; i<LENGHT; i++){
-            random = (int) (Math.random()*100 %26);
+            Random ran = new Random();
+            random = ran.nextInt(1, 26);
             if(i<=2){
 
                 generatedCode.append(ALPHABET.charAt(random));

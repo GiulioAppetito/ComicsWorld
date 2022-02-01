@@ -201,15 +201,15 @@ public class FeedControllerG2 {
     @FXML
     private VBox vBoxToReadSeries;
 
+    
+    private static final String READER = "reader";
+    private static final String BORDER_STYLE = "-fx-border-color: #9b55dc; -fx-background-radius: 20";
+    private static final String PLAIN_STYLE = "-fx-border-color: #ffffff;";
 
-    private final static String BORDER_STYLE = "-fx-border-color: #9b55dc; -fx-background-radius: 20";
-    private final static String PLAIN_STYLE = "-fx-border-color: #ffffff;";
-
-    private static int previous_size = 0;
     private boolean openMenu = true;
     private static FeedControllerG2 instance;
     private static List<SeriesBean> latestSeries;
-    private static List<SeriesBean> mySeries;
+    private List<SeriesBean> mySeries;
 
     private FeedControllerG2(){
         loadLatestSeries();
@@ -235,7 +235,7 @@ public class FeedControllerG2 {
         btnMenu.setOnAction(event -> openMenu());
         btnSettings.setOnAction(event -> openSettings());
 
-        if(UserLogin.getInstance().getAccount().getRole().equals("reader")){
+        if(UserLogin.getInstance().getAccount().getRole().equals(READER)){
             readerMenu();
         }else{
             authorMenu();
@@ -276,13 +276,7 @@ public class FeedControllerG2 {
                 cardController.setData(series.get(j));
 
                 int finalJ = j;
-                card.setOnMouseClicked(event -> {
-                    try {
-                        openSerie(series.get(finalJ));
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
-                });
+                card.setOnMouseClicked(event -> openSerie(series.get(finalJ)));
 
                 box.getChildren().add(card);
 
@@ -294,17 +288,16 @@ public class FeedControllerG2 {
     }
     private void displayListOfChapters(List<ChapterBean> chapters, VBox box){
 
-        int actual_size = chapters.size();
-        for(int i=0; i<previous_size; i++){
-            box.getChildren().remove(0);
-        }
-        previous_size = actual_size;
-        if(actual_size==0){
+        int actualSize = chapters.size();
+        
+        box.getChildren().clear();
+        
+        if(actualSize==0){
             boxNoChapters.setVisible(true);
         }else{
             boxNoChapters.setVisible(false);
         }
-        for(int j=0; j<actual_size; j++){
+        for(int j=0; j<actualSize; j++){
             FXMLLoader fxmlLoader = new FXMLLoader();
             fxmlLoader.setLocation(getClass().getResource("chapterCard.fxml"));
             try {
@@ -324,15 +317,15 @@ public class FeedControllerG2 {
     private void displayListOfReviews(List<ReviewBean> reviews, VBox box) {
 
         box.getChildren().clear();
-        int actual_size = reviews.size();
+        int actualSize = reviews.size();
 
-        if(actual_size==0){
+        if(actualSize==0){
             boxNoReviews.setVisible(true);
         }else{
             boxNoReviews.setVisible(false);
         }
 
-        for(int j=0; j<actual_size; j++){
+        for(int j=0; j<actualSize; j++){
             FXMLLoader fxmlLoader = new FXMLLoader();
             fxmlLoader.setLocation(getClass().getResource("reviewCard.fxml"));
             try {
@@ -466,8 +459,8 @@ public class FeedControllerG2 {
 
         List<String> myTitles = new ArrayList<>();
         ObservableList<PieChart.Data> pieChartData = FXCollections.observableArrayList();
-        PieChart.Data starting_data = new PieChart.Data("", 100);
-        pieChartData.add(starting_data);
+        PieChart.Data startingData = new PieChart.Data("", 100);
+        pieChartData.add(startingData);
         for(SeriesBean seriesBean : mySeries){
             myTitles.add(seriesBean.getTitle());
             StatisticsController statisticsController = new StatisticsController();
@@ -639,14 +632,14 @@ public class FeedControllerG2 {
         description.setText(chapterBean.getDescription());
 
         displayListOfReviews(chapterBean.getReviews(), vBoxReviews);
-        if(UserLogin.getInstance().getAccount().getRole().equals("reader")) {
-            ReadChapter(chapterBean);
+        if(UserLogin.getInstance().getAccount().getRole().equals(READER)) {
+            readChapter(chapterBean);
         }else{
             btnBuy.setVisible(false);
             btnPostReview.setVisible(false);
         }
     }
-    public void openSerie(SeriesBean seriesBean) throws IOException {
+    public void openSerie(SeriesBean seriesBean){
 
         vBoxSeries.setVisible(false);
         boxProfile.setVisible(false);
@@ -668,7 +661,7 @@ public class FeedControllerG2 {
         author.setOnAction(event -> openAuthor(seriesBean.getAuthor()));
 
         displayListOfChapters(seriesBean.getChapters(), vBoxChapters);
-        if(UserLogin.getInstance().getAccount().getRole().equals("reader")) {
+        if(UserLogin.getInstance().getAccount().getRole().equals(READER)) {
             likeSeries(seriesBean);
             addToRead(seriesBean);
         }else{
@@ -698,7 +691,7 @@ public class FeedControllerG2 {
         ResearchController researchController = new ResearchController();
         List<SeriesBean> publishedSeries = researchController.getPublishedSeries(authorBean);
         displayListOfSeries(publishedSeries, vBoxOriginalSeries);
-        if(UserLogin.getInstance().getAccount().getRole().equals("reader")) {
+        if(UserLogin.getInstance().getAccount().getRole().equals(READER)) {
             areYouFollowing(authorBean);
         }else{
             btnFollow.setVisible(false);
@@ -729,7 +722,8 @@ public class FeedControllerG2 {
     }
 
 
-    private void ReadChapter(ChapterBean chapterBean) {
+    private void readChapter(ChapterBean chapterBean) {
+        //TO-DO
     }
 
 }

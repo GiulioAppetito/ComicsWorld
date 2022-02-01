@@ -5,22 +5,12 @@ import com.example.comics.model.AccountSubject;
 import com.example.comics.controller.CustomizeProfileController;
 import com.example.comics.model.fagioli.AccountBean;
 import com.example.comics.model.UserLogin;
-import com.example.comics.model.fagioli.ProfileBean;
 import com.example.comics.view1.beans.AccountBean1;
-import com.example.comics.view1.beans.ProfileBean1;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
-import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
-import javafx.stage.FileChooser;
-
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.InputStream;
 
 public class AccountSettingsControllerG implements AccountObserver {
     @FXML

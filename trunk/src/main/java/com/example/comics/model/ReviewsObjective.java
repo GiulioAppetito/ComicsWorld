@@ -27,9 +27,8 @@ public class ReviewsObjective extends Objective{
     @Override
     public boolean achieveObjective(int readersReviews, Badge badge){
         Boolean win = (readersReviews >= requiredReviews);
-        if(win == true){
+        if(readersReviews >= requiredReviews){
             BadgeBundle badgeBundle = new BadgeBundle();
-            System.out.println("vittoria badge");
             badgeBundle.setIcon(badge.getIcon());
             badgeBundle.setName(badge.getName());
             notifyObserversNewBadge(badgeBundle);
@@ -41,13 +40,6 @@ public class ReviewsObjective extends Objective{
     @Override
     public final String getType() {
         return "reviewsObjective";
-    }
-
-    public int getRequiredReviews(){
-        return requiredReviews;
-    }
-    public void setRequiredReviews(int num){
-        this.requiredReviews = num;
     }
 
 }

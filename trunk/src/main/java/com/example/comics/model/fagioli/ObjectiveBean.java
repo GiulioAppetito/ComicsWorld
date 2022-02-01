@@ -1,7 +1,5 @@
 package com.example.comics.model.fagioli;
 
-import com.example.comics.model.Badge;
-import com.example.comics.model.Discount;
 import com.example.comics.model.Levels;
 import javafx.scene.image.Image;
 
@@ -20,10 +18,6 @@ public interface ObjectiveBean {
 
     Image getBadgeIcon();
     String getBadgeName();
-    void setBadge(Badge badge);
-
-    String getSeriesTitle();
-    void setSeriesTitle(String seriesTitle);
 
     DiscountBean getDiscountBean();
     void setDiscountBean(DiscountBean discountBean);

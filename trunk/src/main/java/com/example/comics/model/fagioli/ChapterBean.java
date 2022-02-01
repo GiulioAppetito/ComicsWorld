@@ -4,7 +4,6 @@ import com.example.comics.model.Review;
 import javafx.scene.image.Image;
 
 import java.io.InputStream;
-import java.util.ArrayList;
 import java.util.List;
 
 public interface ChapterBean {

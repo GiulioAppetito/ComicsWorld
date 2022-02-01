@@ -1,7 +1,6 @@
 package com.example.comics.view2;
 
 import com.example.comics.controller.LoginController;
-import com.example.comics.model.UserLogin;
 import com.example.comics.model.fagioli.LoginBean;
 import com.example.comics.view2.beans.LoginBean2;
 import javafx.event.ActionEvent;
@@ -54,8 +53,6 @@ public class LoginControllerG2 {
             FXMLLoader loader = new FXMLLoader();
             URL fxmlLocation;
             Scene scene;
-
-            String role = UserLogin.getInstance().getAccount().getRole();
 
                 FeedControllerG2 feedControllerG2 = FeedControllerG2.getInstance();
 

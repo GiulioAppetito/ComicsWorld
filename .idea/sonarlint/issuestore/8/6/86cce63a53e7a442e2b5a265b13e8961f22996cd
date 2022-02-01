@@ -1,8 +1,0 @@
-
-y
-java:S4144."^Update this method so that its implementation is not identical to "getRequirement" on line 23.(Ρψ·ύÿÿÿÿ
-B
-java:S1125"'Remove the unnecessary boolean literal.(ωνήκÿÿÿÿÿ
-S	java:S106 "9Replace this use of System.out or System.err by a logger.(ήΦ‘§ÿÿÿÿÿ
-E
-java:S5411"*Use the primitive boolean expression here.(ωνήκÿÿÿÿÿ

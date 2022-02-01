@@ -37,7 +37,6 @@ public class FeedControllerG{
 
     public void init() {
 
-        System.out.println("feed init");
         int size = latestSeries.size();
         int i=1;
         for(int j=0; j<size; j++) {
@@ -50,13 +49,7 @@ public class FeedControllerG{
 
 
                 int finalJ = j;
-                card.setOnMouseClicked(event -> {
-                    try {
-                        openSerie(latestSeries.get(finalJ));
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
-                });
+                card.setOnMouseClicked(event -> openSerie(latestSeries.get(finalJ)));
 
                 feedGrid.add(card,j%4,i);
                 if(j%4 == 3){
@@ -68,7 +61,7 @@ public class FeedControllerG{
         }
     }
 
-    public void openSerie(SeriesBean seriesBean) throws IOException {
+    public void openSerie(SeriesBean seriesBean){
         HomeFactory homeFactory = new HomeFactory();
         HomeControllerG homeControllerG = homeFactory.getHomeControllerG();
         homeControllerG.openSeries(seriesBean);

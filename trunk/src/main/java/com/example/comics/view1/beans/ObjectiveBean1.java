@@ -51,26 +51,12 @@ public class ObjectiveBean1 implements ObjectiveBean {
 
     @Override
     public Image getBadgeIcon() {
-        return null;
+        return badgeBean.getIcon();
     }
 
     @Override
     public String getBadgeName() {
-        return null;
-    }
-
-    @Override
-    public void setBadge(Badge badge) {
-
-    }
-
-
-    public String getSeriesTitle() {
-        return seriesTitle;
-    }
-
-    public void setSeriesTitle(String seriesTitle) {
-        this.seriesTitle = seriesTitle;
+        return badgeBean.getName();
     }
 
     @Override

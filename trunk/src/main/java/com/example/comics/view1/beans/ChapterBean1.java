@@ -13,7 +13,7 @@ public class ChapterBean1 implements ChapterBean {
 
     private String title;
     private Image cover;
-    private final List<ReviewBean> reviews = new ArrayList<>();
+    private List<ReviewBean> reviews = new ArrayList<>();
     private int rating;
     private String description;
     private Boolean isRead;
@@ -44,7 +44,7 @@ public class ChapterBean1 implements ChapterBean {
 
     @Override
     public void setReviews(List<Review> reviews) {
-
+        this.reviews = new ArrayList<>();
     }
 
     @Override

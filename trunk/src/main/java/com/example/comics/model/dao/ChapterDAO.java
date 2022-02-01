@@ -54,7 +54,7 @@ public class ChapterDAO {
                 }
 
 
-                rs2 = Queries.isChapterRead(stmt2,chapterTitle, UserLogin.getInstance().getUsername());
+                rs2 = Queries.isChapterRead(stmt2,chapterTitle, UserLogin.getInstance().getAccount().getUsername());
                 //il capitolo non è letto
                 chapter.setRead(rs2.first());
 

@@ -4,7 +4,6 @@ import com.example.comics.model.AccountObserver;
 import com.example.comics.model.AccountSubject;
 import com.example.comics.model.UserLogin;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
@@ -12,7 +11,6 @@ import javafx.scene.layout.*;
 import tools.FxmlLoader;
 
 import java.io.IOException;
-import java.net.URL;
 
 public class ReaderHomeControllerG extends HomeControllerG implements AccountObserver{
 
@@ -70,14 +68,13 @@ public class ReaderHomeControllerG extends HomeControllerG implements AccountObs
         return instance;
     }
 
-    public void init() throws IOException {
+    public void init(){
 
         openFeed();
 
         lblTitle.setOnMouseClicked(event -> openFeed());
         lblName.setText(UserLogin.getInstance().getAccount().getUsername());
         proPic.setImage(UserLogin.getInstance().getReader().getProPic());
-        System.out.println(" ***** [HomeCOntrollerGReader] Your proPic is : "+proPic.getImage());
 
         btnFav.setOnAction(event -> openFavourites());
         btnFollowing.setOnAction(event-> openFollowing());

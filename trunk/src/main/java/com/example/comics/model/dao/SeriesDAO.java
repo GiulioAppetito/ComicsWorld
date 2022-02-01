@@ -6,8 +6,8 @@ import javafx.scene.image.Image;
 import java.io.InputStream;
 import java.sql.*;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class SeriesDAO {
 
@@ -18,6 +18,7 @@ public class SeriesDAO {
     private static final String SERIES = "series";
     private static final String TITLE = "title";
     private static final String COVER = "cover";
+    private static final String AUTHOR = "author";
 
     public List<Series> retrieveFavouriteSeries(String user) {
         Statement stmt = null;
@@ -127,7 +128,6 @@ public class SeriesDAO {
 
         List<Series> seriesList = new ArrayList<>();
 
-        String title;
         Series series;
 
         try {
@@ -234,9 +234,6 @@ public class SeriesDAO {
         Connection conn = null;
 
         Series series = null;
-        Genres genre1;
-        Genres genre2;
-        Genres genre3;
         Author author;
         try {
             conn = DriverManager.getConnection(DB_URL, USER, PASS);
@@ -250,14 +247,11 @@ public class SeriesDAO {
             rs.first();
 
             do {
-                //genre1 = Genres.valueOf(rs.getString("genre1"));
-                //genre2 = Genres.valueOf(rs.getString("genre2"));
-                //genre3 = Genres.valueOf(rs.getString("genre3"));
 
                 title = rs.getString(TITLE);
 
                 AuthorDAO authorDAO = new AuthorDAO();
-                author = authorDAO.retrieveAuthorWithoutPassword(rs.getString("author"));
+                author = authorDAO.retrieveAuthorWithoutPassword(rs.getString(AUTHOR));
                 series = new Series(title, author);
                 Blob bl = rs.getBlob(COVER);
                 InputStream inputStream = bl.getBinaryStream();
@@ -311,7 +305,7 @@ public class SeriesDAO {
             do {
 
                 AuthorDAO authorDAO = new AuthorDAO();
-                author = authorDAO.retrieveAuthorWithoutPassword(rs.getString("author"));
+                author = authorDAO.retrieveAuthorWithoutPassword(rs.getString(AUTHOR));
                 series = new Series(rs.getString(TITLE), author);
 
                 Blob bl = rs.getBlob(COVER);
@@ -351,9 +345,6 @@ public class SeriesDAO {
         Connection conn = null;
 
         Series series = null;
-        Genres genre1;
-        Genres genre2;
-        Genres genre3;
 
         try {
             conn = DriverManager.getConnection(DB_URL, USER, PASS);
@@ -367,14 +358,8 @@ public class SeriesDAO {
             rs.first();
 
             do {
-                //genre1 = Genres.valueOf(rs.getString("genre1"));
-                //genre2 = Genres.valueOf(rs.getString("genre2"));
-                //genre3 = Genres.valueOf(rs.getString("genre3"));
-
                 title = rs.getString(TITLE);
 
-
-                System.out.println("seriesDAO: recupero serie singola con author");
                 series = new Series(title, author);
                 Blob bl = rs.getBlob(COVER);
                 InputStream inputStream = bl.getBinaryStream();
@@ -428,7 +413,7 @@ public class SeriesDAO {
                         Author author;
                         Series series;
                         AuthorDAO authorDAO = new AuthorDAO();
-                        author = authorDAO.retrieveAuthorWithoutPassword(rs.getString("author"));
+                        author = authorDAO.retrieveAuthorWithoutPassword(rs.getString(AUTHOR));
                         series = new Series(rs.getString(TITLE), author);
 
                         Blob bl = rs.getBlob(COVER);
@@ -473,7 +458,7 @@ public class SeriesDAO {
         return objectiveDAO.retrieveSeriesObjectives(series);
     }
 
-    public void savePublishedSeries(Series series, InputStream seriesCoverInputStream, HashMap<Objective,InputStream> hashMap) {
+    public void savePublishedSeries(Series series, InputStream seriesCoverInputStream, Map<Objective,InputStream> hashMap) {
         Statement stmt = null;
         Connection conn = null;
         int bagdeID = 0;
@@ -498,7 +483,6 @@ public class SeriesDAO {
                 do{
                     bagdeID = rs.getInt("badgeID");
                 }while(rs.next());
-                System.out.println(" HERE IS BADGEID = "+bagdeID);
 
                 int id = bagdeID;
                 Queries.insertObjective(stmt,objective,series,id);
@@ -515,7 +499,7 @@ public class SeriesDAO {
         }
     }
 
-    public Series createSeries(Author author, String title, Genres genre1, Genres genre2, Genres genre3, Image cover, InputStream coverInputStream, List<Objective> objectives,HashMap<Objective,InputStream> badgeIconHM) {
+    public Series createSeries(Author author, String title, Genres genre1, Genres genre2, Genres genre3, Image cover, InputStream coverInputStream, List<Objective> objectives, Map<Objective,InputStream> badgeIconHM) {
         Series series;
         series = new Series();
         series.setAuthor(author);

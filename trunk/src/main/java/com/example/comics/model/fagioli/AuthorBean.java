@@ -7,6 +7,7 @@ import java.util.List;
 
 public interface AuthorBean {
 
+    //QUA DOVREBBE ESSERE SERIESBEAN
     void setPublishedSeries(List<Series> publishedSeries);
     List<Series> getPublishedSeries();
 

@@ -1,9 +1,7 @@
 package com.example.comics.view1;
 
 import com.example.comics.controller.ResearchController;
-import com.example.comics.model.UserLogin;
 import com.example.comics.model.fagioli.AuthorBean;
-import com.example.comics.model.fagioli.SeriesBean;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.layout.GridPane;

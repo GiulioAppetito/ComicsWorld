@@ -1,4 +1,4 @@
-package com.example.comics.view1.beans;
+package com.example.comics.model.exceptions;
 
 public class WrongCredentialException extends Exception {
 }

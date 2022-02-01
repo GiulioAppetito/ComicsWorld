@@ -4,7 +4,6 @@ import com.example.comics.model.AccountObserver;
 import com.example.comics.model.AccountSubject;
 import com.example.comics.model.UserLogin;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
@@ -15,7 +14,6 @@ import tools.FxmlLoader;
 
 
 import java.io.IOException;
-import java.net.URL;
 
 public class AuthorHomeControllerG  extends HomeControllerG implements AccountObserver {
 
@@ -69,26 +67,22 @@ public class AuthorHomeControllerG  extends HomeControllerG implements AccountOb
 
 
 
-    public void init() throws IOException {
+    public void init(){
 
         openFeed();
 
         lblTitle.setOnMouseClicked(event -> openFeed());
         smallProPic.setImage(UserLogin.getInstance().getAccount().getProPic());
-        System.out.println("INITED WITH PIC "+UserLogin.getInstance().getAccount().getProPic());
         lblName.setText(UserLogin.getInstance().getAccount().getUsername());
 
         btnMySeries.setOnAction(event -> openMySeries());
-        btnCategories.setOnAction(event -> {
-            openCategories();
-        });
+        btnCategories.setOnAction(event -> openCategories());
         btnStatistics.setOnAction(event -> openStatistics());
 
         btnSettings.setOnAction(event -> openSettings());
         userBox.setOnMouseClicked(event -> openProfile());
         homeIcon.setOnMouseClicked(event -> openFeed());
 
-        System.out.println("fine init author home controller g");
     }
 
     private void openStatistics() {
@@ -116,6 +110,7 @@ public class AuthorHomeControllerG  extends HomeControllerG implements AccountOb
         resetButtons();
     }
 
+    @Override
     public void openSettings() {
 
         FxmlLoader object = new FxmlLoader();

@@ -12,12 +12,7 @@ public class PublishChapterController {
         //cerca la serie dell'author relativa al capitolo e aggiungi capitolo
         for(Series series : UserLogin.getInstance().getAuthor().getPublishedSeries()){
             if(series.getTitle().equals(seriesTitle)){
-                try {
                     series.addChapter(chapterBean.getTitle(),chapterBean.getCover(),chapterBean.getDescription(),chapterBean.getCoverInputStream());
-                } catch (SQLException e) {
-                    //review non trovate
-                    e.printStackTrace();
-                }
             }
         }
 

@@ -1,12 +1,9 @@
 package com.example.comics.model.fagioli.bundle;
 
-import com.example.comics.model.Author;
-import com.example.comics.model.Chapter;
 import com.example.comics.model.Genres;
 import com.example.comics.model.fagioli.AuthorBean;
 import com.example.comics.model.fagioli.ChapterBean;
 import com.example.comics.model.fagioli.SeriesBean;
-import com.example.comics.view1.beans.ChapterBean1;
 import javafx.scene.image.Image;
 
 import java.io.InputStream;
@@ -47,7 +44,7 @@ public class SeriesBundle implements SeriesBean {
 
     @Override
     public void setCoverInputStream(InputStream inputStream) {
-        this.coverInputStream = coverInputStream;
+        this.coverInputStream = inputStream;
     }
 
     public AuthorBundle getAuthor() {

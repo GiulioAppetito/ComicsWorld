@@ -43,7 +43,8 @@ public class SeriesControllerG {
     @FXML
     private Label lblTitle;
 
-    private final static String STYLE1 = ".button2";
+    private static final String STYLE1 = ".button2";
+    private static final String STYLE2 = "-fx-background-color: #5DADE2; -fx-background-radius: 20";
 
     public void setData(SeriesBean seriesBean) {
 
@@ -80,11 +81,11 @@ public class SeriesControllerG {
             }
         }
 
-        if(UserLogin.getInstance().getAccount().getRole()!="author") {
+        if(UserLogin.getInstance().getAccount().getRole().equals("author")) {
 
             FavouritesController favouritesController = new FavouritesController();
             if (favouritesController.isSeriesFavourite(seriesBean)) {
-                btnAddToFav.setStyle("-fx-background-color: #5DADE2; -fx-background-radius: 20");
+                btnAddToFav.setStyle(STYLE2);
                 btnAddToFav.setOnAction(event -> removeFromFavourites(seriesBean));
                 btnAddToFav.setText("Remove from fav");
 
@@ -96,7 +97,7 @@ public class SeriesControllerG {
 
             ToReadController toReadController = new ToReadController();
             if (toReadController.isSeriesAddedToRead(seriesBean)) {
-                btnAddToRead.setStyle("-fx-background-color: #5DADE2; -fx-background-radius: 20");
+                btnAddToRead.setStyle(STYLE2);
                 btnAddToRead.setOnAction(event -> removeSeriesFromToRead(seriesBean));
                 btnAddToRead.setText("Remove from toRead");
             } else {
@@ -150,7 +151,7 @@ public class SeriesControllerG {
         ToReadController toReadController = new ToReadController();
         toReadController.addSeriesToToRead(seriesBean);
         btnAddToRead.setOnAction(event -> removeSeriesFromToRead(seriesBean));
-        btnAddToRead.setStyle("-fx-background-color: #5DADE2; -fx-background-radius: 20");
+        btnAddToRead.setStyle(STYLE2);
         btnAddToRead.setText("Remove from toRead");
 
     }
@@ -159,7 +160,7 @@ public class SeriesControllerG {
         FavouritesController favouritesController = new FavouritesController();
         favouritesController.addSeriesToFavourites(seriesBean);
         btnAddToFav.setOnAction(event -> removeFromFavourites(seriesBean));
-        btnAddToFav.setStyle("-fx-background-color: #5DADE2; -fx-background-radius: 20");
+        btnAddToFav.setStyle(STYLE2);
         btnAddToFav.setText("Remove from fav");
     }
 

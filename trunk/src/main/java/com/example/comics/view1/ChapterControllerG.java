@@ -382,7 +382,7 @@ public class ChapterControllerG implements ChapterObserver, ObjectiveObserver {
         taDescription.setEditable(false);
         chapterSeries = seriesBean.getTitle();
 
-        if(!chapterBean.getRead()){
+        if(Boolean.FALSE.equals(chapterBean.getRead())){
             btnChapterRead.setStyle(STYLE);
             btnChapterRead.setOnAction(event -> markChapterAsRead(seriesBean,chapterBean));
         }else{
@@ -534,7 +534,6 @@ public class ChapterControllerG implements ChapterObserver, ObjectiveObserver {
         reviewBean.setComment(txtAreaComment.getText());
         reviewBean.setAccount(UserLogin.getInstance().getReader());
         reviewBean.setRating(reviewRating);
-        System.out.println("[Chapter Controller G] Rating : "+reviewRating);
         //e magari anche la foto
         PostReviewController postReviewController = new PostReviewController();
         postReviewController.post(reviewBean, chapterBean, seriesBean);
@@ -567,7 +566,6 @@ public class ChapterControllerG implements ChapterObserver, ObjectiveObserver {
     }
     @Override
     public void update(BadgeBean badgeBean) {
-        System.out.println("new badge won!");
         newBadgeWonPane.setVisible(true);
         lblBadgeName.setText(badgeBean.getName());
         badgeIconView.setImage(badgeBean.getIcon());

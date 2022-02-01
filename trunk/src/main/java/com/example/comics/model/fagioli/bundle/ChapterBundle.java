@@ -73,7 +73,7 @@ public class ChapterBundle implements ChapterBean {
     }
     @Override
     public void setAverageRating(int averageRating) {
-        this.rating = rating;
+        this.rating = averageRating;
     }
 
     @Override

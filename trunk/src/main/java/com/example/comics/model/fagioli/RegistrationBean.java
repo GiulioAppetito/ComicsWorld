@@ -2,27 +2,27 @@ package com.example.comics.model.fagioli;
 
 public interface RegistrationBean {
 
-    public String getFirstName();
+    String getFirstName();
 
-    public void setFirstName(String firstName);
+    void setFirstName(String firstName);
 
-    public String getLastName();
+    String getLastName();
 
-    public void setLastName(String lastName);
+    void setLastName(String lastName);
 
-    public String getUsername();
+    String getUsername();
 
-    public void setUsername(String username);
+    void setUsername(String username);
 
-    public String getPassword();
+    String getPassword();
 
-    public void setPassword(String password);
+    void setPassword(String password);
 
-    public String getEmail();
+    String getEmail();
 
-    public void setEmail(String email);
+    void setEmail(String email);
 
-    public String getRole();
+    String getRole();
 
-    public void setRole(String role);
+    void setRole(String role);
 }

@@ -5,7 +5,6 @@ import com.example.comics.model.dao.SeriesDAO;
 import javafx.scene.image.Image;
 
 import java.io.InputStream;
-import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -109,14 +108,13 @@ public class Series extends SeriesSubject{
 		this.author = author;
 	}
 
-	public void addChapter(String chapterTitle, Image chapterCover, String chapterDescription, InputStream inputStream) throws SQLException {
+	public void addChapter(String chapterTitle, Image chapterCover, String chapterDescription, InputStream inputStream){
 		Chapter chapter = new Chapter(chapterTitle);
 		chapter.setDescription(chapterDescription);
 		chapter.setCover(chapterCover);
 		this.chapters.add(chapter);
 
 		ChapterDAO chapterDAO = new ChapterDAO();
-		System.out.println("**** [Series] I'm calling chapterDAO ****");
 		chapterDAO.saveChapter(chapter,this.title,inputStream);
 	}
 

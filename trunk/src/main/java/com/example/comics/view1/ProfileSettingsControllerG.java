@@ -46,6 +46,7 @@ public class ProfileSettingsControllerG implements AccountObserver {
     @FXML
     private Button btnSaveUsername;
 
+    @FXML
     private String imageCoverPath;
 
     public void initialize(){
@@ -66,7 +67,6 @@ public class ProfileSettingsControllerG implements AccountObserver {
         File f = fc.showOpenDialog(null);
         if(f!=null){
             imageCoverPath = f.getAbsolutePath();
-            System.out.println("Cover path is : "+imageCoverPath);
 
             try {
                 inputStream = new FileInputStream(imageCoverPath);

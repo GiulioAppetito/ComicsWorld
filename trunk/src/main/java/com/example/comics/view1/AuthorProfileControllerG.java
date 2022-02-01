@@ -41,12 +41,7 @@ public class AuthorProfileControllerG implements AccountObserver {
         lblUsername.setText(UserLogin.getInstance().getAccount().getLastName());
         btnEdit.setOnAction(actionEvent -> edit());
         proPicProfile.setImage(UserLogin.getInstance().getAccount().getProPic());
-        //lblBirthday.setText(UserLogin.getInstance().getAccount().getBirthday().toString());
-        //lblCity.setText(UserLogin.getInstance().getAccount().getCity());
-
-        btnNewSeries.setOnAction(actionEvent -> {
-            publishNewSerie();
-        });
+        btnNewSeries.setOnAction(actionEvent -> publishNewSerie());
 
         btnNewChapter.setOnAction(actionEvent -> publishNewChapter());
 

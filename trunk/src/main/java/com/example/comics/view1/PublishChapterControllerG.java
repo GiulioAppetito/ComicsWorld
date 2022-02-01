@@ -17,7 +17,6 @@ import java.io.FileNotFoundException;
 import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
-import java.awt.image.BufferedImage;
 
 public class PublishChapterControllerG {
 
@@ -65,7 +64,6 @@ public class PublishChapterControllerG {
         File f = fc.showOpenDialog(null);
         if(f!=null){
             imageCoverPath = f.getAbsolutePath();
-            System.out.println("Cover path is : "+imageCoverPath);
             InputStream inputStream = null;
             try {
                 inputStream = new FileInputStream(imageCoverPath);
@@ -79,7 +77,6 @@ public class PublishChapterControllerG {
     }
 
     public void publishChapter(){
-        System.out.println("Publishing chapter...");
         String chapterTitle = tfChapterTitle.getText();
         Image chapterCover = ivComicCover.getImage();
         String chapterDescription = taDescription.getText();
