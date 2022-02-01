@@ -3,6 +3,7 @@ package com.example.comics.model.dao;
 import com.example.comics.model.*;
 import com.example.comics.model.dao.utils.Queries;
 import javafx.scene.image.Image;
+import javafx.scene.text.Text;
 
 import java.io.InputStream;
 import java.sql.*;
@@ -416,6 +417,7 @@ public class SeriesDAO {
                         AuthorDAO authorDAO = new AuthorDAO();
                         author = authorDAO.retrieveAuthorWithoutPassword(rs.getString(AUTHOR));
                         series = new Series(rs.getString(TITLE), author);
+                        series.setDescription(rs.getString("description"));
 
                         Blob bl = rs.getBlob(COVER);
                         if(bl != null){
@@ -508,7 +510,7 @@ public class SeriesDAO {
         }
     }
 
-    public Series createSeries(Author author, String title, Genres genre1, Genres genre2, Genres genre3, Image cover, InputStream coverInputStream, List<Objective> objectives, Map<Objective,InputStream> badgeIconHM) {
+    public Series createSeries(Author author, String title, Genres genre1, Genres genre2, Genres genre3, Image cover, InputStream coverInputStream, List<Objective> objectives, Map<Objective, InputStream> badgeIconHM, String description) {
         Series series;
         series = new Series();
         series.setAuthor(author);
@@ -518,6 +520,7 @@ public class SeriesDAO {
         series.setGenre3(genre3);
         series.setCover(cover);
         series.setObjectives(objectives);
+        series.setDescription(description);
 
         savePublishedSeries(series,coverInputStream,badgeIconHM);
 

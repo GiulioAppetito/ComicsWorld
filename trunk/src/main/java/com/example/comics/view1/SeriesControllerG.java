@@ -10,6 +10,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
 import javafx.scene.control.ButtonBar;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextArea;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.VBox;
 
@@ -41,6 +42,9 @@ public class SeriesControllerG {
     private Button btnAuthor;
 
     @FXML
+    private TextArea taDescription;
+
+    @FXML
     private Label lblTitle;
 
     private static final String STYLE1 = ".button2";
@@ -52,6 +56,7 @@ public class SeriesControllerG {
         lblTitle.setText(seriesBean.getTitle());
         comicCover.setImage(seriesBean.getCover());
         btnAuthor.setText(seriesBean.getAuthor().getUsername());
+        taDescription.setText(seriesBean.getDescription());
 
         btnAuthor.setOnAction(event -> openAuthor(seriesBean));
         List<ChapterBean> listOfChapters = seriesBean.getChapters();
@@ -81,7 +86,7 @@ public class SeriesControllerG {
             }
         }
 
-        if(UserLogin.getInstance().getAccount().getRole().equals("author")) {
+        if(UserLogin.getInstance().getAccount().getRole().equals("reader")) {
 
             FavouritesController favouritesController = new FavouritesController();
             if (favouritesController.isSeriesFavourite(seriesBean)) {

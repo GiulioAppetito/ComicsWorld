@@ -3,6 +3,7 @@ package com.example.comics.model;
 import com.example.comics.model.dao.ChapterDAO;
 import com.example.comics.model.dao.SeriesDAO;
 import javafx.scene.image.Image;
+import javafx.scene.text.Text;
 
 import java.io.InputStream;
 import java.util.ArrayList;
@@ -17,6 +18,7 @@ public class Series extends SeriesSubject{
 	private int averageRating;
 	private final List<Chapter> chapters;
 	private List<Objective> objectives;
+	private String description;
 
 	private Genres genre1;
 	private Genres genre2;
@@ -33,7 +35,6 @@ public class Series extends SeriesSubject{
 		if(objectives==null){
 			objectives = new ArrayList<>();
 		}
-
 		calculateAverageRating();
 	}
 
@@ -165,6 +166,14 @@ public class Series extends SeriesSubject{
 
 	public void setAverageRating(int averageRating) {
 		this.averageRating = averageRating;
+	}
+
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
 	}
 }
 

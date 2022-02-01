@@ -251,13 +251,14 @@ public class Queries {
     }
 
     public static void insertSeries(Connection conn, Series series, InputStream seriesCoverInputStream) throws SQLException {
-        PreparedStatement pstmt = conn.prepareStatement("INSERT INTO series (title,author,genre1,genre2,genre3,cover) values (?,?,?,?,?,?)");
+        PreparedStatement pstmt = conn.prepareStatement("INSERT INTO series (title,author,genre1,genre2,genre3,cover,description) values (?,?,?,?,?,?,?)");
         try{
             pstmt.setString(1, series.getTitle());
             pstmt.setString(2,series.getAuthor().getUsername());
             pstmt.setString(3,series.getGenre1().name());
             pstmt.setString(4,series.getGenre2().name());
             pstmt.setString(5,series.getGenre3().name());
+            pstmt.setString(7,series.getDescription());
 
             //Inserting Blob type
             pstmt.setBlob(6, seriesCoverInputStream);
