@@ -9,5 +9,3 @@ Ttrunk/src/main/java/com/example/comics/controller/boundaries/PostReviewBoundary
 Ltrunk/src/main/java/com/example/comics/fakeamazon/FakeAmazonControllerG.java,7\a\7a551c62141d1fe3244d412ea323e2747cca2b61
 9
 	script.py,d\b\db3114d7223bc9bf7f8dd902c5a35833f8ffdf82
-A
-comando batch.txt,e\c\ec904f9bcd6fb051ee00b231734dbc0e5d956b96
