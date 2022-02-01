@@ -29,16 +29,10 @@ public class BuyComicController {
         AccountBean accountBean = new AccountBundle();
         accountBean.setFirstName(UserLogin.getInstance().getAccount().getFirstName());
         accountBean.setLastName(UserLogin.getInstance().getAccount().getLastName());
-
-
         BuyComicBoundary buyComicBoundary = new BuyComicBoundary();
-
         buyComicBoundary.convalidPayment(accountBean);
 
-            //cancella discount code
-        UserLogin.getInstance().getReader().removeDiscountCode(code);
-
-
-
+        //cancella discount code
+        UserLogin.getInstance().getReader().removeDiscountCode(discountCode);
     }
 }

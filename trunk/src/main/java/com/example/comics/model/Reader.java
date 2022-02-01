@@ -172,9 +172,9 @@ public class Reader extends Account{
         this.discountCodes = discountCodes;
     }
 
-    public void removeDiscountCode(String code) {
+    public void removeDiscountCode(DiscountCode codeToRemove) {
         for(DiscountCode discountCode : discountCodes){
-            if(discountCode.getCode().equals(code)){
+            if(discountCode.getCode().equals(codeToRemove.getCode())){
                 discountCodes.remove(discountCode);
             }
         }
