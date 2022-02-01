@@ -1,11 +1,13 @@
 package com.example.comics.controller;
 
-import com.example.comics.controller.boundaries.PostReviewBoundary;
-import com.example.comics.model.fagioli.ChapterBean;
-import com.example.comics.model.fagioli.ReviewBean;
+import com.example.comics.controller.boundaries.PostReviewAuthorBoundary;
+import com.example.comics.controller.boundaries.PostReviewReaderBoundary;
+import com.example.comics.model.fagioli.*;
 import com.example.comics.model.*;
 import com.example.comics.model.dao.SeriesDAO;
-import com.example.comics.model.fagioli.SeriesBean;
+import com.example.comics.model.fagioli.bundle.AccountBundle;
+import com.example.comics.model.fagioli.bundle.DiscountCodeBundle;
+import com.example.comics.model.fagioli.bundle.SeriesBundle;
 
 public class PostReviewController{
 
@@ -26,15 +28,15 @@ public class PostReviewController{
 
         //invio mail all'autore di una nuova review
         new Thread(()->{
-            PostReviewBoundary postReviewAuthorBoundary = new PostReviewBoundary();
-            postReviewAuthorBoundary.sendEmailForNewReviewPosted(series.getAuthor());
+            PostReviewAuthorBoundary postReviewAuthorBoundary = new PostReviewAuthorBoundary();
+            postReviewAuthorBoundary.sendEmailForNewReviewPosted(seriesBean);
         }).start();
 
         //controllo obiettivi
-        checkObjectives(series);
+        checkObjectives(series,seriesBean);
     }
 
-    private void checkObjectives(Series series) {
+    private void checkObjectives(Series series, SeriesBean seriesBean) {
 
 
         //numero di review del lettore
@@ -51,10 +53,25 @@ public class PostReviewController{
                 DiscountCode discountCode = new DiscountCode(objective.getDiscount());
                 UserLogin.getInstance().getReader().addDiscountCode(discountCode);
 
+
+
                 //invio mail al lettore del codice sconto
                 new Thread(()->{
-                    PostReviewBoundary postReviewAuthorBoundary = new PostReviewBoundary();
-                    postReviewAuthorBoundary.sendEmailForDiscountCode(UserLogin.getInstance().getReader(), series, discountCode);
+                    AccountBean accountBean = new AccountBundle();
+                    accountBean.setFirstName(UserLogin.getInstance().getAccount().getFirstName());
+                    accountBean.setLastName(UserLogin.getInstance().getAccount().getLastName());
+                    accountBean.setUsername(UserLogin.getInstance().getAccount().getUsername());
+                    accountBean.setEmail(UserLogin.getInstance().getAccount().getEmail());
+                    accountBean.setProPic(UserLogin.getInstance().getAccount().getProPic());
+
+                    DiscountCodeBean discountCodeBean = new DiscountCodeBundle();
+                    discountCodeBean.setCode(discountCode.getCode());
+                    discountCodeBean.setExpiringDate(discountCode.getExpiringDate());
+                    discountCodeBean.setPercentage(discountCode.getDiscount().getPercentage());
+                    discountCodeBean.setLimitDays(discountCode.getDiscount().getLimitDays());
+
+                    PostReviewReaderBoundary postReviewReaderBoundary = new PostReviewReaderBoundary();
+                    postReviewReaderBoundary.sendEmailForDiscountCode(accountBean, seriesBean, discountCodeBean);
                 }).start();
             }
         }

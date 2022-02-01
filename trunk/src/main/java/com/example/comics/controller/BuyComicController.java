@@ -1,8 +1,11 @@
 package com.example.comics.controller;
 
 import com.example.comics.controller.boundaries.BuyComicBoundary;
+import com.example.comics.controller.boundaries.BuyComicsAuthorBoundary;
+import com.example.comics.model.Author;
 import com.example.comics.model.DiscountCode;
 import com.example.comics.model.UserLogin;
+import com.example.comics.model.dao.AuthorDAO;
 import com.example.comics.model.exceptions.DiscountCodeException;
 import com.example.comics.model.exceptions.InvalidPaymentException;
 import com.example.comics.model.fagioli.AccountBean;
@@ -25,14 +28,23 @@ public class BuyComicController {
             throw new DiscountCodeException("Your code is expired!");
         }
 
-        //chiamo altra boundary per la carta
-        AccountBean accountBean = new AccountBundle();
-        accountBean.setFirstName(UserLogin.getInstance().getAccount().getFirstName());
-        accountBean.setLastName(UserLogin.getInstance().getAccount().getLastName());
-        BuyComicBoundary buyComicBoundary = new BuyComicBoundary();
-        buyComicBoundary.convalidPayment(accountBean);
+        //nel caso va tutto a buon fine ...
 
-        //cancella discount code
-        UserLogin.getInstance().getReader().removeDiscountCode(discountCode);
+            //chiamo altra boundary per la carta
+            AccountBean accountBean = new AccountBundle();
+            accountBean.setFirstName(UserLogin.getInstance().getAccount().getFirstName());
+            accountBean.setLastName(UserLogin.getInstance().getAccount().getLastName());
+            BuyComicBoundary buyComicBoundary = new BuyComicBoundary();
+            buyComicBoundary.convalidPayment(accountBean);
+
+            //mail all'autore
+            BuyComicsAuthorBoundary buyComicsAuthorBoundary = new BuyComicsAuthorBoundary();
+            buyComicsAuthorBoundary.sendEmailForSoldChapter(seriesBean);
+
+            //cancella discount code
+            UserLogin.getInstance().getReader().removeDiscountCode(discountCode);
+
+
+
     }
 }
