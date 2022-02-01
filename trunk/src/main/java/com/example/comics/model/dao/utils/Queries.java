@@ -1,9 +1,13 @@
-package com.example.comics.model.dao;
+package com.example.comics.model.dao.utils;
 
 import com.example.comics.model.*;
 import com.example.comics.model.Reader;
 import java.io.*;
 import java.sql.*;
+import java.time.LocalDate;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.GregorianCalendar;
 
 public class Queries {
 
@@ -110,7 +114,8 @@ public class Queries {
 
 
     public static void saveReadersDiscountCode(Statement stmt, DiscountCode discountCode, Reader reader) throws SQLException {
-        String insertStatement = String.format("INSERT INTO discountCodes (username, code, expiringDate, percentage) values ('%s', '%s', '%s', '%s')", reader.getUsername(), discountCode.getCode(), discountCode.getExpiringDate(), discountCode.getDiscount().getPercentage());
+
+        String insertStatement = String.format("INSERT INTO discountCodes (username, code, expiringDate, percentage,startingDate) values ('%s', '%s', '%s', '%s','%s')", reader.getUsername(), discountCode.getCode(), DatesConverter.toString(discountCode.getExpiringDate()), discountCode.getDiscount().getPercentage(),DatesConverter.toString(LocalDate.now()));
         System.out.println(insertStatement);
         stmt.executeUpdate(insertStatement);
     }
@@ -318,5 +323,10 @@ public class Queries {
         String selectStatement = "SELECT * FROM badges";
         return stmt.executeQuery(selectStatement);
 
+    }
+
+    public static ResultSet retreiveDiscountCodesByReader(Statement stmt, String username) throws SQLException {
+        String selectStatement = String.format("SELECT * FROM discountCodes WHERE (username = '%s')  ",username);
+        return stmt.executeQuery(selectStatement);
     }
 }

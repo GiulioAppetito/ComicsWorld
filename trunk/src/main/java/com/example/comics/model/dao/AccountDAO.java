@@ -3,6 +3,7 @@ package com.example.comics.model.dao;
 import com.example.comics.model.Account;
 import com.example.comics.model.Author;
 import com.example.comics.model.Reader;
+import com.example.comics.model.dao.utils.Queries;
 import com.example.comics.model.exceptions.FailedLoginException;
 import com.example.comics.model.exceptions.FailedRegistrationException;
 import javafx.scene.image.Image;

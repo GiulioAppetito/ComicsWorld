@@ -11,5 +11,7 @@ public class BuyComicController {
         BuyComicBoundary buyComicBoundary = new BuyComicBoundary();
         buyComicBoundary.buyThisComic(chapterBean,seriesBean);
 
+
+
     }
 }

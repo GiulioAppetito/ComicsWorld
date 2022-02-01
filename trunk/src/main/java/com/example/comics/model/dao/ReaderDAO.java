@@ -1,6 +1,7 @@
 package com.example.comics.model.dao;
 
 import com.example.comics.model.*;
+import com.example.comics.model.dao.utils.Queries;
 import javafx.scene.image.Image;
 
 import java.io.InputStream;
@@ -38,10 +39,15 @@ public class ReaderDAO {
             List<Series> toReadSeries = seriesDAO.retrieveToReadSeries(username);
             List<Series> readingSeries = seriesDAO.retrieveReadingSeries(username);
 
+            DiscountCodeDAO discountCodeDAO = new DiscountCodeDAO();
+            List<DiscountCode> discountCodes = discountCodeDAO.retreiveDiscountCodesByReader(username);
+
+            System.out.println("[READER DAO]Your discount codes : "+discountCodes);
+
             AuthorDAO authorDAO = new AuthorDAO();
             List<Author> followedAuthors = authorDAO.retreiveFollowedAuthorsByReader(username);
 
-            reader = new Reader(favSeries, toReadSeries, readingSeries, username, followedAuthors);
+            reader = new Reader(favSeries, toReadSeries, readingSeries, username, followedAuthors,discountCodes);
 
             reader.setFirstName(rs.getString("firstname"));
             reader.setLastName(rs.getString("lastname"));
@@ -74,29 +80,14 @@ public class ReaderDAO {
         badgeDAO.addAchievedBadge(badge, reader);
     }
 
-    public void saveObtainedDiscountCode(DiscountCode discountCode, Reader reader) throws SQLException {
-        Statement stmt = null;
-        Connection conn = null;
 
-        try {
-            conn = DriverManager.getConnection(DB_URL, USER, PASS);
-            stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
-            Queries.saveReadersDiscountCode(stmt,discountCode,reader);
-
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-        finally{
-            assert conn != null;
-            conn.close();
-        }
-    }
 
     public void addSeriesToToRead(Series series,Reader reader) throws SQLException {
         Statement stmt = null;
         Connection conn = null;
 
         try {
+            System.out.println("[ReaderDAO] Calling query for saving discount code.");
             conn = DriverManager.getConnection(DB_URL, USER, PASS);
             stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
             Queries.addSeriesToToRead(stmt,series,reader);
