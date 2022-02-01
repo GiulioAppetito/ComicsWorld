@@ -1,19 +1,16 @@
 package com.example.comics.view1;
 
 import com.example.comics.controller.ResearchController;
-import com.example.comics.controller.StatisticsController;
-import com.example.comics.model.UserLogin;
 import com.example.comics.model.fagioli.SeriesBean;
 import javafx.fxml.FXML;
 import javafx.scene.chart.*;
 
 import java.util.List;
-import java.util.concurrent.ConcurrentSkipListSet;
 
 public class StatisticsRatingControllerG {
 
     @FXML
-    private BarChart<?, ?> barChartRatings;
+    private BarChart<String, Integer> barChartRatings;
 
 
     public void initialize(){
@@ -21,19 +18,15 @@ public class StatisticsRatingControllerG {
         ResearchController researchController = new ResearchController();
         List<SeriesBean> publishedSeries = researchController.getPublishedSeries();
 
-        StatisticsController statisticsController = new StatisticsController();
         //Defining the y Axis
         NumberAxis yAxis = new NumberAxis(0, 5, 1);
         yAxis.setLabel("Rating units");
-        //areaChartRatings.setTitle("Ratings during one week");
 
         //Prepare XYChart.Series objects by setting data
-        XYChart.Series series1 = new XYChart.Series();
-        //series1.setName();
+        XYChart.Series<String, Integer> series1 = new XYChart.Series<>();
 
         for(SeriesBean seriesBean : publishedSeries) {
-            Float rating = statisticsController.seriesAverageRating(seriesBean);
-            series1.getData().add(new XYChart.Data(seriesBean.getTitle(), seriesBean.getAverageRating()));
+            series1.getData().add(new XYChart.Data<>(seriesBean.getTitle(), seriesBean.getAverageRating()));
         }
 
         //Setting the XYChart.Series objects to area chart
