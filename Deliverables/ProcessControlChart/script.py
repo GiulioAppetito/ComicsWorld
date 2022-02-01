@@ -88,8 +88,7 @@ with open('report.txt', 'r') as txt:
 					actual_date = res[2:3][0]+res[5:6][0]
 					date_row += 1
 					date_cell = 'C'+str(date_row)
-					if(previous_date!=actual_date):
-						if(first!=1):
+					if(previous_date!=actual_date && first!=1):
 							#ws2.append([str(commit_anastasia),str(commit_giulio), previous_date])
 							ws2.write(start_row_2, start_column+2, commit_anastasia)
 							ws2.write(start_row_2, start_column+1, commit_giulio)

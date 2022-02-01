@@ -71,7 +71,6 @@ public class PostReviewReaderBoundary {
 
             // Send message
             Transport.send(message);
-            System.out.println("Sent discount code email successfully to "+to);
 
         } catch (MessagingException mex) {
             mex.printStackTrace();

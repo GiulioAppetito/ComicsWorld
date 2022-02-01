@@ -1,7 +1,5 @@
 package com.example.comics.controller.boundaries;
 
-import com.example.comics.model.Author;
-import com.example.comics.model.fagioli.AuthorBean;
 import com.example.comics.model.fagioli.SeriesBean;
 
 import javax.mail.*;
@@ -68,7 +66,6 @@ public class BuyComicsAuthorBoundary {
 
             // Send message
             Transport.send(message);
-            System.out.println("Sent message successfully...");
         } catch (MessagingException mex) {
             mex.printStackTrace();
         }

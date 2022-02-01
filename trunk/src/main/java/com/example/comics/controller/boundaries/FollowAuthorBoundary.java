@@ -24,6 +24,7 @@ public class FollowAuthorBoundary {
         properties.put("mail.smtp.auth","true");
 
         properties.put("mail.smtp.socketFactory.class","javax.net.ssl.SSLSocketFactory");
+        properties.put("mail.smtp.ssl.checkserveridentity","true");
         properties.put("mail.smtp.socketFactory.fallback","false");
         properties.put("mail.smtp.ssl.trust", HOST);
         properties.put("mail.smtp.ssl.protocols","TLSv1.2");
@@ -44,7 +45,6 @@ public class FollowAuthorBoundary {
 
         // Recipient's email ID needs to be mentioned.
         String to = author.getEmail();
-        System.out.println("Boundary send email: author email: " + author.getEmail());
         // Get the default Session object.
         Session session = inizializeProperties();
 
@@ -66,7 +66,6 @@ public class FollowAuthorBoundary {
 
             // Send message
             Transport.send(message);
-            System.out.println("Sent message successfully....");
         } catch (MessagingException mex) {
             mex.printStackTrace();
         }

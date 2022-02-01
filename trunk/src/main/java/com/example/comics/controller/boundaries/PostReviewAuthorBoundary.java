@@ -1,9 +1,5 @@
 package com.example.comics.controller.boundaries;
 
-import com.example.comics.model.Author;
-import com.example.comics.model.DiscountCode;
-import com.example.comics.model.Reader;
-import com.example.comics.model.Series;
 import com.example.comics.model.fagioli.SeriesBean;
 
 import java.util.*;
@@ -70,7 +66,6 @@ public class PostReviewAuthorBoundary {
 
             // Send message
             Transport.send(message);
-            System.out.println("Sent message successfully...");
         } catch (MessagingException mex) {
             mex.printStackTrace();
         }
