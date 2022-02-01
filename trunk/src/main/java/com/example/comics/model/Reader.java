@@ -171,4 +171,21 @@ public class Reader extends Account{
     public void setDiscountCodes(List<DiscountCode> discountCodes) {
         this.discountCodes = discountCodes;
     }
+
+    public void removeDiscountCode(String code) {
+        for(DiscountCode discountCode : discountCodes){
+            if(discountCode.getCode().equals(code)){
+                discountCodes.remove(discountCode);
+            }
+        }
+    }
+
+    public DiscountCode getDiscountCodeByCode(String code) {
+        for(DiscountCode discountCode : discountCodes){
+            if(discountCode.getCode().equals(code)){
+                return discountCode;
+            }
+        }
+        return null;
+    }
 }

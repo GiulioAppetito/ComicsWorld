@@ -4,6 +4,8 @@ import com.example.comics.controller.BuyComicController;
 import com.example.comics.controller.MarkChapterAsReadController;
 import com.example.comics.controller.PostReviewController;
 import com.example.comics.model.*;
+import com.example.comics.model.exceptions.DiscountCodeException;
+import com.example.comics.model.exceptions.InvalidPaymentException;
 import com.example.comics.model.fagioli.*;
 import com.example.comics.view1.beans.ChapterBean1;
 import com.example.comics.view1.beans.ReviewBean1;
@@ -502,9 +504,16 @@ public class ChapterControllerG implements ChapterObserver, ObjectiveObserver {
         btnApply.setOnAction(event -> applyDiscountCode(chapterBean,seriesBean));
     }
 
-    private void applyDiscountCode(ChapterBean chapterBean,SeriesBean seriesBean) {
+    private void applyDiscountCode(ChapterBean chapterBean,SeriesBean seriesBean)  {
         BuyComicController buyComicController = new BuyComicController();
-        buyComicController.buyComic(chapterBean,seriesBean, choiceBoxCodes.getValue());
+        try {
+            buyComicController.buyComic(chapterBean,seriesBean, choiceBoxCodes.getValue());
+        } catch (InvalidPaymentException e) {
+            e.printStackTrace();
+        } catch (DiscountCodeException e) {
+            e.printStackTrace();
+        }
+
     }
 
     private void closePaymentPane() {

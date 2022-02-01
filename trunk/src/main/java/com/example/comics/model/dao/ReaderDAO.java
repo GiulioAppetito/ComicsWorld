@@ -42,7 +42,6 @@ public class ReaderDAO {
             DiscountCodeDAO discountCodeDAO = new DiscountCodeDAO();
             List<DiscountCode> discountCodes = discountCodeDAO.retreiveDiscountCodesByReader(username);
 
-            System.out.println("[READER DAO]Your discount codes : "+discountCodes);
 
             AuthorDAO authorDAO = new AuthorDAO();
             List<Author> followedAuthors = authorDAO.retreiveFollowedAuthorsByReader(username);
