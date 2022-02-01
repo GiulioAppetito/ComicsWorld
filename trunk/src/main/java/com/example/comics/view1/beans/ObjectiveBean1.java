@@ -1,6 +1,5 @@
 package com.example.comics.view1.beans;
 
-import com.example.comics.model.Badge;
 import com.example.comics.model.Levels;
 import com.example.comics.model.fagioli.BadgeBean;
 import com.example.comics.model.fagioli.DiscountBean;
@@ -14,7 +13,6 @@ public class ObjectiveBean1 implements ObjectiveBean {
 
     private BadgeBean badgeBean;
     private Levels level;
-    private String seriesTitle;
     private DiscountBean discountBean;
     private String type;
     private int requirement;

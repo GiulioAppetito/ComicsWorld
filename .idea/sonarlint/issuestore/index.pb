@@ -1,8 +1,6 @@
 
 q
 Atrunk/src/main/java/com/example/comics/fakeamazon/FakeAmazon.java,e\1\e1a7642ca9a1b21efe54b6a3580f26f4dbc5a590
-†
-Vtrunk/src/main/java/com/example/comics/controller/boundaries/FollowAuthorBoundary.java,a\0\a0edd06ee7d18514b11758537fe86f2ef945327c
 „
 Ttrunk/src/main/java/com/example/comics/controller/boundaries/PostReviewBoundary.java,5\3\53ec23862a4b135e8376999ce870229ca2e500d1
 |

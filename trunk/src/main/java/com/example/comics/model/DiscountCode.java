@@ -1,13 +1,7 @@
 package com.example.comics.model;
 
-import org.controlsfx.control.spreadsheet.SpreadsheetCellType;
-
-import java.time.Instant;
 import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.GregorianCalendar;
+import java.util.Random;
 
 public class DiscountCode {
 
@@ -34,7 +28,8 @@ public class DiscountCode {
         StringBuilder generatedCode = new StringBuilder();
         int random;
         for(int i=0; i<LENGHT; i++){
-            random = (int) (Math.random()*100 %26);
+            Random ran = new Random();
+            random = ran.nextInt()%26;
             if(i<=2){
 
                 generatedCode.append(ALPHABET.charAt(random));
