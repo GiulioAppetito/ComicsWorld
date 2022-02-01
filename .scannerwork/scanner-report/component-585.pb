@@ -1,1 +1,0 @@
-É 2javaXQhrAtrunk/src/main/java/com/example/comics/view1/HomeControllerG.java

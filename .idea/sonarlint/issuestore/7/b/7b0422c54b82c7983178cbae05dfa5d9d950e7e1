@@ -1,0 +1,27 @@
+
+o
+java:S3008Ğ"XRename this field "previous_size" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ä’³Û
+Ÿ
+java:S1186Ü"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(Á‘¢˜8óÀäûê/
+\
+java:S1124Í"EReorder the modifiers to comply with the Java Language Specification.(£Ó†ÿ
+a
+java:S1124Î"EReorder the modifiers to comply with the Java Language Specification.(Ü¦÷¯ùÿÿÿÿ
+M
+java:S2696­"6Make the enclosing method "static" or remove this set.(á‚ç¤
+^
+java:S1126®"BReplace this if-then-else statement by a single method invocation.(åŞèÆÿÿÿÿÿ
+^
+java:S1126É"BReplace this if-then-else statement by a single method invocation.(åŞèÆÿÿÿÿÿ
+M
+java:S2696ò"6Make the enclosing method "static" or remove this set.(è–·
+ˆ
+java:S1130‰"lRemove the declaration of thrown exception 'java.io.IOException', as it cannot be thrown from method's body.(êÒ™±ıÿÿÿÿ
+k	java:S100Ü"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Á‘¢˜8ŞÁäûê/
+P
+java:S1172Ü"2Remove this unused method parameter "chapterBean".(Á‘¢˜8ŞÁäûê/
+c
+java:S1192î"GDefine a constant instead of duplicating this literal "reader" 4 times.(Ü°ˆ–úÿÿÿÿ
+g	java:S117©"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(‘¤œ˜
+g	java:S117Ç"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(­Ï‰¼
+l	java:S117Õ"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¶â¨İúÿÿÿÿ

@@ -1,1 +1,0 @@
-ú 2javaX/hrBtrunk/src/main/java/com/example/comics/model/ChapterObjective.java

@@ -1,1 +1,0 @@
-Û 2javaXhrBtrunk/src/main/java/com/example/comics/view2/beans/LoginBean2.java
