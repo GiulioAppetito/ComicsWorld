@@ -1,16 +1,16 @@
 .buttonBuy
 {
-    -fx-background-color : #FF9900;
+    -fx-background-color : #2e78fd;
     -fx-background-radius :  45 45 45 45;
 }
 .buttonBuy:hover
 {
-    -fx-background-color : #ff8800;
+    -fx-background-color : #2255b9;
     -fx-background-radius :  45 45 45 45;
 }
 .buttonBuy:pressed
 {
-    -fx-background-color : #ff7700 ;
+    -fx-background-color : #163a7c;
     -fx-background-radius :  45 45 45 45;
 }
 
