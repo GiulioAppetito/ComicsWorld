@@ -4,6 +4,11 @@
 #README: use the python script to analyze report stats from github#
 
 
+You may need:  pip install openpyxl
+               pip install xlsxwriter
+               pip install pandas
+               pip install matplotlib
+
 
 First of all you need to generate(or update) the "report.txt" file, containing
 all the info you want to analyze, in our case it regards commits per month.

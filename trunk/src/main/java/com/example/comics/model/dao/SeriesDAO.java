@@ -195,7 +195,6 @@ public class SeriesDAO {
             ResultSet rs = Queries.retriveReadingSeries(stmt, user);
 
             if (!rs.first()) {
-                System.out.println("No series in: reading");
                 return seriesList;
             }
             rs.first();
@@ -259,7 +258,6 @@ public class SeriesDAO {
 
                 AuthorDAO authorDAO = new AuthorDAO();
                 author = authorDAO.retrieveAuthorWithoutPassword(rs.getString("author"));
-                System.out.println("seriesDAO: recupero serie singola");
                 series = new Series(title, author);
                 Blob bl = rs.getBlob(COVER);
                 InputStream inputStream = bl.getBinaryStream();
@@ -314,7 +312,6 @@ public class SeriesDAO {
 
                 AuthorDAO authorDAO = new AuthorDAO();
                 author = authorDAO.retrieveAuthorWithoutPassword(rs.getString("author"));
-                System.out.println("seriesDAO: retrieve series from category");
                 series = new Series(rs.getString(TITLE), author);
 
                 Blob bl = rs.getBlob(COVER);
@@ -383,11 +380,6 @@ public class SeriesDAO {
                 InputStream inputStream = bl.getBinaryStream();
                 Image image = new Image(inputStream);
                 series.setCover(image);
-
-
-                //series.setGenre1(genre1);
-                // series.setGenre2(genre2);
-                //series.setGenre3(genre3);
             } while (rs.next());
 
 
@@ -517,7 +509,6 @@ public class SeriesDAO {
             try {
                 assert conn != null;
                 conn.close();
-                stmt.close();
             } catch (SQLException e) {
                 e.printStackTrace();
             }
