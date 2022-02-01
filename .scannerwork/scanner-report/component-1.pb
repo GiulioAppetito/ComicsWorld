@@ -1,3 +1,0 @@
-ComicsWorld :�"�9�����(�
-�������%�����*�!��������������)�������	��#���������
-���������+$�������������� ����������������B1-https://github.com/GiulioAppetito/ComicsWorldB40https://travis-ci.org/GiulioAppetito/ComicsWorldB84https://github.com/GiulioAppetito/ComicsWorld/issuesB1-https://github.com/GiulioAppetito/ComicsWorldRGiulioAppetito_ComicsWorld

@@ -27,9 +27,7 @@ public class FavouritesController {
                     readerDAO.addSeriesToFavourites(series, UserLogin.getInstance().getReader());
                 }).start();
 
-                new Thread(()->{
-                    UserLogin.getInstance().getReader().addSeriesToFavourites(series);
-                }).start();
+                new Thread(()->UserLogin.getInstance().getReader().addSeriesToFavourites(series)).start();
             }
         }
 

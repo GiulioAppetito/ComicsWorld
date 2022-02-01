@@ -1,14 +1,11 @@
 package com.example.comics.model.dao;
 
 import com.example.comics.model.*;
-import com.example.comics.model.fagioli.ObjectiveBean;
 import javafx.scene.image.Image;
 
-import java.io.IOException;
 import java.io.InputStream;
 import java.sql.*;
 import java.util.ArrayList;
-import java.util.Dictionary;
 import java.util.HashMap;
 import java.util.List;
 
@@ -18,6 +15,9 @@ public class SeriesDAO {
     private static final String PASS = "passwordanastasia";
     private static final String DB_URL = "jdbc:mysql://comics-world.ce9t0fxhansh.eu-west-2.rds.amazonaws.com:3306/ComicsWorld?autoReconnect=true&useSSL=false";
 
+    private static final String SERIES = "series";
+    private static final String TITLE = "title";
+    private static final String COVER = "cover";
 
     public List<Series> retrieveFavouriteSeries(String user) {
         Statement stmt = null;
@@ -41,7 +41,7 @@ public class SeriesDAO {
             rs.first();
 
             do {
-                title = rs.getString("series");
+                title = rs.getString(SERIES);
                 series = retrieveSeries(title);
                 seriesList.add(series);
             } while (rs.next());
@@ -91,7 +91,7 @@ public class SeriesDAO {
             rs.first();
 
             do {
-                title = rs.getString("series");
+                title = rs.getString(SERIES);
                 series = retrieveSeries(title);
 
                 seriesList.add(series);
@@ -142,10 +142,9 @@ public class SeriesDAO {
             rs.first();
 
             do {
-                System.out.println("seriesDAO1");
-                series = new Series(rs.getString("title"), author);
+                series = new Series(rs.getString(TITLE), author);
 
-                Blob bl = rs.getBlob("cover");
+                Blob bl = rs.getBlob(COVER);
                 if(bl!=null){
                     InputStream inputStream = bl.getBinaryStream();
                     Image image = new Image(inputStream);
@@ -202,7 +201,7 @@ public class SeriesDAO {
             rs.first();
 
             do {
-                title = rs.getString("series");
+                title = rs.getString(SERIES);
                 series = retrieveSeries(title);
                 seriesList.add(series);
             } while (rs.next());
@@ -256,19 +255,16 @@ public class SeriesDAO {
                 //genre2 = Genres.valueOf(rs.getString("genre2"));
                 //genre3 = Genres.valueOf(rs.getString("genre3"));
 
-                title = rs.getString("title");
+                title = rs.getString(TITLE);
 
                 AuthorDAO authorDAO = new AuthorDAO();
                 author = authorDAO.retrieveAuthorWithoutPassword(rs.getString("author"));
                 System.out.println("seriesDAO: recupero serie singola");
                 series = new Series(title, author);
-                Blob bl = rs.getBlob("cover");
+                Blob bl = rs.getBlob(COVER);
                 InputStream inputStream = bl.getBinaryStream();
                 Image image = new Image(inputStream);
                 series.setCover(image);
-                //series.setGenre1(genre1);
-               // series.setGenre2(genre2);
-                //series.setGenre3(genre3);
             } while (rs.next());
 
 
@@ -319,9 +315,9 @@ public class SeriesDAO {
                 AuthorDAO authorDAO = new AuthorDAO();
                 author = authorDAO.retrieveAuthorWithoutPassword(rs.getString("author"));
                 System.out.println("seriesDAO: retrieve series from category");
-                series = new Series(rs.getString("title"), author);
+                series = new Series(rs.getString(TITLE), author);
 
-                Blob bl = rs.getBlob("cover");
+                Blob bl = rs.getBlob(COVER);
                 InputStream inputStream = bl.getBinaryStream();
                 Image image = new Image(inputStream);
                 series.setCover(image);
@@ -378,12 +374,12 @@ public class SeriesDAO {
                 //genre2 = Genres.valueOf(rs.getString("genre2"));
                 //genre3 = Genres.valueOf(rs.getString("genre3"));
 
-                title = rs.getString("title");
+                title = rs.getString(TITLE);
 
 
                 System.out.println("seriesDAO: recupero serie singola con author");
                 series = new Series(title, author);
-                Blob bl = rs.getBlob("cover");
+                Blob bl = rs.getBlob(COVER);
                 InputStream inputStream = bl.getBinaryStream();
                 Image image = new Image(inputStream);
                 series.setCover(image);
@@ -441,9 +437,9 @@ public class SeriesDAO {
                         Series series;
                         AuthorDAO authorDAO = new AuthorDAO();
                         author = authorDAO.retrieveAuthorWithoutPassword(rs.getString("author"));
-                        series = new Series(rs.getString("title"), author);
+                        series = new Series(rs.getString(TITLE), author);
 
-                        Blob bl = rs.getBlob("cover");
+                        Blob bl = rs.getBlob(COVER);
                         if(bl != null){
                             InputStream inputStream = bl.getBinaryStream();
                             Image image = new Image(inputStream);
@@ -519,6 +515,7 @@ public class SeriesDAO {
             throwables.printStackTrace();
         }finally {
             try {
+                assert conn != null;
                 conn.close();
                 stmt.close();
             } catch (SQLException e) {

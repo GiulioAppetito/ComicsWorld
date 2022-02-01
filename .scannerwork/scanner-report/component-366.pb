@@ -1,1 +1,0 @@
-� 2javaXhrFtrunk/src/main/java/com/example/comics/view1/CharacterControllerG.java

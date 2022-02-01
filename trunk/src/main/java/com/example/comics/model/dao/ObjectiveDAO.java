@@ -26,7 +26,6 @@ public class ObjectiveDAO {
             ResultSet rs = Queries.retreiveObjectivesBySeries(stmt, series);
 
             if (!rs.first()) {
-                System.out.println("No objectives found on series : "+series);
                 return objectives;
             }
             rs.first();

@@ -9,15 +9,11 @@ public class StatisticsController {
 
     public Float seriesAverageRating(SeriesBean seriesBean) {
 
-
-        System.out.println("calcolo average rating");
-
         Float ratingSum = 0f;
         Float numReviews = 0f;
 
         for (ChapterBean chapterBean : seriesBean.getChapters()) {
             for (ReviewBean reviewBean : chapterBean.getReviews()) {
-                System.out.println("[Statistics Controller] Chapter : "+chapterBean.getTitle()+" review stars : "+reviewBean.getRating());
                 ratingSum += reviewBean.getRating();
                 numReviews++;
             }

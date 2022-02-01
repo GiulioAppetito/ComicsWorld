@@ -1,41 +1,0 @@
-
-�com.example.comics.model.dao.Queries#retreiveReader(Ljava/sql/Statement;Ljava/lang/String;Ljava/lang/String;)Ljava/sql/ResultSet;o
-eC:/Users/biril/IdeaProjects/ComicsWorld/trunk/src/main/java/com/example/comics/model/dao/Queries.javab b(*"1*�	
-1o
-eC:/Users/biril/IdeaProjects/ComicsWorld/trunk/src/main/java/com/example/comics/model/dao/Queries.javac! c('�
-�
-p
-eC:/Users/biril/IdeaProjects/ComicsWorld/trunk/src/main/java/com/example/comics/model/dao/Queries.javac! c(�
-%0java.lang.String"Pjava.lang.String#format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;*"
-java.lang.String*TR
-PSELECT * FROM users WHERE (username = '%s' OR email = '%s')  AND password = '%s'* 
-
-
-identifierjava.lang.String* 
-
-
-identifierjava.lang.String*
-
-passwordjava.lang.String�
-�
-p
-eC:/Users/biril/IdeaProjects/ComicsWorld/trunk/src/main/java/com/example/comics/model/dao/Queries.javac c(�#
-selectStatementjava.lang.String"__id*
-
-%0java.lang.String��
-o
-eC:/Users/biril/IdeaProjects/ComicsWorld/trunk/src/main/java/com/example/comics/model/dao/Queries.javad d(1
-%1java.sql.ResultSet"Gjava.sql.Statement#executeQuery(Ljava/lang/String;)Ljava/sql/ResultSet;*
-
-stmtjava.sql.Statement*%
-#
-selectStatementjava.lang.String2 executeQuery(Ljava/lang/String;)"�
-o
-eC:/Users/biril/IdeaProjects/ComicsWorld/trunk/src/main/java/com/example/comics/model/dao/Queries.javad d(2
-
-%1java.sql.ResultSet:
-stmtjava.sql.Statement:
-
-identifierjava.lang.String:
-passwordjava.lang.StringB("&
-$com.example.comics.model.dao.Queries

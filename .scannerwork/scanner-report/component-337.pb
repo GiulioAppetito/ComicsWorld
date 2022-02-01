@@ -1,1 +1,0 @@
-� 2javaX=hrJtrunk/src/main/java/com/example/comics/model/fagioli/RegistrationBean.java

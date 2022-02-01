@@ -5,7 +5,6 @@ import javafx.scene.image.Image;
 
 import java.io.InputStream;
 import java.sql.*;
-import java.util.ArrayList;
 import java.util.List;
 
 public class ReaderDAO {
@@ -54,7 +53,6 @@ public class ReaderDAO {
                 InputStream inputStream = bl.getBinaryStream();
                 Image image = new Image(inputStream);
                 reader.setProPic(image);
-                System.out.println(" ******* [ReaderDAO - retreiveReader] I got propic : "+image);
             }
         } catch (SQLException throwables) {
             throwables.printStackTrace();
@@ -239,14 +237,14 @@ public class ReaderDAO {
         }
     }
 
-    public void saveReadChapter(Series series, String chapter_title) {
+    public void saveReadChapter(Series series, String chapterTitle) {
         Statement stmt = null;
         Connection conn = null;
 
         try {
             conn = DriverManager.getConnection(DB_URL, USER, PASS);
             stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
-            Queries.addReadChapter(stmt,UserLogin.getInstance().getReader(),series, chapter_title);
+            Queries.addReadChapter(stmt,UserLogin.getInstance().getReader(),series, chapterTitle);
 
         } catch (SQLException e) {
             e.printStackTrace();

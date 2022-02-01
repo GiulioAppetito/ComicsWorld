@@ -10,6 +10,7 @@ import com.example.comics.view1.beans.ReviewBean1;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
+import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.image.ImageView;
@@ -275,6 +276,22 @@ public class ChapterControllerG implements ChapterObserver, ObjectiveObserver {
 
 
     @FXML
+    private Button btnApply;
+
+
+    @FXML
+    private Button btnClosePayment;
+
+
+    @FXML
+    private ChoiceBox<String> choiceBoxCodes;
+
+
+    @FXML
+    private Pane paymentPane;
+
+
+    @FXML
     public void zeroStars(){
         reviewRating = 0;
         hbox0.setVisible(true);
@@ -338,7 +355,6 @@ public class ChapterControllerG implements ChapterObserver, ObjectiveObserver {
     @FXML
     private TextArea taDescription;
 
-
     @FXML
     private Button btnBuyComics;
 
@@ -383,7 +399,7 @@ public class ChapterControllerG implements ChapterObserver, ObjectiveObserver {
         paneInsertReview.setVisible(false);
         newBadgeWonPane.setVisible(false);
         btnPostReview.setOnAction(event -> postReview(chapterBean, seriesBean));
-        btnBuyComics.setOnAction(event -> buyComics(chapterBean,seriesBean));
+        btnBuyComics.setOnAction(event -> buyComics());
 
         if(UserLogin.getInstance().getAccount().getRole().equals("reader")) {
             btnAddReview.setOnAction(event -> openEditor());
@@ -480,18 +496,28 @@ public class ChapterControllerG implements ChapterObserver, ObjectiveObserver {
         imgStar35.setOnMouseClicked(event -> fiveStars());
         imgStar45.setOnMouseClicked(event -> fiveStars());
         imgStar55.setOnMouseClicked(event -> fiveStars());
+
+        closePaymentPane();
+        btnClosePayment.setOnAction(event -> closePaymentPane());
+        btnApply.setOnAction(event -> applyDiscountCode(chapterBean,seriesBean));
     }
 
-    private void buyComics(ChapterBean chapterBean,SeriesBean seriesBean) {
+    private void applyDiscountCode(ChapterBean chapterBean,SeriesBean seriesBean) {
         BuyComicController buyComicController = new BuyComicController();
-        buyComicController.buyComic(chapterBean,seriesBean);
+        buyComicController.buyComic(chapterBean,seriesBean, choiceBoxCodes.getValue());
+    }
+
+    private void closePaymentPane() {
+        paymentPane.setVisible(false);
+    }
+    private void buyComics() {
+        paymentPane.setVisible(true);
     }
 
     private void removeChapterFromRead(SeriesBean seriesBean, ChapterBean chapterBean) {
         //TO-DO
         btnChapterRead.setStyle(STYLE);
     }
-
     private void markChapterAsRead(SeriesBean seriesBean,ChapterBean chapterBean) {
         MarkChapterAsReadController controller = new MarkChapterAsReadController();
         controller.markChapterAsRead(seriesBean,chapterBean);
@@ -524,7 +550,6 @@ public class ChapterControllerG implements ChapterObserver, ObjectiveObserver {
         newBadgeWonPane.setVisible(false);
 
     }
-
     @Override
     public void updateReviews(ReviewBean reviewBean) {
         //add della review sulla lista
@@ -540,7 +565,6 @@ public class ChapterControllerG implements ChapterObserver, ObjectiveObserver {
             e.printStackTrace();
         }
     }
-
     @Override
     public void update(BadgeBean badgeBean) {
         System.out.println("new badge won!");

@@ -1,23 +1,0 @@
-
-bcom.example.comics.model.dao.Queries#retriveLatestSeries(Ljava/sql/Statement;)Ljava/sql/ResultSet;o
-eC:/Users/biril/IdeaProjects/ComicsWorld/trunk/src/main/java/com/example/comics/model/dao/Queries.java (/"1*�
-1o
-eC:/Users/biril/IdeaProjects/ComicsWorld/trunk/src/main/java/com/example/comics/model/dao/Queries.java  (6�
-�
-o
-eC:/Users/biril/IdeaProjects/ComicsWorld/trunk/src/main/java/com/example/comics/model/dao/Queries.java (7#
-selectStatementjava.lang.String"__id*
-SELECT * FROM series��
-o
-eC:/Users/biril/IdeaProjects/ComicsWorld/trunk/src/main/java/com/example/comics/model/dao/Queries.java   (1
-%0java.sql.ResultSet"Gjava.sql.Statement#executeQuery(Ljava/lang/String;)Ljava/sql/ResultSet;*
-
-stmtjava.sql.Statement*%
-#
-selectStatementjava.lang.String2 executeQuery(Ljava/lang/String;)"�
-o
-eC:/Users/biril/IdeaProjects/ComicsWorld/trunk/src/main/java/com/example/comics/model/dao/Queries.java   (2
-
-%0java.sql.ResultSet:
-stmtjava.sql.StatementB("&
-$com.example.comics.model.dao.Queries

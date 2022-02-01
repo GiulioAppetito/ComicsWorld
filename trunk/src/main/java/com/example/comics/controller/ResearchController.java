@@ -83,7 +83,6 @@ public class ResearchController {
                 chapterBeans.add(chapterBundle);
             }
             seriesBundle.setChapters(chapterBeans);
-            System.out.println("ResCon : rating series: " + series.getTitle() + " " + series.getAverageRating());
             seriesBundle.setAverageRating(series.getAverageRating());
             seriesBeans.add(seriesBundle);
         }

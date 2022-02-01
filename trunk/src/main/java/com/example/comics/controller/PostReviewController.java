@@ -42,18 +42,12 @@ public class PostReviewController{
 
         //controllo degli obiettivi
         for(Objective objective : series.getObjectives()){
-            if(objective.getType().equals("reviewsObjective")){
-                //controllo che il lettore non abbia già raggiunto questo obiettivo confrontando i badge
-                if(!UserLogin.getInstance().getReader().hasAchievedThisBadge(objective.getBadge())){
-                    if(objective.achieveObjective(numOfReviews, objective.getBadge())){
+            if((objective.getType().equals("reviewsObjective"))&&(!UserLogin.getInstance().getReader().hasAchievedThisBadge(objective.getBadge()))&&(objective.achieveObjective(numOfReviews, objective.getBadge()))){
 
                         //aggiungo badge alla lista e salvo sul DB + assegno badge
                         new Thread(()-> UserLogin.getInstance().getReader().addAchievedBadge(objective.getBadge())).start();
 
                         //genero discount code
-                        //NO!!!
-                        //chiedo ad amazon di generarne uno
-                        //o magari ne assegno uno che amazon mi ha assegnato
                         DiscountCode discountCode = new DiscountCode(objective.getDiscount());
                         UserLogin.getInstance().getReader().addDiscountCode(discountCode);
 
@@ -63,8 +57,8 @@ public class PostReviewController{
                             postReviewAuthorBoundary.sendEmailForDiscountCode(UserLogin.getInstance().getReader(), series, discountCode);
                         }).start();
 
-                    }
-                }
+
+
             }
         }
     }

@@ -1,7 +1,5 @@
 package com.example.comics.controller;
 
-
-import com.example.comics.model.Account;
 import com.example.comics.model.fagioli.AccountBean;
 import com.example.comics.model.fagioli.ProfileBean;
 import com.example.comics.model.UserLogin;

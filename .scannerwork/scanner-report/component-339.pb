@@ -1,1 +1,0 @@
-� 2javaX;hrDtrunk/src/main/java/com/example/comics/model/fagioli/SeriesBean.java

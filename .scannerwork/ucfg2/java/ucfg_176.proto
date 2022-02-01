@@ -1,33 +1,0 @@
-
-pcom.example.comics.model.dao.Queries#retriveChapters(Ljava/sql/Statement;Ljava/lang/String;)Ljava/sql/ResultSet;o
-eC:/Users/biril/IdeaProjects/ComicsWorld/trunk/src/main/java/com/example/comics/model/dao/Queries.java> >(+"1*�
-1o
-eC:/Users/biril/IdeaProjects/ComicsWorld/trunk/src/main/java/com/example/comics/model/dao/Queries.java?! ?('�
-�
-o
-eC:/Users/biril/IdeaProjects/ComicsWorld/trunk/src/main/java/com/example/comics/model/dao/Queries.java?! ?(p
-%0java.lang.String"Pjava.lang.String#format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;*"
-java.lang.String*53
-1SELECT * FROM chapters WHERE series_title = '%s' *!
-
-seriesTitlejava.lang.String�
-�
-o
-eC:/Users/biril/IdeaProjects/ComicsWorld/trunk/src/main/java/com/example/comics/model/dao/Queries.java? ?(q#
-selectStatementjava.lang.String"__id*
-
-%0java.lang.String��
-o
-eC:/Users/biril/IdeaProjects/ComicsWorld/trunk/src/main/java/com/example/comics/model/dao/Queries.java@ @(1
-%1java.sql.ResultSet"Gjava.sql.Statement#executeQuery(Ljava/lang/String;)Ljava/sql/ResultSet;*
-
-stmtjava.sql.Statement*%
-#
-selectStatementjava.lang.String2 executeQuery(Ljava/lang/String;)"�
-o
-eC:/Users/biril/IdeaProjects/ComicsWorld/trunk/src/main/java/com/example/comics/model/dao/Queries.java@ @(2
-
-%1java.sql.ResultSet:
-stmtjava.sql.Statement:
-seriesTitlejava.lang.StringB("&
-$com.example.comics.model.dao.Queries

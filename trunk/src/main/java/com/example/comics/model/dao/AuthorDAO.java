@@ -144,6 +144,13 @@ public class AuthorDAO {
 
         } catch (SQLException e) {
             e.printStackTrace();
+        }finally{
+            assert conn != null;
+            try {
+                conn.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
         }
 
         return followedAuthors;

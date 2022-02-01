@@ -31,7 +31,6 @@ public class Queries {
 
     public static ResultSet retriveFavouriteSeries(Statement stmt, String user) throws SQLException {
         String selectStatement = String.format("SELECT * from userFavouriteSeries where user = '%s' ", user);
-        System.out.println(selectStatement);
         return stmt.executeQuery(selectStatement);
     }
 
@@ -42,13 +41,11 @@ public class Queries {
 
     public static ResultSet retriveToReadSeries(Statement stmt, String user) throws SQLException {
         String selectStatement = String.format("SELECT * from userToReadSeries where user = '%s' ", user);
-        System.out.println(selectStatement);
         return stmt.executeQuery(selectStatement);
     }
 
     public static ResultSet retriveReadingSeries(Statement stmt, String user) throws SQLException {
         String selectStatement = String.format("SELECT * from userReadChapters where reader = '%s' ", user);
-        System.out.println(selectStatement);
         return stmt.executeQuery(selectStatement);
     }
 
@@ -56,7 +53,6 @@ public class Queries {
 
     public static ResultSet retriveChapters(Statement stmt, String seriesTitle) throws SQLException {
         String selectStatement = String.format("SELECT * FROM chapters WHERE series_title = '%s' ", seriesTitle);
-        System.out.println(selectStatement);
         return stmt.executeQuery(selectStatement);
     }
 
@@ -83,7 +79,6 @@ public class Queries {
 
     public static ResultSet retreiveReviewsByChapter(Statement stmt, String chapterTitle) throws SQLException {
         String selectStatement = String.format("SELECT * FROM review WHERE chapter_title = '%s'",chapterTitle);
-        System.out.println(selectStatement);
         return stmt.executeQuery(selectStatement);
 
     }
@@ -216,37 +211,33 @@ public class Queries {
     }
 
     public static void updateUserProPic(Connection conn, InputStream inputStream, Reader reader) throws SQLException {
-        PreparedStatement pstmt = conn.prepareStatement("DELETE FROM users WHERE username = ?");
-        try{
-            //Inserting Blob type
-            pstmt.setString(1,reader.getUsername());
-            //Executing the statement
-            pstmt.execute();
-            System.out.println(pstmt);
-        }
-        catch (Exception e){
-            //TO-DO
-        }
-        PreparedStatement pstmt2 = conn.prepareStatement("INSERT INTO users (username,firstname,lastname,role,email,password,propic) VALUES (?,?,?,?,?,?,?)");
-        try{
-            //Inserting Blob type
-            pstmt2.setBlob(7, inputStream);
-            pstmt2.setString(1,reader.getUsername());
-            pstmt2.setString(2,reader.getFirstName());
-            pstmt2.setString(3,reader.getLastName());
-            pstmt2.setString(4,"reader");
-            pstmt2.setString(5,reader.getEmail());
-            pstmt2.setString(6,reader.getPassword());
-            //Executing the statement
-            pstmt2.execute();
-            System.out.println(pstmt2);
-        }
-        catch (Exception e){
-            //TO-DO
-        }
-        finally {
-            pstmt.close();
-            pstmt2.close();
+        try (PreparedStatement pstmt = conn.prepareStatement("DELETE FROM users WHERE username = ?")) {
+            try {
+                //Inserting Blob type
+                pstmt.setString(1, reader.getUsername());
+                //Executing the statement
+                pstmt.execute();
+                System.out.println(pstmt);
+            } catch (Exception e) {
+                //TO-DO
+            }
+            try (PreparedStatement pstmt2 = conn.prepareStatement("INSERT INTO users (username,firstname,lastname,role,email,password,propic) VALUES (?,?,?,?,?,?,?)")) {
+                try {
+                    //Inserting Blob type
+                    pstmt2.setBlob(7, inputStream);
+                    pstmt2.setString(1, reader.getUsername());
+                    pstmt2.setString(2, reader.getFirstName());
+                    pstmt2.setString(3, reader.getLastName());
+                    pstmt2.setString(4, "reader");
+                    pstmt2.setString(5, reader.getEmail());
+                    pstmt2.setString(6, reader.getPassword());
+                    //Executing the statement
+                    pstmt2.execute();
+                    System.out.println(pstmt2);
+                } catch (Exception e) {
+                    //TO-DO
+                }
+            }
         }
     }
 
@@ -311,7 +302,6 @@ public class Queries {
 
             //Inserting Blob type
             pstmt.setBlob(2, badgeIconStream);
-            System.out.println(pstmt);
 
             //Executing the statement
             pstmt.execute();
@@ -325,8 +315,7 @@ public class Queries {
     }
 
     public static ResultSet getAllBadges(Statement stmt) throws SQLException {
-        String selectStatement = String.format("SELECT * FROM badges");
-        System.out.println(selectStatement);
+        String selectStatement = "SELECT * FROM badges";
         return stmt.executeQuery(selectStatement);
 
     }

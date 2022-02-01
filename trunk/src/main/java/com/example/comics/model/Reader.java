@@ -8,11 +8,11 @@ import java.util.List;
 
 public class Reader extends Account{
 
-    private final List<Series> favourites;
-    private final List<Series> toRead;
-    private final List<Series> reading;
-    private final List<Badge> badges;
-    private final List<Author> followedAuthors;
+    private List<Series> favourites;
+    private List<Series> toRead;
+    private List<Series> reading;
+    private List<Badge> badges;
+    private List<Author> followedAuthors;
 
     public Reader(List<Series> favourites, List<Series> toRead, List<Series> reading, String username,List<Author> followedAuthors){
 
@@ -98,10 +98,6 @@ public class Reader extends Account{
             if(favourites.get(i).getTitle().equals(series.getTitle())){
                 this.favourites.remove(i);
             }
-        }
-
-        for (int i = this.favourites.size() - 1; i >= 0; i--) {
-            System.out.println(favourites.get(i).getTitle());
         }
     }
 

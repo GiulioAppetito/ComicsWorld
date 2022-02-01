@@ -1,1 +1,0 @@
-� 2javaX*hrItrunk/src/main/java/com/example/comics/view1/BadgeCreatorControllerG.java

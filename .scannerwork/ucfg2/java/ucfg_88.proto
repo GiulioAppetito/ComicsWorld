@@ -1,39 +1,0 @@
-
-icom.example.comics.model.UserLogin#createAccount(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Zm
-cC:/Users/biril/IdeaProjects/ComicsWorld/trunk/src/main/java/com/example/comics/model/UserLogin.java% %('"6*ë
-2m
-cC:/Users/biril/IdeaProjects/ComicsWorld/trunk/src/main/java/com/example/comics/model/UserLogin.java2 2("w
-m
-cC:/Users/biril/IdeaProjects/ComicsWorld/trunk/src/main/java/com/example/comics/model/UserLogin.java2 2(
-""*ð
-4m
-cC:/Users/biril/IdeaProjects/ComicsWorld/trunk/src/main/java/com/example/comics/model/UserLogin.java, ,(óð
-m
-cC:/Users/biril/IdeaProjects/ComicsWorld/trunk/src/main/java/com/example/comics/model/UserLogin.java, ,(&
-%1boolean",java.lang.String#equals(Ljava/lang/Object;)Z*
-
-rolejava.lang.String*
-
-reader2equals(Ljava/lang/Object;)*
-2
-1*ð
-6m
-cC:/Users/biril/IdeaProjects/ComicsWorld/trunk/src/main/java/com/example/comics/model/UserLogin.java' '(óð
-m
-cC:/Users/biril/IdeaProjects/ComicsWorld/trunk/src/main/java/com/example/comics/model/UserLogin.java' '( 
-%0boolean",java.lang.String#equals(Ljava/lang/Object;)Z*
-
-rolejava.lang.String*
-
-author2equals(Ljava/lang/Object;)*
-4
-1*ë
-1m
-cC:/Users/biril/IdeaProjects/ComicsWorld/trunk/src/main/java/com/example/comics/model/UserLogin.java5 5("w
-m
-cC:/Users/biril/IdeaProjects/ComicsWorld/trunk/src/main/java/com/example/comics/model/UserLogin.java5 5(
-"":
-emailjava.lang.String:
-passwordjava.lang.String:
-rolejava.lang.StringB&"$
-"com.example.comics.model.UserLogin

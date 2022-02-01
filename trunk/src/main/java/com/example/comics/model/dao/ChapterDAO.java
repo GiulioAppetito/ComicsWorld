@@ -3,9 +3,6 @@ package com.example.comics.model.dao;
 import com.example.comics.model.*;
 import javafx.scene.image.Image;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.IOException;
 import java.io.InputStream;
 import java.sql.*;
 import java.util.ArrayList;
@@ -34,7 +31,6 @@ public class ChapterDAO {
         try {
             conn = DriverManager.getConnection(DB_URL, USER, PASS);
             stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
-            System.out.println("ChapterDAO: sto andando a recuperare i capitoli");
             ResultSet rs = Queries.retriveChapters(stmt, seriesTitle);
 
             conn2 = DriverManager.getConnection(DB_URL, USER, PASS);
@@ -87,6 +83,18 @@ public class ChapterDAO {
             } catch (SQLException se) {
                 se.printStackTrace();
             }
+            try {
+                if (stmt2 != null)
+                    stmt2.close();
+            } catch (SQLException se2) {
+                //TO-DO
+            }
+            try {
+                if (conn2 != null)
+                    conn2.close();
+            } catch (SQLException se) {
+                se.printStackTrace();
+            }
 
         }
         return chaptersList;
@@ -99,12 +107,10 @@ public class ChapterDAO {
     }
 
     public void saveChapter(Chapter chapter,String seriesTitle,InputStream coverInputStream) {
-        Statement stmt = null;
+
         Connection conn = null;
 
         try {
-            System.out.println("**** [ChapterDAO] doing saveChapter ****");
-
             // STEP 3: apertura connessione
             conn = DriverManager.getConnection(DB_URL, USER, PASS);
 

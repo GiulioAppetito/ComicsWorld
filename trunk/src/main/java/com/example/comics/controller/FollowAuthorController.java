@@ -18,12 +18,10 @@ public class FollowAuthorController {
         author.setEmail(authorBean.getEmail());
 
         UserLogin.getInstance().getReader().addFollowedAuthor(author);
-        System.out.println("[FOLLOW AUTHOR CONTROLLER] Author followed : "+author.getUsername());
 
         //persistenza
         ReaderDAO readerDAO = new ReaderDAO();
         readerDAO.saveFollowedAuthor(author);
-        System.out.println("[FOLLOW AUTHOR CONTROLLER] Saved author followed : "+author.getUsername());
 
         //comunicazione con la boundary dell'autore
         FollowAuthorBoundary followAuthorBoundary = new FollowAuthorBoundary();
@@ -41,7 +39,6 @@ public class FollowAuthorController {
     }
 
     public void unfollowAuthor(AuthorBean authorBean) {
-        System.out.println("removing author from followed");
         Author author = new Author();
         author.setUsername(authorBean.getUsername());
         UserLogin.getInstance().getReader().unfollowAuthor(author);
