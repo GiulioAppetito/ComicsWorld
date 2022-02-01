@@ -5,12 +5,12 @@ import java.time.format.DateTimeFormatter;
 import java.time.temporal.ChronoUnit;
 
 public class DatesConverter {
-    public static String pattern="yyyy-MM-dd";
+    public static final String PATTERN ="yyyy-MM-dd";
 
     public static LocalDate toLocalDate(String text) {
         LocalDate date=null;
         if(text!=null && !text.trim().isEmpty()) {
-            date=LocalDate.parse(text, DateTimeFormatter.ofPattern(pattern));
+            date=LocalDate.parse(text, DateTimeFormatter.ofPattern(PATTERN));
         }
         return date;
     }
@@ -18,7 +18,7 @@ public class DatesConverter {
     public static String toString(LocalDate date) {
         String text=null;
         if(date!=null) {
-            text=DateTimeFormatter.ofPattern(pattern).format(date);
+            text=DateTimeFormatter.ofPattern(PATTERN).format(date);
         }
         return text;
     }

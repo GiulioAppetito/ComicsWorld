@@ -86,7 +86,6 @@ public class ReaderDAO {
         Connection conn = null;
 
         try {
-            System.out.println("[ReaderDAO] Calling query for saving discount code.");
             conn = DriverManager.getConnection(DB_URL, USER, PASS);
             stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
             Queries.addSeriesToToRead(stmt,series,reader);
