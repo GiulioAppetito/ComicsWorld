@@ -20,6 +20,7 @@ public class SeriesDAO {
     private static final String TITLE = "title";
     private static final String COVER = "cover";
     private static final String AUTHOR = "author";
+    private static final String NOSERIESFOUND = "No series Found ";
 
     public List<Series> retrieveFavouriteSeries(String user) {
         Statement stmt = null;
@@ -243,7 +244,7 @@ public class SeriesDAO {
             ResultSet rs = Queries.retrieveSeries(stmt, title);
 
             if (!rs.first()) {
-                throw new Exception("No series Found ");
+                throw new Exception(NOSERIESFOUND);
             }
             rs.first();
 
@@ -300,7 +301,7 @@ public class SeriesDAO {
             ResultSet rs = Queries.retrieveCategorySeries(stmt, genre);
 
             if (!rs.first()) {
-                throw new Exception("No series Found ");
+                throw new Exception(NOSERIESFOUND);
             }
             rs.first();
             do {
@@ -354,7 +355,7 @@ public class SeriesDAO {
             ResultSet rs = Queries.retrieveSeries(stmt, title);
 
             if (!rs.first()) {
-                throw new Exception("No series Found ");
+                throw new Exception(NOSERIESFOUND);
             }
             rs.first();
 
@@ -410,7 +411,6 @@ public class SeriesDAO {
             }
             rs.first();
             do {
-                    try{
                         Author author;
                         Series series;
                         AuthorDAO authorDAO = new AuthorDAO();
@@ -424,9 +424,7 @@ public class SeriesDAO {
                             series.setCover(image);
                         }
                         seriesList.add(series);
-                    } catch (SQLException throwables) {
-                        throwables.printStackTrace();
-                    }
+
 
             } while (rs.next());
 
@@ -496,6 +494,16 @@ public class SeriesDAO {
                 conn.close();
             } catch (SQLException e) {
                 e.printStackTrace();
+            }
+            try{
+                try {
+                    assert stmt!=null;
+                    stmt.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            } finally {
+                //TO-DO
             }
         }
     }
