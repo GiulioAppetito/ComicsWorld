@@ -4,8 +4,6 @@ import com.example.comics.model.Series;
 import com.example.comics.model.UserLogin;
 import com.example.comics.model.fagioli.ChapterBean;
 
-import java.sql.SQLException;
-
 public class PublishChapterController {
 
     public void publishChapter(ChapterBean chapterBean, String seriesTitle){

@@ -20,20 +20,20 @@ public class ToReadControllerG {
 
         ResearchController researchController = new ResearchController();
 
-        List<SeriesBean> listOfCards = researchController.getToReadSeries();
-        int size = listOfCards.size();
+        List<SeriesBean> listOfSeriesCards = researchController.getToReadSeries();
+
         int columns = 3;
         int i=1;
-        for(int j=0; j<size; j++) {
+        for(int j=0; j<listOfSeriesCards.size(); j++) {
             FXMLLoader fxmlLoader = new FXMLLoader();
             fxmlLoader.setLocation(getClass().getResource("vcard.fxml"));
             try {
                 VBox card = fxmlLoader.load();
                 CardControllerG cardController = fxmlLoader.getController();
-                cardController.setData(listOfCards.get(j));
+                cardController.setData(listOfSeriesCards.get(j));
 
                 int finalJ = j;
-                card.setOnMouseClicked(event -> openSerie(listOfCards.get(finalJ)));
+                card.setOnMouseClicked(event -> openSerie(listOfSeriesCards.get(finalJ)));
 
                 gpComics.add(card,j%columns,i);
                 if(j%columns == columns-1){

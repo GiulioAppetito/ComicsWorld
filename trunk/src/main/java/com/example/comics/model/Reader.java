@@ -83,7 +83,6 @@ public class Reader extends Account{
     }
 
     public boolean likesThisSeries(Series series){
-
         for(Series fav : this.favourites){
             if(fav.getTitle().equals(series.getTitle())){
                 return true;

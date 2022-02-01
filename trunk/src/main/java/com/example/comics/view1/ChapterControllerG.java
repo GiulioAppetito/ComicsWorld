@@ -7,7 +7,6 @@ import com.example.comics.model.*;
 import com.example.comics.model.exceptions.DiscountCodeException;
 import com.example.comics.model.exceptions.InvalidPaymentException;
 import com.example.comics.model.fagioli.*;
-import com.example.comics.view1.beans.ChapterBean1;
 import com.example.comics.view1.beans.ReviewBean1;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -26,6 +25,9 @@ public class ChapterControllerG implements ChapterObserver, ObjectiveObserver {
 
     @FXML
     private VBox vbReviews;
+
+    @FXML
+    private Button btnSkip;
 
     @FXML
     private ImageView chapterCoverIV;
@@ -502,18 +504,25 @@ public class ChapterControllerG implements ChapterObserver, ObjectiveObserver {
         closePaymentPane();
         btnClosePayment.setOnAction(event -> closePaymentPane());
         btnApply.setOnAction(event -> applyDiscountCode(chapterBean,seriesBean));
+        btnSkip.setOnAction(event -> applyNoDiscountCode(chapterBean,seriesBean));
+    }
+
+    private void applyNoDiscountCode(ChapterBean chapterBean, SeriesBean seriesBean) {
+        BuyComicController buyComicController = new BuyComicController();
+        try {
+            buyComicController.buyComic(chapterBean,seriesBean, "");
+        } catch (InvalidPaymentException | DiscountCodeException e) {
+            e.printStackTrace();
+        }
     }
 
     private void applyDiscountCode(ChapterBean chapterBean,SeriesBean seriesBean)  {
         BuyComicController buyComicController = new BuyComicController();
         try {
             buyComicController.buyComic(chapterBean,seriesBean, choiceBoxCodes.getValue());
-        } catch (InvalidPaymentException e) {
-            e.printStackTrace();
-        } catch (DiscountCodeException e) {
+        } catch (InvalidPaymentException | DiscountCodeException e) {
             e.printStackTrace();
         }
-
     }
 
     private void closePaymentPane() {

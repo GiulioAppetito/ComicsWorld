@@ -6,6 +6,7 @@ import javafx.scene.image.Image;
 
 import java.io.InputStream;
 import java.sql.*;
+import java.util.ArrayList;
 import java.util.List;
 
 public class ReaderDAO {
@@ -14,6 +15,11 @@ public class ReaderDAO {
     private static final String PASS = "passwordanastasia";
     private static final String DB_URL = "jdbc:mysql://comics-world.ce9t0fxhansh.eu-west-2.rds.amazonaws.com:3306/ComicsWorld?autoReconnect=true&useSSL=false";
 
+    private List<Series> favSeries = new ArrayList<>();
+    private List<Series> toReadSeries = new ArrayList<>();
+    private List<DiscountCode> discountCodes = new ArrayList<>();
+    private List<Author> followedAuthors = new ArrayList<>();
+    private List<Series> readingSeries = new ArrayList<>();
 
     public Reader retrieveReader(String identifier, String password){
 
@@ -35,16 +41,40 @@ public class ReaderDAO {
             SeriesDAO seriesDAO = new SeriesDAO();
 
             String username = rs.getString("username");
-            List<Series> favSeries = seriesDAO.retrieveFavouriteSeries(username);
-            List<Series> toReadSeries = seriesDAO.retrieveToReadSeries(username);
-            List<Series> readingSeries = seriesDAO.retrieveReadingSeries(username);
+
+
+            Thread t = new Thread(()->{
+                favSeries = seriesDAO.retrieveFavouriteSeries(username);
+            });
+            t.start();
+
+            Thread t1 = new Thread(()->{
+                toReadSeries = seriesDAO.retrieveToReadSeries(username);
+            });
+            t1.start();
+
+            Thread t2 = new Thread(()->{
+                readingSeries = seriesDAO.retrieveReadingSeries(username);
+            });
+            t2.start();
 
             DiscountCodeDAO discountCodeDAO = new DiscountCodeDAO();
-            List<DiscountCode> discountCodes = discountCodeDAO.retreiveDiscountCodesByReader(username);
-
+            Thread t3 = new Thread(()->{
+                discountCodes = discountCodeDAO.retreiveDiscountCodesByReader(username);
+            });
+            t3.start();
 
             AuthorDAO authorDAO = new AuthorDAO();
-            List<Author> followedAuthors = authorDAO.retreiveFollowedAuthorsByReader(username);
+            Thread t4 = new Thread(()->{
+                followedAuthors = authorDAO.retreiveFollowedAuthorsByReader(username);
+            });
+            t4.start();
+
+            t.join();
+            t1.join();
+            t2.join();
+            t3.join();
+            t4.join();
 
             reader = new Reader(favSeries, toReadSeries, readingSeries, username, followedAuthors,discountCodes);
 
@@ -61,8 +91,10 @@ public class ReaderDAO {
             }
         } catch (SQLException throwables) {
             throwables.printStackTrace();
-        }
-    finally{
+
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } finally{
             try {
                 assert conn != null;
                 conn.close();

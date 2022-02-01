@@ -13,7 +13,6 @@ module com.example.coomics {
     requires java.desktop;
     requires javax.jms;
     requires mail;
-    requires kotlin.stdlib;
 
 
 

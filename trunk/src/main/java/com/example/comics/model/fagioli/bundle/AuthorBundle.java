@@ -2,6 +2,7 @@ package com.example.comics.model.fagioli.bundle;
 
 import com.example.comics.model.Series;
 import com.example.comics.model.fagioli.AuthorBean;
+import com.example.comics.model.fagioli.SeriesBean;
 import javafx.scene.image.Image;
 
 import java.util.List;
