@@ -92,7 +92,7 @@ public class AccountSettingsControllerG implements AccountObserver {
 
     @FXML
     void saveFirstName() {
-        AccountBean accountBean = new AccountBean1();
+        AccountBean1 accountBean = new AccountBean1();
         accountBean.setFirstName(taNewFirstName.getText());
 
         CustomizeProfileController customizeProfileController = new CustomizeProfileController();
@@ -109,7 +109,7 @@ public class AccountSettingsControllerG implements AccountObserver {
 
     @FXML
     void saveLastName() {
-        AccountBean accountBean = new AccountBean1();
+        AccountBean1 accountBean = new AccountBean1();
         accountBean.setLastName(taNewLastName.getText());
 
         CustomizeProfileController customizeProfileController = new CustomizeProfileController();
@@ -125,7 +125,7 @@ public class AccountSettingsControllerG implements AccountObserver {
 
     @FXML
     void saveEmail() {
-        AccountBean accountBean = new AccountBean1();
+        AccountBean1 accountBean = new AccountBean1();
         accountBean.setEmail(taNewEmail.getText());
 
         CustomizeProfileController customizeProfileController = new CustomizeProfileController();

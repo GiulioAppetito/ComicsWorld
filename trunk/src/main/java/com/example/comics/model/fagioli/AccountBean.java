@@ -2,6 +2,8 @@ package com.example.comics.model.fagioli;
 
 import javafx.scene.image.Image;
 
+import java.io.InputStream;
+
 public interface AccountBean {
 
     public String getFirstName();
@@ -16,10 +18,6 @@ public interface AccountBean {
 
     public void setEmail(String email);
 
-    public String getPassword();
-
-    public void setPassword(String password);
-
     public String getUsername();
 
     public void setUsername(String username);
@@ -27,5 +25,9 @@ public interface AccountBean {
     public Image getProPic();
 
     public void setProPic(Image proPic);
+
+    void setInputStream(InputStream inputStream);
+
+    InputStream getInputStream();
 
 }

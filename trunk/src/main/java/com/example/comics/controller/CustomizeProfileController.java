@@ -1,22 +1,21 @@
 package com.example.comics.controller;
 
 import com.example.comics.model.fagioli.AccountBean;
-import com.example.comics.model.fagioli.ProfileBean;
 import com.example.comics.model.UserLogin;
 import com.example.comics.model.dao.AccountDAO;
 
 public class CustomizeProfileController {
 
-    public void changeUsername(ProfileBean profileBean){
+    public void changeUsername(AccountBean accountBean){
         AccountDAO accountDAO = new AccountDAO();
-        accountDAO.changeUsername(profileBean.getUsername(), UserLogin.getInstance().getAccount().getUsername());
-        UserLogin.getInstance().getAccount().changeCredential("username", profileBean.getUsername());
+        accountDAO.changeUsername(accountBean.getUsername(), UserLogin.getInstance().getAccount().getUsername());
+        UserLogin.getInstance().getAccount().changeCredential("username", accountBean.getUsername());
     }
 
-    public void changeProPic(ProfileBean profileBean){
-        UserLogin.getInstance().getAccount().changeProPic(profileBean.getProPic());
+    public void changeProPic(AccountBean accountBean){
+        UserLogin.getInstance().getAccount().changeProPic(accountBean.getProPic());
         AccountDAO accountDAO = new AccountDAO();
-        accountDAO.changeProPic(profileBean.getInputStream(),UserLogin.getInstance().getReader());
+        accountDAO.changeProPic(accountBean.getInputStream(),UserLogin.getInstance().getReader());
     }
 
     public void changeEmail(AccountBean accountBean){

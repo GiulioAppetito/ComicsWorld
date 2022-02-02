@@ -1,9 +1,12 @@
 package com.example.comics.view2;
 
 import com.example.comics.controller.*;
+import com.example.comics.model.AccountObserver;
+import com.example.comics.model.AccountSubject;
 import com.example.comics.model.UserLogin;
 import com.example.comics.model.fagioli.*;
-import com.example.comics.view1.BadgeCardControllerG;
+import com.example.comics.view1.beans.AccountBean1;
+import com.example.comics.view2.beans.AccountBean2;
 import com.example.comics.view2.beans.ReviewBean2;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -20,7 +23,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class FeedControllerG2 {
+public class FeedControllerG2 implements AccountObserver {
 
     @FXML
     private Button author;
@@ -224,6 +227,36 @@ public class FeedControllerG2 {
     @FXML
     private VBox boxNoBadges;
 
+    @FXML
+    private Button btnChangeBirthday;
+
+    @FXML
+    private Button btnChangeEmail;
+
+    @FXML
+    private Button btnChangeFirstName;
+
+    @FXML
+    private Button btnChangeLastName;
+
+    @FXML
+    private Button btnChangeUsername;
+
+    @FXML
+    private TextField tfEmail;
+
+    @FXML
+    private TextField tfFirstName;
+
+    @FXML
+    private TextField tfLastName;
+
+    @FXML
+    private TextField tfUsername;
+
+    @FXML
+    private Label lblEmail;
+
 
     private static final String READER = "reader";
     private static final String BORDER_STYLE = "-fx-border-color: #9b55dc; -fx-background-radius: 20";
@@ -236,6 +269,7 @@ public class FeedControllerG2 {
 
     private FeedControllerG2(){
         loadLatestSeries();
+        AccountSubject.attach(this);
     }
     public static synchronized FeedControllerG2 getInstance(){
         if(instance == null){
@@ -494,7 +528,48 @@ public class FeedControllerG2 {
         openMenu();
         closeAll();
         vBoxSettings.setVisible(true);
+
+        tfFirstName.setText(UserLogin.getInstance().getAccount().getFirstName());
+        tfLastName.setText(UserLogin.getInstance().getAccount().getLastName());
+        tfUsername.setText(UserLogin.getInstance().getAccount().getUsername());
+        tfEmail.setText(UserLogin.getInstance().getAccount().getEmail());
+
+        btnChangeEmail.setOnAction(event -> changeEmail());
+        btnChangeFirstName.setOnAction(event -> changeFirstName());
+        btnChangeLastName.setOnAction(event -> changeLastName());
+        btnChangeUsername.setOnAction(event -> changeUsername());
+
     }
+
+    private void changeUsername() {
+        AccountBean2 accountBean = new AccountBean2();
+        accountBean.setUsername(tfUsername.getText());
+
+        CustomizeProfileController customizeProfileController = new CustomizeProfileController();
+        customizeProfileController.changeUsername(accountBean);
+    }
+    private void changeLastName() {
+        AccountBean2 accountBean = new AccountBean2();
+        accountBean.setLastName(tfLastName.getText());
+
+        CustomizeProfileController customizeProfileController = new CustomizeProfileController();
+        customizeProfileController.changeLastName(accountBean);
+    }
+    private void changeFirstName() {
+        AccountBean2 accountBean = new AccountBean2();
+        accountBean.setFirstName(tfFirstName.getText());
+
+        CustomizeProfileController customizeProfileController = new CustomizeProfileController();
+        customizeProfileController.changeFirstName(accountBean);
+    }
+    private void changeEmail() {
+        AccountBean2 accountBean = new AccountBean2();
+        accountBean.setEmail(tfEmail.getText());
+
+        CustomizeProfileController customizeProfileController = new CustomizeProfileController();
+        customizeProfileController.changeEmail(accountBean);
+    }
+
     public void openProfile(){
         closeAll();
         boxProfile.setVisible(true);
@@ -655,6 +730,7 @@ public class FeedControllerG2 {
     private void initProfile(){
         lblFirstName.setText(UserLogin.getInstance().getAccount().getFirstName());
         lblLastName.setText(UserLogin.getInstance().getAccount().getLastName());
+        lblEmail.setText(UserLogin.getInstance().getAccount().getEmail());
         propic.setImage(UserLogin.getInstance().getAccount().getProPic());
     }
     private void openMenu(){
@@ -674,8 +750,7 @@ public class FeedControllerG2 {
         readerMenu.setVisible(false);
         authorMenu.setVisible(true);
     }
-
-
+    
     private void readChapter(ChapterBean chapterBean) {
         //TO-DO
     }
@@ -698,4 +773,8 @@ public class FeedControllerG2 {
         vBoxMyBadges.setVisible(false);
     }
 
+    @Override
+    public void update() {
+        initProfile();
+    }
 }

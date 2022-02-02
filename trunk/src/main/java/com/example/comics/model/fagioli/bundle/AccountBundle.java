@@ -3,6 +3,8 @@ package com.example.comics.model.fagioli.bundle;
 import com.example.comics.model.fagioli.AccountBean;
 import javafx.scene.image.Image;
 
+import java.io.InputStream;
+
 public class AccountBundle implements AccountBean {
 
     private String firstName;
@@ -41,15 +43,6 @@ public class AccountBundle implements AccountBean {
         this.email = email;
     }
 
-    @Override
-    public String getPassword() {
-        return null;
-    }
-
-    @Override
-    public void setPassword(String password) {
-
-    }
 
     @Override
     public String getUsername() {
@@ -69,5 +62,14 @@ public class AccountBundle implements AccountBean {
     @Override
     public void setProPic(Image proPic) {
         this.proPic = proPic;
+    }
+
+    @Override
+    public void setInputStream(InputStream inputStream) {
+    }
+
+    @Override
+    public InputStream getInputStream() {
+        return null;
     }
 }

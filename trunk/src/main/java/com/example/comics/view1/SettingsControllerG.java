@@ -33,6 +33,7 @@ public class SettingsControllerG {
         FxmlLoader object = new FxmlLoader();
         Pane view = object.getPage("profilesettings");
         mainPane.setCenter(view);
+
     }
 
     public void openAccountSettings() {
@@ -44,6 +45,7 @@ public class SettingsControllerG {
         FxmlLoader object = new FxmlLoader();
         Pane view = object.getPage("accountsettings");
         mainPane.setCenter(view);
+
     }
 
     public void openAboutUsSettings() {

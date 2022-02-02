@@ -1,11 +1,12 @@
-package com.example.comics.view1.beans;
+package com.example.comics.view2.beans;
 
 import com.example.comics.model.fagioli.AccountBean;
 import javafx.scene.image.Image;
 
 import java.io.InputStream;
 
-public class AccountBean1 implements AccountBean {
+public class AccountBean2 implements AccountBean {
+
     private String firstName;
     private String lastName;
     private String email;
@@ -13,30 +14,37 @@ public class AccountBean1 implements AccountBean {
     private Image proPic;
     private InputStream inputStream;
 
+    @Override
     public String getFirstName() {
         return firstName;
     }
 
+    @Override
     public void setFirstName(String firstName) {
         this.firstName = firstName;
     }
 
+    @Override
     public String getLastName() {
         return lastName;
     }
 
+    @Override
     public void setLastName(String lastName) {
         this.lastName = lastName;
     }
 
+    @Override
     public String getEmail() {
         return email;
     }
 
+    @Override
     public void setEmail(String email) {
         this.email = email;
     }
 
+    @Override
     public String getUsername() {
         return username;
     }
@@ -60,5 +68,4 @@ public class AccountBean1 implements AccountBean {
     public void setInputStream(InputStream inputStream) {
         this.inputStream = inputStream;
     }
-
 }

@@ -3,9 +3,9 @@ package com.example.comics.view1;
 import com.example.comics.model.AccountSubject;
 import com.example.comics.controller.CustomizeProfileController;
 import com.example.comics.model.AccountObserver;
-import com.example.comics.model.fagioli.ProfileBean;
 import com.example.comics.model.UserLogin;
-import com.example.comics.view1.beans.ProfileBean1;
+import com.example.comics.model.fagioli.AccountBean;
+import com.example.comics.view1.beans.AccountBean1;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -71,7 +71,6 @@ public class ProfileSettingsControllerG implements AccountObserver {
             try {
                 inputStream = new FileInputStream(imageCoverPath);
             } catch (FileNotFoundException e) {
-                System.out.println("Impossible make proPic inputstream...");
                 e.printStackTrace();
             }
             Image cover = new Image(inputStream);
@@ -79,11 +78,10 @@ public class ProfileSettingsControllerG implements AccountObserver {
             UserLogin.getInstance().getAccount().setProPic(cover);
         }
         CustomizeProfileController controller = new CustomizeProfileController();
-        ProfileBean profileBean = new ProfileBean1();
-        profileBean.setInputStream(inputStream);
-        System.out.println("Set the input stream "+inputStream);
-        profileBean.setProPic(imgProPic.getImage());
-        controller.changeProPic(profileBean);
+        AccountBean1 accountBean = new AccountBean1();
+        accountBean.setInputStream(inputStream);
+        accountBean.setProPic(imgProPic.getImage());
+        controller.changeProPic(accountBean);
 
     }
 
@@ -105,7 +103,7 @@ public class ProfileSettingsControllerG implements AccountObserver {
 
     @FXML
     public void saveUsername(){
-        ProfileBean profileBean = new ProfileBean1();
+        AccountBean1 profileBean = new AccountBean1();
         profileBean.setUsername(taNewUsername.getText());
 
         CustomizeProfileController customizeProfileController = new CustomizeProfileController();
@@ -115,7 +113,6 @@ public class ProfileSettingsControllerG implements AccountObserver {
     @Override
     public void update() {
         paneEditUsername.setVisible(false);
-
         lblUsername.setText(UserLogin.getInstance().getAccount().getUsername());
     }
 }

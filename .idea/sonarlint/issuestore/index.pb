@@ -17,8 +17,6 @@ Qtrunk/src/main/java/com/example/comics/model/exceptions/FailedLoginException.ja
 Xtrunk/src/main/java/com/example/comics/model/exceptions/FailedRegistrationException.java,9\d\9db7c040f084db81b0c5699b617fd6837d98607a
 |
 Ltrunk/src/main/java/com/example/comics/model/fagioli/bundle/BadgeBundle.java,1\a\1ac5d439cc207f33d1287c003324960e24b3f503
-u
-Etrunk/src/main/java/com/example/comics/model/fagioli/AccountBean.java,a\5\a5cf89bb8bc9b320572341689a43bdd3972e0503
 h
 8trunk/src/main/java/com/example/comics/model/Genres.java,b\f\bff2b7bdcfd10d12a77eaacb5c15d0a26723ca34
 h
@@ -35,12 +33,8 @@ v
 Ftrunk/src/main/java/com/example/comics/model/fagioli/DiscountBean.java,0\7\076350d73c9453857e26baf6ccd31fc95ebcf169
 s
 Ctrunk/src/main/java/com/example/comics/model/fagioli/LoginBean.java,5\b\5becafffff50e8d5e91b8682372fe29ba8974529
-u
-Etrunk/src/main/java/com/example/comics/model/fagioli/ProfileBean.java,3\1\319a75db0d22880bf299081b55bb1ae7f375ccc4
 t
 Dtrunk/src/main/java/com/example/comics/model/fagioli/ReaderBean.java,a\a\aac2c572c88b8baac40ef91db2a63a80029b57d8
-p
-@trunk/src/main/java/com/example/comics/model/AccountSubject.java,2\2\22159ed47b874dbaeb776c244474b459c50c1fde
 h
 8trunk/src/main/java/com/example/comics/model/Author.java,3\4\343dfb0cca929f5d5fdcebd3e34f8a8bf62bfb2a
 g
@@ -81,8 +75,6 @@ w
 Gtrunk/src/main/java/com/example/comics/model/fagioli/ObjectiveBean.java,a\e\ae91919e907ece49d105c546ec30b6670ff6219a
 r
 Btrunk/src/main/java/com/example/comics/model/ObjectiveSubject.java,1\8\18ef6e444fbec01ffcb9653ad71ca2c3e909c78d
-|
-Ltrunk/src/main/java/com/example/comics/view1/ProfileSettingsControllerG.java,4\1\415b665414f37f262296f9bac7a0b4c322bf6bb6
 {
 Ktrunk/src/main/java/com/example/comics/view1/PublishChapterControllerG.java,0\c\0cb0924298542915457c5ca35266c9f6965efc56
 z
@@ -103,8 +95,6 @@ r
 Btrunk/src/main/java/com/example/comics/view2/beans/LoginBean2.java,3\a\3ad9173ce7be68972a4e45d391611f87f182f820
 w
 Gtrunk/src/main/java/com/example/comics/view1/StatisticsControllerG.java,9\5\95761a20162375edf28c29d3b2274ef1674b8d9e
-u
-Etrunk/src/main/java/com/example/comics/view1/SettingsControllerG.java,7\9\79ea4a4cd75fb8046c2b9cdeda07ca97f4d2afa6
 s
 Ctrunk/src/main/java/com/example/comics/view1/ReviewControllerG.java,a\c\ac5b4e435a0fa8774cef86ff1be8def634e39f94
 t
@@ -113,8 +103,6 @@ w
 Gtrunk/src/main/java/com/example/comics/view1/ReaderHomeControllerG.java,e\c\ec2e8050235c1d9d3918ef5543b9bf4b12855c12
 }
 Mtrunk/src/main/java/com/example/comics/view1/StatisticsRatingControllerG.java,5\a\5aac75394d3cc7c119b16d8979d3f95dee37e383
-Å
-Qtrunk/src/main/java/com/example/comics/controller/CustomizeProfileController.java,2\d\2dbf5afb17ba5adc40d371a5aa29e8812bff060c
 z
 Jtrunk/src/main/java/com/example/comics/view1/PublishSeriesControllerG.java,8\2\823de8123fac431d811bed934186b6b783b80803
 t
@@ -163,12 +151,8 @@ w
 Gtrunk/src/main/java/com/example/comics/controller/ToReadController.java,1\c\1c3ec2f83de973c2309989978a5802f8217b0e4a
 q
 Atrunk/src/main/java/com/example/comics/fakepaypal/FakePayPal.java,7\1\716dcd3acd7f307e7f9e5e3bb530c5fca88cbe7e
-i
-9trunk/src/main/java/com/example/comics/model/Account.java,9\a\9a56b31fe52b942392371e7a8bc9f9ad131d226e
 q
 Atrunk/src/main/java/com/example/comics/model/AccountObserver.java,8\a\8a9da835aba02ae3f87aedfcf50281d6f92a3e08
-|
-Ltrunk/src/main/java/com/example/comics/view1/AccountSettingsControllerG.java,0\f\0fc27c6cd671a8ceecf31e5699deb2fe6ce56f4d
 ~
 Ntrunk/src/main/java/com/example/comics/view1/AuthorFromOutsideControllerG.java,2\4\24fd798da996c23705c0bf981cc9d7ebd245574d
 w
