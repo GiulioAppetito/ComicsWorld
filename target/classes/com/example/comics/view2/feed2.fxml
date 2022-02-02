@@ -70,6 +70,83 @@
                         <Insets />
                      </VBox.margin>
                      <children>
+                        <VBox fx:id="boxFeed" prefHeight="510.0" prefWidth="286.0">
+                           <children>
+                              <HBox alignment="CENTER" prefHeight="26.0" prefWidth="270.0">
+                                 <children>
+                                    <TextField alignment="TOP_LEFT" prefHeight="26.0" prefWidth="348.0" promptText="Search">
+                                       <HBox.margin>
+                                          <Insets left="20.0" />
+                                       </HBox.margin>
+                                    </TextField>
+                                    <ImageView fitHeight="25.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+                                       <HBox.margin>
+                                          <Insets right="20.0" />
+                                       </HBox.margin>
+                                       <image>
+                                          <Image url="@../../../../img/img2/search.png" />
+                                       </image>
+                                    </ImageView>
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets bottom="5.0" top="5.0" />
+                                 </VBox.margin>
+                              </HBox>
+                              <VBox prefHeight="475.0" prefWidth="286.0">
+                                 <children>
+                                    <ScrollPane hbarPolicy="NEVER" prefHeight="442.0" prefWidth="286.0" styleClass="scroll-bar" vbarPolicy="ALWAYS">
+                                       <content>
+                                          <VBox fx:id="vBoxSeries" prefHeight="267.0" prefWidth="270.0" />
+                                       </content>
+                                    </ScrollPane>
+                                 </children>
+                              </VBox>
+                           </children>
+                           <StackPane.margin>
+                              <Insets />
+                           </StackPane.margin>
+                           <styleClass>
+                              <String fx:value="white-background" />
+                              <String fx:value="keyboard" />
+                           </styleClass>
+                        </VBox>
+                        <VBox fx:id="vBoxPostReview" prefHeight="513.0" prefWidth="286.0">
+                           <styleClass>
+                              <String fx:value="header-background" />
+                              <String fx:value="keyboard" />
+                           </styleClass>
+                           <StackPane.margin>
+                              <Insets right="-1.0" top="-1.0" />
+                           </StackPane.margin>
+                           <children>
+                              <Button fx:id="btnBackFromChaptee" mnemonicParsing="false" prefHeight="40.0" prefWidth="78.0" styleClass="header-background" text="Back" textFill="WHITE">
+                                 <graphic>
+                                    <ImageView fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../../../img/img2/icons8-back-64.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                              <Label alignment="CENTER" prefHeight="78.0" prefWidth="287.0" text="Let the author know what you think:" textFill="WHITE" />
+                              <TextArea fx:id="taComment" prefHeight="123.0" prefWidth="287.0">
+                                 <VBox.margin>
+                                    <Insets left="10.0" right="10.0" />
+                                 </VBox.margin>
+                              </TextArea>
+                              <Label alignment="CENTER" prefHeight="78.0" prefWidth="287.0" text="Rate this chapter:" textFill="WHITE" />
+                              <Slider fx:id="ratingSlider">
+                                 <VBox.margin>
+                                    <Insets left="10.0" right="10.0" />
+                                 </VBox.margin>
+                              </Slider>
+                              <Button fx:id="btnSubmit" mnemonicParsing="false" prefHeight="54.0" prefWidth="301.0" styleClass="darkButton" text="Submit" textFill="WHITE">
+                                 <VBox.margin>
+                                    <Insets left="10.0" right="10.0" top="10.0" />
+                                 </VBox.margin>
+                              </Button>
+                           </children>
+                        </VBox>
                         <VBox fx:id="vBoxChapter" prefHeight="200.0" prefWidth="100.0">
                            <children>
                               <HBox alignment="CENTER" prefHeight="49.0" prefWidth="286.0">
@@ -269,46 +346,6 @@
                            <padding>
                               <Insets bottom="5.0" />
                            </padding>
-                           <styleClass>
-                              <String fx:value="white-background" />
-                              <String fx:value="keyboard" />
-                           </styleClass>
-                        </VBox>
-                        <VBox fx:id="boxFeed">
-                           <children>
-                              <HBox alignment="CENTER" prefHeight="26.0" prefWidth="270.0">
-                                 <children>
-                                    <TextField alignment="TOP_LEFT" prefHeight="26.0" prefWidth="348.0" promptText="Search">
-                                       <HBox.margin>
-                                          <Insets left="20.0" />
-                                       </HBox.margin>
-                                    </TextField>
-                                    <ImageView fitHeight="25.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
-                                       <HBox.margin>
-                                          <Insets right="20.0" />
-                                       </HBox.margin>
-                                       <image>
-                                          <Image url="@../../../../img/img2/search.png" />
-                                       </image>
-                                    </ImageView>
-                                 </children>
-                                 <VBox.margin>
-                                    <Insets bottom="5.0" top="5.0" />
-                                 </VBox.margin>
-                              </HBox>
-                              <VBox prefHeight="482.0" prefWidth="286.0">
-                                 <children>
-                                    <ScrollPane hbarPolicy="NEVER" prefHeight="442.0" prefWidth="286.0" styleClass="scroll-bar" vbarPolicy="ALWAYS">
-                                       <content>
-                                          <VBox fx:id="vBoxSeries" prefHeight="267.0" prefWidth="270.0" />
-                                       </content>
-                                    </ScrollPane>
-                                 </children>
-                              </VBox>
-                           </children>
-                           <StackPane.margin>
-                              <Insets bottom="5.0" />
-                           </StackPane.margin>
                            <styleClass>
                               <String fx:value="white-background" />
                               <String fx:value="keyboard" />
@@ -785,43 +822,6 @@
                               <String fx:value="menu-keyboard" />
                            </styleClass>
                         </Pane>
-                        <VBox fx:id="vBoxPostReview" prefHeight="513.0" prefWidth="286.0">
-                           <styleClass>
-                              <String fx:value="header-background" />
-                              <String fx:value="keyboard" />
-                           </styleClass>
-                           <StackPane.margin>
-                              <Insets right="-1.0" top="-1.0" />
-                           </StackPane.margin>
-                           <children>
-                              <Button fx:id="btnBackFromChaptee" mnemonicParsing="false" prefHeight="40.0" prefWidth="78.0" styleClass="header-background" text="Back" textFill="WHITE">
-                                 <graphic>
-                                    <ImageView fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
-                                       <image>
-                                          <Image url="@../../../../img/img2/icons8-back-64.png" />
-                                       </image>
-                                    </ImageView>
-                                 </graphic>
-                              </Button>
-                              <Label alignment="CENTER" prefHeight="78.0" prefWidth="287.0" text="Let the author know what you think:" textFill="WHITE" />
-                              <TextArea fx:id="taComment" prefHeight="123.0" prefWidth="287.0">
-                                 <VBox.margin>
-                                    <Insets left="10.0" right="10.0" />
-                                 </VBox.margin>
-                              </TextArea>
-                              <Label alignment="CENTER" prefHeight="78.0" prefWidth="287.0" text="Rate this chapter:" textFill="WHITE" />
-                              <Slider fx:id="ratingSlider">
-                                 <VBox.margin>
-                                    <Insets left="10.0" right="10.0" />
-                                 </VBox.margin>
-                              </Slider>
-                              <Button fx:id="btnSubmit" mnemonicParsing="false" prefHeight="54.0" prefWidth="301.0" styleClass="darkButton" text="Submit" textFill="WHITE">
-                                 <VBox.margin>
-                                    <Insets left="10.0" right="10.0" top="10.0" />
-                                 </VBox.margin>
-                              </Button>
-                           </children>
-                        </VBox>
                      </children>
                   </StackPane>
                </children>

@@ -66,11 +66,11 @@ public class CardControllerG {
                 imgStar5.setVisible(true);
                 break;
             default:
-                imgStar1.setVisible(true);
+                imgStar1.setVisible(false);
                 imgStar2.setVisible(false);
-                imgStar3.setVisible(true);
+                imgStar3.setVisible(false);
                 imgStar4.setVisible(false);
-                imgStar5.setVisible(true);
+                imgStar5.setVisible(false);
                 break;
         }
     }

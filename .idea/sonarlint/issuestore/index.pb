@@ -187,8 +187,6 @@ v
 Ftrunk/src/main/java/com/example/comics/view1/BadgeCardControllerG.java,3\4\3436a3a027503288b5c3e7c9e0bbc9f875604119
 y
 Itrunk/src/main/java/com/example/comics/view1/BadgeCreatorControllerG.java,e\8\e88e29f7a2a68e164194f897e31feb5d745f335c
-q
-Atrunk/src/main/java/com/example/comics/view1/CardControllerG.java,c\c\cc10c45ac1cf730a6e1e2df106f1245d44586676
 y
 Itrunk/src/main/java/com/example/comics/view1/CategoryCardControllerG.java,7\a\7abe2fa6ba04c0b4f11be7d3e6be76fedd46bd94
 w
@@ -199,8 +197,6 @@ f
 6trunk/src/main/java/com/example/comics/view1/Main.java,4\f\4fac817cac1c690fe55eef1a8c0e48877f7cdb73
 r
 Btrunk/src/main/java/com/example/comics/view1/LoginControllerG.java,c\e\ce2466ad6ef4e7ee688a7c6ee590a9a25d5f40e1
-s
-Ctrunk/src/main/java/com/example/comics/view1/SeriesControllerG.java,9\e\9e35f99e41cf6d6aa41349eee274243f957b0813
 ;
 Coomics.iml,e\e\ee9c7419ca187f5eb005ec5f6bcb3934bb03ee34
 t

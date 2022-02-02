@@ -450,6 +450,7 @@ public class FeedControllerG2 {
     }
     public void openFeed(){
         closeAll();
+        boxFeed.setVisible(true);
         vBoxSeries.setVisible(true);
     }
 
@@ -536,17 +537,21 @@ public class FeedControllerG2 {
         displayListOfReviews(chapterBean.getReviews(), vBoxReviews);
         if(UserLogin.getInstance().getAccount().getRole().equals(READER)) {
             readChapter(chapterBean);
-            btnPostReview.setOnAction(event -> postReview(chapterBean, seriesBean));
+            btnPostReview.setOnAction(event -> openBoxReview(chapterBean, seriesBean));
         }else{
             btnBuy.setVisible(false);
             btnPostReview.setVisible(false);
         }
     }
 
-    private void postReview(ChapterBean chapterBean, SeriesBean seriesBean) {
+    private void openBoxReview(ChapterBean chapterBean, SeriesBean seriesBean) {
         closeAll();
         vBoxPostReview.setVisible(true);
+        btnSubmit.setOnAction(event -> postReview(chapterBean, seriesBean));
+        btnBackFromChaptee.setOnAction(event -> openChapter(chapterBean, seriesBean));
+    }
 
+    public void postReview(ChapterBean chapterBean, SeriesBean seriesBean){
         ReviewBean reviewBean = new ReviewBean2();
         reviewBean.setComment(taComment.getText());
         reviewBean.setAccount(UserLogin.getInstance().getAccount());
@@ -555,7 +560,8 @@ public class FeedControllerG2 {
         PostReviewController postReviewController = new PostReviewController();
         postReviewController.post(reviewBean, chapterBean, seriesBean);
 
-        vBoxPostReview.setVisible(false);
+        taComment.setText("");
+        openChapter(chapterBean, seriesBean);
     }
 
     public void openSerie(SeriesBean seriesBean){
