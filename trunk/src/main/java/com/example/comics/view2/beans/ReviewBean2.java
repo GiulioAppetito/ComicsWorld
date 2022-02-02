@@ -5,34 +5,39 @@ import com.example.comics.model.fagioli.ReviewBean;
 
 public class ReviewBean2 implements ReviewBean {
 
+    private String comment;
+    private Account account;
+    private Integer rating;
+
+
     @Override
     public String getComment() {
-        return null;
+        return comment;
     }
 
     @Override
     public void setComment(String comment) {
-
+        this.comment = comment;
     }
 
     @Override
     public Account getAccount() {
-        return null;
+        return account;
     }
 
     @Override
     public void setAccount(Account account) {
-
+        this.account = account;
     }
 
     @Override
     public int getRating() {
-        return 0;
+        return rating;
     }
 
     @Override
     public void setRating(int rating) {
-
+        this.rating = rating;
     }
 
 }

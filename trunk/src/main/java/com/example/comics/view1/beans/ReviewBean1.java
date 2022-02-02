@@ -25,4 +25,14 @@ public class ReviewBean1 implements ReviewBean {
         this.rating = rating;
     }
 
+    @Override
+    public Account getAccount() {
+        return account;
+    }
+
+    @Override
+    public void setAccount(Account account) {
+        this.account = account;
+    }
+
 }
