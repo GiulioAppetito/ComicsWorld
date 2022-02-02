@@ -93,22 +93,6 @@
             </VBox>
         </center>
     </BorderPane>
-   <Pane fx:id="errorPane" prefHeight="100.0" prefWidth="290.0" style="-fx-background-color: red;" stylesheets="@../../../../css/css1/fullpackstyling.css">
-      <StackPane.margin>
-         <Insets bottom="250.0" left="80.0" right="80.0" top="300.0" />
-      </StackPane.margin>
-      <styleClass>
-         <String fx:value="white-background" />
-         <String fx:value="buttonLogin" />
-      </styleClass>
-      <children>
-         <Button fx:id="btnCloseErrorMessage" layoutX="238.0" layoutY="14.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="38.0" styleClass="button2" text="X" />
-         <Label fx:id="errorPaneLabel" alignment="CENTER" layoutX="14.0" prefHeight="111.0" prefWidth="221.0" text="Wrong Credentials!" textFill="WHITE">
-            <font>
-               <Font name="Berlin Sans FB" size="20.0" />
-            </font></Label>
-      </children>
-   </Pane>
     <BorderPane fx:id="loginPane">
         <center>
             <VBox prefHeight="661.0" prefWidth="450.0" styleClass="wallpaperlogin" stylesheets="@../../../../css/css1/fullpackstyling.css">
@@ -163,4 +147,20 @@
             </VBox>
         </center>
     </BorderPane>
+   <Pane fx:id="errorPane" prefHeight="100.0" prefWidth="290.0" style="-fx-background-color: red;" stylesheets="@../../../../css/css1/fullpackstyling.css">
+      <StackPane.margin>
+         <Insets bottom="250.0" left="80.0" right="80.0" top="300.0" />
+      </StackPane.margin>
+      <styleClass>
+         <String fx:value="white-background" />
+         <String fx:value="buttonLogin" />
+      </styleClass>
+      <children>
+         <Button fx:id="btnCloseErrorMessage" layoutX="238.0" layoutY="14.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="38.0" styleClass="button2" text="X" />
+         <Label fx:id="errorPaneLabel" alignment="CENTER" layoutX="14.0" prefHeight="111.0" prefWidth="221.0" text="Wrong Credentials!" textFill="WHITE">
+            <font>
+               <Font name="Berlin Sans FB" size="20.0" />
+            </font></Label>
+      </children>
+   </Pane>
 </StackPane>

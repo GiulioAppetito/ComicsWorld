@@ -2,6 +2,7 @@ package com.example.comics.view2;
 
 import com.example.comics.controller.*;
 import com.example.comics.model.UserLogin;
+import com.example.comics.model.exceptions.IncompleteReviewException;
 import com.example.comics.model.fagioli.AuthorBean;
 import com.example.comics.model.fagioli.ChapterBean;
 import com.example.comics.model.fagioli.ReviewBean;
@@ -558,7 +559,11 @@ public class FeedControllerG2 {
         reviewBean.setRating(1);
         //e magari anche la foto
         PostReviewController postReviewController = new PostReviewController();
-        postReviewController.post(reviewBean, chapterBean, seriesBean);
+        try {
+            postReviewController.post(reviewBean, chapterBean, seriesBean);
+        } catch (IncompleteReviewException e) {
+            e.printStackTrace();
+        }
 
         taComment.setText("");
         openChapter(chapterBean, seriesBean);

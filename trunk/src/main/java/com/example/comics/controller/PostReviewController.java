@@ -2,6 +2,7 @@ package com.example.comics.controller;
 
 import com.example.comics.controller.boundaries.PostReviewAuthorBoundary;
 import com.example.comics.controller.boundaries.PostReviewReaderBoundary;
+import com.example.comics.model.exceptions.IncompleteReviewException;
 import com.example.comics.model.fagioli.*;
 import com.example.comics.model.*;
 import com.example.comics.model.dao.SeriesDAO;
@@ -10,9 +11,17 @@ import com.example.comics.model.fagioli.bundle.DiscountCodeBundle;
 
 public class PostReviewController{
 
-    public void post(ReviewBean reviewBean, ChapterBean chapterBean, SeriesBean seriesBean) {
+    public void post(ReviewBean reviewBean, ChapterBean chapterBean, SeriesBean seriesBean) throws IncompleteReviewException {
 
         Thread emailThread;
+
+        //controllo iniziale
+        if(reviewBean.getComment() == null){
+            throw new IncompleteReviewException("Comment text not set!");
+        }
+        if(reviewBean.getAccount() == null){
+            throw new IncompleteReviewException("Reviewer account not set!");
+        }
 
         //salvataggio sul DB
         Author author = new Author();

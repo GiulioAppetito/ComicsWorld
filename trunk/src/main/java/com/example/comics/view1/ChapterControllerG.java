@@ -5,6 +5,7 @@ import com.example.comics.controller.MarkChapterAsReadController;
 import com.example.comics.controller.PostReviewController;
 import com.example.comics.model.*;
 import com.example.comics.model.exceptions.DiscountCodeException;
+import com.example.comics.model.exceptions.IncompleteReviewException;
 import com.example.comics.model.exceptions.InvalidPaymentException;
 import com.example.comics.model.fagioli.*;
 import com.example.comics.view1.beans.ReviewBean1;
@@ -563,7 +564,11 @@ public class ChapterControllerG implements ChapterObserver, ObjectiveObserver {
         reviewBean.setRating(reviewRating);
         //e magari anche la foto
         PostReviewController postReviewController = new PostReviewController();
-        postReviewController.post(reviewBean, chapterBean, seriesBean);
+        try {
+            postReviewController.post(reviewBean, chapterBean, seriesBean);
+        } catch (IncompleteReviewException e) {
+            txtAreaComment.setText("");
+        }
 
         paneInsertReview.setVisible(false);
 
