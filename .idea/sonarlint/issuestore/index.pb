@@ -45,8 +45,6 @@ h
 8trunk/src/main/java/com/example/comics/model/Author.java,3\4\343dfb0cca929f5d5fdcebd3e34f8a8bf62bfb2a
 g
 7trunk/src/main/java/com/example/comics/model/Badge.java,3\1\31f98f33cf5be70d062ca3e1b9483ac49201595f
-i
-9trunk/src/main/java/com/example/comics/model/Chapter.java,e\e\ee53f251e6fa246c2de20c960c4d267b1c885842
 r
 Btrunk/src/main/java/com/example/comics/model/ChapterObjective.java,b\3\b3eec645610f52f5ca30fb3f4a1f138583d83fc4
 q
@@ -71,8 +69,6 @@ m
 =trunk/src/main/java/com/example/comics/view1/HomeFactory.java,6\8\68f57411c53415cf6dbae85e49b0a05980e4cabe
 s
 Ctrunk/src/main/java/com/example/comics/model/fagioli/BadgeBean.java,5\4\541444d7fee134e989d4ba3f5d7fff0b86d2a1d7
-~
-Ntrunk/src/main/java/com/example/comics/model/fagioli/bundle/ChapterBundle.java,5\2\520405a26e9b43ba9b50c5320a92e3b0970934d7
 s
 Ctrunk/src/main/java/com/example/comics/model/ChaptersObjective.java,0\c\0cac8b97512560d8899f118f0350abbb5c8adf8f
 w
@@ -101,8 +97,6 @@ A
 comando batch.txt,e\c\ec904f9bcd6fb051ee00b231734dbc0e5d956b96
 w
 Gtrunk/src/main/java/com/example/comics/view2/SeriesCardControllerG.java,1\b\1be915d2c3d65af39b55d9dce686f6b35d8ed7a0
-w
-Gtrunk/src/main/java/com/example/comics/view2/ReviewCardControllerG.java,5\3\53aba0c54101550241d093304df200cd292bf72b
 x
 Htrunk/src/main/java/com/example/comics/view2/ChapterCardControllerG.java,d\c\dc9731744785a3f758fa8988154bdffd9cb8c788
 w
