@@ -27,7 +27,7 @@ public class BuyComicController {
             throw new DiscountCodeException("Your code is expired!");
         }
 
-        //nel caso va tutto a buon fine ...
+        //nel caso vada tutto a buon fine ...
 
         //chiamo altra boundary per la carta
         AccountBean accountBean = new AccountBundle();
@@ -45,8 +45,6 @@ public class BuyComicController {
         UserLogin.getInstance().getReader().removeDiscountCode(discountCode);
         DiscountCodeDAO discountCodeDAO = new DiscountCodeDAO();
         discountCodeDAO.deleteDiscountCode(UserLogin.getInstance().getReader(),discountCode);
-
-
 
     }
 }

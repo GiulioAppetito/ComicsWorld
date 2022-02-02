@@ -14,7 +14,7 @@ public class Chapter extends ChapterSubject {
 
     private String title;
     private Date publishingDate;
-    private List<Review> reviews = new ArrayList<>();
+    private List<Review> reviews;
     private int averageRating;
     private Image cover;
     private String description;

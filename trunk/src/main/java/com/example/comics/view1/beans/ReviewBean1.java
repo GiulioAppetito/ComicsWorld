@@ -17,21 +17,22 @@ public class ReviewBean1 implements ReviewBean {
     }
 
     @Override
-    public Account getAccount() {
-        return account;
-    }
-    @Override
-    public void setAccount(Account account) {
-        this.account = account;
-    }
-
-    @Override
     public int getRating() {
         return this.rating;
     }
     @Override
     public void setRating(int rating) {
         this.rating = rating;
+    }
+
+    @Override
+    public Account getAccount() {
+        return account;
+    }
+
+    @Override
+    public void setAccount(Account account) {
+        this.account = account;
     }
 
 }

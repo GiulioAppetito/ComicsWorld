@@ -10,21 +10,21 @@ public class ReviewBundle implements ReviewBean {
     private Account account;
 
     @Override
+    public Account getAccount() {
+        return this.account;
+    }
+    @Override
+    public void setAccount(Account account) {
+        this.account = account;
+    }
+
+    @Override
     public String getComment() {
         return this.comment;
     }
     @Override
     public void setComment(String comment) {
         this.comment = comment;
-    }
-
-    @Override
-    public Account getAccount() {
-        return account;
-    }
-    @Override
-    public void setAccount(Account account) {
-        this.account = account;
     }
 
     @Override

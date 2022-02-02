@@ -7,11 +7,11 @@ public interface ReviewBean {
     String getComment();
     void setComment(String comment);
 
-    Account getAccount();
-    void setAccount(Account account);
-
     int getRating();
     void setRating(int rating);
+
+    Account getAccount();
+    void setAccount(Account account);
 
 
 }
