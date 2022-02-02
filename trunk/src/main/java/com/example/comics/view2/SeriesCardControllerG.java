@@ -22,7 +22,9 @@ public class SeriesCardControllerG {
         comicName.setText(seriesBean.getTitle());
         comicCover.setImage(seriesBean.getCover());
         StatisticsController statisticsController = new StatisticsController();
-        ratingBar.setProgress(statisticsController.seriesAverageRating(seriesBean));
+        System.out.println("[SeriesCard2] Rating of "+seriesBean.getTitle()+" : "+statisticsController.seriesAverageRating(seriesBean));
+
+        ratingBar.setProgress(statisticsController.seriesAverageRating(seriesBean)/10);
     }
 
 }

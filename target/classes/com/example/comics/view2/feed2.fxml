@@ -110,165 +110,6 @@
                               <String fx:value="keyboard" />
                            </styleClass>
                         </VBox>
-                        <VBox fx:id="vBoxPostReview" prefHeight="513.0" prefWidth="286.0">
-                           <styleClass>
-                              <String fx:value="header-background" />
-                              <String fx:value="keyboard" />
-                           </styleClass>
-                           <StackPane.margin>
-                              <Insets right="-1.0" top="-1.0" />
-                           </StackPane.margin>
-                           <children>
-                              <Button fx:id="btnBackFromChaptee" mnemonicParsing="false" prefHeight="40.0" prefWidth="78.0" styleClass="header-background" text="Back" textFill="WHITE">
-                                 <graphic>
-                                    <ImageView fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
-                                       <image>
-                                          <Image url="@../../../../img/img2/icons8-back-64.png" />
-                                       </image>
-                                    </ImageView>
-                                 </graphic>
-                              </Button>
-                              <Label alignment="CENTER" prefHeight="78.0" prefWidth="287.0" text="Let the author know what you think:" textFill="WHITE" />
-                              <TextArea fx:id="taComment" prefHeight="123.0" prefWidth="287.0">
-                                 <VBox.margin>
-                                    <Insets left="10.0" right="10.0" />
-                                 </VBox.margin>
-                              </TextArea>
-                              <Label alignment="CENTER" prefHeight="78.0" prefWidth="287.0" text="Rate this chapter:" textFill="WHITE" />
-                              <Slider fx:id="ratingSlider">
-                                 <VBox.margin>
-                                    <Insets left="10.0" right="10.0" />
-                                 </VBox.margin>
-                              </Slider>
-                              <Button fx:id="btnSubmit" mnemonicParsing="false" prefHeight="54.0" prefWidth="301.0" styleClass="darkButton" text="Submit" textFill="WHITE">
-                                 <VBox.margin>
-                                    <Insets left="10.0" right="10.0" top="10.0" />
-                                 </VBox.margin>
-                              </Button>
-                           </children>
-                        </VBox>
-                        <VBox fx:id="vBoxChapter" prefHeight="200.0" prefWidth="100.0">
-                           <children>
-                              <HBox alignment="CENTER" prefHeight="49.0" prefWidth="286.0">
-                                 <children>
-                                    <Label fx:id="chapterTitle" prefHeight="29.0" prefWidth="110.0" text="Title">
-                                       <font>
-                                          <Font name="System Bold" size="14.0" />
-                                       </font>
-                                    </Label>
-                                 </children>
-                              </HBox>
-                              <VBox prefHeight="434.0" prefWidth="271.0" spacing="5.0" styleClass="keyboard">
-                                 <children>
-                                    <HBox alignment="CENTER">
-                                       <children>
-                                          <ImageView fx:id="chapterCover" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
-                                             <image>
-                                                <Image url="@../../../../img/img2/copertina_ad.jpg" />
-                                             </image>
-                                          </ImageView>
-                                          <VBox prefHeight="137.0" prefWidth="126.0">
-                                             <children>
-                                                <HBox alignment="CENTER" prefHeight="39.0" prefWidth="102.0">
-                                                   <children>
-                                                      <Button fx:id="btnReadChapter" alignment="TOP_LEFT" mnemonicParsing="false" prefHeight="46.0" prefWidth="94.0" styleClass="transparent" text="Read">
-                                                         <graphic>
-                                                            <ImageView fitHeight="38.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
-                                                               <image>
-                                                                  <Image url="@../../../../img/img2/icons8-book-reading-48.png" />
-                                                               </image>
-                                                            </ImageView>
-                                                         </graphic>
-                                                      </Button>
-                                                   </children>
-                                                </HBox>
-                                                <Separator prefWidth="200.0" styleClass="menu-background" />
-                                                <HBox alignment="CENTER" prefHeight="39.0" prefWidth="102.0">
-                                                   <children>
-                                                      <Button fx:id="btnBuy" alignment="CENTER" mnemonicParsing="false" prefHeight="48.0" prefWidth="111.0" styleClass="menu-button" text="Buy">
-                                                         <graphic>
-                                                            <ImageView fitHeight="31.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
-                                                               <image>
-                                                                  <Image url="@../../../../img/img2/icons8-fast-cart-60.png" />
-                                                               </image>
-                                                            </ImageView>
-                                                         </graphic>
-                                                      </Button>
-                                                   </children>
-                                                   <VBox.margin>
-                                                      <Insets top="25.0" />
-                                                   </VBox.margin>
-                                                </HBox>
-                                                <HBox alignment="CENTER" prefHeight="39.0" prefWidth="114.0">
-                                                   <children>
-                                                      <Button fx:id="btnPostReview" alignment="CENTER" mnemonicParsing="false" prefHeight="40.0" prefWidth="112.0" styleClass="menu-button" text="Post Review">
-                                                         <graphic>
-                                                            <ImageView fitHeight="38.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
-                                                               <image>
-                                                                  <Image url="@../../../../img/img2/icons8-quill-pen-60.png" />
-                                                               </image>
-                                                            </ImageView>
-                                                         </graphic>
-                                                      </Button>
-                                                   </children>
-                                                   <VBox.margin>
-                                                      <Insets top="5.0" />
-                                                   </VBox.margin>
-                                                </HBox>
-                                             </children>
-                                          </VBox>
-                                       </children>
-                                    </HBox>
-                                    <HBox alignment="CENTER" prefHeight="150.0" prefWidth="286.0">
-                                       <VBox.margin>
-                                          <Insets />
-                                       </VBox.margin>
-                                       <children>
-                                          <Label fx:id="description" prefHeight="71.0" prefWidth="223.0" text="Description bla bla \n ciao" />
-                                       </children>
-                                    </HBox>
-                                    <VBox prefHeight="281.0" prefWidth="286.0" styleClass="keyboard">
-                                       <children>
-                                          <Label prefHeight="12.0" prefWidth="286.0" text="Reviews">
-                                             <VBox.margin>
-                                                <Insets left="10.0" top="10.0" />
-                                             </VBox.margin>
-                                          </Label>
-                                          <HBox prefHeight="170.0" prefWidth="286.0">
-                                             <children>
-                                                <ScrollPane hbarPolicy="NEVER" prefHeight="159.0" prefWidth="289.0" styleClass="keyboard" vbarPolicy="ALWAYS">
-                                                   <content>
-                                                      <Pane prefHeight="193.0" prefWidth="270.0">
-                                                         <children>
-                                                            <VBox fx:id="vBoxReviews" prefHeight="1107.0" prefWidth="270.0" spacing="5.0">
-                                                               <padding>
-                                                                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-                                                               </padding>
-                                                            </VBox>
-                                                            <VBox fx:id="boxNoReviews" prefHeight="177.0" prefWidth="266.0">
-                                                               <children>
-                                                                  <Label alignment="CENTER" prefHeight="166.0" prefWidth="266.0" text="No reviews yet" />
-                                                               </children>
-                                                            </VBox>
-                                                         </children>
-                                                      </Pane>
-                                                   </content>
-                                                </ScrollPane>
-                                             </children>
-                                          </HBox>
-                                       </children>
-                                    </VBox>
-                                 </children>
-                              </VBox>
-                           </children>
-                           <padding>
-                              <Insets bottom="5.0" />
-                           </padding>
-                           <styleClass>
-                              <String fx:value="white-background" />
-                              <String fx:value="keyboard" />
-                           </styleClass>
-                        </VBox>
                         <VBox fx:id="vBoxAuthorFromOutside" prefHeight="200.0" prefWidth="100.0">
                            <children>
                               <HBox alignment="CENTER" prefHeight="93.0" prefWidth="286.0">
@@ -822,6 +663,165 @@
                               <String fx:value="menu-keyboard" />
                            </styleClass>
                         </Pane>
+                        <VBox fx:id="vBoxPostReview" prefHeight="513.0" prefWidth="286.0">
+                           <styleClass>
+                              <String fx:value="header-background" />
+                              <String fx:value="keyboard" />
+                           </styleClass>
+                           <StackPane.margin>
+                              <Insets right="-1.0" top="-1.0" />
+                           </StackPane.margin>
+                           <children>
+                              <Button fx:id="btnBackFromChaptee" mnemonicParsing="false" prefHeight="40.0" prefWidth="78.0" styleClass="header-background" text="Back" textFill="WHITE">
+                                 <graphic>
+                                    <ImageView fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../../../img/img2/icons8-back-64.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                              <Label alignment="CENTER" prefHeight="78.0" prefWidth="287.0" text="Let the author know what you think:" textFill="WHITE" />
+                              <TextArea fx:id="taComment" prefHeight="123.0" prefWidth="287.0">
+                                 <VBox.margin>
+                                    <Insets left="10.0" right="10.0" />
+                                 </VBox.margin>
+                              </TextArea>
+                              <Label alignment="CENTER" prefHeight="78.0" prefWidth="287.0" text="Rate this chapter:" textFill="WHITE" />
+                              <Slider fx:id="ratingSlider">
+                                 <VBox.margin>
+                                    <Insets left="10.0" right="10.0" />
+                                 </VBox.margin>
+                              </Slider>
+                              <Button fx:id="btnSubmit" mnemonicParsing="false" prefHeight="54.0" prefWidth="301.0" styleClass="darkButton" text="Submit" textFill="WHITE">
+                                 <VBox.margin>
+                                    <Insets left="10.0" right="10.0" top="10.0" />
+                                 </VBox.margin>
+                              </Button>
+                           </children>
+                        </VBox>
+                        <VBox fx:id="vBoxChapter" prefHeight="200.0" prefWidth="100.0">
+                           <children>
+                              <HBox alignment="CENTER" prefHeight="49.0" prefWidth="286.0">
+                                 <children>
+                                    <Label fx:id="chapterTitle" prefHeight="29.0" prefWidth="110.0" text="Title">
+                                       <font>
+                                          <Font name="System Bold" size="14.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </HBox>
+                              <VBox prefHeight="434.0" prefWidth="271.0" spacing="5.0" styleClass="keyboard">
+                                 <children>
+                                    <HBox alignment="CENTER">
+                                       <children>
+                                          <ImageView fx:id="chapterCover" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../../../../img/img2/copertina_ad.jpg" />
+                                             </image>
+                                          </ImageView>
+                                          <VBox prefHeight="137.0" prefWidth="126.0">
+                                             <children>
+                                                <HBox alignment="CENTER" prefHeight="39.0" prefWidth="102.0">
+                                                   <children>
+                                                      <Button fx:id="btnReadChapter" alignment="TOP_LEFT" mnemonicParsing="false" prefHeight="46.0" prefWidth="94.0" styleClass="transparent" text="Read">
+                                                         <graphic>
+                                                            <ImageView fitHeight="38.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
+                                                               <image>
+                                                                  <Image url="@../../../../img/img2/icons8-book-reading-48.png" />
+                                                               </image>
+                                                            </ImageView>
+                                                         </graphic>
+                                                      </Button>
+                                                   </children>
+                                                </HBox>
+                                                <Separator prefWidth="200.0" styleClass="menu-background" />
+                                                <HBox alignment="CENTER" prefHeight="39.0" prefWidth="102.0">
+                                                   <children>
+                                                      <Button fx:id="btnBuy" alignment="CENTER" mnemonicParsing="false" prefHeight="48.0" prefWidth="111.0" styleClass="menu-button" text="Buy">
+                                                         <graphic>
+                                                            <ImageView fitHeight="31.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
+                                                               <image>
+                                                                  <Image url="@../../../../img/img2/icons8-fast-cart-60.png" />
+                                                               </image>
+                                                            </ImageView>
+                                                         </graphic>
+                                                      </Button>
+                                                   </children>
+                                                   <VBox.margin>
+                                                      <Insets top="25.0" />
+                                                   </VBox.margin>
+                                                </HBox>
+                                                <HBox alignment="CENTER" prefHeight="39.0" prefWidth="114.0">
+                                                   <children>
+                                                      <Button fx:id="btnPostReview" alignment="CENTER" mnemonicParsing="false" prefHeight="40.0" prefWidth="112.0" styleClass="menu-button" text="Post Review">
+                                                         <graphic>
+                                                            <ImageView fitHeight="38.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
+                                                               <image>
+                                                                  <Image url="@../../../../img/img2/icons8-quill-pen-60.png" />
+                                                               </image>
+                                                            </ImageView>
+                                                         </graphic>
+                                                      </Button>
+                                                   </children>
+                                                   <VBox.margin>
+                                                      <Insets top="5.0" />
+                                                   </VBox.margin>
+                                                </HBox>
+                                             </children>
+                                          </VBox>
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER" prefHeight="150.0" prefWidth="286.0">
+                                       <VBox.margin>
+                                          <Insets />
+                                       </VBox.margin>
+                                       <children>
+                                          <Label fx:id="description" prefHeight="71.0" prefWidth="223.0" text="Description bla bla \n ciao" />
+                                       </children>
+                                    </HBox>
+                                    <VBox prefHeight="281.0" prefWidth="286.0" styleClass="keyboard">
+                                       <children>
+                                          <Label prefHeight="12.0" prefWidth="286.0" text="Reviews">
+                                             <VBox.margin>
+                                                <Insets left="10.0" top="10.0" />
+                                             </VBox.margin>
+                                          </Label>
+                                          <HBox prefHeight="170.0" prefWidth="286.0">
+                                             <children>
+                                                <ScrollPane hbarPolicy="NEVER" prefHeight="159.0" prefWidth="289.0" styleClass="keyboard">
+                                                   <content>
+                                                      <Pane prefHeight="193.0" prefWidth="270.0">
+                                                         <children>
+                                                            <VBox fx:id="vBoxReviews" prefHeight="1107.0" prefWidth="270.0" spacing="5.0">
+                                                               <padding>
+                                                                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                               </padding>
+                                                            </VBox>
+                                                            <VBox fx:id="boxNoReviews" prefHeight="177.0" prefWidth="266.0">
+                                                               <children>
+                                                                  <Label alignment="CENTER" prefHeight="166.0" prefWidth="266.0" text="No reviews yet" />
+                                                               </children>
+                                                            </VBox>
+                                                         </children>
+                                                      </Pane>
+                                                   </content>
+                                                </ScrollPane>
+                                             </children>
+                                          </HBox>
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </VBox>
+                           </children>
+                           <padding>
+                              <Insets bottom="5.0" />
+                           </padding>
+                           <styleClass>
+                              <String fx:value="white-background" />
+                              <String fx:value="keyboard" />
+                           </styleClass>
+                        </VBox>
                      </children>
                   </StackPane>
                </children>

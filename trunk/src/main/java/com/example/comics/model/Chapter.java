@@ -102,7 +102,9 @@ public class Chapter extends ChapterSubject {
     public int calculateAverageRating() {
         averageRating = 0;
         int count = 0;
-
+        if(reviews == null){
+            return 0;
+        }
         for(Review review : reviews){
             averageRating = averageRating + review.getRating();
             count++;

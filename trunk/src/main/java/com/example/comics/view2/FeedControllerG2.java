@@ -2,12 +2,10 @@ package com.example.comics.view2;
 
 import com.example.comics.controller.*;
 import com.example.comics.model.UserLogin;
-import com.example.comics.model.exceptions.IncompleteReviewException;
 import com.example.comics.model.fagioli.AuthorBean;
 import com.example.comics.model.fagioli.ChapterBean;
 import com.example.comics.model.fagioli.ReviewBean;
 import com.example.comics.model.fagioli.SeriesBean;
-import com.example.comics.view1.beans.ReviewBean1;
 import com.example.comics.view2.beans.ReviewBean2;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -559,11 +557,9 @@ public class FeedControllerG2 {
         reviewBean.setRating(1);
         //e magari anche la foto
         PostReviewController postReviewController = new PostReviewController();
-        try {
+
             postReviewController.post(reviewBean, chapterBean, seriesBean);
-        } catch (IncompleteReviewException e) {
-            e.printStackTrace();
-        }
+
 
         taComment.setText("");
         openChapter(chapterBean, seriesBean);
