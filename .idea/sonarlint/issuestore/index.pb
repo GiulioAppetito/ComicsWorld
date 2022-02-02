@@ -97,8 +97,6 @@ A
 comando batch.txt,e\c\ec904f9bcd6fb051ee00b231734dbc0e5d956b96
 w
 Gtrunk/src/main/java/com/example/comics/view2/SeriesCardControllerG.java,1\b\1be915d2c3d65af39b55d9dce686f6b35d8ed7a0
-x
-Htrunk/src/main/java/com/example/comics/view2/ChapterCardControllerG.java,d\c\dc9731744785a3f758fa8988154bdffd9cb8c788
 w
 Gtrunk/src/main/java/com/example/comics/view2/AuthorCardControllerG.java,5\8\5877fa54b5f709663253d467adad9cd2343f688e
 r
