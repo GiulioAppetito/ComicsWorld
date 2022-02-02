@@ -557,6 +557,7 @@ public class ChapterControllerG implements ChapterObserver, ObjectiveObserver {
         postReviewController.post(reviewBean, chapterBean, seriesBean);
 
         paneInsertReview.setVisible(false);
+
     }
 
     public void openEditor(){

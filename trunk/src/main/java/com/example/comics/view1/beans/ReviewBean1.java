@@ -17,15 +17,6 @@ public class ReviewBean1 implements ReviewBean {
     }
 
     @Override
-    public Account getAccount() {
-        return account;
-    }
-    @Override
-    public void setAccount(Account account) {
-        this.account = account;
-    }
-
-    @Override
     public int getRating() {
         return this.rating;
     }

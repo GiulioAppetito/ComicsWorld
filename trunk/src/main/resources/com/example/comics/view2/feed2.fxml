@@ -8,6 +8,8 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -161,7 +163,7 @@
                                                    <content>
                                                       <Pane prefHeight="193.0" prefWidth="270.0">
                                                          <children>
-                                                            <VBox fx:id="vBoxReviews" prefHeight="226.0" prefWidth="270.0" spacing="5.0">
+                                                            <VBox fx:id="vBoxReviews" prefHeight="1107.0" prefWidth="270.0" spacing="5.0">
                                                                <padding>
                                                                   <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                                                                </padding>
@@ -769,7 +771,8 @@
                                  <styleClass>
                                     <String fx:value="menu-button" />
                                     <String fx:value="menu-keyboard" />
-                                 </styleClass></Button>
+                                 </styleClass>
+                              </Button>
                               <VBox fx:id="authorMenu" layoutX="-1.0" layoutY="1.0" prefHeight="94.0" prefWidth="206.0">
                                  <children>
                                     <Button fx:id="btnMySeries" mnemonicParsing="false" prefHeight="46.0" prefWidth="206.0" styleClass="menu-button" text="My Series" textFill="WHITE" />
@@ -782,6 +785,43 @@
                               <String fx:value="menu-keyboard" />
                            </styleClass>
                         </Pane>
+                        <VBox fx:id="vBoxPostReview" prefHeight="513.0" prefWidth="286.0">
+                           <styleClass>
+                              <String fx:value="header-background" />
+                              <String fx:value="keyboard" />
+                           </styleClass>
+                           <StackPane.margin>
+                              <Insets right="-1.0" top="-1.0" />
+                           </StackPane.margin>
+                           <children>
+                              <Button fx:id="btnBackFromChaptee" mnemonicParsing="false" prefHeight="40.0" prefWidth="78.0" styleClass="header-background" text="Back" textFill="WHITE">
+                                 <graphic>
+                                    <ImageView fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../../../img/img2/icons8-back-64.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                              <Label alignment="CENTER" prefHeight="78.0" prefWidth="287.0" text="Let the author know what you think:" textFill="WHITE" />
+                              <TextArea fx:id="taComment" prefHeight="123.0" prefWidth="287.0">
+                                 <VBox.margin>
+                                    <Insets left="10.0" right="10.0" />
+                                 </VBox.margin>
+                              </TextArea>
+                              <Label alignment="CENTER" prefHeight="78.0" prefWidth="287.0" text="Rate this chapter:" textFill="WHITE" />
+                              <Slider fx:id="ratingSlider">
+                                 <VBox.margin>
+                                    <Insets left="10.0" right="10.0" />
+                                 </VBox.margin>
+                              </Slider>
+                              <Button fx:id="btnSubmit" mnemonicParsing="false" prefHeight="54.0" prefWidth="301.0" styleClass="darkButton" text="Submit" textFill="WHITE">
+                                 <VBox.margin>
+                                    <Insets left="10.0" right="10.0" top="10.0" />
+                                 </VBox.margin>
+                              </Button>
+                           </children>
+                        </VBox>
                      </children>
                   </StackPane>
                </children>
