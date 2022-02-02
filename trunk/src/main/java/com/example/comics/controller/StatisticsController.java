@@ -15,7 +15,7 @@ public class StatisticsController {
         for (ChapterBean chapterBean : seriesBean.getChapters()) {
             for (ReviewBean reviewBean : chapterBean.getReviews()) {
                 ratingSum += reviewBean.getRating();
-                numReviews = numReviews+1;
+                numReviews = numReviews+1f;
             }
         }
 

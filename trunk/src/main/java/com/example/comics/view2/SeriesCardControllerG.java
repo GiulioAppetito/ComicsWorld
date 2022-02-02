@@ -24,7 +24,7 @@ public class SeriesCardControllerG {
         StatisticsController statisticsController = new StatisticsController();
         System.out.println("[SeriesCard2] Rating of "+seriesBean.getTitle()+" : "+statisticsController.seriesAverageRating(seriesBean));
 
-        ratingBar.setProgress(statisticsController.seriesAverageRating(seriesBean)/10);
+        ratingBar.setProgress(statisticsController.seriesAverageRating(seriesBean)/5);
     }
 
 }
