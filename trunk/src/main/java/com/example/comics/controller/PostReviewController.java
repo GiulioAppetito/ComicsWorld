@@ -20,7 +20,6 @@ public class PostReviewController{
         author.setProPic(seriesBean.getAuthor().getProPic());
         author.setLastName(seriesBean.getAuthor().getLastName());
         author.setEmail(seriesBean.getAuthor().getEmail());
-        author.setPublishedSeries(seriesBean.getAuthor().getPublishedSeries());
 
         SeriesDAO seriesDAO = new SeriesDAO();
         Series series = seriesDAO.retreiveSeriesWithAuthor(seriesBean.getTitle(),author);

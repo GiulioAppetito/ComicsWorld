@@ -210,7 +210,7 @@ public class Queries {
 
     public static ResultSet isChapterRead(Statement stmt, String chapterTitle, String reader) throws SQLException {
         String selectStatement = String.format("SELECT * FROM userReadChapters WHERE (reader = '%s' AND chapter='%s')",reader,chapterTitle);
-
+        System.out.println(selectStatement);
         return stmt.executeQuery(selectStatement);
     }
 
@@ -331,7 +331,14 @@ public class Queries {
     }
 
     public static void deleteDiscountCode(Statement stmt, Reader reader, DiscountCode discountCode) throws SQLException {
-        String selectStatement = String.format("DELETE FROM discountCodes WHERE (username = '%s' AND code = '%s')  ",reader.getUsername(),discountCode.getCode());
-        stmt.executeQuery(selectStatement);
+        String deleteStatement = String.format("DELETE FROM discountCodes WHERE (username = '%s' AND code = '%s')  ",reader.getUsername(),discountCode.getCode());
+        System.out.println(deleteStatement);
+        stmt.executeUpdate(deleteStatement);
+    }
+
+    public static void removeChapterFromRead(Statement stmt, Series series, String chapterTitle, Reader reader) throws SQLException {
+        String deleteStatement = String.format("DELETE FROM userReadChapters WHERE (reader = '%s' AND series = '%s' AND chapter = '%s')  ",reader.getUsername(),series.getTitle(),chapterTitle);
+        System.out.println(deleteStatement);
+        stmt.executeUpdate(deleteStatement);
     }
 }

@@ -384,19 +384,22 @@ public class ChapterControllerG implements ChapterObserver, ObjectiveObserver {
         taDescription.setEditable(false);
         chapterSeries = seriesBean.getTitle();
 
-        if(Boolean.FALSE.equals(chapterBean.getRead())){
-            btnChapterRead.setStyle(STYLE);
-            btnChapterRead.setOnAction(event -> markChapterAsRead(seriesBean,chapterBean));
-        }else{
+        System.out.println("Ho letto il chapter: "+chapterBean.getRead());
+
+        if(Boolean.TRUE.equals(chapterBean.getRead())){
+            System.out.println("[ChapterControllerG] You have read this chapter.");
             btnChapterRead.setStyle(STYLE2);
             btnChapterRead.setOnAction(event -> removeChapterFromRead(seriesBean,chapterBean));
+        }else{
+            System.out.println("[ChapterControllerG] You didn't read this chapter.");
+            btnChapterRead.setStyle(STYLE);
+            btnChapterRead.setOnAction(event -> markChapterAsRead(seriesBean,chapterBean));
         }
 
         chapterCoverIV.setImage(chapterBean.getCover());
 
         btnCloseEditor.setOnAction(event -> closeEditor());
         btnCloseBadge.setOnAction(event -> closeBadgeWon());
-        btnChapterRead.setOnAction(event -> markChapterAsRead(seriesBean,chapterBean));
 
         paneInsertReview.setVisible(false);
         newBadgeWonPane.setVisible(false);
@@ -524,13 +527,19 @@ public class ChapterControllerG implements ChapterObserver, ObjectiveObserver {
     }
 
     private void removeChapterFromRead(SeriesBean seriesBean, ChapterBean chapterBean) {
-        //TO-DO
+        System.out.println("[ChapterControllerG] : doing removeChapterFromRead ");
         btnChapterRead.setStyle(STYLE);
+        MarkChapterAsReadController controller = new MarkChapterAsReadController();
+        controller.unmarkChapterAsRead(seriesBean,chapterBean);
+        btnChapterRead.setOnAction(event -> markChapterAsRead(seriesBean,chapterBean));
+
     }
     private void markChapterAsRead(SeriesBean seriesBean,ChapterBean chapterBean) {
+        System.out.println("Doing add chapter as read");
         MarkChapterAsReadController controller = new MarkChapterAsReadController();
         controller.markChapterAsRead(seriesBean,chapterBean);
         btnChapterRead.setStyle(STYLE2);
+        btnChapterRead.setOnAction(event -> removeChapterFromRead(seriesBean,chapterBean));
     }
 
     public void closeBadgeWon() {
