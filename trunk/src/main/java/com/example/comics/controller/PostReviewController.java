@@ -12,6 +12,8 @@ public class PostReviewController{
 
     public void post(ReviewBean reviewBean, ChapterBean chapterBean, SeriesBean seriesBean) {
 
+        Thread emailThread;
+
         //salvataggio sul DB
         Author author = new Author();
         author.setFirstName(seriesBean.getAuthor().getFirstName());
@@ -25,10 +27,11 @@ public class PostReviewController{
         series.addReview(chapterBean.getTitle(), reviewBean.getComment(), reviewBean.getRating());
 
         //invio mail all'autore di una nuova review
-        new Thread(()->{
+        emailThread = new Thread(()->{
             PostReviewAuthorBoundary postReviewAuthorBoundary = new PostReviewAuthorBoundary();
             postReviewAuthorBoundary.sendEmailForNewReviewPosted(seriesBean);
-        }).start();
+        });
+        emailThread.start();
 
         //controllo obiettivi
         checkObjectives(series,seriesBean);
@@ -51,8 +54,6 @@ public class PostReviewController{
                 DiscountCode discountCode = new DiscountCode(objective.getDiscount());
                 UserLogin.getInstance().getReader().addDiscountCode(discountCode);
 
-
-
                 //invio mail al lettore del codice sconto
                 new Thread(()->{
                     AccountBean accountBean = new AccountBundle();
@@ -74,5 +75,4 @@ public class PostReviewController{
             }
         }
     }
-
 }

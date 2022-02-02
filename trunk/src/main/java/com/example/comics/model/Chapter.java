@@ -21,13 +21,28 @@ public class Chapter extends ChapterSubject {
     private Boolean isRead;
 
     public Chapter(String title){
+        Thread reviewsThread, ratingThread;
 
         this.title = title;
-        //delego la responsabilità di creator delle review del chapter al chapterDAO che farà il retrieve delle review
-        ChapterDAO chapterDAO = new ChapterDAO();
-        this.reviews = chapterDAO.retrieveReviews(title);
 
-        this.averageRating = calculateAverageRating();
+        reviewsThread = new Thread(() -> {
+            ChapterDAO chapterDAO = new ChapterDAO();
+            this.reviews = chapterDAO.retrieveReviews(title);
+        });
+        reviewsThread.start();
+
+        ratingThread = new Thread(() ->{
+            this.averageRating = calculateAverageRating();
+        });
+        ratingThread.start();
+
+        try {
+            reviewsThread.join();
+            ratingThread.join();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
     }
 
     public String getTitle() {

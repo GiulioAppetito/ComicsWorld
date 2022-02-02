@@ -810,6 +810,23 @@
                                           <String fx:value="buttonEdit" />
                                        </styleClass>
                                     </Button>
+                                    <Button fx:id="btnSkip" mnemonicParsing="false" text="Skip" textFill="WHITE">
+                                       <graphic>
+                                          <ImageView fitHeight="38.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../../../../img/img2/icons8-fast-cart-60.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                       <styleClass>
+                                          <String fx:value="oval-layout" />
+                                          <String fx:value="transparent" />
+                                          <String fx:value="buttonEdit" />
+                                       </styleClass>
+                                       <HBox.margin>
+                                          <Insets left="20.0" />
+                                       </HBox.margin>
+                                    </Button>
                                  </children>
                                  <VBox.margin>
                                     <Insets top="20.0" />

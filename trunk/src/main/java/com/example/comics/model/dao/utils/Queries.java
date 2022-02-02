@@ -239,7 +239,7 @@ public class Queries {
                     pstmt2.execute();
                     System.out.println(pstmt2);
                 } catch (Exception e) {
-                    //TO-DO
+                    e.printStackTrace();
                 }
             }
         }
