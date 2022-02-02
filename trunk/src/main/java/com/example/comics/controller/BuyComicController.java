@@ -2,10 +2,8 @@ package com.example.comics.controller;
 
 import com.example.comics.controller.boundaries.BuyComicBoundary;
 import com.example.comics.controller.boundaries.BuyComicsAuthorBoundary;
-import com.example.comics.model.Author;
 import com.example.comics.model.DiscountCode;
 import com.example.comics.model.UserLogin;
-import com.example.comics.model.dao.AuthorDAO;
 import com.example.comics.model.dao.DiscountCodeDAO;
 import com.example.comics.model.exceptions.DiscountCodeException;
 import com.example.comics.model.exceptions.InvalidPaymentException;

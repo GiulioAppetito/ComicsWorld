@@ -2,7 +2,6 @@ package com.example.comics.controller.boundaries;
 
 import com.example.comics.model.fagioli.SeriesBean;
 
-import java.util.*;
 import javax.mail.*;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;

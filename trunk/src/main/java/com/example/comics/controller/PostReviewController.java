@@ -7,7 +7,6 @@ import com.example.comics.model.*;
 import com.example.comics.model.dao.SeriesDAO;
 import com.example.comics.model.fagioli.bundle.AccountBundle;
 import com.example.comics.model.fagioli.bundle.DiscountCodeBundle;
-import com.example.comics.model.fagioli.bundle.SeriesBundle;
 
 public class PostReviewController{
 

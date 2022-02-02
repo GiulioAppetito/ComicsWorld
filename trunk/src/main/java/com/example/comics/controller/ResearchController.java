@@ -91,8 +91,6 @@ public class ResearchController {
         return seriesBeans;
     }
 
-
-
     public List<BadgeBean> getUserBadges() {
 
         ArrayList<BadgeBean> badgeBeans = new ArrayList<>();

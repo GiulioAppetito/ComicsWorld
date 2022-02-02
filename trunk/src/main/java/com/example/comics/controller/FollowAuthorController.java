@@ -16,6 +16,7 @@ public class FollowAuthorController {
         author.setLastName(authorBean.getLastName());
         author.setProPic(authorBean.getProPic());
         author.setEmail(authorBean.getEmail());
+        author.setPublishedSeries(authorBean.getPublishedSeries());
 
         UserLogin.getInstance().getReader().addFollowedAuthor(author);
 

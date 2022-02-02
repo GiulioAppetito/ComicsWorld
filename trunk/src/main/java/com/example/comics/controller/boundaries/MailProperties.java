@@ -33,14 +33,12 @@ public abstract class MailProperties {
         properties.put("mail.smtp.ssl.protocols","TLSv1.2");
 
         // Get the default Session object.
-        Session session = javax.mail.Session.getInstance(properties, new Authenticator() {
+        return javax.mail.Session.getInstance(properties, new Authenticator() {
             @Override
             protected PasswordAuthentication getPasswordAuthentication() {
                 return new PasswordAuthentication(FROM,PASSWORD);
             }
         });
-
-        return session;
 
     }
 }

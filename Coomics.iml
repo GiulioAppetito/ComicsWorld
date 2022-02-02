@@ -34,6 +34,7 @@
       <sourceFolder url="file://$MODULE_DIR$/trunk/src/main/java" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/trunk/src/main/resources" type="java-resource" />
       <excludeFolder url="file://$MODULE_DIR$/target" />
+      <excludeFolder url="file://$MODULE_DIR$/venv" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
@@ -50,10 +51,6 @@
     <orderEntry type="library" name="Java EE 6-Java EE 6 (2)" level="project" />
     <orderEntry type="library" name="activation" level="project" />
     <orderEntry type="library" name="mail" level="project" />
-    <orderEntry type="library" name="tornadofx-1.7.20" level="project" />
-    <orderEntry type="library" name="tornadofx-1.7.201" level="project" />
-    <orderEntry type="library" name="tornadofx-controlsfx-0.1.1" level="project" />
-    <orderEntry type="library" name="tornadofx-controlsfx-0.1.11" level="project" />
     <orderEntry type="library" name="Maven: org.openjfx:javafx-controls:17.0.0.1" level="project" />
     <orderEntry type="library" name="Maven: org.openjfx:javafx-controls:win:17.0.0.1" level="project" />
     <orderEntry type="library" name="Maven: org.openjfx:javafx-graphics:17.0.0.1" level="project" />
@@ -80,7 +77,6 @@
     <orderEntry type="library" scope="TEST" name="Maven: org.junit.jupiter:junit-jupiter-engine:5.8.1" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: org.junit.platform:junit-platform-engine:1.8.1" level="project" />
     <orderEntry type="library" name="Maven: org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.6.10" level="project" />
-    <orderEntry type="library" name="Maven: org.jetbrains.kotlin:kotlin-stdlib:1.6.10" level="project" />
     <orderEntry type="library" name="Maven: org.jetbrains:annotations:13.0" level="project" />
     <orderEntry type="library" name="Maven: org.jetbrains.kotlin:kotlin-stdlib-common:1.6.10" level="project" />
     <orderEntry type="library" name="Maven: org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.6.10" level="project" />

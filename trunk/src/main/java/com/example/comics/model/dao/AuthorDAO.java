@@ -86,7 +86,6 @@ public class AuthorDAO {
             }
             rs.first();
 
-
             author = new Author();
             author.setFirstName(rs.getString("firstname"));
             author.setUsername(rs.getString("username"));
