@@ -549,6 +549,7 @@ public class FeedControllerG2 {
 
         ReviewBean reviewBean = new ReviewBean2();
         reviewBean.setComment(taComment.getText());
+        reviewBean.setAccount(UserLogin.getInstance().getAccount());
         reviewBean.setRating(1);
         //e magari anche la foto
         PostReviewController postReviewController = new PostReviewController();

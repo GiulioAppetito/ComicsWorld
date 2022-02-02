@@ -1,11 +1,22 @@
 package com.example.comics.model.fagioli.bundle;
 
+import com.example.comics.model.Account;
 import com.example.comics.model.fagioli.ReviewBean;
 
 public class ReviewBundle implements ReviewBean {
 
     private String comment;
     private int rating;
+    private Account account;
+
+    @Override
+    public Account getAccount() {
+        return this.account;
+    }
+    @Override
+    public void setAccount(Account account) {
+        this.account = account;
+    }
 
     @Override
     public String getComment() {
