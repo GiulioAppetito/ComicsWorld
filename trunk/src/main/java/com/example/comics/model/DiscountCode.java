@@ -29,7 +29,7 @@ public class DiscountCode {
         int random;
         for(int i=0; i<LENGHT; i++){
             Random ran = new Random();
-            random = ran.nextInt()%26;
+            random = Math.abs(ran.nextInt()%25);
             if(i<=2){
 
                 generatedCode.append(ALPHABET.charAt(random));

@@ -1,20 +1,114 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.String?>
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.PasswordField?>
-<?import javafx.scene.control.RadioButton?>
-<?import javafx.scene.control.TextField?>
-<?import javafx.scene.layout.BorderPane?>
-<?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.Pane?>
-<?import javafx.scene.layout.StackPane?>
-<?import javafx.scene.layout.VBox?>
-<?import javafx.scene.text.Font?>
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<StackPane styleClass="wallpaperlogin" stylesheets="@../../../../css/css1/fullpackstyling.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
+<StackPane styleClass="wallpaperlogin" stylesheets="@../../../../css/css1/fullpackstyling.css" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1">
+    <BorderPane fx:id="registrationPane">
+        <center>
+            <VBox prefHeight="630.0" prefWidth="450.0" styleClass="wallpaperlogin" stylesheets="@../../../../css/css1/fullpackstyling.css">
+                <Label text="Registration">
+                    <font>
+                        <Font name="Berlin Sans FB" size="36.0" />
+                    </font>
+                    <VBox.margin>
+                        <Insets left="50.0" top="50.0" />
+                    </VBox.margin>
+                </Label>
+                <TextField fx:id="textFieldName" opacity="0.75" promptText="name">
+                    <VBox.margin>
+                        <Insets bottom="40.0" left="50.0" right="50.0" top="60.0" />
+                    </VBox.margin>
+                </TextField>
+                <TextField fx:id="textFieldSurname" opacity="0.75" promptText="surname">
+                    <VBox.margin>
+                        <Insets bottom="50.0" left="50.0" right="50.0" />
+                    </VBox.margin>
+                </TextField>
+                <TextField fx:id="textFieldUsername" opacity="0.75" promptText="username">
+                    <VBox.margin>
+                        <Insets bottom="50.0" left="50.0" right="50.0" />
+                    </VBox.margin>
+                </TextField>
+                <TextField fx:id="textFieldEmail" opacity="0.75" promptText="e-mail">
+                    <VBox.margin>
+                        <Insets bottom="50.0" left="50.0" right="50.0" />
+                    </VBox.margin>
+                </TextField>
+                <PasswordField fx:id="textFieldPassword" opacity="0.75" promptText="password">
+                    <VBox.margin>
+                        <Insets bottom="20.0" left="50.0" right="50.0" />
+                    </VBox.margin>
+                </PasswordField>
+            <HBox>
+               <VBox.margin>
+                  <Insets left="50.0" />
+               </VBox.margin>
+               <children>
+                  <RadioButton fx:id="radioBtnReader" mnemonicParsing="false" text="Reader" />
+                  <RadioButton fx:id="radioBtnAuthor" mnemonicParsing="false" text="Author">
+                     <HBox.margin>
+                        <Insets left="30.0" />
+                     </HBox.margin>
+                  </RadioButton>
+               </children>
+            </HBox>
+                <HBox prefHeight="97.0" prefWidth="450.0" translateZ="300.0">
+                    <VBox.margin>
+                        <Insets />
+                    </VBox.margin>
+                    <Button fx:id="btnCancelForm" mnemonicParsing="false" prefHeight="76.0" prefWidth="186.0" stylesheets="@../../../../css/css1/fullpackstyling.css" text="Cancel">
+                        <font>
+                            <Font name="Berlin Sans FB" size="24.0" />
+                        </font>
+                        <HBox.margin>
+                            <Insets bottom="50.0" left="50.0" right="50.0" top="30.0" />
+                        </HBox.margin>
+                        <styleClass>
+                            <String fx:value="glass" />
+                            <String fx:value="buttonCancel" />
+                        </styleClass>
+                    </Button>
+                    <Button fx:id="registerButton" mnemonicParsing="false" prefHeight="76.0" prefWidth="186.0" stylesheets="@../../../../css/css1/fullpackstyling.css" text="Register">
+                        <font>
+                            <Font name="Berlin Sans FB" size="24.0" />
+                        </font>
+                        <styleClass>
+                            <String fx:value="glass" />
+                            <String fx:value="buttonLogin" />
+                        </styleClass>
+                        <HBox.margin>
+                            <Insets bottom="50.0" right="50.0" top="30.0" />
+                        </HBox.margin>
+                    </Button>
+                </HBox>
+                <Button fx:id="btnBackToLogin" mnemonicParsing="false" prefHeight="27.0" prefWidth="450.0" styleClass="transparent" text="L͟o͟g͟i͟n͟">
+                    <VBox.margin>
+                        <Insets top="-30.0" />
+                    </VBox.margin>
+                </Button>
+            </VBox>
+        </center>
+    </BorderPane>
+   <Pane fx:id="errorPane" prefHeight="100.0" prefWidth="290.0" style="-fx-background-color: red;" stylesheets="@../../../../css/css1/fullpackstyling.css">
+      <StackPane.margin>
+         <Insets bottom="250.0" left="80.0" right="80.0" top="300.0" />
+      </StackPane.margin>
+      <styleClass>
+         <String fx:value="white-background" />
+         <String fx:value="buttonLogin" />
+      </styleClass>
+      <children>
+         <Button fx:id="btnCloseErrorMessage" layoutX="238.0" layoutY="14.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="38.0" styleClass="button2" text="X" />
+         <Label fx:id="errorPaneLabel" alignment="CENTER" layoutX="14.0" prefHeight="111.0" prefWidth="221.0" text="Wrong Credentials!" textFill="WHITE">
+            <font>
+               <Font name="Berlin Sans FB" size="20.0" />
+            </font></Label>
+      </children>
+   </Pane>
     <BorderPane fx:id="loginPane">
         <center>
             <VBox prefHeight="661.0" prefWidth="450.0" styleClass="wallpaperlogin" stylesheets="@../../../../css/css1/fullpackstyling.css">
@@ -69,106 +163,4 @@
             </VBox>
         </center>
     </BorderPane>
-    <BorderPane fx:id="registrationPane">
-        <center>
-            <VBox prefHeight="630.0" prefWidth="450.0" styleClass="wallpaperlogin" stylesheets="@../../../../css/css1/fullpackstyling.css">
-                <Label text="Registration">
-                    <font>
-                        <Font name="Berlin Sans FB" size="36.0" />
-                    </font>
-                    <VBox.margin>
-                        <Insets left="50.0" top="50.0" />
-                    </VBox.margin>
-                </Label>
-                <TextField fx:id="textFieldName" opacity="0.75" promptText="name">
-                    <VBox.margin>
-                        <Insets bottom="40.0" left="50.0" right="50.0" top="60.0" />
-                    </VBox.margin>
-                </TextField>
-                <TextField fx:id="textFieldSurname" opacity="0.75" promptText="surname">
-                    <VBox.margin>
-                        <Insets bottom="50.0" left="50.0" right="50.0" />
-                    </VBox.margin>
-                </TextField>
-                <TextField fx:id="textFieldUsername" opacity="0.75" promptText="username">
-                    <VBox.margin>
-                        <Insets bottom="50.0" left="50.0" right="50.0" />
-                    </VBox.margin>
-                </TextField>
-                <TextField fx:id="textFieldEmail" opacity="0.75" promptText="e-mail">
-                    <VBox.margin>
-                        <Insets bottom="50.0" left="50.0" right="50.0" />
-                    </VBox.margin>
-                </TextField>
-                <PasswordField fx:id="textFieldPassword" opacity="0.75" promptText="password">
-                    <VBox.margin>
-                        <Insets bottom="20.0" left="50.0" right="50.0" />
-                    </VBox.margin>
-                </PasswordField>
-            <HBox>
-               <VBox.margin>
-                  <Insets left="50.0" />
-               </VBox.margin>
-               <children>
-                  <RadioButton fx:id="radioBtnReader" mnemonicParsing="false"  text="Reader" />
-                  <RadioButton fx:id="radioBtnAuthor" mnemonicParsing="false"  text="Author">
-                     <HBox.margin>
-                        <Insets left="30.0" />
-                     </HBox.margin>
-                  </RadioButton>
-               </children>
-            </HBox>
-                <HBox prefHeight="97.0" prefWidth="450.0" translateZ="300.0">
-                    <VBox.margin>
-                        <Insets />
-                    </VBox.margin>
-                    <Button fx:id="btnCancelForm" mnemonicParsing="false" prefHeight="76.0" prefWidth="186.0" stylesheets="@../../../../css/css1/fullpackstyling.css" text="Cancel">
-                        <font>
-                            <Font name="Berlin Sans FB" size="24.0" />
-                        </font>
-                        <HBox.margin>
-                            <Insets bottom="50.0" left="50.0" right="50.0" top="30.0" />
-                        </HBox.margin>
-                        <styleClass>
-                            <String fx:value="glass" />
-                            <String fx:value="buttonCancel" />
-                        </styleClass>
-                    </Button>
-                    <Button fx:id="registerButton" mnemonicParsing="false"  prefHeight="76.0" prefWidth="186.0" stylesheets="@../../../../css/css1/fullpackstyling.css" text="Register">
-                        <font>
-                            <Font name="Berlin Sans FB" size="24.0" />
-                        </font>
-                        <styleClass>
-                            <String fx:value="glass" />
-                            <String fx:value="buttonLogin" />
-                        </styleClass>
-                        <HBox.margin>
-                            <Insets bottom="50.0" right="50.0" top="30.0" />
-                        </HBox.margin>
-                    </Button>
-                </HBox>
-                <Button fx:id="btnBackToLogin" mnemonicParsing="false" prefHeight="27.0" prefWidth="450.0" styleClass="transparent" text="L͟o͟g͟i͟n͟">
-                    <VBox.margin>
-                        <Insets top="-30.0" />
-                    </VBox.margin>
-                </Button>
-            </VBox>
-        </center>
-    </BorderPane>
-   <Pane fx:id="errorPane" prefHeight="100.0" prefWidth="290.0" style="-fx-background-color: red;" stylesheets="@../../../../css/css1/fullpackstyling.css">
-      <StackPane.margin>
-         <Insets bottom="250.0" left="80.0" right="80.0" top="300.0" />
-      </StackPane.margin>
-      <styleClass>
-         <String fx:value="white-background" />
-         <String fx:value="buttonLogin" />
-      </styleClass>
-      <children>
-         <Button fx:id="btnCloseErrorMessage" layoutX="238.0" layoutY="14.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="38.0" styleClass="button2" text="X" />
-         <Label fx:id="errorPaneLabel" alignment="CENTER" layoutX="14.0" prefHeight="111.0" prefWidth="221.0" text="Wrong Credentials!" textFill="WHITE">
-            <font>
-               <Font name="Berlin Sans FB" size="20.0" />
-            </font></Label>
-      </children>
-   </Pane>
 </StackPane>

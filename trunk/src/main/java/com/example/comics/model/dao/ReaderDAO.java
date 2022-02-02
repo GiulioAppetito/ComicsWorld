@@ -279,4 +279,29 @@ public class ReaderDAO {
             }
         }
     }
+
+    public void removeReadChapter(Series series, String chapterTitle) {
+        // STEP 1: dichiarazioni
+        Statement stmt = null;
+        Connection conn = null;
+
+        try {
+
+            conn = DriverManager.getConnection(DB_URL, USER, PASS);
+            stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
+            Queries.removeChapterFromRead(stmt,series,chapterTitle,UserLogin.getInstance().getReader());
+
+        }catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                assert conn != null;
+                conn.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+    }
 }

@@ -16,7 +16,7 @@
 <?import javafx.scene.paint.Stop?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="509.0" prefWidth="719.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.comics.fakepaypal.FakePayPalControllerG">
+<AnchorPane prefHeight="509.0" prefWidth="719.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
     <children>
         <Pane fx:id="errorPane" layoutX="184.0" layoutY="224.0" prefHeight="90.0" prefWidth="378.0" style="-fx-background-color: #FF9900;" styleClass="button2" stylesheets="@../../../../css/paypalCSS/paypal.css">
             <children>
