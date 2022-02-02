@@ -16,7 +16,7 @@ public class Series extends SeriesSubject{
 	private Image cover;
 	private String publishingHouse;
 	private int averageRating;
-	private final List<Chapter> chapters;
+	private List<Chapter> chapters;
 	private List<Objective> objectives;
 	private String description;
 
@@ -25,16 +25,31 @@ public class Series extends SeriesSubject{
 	private Genres genre3;
 
 	public Series(String title, Author author){
+		Thread chaptersThread,objectivesThread;
 		this.title = title;
 		this.author = author;
-		ChapterDAO chapterDAO = new ChapterDAO();
-		this.chapters = chapterDAO.retriveChapters(title);
-		//inizializzazione obiettivi dal db
-		SeriesDAO seriesDAO = new SeriesDAO();
-		this.objectives = seriesDAO.retrieveObjectives(title);
-		if(objectives==null){
-			objectives = new ArrayList<>();
+		chaptersThread = new Thread(() -> {
+			ChapterDAO chapterDAO = new ChapterDAO();
+			this.chapters = chapterDAO.retriveChapters(title);
+		});
+		chaptersThread.start();
+
+		objectivesThread = new Thread(() -> {
+			SeriesDAO seriesDAO = new SeriesDAO();
+			this.objectives = seriesDAO.retrieveObjectives(title);
+			if(objectives==null){
+				objectives = new ArrayList<>();
+			}
+		});
+		objectivesThread.start();
+
+		try {
+			chaptersThread.join();
+			objectivesThread.join();
+		} catch (InterruptedException e) {
+			e.printStackTrace();
 		}
+
 		calculateAverageRating();
 	}
 
@@ -114,6 +129,7 @@ public class Series extends SeriesSubject{
 		chapter.setDescription(chapterDescription);
 		chapter.setCover(chapterCover);
 		this.chapters.add(chapter);
+
 
 		ChapterDAO chapterDAO = new ChapterDAO();
 		chapterDAO.saveChapter(chapter,this.title,inputStream);

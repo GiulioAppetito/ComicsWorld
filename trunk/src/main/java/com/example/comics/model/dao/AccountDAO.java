@@ -172,12 +172,8 @@ public class AccountDAO {
         Connection conn = null;
 
         try {
-            // STEP 3: apertura connessione
             conn = DriverManager.getConnection(DB_URL, USER, PASS);
-
-            // STEP 4.2: creazione ed esecuzione della query
             Queries.updateUserProPic(conn,inputStream,reader);
-
 
         } catch (SQLException throwables) {
             throwables.printStackTrace();

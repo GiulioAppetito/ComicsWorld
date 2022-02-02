@@ -163,5 +163,6 @@ public class AuthorHomeControllerG  extends HomeControllerG implements AccountOb
     @Override
     public void update() {
         lblName.setText(UserLogin.getInstance().getAccount().getUsername());
+        smallProPic.setImage(UserLogin.getInstance().getAccount().getProPic());
     }
 }

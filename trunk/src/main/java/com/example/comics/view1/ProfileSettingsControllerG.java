@@ -71,6 +71,7 @@ public class ProfileSettingsControllerG implements AccountObserver {
             try {
                 inputStream = new FileInputStream(imageCoverPath);
             } catch (FileNotFoundException e) {
+                System.out.println("Impossible make proPic inputstream...");
                 e.printStackTrace();
             }
             Image cover = new Image(inputStream);
@@ -80,6 +81,7 @@ public class ProfileSettingsControllerG implements AccountObserver {
         CustomizeProfileController controller = new CustomizeProfileController();
         ProfileBean profileBean = new ProfileBean1();
         profileBean.setInputStream(inputStream);
+        System.out.println("Set the input stream "+inputStream);
         profileBean.setProPic(imgProPic.getImage());
         controller.changeProPic(profileBean);
 

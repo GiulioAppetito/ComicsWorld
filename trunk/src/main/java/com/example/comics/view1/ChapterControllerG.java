@@ -563,7 +563,9 @@ public class ChapterControllerG implements ChapterObserver, ObjectiveObserver {
         reviewBean.setRating(reviewRating);
         //e magari anche la foto
         PostReviewController postReviewController = new PostReviewController();
+
         postReviewController.post(reviewBean, chapterBean, seriesBean);
+
 
         paneInsertReview.setVisible(false);
 
