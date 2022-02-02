@@ -16,11 +16,30 @@
          <children>
             <VBox prefHeight="578.0" prefWidth="286.0">
                <children>
-                  <Label alignment="CENTER" prefHeight="69.0" prefWidth="286.0" text="ComicsWorld" textAlignment="CENTER">
-                     <font>
-                        <Font name="Berlin Sans FB Demi Bold" size="48.0" />
-                     </font>
-                  </Label>
+                  <HBox>
+                     <children>
+                        <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" prefHeight="78.0" prefWidth="44.0" text="C" textFill="#9b55dc">
+                           <font>
+                              <Font name="Berlin Sans FB Demi Bold" size="42.0" />
+                           </font>
+                        </Label>
+                        <Label prefHeight="78.0" prefWidth="106.0" text="omics" textAlignment="CENTER">
+                           <font>
+                              <Font name="Berlin Sans FB Demi Bold" size="42.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="CENTER_RIGHT" prefHeight="78.0" prefWidth="42.0" text="W" textAlignment="CENTER" textFill="#9b55dc">
+                           <font>
+                              <Font name="Berlin Sans FB Demi Bold" size="42.0" />
+                           </font>
+                        </Label>
+                        <Label prefHeight="78.0" prefWidth="74.0" text="orld" textAlignment="CENTER">
+                           <font>
+                              <Font name="Berlin Sans FB Demi Bold" size="42.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
                   <VBox>
                      <VBox.margin>
                         <Insets bottom="10.0" top="90.0" />

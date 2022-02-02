@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import java.lang.String?>
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressBar?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.HBox?>
@@ -22,13 +24,18 @@
                   <Image url="@../../../../img/img1/flat-business-man-user-profile-avatar-icon-vector-4333097.jpg" />
                </image>
             </ImageView>
-            <VBox>
+            <VBox prefHeight="104.0" prefWidth="110.0">
                <children>
                   <Label fx:id="username" alignment="CENTER" prefHeight="35.0" prefWidth="93.0" text="AuthorName">
                      <font>
                         <Font name="Berlin Sans FB" size="14.0" />
                      </font>
                   </Label>
+                  <ProgressBar fx:id="rating" prefWidth="200.0" progress="0.0">
+                     <VBox.margin>
+                        <Insets right="10.0" />
+                     </VBox.margin>
+                  </ProgressBar>
                   <Label fx:id="comment" prefHeight="50.0" prefWidth="95.0" text="Commento" />
                </children>
             </VBox>

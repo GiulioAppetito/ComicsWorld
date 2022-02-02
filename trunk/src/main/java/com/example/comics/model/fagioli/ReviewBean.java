@@ -13,5 +13,4 @@ public interface ReviewBean {
     Account getAccount();
     void setAccount(Account account);
 
-
 }

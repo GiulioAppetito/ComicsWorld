@@ -557,7 +557,7 @@ public class ChapterControllerG implements ChapterObserver, ObjectiveObserver {
 
     public void postReview(ChapterBean chapterBean, SeriesBean seriesBean){
 
-        ReviewBean reviewBean = new ReviewBean1();
+        ReviewBean1 reviewBean = new ReviewBean1();
         reviewBean.setComment(txtAreaComment.getText());
         reviewBean.setAccount(UserLogin.getInstance().getAccount());
         reviewBean.setRating(reviewRating);

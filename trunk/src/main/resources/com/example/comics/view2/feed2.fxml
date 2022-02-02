@@ -14,8 +14,10 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
@@ -631,38 +633,6 @@
                               <String fx:value="keyboard" />
                            </styleClass>
                         </VBox>
-                        <Pane fx:id="paneMenu" prefHeight="512.0" prefWidth="206.0">
-                           <StackPane.margin>
-                              <Insets bottom="-1.0" right="80.0" />
-                           </StackPane.margin>
-                           <children>
-                              <VBox fx:id="readerMenu">
-                                 <children>
-                                    <Button fx:id="btnFav" mnemonicParsing="false" prefHeight="46.0" prefWidth="206.0" styleClass="menu-button" text="Favourites" textFill="WHITE" />
-                                    <Button fx:id="btnToRead" mnemonicParsing="false" prefHeight="46.0" prefWidth="206.0" styleClass="menu-button" text="ToRead" textFill="WHITE" />
-                                    <Button fx:id="btnReading" mnemonicParsing="false" prefHeight="46.0" prefWidth="206.0" styleClass="menu-button" text="Reading" textFill="WHITE" />
-                                    <Button fx:id="btnFollowing" mnemonicParsing="false" prefHeight="46.0" prefWidth="206.0" styleClass="menu-button" text="Following" textFill="WHITE" />
-                                    <Button fx:id="btnMyBadges" mnemonicParsing="false" prefHeight="46.0" prefWidth="206.0" styleClass="menu-button" text="MyBadges" textFill="WHITE" />
-                                 </children>
-                              </VBox>
-                              <Button fx:id="btnSettings" layoutY="449.0" mnemonicParsing="false" prefHeight="54.0" prefWidth="206.0" text="Settings" textFill="WHITE">
-                                 <styleClass>
-                                    <String fx:value="menu-button" />
-                                    <String fx:value="menu-keyboard" />
-                                 </styleClass>
-                              </Button>
-                              <VBox fx:id="authorMenu" layoutX="-1.0" layoutY="1.0" prefHeight="94.0" prefWidth="206.0">
-                                 <children>
-                                    <Button fx:id="btnMySeries" mnemonicParsing="false" prefHeight="46.0" prefWidth="206.0" styleClass="menu-button" text="My Series" textFill="WHITE" />
-                                    <Button fx:id="btnStatistics" mnemonicParsing="false" prefHeight="46.0" prefWidth="206.0" styleClass="menu-button" text="Statistics" textFill="WHITE" />
-                                 </children>
-                              </VBox>
-                           </children>
-                           <styleClass>
-                              <String fx:value="menu-background" />
-                              <String fx:value="menu-keyboard" />
-                           </styleClass>
-                        </Pane>
                         <VBox fx:id="vBoxPostReview" prefHeight="513.0" prefWidth="286.0">
                            <styleClass>
                               <String fx:value="header-background" />
@@ -798,7 +768,7 @@
                                                                   <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                                                                </padding>
                                                             </VBox>
-                                                            <VBox fx:id="boxNoReviews" prefHeight="177.0" prefWidth="266.0">
+                                                            <VBox fx:id="boxNoReviews" prefHeight="291.0" prefWidth="266.0">
                                                                <children>
                                                                   <Label alignment="CENTER" prefHeight="166.0" prefWidth="266.0" text="No reviews yet" />
                                                                </children>
@@ -822,6 +792,72 @@
                               <String fx:value="keyboard" />
                            </styleClass>
                         </VBox>
+                        <VBox fx:id="vBoxMyBadges" prefHeight="200.0" prefWidth="100.0">
+                           <children>
+                              <HBox alignment="CENTER">
+                                 <children>
+                                    <Label prefHeight="38.0" prefWidth="62.0" text="My Badges" />
+                                 </children>
+                              </HBox>
+                              <Pane>
+                                 <children>
+                                    <ScrollPane hbarPolicy="NEVER" layoutY="0.8000030517578125" prefHeight="436.0" prefWidth="286.0">
+                                       <content>
+                                          <GridPane fx:id="vBoxBadgesList" prefHeight="433.0" prefWidth="286.0">
+                                             <rowConstraints>
+                                                <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                                             </rowConstraints>
+                                          </GridPane>
+                                       </content>
+                                    </ScrollPane>
+                                    <VBox fx:id="boxNoBadges" prefHeight="276.0" prefWidth="276.0">
+                                       <children>
+                                          <Label alignment="CENTER" prefHeight="277.0" prefWidth="278.0" text="No badges yet" />
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </Pane>
+                           </children>
+                           <padding>
+                              <Insets bottom="5.0" />
+                           </padding>
+                           <styleClass>
+                              <String fx:value="white-background" />
+                              <String fx:value="keyboard" />
+                           </styleClass>
+                        </VBox>
+                        <Pane fx:id="paneMenu" prefHeight="512.0" prefWidth="206.0">
+                           <StackPane.margin>
+                              <Insets bottom="-1.0" right="80.0" />
+                           </StackPane.margin>
+                           <children>
+                              <VBox fx:id="readerMenu">
+                                 <children>
+                                    <Button fx:id="btnFav" mnemonicParsing="false" prefHeight="46.0" prefWidth="206.0" styleClass="menu-button" text="Favourites" textFill="WHITE" />
+                                    <Button fx:id="btnToRead" mnemonicParsing="false" prefHeight="46.0" prefWidth="206.0" styleClass="menu-button" text="ToRead" textFill="WHITE" />
+                                    <Button fx:id="btnReading" mnemonicParsing="false" prefHeight="46.0" prefWidth="206.0" styleClass="menu-button" text="Reading" textFill="WHITE" />
+                                    <Button fx:id="btnFollowing" mnemonicParsing="false" prefHeight="46.0" prefWidth="206.0" styleClass="menu-button" text="Following" textFill="WHITE" />
+                                    <Button fx:id="btnMyBadges" mnemonicParsing="false" prefHeight="46.0" prefWidth="206.0" styleClass="menu-button" text="MyBadges" textFill="WHITE" />
+                                 </children>
+                              </VBox>
+                              <Button fx:id="btnSettings" layoutY="449.0" mnemonicParsing="false" prefHeight="54.0" prefWidth="206.0" text="Settings" textFill="WHITE">
+                                 <styleClass>
+                                    <String fx:value="menu-button" />
+                                    <String fx:value="menu-keyboard" />
+                                 </styleClass>
+                              </Button>
+                              <VBox fx:id="authorMenu" layoutX="-1.0" layoutY="1.0" prefHeight="94.0" prefWidth="206.0">
+                                 <children>
+                                    <Button fx:id="btnMySeries" mnemonicParsing="false" prefHeight="46.0" prefWidth="206.0" styleClass="menu-button" text="My Series" textFill="WHITE" />
+                                    <Button fx:id="btnStatistics" mnemonicParsing="false" prefHeight="46.0" prefWidth="206.0" styleClass="menu-button" text="Statistics" textFill="WHITE" />
+                                 </children>
+                              </VBox>
+                           </children>
+                           <styleClass>
+                              <String fx:value="menu-background" />
+                              <String fx:value="menu-keyboard" />
+                           </styleClass>
+                        </Pane>
                      </children>
                   </StackPane>
                </children>

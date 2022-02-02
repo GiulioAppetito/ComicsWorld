@@ -3,6 +3,8 @@ package com.example.comics.view2.beans;
 import com.example.comics.model.Account;
 import com.example.comics.model.fagioli.ReviewBean;
 
+import java.beans.BeanProperty;
+
 public class ReviewBean2 implements ReviewBean {
 
     private String comment;
@@ -38,6 +40,10 @@ public class ReviewBean2 implements ReviewBean {
     @Override
     public void setRating(int rating) {
         this.rating = rating;
+    }
+
+    public void setRating(Double rating){
+        this.rating = rating.intValue();
     }
 
 }

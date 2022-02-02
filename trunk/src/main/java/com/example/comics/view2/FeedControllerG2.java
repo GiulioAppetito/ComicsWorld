@@ -2,11 +2,8 @@ package com.example.comics.view2;
 
 import com.example.comics.controller.*;
 import com.example.comics.model.UserLogin;
-import com.example.comics.model.fagioli.AuthorBean;
-import com.example.comics.model.fagioli.ChapterBean;
-import com.example.comics.model.fagioli.ReviewBean;
-import com.example.comics.model.fagioli.SeriesBean;
-import com.example.comics.view1.beans.ReviewBean1;
+import com.example.comics.model.fagioli.*;
+import com.example.comics.view1.BadgeCardControllerG;
 import com.example.comics.view2.beans.ReviewBean2;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -15,6 +12,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.chart.PieChart;
 import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 
@@ -217,6 +215,16 @@ public class FeedControllerG2 {
     private Slider ratingSlider;
 
 
+    @FXML
+    private VBox vBoxMyBadges;
+
+    @FXML
+    private GridPane vBoxBadgesList;
+
+    @FXML
+    private VBox boxNoBadges;
+
+
     private static final String READER = "reader";
     private static final String BORDER_STYLE = "-fx-border-color: #9b55dc; -fx-background-radius: 20";
     private static final String PLAIN_STYLE = "-fx-border-color: #ffffff;";
@@ -261,12 +269,55 @@ public class FeedControllerG2 {
         btnFollowing.setOnAction(event -> openFollowing());
         btnReading.setOnAction(event -> openReading());
         btnToRead.setOnAction(event -> openToRead());
+        btnMyBadges.setOnAction(event -> openMyBadges());
 
         //author menu
         btnStatistics.setOnAction(event -> openStats());
         btnMySeries.setOnAction(event -> openMySeries());
 
         displayListOfSeries(latestSeries, vBoxSeries);
+    }
+
+    private void openMyBadges() {
+        closeAll();
+        vBoxMyBadges.setVisible(true);
+        displayListOfBadges();
+    }
+
+    private void displayListOfBadges() {
+        vBoxBadgesList.getChildren().clear();
+
+        ResearchController researchController = new ResearchController();
+        List<BadgeBean> badges = researchController.getUserBadges();
+        int size = badges.size();
+        if(size == 0){
+            boxNoBadges.setVisible(true);
+            vBoxBadgesList.setVisible(false);
+            return;
+        }else{
+            vBoxBadgesList.setVisible(true);
+            boxNoBadges.setVisible(false);
+        }
+
+        int columns=3;
+        int i=1;
+
+        for (int j = 0; j < size; j++) {
+            FXMLLoader fxmlLoader = new FXMLLoader();
+            fxmlLoader.setLocation(getClass().getResource("badgeCard.fxml"));
+            try {
+                VBox card = fxmlLoader.load();
+                BadgeCardControllerG2 cardController = fxmlLoader.getController();
+                cardController.setData(badges.get(j));
+
+                vBoxBadgesList.add(card, j%columns, i);
+                if(j%columns == columns -1 ){
+                    i++;
+                }
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
     }
 
     private void displayListOfSeries(List<SeriesBean> series, VBox box){
@@ -552,10 +603,10 @@ public class FeedControllerG2 {
     }
 
     public void postReview(ChapterBean chapterBean, SeriesBean seriesBean){
-        ReviewBean reviewBean = new ReviewBean2();
+        ReviewBean2 reviewBean = new ReviewBean2();
         reviewBean.setComment(taComment.getText());
         reviewBean.setAccount(UserLogin.getInstance().getAccount());
-        reviewBean.setRating(1);
+        reviewBean.setRating(ratingSlider.getValue());
         //e magari anche la foto
         PostReviewController postReviewController = new PostReviewController();
         postReviewController.post(reviewBean, chapterBean, seriesBean);
@@ -644,6 +695,7 @@ public class FeedControllerG2 {
         vBoxAuthorFromOutside.setVisible(false);
         vBoxChapter.setVisible(false);
         vBoxPostReview.setVisible(false);
+        vBoxMyBadges.setVisible(false);
     }
 
 }

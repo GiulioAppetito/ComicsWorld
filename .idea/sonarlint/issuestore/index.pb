@@ -111,8 +111,6 @@ s
 Ctrunk/src/main/java/com/example/comics/view1/ReviewControllerG.java,a\c\ac5b4e435a0fa8774cef86ff1be8def634e39f94
 t
 Dtrunk/src/main/java/com/example/comics/view1/ReadingControllerG.java,c\f\cfbb7ef6413152c3bf22790c0db6628eb2e393e5
-z
-Jtrunk/src/main/java/com/example/comics/view1/ReaderProfileControllerG.java,9\d\9d55d09a3bc1211493d2067fe3a33b4ff83ca9f4
 w
 Gtrunk/src/main/java/com/example/comics/view1/ReaderHomeControllerG.java,e\c\ec2e8050235c1d9d3918ef5543b9bf4b12855c12
 }
