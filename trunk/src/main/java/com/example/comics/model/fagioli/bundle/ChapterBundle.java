@@ -18,6 +18,7 @@ public class ChapterBundle implements ChapterBean {
     private int rating;
     private Boolean isRead;
     private InputStream coverStream;
+    private Float price;
 
 
     @Override
@@ -92,6 +93,16 @@ public class ChapterBundle implements ChapterBean {
     @Override
     public void setCoverInputStream(InputStream stream) {
         this.coverStream = stream;
+    }
+
+    @Override
+    public Float getPrice() {
+        return this.price;
+    }
+
+    @Override
+    public void setPrice(Float price) {
+        this.price = price;
     }
 
 }

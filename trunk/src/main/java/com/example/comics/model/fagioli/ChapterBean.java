@@ -28,4 +28,7 @@ public interface ChapterBean {
 
     InputStream getCoverInputStream();
     void setCoverInputStream(InputStream stream);
+
+    Float getPrice();
+    void setPrice(Float price);
 }

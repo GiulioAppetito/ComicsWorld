@@ -35,7 +35,7 @@ public class PublishChapterControllerG {
     private TextField tfChapterTitle;
 
     @FXML
-    private Label lblSeriesTitle;
+    private TextField tfPrice;
 
     @FXML
     private TextArea taDescription;
@@ -85,6 +85,7 @@ public class PublishChapterControllerG {
         ChapterBean chapterBean = new ChapterBean1();
         chapterBean.setTitle(chapterTitle);
         chapterBean.setDescription(chapterDescription);
+        chapterBean.setPrice(Float.parseFloat(tfPrice.getText()));
 
         chapterBean.setCover(chapterCover);
         try {

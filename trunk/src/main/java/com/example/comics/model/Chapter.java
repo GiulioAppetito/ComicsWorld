@@ -19,6 +19,7 @@ public class Chapter extends ChapterSubject {
     private Image cover;
     private String description;
     private Boolean isRead;
+    private Float price;
 
     public Chapter(String title){
         Thread reviewsThread, ratingThread;
@@ -127,5 +128,13 @@ public class Chapter extends ChapterSubject {
 
     public void setRead(Boolean read) {
         isRead = read;
+    }
+
+    public Float getPrice() {
+        return price;
+    }
+
+    public void setPrice(Float price) {
+        this.price = price;
     }
 }

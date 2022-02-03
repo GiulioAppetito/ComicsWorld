@@ -3,7 +3,6 @@ package com.example.comics.model.dao;
 import com.example.comics.model.*;
 import com.example.comics.model.dao.utils.Queries;
 import javafx.scene.image.Image;
-import javafx.scene.text.Text;
 
 import java.io.InputStream;
 import java.sql.*;
@@ -51,12 +50,9 @@ public class SeriesDAO {
             } while (rs.next());
 
 
-        } catch (SQLException throwables) {
+        } catch (Exception throwables) {
             throwables.printStackTrace();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        finally {
+        } finally {
             try {
                 if (stmt != null)
                     stmt.close();
@@ -102,12 +98,9 @@ public class SeriesDAO {
             } while (rs.next());
 
 
-        } catch (SQLException throwables) {
+        } catch (Exception throwables) {
             throwables.printStackTrace();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        finally {
+        } finally {
             try {
                 if (stmt != null)
                     stmt.close();
@@ -159,12 +152,9 @@ public class SeriesDAO {
             } while (rs.next());
 
 
-        } catch (SQLException throwables) {
+        } catch (Exception throwables) {
             throwables.printStackTrace();
-        }catch (Exception e) {
-            e.printStackTrace();
-        }
-        finally {
+        } finally {
             try {
                 if (stmt != null)
                     stmt.close();
@@ -209,12 +199,9 @@ public class SeriesDAO {
             } while (rs.next());
 
 
-        } catch (SQLException throwables) {
+        } catch (Exception throwables) {
             throwables.printStackTrace();
-        }catch (Exception e) {
-            e.printStackTrace();
-        }
-        finally {
+        } finally {
             try {
                 if (stmt != null)
                     stmt.close();
@@ -263,10 +250,8 @@ public class SeriesDAO {
             } while (rs.next());
 
 
-        } catch (SQLException throwables) {
+        } catch (Exception throwables) {
             throwables.printStackTrace();
-        } catch (Exception e) {
-            e.printStackTrace();
         } finally {
             try {
                 if (stmt != null)
@@ -321,10 +306,8 @@ public class SeriesDAO {
             } while (rs.next());
 
 
-        } catch (SQLException throwables) {
+        } catch (Exception throwables) {
             throwables.printStackTrace();
-        } catch (Exception e) {
-            e.printStackTrace();
         } finally {
             try {
                 if (stmt != null)
@@ -371,10 +354,8 @@ public class SeriesDAO {
             } while (rs.next());
 
 
-        } catch (SQLException throwables) {
+        } catch (Exception throwables) {
             throwables.printStackTrace();
-        } catch (Exception e) {
-            e.printStackTrace();
         } finally {
             try {
                 if (stmt != null)
@@ -431,12 +412,9 @@ public class SeriesDAO {
             } while (rs.next());
 
 
-        } catch (SQLException throwables) {
+        } catch (Exception throwables) {
             throwables.printStackTrace();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        finally {
+        } finally {
             try {
                 if (stmt != null)
                     stmt.close();
@@ -476,9 +454,6 @@ public class SeriesDAO {
 
                 //retreive last insert id in badge
                 ResultSet rs = Queries.getAllBadges(stmt);
-                if(!rs.first()){
-                    bagdeID = 0;
-                }
                 rs.first();
                 bagdeID = 0;
                 do{
@@ -497,15 +472,11 @@ public class SeriesDAO {
             } catch (SQLException e) {
                 e.printStackTrace();
             }
-            try{
-                try {
-                    assert stmt!=null;
-                    stmt.close();
-                } catch (SQLException e) {
-                    e.printStackTrace();
-                }
-            } finally {
-                //TO-DO
+            try {
+                assert stmt!=null;
+                stmt.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
             }
         }
     }

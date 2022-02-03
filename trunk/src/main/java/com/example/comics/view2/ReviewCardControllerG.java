@@ -1,5 +1,6 @@
 package com.example.comics.view2;
 
+import com.example.comics.controller.StatisticsController;
 import com.example.comics.model.fagioli.ReviewBean;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
@@ -18,13 +19,18 @@ public class ReviewCardControllerG {
     private Label username;
 
     @FXML
-    private ProgressBar rating;
+    private ProgressBar ratingBar;
+
+    @FXML
+    private Label lblRating;
 
     public void setData(ReviewBean reviewBean) {
         username.setText(reviewBean.getAccount().getUsername());
         propic.setImage(reviewBean.getAccount().getProPic());
         comment.setText(reviewBean.getComment());
-        rating.setProgress(reviewBean.getRating());
+        ratingBar.setProgress(reviewBean.getRating()/10f);
+        lblRating.setText(reviewBean.getRating() * 10 + "%");
+
     }
 
 }

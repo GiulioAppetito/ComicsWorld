@@ -1,16 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.String?>
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.ProgressBar?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.VBox?>
-<?import javafx.scene.text.Font?>
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<VBox alignment="CENTER" prefHeight="119.0" prefWidth="214.0" stylesheets="@../../../../css/css1/fullpackstyling.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.comics.view2.ReviewCardControllerG">
+<VBox alignment="CENTER" prefHeight="119.0" prefWidth="214.0" stylesheets="@../../../../css/css1/fullpackstyling.css" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.comics.view2.ReviewCardControllerG">
    <styleClass>
       <String fx:value="white-background" />
       <String fx:value="oval-layout" />
@@ -19,7 +16,7 @@
    <children>
       <HBox alignment="CENTER">
          <children>
-            <ImageView fx:id="propic" fitHeight="87.0" fitWidth="85.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="propic" fitHeight="102.0" fitWidth="102.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../../../img/img1/flat-business-man-user-profile-avatar-icon-vector-4333097.jpg" />
                </image>
@@ -31,12 +28,18 @@
                         <Font name="Berlin Sans FB" size="14.0" />
                      </font>
                   </Label>
-                  <ProgressBar fx:id="rating" prefWidth="200.0" progress="0.0">
+                  <HBox>
+                     <children>
+                        <Label fx:id="comment1" prefHeight="17.0" prefWidth="46.0" text="Rating : " />
+                        <Label fx:id="lblRating" layoutX="10.0" layoutY="10.0" prefHeight="17.0" prefWidth="46.0" text="vote" />
+                     </children>
+                  </HBox>
+                  <ProgressBar fx:id="ratingBar" prefHeight="19.0" prefWidth="100.0" progress="0.0">
                      <VBox.margin>
                         <Insets right="10.0" />
                      </VBox.margin>
                   </ProgressBar>
-                  <Label fx:id="comment" prefHeight="50.0" prefWidth="95.0" text="Commento" />
+                  <Label fx:id="comment" prefHeight="46.0" prefWidth="100.0" text="Commento" />
                </children>
             </VBox>
          </children>

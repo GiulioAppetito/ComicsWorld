@@ -105,8 +105,6 @@ Gtrunk/src/main/java/com/example/comics/view1/ReaderHomeControllerG.java,e\c\ec
 Mtrunk/src/main/java/com/example/comics/view1/StatisticsRatingControllerG.java,5\a\5aac75394d3cc7c119b16d8979d3f95dee37e383
 z
 Jtrunk/src/main/java/com/example/comics/view1/PublishSeriesControllerG.java,8\2\823de8123fac431d811bed934186b6b783b80803
-t
-Dtrunk/src/main/java/com/example/comics/view1/beans/ProfileBean1.java,1\8\1838e81a049b7d3183f080e27244428bf1cc8686
 y
 Itrunk/src/main/java/com/example/comics/view1/beans/RegistrationBean1.java,9\8\98195c3cb34325d791d3bd49c1cbcfbe4a9e599f
 s

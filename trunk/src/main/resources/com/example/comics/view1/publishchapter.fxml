@@ -15,7 +15,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<StackPane xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.comics.view1.PublishChapterControllerG">
+<StackPane xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.comics.view1.PublishChapterControllerG">
     <children>
         <Pane>
             <children>
@@ -75,7 +75,7 @@
                                                                         <Font name="Berlin Sans FB" size="20.0" />
                                                                     </font>
                                                                 </Label>
-                                                                <TextField fx:id="tfChapterTitle" prefHeight="25.0" prefWidth="149.0">
+                                                                <TextField fx:id="tfChapterTitle" prefHeight="25.0" prefWidth="149.0" promptText="Title">
                                                    <HBox.margin>
                                                       <Insets left="7.0" />
                                                    </HBox.margin></TextField>
@@ -100,6 +100,26 @@
                                                    </HBox.margin>
                                                 </ChoiceBox>
                                              </children>
+                                          </HBox>
+                                          <HBox prefHeight="0.0" prefWidth="452.0">
+                                             <children>
+                                                <Label text="Price (€)">
+                                                   <font>
+                                                      <Font name="Berlin Sans FB" size="20.0" />
+                                                   </font>
+                                                   <HBox.margin>
+                                                      <Insets left="33.0" />
+                                                   </HBox.margin>
+                                                </Label>
+                                                <TextField fx:id="tfPrice" prefHeight="25.0" prefWidth="67.0" promptText="Price">
+                                                   <HBox.margin>
+                                                      <Insets left="7.0" />
+                                                   </HBox.margin>
+                                                </TextField>
+                                             </children>
+                                             <VBox.margin>
+                                                <Insets left="80.0" top="40.0" />
+                                             </VBox.margin>
                                           </HBox>
                                                     </children>
                                                 </VBox>

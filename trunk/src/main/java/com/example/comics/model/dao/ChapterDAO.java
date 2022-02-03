@@ -46,6 +46,7 @@ public class ChapterDAO {
             do {
                 chapterTitle = rs.getString("chapter_title");
                 chapter = new Chapter(chapterTitle);
+                chapter.setPrice(rs.getFloat("chapterPrice"));
                 chapter.setDescription(rs.getString("chapterDescription"));
                 Blob bl = rs.getBlob("chapterCover");
                 if(bl != null){
@@ -74,12 +75,9 @@ public class ChapterDAO {
 
 
 
-        } catch (SQLException throwables) {
+        } catch (Exception throwables) {
             throwables.printStackTrace();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        finally {
+        } finally {
             try {
                 if (stmt != null)
                     stmt.close();
@@ -117,7 +115,7 @@ public class ChapterDAO {
 
     public void saveChapter(Chapter chapter,String seriesTitle,InputStream coverInputStream) {
 
-        Connection conn = null;
+        Connection conn;
 
         try {
             // STEP 3: apertura connessione

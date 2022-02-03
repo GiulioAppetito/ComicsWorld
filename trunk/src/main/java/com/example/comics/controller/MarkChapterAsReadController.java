@@ -26,6 +26,11 @@ public class MarkChapterAsReadController {
 
         ReaderDAO readerDAO = new ReaderDAO();
         readerDAO.saveReadChapter(finalSeries1, chapterBean.getTitle());
+        
+        checkObjectives();
+    }
+
+    private void checkObjectives() {
     }
 
     public void unmarkChapterAsRead(SeriesBean seriesBean, ChapterBean chapterBean){
