@@ -39,8 +39,6 @@ q
 Atrunk/src/main/java/com/example/comics/model/ChapterObserver.java,2\3\23130c14c97aeffd28a4358cea3f734706d5d187
 p
 @trunk/src/main/java/com/example/comics/model/ChapterSubject.java,c\b\cbef2f5c28e0525fe37bc3006eb93dd3e76f3b3d
-j
-:trunk/src/main/java/com/example/comics/model/Discount.java,6\7\679da8e9c0f13931aa91489c0173c05b7342e1d8
 r
 Btrunk/src/main/java/com/example/comics/view1/beans/BadgeBean1.java,f\1\f18e5483fab09a9041c604562695458ba096c628
 u
@@ -73,8 +71,6 @@ Btrunk/src/main/java/com/example/comics/model/ObjectiveSubject.java,1\8\18ef6e4
 Ktrunk/src/main/java/com/example/comics/view1/PublishChapterControllerG.java,0\c\0cb0924298542915457c5ca35266c9f6965efc56
 z
 Jtrunk/src/main/java/com/example/comics/model/fagioli/RegistrationBean.java,4\0\401d7157b53fc41e97db3cc87f7e43537ad2ee3f
-r
-Btrunk/src/main/java/com/example/comics/model/ReviewsObjective.java,8\6\86cce63a53e7a442e2b5a265b13e8961f22996cd
 …
 Utrunk/src/main/java/com/example/comics/model/exceptions/WrongCredentialException.java,9\7\974a53b143df41de171599f853026ed19305195c
 A
@@ -101,8 +97,6 @@ s
 Ctrunk/src/main/java/com/example/comics/view1/beans/SeriesBean1.java,0\4\049042e92d20702c497e7fe94652a00b8b4a470d
 v
 Ftrunk/src/main/java/com/example/comics/view1/beans/ObjectiveBean1.java,2\8\28171cbbb0ca19ed3dfa06de314921ad48b51454
-n
->trunk/src/main/java/com/example/comics/model/DiscountCode.java,f\8\f8c1b7e67fef9ace2db0e148950e80095f001b68
 W
 'Deliverables/storyboard/StoryBoard.html,f\d\fd738ae60ff866b3d263d7945f1b4bfaa9b203c1
 z
@@ -111,10 +105,6 @@ t
 Dtrunk/src/main/java/com/example/comics/view1/beans/ChapterBean1.java,d\5\d525038b8bf9ca59cdf070841e0b546a197da1c5
 u
 Etrunk/src/main/java/com/example/comics/model/fagioli/ChapterBean.java,1\0\10ff9f5e6d454fce4bc8188b948cd60f08d61d27
-p
-@trunk/src/main/java/com/example/comics/model/dao/ChapterDAO.java,1\d\1ddfc0cfcef200504c825e15e2d46d1aa7918d49
-h
-8trunk/src/main/java/com/example/comics/model/Series.java,c\8\c8bcf65e561109814ec36c1d5eccfe66f4067141
 t
 Dtrunk/src/main/java/com/example/comics/model/fagioli/SeriesBean.java,f\d\fd75283aef1e8f11518e9607c93bdaffabd5c688
 }
@@ -183,8 +173,6 @@ s
 Ctrunk/src/main/java/com/example/comics/view1/ToReadControllerG.java,a\f\af51d298954fbb57ad158824154a1019417de095
 k
 ;trunk/src/main/java/com/example/comics/model/UserLogin.java,5\d\5dfc908745a1c7e70c463f0eeb83fb14a2777e53
-o
-?trunk/src/main/java/com/example/comics/model/dao/SeriesDAO.java,1\a\1a268b5783fdf4518ee179aca9664c3642aacf6e
 s
 Ctrunk/src/main/java/com/example/comics/view2/LoginControllerG2.java,1\e\1e7b544f2c19e9490bc5f6c5bfe8bb802f713d05
 p
@@ -199,8 +187,6 @@ i
 9trunk/src/main/java/com/example/comics/model/Chapter.java,e\e\ee53f251e6fa246c2de20c960c4d267b1c885842
 s
 Ctrunk/src/main/java/com/example/comics/view1/beans/ReviewBean1.java,3\2\3245b769fe299e7605b5f5d89ddbf313f56d1e2b
-{
-Ktrunk/src/main/java/com/example/comics/controller/PostReviewController.java,a\1\a19cf71aec895bab12bf5df544290229107f8b95
 s
 Ctrunk/src/main/java/com/example/comics/view1/SeriesControllerG.java,9\e\9e35f99e41cf6d6aa41349eee274243f957b0813
 q

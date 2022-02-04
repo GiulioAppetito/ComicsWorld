@@ -5,15 +5,16 @@ import com.example.comics.model.dao.DiscountCodeDAO;
 import com.example.comics.model.dao.ReaderDAO;
 
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 
 public class Reader extends Account{
 
-    private final List<Series> favourites;
-    private final List<Series> toRead;
-    private final List<Series> reading;
-    private final List<Badge> badges;
-    private final List<Author> followedAuthors;
+    private List<Series> favourites;
+    private List<Series> toRead;
+    private List<Series> reading;
+    private List<Badge> badges;
+    private List<Author> followedAuthors;
     private List<DiscountCode> discountCodes;
 
     public Reader(List<Series> favourites, List<Series> toRead, List<Series> reading, String username,List<Author> followedAuthors, List<DiscountCode> discountCodes){
@@ -21,12 +22,13 @@ public class Reader extends Account{
         this.setUsername(username);
         this.favourites = favourites;
         this.toRead = toRead;
-        this.reading = reading;
+        //this.reading = reading;
         this.followedAuthors = followedAuthors;
         this.discountCodes = discountCodes;
 
         BadgeDAO badgesDAO = new BadgeDAO();
         this.badges = badgesDAO.retrieveAchievedBadges(username);
+
     }
 
     private static final String ROLE = "reader";
@@ -83,7 +85,14 @@ public class Reader extends Account{
     }
 
     public boolean likesThisSeries(Series series){
+        if(favourites.isEmpty()){
+            System.out.println("Reader: No favs");
+            return false;
+        }
         for(Series fav : this.favourites){
+            if(fav==null){
+                return false;
+            }
             if(fav.getTitle().equals(series.getTitle())){
                 return true;
             }
@@ -108,7 +117,13 @@ public class Reader extends Account{
     }
 
     public boolean wantsToRead(Series series) {
+        if(toRead.isEmpty()){
+            return false;
+        }
         for(Series toBeRead : this.toRead){
+            if(toBeRead==null){
+                return false;
+            }
             if(toBeRead.getTitle().equals(series.getTitle())){
                 return true;
             }

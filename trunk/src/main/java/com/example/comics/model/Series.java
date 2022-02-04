@@ -3,9 +3,7 @@ package com.example.comics.model;
 import com.example.comics.model.dao.ChapterDAO;
 import com.example.comics.model.dao.SeriesDAO;
 import javafx.scene.image.Image;
-import javafx.scene.text.Text;
 
-import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 

@@ -60,10 +60,8 @@ public class ChapterDAO {
 
                 //il capitolo non è letto
                 if(!rs2.first()){
-                    System.out.println("* * * * !rs2.first() * * * * * ");
                     chapter.setRead(false);
                 }else{
-                    System.out.println("* * * * rs2.first() * * * * ");
                     chapter.setRead(true);
                 }
 

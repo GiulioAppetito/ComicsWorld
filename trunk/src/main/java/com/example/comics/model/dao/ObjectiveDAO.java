@@ -38,47 +38,46 @@ public class ObjectiveDAO {
                 Discount discount = new Discount(rs.getFloat("discountPercentage"));
                 discount.setLimitDays(rs.getInt("limitDays"));
 
+                Objective objective = null;
+                String level = rs.getString("level");
                 if(rs.getString("type").equals("reviews")){
-                    ReviewsObjective reviewsObjective = new ReviewsObjective(badge,discount, rs.getInt("number"));
-                    reviewsObjective.setId(rs.getInt("objective_id"));
-                    switch (rs.getString("level")){
+                    objective = new ReviewsObjective(badge,discount, rs.getInt("number"));
+                    switch (level){
                         case "beginner":
-                            reviewsObjective.setLevel(Levels.BEGINNER);
+                            objective.setLevel(Levels.BEGINNER);
                             break;
                         case "intermediate":
-                            reviewsObjective.setLevel(Levels.INTERMEDIATE);
+                            objective.setLevel(Levels.INTERMEDIATE);
                             break;
                         case "expert":
-                            reviewsObjective.setLevel(Levels.EXPERT);
+                            objective.setLevel(Levels.EXPERT);
                             break;
                         default:
                             break;
                     }
-
-                    objectives.add(reviewsObjective);
 
 
                 }else if(rs.getString("type").equals("chapters")){
-                    ChapterObjective chapterObjective = new ChapterObjective(badge,discount);
-                    chapterObjective.setId(rs.getInt("objective_id"));
+                    objective = new ChapterObjective(badge,discount, rs.getInt("number"));
                     switch (rs.getString("level")){
                         case "beginner":
-                            chapterObjective.setLevel(Levels.BEGINNER);
+                            objective.setLevel(Levels.BEGINNER);
                             break;
                         case "intermediate":
-                            chapterObjective.setLevel(Levels.INTERMEDIATE);
+                            objective.setLevel(Levels.INTERMEDIATE);
                             break;
                         case "expert":
-                            chapterObjective.setLevel(Levels.EXPERT);
+                            objective.setLevel(Levels.EXPERT);
                             break;
                         default:
                             break;
                     }
 
-                    chapterObjective.setRequiredChapters(rs.getInt("number"));
-                    objectives.add(chapterObjective);
-                }
 
+                }
+                assert objective!=null;
+                objective.setId(rs.getInt("objective_id"));
+                objectives.add(objective);
 
             } while (rs.next());
 
