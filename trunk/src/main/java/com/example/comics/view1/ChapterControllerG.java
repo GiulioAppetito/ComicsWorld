@@ -517,6 +517,7 @@ public class ChapterControllerG implements ChapterObserver, ObjectiveObserver {
     private void applyNoDiscountCode(SeriesBean seriesBean) {
         BuyComicController buyComicController = new BuyComicController();
         buyComicController.buyComic(seriesBean);
+        closePaymentPane();
     }
 
     private void applyDiscountCode(SeriesBean seriesBean)  {
@@ -529,6 +530,7 @@ public class ChapterControllerG implements ChapterObserver, ObjectiveObserver {
         } catch (InvalidPaymentException | DiscountCodeException e) {
             e.printStackTrace();
         }
+        closePaymentPane();
     }
 
     private void closePaymentPane() {
