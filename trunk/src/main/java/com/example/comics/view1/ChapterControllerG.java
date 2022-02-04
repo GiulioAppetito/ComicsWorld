@@ -281,22 +281,17 @@ public class ChapterControllerG implements ChapterObserver, ObjectiveObserver {
     @FXML
     private ImageView imgStar55;
 
-
     @FXML
     private Button btnApply;
-
 
     @FXML
     private Button btnClosePayment;
 
-
     @FXML
-    private ChoiceBox<String> choiceBoxCodes;
-
+    private ChoiceBox<DiscountCode> choiceBoxCodes;
 
     @FXML
     private Pane paymentPane;
-
 
     @FXML
     public void zeroStars(){
@@ -526,7 +521,7 @@ public class ChapterControllerG implements ChapterObserver, ObjectiveObserver {
         }
         BuyComicController buyComicController = new BuyComicController();
         try {
-            buyComicController.buyComic(seriesBean, choiceBoxCodes.getValue());
+            buyComicController.buyComic(seriesBean, choiceBoxCodes.getValue().getCode());
         } catch (InvalidPaymentException | DiscountCodeException e) {
             e.printStackTrace();
         }
@@ -541,6 +536,7 @@ public class ChapterControllerG implements ChapterObserver, ObjectiveObserver {
 
         }else{
             paymentPane.setVisible(true);
+            choiceBoxCodes.getItems().setAll(UserLogin.getInstance().getReader().getDiscountCodes());
         }
 
     }

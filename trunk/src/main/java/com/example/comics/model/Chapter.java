@@ -125,7 +125,6 @@ public class Chapter extends ChapterSubject {
     public Boolean getRead() {
         return isRead;
     }
-
     public void setRead(Boolean read) {
         isRead = read;
     }
@@ -133,7 +132,6 @@ public class Chapter extends ChapterSubject {
     public Float getPrice() {
         return price;
     }
-
     public void setPrice(Float price) {
         this.price = price;
     }

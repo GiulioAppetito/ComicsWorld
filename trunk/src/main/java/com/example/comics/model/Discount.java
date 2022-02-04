@@ -2,7 +2,7 @@ package com.example.comics.model;
 
 
 public class Discount {
-    private Float percentage;
+    private final Float percentage;
     private int limitDays;
 
     public Discount(Float percentage) {
@@ -21,7 +21,4 @@ public class Discount {
         return percentage;
     }
 
-    public void setPercentage(Float percentage) {
-        this.percentage = percentage;
-    }
 }
