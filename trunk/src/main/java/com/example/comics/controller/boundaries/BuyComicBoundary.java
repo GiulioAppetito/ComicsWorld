@@ -1,15 +1,11 @@
 package com.example.comics.controller.boundaries;
 
-import com.example.comics.fakepaypal.FakePayPalControllerG;
-import com.example.comics.model.exceptions.InvalidPaymentException;
+import com.example.comics.controller.BuyComicController;
+import com.example.comics.fakepaypal.PayPalBoundary;
+import com.example.comics.fakepaypal.PayPalInterface;
+import com.example.comics.model.DiscountCode;
 import com.example.comics.model.fagioli.AccountBean;
-import com.example.comics.view1.LoginControllerG;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Scene;
-import javafx.stage.Stage;
-
-import java.io.IOException;
-import java.net.URL;
+import com.example.comics.model.fagioli.SeriesBean;
 
 public class BuyComicBoundary {
 
@@ -18,27 +14,82 @@ public class BuyComicBoundary {
     }
 
 
-    public void convalidPayment(AccountBean accountBean) throws InvalidPaymentException {
+    public void convalidPayment(AccountBean accountBean, SeriesBean seriesBean, DiscountCode discount){
 
-        FakePayPalControllerG fakePayPalControllerG = new FakePayPalControllerG(accountBean.getFirstName(),accountBean.getLastName());
+        //contattiamo la boundary di paypal, tipo set di api offerto
+        PayPalInterface paypal = new PayPalBoundary();
 
-        Stage stage = new Stage();
-        FXMLLoader loader = new FXMLLoader();
+        //magari non facciamo due stringhette
+        paypal.startTransaction(accountBean.getFirstName(), accountBean.getLastName());
 
-        URL fxmlLocation = LoginControllerG.class.getResource("paypal.fxml");
-        loader.setLocation(fxmlLocation);
-        loader.setController(fakePayPalControllerG);
 
-        Scene scene = null;
-        try {
-            scene = new Scene(loader.load());
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        final int[] waiting = {0};
+        Thread waitForPayment = new Thread(()->{
+            //attendo pagamento
+            while(waiting[0] == 0){
+                try {
+                    wait(5);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+                waiting[0] = paypal.convalidPayment();
+            }
+            //quando arriva
+            if(waiting[0]==1){
+                signalPayment(true, seriesBean, discount);
+            }else{
+                signalPayment(false, seriesBean, discount);
+            }
 
-        stage.setTitle("Paypal");
-        stage.setScene(scene);
-        stage.show();
+        });
+        waitForPayment.start();
 
     }
+
+    public void signalPayment(Boolean b, SeriesBean seriesBean, DiscountCode discountCode){
+        BuyComicController buyComicController = new BuyComicController();
+        if(b){
+            System.out.println("BUYCOMICBOUNDARY: "+ "good payment");
+            buyComicController.completedPayment(seriesBean, discountCode);
+        }else{
+            System.out.println("BUYCOMICBOUNDARY: "+ "bad payment");
+            buyComicController.failedPayment(seriesBean);
+        }
+    }
+
+    public void convalidPayment(AccountBean accountBean, SeriesBean seriesBean) {
+        //contattiamo la boundary di paypal, tipo set di api offerto
+        PayPalInterface paypal = new PayPalBoundary();
+
+        //magari non facciamo due stringhette
+        paypal.startTransaction(accountBean.getFirstName(), accountBean.getLastName());
+
+        final int[] waiting = {0};
+        Thread waitForPayment = new Thread(()->{
+            //attendo pagamento
+            while(waiting[0] == 0){
+                waiting[0] = paypal.convalidPayment();
+            }
+            //quando arriva
+            if(waiting[0]==1){
+                signalPayment(true, seriesBean);
+            }else{
+                signalPayment(false, seriesBean);
+            }
+
+        });
+        waitForPayment.start();
+    }
+
+    private void signalPayment(boolean b, SeriesBean seriesBean) {
+        BuyComicController buyComicController = new BuyComicController();
+        if(b){
+            System.out.println("BUYCOMICBOUNDARY: "+ "good payment");
+            buyComicController.completedPayment(seriesBean);
+        }else{
+            System.out.println("BUYCOMICBOUNDARY: "+ "bad payment");
+            buyComicController.failedPayment(seriesBean);
+        }
+    }
+
 }

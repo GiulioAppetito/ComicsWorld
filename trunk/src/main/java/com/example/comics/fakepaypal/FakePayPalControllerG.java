@@ -25,13 +25,8 @@ public class FakePayPalControllerG {
     private Button btnClose;
 
     @FXML
-    private Button btnCloseErrorPane;
-
-    @FXML
     private TextField tfFirstName;
 
-    @FXML
-    private Pane errorPane;
 
     @FXML
     private Label lblPrice;
@@ -45,33 +40,39 @@ public class FakePayPalControllerG {
     private static String FIRSTNAME;
     private static String LASTNAME;
 
+    private String result = null;
+
     public FakePayPalControllerG(String firstName, String lastName){
         FIRSTNAME = firstName;
         LASTNAME = lastName;
     }
+    public String getResult(){
+        return result;
+    }
 
     @FXML
     public void initialize(){
-        errorPane.setVisible(false);
         tfFirstName.setText(FIRSTNAME);
         tfLastName.setText(LASTNAME);
-        btnBuy.setOnAction(event -> convalidateCard());
-        btnClose.setOnAction(this::close);
-        btnCloseErrorPane.setOnAction(event -> closeErrorPane());
+        btnBuy.setOnAction(event -> convalidateCard(event));
     }
 
-    private void close(ActionEvent event) {
-        ((Stage) ((Node) event.getSource()).getScene().getWindow()).close();
-    }
-
-    private void closeErrorPane() {
-        errorPane.setVisible(false);
-    }
-
-    private boolean convalidateCard() {
+    private void convalidateCard(ActionEvent event) {
+        System.out.println("convalidating card");
         String cardID = tfCard.getText();
         FakePayPal fakePayPal = new FakePayPal();
-        return fakePayPal.isCardValid(cardID);
+        if(fakePayPal.isCardValid(cardID)){
+            result = "right";
+            //magari prima fai tipo vedere che è andata bene bla bla
+            close(event);
+        }else{
+            result = "wrong";
+        }
+        System.out.println("result: "+result);
+    }
+
+    public void close(ActionEvent event){
+        ((Stage) ((Node) event.getSource()).getScene().getWindow()).close();
     }
 
 }

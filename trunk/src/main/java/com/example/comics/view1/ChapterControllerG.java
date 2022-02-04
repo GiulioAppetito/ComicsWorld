@@ -506,23 +506,22 @@ public class ChapterControllerG implements ChapterObserver, ObjectiveObserver {
 
         closePaymentPane();
         btnClosePayment.setOnAction(event -> closePaymentPane());
-        btnApply.setOnAction(event -> applyDiscountCode(chapterBean,seriesBean));
-        btnSkip.setOnAction(event -> applyNoDiscountCode(chapterBean,seriesBean));
+        btnApply.setOnAction(event -> applyDiscountCode(seriesBean));
+        btnSkip.setOnAction(event -> applyNoDiscountCode(seriesBean));
     }
 
-    private void applyNoDiscountCode(ChapterBean chapterBean, SeriesBean seriesBean) {
+    private void applyNoDiscountCode(SeriesBean seriesBean) {
         BuyComicController buyComicController = new BuyComicController();
-        try {
-            buyComicController.buyComic(chapterBean,seriesBean, "");
-        } catch (InvalidPaymentException | DiscountCodeException e) {
-            e.printStackTrace();
+        buyComicController.buyComic(seriesBean);
+    }
+
+    private void applyDiscountCode(SeriesBean seriesBean)  {
+        if(choiceBoxCodes.getValue()==null){
+
         }
-    }
-
-    private void applyDiscountCode(ChapterBean chapterBean,SeriesBean seriesBean)  {
         BuyComicController buyComicController = new BuyComicController();
         try {
-            buyComicController.buyComic(chapterBean,seriesBean, choiceBoxCodes.getValue());
+            buyComicController.buyComic(seriesBean, choiceBoxCodes.getValue());
         } catch (InvalidPaymentException | DiscountCodeException e) {
             e.printStackTrace();
         }
@@ -532,7 +531,12 @@ public class ChapterControllerG implements ChapterObserver, ObjectiveObserver {
         paymentPane.setVisible(false);
     }
     private void buyComics() {
-        paymentPane.setVisible(true);
+        if(UserLogin.getInstance().getReader().getDiscountCodes().isEmpty()){
+
+        }else{
+            paymentPane.setVisible(true);
+        }
+
     }
 
     private void removeChapterFromRead(SeriesBean seriesBean, ChapterBean chapterBean) {

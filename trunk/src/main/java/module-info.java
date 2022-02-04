@@ -20,4 +20,6 @@ module com.example.coomics {
     opens com.example.comics.view1 to javafx.fxml;
     exports com.example.comics.view2;
     opens com.example.comics.view2 to javafx.fxml;
+    exports com.example.comics.fakepaypal;
+    opens com.example.comics.fakepaypal to javafx.fxml;
 }

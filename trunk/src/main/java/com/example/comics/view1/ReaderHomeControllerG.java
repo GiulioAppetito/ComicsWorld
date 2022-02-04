@@ -44,12 +44,17 @@ public class ReaderHomeControllerG extends HomeControllerG implements AccountObs
     @FXML
     private Button btnToRead;
 
-
     @FXML
     private ImageView homeIcon;
 
     @FXML
     private Label lblName;
+
+    @FXML
+    private Button btnClosePayment;
+
+    @FXML
+    private Pane paymentPane;
 
     private static final String STYLE = ".button2";
     private static final String STYLE2 = "-fx-background-color: #5DADE2; -fx-background-radius: 20";
@@ -71,6 +76,7 @@ public class ReaderHomeControllerG extends HomeControllerG implements AccountObs
     public void init(){
 
         openFeed();
+        closePayment();
 
         lblTitle.setOnMouseClicked(event -> openFeed());
         lblName.setText(UserLogin.getInstance().getAccount().getUsername());
@@ -155,6 +161,12 @@ public class ReaderHomeControllerG extends HomeControllerG implements AccountObs
         btnFav.setStyle(STYLE2);
     }
 
+    public void openPayment(){
+        paymentPane.setVisible(true);
+    }
+    public void closePayment(){
+        paymentPane.setVisible(false);
+    }
 
     @Override
     public void resetButtons(){
@@ -170,9 +182,13 @@ public class ReaderHomeControllerG extends HomeControllerG implements AccountObs
 
     @Override
     public void update() {
-
         lblName.setText(UserLogin.getInstance().getAccount().getUsername());
         proPic.setImage(UserLogin.getInstance().getAccount().getProPic());
     }
+
+    public void updateOnPayment(){
+        openPayment();
+    }
+
 
 }
