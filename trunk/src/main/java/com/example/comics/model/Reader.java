@@ -10,11 +10,11 @@ import java.util.List;
 
 public class Reader extends Account{
 
-    private List<Series> favourites;
-    private List<Series> toRead;
-    private List<Series> reading;
-    private List<Badge> badges;
-    private List<Author> followedAuthors;
+    private final List<Series> favourites;
+    private final List<Series> toRead;
+    private final List<Series> reading;
+    private final List<Badge> badges;
+    private final List<Author> followedAuthors;
     private List<DiscountCode> discountCodes;
 
     public Reader(List<Series> favourites, List<Series> toRead, List<Series> reading, String username,List<Author> followedAuthors, List<DiscountCode> discountCodes){
@@ -136,7 +136,11 @@ public class Reader extends Account{
     }
 
     public void removeSeriesFromToRead(Series series) {
+
         for (int i = this.toRead.size() - 1; i >= 0; i--) {
+            if(this.toRead.size() == 0){
+                return;
+            }
             if (toRead.get(i).getTitle().equals(series.getTitle())) {
                 this.toRead.remove(i);
             }
@@ -175,6 +179,9 @@ public class Reader extends Account{
         Series seriesToRemove = null;
 
         for(Series readerSeries : reading){
+            if(readerSeries == null){
+                return;
+            }
             if(readerSeries.getTitle().equals(series.getTitle())){
                 for(Chapter chapter : readerSeries.getChapters()){
                     if(chapter.getTitle().equals(chapterTitle)){
@@ -199,6 +206,9 @@ public class Reader extends Account{
 
     private void addSeriesToReading(Series seriesToAdd){
         for(Series series : this.reading){
+            if(series == null){
+                break;
+            }
             if(series.getTitle().equals(seriesToAdd.getTitle())){
                 return;
             }

@@ -287,7 +287,7 @@ public class Queries {
             case "reviewsObjective":
                 type =  "reviews";
                 break;
-            case "chaptersObjective":
+            case "chapterObjective":
                 type = "chapters";
                 break;
             default:

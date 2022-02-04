@@ -30,7 +30,6 @@ public class ObjectiveDAO {
                 return objectives;
             }
             rs.first();
-
             do {
                 BadgeDAO badgeDAO = new BadgeDAO();
                 Badge badge = badgeDAO.retreiveAssociatedBadge(rs.getInt("associatedBadgeID"));
@@ -38,27 +37,13 @@ public class ObjectiveDAO {
                 Discount discount = new Discount(rs.getFloat("discountPercentage"));
                 discount.setLimitDays(rs.getInt("limitDays"));
 
-                Objective objective = null;
-                String level = rs.getString("level");
+                Objective objective;
+                
+
                 if(rs.getString("type").equals("reviews")){
                     objective = new ReviewsObjective(badge,discount, rs.getInt("number"));
-                    switch (level){
-                        case "beginner":
-                            objective.setLevel(Levels.BEGINNER);
-                            break;
-                        case "intermediate":
-                            objective.setLevel(Levels.INTERMEDIATE);
-                            break;
-                        case "expert":
-                            objective.setLevel(Levels.EXPERT);
-                            break;
-                        default:
-                            break;
-                    }
+                    objective.setId(rs.getInt("objective_id"));
 
-
-                }else if(rs.getString("type").equals("chapters")){
-                    objective = new ChapterObjective(badge,discount, rs.getInt("number"));
                     switch (rs.getString("level")){
                         case "beginner":
                             objective.setLevel(Levels.BEGINNER);
@@ -72,27 +57,35 @@ public class ObjectiveDAO {
                         default:
                             break;
                     }
+                    objectives.add(objective);
+
+                }else if(rs.getString("type").equals("chapters")){
+                    objective = new ChapterObjective(badge,discount,rs.getInt("number"));
+                    objective.setId(rs.getInt("objective_id"));
+
+                    switch (rs.getString("level")){
+                        case "beginner":
+                            objective.setLevel(Levels.BEGINNER);
+                            break;
+                        case "intermediate":
+                            objective.setLevel(Levels.INTERMEDIATE);
+                            break;
+                        case "expert":
+                            objective.setLevel(Levels.EXPERT);
+                            break;
+                        default:
+                            break;
+                    }
+                    objectives.add(objective);
 
 
                 }
-                assert objective!=null;
-                objective.setId(rs.getInt("objective_id"));
-                objectives.add(objective);
+
 
             } while (rs.next());
 
-
-        } catch (SQLException throwables) {
-            throwables.printStackTrace();
-        } catch (Exception e) {
+        } catch (SQLException e) {
             e.printStackTrace();
-        } finally {
-            assert conn != null;
-            try {
-                conn.close();
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
         }
 
 

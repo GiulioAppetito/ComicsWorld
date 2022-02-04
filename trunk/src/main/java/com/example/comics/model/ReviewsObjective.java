@@ -7,6 +7,10 @@ public class ReviewsObjective extends Objective{
 
     private int requiredReviews;
 
+    public ReviewsObjective(){
+
+    }
+
     public ReviewsObjective(Badge badge, Discount discount, int requiredReviews){
         this.badge = badge;
         this.discount = discount;
@@ -26,13 +30,13 @@ public class ReviewsObjective extends Objective{
 
     @Override
     public boolean achieveObjective(int readersReviews, Badge badge){
+
         Boolean win = (readersReviews >= requiredReviews);
         if(readersReviews >= requiredReviews){
             BadgeBundle badgeBundle = new BadgeBundle();
             badgeBundle.setIcon(badge.getIcon());
             badgeBundle.setName(badge.getName());
             notifyObserversNewBadge(badgeBundle);
-
         }
         return win;
     }

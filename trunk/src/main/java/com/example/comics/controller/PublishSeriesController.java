@@ -9,6 +9,7 @@ import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Locale;
 
 public class PublishSeriesController {
 
@@ -20,7 +21,6 @@ public class PublishSeriesController {
         HashMap<Objective, InputStream> objectiveBadgeHM = new HashMap<>();
 
         List<Objective> objectives = new ArrayList<>();
-        Objective objective;
 
         for(ObjectiveBean objectiveBean : objectiveBeans){
             Badge badge = new Badge();
@@ -30,15 +30,26 @@ public class PublishSeriesController {
             Discount discount = new Discount(objectiveBean.getDiscountBean().getPercentage());
             discount.setLimitDays(objectiveBean.getDiscountBean().getLimitDays());
 
-            if(objectiveBean.getType().equals("reviews")){
+            ObjectiveFactory objectiveFactory = new ObjectiveFactory();
+            Objective objective;
+            objective = objectiveFactory.createObjective(objectiveBean.getType());
+
+            objective.setBadge(badge);
+            objective.setDiscount(discount);
+            objective.setRequirement(objectiveBean.getRequirement());
+            objective.setLevel(Levels.valueOf(objectiveBean.getLevel()));
+            objective.setRequirement(objectiveBean.getRequirement());
+
+            objectives.add(objective);
+            objectiveBadgeHM.put(objective,objectiveBean.getBadgeIconInputStream());
+
+            /*if(objectiveBean.getType().equals("reviews")){
                 objective = new ReviewsObjective(badge, discount,objectiveBean.getRequirement());
             }else{
                 objective = new ChapterObjective(badge,discount,objectiveBean.getRequirement());
-            }
-            objective.setLevel(Levels.valueOf(objectiveBean.getLevel()));
-            objective.setRequirement(objectiveBean.getRequirement());
-            objectives.add(objective);
-            objectiveBadgeHM.put(objective,objectiveBean.getBadgeIconInputStream());
+            }*/
+
+
         }
 
         //istanziazione e salvataggio su DB
