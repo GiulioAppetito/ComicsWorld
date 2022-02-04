@@ -36,6 +36,9 @@ public class ChapterControllerG implements ChapterObserver, ObjectiveObserver {
     private Button btnAddReview;
 
     @FXML
+    private Label lblPrice;
+
+    @FXML
     private Pane paneInsertReview;
 
     @FXML
@@ -385,6 +388,7 @@ public class ChapterControllerG implements ChapterObserver, ObjectiveObserver {
         taDescription.setText(chapterBean.getDescription());
         taDescription.setEditable(false);
         chapterSeries = seriesBean.getTitle();
+        lblPrice.setText("€"+chapterBean.getPrice());
 
         System.out.println("Ho letto il chapter: "+chapterBean.getRead());
 

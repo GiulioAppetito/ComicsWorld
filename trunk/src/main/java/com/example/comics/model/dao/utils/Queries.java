@@ -159,11 +159,12 @@ public class Queries {
     public static void insertChapter(Connection connection, Chapter chapter,String seriesTitle,InputStream coverInputStream) throws SQLException{
 
 
-        PreparedStatement pstmt = connection.prepareStatement("INSERT INTO chapters (series_title,chapter_title,chapterDescription,chapterCover) values (?, ?,?,?)");
+        PreparedStatement pstmt = connection.prepareStatement("INSERT INTO chapters (series_title,chapter_title,chapterDescription,chapterCover,chapterPrice) values (?, ?,?,?,?)");
         try{
             pstmt.setString(1, seriesTitle);
             pstmt.setString(2,chapter.getTitle());
             pstmt.setString(3,chapter.getDescription());
+            pstmt.setFloat(5,chapter.getPrice());
 
             //Inserting Blob type
             pstmt.setBlob(4, coverInputStream);
@@ -173,6 +174,7 @@ public class Queries {
         }
         catch (Exception e){
             //TO-DO
+            e.printStackTrace();
         }
         finally {
             pstmt.close();
@@ -268,6 +270,7 @@ public class Queries {
         }
         catch (Exception e){
             //TO-DO
+            e.printStackTrace();
         }
         finally {
             pstmt.close();

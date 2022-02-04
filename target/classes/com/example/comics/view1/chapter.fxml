@@ -54,7 +54,7 @@
                            <Font name="Berlin Sans FB" size="24.0" />
                         </font>
                      </Label>
-                     <Label alignment="CENTER" prefHeight="74.0" prefWidth="615.0" text="May,1962">
+                     <Label fx:id="lblPrice" alignment="CENTER" prefHeight="74.0" prefWidth="615.0" text="Price">
                         <font>
                            <Font name="Berlin Sans FB" size="24.0" />
                         </font>

@@ -124,15 +124,15 @@ public class Series extends SeriesSubject{
 		this.author = author;
 	}
 
-	public void addChapter(String chapterTitle, Image chapterCover, String chapterDescription, InputStream inputStream){
+	public Chapter addChapter(String chapterTitle, Image chapterCover, String chapterDescription,Float chapterPrice){
 		Chapter chapter = new Chapter(chapterTitle);
+		chapter.setPrice(chapterPrice);
 		chapter.setDescription(chapterDescription);
 		chapter.setCover(chapterCover);
 		this.chapters.add(chapter);
 
+		return chapter;
 
-		ChapterDAO chapterDAO = new ChapterDAO();
-		chapterDAO.saveChapter(chapter,this.title,inputStream);
 	}
 
 	public int getNumberOfReviews(Reader reader) {

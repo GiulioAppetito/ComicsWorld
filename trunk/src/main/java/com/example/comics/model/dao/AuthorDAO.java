@@ -20,7 +20,7 @@ public class AuthorDAO {
 
     public Author retrieveAuthor(String identifier, String password) {
 
-        Statement stmt = null;
+        Statement stmt;
         Connection conn = null;
 
         Author author = null;
@@ -120,7 +120,7 @@ public class AuthorDAO {
     }
 
     public List<Author> retreiveFollowedAuthorsByReader(String username) {
-        Statement stmt = null;
+        Statement stmt;
         Connection conn = null;
 
         List<Author> followedAuthors = new ArrayList<>();

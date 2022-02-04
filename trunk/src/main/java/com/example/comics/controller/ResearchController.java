@@ -79,6 +79,7 @@ public class ResearchController {
                 chapterBundle.setAverageRating(chapter.getAverageRating());
                 chapterBundle.setDescription(chapter.getDescription());
                 chapterBundle.setReviews(chapter.getReviews());
+                chapterBundle.setPrice(chapter.getPrice());
                 chapterBundle.setCover(chapter.getCover());
                 chapterBundle.setRead(chapter.getRead());
                 chapterBeans.add(chapterBundle);

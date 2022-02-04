@@ -14,7 +14,7 @@ public class ReviewDAO {
     private static final String DB_URL = "jdbc:mysql://comics-world.ce9t0fxhansh.eu-west-2.rds.amazonaws.com:3306/ComicsWorld?autoReconnect=true&useSSL=false";
 
     public List<Review> retrieveReviews(String chapter)  {
-        Statement stmt = null;
+        Statement stmt;
         Connection conn = null;
 
         List<Review> reviewsList = new ArrayList<>();
@@ -33,7 +33,7 @@ public class ReviewDAO {
                 AccountDAO accountDAO = new AccountDAO();
                 Account account = accountDAO.retriveReviewAuthor(rs.getString("user"));
 
-                reviewItem = new Review(rs.getString("comment"),Integer.valueOf(rs.getString("rating")),account);
+                reviewItem = new Review(rs.getString("comment"),Integer.parseInt(rs.getString("rating")),account);
                 reviewsList.add(reviewItem);
 
             }while(rs.next());
@@ -56,7 +56,7 @@ public class ReviewDAO {
 
     public void saveReview(Review review, Chapter chapter, Series series) throws Exception {
         // STEP 1: dichiarazioni
-        Statement stmt = null;
+        Statement stmt;
         Connection conn = null;
 
         try {
