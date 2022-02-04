@@ -6,7 +6,6 @@ public abstract class Objective extends ObjectiveSubject{
     private Levels level;
     protected Discount discount;
     protected Badge badge;
-    private String seriesTitle;
 
     public abstract void setRequirement(int requirement);
     public abstract int getRequirement();
@@ -36,14 +35,6 @@ public abstract class Objective extends ObjectiveSubject{
 
     public void setDiscount(Discount discount) {
         this.discount = discount;
-    }
-
-    public String getSeriesTitle() {
-        return seriesTitle;
-    }
-
-    public void setSeriesTitle(String seriesTitle) {
-        this.seriesTitle = seriesTitle;
     }
 
     public int getId() {

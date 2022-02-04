@@ -37,11 +37,9 @@ public class ObjectiveDAO {
 
                 Discount discount = new Discount(rs.getFloat("discountPercentage"));
                 discount.setLimitDays(rs.getInt("limitDays"));
-                String seriesTitle = rs.getString("seriesTitle");
 
                 if(rs.getString("type").equals("reviews")){
                     ReviewsObjective reviewsObjective = new ReviewsObjective(badge,discount, rs.getInt("number"));
-                    reviewsObjective.setSeriesTitle(seriesTitle);
                     reviewsObjective.setId(rs.getInt("objective_id"));
                     switch (rs.getString("level")){
                         case "beginner":
@@ -62,7 +60,6 @@ public class ObjectiveDAO {
 
                 }else if(rs.getString("type").equals("chapters")){
                     ChapterObjective chapterObjective = new ChapterObjective(badge,discount);
-                    chapterObjective.setSeriesTitle(seriesTitle);
                     chapterObjective.setId(rs.getInt("objective_id"));
                     switch (rs.getString("level")){
                         case "beginner":

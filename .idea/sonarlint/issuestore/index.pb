@@ -17,8 +17,6 @@ h
 8trunk/src/main/java/com/example/comics/model/Genres.java,b\f\bff2b7bdcfd10d12a77eaacb5c15d0a26723ca34
 h
 8trunk/src/main/java/com/example/comics/model/Levels.java,9\f\9f502bf70865a0c0b02346d4a01da46d366822ef
-k
-;trunk/src/main/java/com/example/comics/model/Objective.java,3\8\385df1ff7a57b7c35d66812611318ab3dc7e6bf1
 s
 Ctrunk/src/main/java/com/example/comics/model/ObjectiveObserver.java,f\f\ff7b49ca35edd2f57fd4540229e2268038e011fb
 p
