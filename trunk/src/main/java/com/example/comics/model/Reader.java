@@ -22,7 +22,7 @@ public class Reader extends Account{
         this.setUsername(username);
         this.favourites = favourites;
         this.toRead = toRead;
-        //this.reading = reading;
+        this.reading = reading;
         this.followedAuthors = followedAuthors;
         this.discountCodes = discountCodes;
 

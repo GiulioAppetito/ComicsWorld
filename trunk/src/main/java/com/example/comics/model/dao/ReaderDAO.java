@@ -52,12 +52,12 @@ public class ReaderDAO {
                 toReadSeries = seriesDAO.retrieveToReadSeries(username);
             });
             t1.start();
-/*
+
             Thread t2 = new Thread(()->{
                 readingSeries = seriesDAO.retrieveReadingSeries(username);
             });
             t2.start();
-*/
+
             DiscountCodeDAO discountCodeDAO = new DiscountCodeDAO();
             Thread t3 = new Thread(()->{
                 discountCodes = discountCodeDAO.retreiveDiscountCodesByReader(username);
@@ -72,7 +72,7 @@ public class ReaderDAO {
 
             t.join();
             t1.join();
-//            t2.join();
+            t2.join();
             t3.join();
             t4.join();
 
