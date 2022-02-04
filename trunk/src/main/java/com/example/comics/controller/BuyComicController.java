@@ -8,6 +8,7 @@ import com.example.comics.model.dao.DiscountCodeDAO;
 import com.example.comics.model.exceptions.DiscountCodeException;
 import com.example.comics.model.exceptions.InvalidPaymentException;
 import com.example.comics.model.fagioli.AccountBean;
+import com.example.comics.model.fagioli.ChapterBean;
 import com.example.comics.model.fagioli.SeriesBean;
 import com.example.comics.model.fagioli.bundle.AccountBundle;
 
@@ -15,7 +16,7 @@ import java.time.LocalDate;
 
 public class BuyComicController {
 
-    public void buyComic(SeriesBean seriesBean, String code) throws InvalidPaymentException, DiscountCodeException {
+    public void buyComic(SeriesBean seriesBean, ChapterBean chapterBean, String code) throws InvalidPaymentException, DiscountCodeException {
         DiscountCode discountCode = null;
         //controllo del codice se è valido,se inserito
         if(code != "" || code != null){
@@ -37,7 +38,7 @@ public class BuyComicController {
         accountBean.setLastName(UserLogin.getInstance().getAccount().getLastName());
 
         BuyComicBoundary buyComicBoundary = new BuyComicBoundary();
-        buyComicBoundary.convalidPayment(accountBean, seriesBean, discountCode);
+        buyComicBoundary.convalidPayment(accountBean, chapterBean, seriesBean, discountCode);
 
     }
     
@@ -61,7 +62,7 @@ public class BuyComicController {
         System.out.println("Payment of "+seriesBean.getTitle()+" went wrong");
     }
 
-    public void buyComic(SeriesBean seriesBean) {
+    public void buyComic(SeriesBean seriesBean, ChapterBean chapterBean) {
 
         //chiamo altra boundary per la carta
         AccountBean accountBean = new AccountBundle();
@@ -69,7 +70,7 @@ public class BuyComicController {
         accountBean.setLastName(UserLogin.getInstance().getAccount().getLastName());
 
         BuyComicBoundary buyComicBoundary = new BuyComicBoundary();
-        buyComicBoundary.convalidPayment(accountBean, seriesBean);
+        buyComicBoundary.convalidPayment(accountBean, chapterBean, seriesBean);
 
     }
 

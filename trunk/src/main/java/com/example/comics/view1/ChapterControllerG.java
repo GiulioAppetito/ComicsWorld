@@ -510,23 +510,23 @@ public class ChapterControllerG implements ChapterObserver, ObjectiveObserver {
 
         closePaymentPane();
         btnClosePayment.setOnAction(event -> closePaymentPane());
-        btnApply.setOnAction(event -> applyDiscountCode(seriesBean));
-        btnSkip.setOnAction(event -> applyNoDiscountCode(seriesBean));
+        btnApply.setOnAction(event -> applyDiscountCode(seriesBean, chapterBean));
+        btnSkip.setOnAction(event -> applyNoDiscountCode(seriesBean, chapterBean));
     }
 
-    private void applyNoDiscountCode(SeriesBean seriesBean) {
+    private void applyNoDiscountCode(SeriesBean seriesBean, ChapterBean chapterBean) {
         BuyComicController buyComicController = new BuyComicController();
-        buyComicController.buyComic(seriesBean);
+        buyComicController.buyComic(seriesBean, chapterBean);
         closePaymentPane();
     }
 
-    private void applyDiscountCode(SeriesBean seriesBean)  {
+    private void applyDiscountCode(SeriesBean seriesBean, ChapterBean chapterBean)  {
         if(choiceBoxCodes.getValue()==null){
 
         }
         BuyComicController buyComicController = new BuyComicController();
         try {
-            buyComicController.buyComic(seriesBean, choiceBoxCodes.getValue());
+            buyComicController.buyComic(seriesBean, chapterBean, choiceBoxCodes.getValue());
         } catch (InvalidPaymentException | DiscountCodeException e) {
             e.printStackTrace();
         }

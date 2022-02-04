@@ -39,12 +39,14 @@ public class FakePayPalControllerG {
 
     private static String FIRSTNAME;
     private static String LASTNAME;
+    private static String EXPENSE;
 
     private String result = null;
 
-    public FakePayPalControllerG(String firstName, String lastName){
+    public FakePayPalControllerG(String firstName, String lastName, String expense){
         FIRSTNAME = firstName;
         LASTNAME = lastName;
+        EXPENSE = expense;
     }
     public String getResult(){
         return result;
@@ -54,6 +56,7 @@ public class FakePayPalControllerG {
     public void initialize(){
         tfFirstName.setText(FIRSTNAME);
         tfLastName.setText(LASTNAME);
+        lblPrice.setText("Payment: "+EXPENSE+"€");
         btnBuy.setOnAction(event -> convalidateCard(event));
     }
 

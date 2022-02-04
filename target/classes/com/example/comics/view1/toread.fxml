@@ -1,14 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="729.0" prefWidth="600.0" styleClass="transparent" stylesheets="@../../../../css/css1/fullpackstyling.css" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.comics.view1.ToReadControllerG">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="729.0" prefWidth="740.0" styleClass="transparent" stylesheets="@../../../../css/css1/fullpackstyling.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.comics.view1.ToReadControllerG">
    <children>
-      <HBox prefHeight="729.0" prefWidth="600.0">
+      <HBox prefHeight="729.0" prefWidth="740.0">
          <children>
-            <Pane prefHeight="649.0" prefWidth="557.0" styleClass="transparent" stylesheets="@../../../../css/css1/fullpackstyling.css">
+            <Pane prefHeight="649.0" prefWidth="660.0" styleClass="transparent" stylesheets="@../../../../css/css1/fullpackstyling.css">
                <HBox.margin>
                   <Insets bottom="40.0" left="40.0" right="40.0" top="40.0" />
                </HBox.margin>

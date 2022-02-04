@@ -1,0 +1,9 @@
+
+G
+java:S1659"*Declare "ratingThread" on a separate line.(’ä£Ö8€‘¢¤ì/
+N
+java:S1602#",Remove useless curly braces around statement(šÍ…¤ÿÿÿÿÿ8‚‘¢¤ì/
+{
+java:S2142+"^Either re-interrupt this method or rethrow the "InterruptedException" that can be caught here.(ä ¹€8ƒ‘¢¤ì/
+M
+java:S1128	"0Remove this unused import 'java.util.ArrayList'.(÷‰îƒ8ş¢¤ì/

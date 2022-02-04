@@ -1,0 +1,12 @@
+
+p
+AX61nhccpJNWc0ulALB4	java:S106P"9Replace this use of System.out or System.err by a logger.(¾ÈÐžùÿÿÿÿ8€Âò¬ë/
+U	java:S106Y"9Replace this use of System.out or System.err by a logger.(ý¿š£8€Âò¬ë/
+p
+AX61nhccpJNWc0ulALB5	java:S106s"9Replace this use of System.out or System.err by a logger.(ÄÐäˆúÿÿÿÿ8€Âò¬ë/
+u
+java:S3776¬"RRefactor this method to reduce its Cognitive Complexity from 18 to the 15 allowed.(œ‡ŽÔùÿÿÿÿ8Éê¾ ì/
+M
+java:S1128"0Remove this unused import 'java.util.ArrayList'.(÷‰îƒ8¢ÑÄ ì/
+M
+java:S5411»"*Use the primitive boolean expression here.(¥šŒÊüÿÿÿÿ8Éê¾ ì/

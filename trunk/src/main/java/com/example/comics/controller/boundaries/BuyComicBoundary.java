@@ -5,6 +5,7 @@ import com.example.comics.fakepaypal.PayPalBoundary;
 import com.example.comics.fakepaypal.PayPalInterface;
 import com.example.comics.model.DiscountCode;
 import com.example.comics.model.fagioli.AccountBean;
+import com.example.comics.model.fagioli.ChapterBean;
 import com.example.comics.model.fagioli.SeriesBean;
 
 public class BuyComicBoundary {
@@ -14,13 +15,14 @@ public class BuyComicBoundary {
     }
 
 
-    public void convalidPayment(AccountBean accountBean, SeriesBean seriesBean, DiscountCode discount){
+    public void convalidPayment(AccountBean accountBean, ChapterBean chapterBean, SeriesBean seriesBean, DiscountCode discount){
 
         //contattiamo la boundary di paypal, tipo set di api offerto
         PayPalInterface paypal = new PayPalBoundary();
 
+        String payment = String.valueOf(chapterBean.getPrice());
         //magari non facciamo due stringhette
-        paypal.startTransaction(accountBean.getFirstName(), accountBean.getLastName());
+        paypal.startTransaction(accountBean.getFirstName(), accountBean.getLastName(), payment);
 
 
         final int[] waiting = {0};
@@ -57,12 +59,13 @@ public class BuyComicBoundary {
         }
     }
 
-    public void convalidPayment(AccountBean accountBean, SeriesBean seriesBean) {
+    public void convalidPayment(AccountBean accountBean, ChapterBean chapterBean, SeriesBean seriesBean) {
         //contattiamo la boundary di paypal, tipo set di api offerto
         PayPalInterface paypal = new PayPalBoundary();
 
+        String payment = String.valueOf(chapterBean.getPrice());
         //magari non facciamo due stringhette
-        paypal.startTransaction(accountBean.getFirstName(), accountBean.getLastName());
+        paypal.startTransaction(accountBean.getFirstName(), accountBean.getLastName(), payment);
 
         final int[] waiting = {0};
         Thread waitForPayment = new Thread(()->{

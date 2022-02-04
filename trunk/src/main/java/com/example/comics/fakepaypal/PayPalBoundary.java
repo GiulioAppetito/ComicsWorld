@@ -1,6 +1,5 @@
 package com.example.comics.fakepaypal;
 
-import com.example.comics.view1.LoginControllerG;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
@@ -14,9 +13,9 @@ public class PayPalBoundary implements PayPalInterface{
 
     //magari per fare i fighetti mettiamo qualcosa di diverso da due stupide stringhe
     @Override
-    public void startTransaction(String firstName, String lastName) {
+    public void startTransaction(String firstName, String lastName, String expense) {
         //facciamo partire la finta scene
-        fakePayPalControllerG = new FakePayPalControllerG(firstName,lastName);
+        fakePayPalControllerG = new FakePayPalControllerG(firstName,lastName, expense);
 
         Stage stage = new Stage();
         FXMLLoader loader = new FXMLLoader();
