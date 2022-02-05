@@ -455,7 +455,6 @@ public class SeriesDAO {
                 //retreive last insert id in badge
                 ResultSet rs = Queries.getAllBadges(stmt);
                 rs.first();
-                bagdeID = 0;
                 do{
                     bagdeID = rs.getInt("badgeID");
                 }while(rs.next());

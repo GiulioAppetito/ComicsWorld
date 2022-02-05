@@ -74,13 +74,6 @@ public class Queries {
 
     }
 
-    public static ResultSet retrieveReviewsByReaderAndSeries(Statement stmt, String seriesTitle, String user) throws SQLException {
-        String selectStatement = String.format("SELECT * FROM review WHERE series_title = '%s' AND user = '%s' ", seriesTitle, user);
-        System.out.println(selectStatement);
-        return stmt.executeQuery(selectStatement);
-
-    }
-
     public static ResultSet retreiveReviewsByChapter(Statement stmt, String chapterTitle) throws SQLException {
         String selectStatement = String.format("SELECT * FROM review WHERE chapter_title = '%s'",chapterTitle);
         return stmt.executeQuery(selectStatement);
@@ -216,33 +209,19 @@ public class Queries {
         return stmt.executeQuery(selectStatement);
     }
 
-    public static void updateUserProPic(Connection conn, InputStream inputStream, Reader reader) throws SQLException {
-        try (PreparedStatement pstmt = conn.prepareStatement("DELETE FROM users WHERE username = ?")) {
-            try {
-                //Inserting Blob type
-                pstmt.setString(1, reader.getUsername());
-                //Executing the statement
+    public static void updateUserProPic(Connection conn, InputStream inputStream, Account account) throws SQLException{
+        if(inputStream==null){
+            System.out.println("null input stream");
+        }
+        try(PreparedStatement pstmt = conn.prepareStatement("UPDATE users SET propic = ? WHERE username = ?")){
+            try{
+                pstmt.setString(2, account.getUsername());
+                pstmt.setBlob(1, inputStream);
+
                 pstmt.execute();
                 System.out.println(pstmt);
             } catch (Exception e) {
                 //TO-DO
-            }
-            try (PreparedStatement pstmt2 = conn.prepareStatement("INSERT INTO users (username,firstname,lastname,role,email,password,propic) VALUES (?,?,?,?,?,?,?)")) {
-                try {
-                    //Inserting Blob type
-                    pstmt2.setBlob(7, inputStream);
-                    pstmt2.setString(1, reader.getUsername());
-                    pstmt2.setString(2, reader.getFirstName());
-                    pstmt2.setString(3, reader.getLastName());
-                    pstmt2.setString(4, "reader");
-                    pstmt2.setString(5, reader.getEmail());
-                    pstmt2.setString(6, reader.getPassword());
-                    //Executing the statement
-                    pstmt2.execute();
-                    System.out.println(pstmt2);
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
             }
         }
     }

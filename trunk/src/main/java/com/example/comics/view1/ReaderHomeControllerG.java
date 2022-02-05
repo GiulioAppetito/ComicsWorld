@@ -80,7 +80,7 @@ public class ReaderHomeControllerG extends HomeControllerG implements AccountObs
 
         lblTitle.setOnMouseClicked(event -> openFeed());
         lblName.setText(UserLogin.getInstance().getAccount().getUsername());
-        proPic.setImage(UserLogin.getInstance().getReader().getProPic());
+        proPic.setImage(UserLogin.getInstance().getAccount().getProPic());
 
         btnFav.setOnAction(event -> openFavourites());
         btnFollowing.setOnAction(event-> openFollowing());

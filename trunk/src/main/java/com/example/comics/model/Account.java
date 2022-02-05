@@ -103,4 +103,7 @@ public abstract class Account extends AccountSubject {
         notifyObservers();
     }
 
+    public void changeProPic(Image proPic){
+        this.proPic = proPic;
+    }
 }
