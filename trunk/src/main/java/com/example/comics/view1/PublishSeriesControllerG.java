@@ -149,38 +149,36 @@ public class PublishSeriesControllerG {
 
     }
 
-    public void changeIcon(String path){
+    public void changeIcon(String choice){
         FileChooser fc = new FileChooser();
         fc.getExtensionFilters().add(new FileChooser.ExtensionFilter(PNG,PNG));
         File f = fc.showOpenDialog(null);
         if(f!=null){
-            path = f.getAbsolutePath();
-            InputStream inputStream = null;
-            try {
-                inputStream = new FileInputStream(path);
-            } catch (FileNotFoundException e) {
-                e.printStackTrace();
-            } finally {
-                try {
-                    assert inputStream!=null;
-                    inputStream.close();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
+            switch(choice) {
+                case "I":
+                    badgeIconPathI = f.getAbsolutePath();
+                    break;
+
+                case "B":
+                    badgeIconPathB = f.getAbsolutePath();
+                    break;
+                case "E":
+                    badgeIconPathE = f.getAbsolutePath();
+                    break;
             }
         }
     }
 
     private void changeBagdeIconI() {
-        changeIcon(badgeIconPathI);
+        changeIcon("I");
     }
 
     private void changeBagdeIconB() {
-       changeIcon(badgeIconPathB);
+       changeIcon("B");
     }
 
     private void changeBagdeIconE() {
-        changeIcon(badgeIconPathE);
+        changeIcon("E");
     }
 
     private void applyObjectives() {

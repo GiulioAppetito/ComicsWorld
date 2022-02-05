@@ -11,8 +11,6 @@ Z
 Qtrunk/src/main/java/com/example/comics/model/exceptions/FailedLoginException.java,0\d\0dea5fee9e580bb1a717a711dbe16da017bab61e
 ˆ
 Xtrunk/src/main/java/com/example/comics/model/exceptions/FailedRegistrationException.java,9\d\9db7c040f084db81b0c5699b617fd6837d98607a
-|
-Ltrunk/src/main/java/com/example/comics/model/fagioli/bundle/BadgeBundle.java,1\a\1ac5d439cc207f33d1287c003324960e24b3f503
 h
 8trunk/src/main/java/com/example/comics/model/Genres.java,b\f\bff2b7bdcfd10d12a77eaacb5c15d0a26723ca34
 h
@@ -27,8 +25,6 @@ s
 Ctrunk/src/main/java/com/example/comics/model/fagioli/LoginBean.java,5\b\5becafffff50e8d5e91b8682372fe29ba8974529
 t
 Dtrunk/src/main/java/com/example/comics/model/fagioli/ReaderBean.java,a\a\aac2c572c88b8baac40ef91db2a63a80029b57d8
-q
-Atrunk/src/main/java/com/example/comics/model/ChapterObserver.java,2\3\23130c14c97aeffd28a4358cea3f734706d5d187
 p
 @trunk/src/main/java/com/example/comics/model/ChapterSubject.java,c\b\cbef2f5c28e0525fe37bc3006eb93dd3e76f3b3d
 r
@@ -181,18 +177,12 @@ q
 Atrunk/src/main/java/com/example/comics/fakepaypal/FakePayPal.java,7\1\716dcd3acd7f307e7f9e5e3bb530c5fca88cbe7e
 T
 $trunk/src/main/java/module-info.java,7\a\7a9544f29bbbe55011b24e5e7cc2a5514087fa6f
-n
->trunk/src/main/java/com/example/comics/model/dao/BadgeDAO.java,5\c\5c6bff5f7715bfb3aee28deec64036a8fdc1f276
-r
-Btrunk/src/main/java/com/example/comics/model/dao/ObjectiveDAO.java,c\7\c7045f6d6870d3973d5b81168efa0837b642c85d
 p
 @trunk/src/main/java/com/example/comics/model/dao/ChapterDAO.java,1\d\1ddfc0cfcef200504c825e15e2d46d1aa7918d49
 i
 9trunk/src/main/java/com/example/comics/model/Chapter.java,e\e\ee53f251e6fa246c2de20c960c4d267b1c885842
 r
 Btrunk/src/main/java/com/example/comics/model/ChapterObjective.java,b\3\b3eec645610f52f5ca30fb3f4a1f138583d83fc4
-u
-Etrunk/src/main/java/com/example/comics/model/fagioli/ChapterBean.java,1\0\10ff9f5e6d454fce4bc8188b948cd60f08d61d27
 t
 Dtrunk/src/main/java/com/example/comics/view1/beans/ChapterBean1.java,d\5\d525038b8bf9ca59cdf070841e0b546a197da1c5
 |
