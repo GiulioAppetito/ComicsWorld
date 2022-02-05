@@ -1,6 +1,6 @@
 package com.example.comics.controller;
 
-import com.example.comics.controller.boundaries.BuyComicBoundary;
+import com.example.comics.controller.boundaries.PaymentBoundary;
 import com.example.comics.controller.boundaries.BuyComicsAuthorBoundary;
 import com.example.comics.model.DiscountCode;
 import com.example.comics.model.UserLogin;
@@ -12,7 +12,6 @@ import com.example.comics.model.fagioli.ChapterBean;
 import com.example.comics.model.fagioli.DiscountCodeBean;
 import com.example.comics.model.fagioli.SeriesBean;
 import com.example.comics.model.fagioli.bundle.AccountBundle;
-import com.example.comics.view1.beans.DiscountCodeBean1;
 
 import java.time.LocalDate;
 
@@ -27,7 +26,7 @@ public class BuyComicController {
             accountBean.setFirstName(UserLogin.getInstance().getAccount().getFirstName());
             accountBean.setLastName(UserLogin.getInstance().getAccount().getLastName());
 
-            BuyComicBoundary buyComicBoundary = new BuyComicBoundary();
+            PaymentBoundary buyComicBoundary = new PaymentBoundary();
             buyComicBoundary.convalidPayment(accountBean, chapterBean, seriesBean);
         }
 
@@ -35,6 +34,7 @@ public class BuyComicController {
 
     private boolean checkValidity(DiscountCodeBean discountCodeBean) throws DiscountCodeException{
         DiscountCode discountCode;
+        //ricostruiscilo
 
         //controllo del codice se è valido, se inserito
         if(discountCodeBean.getCode() != null){
@@ -84,7 +84,7 @@ public class BuyComicController {
         accountBean.setFirstName(UserLogin.getInstance().getAccount().getFirstName());
         accountBean.setLastName(UserLogin.getInstance().getAccount().getLastName());
 
-        BuyComicBoundary buyComicBoundary = new BuyComicBoundary();
+        PaymentBoundary buyComicBoundary = new PaymentBoundary();
         buyComicBoundary.convalidPayment(accountBean, chapterBean, seriesBean);
 
     }

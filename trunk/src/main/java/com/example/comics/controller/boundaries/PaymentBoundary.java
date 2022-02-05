@@ -7,9 +7,9 @@ import com.example.comics.model.fagioli.AccountBean;
 import com.example.comics.model.fagioli.ChapterBean;
 import com.example.comics.model.fagioli.SeriesBean;
 
-public class BuyComicBoundary {
+public class PaymentBoundary {
 
-    public BuyComicBoundary(){
+    public PaymentBoundary(){
         //costruttore
     }
 
