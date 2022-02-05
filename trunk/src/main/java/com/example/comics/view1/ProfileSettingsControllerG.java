@@ -63,13 +63,19 @@ public class ProfileSettingsControllerG implements AccountObserver {
     private void changeProPic() {
         FileChooser fc = new FileChooser();
         InputStream inputStream = null;
+        AccountBean1 accountBean = new AccountBean1();
         fc.getExtensionFilters().add(new FileChooser.ExtensionFilter("*.png","*.png"));
         File f = fc.showOpenDialog(null);
         if(f!=null){
+            System.out.println("[PRO SETT CON] : not null f");
             imageCoverPath = f.getAbsolutePath();
 
             try {
                 inputStream = new FileInputStream(imageCoverPath);
+                accountBean.setInputStream(new FileInputStream(imageCoverPath));
+                if(inputStream == null){
+                    System.out.println("input stream == null");
+                }
             } catch (FileNotFoundException e) {
                 e.printStackTrace();
             }
@@ -78,8 +84,7 @@ public class ProfileSettingsControllerG implements AccountObserver {
             UserLogin.getInstance().getAccount().setProPic(cover);
         }
         CustomizeProfileController controller = new CustomizeProfileController();
-        AccountBean1 accountBean = new AccountBean1();
-        accountBean.setInputStream(inputStream);
+
         accountBean.setProPic(imgProPic.getImage());
         controller.changeProPic(accountBean);
 

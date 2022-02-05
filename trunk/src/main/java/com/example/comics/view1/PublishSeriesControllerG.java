@@ -254,7 +254,7 @@ public class PublishSeriesControllerG {
         Genres genre3 = choiceBoxGenre3.getValue();
 
         //init seriesBean
-        SeriesBean seriesBean1 = new SeriesBean1();
+        SeriesBean1 seriesBean1 = new SeriesBean1();
 
         try {
             seriesBean1.setCoverInputStream(new FileInputStream(imageCoverPath));

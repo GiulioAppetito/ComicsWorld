@@ -40,7 +40,6 @@ public class AuthorDAO {
             author.setFirstName(rs.getString("firstname"));
             author.setLastName(rs.getString("lastname"));
             author.setUsername(rs.getString("username"));
-            author.setPassword(rs.getString("password"));
             author.setEmail(rs.getString("email"));
 
             SeriesDAO seriesDAO = new SeriesDAO();

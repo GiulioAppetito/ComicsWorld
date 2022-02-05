@@ -80,7 +80,6 @@ public class ReaderDAO {
 
             reader.setFirstName(rs.getString("firstname"));
             reader.setLastName(rs.getString("lastname"));
-            reader.setPassword(rs.getString("password"));
             reader.setEmail(rs.getString("email"));
 
             Blob bl = rs.getBlob("propic");
