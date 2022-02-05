@@ -71,7 +71,6 @@ public class BuyComicController {
         System.out.println("Payment went well");
     }
 
-
     public void failedPayment(SeriesBean seriesBean) {
         //mostri il pagamento non avvenuto
         System.out.println("Payment of "+seriesBean.getTitle()+" went wrong");
@@ -88,5 +87,6 @@ public class BuyComicController {
         buyComicBoundary.convalidPayment(accountBean, chapterBean, seriesBean);
 
     }
+
 
 }

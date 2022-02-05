@@ -1,7 +1,6 @@
 package com.example.comics.model;
 
 import javafx.scene.image.Image;
-
 import java.util.Date;
 
 public abstract class Account extends AccountSubject {
@@ -10,16 +9,13 @@ public abstract class Account extends AccountSubject {
     private String firstName;
     private String lastName;
     private Date birthday;
+    private String city;
+
 
     //profile basics
     private String username;
     private Image proPic;
-
-    //profile private
-    private String city;
     private String email;
-    private String password;
-
 
     public abstract String getRole();
 
@@ -81,13 +77,6 @@ public abstract class Account extends AccountSubject {
         this.email = email;
     }
 
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
 
     public void changeCredential(String credentialType, String newCredential){
 
@@ -104,9 +93,6 @@ public abstract class Account extends AccountSubject {
             case "lastname":
                 this.setLastName(newCredential);
                 break;
-            case "password":
-                this.setPassword(newCredential);
-                break;
             case "city":
                 this.setCity(newCredential);
                 break;
@@ -116,7 +102,5 @@ public abstract class Account extends AccountSubject {
         }
         notifyObservers();
     }
-
-    public void changeProPic(Image imageView){}
 
 }

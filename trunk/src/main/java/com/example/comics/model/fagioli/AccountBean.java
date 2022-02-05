@@ -6,25 +6,25 @@ import java.io.InputStream;
 
 public interface AccountBean {
 
-    public String getFirstName();
+    String getFirstName();
 
-    public void setFirstName(String firstName);
+    void setFirstName(String firstName);
 
-    public String getLastName();
+    String getLastName();
 
-    public void setLastName(String lastName);
+    void setLastName(String lastName);
 
-    public String getEmail();
+    String getEmail();
 
-    public void setEmail(String email);
+    void setEmail(String email);
 
-    public String getUsername();
+    String getUsername();
 
-    public void setUsername(String username);
+    void setUsername(String username);
 
-    public Image getProPic();
+    Image getProPic();
 
-    public void setProPic(Image proPic);
+    void setProPic(Image proPic);
 
     void setInputStream(InputStream inputStream);
 
