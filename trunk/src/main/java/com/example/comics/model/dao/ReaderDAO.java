@@ -111,8 +111,6 @@ public class ReaderDAO {
         badgeDAO.addAchievedBadge(badge, reader);
     }
 
-
-
     public void addSeriesToToRead(Series series,Reader reader) throws SQLException {
         Statement stmt = null;
         Connection conn = null;

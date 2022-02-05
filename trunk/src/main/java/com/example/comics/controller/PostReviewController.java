@@ -13,8 +13,6 @@ public class PostReviewController{
 
     public void post(ReviewBean reviewBean, ChapterBean chapterBean, SeriesBean seriesBean) {
 
-        Thread emailThread;
-
         //salvataggio sul DB
         Author author = new Author();
         author.setFirstName(seriesBean.getAuthor().getFirstName());
@@ -28,6 +26,7 @@ public class PostReviewController{
         series.addReview(chapterBean.getTitle(), reviewBean.getComment(), reviewBean.getRating());
 
         //invio mail all'autore di una nuova review
+        Thread emailThread;
         emailThread = new Thread(()->{
             PostReviewAuthorBoundary postReviewAuthorBoundary = new PostReviewAuthorBoundary();
             postReviewAuthorBoundary.sendEmailForNewReviewPosted(seriesBean);
@@ -39,43 +38,57 @@ public class PostReviewController{
     }
 
     private void checkObjectives(Series series, SeriesBean seriesBean) {
+        boolean isReviewsType;
+        boolean isBadgeAlreadyAchieved;
+        boolean isNewObjectiveAchieved;
 
         //numero di review del lettore
         int numOfReviews = series.getNumberOfReviews(UserLogin.getInstance().getReader());
 
         //controllo degli obiettivi
         for(Objective objective : series.getObjectives()){
-            if((objective.getType().equals("reviewsObjective"))&&(!UserLogin.getInstance().getReader().hasAchievedThisBadge(objective.getBadge()))&&(objective.achieveObjective(numOfReviews, objective.getBadge()))){
 
-                //aggiungo badge alla lista e salvo sul DB + assegno badge
-                new Thread(()-> UserLogin.getInstance().getReader().addAchievedBadge(objective.getBadge())).start();
+            isReviewsType = objective.getType().equals("reviewsObjective");
+            isBadgeAlreadyAchieved = UserLogin.getInstance().getReader().hasAchievedThisBadge(objective.getBadge());
+            isNewObjectiveAchieved = objective.achieveObjective(numOfReviews, objective.getBadge());
 
-                //genero discount code
-                DiscountCode discountCode = new DiscountCode(objective.getDiscount());
-                UserLogin.getInstance().getReader().addDiscountCode(discountCode);
-
-                //invio mail al lettore del codice sconto
-                new Thread(()->{
-                    AccountBean accountBean = new AccountBundle();
-                    accountBean.setFirstName(UserLogin.getInstance().getAccount().getFirstName());
-                    accountBean.setLastName(UserLogin.getInstance().getAccount().getLastName());
-                    accountBean.setUsername(UserLogin.getInstance().getAccount().getUsername());
-                    accountBean.setEmail(UserLogin.getInstance().getAccount().getEmail());
-                    accountBean.setProPic(UserLogin.getInstance().getAccount().getProPic());
-
-                    DiscountBean discountBean = new DiscountBundle();
-                    discountBean.setLimitDays(discountCode.getDiscount().getLimitDays());
-                    discountBean.setPercentage(discountCode.getDiscount().getPercentage());
-
-
-                    DiscountCodeBean discountCodeBean = new DiscountCodeBundle();
-                    discountCodeBean.setCode(discountCode.getCode());
-                    discountCodeBean.setDiscountBean(discountBean);
-
-                    PostReviewReaderBoundary postReviewReaderBoundary = new PostReviewReaderBoundary();
-                    postReviewReaderBoundary.sendEmailForDiscountCode(accountBean, seriesBean, discountCodeBean);
-                }).start();
+            if(isReviewsType && !isBadgeAlreadyAchieved && isNewObjectiveAchieved){
+                assignBadgeAndDiscountCodeToReader(objective,seriesBean);
             }
         }
+    }
+
+    private void assignBadgeAndDiscountCodeToReader(Objective objective,SeriesBean seriesBean) {
+        //aggiungo badge alla lista e salvo sul DB + assegno badge
+        new Thread(()-> UserLogin.getInstance().getReader().addAchievedBadge(objective.getBadge())).start();
+
+        //genero discount code
+        DiscountCode discountCode = new DiscountCode(objective.getDiscount());
+        UserLogin.getInstance().getReader().addDiscountCode(discountCode);
+
+        //invio mail al lettore del codice sconto
+        new Thread(()->{
+            sendEmailToReader(discountCode,seriesBean);
+        }).start();
+    }
+
+    private void sendEmailToReader(DiscountCode discountCode,SeriesBean seriesBean){
+        AccountBean accountBean = new AccountBundle();
+        accountBean.setFirstName(UserLogin.getInstance().getAccount().getFirstName());
+        accountBean.setLastName(UserLogin.getInstance().getAccount().getLastName());
+        accountBean.setUsername(UserLogin.getInstance().getAccount().getUsername());
+        accountBean.setEmail(UserLogin.getInstance().getAccount().getEmail());
+        accountBean.setProPic(UserLogin.getInstance().getAccount().getProPic());
+
+        DiscountBean discountBean = new DiscountBundle();
+        discountBean.setLimitDays(discountCode.getDiscount().getLimitDays());
+        discountBean.setPercentage(discountCode.getDiscount().getPercentage());
+
+        DiscountCodeBean discountCodeBean = new DiscountCodeBundle();
+        discountCodeBean.setCode(discountCode.getCode());
+        discountCodeBean.setDiscountBean(discountBean);
+
+        PostReviewReaderBoundary postReviewReaderBoundary = new PostReviewReaderBoundary();
+        postReviewReaderBoundary.sendEmailForDiscountCode(accountBean, seriesBean, discountCodeBean);
     }
 }
