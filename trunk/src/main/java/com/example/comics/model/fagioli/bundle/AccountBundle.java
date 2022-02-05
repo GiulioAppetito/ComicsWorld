@@ -12,6 +12,7 @@ public class AccountBundle implements AccountBean {
     private String email;
     private Image proPic;
     private String username;
+    private InputStream inputStream;
 
     @Override
     public String getFirstName() {
@@ -66,10 +67,12 @@ public class AccountBundle implements AccountBean {
 
     @Override
     public void setInputStream(InputStream inputStream) {
+        this.inputStream = inputStream;
     }
 
     @Override
     public InputStream getInputStream() {
-        return null;
+        return inputStream;
     }
+
 }
