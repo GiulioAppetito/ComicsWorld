@@ -15,6 +15,7 @@ public class ResearchController {
 
     public List<SeriesBean> getFavouriteSeries() {
         List<Series> favouriteSeries = UserLogin.getInstance().getReader().getFavourites();
+        System.out.println("[RESEARCH CONTROLLER] reading list lenght : "+UserLogin.getInstance().getReader().getReading().size());
         return getSeriesBeans(favouriteSeries);
     }
 
@@ -25,6 +26,7 @@ public class ResearchController {
 
     public List<SeriesBean> getReadingSeries() {
         List<Series> toReadSeries = UserLogin.getInstance().getReader().getReading();
+        System.out.println("[Research controller] getReadingSeries lenght : "+toReadSeries.size());
         return getSeriesBeans(toReadSeries);
     }
 
