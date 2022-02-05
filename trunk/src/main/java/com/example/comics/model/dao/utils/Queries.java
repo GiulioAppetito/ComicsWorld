@@ -49,7 +49,7 @@ public class Queries {
     }
 
     public static ResultSet retriveReadingSeries(Statement stmt, String user) throws SQLException {
-        String selectStatement = String.format("SELECT * from userReadChapters where reader = '%s' ", user);
+        String selectStatement = String.format("SELECT DISTINCT series from userReadChapters where reader = '%s' ", user);
         return stmt.executeQuery(selectStatement);
     }
 
