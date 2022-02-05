@@ -6,7 +6,6 @@ import java.util.List;
 public class Author extends Account{
 
     private List<Series> publishedSeries = new ArrayList<>();
-    private List<Badge> badges;
 
     public Author(){
         //dummy
@@ -30,14 +29,5 @@ public class Author extends Account{
     public void addPublishedSeries(Series series){
         this.publishedSeries.add(series);
     }
-
-    public List<Badge> getBadges() {
-        return badges;
-    }
-
-    public void setBadges(List<Badge> badges) {
-        this.badges = badges;
-    }
-
 
 }

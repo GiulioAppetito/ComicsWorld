@@ -4,11 +4,9 @@ import com.example.comics.controller.boundaries.PostReviewReaderBoundary;
 import com.example.comics.model.*;
 import com.example.comics.model.dao.ReaderDAO;
 import com.example.comics.model.dao.SeriesDAO;
-import com.example.comics.model.fagioli.AccountBean;
-import com.example.comics.model.fagioli.ChapterBean;
-import com.example.comics.model.fagioli.DiscountCodeBean;
-import com.example.comics.model.fagioli.SeriesBean;
+import com.example.comics.model.fagioli.*;
 import com.example.comics.model.fagioli.bundle.AccountBundle;
+import com.example.comics.model.fagioli.bundle.DiscountBundle;
 import com.example.comics.model.fagioli.bundle.DiscountCodeBundle;
 import com.example.comics.model.fagioli.bundle.SeriesBundle;
 
@@ -71,11 +69,14 @@ public class MarkChapterAsReadController {
                     accountBean.setEmail(UserLogin.getInstance().getAccount().getEmail());
                     accountBean.setProPic(UserLogin.getInstance().getAccount().getProPic());
 
+
+                    DiscountBean discountBean = new DiscountBundle();
+                    discountBean.setLimitDays(discountCode.getDiscount().getLimitDays());
+                    discountBean.setPercentage(discountCode.getDiscount().getPercentage());
+
                     DiscountCodeBean discountCodeBean = new DiscountCodeBundle();
                     discountCodeBean.setCode(discountCode.getCode());
-                    discountCodeBean.setExpiringDate(discountCode.getExpiringDate());
-                    discountCodeBean.setPercentage(discountCode.getDiscount().getPercentage());
-                    discountCodeBean.setLimitDays(discountCode.getDiscount().getLimitDays());
+                    discountCodeBean.setDiscountBean(discountBean);
 
                     SeriesBean seriesBean = new SeriesBundle();
                     seriesBean.setTitle(series.getTitle());

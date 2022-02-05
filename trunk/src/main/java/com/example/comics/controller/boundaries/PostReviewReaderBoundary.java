@@ -34,8 +34,8 @@ public class PostReviewReaderBoundary extends MailProperties {
 
             // Now set the actual message
             message.setText("Hello from ComicsWorld! Your review just allowed you to receive a new badge! Check it out on your profile" +
-                    "Use the following code" + discountCodeBean.getCode() + " to purchase from " + seriesBean.getTitle() + ", with a " + discountCodeBean.getPercentage() +
-                    "% off (up to " + discountCodeBean.getLimitDays() + " days)");
+                    "Use the following code" + discountCodeBean.getCode() + " to purchase from " + seriesBean.getTitle() + ", with a " + discountCodeBean.getDiscountBean().getPercentage() +
+                    "% off (up to " + discountCodeBean.getDiscountBean().getLimitDays() + " days)");
 
             // Send message
             Transport.send(message);

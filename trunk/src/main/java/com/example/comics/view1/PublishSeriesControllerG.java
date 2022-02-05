@@ -149,15 +149,15 @@ public class PublishSeriesControllerG {
 
     }
 
-    private void changeBagdeIconI() {
+    public void changeIcon(String path){
         FileChooser fc = new FileChooser();
         fc.getExtensionFilters().add(new FileChooser.ExtensionFilter(PNG,PNG));
         File f = fc.showOpenDialog(null);
         if(f!=null){
-            badgeIconPathI = f.getAbsolutePath();
+            path = f.getAbsolutePath();
             InputStream inputStream = null;
             try {
-                inputStream = new FileInputStream(badgeIconPathI);
+                inputStream = new FileInputStream(path);
             } catch (FileNotFoundException e) {
                 e.printStackTrace();
             } finally {
@@ -171,94 +171,51 @@ public class PublishSeriesControllerG {
         }
     }
 
+    private void changeBagdeIconI() {
+        changeIcon(badgeIconPathI);
+    }
+
     private void changeBagdeIconB() {
-        FileChooser fc = new FileChooser();
-        fc.getExtensionFilters().add(new FileChooser.ExtensionFilter(PNG,PNG));
-        File f = fc.showOpenDialog(null);
-        if(f!=null){
-            badgeIconPathB = f.getAbsolutePath();
-            InputStream inputStream = null;
-            try {
-                inputStream = new FileInputStream(badgeIconPathB);
-            } catch (FileNotFoundException e) {
-                e.printStackTrace();
-            }finally {
-                try {
-                    assert inputStream!=null;
-                    inputStream.close();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-            }
-        }
+       changeIcon(badgeIconPathB);
     }
 
     private void changeBagdeIconE() {
-        FileChooser fc = new FileChooser();
-        fc.getExtensionFilters().add(new FileChooser.ExtensionFilter(PNG,PNG));
-        File f = fc.showOpenDialog(null);
-        if(f!=null){
-            badgeIconPathE = f.getAbsolutePath();
-            InputStream inputStream = null;
-            try {
-                inputStream = new FileInputStream(badgeIconPathE);
-            } catch (FileNotFoundException e) {
-                e.printStackTrace();
-            }finally {
-                try {
-                    assert inputStream!=null;
-                    inputStream.close();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-            }
-        }
+        changeIcon(badgeIconPathE);
     }
 
     private void applyObjectives() {
         objectiveBeanList.clear();
 
-        ObjectiveBean objectiveBean;
-        DiscountBean discountBean1;
-        BadgeBean badgeBean1;
+        DiscountBean1 discountBean1 = new DiscountBean1();
+        BadgeBean1 badgeBean1 = new BadgeBean1();
+        ObjectiveBean1 objectiveBean = new ObjectiveBean1();
 
         if(isThisObjectiveCompiled(Levels.BEGINNER)){
-            discountBean1 = new DiscountBean1();
+
             discountBean1.setPercentage(Float.parseFloat(tfDiscountPercB.getText()));
             discountBean1.setLimitDays(Integer.parseInt(tfDiscountDaysB.getText()));
 
-            badgeBean1 = new BadgeBean1();
             badgeBean1.setName(tfBadgeNameB.getText());
             badgeBean1.setIcon(new Image(badgeIconPathB));
 
-            objectiveBean = new ObjectiveBean1();
             objectiveBean.setLevel(Levels.BEGINNER);
             objectiveBean.setType(choiceBoxTypeB.getValue());
-            objectiveBean.setDiscountBean(discountBean1);
-            objectiveBean.setBadgeBean(badgeBean1);
             objectiveBean.setRequirement(Integer.parseInt(tfTargetNumberB.getText()));
             try {
                 objectiveBean.setBadgeIconInputStream(new FileInputStream(badgeIconPathB));
             } catch (FileNotFoundException e) {
                 e.printStackTrace();
             }
-
-            objectiveBeanList.add(objectiveBean);
         }
         if(isThisObjectiveCompiled(Levels.INTERMEDIATE)){
-            discountBean1 = new DiscountBean1();
             discountBean1.setPercentage(Float.parseFloat(tfDiscountPercI.getText()));
             discountBean1.setLimitDays(Integer.parseInt(tfDiscountDaysI.getText()));
 
-            badgeBean1 = new BadgeBean1();
             badgeBean1.setName(tfBadgeNameI.getText());
             badgeBean1.setIcon(new Image(badgeIconPathI));
 
-            objectiveBean = new ObjectiveBean1();
             objectiveBean.setLevel(Levels.INTERMEDIATE);
             objectiveBean.setType(choiceBoxTypeI.getValue());
-            objectiveBean.setDiscountBean(discountBean1);
-            objectiveBean.setBadgeBean(badgeBean1);
             objectiveBean.setRequirement(Integer.parseInt(tfTargetNumberI.getText()));
             try {
                 objectiveBean.setBadgeIconInputStream(new FileInputStream(badgeIconPathI));
@@ -266,32 +223,27 @@ public class PublishSeriesControllerG {
                 e.printStackTrace();
             }
 
-            objectiveBeanList.add(objectiveBean);
         }
         if(isThisObjectiveCompiled(Levels.EXPERT)){
-            discountBean1 = new DiscountBean1();
             discountBean1.setPercentage(Float.parseFloat(tfDiscountPercE.getText()));
             discountBean1.setLimitDays(Integer.parseInt(tfDiscountDaysE.getText()));
 
-            badgeBean1 = new BadgeBean1();
             badgeBean1.setName(tfBadgeNameE.getText());
             badgeBean1.setIcon(new Image(badgeIconPathE));
 
-            objectiveBean = new ObjectiveBean1();
             objectiveBean.setLevel(Levels.EXPERT);
             objectiveBean.setType(choiceBoxTypeE.getValue());
-            objectiveBean.setDiscountBean(discountBean1);
-            objectiveBean.setBadgeBean(badgeBean1);
             objectiveBean.setRequirement(Integer.parseInt(tfTargetNumberE.getText()));
             try {
                 objectiveBean.setBadgeIconInputStream(new FileInputStream(badgeIconPathE));
             } catch (FileNotFoundException e) {
                 e.printStackTrace();
             }
-
-            objectiveBeanList.add(objectiveBean);
         }
 
+        objectiveBean.setDiscountBean(discountBean1);
+        objectiveBean.setBadgeBean(badgeBean1);
+        objectiveBeanList.add(objectiveBean);
         closeObjectives();
     }
 

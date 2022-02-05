@@ -8,7 +8,7 @@ public class ReviewsObjective extends Objective{
     private int requiredReviews;
 
     public ReviewsObjective(){
-
+        //costruttore
     }
 
     public ReviewsObjective(Badge badge, Discount discount, int requiredReviews){

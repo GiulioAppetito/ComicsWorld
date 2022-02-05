@@ -1,5 +1,6 @@
 package com.example.comics.model.fagioli.bundle;
 
+import com.example.comics.model.fagioli.DiscountBean;
 import com.example.comics.model.fagioli.DiscountCodeBean;
 
 import java.time.LocalDate;
@@ -7,9 +8,7 @@ import java.time.LocalDate;
 public class DiscountCodeBundle implements DiscountCodeBean {
 
     private String code;
-    private Float percentage;
-    private LocalDate expiringDate;
-    private int limitDays;
+    private DiscountBean discountBean;
 
     @Override
     public String getCode() {
@@ -22,32 +21,12 @@ public class DiscountCodeBundle implements DiscountCodeBean {
     }
 
     @Override
-    public void setPercentage(Float percentage) {
-        this.percentage = percentage;
+    public DiscountBean getDiscountBean() {
+        return discountBean;
     }
 
     @Override
-    public Float getPercentage() {
-        return this.percentage;
-    }
-
-    @Override
-    public LocalDate getExpiringDate() {
-        return this.expiringDate;
-    }
-
-    @Override
-    public void setExpiringDate(LocalDate expiringDate) {
-        this.expiringDate = expiringDate;
-    }
-
-    @Override
-    public int getLimitDays() {
-        return this.limitDays;
-    }
-
-    @Override
-    public void setLimitDays(int limitDays) {
-        this.limitDays = limitDays;
+    public void setDiscountBean(DiscountBean discountBean) {
+        this.discountBean = discountBean;
     }
 }

@@ -2,6 +2,7 @@ package com.example.comics.model;
 
 
 public class Discount {
+
     private final Float percentage;
     private int limitDays;
 

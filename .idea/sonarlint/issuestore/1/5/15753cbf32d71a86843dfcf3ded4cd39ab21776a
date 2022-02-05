@@ -1,0 +1,6 @@
+
+N	java:S106."9Replace this use of System.out or System.err by a logger.(¯·ò•
+N	java:S1062"9Replace this use of System.out or System.err by a logger.(ð¥Å“
+N	java:S1066"9Replace this use of System.out or System.err by a logger.(ç®ÓÃ
+g
+java:S1192."QDefine a constant instead of duplicating this literal "PAYPALBOUNDARY: " 3 times.(¯·ò•

@@ -1,0 +1,29 @@
+
+j
+java:S3008("TRename this field "FIRSTNAME" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(õóñ
+n
+java:S3008)"SRename this field "LASTNAME" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(öà«èüÿÿÿÿ
+o
+java:S3008*"RRename this field "EXPENSE" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(é¸à‘8§„Ó¤ì/
+A
+java:S3010/"&Remove this assignment of "FIRSTNAME".(È‰êÑøÿÿÿÿ
+;
+java:S30100"%Remove this assignment of "LASTNAME".(è½å±
+F
+java:S30101"$Remove this assignment of "EXPENSE".(½€õûÿÿÿÿ8­„Ó¤ì/
+X
+java:S1612<"BReplace this lambda with method reference 'this::convalidateCard'.(È÷ëü
+S	java:S106@"9Replace this use of System.out or System.err by a logger.(×â„çÿÿÿÿÿ
+S	java:S106J"9Replace this use of System.out or System.err by a logger.(Š•éùÿÿÿÿ
+\
+java:S1128"FRemove this unused import 'com.example.comics.view1.LoginControllerG'.(½ãÆ©
+N
+java:S1128"3Remove this unused import 'javafx.fxml.FXMLLoader'.(À‡ô³úÿÿÿÿ
+E
+java:S1128"/Remove this unused import 'javafx.scene.Scene'.(Õü²
+P
+java:S1128"5Remove this unused import 'javafx.scene.layout.Pane'.(êÄƒÄşÿÿÿÿ
+K
+java:S1128"0Remove this unused import 'java.io.IOException'.(ªº»Úıÿÿÿÿ
+D
+java:S1128")Remove this unused import 'java.net.URL'.(ñìÁ„üÿÿÿÿ

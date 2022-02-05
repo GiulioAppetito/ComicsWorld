@@ -6,6 +6,7 @@ import com.example.comics.model.fagioli.*;
 import com.example.comics.model.*;
 import com.example.comics.model.dao.SeriesDAO;
 import com.example.comics.model.fagioli.bundle.AccountBundle;
+import com.example.comics.model.fagioli.bundle.DiscountBundle;
 import com.example.comics.model.fagioli.bundle.DiscountCodeBundle;
 
 public class PostReviewController{
@@ -62,11 +63,14 @@ public class PostReviewController{
                     accountBean.setEmail(UserLogin.getInstance().getAccount().getEmail());
                     accountBean.setProPic(UserLogin.getInstance().getAccount().getProPic());
 
+                    DiscountBean discountBean = new DiscountBundle();
+                    discountBean.setLimitDays(discountCode.getDiscount().getLimitDays());
+                    discountBean.setPercentage(discountCode.getDiscount().getPercentage());
+
+
                     DiscountCodeBean discountCodeBean = new DiscountCodeBundle();
                     discountCodeBean.setCode(discountCode.getCode());
-                    discountCodeBean.setExpiringDate(discountCode.getExpiringDate());
-                    discountCodeBean.setPercentage(discountCode.getDiscount().getPercentage());
-                    discountCodeBean.setLimitDays(discountCode.getDiscount().getLimitDays());
+                    discountCodeBean.setDiscountBean(discountBean);
 
                     PostReviewReaderBoundary postReviewReaderBoundary = new PostReviewReaderBoundary();
                     postReviewReaderBoundary.sendEmailForDiscountCode(accountBean, seriesBean, discountCodeBean);
