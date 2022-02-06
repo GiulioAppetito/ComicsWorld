@@ -34,15 +34,6 @@ public class ReaderProfileControllerG implements AccountObserver {
     @FXML
     private Button btnEdit;
 
-    @FXML
-    private Label title;
-
-    @FXML
-    private ImageView cover;
-
-
-    @FXML
-    private HBox noPurchasePane;
 
 
     @FXML
@@ -52,17 +43,6 @@ public class ReaderProfileControllerG implements AccountObserver {
         lblUsername.setText(UserLogin.getInstance().getAccount().getLastName());
         ivProPic.setImage(UserLogin.getInstance().getAccount().getProPic());
 
-        if(UserLogin.getInstance().getReader().getLatestPurchase()!=null){
-
-            cover.setImage(UserLogin.getInstance().getReader().getLatestPurchase().getCover());
-            title.setText(UserLogin.getInstance().getReader().getLatestPurchase().getTitle());
-            noPurchasePane.setVisible(false);
-
-        }else{
-            noPurchasePane.setVisible(true);
-            cover.setVisible(false);
-            title.setVisible(false);
-        }
 
         AccountSubject.attach(this);
 
@@ -109,12 +89,6 @@ public class ReaderProfileControllerG implements AccountObserver {
     public void update() {
         lblName.setText(UserLogin.getInstance().getAccount().getFirstName());
         lblUsername.setText(UserLogin.getInstance().getAccount().getUsername());
-
-        //aggiorna serie purchased
-
-        cover.setImage(UserLogin.getInstance().getReader().getLatestPurchase().getCover());
-        title.setText(UserLogin.getInstance().getReader().getLatestPurchase().getTitle());
-        noPurchasePane.setVisible(false);
     }
 
 }

@@ -56,6 +56,9 @@ public class ReaderHomeControllerG extends HomeControllerG implements AccountObs
     @FXML
     private Pane paymentPane;
 
+    @FXML
+    private Button btnOrders;
+
     private static final String STYLE = ".button2";
     private static final String STYLE2 = "-fx-background-color: #5DADE2; -fx-background-radius: 20";
 
@@ -88,9 +91,19 @@ public class ReaderHomeControllerG extends HomeControllerG implements AccountObs
         btnSettings.setOnAction(event -> openSettings());
         btnToRead.setOnAction(event -> openToRead());
         btnReading.setOnAction(event -> openReading());
+        btnOrders.setOnAction(event -> openOrders());
         userBox.setOnMouseClicked(event -> openProfile());
         homeIcon.setOnMouseClicked(event -> openFeed());
 
+    }
+
+    private void openOrders() {
+        FxmlLoader object = new FxmlLoader();
+        Pane view = object.getPage("ordershystory");
+        mainPane.setCenter(view);
+
+        resetButtons();
+        btnOrders.setStyle(STYLE2);
     }
 
     private void openFollowing() {
@@ -135,7 +148,6 @@ public class ReaderHomeControllerG extends HomeControllerG implements AccountObs
 
     }
 
-
     @Override
     public void openSettings() {
         super.openSettings();
@@ -176,7 +188,7 @@ public class ReaderHomeControllerG extends HomeControllerG implements AccountObs
         btnFav.setStyle(STYLE);
         btnReading.setStyle(STYLE);
         btnToRead.setStyle(STYLE);
-
+        btnOrders.setStyle(STYLE);
     }
 
 
@@ -184,10 +196,6 @@ public class ReaderHomeControllerG extends HomeControllerG implements AccountObs
     public void update() {
         lblName.setText(UserLogin.getInstance().getAccount().getUsername());
         proPic.setImage(UserLogin.getInstance().getAccount().getProPic());
-    }
-
-    public void updateOnPayment(){
-        openPayment();
     }
 
 
