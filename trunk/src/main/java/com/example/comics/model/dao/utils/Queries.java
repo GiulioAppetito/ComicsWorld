@@ -328,4 +328,10 @@ public class Queries {
         String updateStatement = String.format("UPDATE users SET purchase = '%s' WHERE username = '%s' ", series.getTitle(), account.getUsername());
         stmt.executeUpdate(updateStatement);
     }
+
+    public static ResultSet retreiveOrdersByReader(Statement stmt, Reader reader) throws SQLException {
+        String selectStatement = String.format("SELECT * FROM orders WHERE (reader = '%s')",reader.getUsername());
+        System.out.println(selectStatement);
+        return stmt.executeQuery(selectStatement);
+    }
 }
