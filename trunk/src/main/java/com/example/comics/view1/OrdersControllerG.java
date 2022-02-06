@@ -22,7 +22,7 @@ public class OrdersControllerG {
 
         int size = orders.size();
 
-        int columns = 3;
+        int columns = 2;
         int i=1;
         for(int j=0; j<size; j++) {
             FXMLLoader fxmlLoader = new FXMLLoader();
