@@ -323,4 +323,9 @@ public class Queries {
         System.out.println(deleteStatement);
         stmt.executeUpdate(deleteStatement);
     }
+
+    public static void changeLatestPurchaseSeries(Statement stmt, Series series, Account account) throws SQLException {
+        String updateStatement = String.format("UPDATE users SET purchase = '%s' WHERE username = '%s' ", series.getTitle(), account.getUsername());
+        stmt.executeUpdate(updateStatement);
+    }
 }

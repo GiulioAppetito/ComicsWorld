@@ -6,6 +6,7 @@ import com.example.comics.model.DiscountCode;
 import com.example.comics.model.Series;
 import com.example.comics.model.UserLogin;
 import com.example.comics.model.dao.DiscountCodeDAO;
+import com.example.comics.model.dao.SeriesDAO;
 import com.example.comics.model.exceptions.DiscountCodeException;
 import com.example.comics.model.exceptions.InvalidPaymentException;
 import com.example.comics.model.fagioli.AccountBean;
@@ -65,12 +66,22 @@ public class BuyComicController {
 
     public void completedPayment(SeriesBean seriesBean){
 
+        Series latestPurchase = null;
         //cambia l'ultima purchase del reader
         for(Series series : seriesBean.getAuthor().getPublishedSeries()){
             if(series.getTitle().equals(seriesBean.getTitle())){
-                UserLogin.getInstance().getReader().setLatestPurchase(series);
+                latestPurchase = series;
             }
         }
+
+        UserLogin.getInstance().getReader().setLatestPurchase(latestPurchase);
+
+        //salva latestPurchase sul db
+        Series finalLatestPurchase = latestPurchase;
+        new Thread(()-> {
+            SeriesDAO seriesDAO = new SeriesDAO();
+            seriesDAO.changeLatestPurchase(finalLatestPurchase);
+        }).start();
 
         //mail all'autore
         BuyComicsAuthorBoundary buyComicsAuthorBoundary = new BuyComicsAuthorBoundary();

@@ -497,4 +497,35 @@ public class SeriesDAO {
         return series;
 
     }
+
+    public void changeLatestPurchase(Series series) {
+
+        Statement stmt = null;
+        Connection conn = null;
+
+        try {
+
+            // STEP 3: apertura connessione
+            conn = DriverManager.getConnection(DB_URL, USER, PASS);
+            stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
+            // STEP 4.2: creazione ed esecuzione della query
+            Queries.changeLatestPurchaseSeries(stmt,series,UserLogin.getInstance().getAccount());
+
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }finally {
+            try {
+                assert conn != null;
+                conn.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+            try {
+                assert stmt!=null;
+                stmt.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+    }
 }
