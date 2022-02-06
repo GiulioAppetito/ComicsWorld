@@ -249,6 +249,14 @@ public class Reader extends Account{
         return null;
     }
 
+    public List<Order> getOrdersHistory() {
+        return ordersHistory;
+    }
+
+    public void setOrdersHistory(List<Order> ordersHistory) {
+        this.ordersHistory = ordersHistory;
+    }
+
     /*
     public Badge getLatestBadge(){
         return latestBadge;

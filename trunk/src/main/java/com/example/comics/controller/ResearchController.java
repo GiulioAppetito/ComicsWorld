@@ -108,6 +108,29 @@ public class ResearchController {
         return badgeBeans;
     }
 
+    public List<OrderBean> getOrders() {
+
+        List<OrderBean> orderBeans = new ArrayList<>();
+        List<Series> series;
+        OrderBundle orderBundle;
+
+        List<Order> orders = UserLogin.getInstance().getReader().getOrdersHistory();
+        for(int i=0; i<orders.size();i++){
+            orderBundle = new OrderBundle();
+            orderBundle.setExpense(orders.get(i).getExpense());
+            orderBundle.setDate(orderBeans.get(i).getDate());
+
+            series = new ArrayList<>();
+            series.add(orders.get(i).getSeries());
+            SeriesBean seriesBean = getSeriesBeans(series).get(0);
+
+            orderBundle.setSeries(seriesBean);
+            orderBeans.add(orderBundle);
+        }
+
+        return orderBeans;
+    }
+
     public List<AuthorBean> getFollowedAuthors() {
 
         List<AuthorBean> authorBeans = new ArrayList<>();
