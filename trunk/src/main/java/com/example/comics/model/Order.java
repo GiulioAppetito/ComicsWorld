@@ -7,6 +7,10 @@ public class Order {
     private LocalDate date;
     private Float expense;
 
+    public Order(Series series){
+        this.series = series;
+    }
+
     public Series getSeries() {
         return series;
     }
