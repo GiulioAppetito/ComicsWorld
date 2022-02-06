@@ -7,7 +7,9 @@ import javafx.scene.image.Image;
 import java.io.InputStream;
 import java.sql.*;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class ReaderDAO {
 
@@ -17,7 +19,7 @@ public class ReaderDAO {
 
     private List<Series> favSeries = new ArrayList<>();
     private List<Series> toReadSeries = new ArrayList<>();
-    private List<DiscountCode> discountCodes = new ArrayList<>();
+    private Map<DiscountCode,Series> discountCodes = new HashMap<>();
     private List<Author> followedAuthors = new ArrayList<>();
     private List<Series> readingSeries = new ArrayList<>();
 
