@@ -5,7 +5,6 @@ import com.example.comics.model.dao.DiscountCodeDAO;
 import com.example.comics.model.dao.ReaderDAO;
 
 import java.sql.SQLException;
-import java.util.ArrayList;
 import java.util.List;
 
 public class Reader extends Account{
@@ -16,8 +15,11 @@ public class Reader extends Account{
     private List<Badge> badges;
     private List<Author> followedAuthors;
     private List<DiscountCode> discountCodes;
+    private Series latestPurchase;
 
-    public Reader(List<Series> favourites, List<Series> toRead, List<Series> reading, String username,List<Author> followedAuthors, List<DiscountCode> discountCodes){
+    private static Badge latestBadge = null;
+
+    public Reader(List<Series> favourites, List<Series> toRead, List<Series> reading, String username,List<Author> followedAuthors, List<DiscountCode> discountCodes, Series latestPurchase){
 
         this.setUsername(username);
         this.favourites = favourites;
@@ -25,6 +27,8 @@ public class Reader extends Account{
         this.reading = reading;
         this.followedAuthors = followedAuthors;
         this.discountCodes = discountCodes;
+
+        this.latestPurchase = latestPurchase;
 
         BadgeDAO badgesDAO = new BadgeDAO();
         this.badges = badgesDAO.retrieveAchievedBadges(username);
@@ -70,8 +74,16 @@ public class Reader extends Account{
 
     public void addAchievedBadge(Badge badge) {
         this.badges.add(badge);
-        ReaderDAO readerDAO = new ReaderDAO();
-        readerDAO.saveAchievedBadge(badge, this);
+        latestBadge = badge;
+
+        new Thread(()->{
+            ReaderDAO readerDAO = new ReaderDAO();
+            readerDAO.saveAchievedBadge(badge, this);
+        }).start();
+
+
+
+        notifyObservers();
     }
 
     public void addDiscountCode(DiscountCode discountCode) {
@@ -220,10 +232,6 @@ public class Reader extends Account{
         return discountCodes;
     }
 
-    public void setDiscountCodes(List<DiscountCode> discountCodes) {
-        this.discountCodes = discountCodes;
-    }
-
     public void removeDiscountCode(DiscountCode codeToRemove) {
         for(DiscountCode discountCode : discountCodes){
             if(discountCode.getCode().equals(codeToRemove.getCode())){
@@ -241,5 +249,22 @@ public class Reader extends Account{
         return null;
     }
 
+    /*
+    public Badge getLatestBadge(){
+        return latestBadge;
+    }
+    */
 
+    public Series getLatestPurchase() {
+        return latestPurchase;
+    }
+
+    public void setLatestPurchase(Series newPurchase) {
+        this.latestPurchase = newPurchase;
+        notifyObservers();
+    }
+
+    public void failedPurchase(Series series) {
+        //mostrare pagamento fallito
+    }
 }

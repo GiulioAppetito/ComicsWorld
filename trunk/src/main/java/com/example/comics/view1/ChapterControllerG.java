@@ -3,6 +3,7 @@ package com.example.comics.view1;
 import com.example.comics.controller.BuyComicController;
 import com.example.comics.controller.MarkChapterAsReadController;
 import com.example.comics.controller.PostReviewController;
+import com.example.comics.controller.ResearchController;
 import com.example.comics.model.*;
 import com.example.comics.model.exceptions.DiscountCodeException;
 import com.example.comics.model.exceptions.InvalidPaymentException;
@@ -22,7 +23,7 @@ import javafx.scene.layout.VBox;
 import java.io.IOException;
 import java.util.List;
 
-public class ChapterControllerG implements ChapterObserver, ObjectiveObserver {
+public class ChapterControllerG implements ChapterObserver, AccountObserver{
 
     @FXML
     private VBox vbReviews;
@@ -377,28 +378,21 @@ public class ChapterControllerG implements ChapterObserver, ObjectiveObserver {
     private static final String STYLE = ".button2";
     private static final String STYLE2 = "-fx-background-color: #5DADE2; -fx-background-radius: 20";
 
-    private String chapterSeries;
-
 
     public void init(ChapterBean chapterBean, SeriesBean seriesBean){
 
-        ChapterSubject.attach(this);
-        ObjectiveSubject.attach(this);
+        ChapterSubject.attach(this, "reviews");
+        AccountSubject.attach(this);
         lblAuthor.setText("autore");
         lblChapterTitle.setText(chapterBean.getTitle());
         taDescription.setText(chapterBean.getDescription());
         taDescription.setEditable(false);
-        chapterSeries = seriesBean.getTitle();
         lblPrice.setText("€"+chapterBean.getPrice());
 
-        System.out.println("Ho letto il chapter: "+chapterBean.getRead());
-
         if(Boolean.TRUE.equals(chapterBean.getRead())){
-            System.out.println("[ChapterControllerG] You have read this chapter.");
             btnChapterRead.setStyle(STYLE2);
             btnChapterRead.setOnAction(event -> removeChapterFromRead(seriesBean,chapterBean));
         }else{
-            System.out.println("[ChapterControllerG] You didn't read this chapter.");
             btnChapterRead.setStyle(STYLE);
             btnChapterRead.setOnAction(event -> markChapterAsRead(seriesBean,chapterBean));
         }
@@ -550,15 +544,12 @@ public class ChapterControllerG implements ChapterObserver, ObjectiveObserver {
     }
 
     private void removeChapterFromRead(SeriesBean seriesBean, ChapterBean chapterBean) {
-        System.out.println("[ChapterControllerG] : doing removeChapterFromRead ");
         btnChapterRead.setStyle(STYLE);
         MarkChapterAsReadController controller = new MarkChapterAsReadController();
         controller.unmarkChapterAsRead(seriesBean,chapterBean);
         btnChapterRead.setOnAction(event -> markChapterAsRead(seriesBean,chapterBean));
-
     }
     private void markChapterAsRead(SeriesBean seriesBean,ChapterBean chapterBean) {
-        System.out.println("Doing add chapter as read");
         MarkChapterAsReadController controller = new MarkChapterAsReadController();
         controller.markChapterAsRead(seriesBean,chapterBean);
         btnChapterRead.setStyle(STYLE2);
@@ -580,21 +571,20 @@ public class ChapterControllerG implements ChapterObserver, ObjectiveObserver {
 
         postReviewController.post(reviewBean, chapterBean, seriesBean);
 
-
         paneInsertReview.setVisible(false);
 
     }
 
     public void openEditor(){
-
         zeroStars();
         paneInsertReview.setVisible(true);
         txtAreaComment.setText("");
         newBadgeWonPane.setVisible(false);
-
     }
+
+
     @Override
-    public void updateReviews(ReviewBean reviewBean) {
+    public void update(ReviewBean reviewBean) {
         //add della review sulla lista
         FXMLLoader fxmlLoader = new FXMLLoader();
         fxmlLoader.setLocation(getClass().getResource("review.fxml"));
@@ -608,12 +598,18 @@ public class ChapterControllerG implements ChapterObserver, ObjectiveObserver {
             e.printStackTrace();
         }
     }
+
+
     @Override
-    public void update(BadgeBean badgeBean) {
+    public void update() {
+        ResearchController researchController = new ResearchController();
+        BadgeBean badgeBean = researchController.getLatestBadge();
+        if(badgeBean==null){
+            return;
+        }
         newBadgeWonPane.setVisible(true);
         lblBadgeName.setText(badgeBean.getName());
         badgeIconView.setImage(badgeBean.getIcon());
-        lblBadgeSeries.setText(chapterSeries);
     }
 
 }

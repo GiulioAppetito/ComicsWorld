@@ -777,4 +777,5 @@ public class FeedControllerG2 implements AccountObserver {
     public void update() {
         initProfile();
     }
+
 }

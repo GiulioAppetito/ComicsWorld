@@ -3,10 +3,7 @@ package com.example.comics.controller;
 import com.example.comics.model.*;
 import com.example.comics.model.fagioli.*;
 import com.example.comics.model.dao.SeriesDAO;
-import com.example.comics.model.fagioli.bundle.AuthorBundle;
-import com.example.comics.model.fagioli.bundle.BadgeBundle;
-import com.example.comics.model.fagioli.bundle.ChapterBundle;
-import com.example.comics.model.fagioli.bundle.SeriesBundle;
+import com.example.comics.model.fagioli.bundle.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -26,7 +23,6 @@ public class ResearchController {
 
     public List<SeriesBean> getReadingSeries() {
         List<Series> toReadSeries = UserLogin.getInstance().getReader().getReading();
-        System.out.println("[Research controller] getReadingSeries lenght : "+toReadSeries.size());
         return getSeriesBeans(toReadSeries);
     }
 
@@ -130,6 +126,19 @@ public class ResearchController {
         }
 
         return authorBeans;
+    }
+
+    public BadgeBean getLatestBadge(){
+
+        int size = UserLogin.getInstance().getReader().getBadges().size();
+        Badge badge = UserLogin.getInstance().getReader().getBadges().get(size);
+        if(badge == null){
+            return null;
+        }
+        BadgeBundle badgeBundle = new BadgeBundle();
+        badgeBundle.setIcon(badge.getIcon());
+        badgeBundle.setName(badge.getName());
+        return badgeBundle;
     }
 
 }

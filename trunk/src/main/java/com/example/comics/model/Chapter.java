@@ -21,6 +21,7 @@ public class Chapter extends ChapterSubject {
     private Boolean isRead;
     private Float price;
 
+
     public Chapter(String title){
         Thread reviewsThread, ratingThread;
 
@@ -84,20 +85,24 @@ public class Chapter extends ChapterSubject {
     public void addReview(Series series, String comment, int rating, Reader reader){
         Review review = new Review(comment, rating, reader);
         reviews.add(review);
-        ReviewDAO reviewDAO = new ReviewDAO();
-        try {
-            reviewDAO.saveReview(review,this, series);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+
+        new Thread(()-> {
+            ReviewDAO reviewDAO = new ReviewDAO();
+            try {
+                reviewDAO.saveReview(review,this, series);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }).start();
+
         this.averageRating = calculateAverageRating();
 
-        ReviewBean reviewBean = new ReviewBundle();
-        reviewBean.setRating(rating);
-        reviewBean.setComment(comment);
-        reviewBean.setAccount(reader);
+        ReviewBundle reviewBundle = new ReviewBundle();
+        reviewBundle.setRating(rating);
+        reviewBundle.setComment(comment);
+        reviewBundle.setAccount(reader);
 
-        notifyObserversNewReview(reviewBean);
+        notifyObserversNewReview(reviewBundle);
     }
 
     public int calculateAverageRating() {
@@ -135,4 +140,6 @@ public class Chapter extends ChapterSubject {
     public void setPrice(Float price) {
         this.price = price;
     }
+
+
 }

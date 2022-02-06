@@ -3,6 +3,7 @@ package com.example.comics.controller;
 import com.example.comics.controller.boundaries.PaymentBoundary;
 import com.example.comics.controller.boundaries.BuyComicsAuthorBoundary;
 import com.example.comics.model.DiscountCode;
+import com.example.comics.model.Series;
 import com.example.comics.model.UserLogin;
 import com.example.comics.model.dao.DiscountCodeDAO;
 import com.example.comics.model.exceptions.DiscountCodeException;
@@ -63,6 +64,14 @@ public class BuyComicController {
     }
 
     public void completedPayment(SeriesBean seriesBean){
+
+        //cambia l'ultima purchase del reader
+        for(Series series : seriesBean.getAuthor().getPublishedSeries()){
+            if(series.getTitle().equals(seriesBean.getTitle())){
+                UserLogin.getInstance().getReader().setLatestPurchase(series);
+            }
+        }
+
         //mail all'autore
         BuyComicsAuthorBoundary buyComicsAuthorBoundary = new BuyComicsAuthorBoundary();
         buyComicsAuthorBoundary.sendEmailForSoldChapter(seriesBean);
@@ -73,6 +82,12 @@ public class BuyComicController {
 
     public void failedPayment(SeriesBean seriesBean) {
         //mostri il pagamento non avvenuto
+        for(Series series : seriesBean.getAuthor().getPublishedSeries()){
+            if(series.getTitle().equals(seriesBean.getTitle())){
+                UserLogin.getInstance().getReader().failedPurchase(series);
+            }
+        }
+
         System.out.println("Payment of "+seriesBean.getTitle()+" went wrong");
     }
 

@@ -1,6 +1,6 @@
 package com.example.comics.model;
 
-public abstract class Objective extends ObjectiveSubject{
+public abstract class Objective{
 
     protected Levels level;
     protected Discount discount;
