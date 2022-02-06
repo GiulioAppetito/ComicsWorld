@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<HBox prefHeight="153.0" prefWidth="362.0" spacing="15.0" stylesheets="@../../../../css/css1/fullpackstyling.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.comics.view1.OrderCardControllerG">
+    <ImageView fx:id="imgCover" fitHeight="138.0" fitWidth="116.0" pickOnBounds="true" preserveRatio="true">
+        <HBox.margin>
+            <Insets bottom="10.0" left="20.0" top="15.0" />
+        </HBox.margin>
+
+        <Image url="@../../../../img/img1/2-1.jpg" />
+    </ImageView>
+   <VBox>
+      <HBox.margin>
+         <Insets bottom="30.0" left="15.0" top="35.0" />
+      </HBox.margin>
+      <children>
+          <Label fx:id="lblSeries" alignment="CENTER" prefHeight="32.0" prefWidth="179.0" text="Series">
+              <font>
+                  <Font name="Berlin Sans FB" size="20.0" />
+              </font>
+            <VBox.margin>
+               <Insets bottom="10.0" />
+            </VBox.margin>
+          </Label>
+         <VBox>
+            <children>
+               <Label fx:id="lblPrice" alignment="CENTER" prefHeight="32.0" prefWidth="179.0" text="Price">
+                  <font>
+                     <Font name="Berlin Sans FB" size="20.0" />
+                  </font>
+                  <VBox.margin>
+                     <Insets bottom="10.0" />
+                  </VBox.margin>
+               </Label>
+            </children>
+         </VBox>
+         <VBox>
+            <children>
+               <Label fx:id="lblDate" alignment="CENTER" prefHeight="32.0" prefWidth="179.0" text="Date">
+                  <font>
+                     <Font name="Berlin Sans FB" size="20.0" />
+                  </font>
+               </Label>
+            </children>
+         </VBox>
+      </children>
+   </VBox>
+    <styleClass>
+        <String fx:value="white-background" />
+        <String fx:value="oval-layout" />
+        <String fx:value="button2" />
+    </styleClass>
+</HBox>
