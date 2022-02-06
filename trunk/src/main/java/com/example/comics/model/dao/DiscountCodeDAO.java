@@ -64,6 +64,9 @@ public class DiscountCodeDAO {
 
                 Series series;
                 SeriesDAO seriesDAO = new SeriesDAO();
+                if(!rs2.first()){
+                    return discountCodes;
+                }
                 series = seriesDAO.retrieveSeries(rs2.getString("seriesTitle"));
 
                 DiscountCode discountCode = new DiscountCode(discount,code,expiringDate);

@@ -51,12 +51,6 @@ public class ReaderHomeControllerG extends HomeControllerG implements AccountObs
     private Label lblName;
 
     @FXML
-    private Button btnClosePayment;
-
-    @FXML
-    private Pane paymentPane;
-
-    @FXML
     private Button btnOrders;
 
     private static final String STYLE = ".button2";
@@ -79,7 +73,6 @@ public class ReaderHomeControllerG extends HomeControllerG implements AccountObs
     public void init(){
 
         openFeed();
-        closePayment();
 
         lblTitle.setOnMouseClicked(event -> openFeed());
         lblName.setText(UserLogin.getInstance().getAccount().getUsername());
@@ -173,12 +166,6 @@ public class ReaderHomeControllerG extends HomeControllerG implements AccountObs
         btnFav.setStyle(STYLE2);
     }
 
-    public void openPayment(){
-        paymentPane.setVisible(true);
-    }
-    public void closePayment(){
-        paymentPane.setVisible(false);
-    }
 
     @Override
     public void resetButtons(){

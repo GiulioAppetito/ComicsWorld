@@ -1,7 +1,6 @@
 package com.example.comics.view1;
 
 import com.example.comics.controller.ResearchController;
-import com.example.comics.model.fagioli.AuthorBean;
 import com.example.comics.model.fagioli.OrderBean;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -19,7 +18,7 @@ public class OrdersControllerG {
     public void initialize(){
 
         ResearchController researchController = new ResearchController();
-        List<OrderBean> orders = researchController.getOrders();
+        List<OrderBean> orders = researchController.getUserOrders();
 
         int size = orders.size();
 

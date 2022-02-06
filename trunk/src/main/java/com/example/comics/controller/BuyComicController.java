@@ -22,7 +22,7 @@ public class BuyComicController {
     public void buyComic(SeriesBean seriesBean, ChapterBean chapterBean, DiscountCodeBean discountCodeBean) throws InvalidPaymentException, DiscountCodeException {
 
         DiscountCode discountCode;
-        if(discountCodeBean.getCode() != null){
+        if(discountCodeBean != null){
             discountCode = UserLogin.getInstance().getReader().getDiscountCodeByCode(discountCodeBean.getCode());
             if(discountCode == null){
                 throw new DiscountCodeException("You don't own this discount code!");
@@ -51,15 +51,17 @@ public class BuyComicController {
         BuyComicsAuthorBoundary buyComicsAuthorBoundary = new BuyComicsAuthorBoundary();
         buyComicsAuthorBoundary.sendEmailForSoldChapter(seriesBean);
 
-        for(DiscountCode discountCode : UserLogin.getInstance().getReader().getDiscountCodes().keySet()){
-            if(discountCode.getCode().equals(discountCodeBean.getCode())){
-                UserLogin.getInstance().getReader().removeDiscountCode(discountCode);
+        if(discountCodeBean != null) {
+            for (DiscountCode discountCode : UserLogin.getInstance().getReader().getDiscountCodes().keySet()) {
+                if (discountCode.getCode().equals(discountCodeBean.getCode())) {
+                    UserLogin.getInstance().getReader().removeDiscountCode(discountCode);
 
-                new Thread(()->{
-                    DiscountCodeDAO discountCodeDAO = new DiscountCodeDAO();
-                    discountCodeDAO.deleteDiscountCode(UserLogin.getInstance().getReader(), discountCode);
-                }).start();
+                    new Thread(() -> {
+                        DiscountCodeDAO discountCodeDAO = new DiscountCodeDAO();
+                        discountCodeDAO.deleteDiscountCode(UserLogin.getInstance().getReader(), discountCode);
+                    }).start();
 
+                }
             }
         }
 
