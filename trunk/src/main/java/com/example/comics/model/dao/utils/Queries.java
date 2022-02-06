@@ -334,4 +334,10 @@ public class Queries {
         System.out.println(selectStatement);
         return stmt.executeQuery(selectStatement);
     }
+
+    public static ResultSet retreiveObjectivesByDiscountCode(Statement stmt, int objectiveID) throws SQLException {
+        String selectStatement = String.format("SELECT DISTINCT seriesTitle FROM objectives WHERE (objective_id = '%d')",objectiveID);
+        System.out.println(selectStatement);
+        return stmt.executeQuery(selectStatement);
+    }
 }

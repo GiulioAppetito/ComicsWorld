@@ -7,20 +7,21 @@ import com.example.comics.model.dao.ReaderDAO;
 
 import java.sql.SQLException;
 import java.util.List;
+import java.util.Map;
 
 public class Reader extends Account{
 
-    private List<Series> favourites;
-    private List<Series> toRead;
-    private List<Series> reading;
-    private List<Badge> badges;
-    private List<Author> followedAuthors;
-    private List<DiscountCode> discountCodes;
-    private List<Order> ordersHistory;
+    private final List<Series> favourites;
+    private final List<Series> toRead;
+    private final List<Series> reading;
+    private final List<Badge> badges;
+    private final List<Author> followedAuthors;
+    private final Map<DiscountCode,Series> discountCodes;
+    private final List<Order> ordersHistory;
 
     private static Badge latestBadge = null;
 
-    public Reader(List<Series> favourites, List<Series> toRead, List<Series> reading, String username,List<Author> followedAuthors, List<DiscountCode> discountCodes){
+    public Reader(List<Series> favourites, List<Series> toRead, List<Series> reading, String username,List<Author> followedAuthors, Map<DiscountCode,Series> discountCodes){
 
         this.setUsername(username);
         this.favourites = favourites;
@@ -230,12 +231,12 @@ public class Reader extends Account{
         this.reading.add(seriesToAdd);
     }
 
-    public List<DiscountCode> getDiscountCodes() {
+    public Map<DiscountCode,Series> getDiscountCodes() {
         return discountCodes;
     }
 
     public void removeDiscountCode(DiscountCode codeToRemove) {
-        for(DiscountCode discountCode : discountCodes){
+        for(DiscountCode discountCode : discountCodes.keySet()){
             if(discountCode.getCode().equals(codeToRemove.getCode())){
                 discountCodes.remove(discountCode);
             }
@@ -243,7 +244,7 @@ public class Reader extends Account{
     }
 
     public DiscountCode getDiscountCodeByCode(String code) {
-        for(DiscountCode discountCode : discountCodes){
+        for(DiscountCode discountCode : discountCodes.keySet()){
             if(discountCode.getCode().equals(code)){
                 return discountCode;
             }

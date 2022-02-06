@@ -51,7 +51,7 @@ public class BuyComicController {
         BuyComicsAuthorBoundary buyComicsAuthorBoundary = new BuyComicsAuthorBoundary();
         buyComicsAuthorBoundary.sendEmailForSoldChapter(seriesBean);
 
-        for(DiscountCode discountCode : UserLogin.getInstance().getReader().getDiscountCodes()){
+        for(DiscountCode discountCode : UserLogin.getInstance().getReader().getDiscountCodes().keySet()){
             if(discountCode.getCode().equals(discountCodeBean.getCode())){
                 UserLogin.getInstance().getReader().removeDiscountCode(discountCode);
 

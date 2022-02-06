@@ -3,13 +3,16 @@ package com.example.comics.model.dao;
 import com.example.comics.model.Discount;
 import com.example.comics.model.DiscountCode;
 import com.example.comics.model.Reader;
+import com.example.comics.model.Series;
 import com.example.comics.model.dao.utils.DatesConverter;
 import com.example.comics.model.dao.utils.Queries;
 
 import java.sql.*;
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class DiscountCodeDAO {
 
@@ -17,12 +20,12 @@ public class DiscountCodeDAO {
     private static final String PASS = "passwordanastasia";
     private static final String DB_URL = "jdbc:mysql://comics-world.ce9t0fxhansh.eu-west-2.rds.amazonaws.com:3306/ComicsWorld?autoReconnect=true&useSSL=false";
 
-    public List<DiscountCode> retreiveDiscountCodesByReader(String username) {
+    public Map<DiscountCode, Series> retreiveDiscountCodesByReader(String username) {
 
         Statement stmt = null;
         Connection conn = null;
 
-        List<DiscountCode> discountCodes = new ArrayList<>();
+        Map<DiscountCode,Series> discountCodes = new HashMap<>();
         String code;
         LocalDate expiringDate;
         Float percentage;
@@ -55,8 +58,16 @@ public class DiscountCodeDAO {
                 Discount discount = new Discount(percentage);
                 discount.setLimitDays(limitDays);
 
+                ResultSet rs2;
+                Statement stmt2 = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
+                rs2 = Queries.retreiveObjectivesByDiscountCode(stmt2,rs.getInt("objectiveID"));
+
+                Series series;
+                SeriesDAO seriesDAO = new SeriesDAO();
+                series = seriesDAO.retrieveSeries(rs2.getString("seriesTitle"));
+
                 DiscountCode discountCode = new DiscountCode(discount,code,expiringDate);
-                discountCodes.add(discountCode);
+                discountCodes.put(discountCode,series);
 
 
             } while (rs.next());
