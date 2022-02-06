@@ -108,7 +108,7 @@ public class ResearchController {
         return badgeBeans;
     }
 
-    public List<OrderBean> getOrders() {
+    public List<OrderBean> getUserOrders() {
 
         List<OrderBean> orderBeans = new ArrayList<>();
 

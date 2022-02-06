@@ -6,7 +6,9 @@ import com.example.comics.model.AccountSubject;
 import com.example.comics.model.fagioli.SeriesBean;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.control.Button;
 import javafx.scene.layout.GridPane;
+import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 
 import java.io.IOException;
@@ -15,7 +17,13 @@ import java.util.List;
 public class FeedControllerG implements AccountObserver {
 
     @FXML
-    public GridPane feedGrid;
+    private Button btnCloseOrderPane;
+
+    @FXML
+    private GridPane feedGrid;
+
+    @FXML
+    private Pane orderPane;
 
     private static FeedControllerG instance;
     private static List<SeriesBean> latestSeries;
@@ -39,6 +47,8 @@ public class FeedControllerG implements AccountObserver {
 
     public void init() {
 
+        orderPane.setVisible(false);
+        btnCloseOrderPane.setOnAction(event -> orderPane.setVisible(false));
         int size = latestSeries.size();
         int i=1;
         for(int j=0; j<size; j++) {
@@ -71,6 +81,6 @@ public class FeedControllerG implements AccountObserver {
 
     @Override
     public void update() {
-
+        orderPane.setVisible(true);
     }
 }

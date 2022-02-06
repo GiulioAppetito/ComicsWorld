@@ -1,6 +1,4 @@
 
-u
-Etrunk/src/main/java/com/example/comics/model/dao/DiscountCodeDAO.java,2\a\2a43bba4095430db21d2bd1e62767d1e1ab1c3bb
 v
 Ftrunk/src/main/java/com/example/comics/view1/FollowingControllerG.java,5\b\5b83aa37f1ae076a1d49a047a71aac1e675f370c
 
@@ -9,8 +7,6 @@ n
 >trunk/src/main/java/com/example/comics/model/dao/BadgeDAO.java,5\c\5c6bff5f7715bfb3aee28deec64036a8fdc1f276
 s
 Ctrunk/src/main/java/com/example/comics/model/fagioli/OrderBean.java,b\0\b0ec328a9f894b20595fe99e641b717f03b8f788
-w
-Gtrunk/src/main/java/com/example/comics/view1/FavouritesControllerG.java,7\9\795114fd6bd048af9c0d63656a226aa152a5de1c
 |
 Ltrunk/src/main/java/com/example/comics/model/fagioli/bundle/OrderBundle.java,0\b\0b33915c6ce9dd0fce3c1c2661661adc04470f28
 g
@@ -41,7 +37,3 @@ s
 Ctrunk/src/main/java/com/example/comics/model/dao/utils/Queries.java,d\6\d66fee4ea675fb08e5789d97b95e9d34a1c559d9
 o
 ?trunk/src/main/java/com/example/comics/model/dao/ReaderDAO.java,3\b\3bd4551b66716af31be8aa022e406ebae2bc3845
-z
-Jtrunk/src/main/java/com/example/comics/view1/ReaderProfileControllerG.java,9\d\9d55d09a3bc1211493d2067fe3a33b4ff83ca9f4
-q
-Atrunk/src/main/java/com/example/comics/view1/FeedControllerG.java,3\0\30f770410a71ec3e410810c53c6e2891d29a24c5
