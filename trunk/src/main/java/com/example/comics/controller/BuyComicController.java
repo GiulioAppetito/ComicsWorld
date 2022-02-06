@@ -6,7 +6,6 @@ import com.example.comics.model.DiscountCode;
 import com.example.comics.model.Series;
 import com.example.comics.model.UserLogin;
 import com.example.comics.model.dao.DiscountCodeDAO;
-import com.example.comics.model.dao.SeriesDAO;
 import com.example.comics.model.exceptions.DiscountCodeException;
 import com.example.comics.model.exceptions.InvalidPaymentException;
 import com.example.comics.model.fagioli.AccountBean;
@@ -21,24 +20,7 @@ public class BuyComicController {
 
     public void buyComic(SeriesBean seriesBean, ChapterBean chapterBean, DiscountCodeBean discountCodeBean) throws InvalidPaymentException, DiscountCodeException {
 
-        if(checkValidity(discountCodeBean)) {
-            //nel caso vada tutto a buon fine ...
-            //chiamo altra boundary per la carta
-            AccountBean accountBean = new AccountBundle();
-            accountBean.setFirstName(UserLogin.getInstance().getAccount().getFirstName());
-            accountBean.setLastName(UserLogin.getInstance().getAccount().getLastName());
-
-            PaymentBoundary buyComicBoundary = new PaymentBoundary();
-            buyComicBoundary.convalidPayment(accountBean, chapterBean, seriesBean);
-        }
-
-    }
-
-    private boolean checkValidity(DiscountCodeBean discountCodeBean) throws DiscountCodeException{
         DiscountCode discountCode;
-        //ricostruiscilo
-
-        //controllo del codice se è valido, se inserito
         if(discountCodeBean.getCode() != null){
             discountCode = UserLogin.getInstance().getReader().getDiscountCodeByCode(discountCodeBean.getCode());
             if(discountCode == null){
@@ -48,71 +30,54 @@ public class BuyComicController {
                 throw new DiscountCodeException("Your code is expired!");
             }
 
-            DiscountCode finalDiscountCode = discountCode;
-            new Thread(()-> {
-                deleteDiscountCode(finalDiscountCode);
-            }).start();
         }
 
-        return true;
+            //nel caso vada tutto a buon fine ...
+            //chiamo altra boundary per la carta
+            AccountBean accountBean = new AccountBundle();
+            accountBean.setFirstName(UserLogin.getInstance().getAccount().getFirstName());
+            accountBean.setLastName(UserLogin.getInstance().getAccount().getLastName());
+
+            PaymentBoundary paymentBoundary = new PaymentBoundary();
+            paymentBoundary.convalidPayment(accountBean, chapterBean, seriesBean, discountCodeBean);
+
+
     }
 
-    private void deleteDiscountCode(DiscountCode discountCode){
-        //cancella discount code
-        UserLogin.getInstance().getReader().removeDiscountCode(discountCode);
-        DiscountCodeDAO discountCodeDAO = new DiscountCodeDAO();
-        discountCodeDAO.deleteDiscountCode(UserLogin.getInstance().getReader(), discountCode);
-    }
-
-    public void completedPayment(SeriesBean seriesBean){
-
-        Series latestPurchase = null;
-        //cambia l'ultima purchase del reader
-        for(Series series : seriesBean.getAuthor().getPublishedSeries()){
-            if(series.getTitle().equals(seriesBean.getTitle())){
-                latestPurchase = series;
-            }
-        }
-
-        UserLogin.getInstance().getReader().setLatestPurchase(latestPurchase);
-
-        //salva latestPurchase sul db
-        Series finalLatestPurchase = latestPurchase;
-        new Thread(()-> {
-            SeriesDAO seriesDAO = new SeriesDAO();
-            seriesDAO.changeLatestPurchase(finalLatestPurchase);
-        }).start();
+    public void completedPayment(SeriesBean seriesBean, DiscountCodeBean discountCodeBean){
 
         //mail all'autore
         BuyComicsAuthorBoundary buyComicsAuthorBoundary = new BuyComicsAuthorBoundary();
         buyComicsAuthorBoundary.sendEmailForSoldChapter(seriesBean);
 
+        for(DiscountCode discountCode : UserLogin.getInstance().getReader().getDiscountCodes()){
+            if(discountCode.getCode().equals(discountCodeBean.getCode())){
+                UserLogin.getInstance().getReader().removeDiscountCode(discountCode);
+
+                new Thread(()->{
+                    DiscountCodeDAO discountCodeDAO = new DiscountCodeDAO();
+                    discountCodeDAO.deleteDiscountCode(UserLogin.getInstance().getReader(), discountCode);
+                }).start();
+
+            }
+        }
+
+
         //mostri il pagamento avvenuto
         System.out.println("Payment went well");
     }
 
-    public void failedPayment(SeriesBean seriesBean) {
+    public void failedPayment(SeriesBean seriesBean, DiscountCodeBean discountCodeBean) {
         //mostri il pagamento non avvenuto
         for(Series series : seriesBean.getAuthor().getPublishedSeries()){
             if(series.getTitle().equals(seriesBean.getTitle())){
-                UserLogin.getInstance().getReader().failedPurchase(series);
+                //to-do
             }
         }
 
         System.out.println("Payment of "+seriesBean.getTitle()+" went wrong");
     }
 
-    public void buyComic(SeriesBean seriesBean, ChapterBean chapterBean) {
-
-        //chiamo altra boundary per la carta
-        AccountBean accountBean = new AccountBundle();
-        accountBean.setFirstName(UserLogin.getInstance().getAccount().getFirstName());
-        accountBean.setLastName(UserLogin.getInstance().getAccount().getLastName());
-
-        PaymentBoundary buyComicBoundary = new PaymentBoundary();
-        buyComicBoundary.convalidPayment(accountBean, chapterBean, seriesBean);
-
-    }
 
 
 }

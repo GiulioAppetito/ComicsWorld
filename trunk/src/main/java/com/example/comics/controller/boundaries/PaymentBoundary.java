@@ -3,8 +3,10 @@ package com.example.comics.controller.boundaries;
 import com.example.comics.controller.BuyComicController;
 import com.example.comics.fakepaypal.PayPalBoundary;
 import com.example.comics.fakepaypal.PayPalInterface;
+import com.example.comics.model.DiscountCode;
 import com.example.comics.model.fagioli.AccountBean;
 import com.example.comics.model.fagioli.ChapterBean;
+import com.example.comics.model.fagioli.DiscountCodeBean;
 import com.example.comics.model.fagioli.SeriesBean;
 
 public class PaymentBoundary {
@@ -14,7 +16,7 @@ public class PaymentBoundary {
     }
 
 
-    public void convalidPayment(AccountBean accountBean, ChapterBean chapterBean, SeriesBean seriesBean) {
+    public void convalidPayment(AccountBean accountBean, ChapterBean chapterBean, SeriesBean seriesBean, DiscountCodeBean discountCodeBean) {
         //contattiamo la boundary di paypal, tipo set di api offerto
         PayPalInterface paypal = new PayPalBoundary();
 
@@ -30,23 +32,23 @@ public class PaymentBoundary {
             }
             //quando arriva
             if(waiting[0]==1){
-                signalPayment(true, seriesBean);
+                signalPayment(true, seriesBean ,discountCodeBean);
             }else{
-                signalPayment(false, seriesBean);
+                signalPayment(false, seriesBean, discountCodeBean);
             }
 
         });
         waitForPayment.start();
     }
 
-    private void signalPayment(boolean b, SeriesBean seriesBean) {
+    private void signalPayment(boolean b, SeriesBean seriesBean, DiscountCodeBean discountCodeBean) {
         BuyComicController buyComicController = new BuyComicController();
         if(b){
             System.out.println("BUYCOMICBOUNDARY: "+ "good payment");
-            buyComicController.completedPayment(seriesBean);
+            buyComicController.completedPayment(seriesBean, discountCodeBean);
         }else{
             System.out.println("BUYCOMICBOUNDARY: "+ "bad payment");
-            buyComicController.failedPayment(seriesBean);
+            buyComicController.failedPayment(seriesBean, discountCodeBean);
         }
     }
 

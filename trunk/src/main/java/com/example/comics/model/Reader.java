@@ -15,11 +15,11 @@ public class Reader extends Account{
     private List<Badge> badges;
     private List<Author> followedAuthors;
     private List<DiscountCode> discountCodes;
-    private Series latestPurchase;
+    private List<Order> ordersHistory;
 
     private static Badge latestBadge = null;
 
-    public Reader(List<Series> favourites, List<Series> toRead, List<Series> reading, String username,List<Author> followedAuthors, List<DiscountCode> discountCodes, Series latestPurchase){
+    public Reader(List<Series> favourites, List<Series> toRead, List<Series> reading, String username,List<Author> followedAuthors, List<Order> orders, List<DiscountCode> discountCodes){
 
         this.setUsername(username);
         this.favourites = favourites;
@@ -28,7 +28,7 @@ public class Reader extends Account{
         this.followedAuthors = followedAuthors;
         this.discountCodes = discountCodes;
 
-        this.latestPurchase = latestPurchase;
+        this.ordersHistory = orders;
 
         BadgeDAO badgesDAO = new BadgeDAO();
         this.badges = badgesDAO.retrieveAchievedBadges(username);
@@ -255,16 +255,4 @@ public class Reader extends Account{
     }
     */
 
-    public Series getLatestPurchase() {
-        return latestPurchase;
-    }
-
-    public void setLatestPurchase(Series newPurchase) {
-        this.latestPurchase = newPurchase;
-        notifyObservers();
-    }
-
-    public void failedPurchase(Series series) {
-        //mostrare pagamento fallito
-    }
 }
