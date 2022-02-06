@@ -188,6 +188,21 @@
                   </ImageView>
                </graphic>
             </Button>
+            <Button fx:id="btnOrders" alignment="CENTER" mnemonicParsing="false" prefHeight="78.0" prefWidth="208.0" styleClass="lateral" stylesheets="@../../../../css/css1/fullpackstyling.css" text="Orders">
+               <font>
+                  <Font name="Berlin Sans FB" size="18.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../img/img1/icons8-order-history-96.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+            </Button>
             <Separator prefWidth="200.0" />
             <Label prefHeight="37.0" prefWidth="254.0" text="My comics">
                <font>
