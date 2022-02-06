@@ -37,7 +37,7 @@ public class FollowingControllerG {
                     }
                 });
                 FollowedAuthorCardControllerG followedAuthorsControllerG= fxmlLoader.getController();
-                followedAuthorsControllerG.setData(listOfCards.get(j).getProPic(),listOfCards.get(j).getUsername());
+                followedAuthorsControllerG.setData(listOfCards.get(j));
                 gpFollowing.add(card,j%columns,i);
                 if(j%columns == columns-1){
                     i++;
