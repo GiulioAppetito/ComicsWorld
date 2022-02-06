@@ -1,5 +1,6 @@
 package com.example.comics.view1;
 
+import com.example.comics.model.fagioli.AuthorBean;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
@@ -12,8 +13,8 @@ public class FollowedAuthorCardControllerG {
     @FXML
     private Label authorUsername;
 
-    public void setData(Image proPic, String username) {
-        ivProPic.setImage(proPic);
-        authorUsername.setText(username);
+    public void setData(AuthorBean authorBean) {
+        ivProPic.setImage(authorBean.getProPic());
+        authorUsername.setText(authorBean.getUsername());
     }
 }
