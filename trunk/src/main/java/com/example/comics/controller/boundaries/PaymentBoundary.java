@@ -3,7 +3,6 @@ package com.example.comics.controller.boundaries;
 import com.example.comics.controller.BuyComicController;
 import com.example.comics.fakepaypal.PayPalBoundary;
 import com.example.comics.fakepaypal.PayPalInterface;
-import com.example.comics.model.DiscountCode;
 import com.example.comics.model.fagioli.AccountBean;
 import com.example.comics.model.fagioli.ChapterBean;
 import com.example.comics.model.fagioli.DiscountCodeBean;
@@ -32,23 +31,23 @@ public class PaymentBoundary {
             }
             //quando arriva
             if(waiting[0]==1){
-                signalPayment(true, seriesBean ,discountCodeBean);
+                signalPayment(true, seriesBean , chapterBean, discountCodeBean);
             }else{
-                signalPayment(false, seriesBean, discountCodeBean);
+                signalPayment(false, seriesBean, chapterBean, discountCodeBean);
             }
 
         });
         waitForPayment.start();
     }
 
-    private void signalPayment(boolean b, SeriesBean seriesBean, DiscountCodeBean discountCodeBean) {
+    private void signalPayment(boolean b, SeriesBean seriesBean, ChapterBean chapterBean, DiscountCodeBean discountCodeBean) {
         BuyComicController buyComicController = new BuyComicController();
         if(b){
             System.out.println("BUYCOMICBOUNDARY: "+ "good payment");
-            buyComicController.completedPayment(seriesBean, discountCodeBean);
+            buyComicController.completedPayment(seriesBean, chapterBean, discountCodeBean);
         }else{
             System.out.println("BUYCOMICBOUNDARY: "+ "bad payment");
-            buyComicController.failedPayment(seriesBean, discountCodeBean);
+            buyComicController.failedPayment();
         }
     }
 

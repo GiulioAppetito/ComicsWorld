@@ -71,7 +71,7 @@ public class ReaderHomeControllerG extends HomeControllerG implements AccountObs
     public static ReaderHomeControllerG getInstance(){
         if(instance==null){
             instance = new ReaderHomeControllerG();
-            AccountSubject.attach(instance);
+            AccountSubject.attach(instance, "user");
         }
         return instance;
     }
@@ -99,7 +99,7 @@ public class ReaderHomeControllerG extends HomeControllerG implements AccountObs
 
     private void openOrders() {
         FxmlLoader object = new FxmlLoader();
-        Pane view = object.getPage("ordershystory");
+        Pane view = object.getPage("ordershistory");
         mainPane.setCenter(view);
 
         resetButtons();

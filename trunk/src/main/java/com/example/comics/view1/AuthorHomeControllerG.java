@@ -60,7 +60,7 @@ public class AuthorHomeControllerG  extends HomeControllerG implements AccountOb
     public static synchronized AuthorHomeControllerG getInstance() {
         if(instance == null){
             instance = new AuthorHomeControllerG();
-            AccountSubject.attach(instance);
+            AccountSubject.attach(instance, "user");
         }
         return instance;
     }

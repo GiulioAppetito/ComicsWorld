@@ -46,7 +46,7 @@ public class AuthorProfileControllerG implements AccountObserver {
         btnNewChapter.setOnAction(actionEvent -> publishNewChapter());
 
 
-        AccountSubject.attach(this);
+        AccountSubject.attach(this, "user");
     }
 
     @FXML

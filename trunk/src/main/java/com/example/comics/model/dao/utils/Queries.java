@@ -329,8 +329,8 @@ public class Queries {
         stmt.executeUpdate(updateStatement);
     }
 
-    public static ResultSet retreiveOrdersByReader(Statement stmt, Reader reader) throws SQLException {
-        String selectStatement = String.format("SELECT * FROM orders WHERE (reader = '%s')",reader.getUsername());
+    public static ResultSet retreiveOrdersByReader(Statement stmt, String reader) throws SQLException {
+        String selectStatement = String.format("SELECT * FROM orders WHERE (reader = '%s')",reader);
         System.out.println(selectStatement);
         return stmt.executeQuery(selectStatement);
     }

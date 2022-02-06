@@ -1,6 +1,8 @@
 package com.example.comics.view1;
 
 import com.example.comics.controller.ResearchController;
+import com.example.comics.model.AccountObserver;
+import com.example.comics.model.AccountSubject;
 import com.example.comics.model.fagioli.SeriesBean;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -10,7 +12,7 @@ import javafx.scene.layout.VBox;
 import java.io.IOException;
 import java.util.List;
 
-public class FeedControllerG{
+public class FeedControllerG implements AccountObserver {
 
     @FXML
     public GridPane feedGrid;
@@ -25,6 +27,7 @@ public class FeedControllerG{
     public static synchronized FeedControllerG getInstance(){
         if(instance == null){
             instance = new FeedControllerG();
+            AccountSubject.attach(instance, "orders");
         }
         return instance;
     }
@@ -33,7 +36,6 @@ public class FeedControllerG{
         ResearchController researchController = new ResearchController();
         latestSeries = researchController.getLatestSeries();
     }
-
 
     public void init() {
 
@@ -67,4 +69,8 @@ public class FeedControllerG{
         homeControllerG.openSeries(seriesBean);
     }
 
+    @Override
+    public void update() {
+
+    }
 }

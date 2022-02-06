@@ -20,7 +20,6 @@ public class ReaderDAO {
     private List<DiscountCode> discountCodes = new ArrayList<>();
     private List<Author> followedAuthors = new ArrayList<>();
     private List<Series> readingSeries = new ArrayList<>();
-    private List<Order> orders = new ArrayList<>();
 
     public Reader retrieveReader(String identifier, String password){
 
@@ -71,12 +70,6 @@ public class ReaderDAO {
             });
             t4.start();
 
-            OrderDAO orderDAO = new OrderDAO();
-            Thread t5 = new Thread(()->{
-                orders = orderDAO.retrieveOrders();
-            });
-            t5.start();
-
 
             t.join();
             t1.join();
@@ -84,7 +77,7 @@ public class ReaderDAO {
             t3.join();
             t4.join();
 
-            reader = new Reader(favSeries, toReadSeries, readingSeries, username, followedAuthors, orders, discountCodes);
+            reader = new Reader(favSeries, toReadSeries, readingSeries, username, followedAuthors, discountCodes);
 
             reader.setFirstName(rs.getString("firstname"));
             reader.setLastName(rs.getString("lastname"));

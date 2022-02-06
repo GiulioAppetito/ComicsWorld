@@ -44,7 +44,7 @@ public class ReaderProfileControllerG implements AccountObserver {
         ivProPic.setImage(UserLogin.getInstance().getAccount().getProPic());
 
 
-        AccountSubject.attach(this);
+        AccountSubject.attach(this, "user");
 
         loadBadges();
     }

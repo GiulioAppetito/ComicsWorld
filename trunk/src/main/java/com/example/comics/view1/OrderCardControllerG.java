@@ -23,7 +23,7 @@ public class OrderCardControllerG {
         lblDate.setText(DatesConverter.toString(orderBean.getDate()));
         lblPrice.setText(orderBean.getExpense().toString());
         lblSeries.setText(orderBean.getSeries().getTitle());
-        imgCover.setImage(orderBean.getImage());
+        imgCover.setImage(orderBean.getSeries().getCover());
     }
 
 }

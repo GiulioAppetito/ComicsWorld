@@ -23,7 +23,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class FeedControllerG2 implements AccountObserver {
+public class FeedControllerG2{
 
     @FXML
     private Button author;
@@ -269,7 +269,6 @@ public class FeedControllerG2 implements AccountObserver {
 
     private FeedControllerG2(){
         loadLatestSeries();
-        AccountSubject.attach(this);
     }
     public static synchronized FeedControllerG2 getInstance(){
         if(instance == null){
@@ -773,9 +772,5 @@ public class FeedControllerG2 implements AccountObserver {
         vBoxMyBadges.setVisible(false);
     }
 
-    @Override
-    public void update() {
-        initProfile();
-    }
 
 }

@@ -111,14 +111,22 @@ public class ResearchController {
     public List<OrderBean> getOrders() {
 
         List<OrderBean> orderBeans = new ArrayList<>();
+
         List<Series> series;
         OrderBundle orderBundle;
 
         List<Order> orders = UserLogin.getInstance().getReader().getOrdersHistory();
+
+        System.out.println("[RES CON ]: orders:" + orders.get(0).getDate());
+
         for(int i=0; i<orders.size();i++){
+            System.out.println("RESEARCH CONTORLLER: for" + i);
             orderBundle = new OrderBundle();
+            System.out.println("RESEARCH CONTORLLER: bundle");
             orderBundle.setExpense(orders.get(i).getExpense());
-            orderBundle.setDate(orderBeans.get(i).getDate());
+            System.out.println("RESEARCH CONTORLLER: expense" + orders.get(i).getExpense());
+            orderBundle.setDate(orders.get(i).getDate());
+            System.out.println("RESEARCH CON: date" + orders.get(i).getDate());
 
             series = new ArrayList<>();
             series.add(orders.get(i).getSeries());

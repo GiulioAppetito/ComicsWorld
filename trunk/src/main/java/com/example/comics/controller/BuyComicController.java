@@ -3,6 +3,7 @@ package com.example.comics.controller;
 import com.example.comics.controller.boundaries.PaymentBoundary;
 import com.example.comics.controller.boundaries.BuyComicsAuthorBoundary;
 import com.example.comics.model.DiscountCode;
+import com.example.comics.model.Order;
 import com.example.comics.model.Series;
 import com.example.comics.model.UserLogin;
 import com.example.comics.model.dao.DiscountCodeDAO;
@@ -44,7 +45,7 @@ public class BuyComicController {
 
     }
 
-    public void completedPayment(SeriesBean seriesBean, DiscountCodeBean discountCodeBean){
+    public void completedPayment(SeriesBean seriesBean, ChapterBean chapterBean, DiscountCodeBean discountCodeBean){
 
         //mail all'autore
         BuyComicsAuthorBoundary buyComicsAuthorBoundary = new BuyComicsAuthorBoundary();
@@ -62,20 +63,22 @@ public class BuyComicController {
             }
         }
 
-
-        //mostri il pagamento avvenuto
-        System.out.println("Payment went well");
-    }
-
-    public void failedPayment(SeriesBean seriesBean, DiscountCodeBean discountCodeBean) {
-        //mostri il pagamento non avvenuto
+        Series orderedSeries = null;
         for(Series series : seriesBean.getAuthor().getPublishedSeries()){
             if(series.getTitle().equals(seriesBean.getTitle())){
-                //to-do
+                orderedSeries = series;
             }
         }
 
-        System.out.println("Payment of "+seriesBean.getTitle()+" went wrong");
+        Order order = new Order(orderedSeries);
+        order.setDate(LocalDate.now());
+        order.setExpense(chapterBean.getPrice());
+
+        UserLogin.getInstance().getReader().addNewOrder(order);
+    }
+
+    public void failedPayment() {
+        //mostri il pagamento non avvenuto
     }
 
 

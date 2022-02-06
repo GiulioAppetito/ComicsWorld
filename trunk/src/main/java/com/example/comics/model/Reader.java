@@ -2,6 +2,7 @@ package com.example.comics.model;
 
 import com.example.comics.model.dao.BadgeDAO;
 import com.example.comics.model.dao.DiscountCodeDAO;
+import com.example.comics.model.dao.OrderDAO;
 import com.example.comics.model.dao.ReaderDAO;
 
 import java.sql.SQLException;
@@ -19,7 +20,7 @@ public class Reader extends Account{
 
     private static Badge latestBadge = null;
 
-    public Reader(List<Series> favourites, List<Series> toRead, List<Series> reading, String username,List<Author> followedAuthors, List<Order> orders, List<DiscountCode> discountCodes){
+    public Reader(List<Series> favourites, List<Series> toRead, List<Series> reading, String username,List<Author> followedAuthors, List<DiscountCode> discountCodes){
 
         this.setUsername(username);
         this.favourites = favourites;
@@ -28,7 +29,9 @@ public class Reader extends Account{
         this.followedAuthors = followedAuthors;
         this.discountCodes = discountCodes;
 
-        this.ordersHistory = orders;
+        OrderDAO orderDAO = new OrderDAO();
+        this.ordersHistory = orderDAO.retrieveOrders(username);
+        System.out.println("[READER]: orders:" + ordersHistory.get(0).getDate());
 
         BadgeDAO badgesDAO = new BadgeDAO();
         this.badges = badgesDAO.retrieveAchievedBadges(username);
@@ -80,7 +83,6 @@ public class Reader extends Account{
             ReaderDAO readerDAO = new ReaderDAO();
             readerDAO.saveAchievedBadge(badge, this);
         }).start();
-
 
 
         notifyObservers();
@@ -250,12 +252,18 @@ public class Reader extends Account{
     }
 
     public List<Order> getOrdersHistory() {
+
+        System.out.println("[READER]: history:" + ordersHistory.get(0).getDate());
+        System.out.println("[READER]: history:" + ordersHistory.get(0).getExpense());
         return ordersHistory;
     }
 
-    public void setOrdersHistory(List<Order> ordersHistory) {
-        this.ordersHistory = ordersHistory;
+    public void addNewOrder(Order order) {
+        this.ordersHistory.add(order);
+        notifyObserversNewOrder();
     }
+
+
 
     /*
     public Badge getLatestBadge(){

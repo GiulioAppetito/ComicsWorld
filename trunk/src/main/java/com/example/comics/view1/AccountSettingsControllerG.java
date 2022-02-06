@@ -71,7 +71,7 @@ public class AccountSettingsControllerG implements AccountObserver {
         lblEmail.setText(UserLogin.getInstance().getAccount().getEmail());
         //stessa cosa con la propic
 
-        AccountSubject.attach(this);
+        AccountSubject.attach(this, "user");
     }
 
 

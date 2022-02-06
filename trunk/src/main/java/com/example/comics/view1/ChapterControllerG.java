@@ -382,7 +382,7 @@ public class ChapterControllerG implements ChapterObserver, AccountObserver{
     public void init(ChapterBean chapterBean, SeriesBean seriesBean){
 
         ChapterSubject.attach(this, "reviews");
-        AccountSubject.attach(this);
+        AccountSubject.attach(this, "badges");
         lblAuthor.setText("autore");
         lblChapterTitle.setText(chapterBean.getTitle());
         taDescription.setText(chapterBean.getDescription());
@@ -511,7 +511,13 @@ public class ChapterControllerG implements ChapterObserver, AccountObserver{
 
     private void applyNoDiscountCode(SeriesBean seriesBean, ChapterBean chapterBean) {
         BuyComicController buyComicController = new BuyComicController();
-        buyComicController.buyComic(seriesBean, chapterBean);
+        try {
+            buyComicController.buyComic(seriesBean, chapterBean, null);
+        } catch (InvalidPaymentException e) {
+            e.printStackTrace();
+        } catch (DiscountCodeException e) {
+            e.printStackTrace();
+        }
         closePaymentPane();
     }
 
