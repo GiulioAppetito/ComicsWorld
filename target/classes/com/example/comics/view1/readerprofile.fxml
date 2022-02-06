@@ -90,53 +90,7 @@
          </VBox>
       </Pane>
       <VBox prefHeight="729.0" prefWidth="453.0">
-         <Pane prefHeight="212.0" prefWidth="368.0" stylesheets="@../../../../css/css1/fullpackstyling.css">
-            <VBox.margin>
-               <Insets left="40.0" right="40.0" top="40.0" />
-            </VBox.margin>
-            <Label layoutX="14.0" prefHeight="60.0" prefWidth="327.0" text="Latest Purchase">
-               <font>
-                  <Font name="Berlin Sans FB" size="24.0" />
-               </font>
-               <padding>
-                  <Insets left="20.0" />
-               </padding>
-            </Label>
-            <HBox layoutY="51.0" prefHeight="145.0" prefWidth="368.0">
-               <children>
-                  <ImageView fx:id="cover" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../../../../img/img1/4.jpg" />
-                     </image>
-                     <HBox.margin>
-                        <Insets left="40.0" />
-                     </HBox.margin>
-                  </ImageView>
-                  <Label fx:id="title" prefHeight="150.0" prefWidth="170.0" text="Title">
-                     <font>
-                        <Font name="Berlin Sans FB" size="24.0" />
-                     </font>
-                     <HBox.margin>
-                        <Insets left="20.0" />
-                     </HBox.margin>
-                  </Label>
-               </children></HBox>
-            <HBox fx:id="noPurchasePane" layoutY="49.0" prefHeight="165.0" prefWidth="368.0">
-               <children>
-                  <Label alignment="CENTER" prefHeight="166.0" prefWidth="380.0" text="No purchase yet">
-                     <font>
-                        <Font name="Berlin Sans FB" size="24.0" />
-                     </font>
-                  </Label>
-               </children>
-            </HBox>
-            <styleClass>
-               <String fx:value="panes" />
-               <String fx:value="glass" />
-               <String fx:value="oval-layout" />
-            </styleClass>
-         </Pane>
-         <Pane prefHeight="402.0" prefWidth="368.0" stylesheets="@../../../../css/css1/fullpackstyling.css">
+         <Pane prefHeight="649.0" prefWidth="368.0" stylesheets="@../../../../css/css1/fullpackstyling.css">
             <styleClass>
                <String fx:value="panes" />
                <String fx:value="glass" />
@@ -151,7 +105,7 @@
                      <Insets left="20.0" />
                   </padding>
                </Label>
-               <ScrollPane hbarPolicy="NEVER" layoutX="14.0" layoutY="78.0" prefHeight="347.0" prefWidth="341.0">
+               <ScrollPane hbarPolicy="NEVER" layoutX="14.0" layoutY="78.0" prefHeight="548.0" prefWidth="341.0">
                   <content>
                      <GridPane fx:id="gpBadges" hgap="25.0" prefHeight="14.0" prefWidth="339.0" vgap="25.0">
                         <rowConstraints>
