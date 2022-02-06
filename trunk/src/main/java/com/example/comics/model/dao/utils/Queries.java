@@ -106,9 +106,9 @@ public class Queries {
     }
 
 
-    public static void saveReadersDiscountCode(Statement stmt, DiscountCode discountCode, Reader reader) throws SQLException {
+    public static void saveReadersDiscountCode(Statement stmt, DiscountCode discountCode, Reader reader,Series series) throws SQLException {
 
-        String insertStatement = String.format("INSERT INTO discountCodes (username, code, expiringDate, percentage,startingDate) values ('%s', '%s', '%s', '%s','%s')", reader.getUsername(), discountCode.getCode(), DatesConverter.toString(discountCode.getExpiringDate()), discountCode.getDiscount().getPercentage(),DatesConverter.toString(LocalDate.now()));
+        String insertStatement = String.format("INSERT INTO discountCodes (username, code, expiringDate, percentage,startingDate,series) values ('%s', '%s', '%s', '%s','%s','%s')", reader.getUsername(), discountCode.getCode(), DatesConverter.toString(discountCode.getExpiringDate()), discountCode.getDiscount().getPercentage(),DatesConverter.toString(LocalDate.now()),series.getTitle());
         System.out.println(insertStatement);
         stmt.executeUpdate(insertStatement);
     }

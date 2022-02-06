@@ -21,6 +21,7 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 public class ChapterControllerG implements ChapterObserver, AccountObserver{
@@ -396,6 +397,14 @@ public class ChapterControllerG implements ChapterObserver, AccountObserver{
             btnChapterRead.setStyle(STYLE);
             btnChapterRead.setOnAction(event -> markChapterAsRead(seriesBean,chapterBean));
         }
+
+        List<String> codes = new ArrayList<>();
+        for(DiscountCode discountCode : UserLogin.getInstance().getReader().getDiscountCodes().keySet()){
+            if(UserLogin.getInstance().getReader().getDiscountCodes().get(discountCode).getTitle().equals(seriesBean.getTitle())){
+                codes.add(discountCode.getCode());
+            }
+        }
+        choiceBoxCodes.getItems().setAll(codes);
 
         chapterCoverIV.setImage(chapterBean.getCover());
 

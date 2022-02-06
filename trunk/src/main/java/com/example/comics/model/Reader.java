@@ -32,7 +32,7 @@ public class Reader extends Account{
 
         OrderDAO orderDAO = new OrderDAO();
         this.ordersHistory = orderDAO.retrieveOrders(username);
-        System.out.println("[READER]: orders:" + ordersHistory.get(0).getDate());
+
 
         BadgeDAO badgesDAO = new BadgeDAO();
         this.badges = badgesDAO.retrieveAchievedBadges(username);
@@ -89,11 +89,11 @@ public class Reader extends Account{
         notifyObservers();
     }
 
-    public void addDiscountCode(DiscountCode discountCode) {
+    public void addDiscountCode(DiscountCode discountCode,Series series) {
+        UserLogin.getInstance().getReader().discountCodes.put(discountCode,series);
         DiscountCodeDAO discountCodeDAO = new DiscountCodeDAO();
         try {
-            System.out.println("[READER] Saving discount code.");
-            discountCodeDAO.saveObtainedDiscountCode(discountCode,this);
+            discountCodeDAO.saveObtainedDiscountCode(discountCode,this,series);
         } catch (SQLException e) {
             e.printStackTrace();
         }
