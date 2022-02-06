@@ -58,7 +58,7 @@ public class MarkChapterAsReadController {
 
                 //genero discount code
                 DiscountCode discountCode = new DiscountCode(objective.getDiscount());
-                UserLogin.getInstance().getReader().addDiscountCode(discountCode,series);
+                UserLogin.getInstance().getReader().assignDiscountCode(discountCode,series);
 
                 //invio mail al lettore del codice sconto
                 new Thread(()->{

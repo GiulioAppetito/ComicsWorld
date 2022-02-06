@@ -2,7 +2,6 @@ package com.example.comics.controller;
 
 import com.example.comics.controller.boundaries.PostReviewAuthorBoundary;
 import com.example.comics.controller.boundaries.PostReviewReaderBoundary;
-import com.example.comics.model.dao.DiscountCodeDAO;
 import com.example.comics.model.fagioli.*;
 import com.example.comics.model.*;
 import com.example.comics.model.dao.SeriesDAO;
@@ -60,12 +59,13 @@ public class PostReviewController{
     }
 
     private void assignBadgeAndDiscountCodeToReader(Objective objective,Series series,SeriesBean seriesBean) {
+
         //aggiungo badge alla lista e salvo sul DB + assegno badge
         new Thread(()-> UserLogin.getInstance().getReader().addAchievedBadge(objective.getBadge())).start();
 
         //genero discount code
         DiscountCode discountCode = new DiscountCode(objective.getDiscount());
-        UserLogin.getInstance().getReader().addDiscountCode(discountCode,series);
+        UserLogin.getInstance().getReader().assignDiscountCode(discountCode,series);
 
         //invio mail al lettore del codice sconto
         new Thread(()->{
