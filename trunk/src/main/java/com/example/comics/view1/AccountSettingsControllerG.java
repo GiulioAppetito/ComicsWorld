@@ -5,6 +5,7 @@ import com.example.comics.model.AccountSubject;
 import com.example.comics.controller.CustomizeProfileController;
 import com.example.comics.model.fagioli.AccountBean;
 import com.example.comics.model.UserLogin;
+import com.example.comics.model.fagioli.BadgeBean;
 import com.example.comics.view1.beans.AccountBean1;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -71,7 +72,7 @@ public class AccountSettingsControllerG implements AccountObserver {
         lblEmail.setText(UserLogin.getInstance().getAccount().getEmail());
         //stessa cosa con la propic
 
-        AccountSubject.attach(this, "user");
+        AccountSubject.attach(this);
     }
 
 

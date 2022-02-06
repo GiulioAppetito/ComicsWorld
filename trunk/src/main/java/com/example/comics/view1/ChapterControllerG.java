@@ -24,7 +24,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ChapterControllerG implements ChapterObserver, AccountObserver{
+public class ChapterControllerG implements ChapterObserver, ReaderObserver{
 
     @FXML
     private VBox vbReviews;
@@ -302,6 +302,14 @@ public class ChapterControllerG implements ChapterObserver, AccountObserver{
 
 
     @FXML
+    private Pane orderPane;
+
+
+    @FXML
+    private Button btnCloseOrderPane;
+
+
+    @FXML
     public void zeroStars(){
         reviewRating = 0;
         hbox0.setVisible(true);
@@ -382,8 +390,16 @@ public class ChapterControllerG implements ChapterObserver, AccountObserver{
 
     public void init(ChapterBean chapterBean, SeriesBean seriesBean){
 
+
+        orderPane.setVisible(false);
+        btnCloseOrderPane.setOnAction(event -> orderPane.setVisible(false));
+
+
         ChapterSubject.attach(this, "reviews");
         AccountSubject.attach(this, "badges");
+        AccountSubject.attach(this, "orders");
+
+
         lblAuthor.setText("autore");
         lblChapterTitle.setText(chapterBean.getTitle());
         taDescription.setText(chapterBean.getDescription());
@@ -616,15 +632,20 @@ public class ChapterControllerG implements ChapterObserver, AccountObserver{
 
 
     @Override
-    public void update() {
-        ResearchController researchController = new ResearchController();
-        BadgeBean badgeBean = researchController.getLatestBadge();
-        if(badgeBean==null){
-            return;
-        }
+    public void update(BadgeBean badgeBean) {
         newBadgeWonPane.setVisible(true);
         lblBadgeName.setText(badgeBean.getName());
         badgeIconView.setImage(badgeBean.getIcon());
     }
+
+
+    public void update(Boolean payment){
+        if(payment){
+            orderPane.setVisible(true);
+        }
+
+    }
+
+
 
 }

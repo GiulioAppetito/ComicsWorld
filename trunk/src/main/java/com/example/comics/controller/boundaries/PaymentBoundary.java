@@ -43,7 +43,7 @@ public class PaymentBoundary {
     private void signalPayment(boolean b, SeriesBean seriesBean, ChapterBean chapterBean, DiscountCodeBean discountCodeBean) {
         BuyComicController buyComicController = new BuyComicController();
         if(b){
-            System.out.println("BUYCOMICBOUNDARY: "+ "good payment");
+            System.out.println("PAymentBOUNDARY: "+ "good payment");
             buyComicController.completedPayment(seriesBean, chapterBean, discountCodeBean);
         }else{
             System.out.println("BUYCOMICBOUNDARY: "+ "bad payment");

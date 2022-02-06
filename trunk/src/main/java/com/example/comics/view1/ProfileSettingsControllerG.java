@@ -57,7 +57,7 @@ public class ProfileSettingsControllerG implements AccountObserver {
         btnEditProPic.setOnAction(event -> changeProPic());
         imgProPic.setImage(UserLogin.getInstance().getAccount().getProPic());
 
-        AccountSubject.attach(this, "user");
+        AccountSubject.attach(this);
     }
 
     private void changeProPic() {

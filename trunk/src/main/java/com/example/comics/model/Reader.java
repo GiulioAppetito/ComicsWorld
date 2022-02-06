@@ -4,6 +4,7 @@ import com.example.comics.model.dao.BadgeDAO;
 import com.example.comics.model.dao.DiscountCodeDAO;
 import com.example.comics.model.dao.OrderDAO;
 import com.example.comics.model.dao.ReaderDAO;
+import com.example.comics.model.fagioli.bundle.BadgeBundle;
 
 import java.sql.SQLException;
 import java.util.List;
@@ -85,8 +86,11 @@ public class Reader extends Account{
             readerDAO.saveAchievedBadge(badge, this);
         }).start();
 
+        BadgeBundle badgeBundle = new BadgeBundle();
+        badgeBundle.setName(badge.getName());
+        badgeBundle.setIcon(badge.getIcon());
 
-        notifyObservers();
+        notifyObserversNewBadge(badgeBundle);
     }
 
     public void assignDiscountCode(DiscountCode discountCode, Series series) {
@@ -260,8 +264,10 @@ public class Reader extends Account{
     }
 
     public void addNewOrder(Order order) {
+
+        System.out.println("adding new order");
         this.ordersHistory.add(order);
-        notifyObserversNewOrder();
+        notifyObserversNewOrder(true);
     }
 
 

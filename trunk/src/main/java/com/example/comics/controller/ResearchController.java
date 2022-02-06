@@ -159,17 +159,4 @@ public class ResearchController {
         return authorBeans;
     }
 
-    public BadgeBean getLatestBadge(){
-
-        int size = UserLogin.getInstance().getReader().getBadges().size();
-        Badge badge = UserLogin.getInstance().getReader().getBadges().get(size);
-        if(badge == null){
-            return null;
-        }
-        BadgeBundle badgeBundle = new BadgeBundle();
-        badgeBundle.setIcon(badge.getIcon());
-        badgeBundle.setName(badge.getName());
-        return badgeBundle;
-    }
-
 }

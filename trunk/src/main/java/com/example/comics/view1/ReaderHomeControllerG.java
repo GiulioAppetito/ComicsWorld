@@ -65,7 +65,7 @@ public class ReaderHomeControllerG extends HomeControllerG implements AccountObs
     public static ReaderHomeControllerG getInstance(){
         if(instance==null){
             instance = new ReaderHomeControllerG();
-            AccountSubject.attach(instance, "user");
+            AccountSubject.attach(instance);
         }
         return instance;
     }

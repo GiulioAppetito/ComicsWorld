@@ -76,6 +76,7 @@ public class BuyComicController {
         order.setDate(LocalDate.now());
         order.setExpense(chapterBean.getPrice());
 
+        System.out.println("BCC : new order to be inserted");
         UserLogin.getInstance().getReader().addNewOrder(order);
     }
 
