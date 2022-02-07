@@ -19,5 +19,3 @@ v
 Ftrunk/src/main/java/com/example/comics/view1/OrderCardControllerG.java,c\d\cd3c8faacf27f14d192b331dba9740edfd361869
 n
 >trunk/src/main/java/com/example/comics/model/dao/OrderDAO.java,d\8\d8cfed98e220b0cb248bd1e499e7c3c2216413b5
-o
-?trunk/src/main/java/com/example/comics/model/dao/ReaderDAO.java,3\b\3bd4551b66716af31be8aa022e406ebae2bc3845

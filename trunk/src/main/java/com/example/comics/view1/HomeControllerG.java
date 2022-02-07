@@ -12,6 +12,10 @@ public abstract class HomeControllerG {
 
     private static final String FEED = "feed";
 
+    private static URL fxmlHomeLocation = null;
+
+    public abstract void init();
+
     public abstract void changeCenter(Pane pane);
 
     public abstract void resetButtons();
@@ -78,5 +82,13 @@ public abstract class HomeControllerG {
         }
 
         serieControllerG.setData(seriesBean);
+    }
+
+    public URL getLocation(){
+        return fxmlHomeLocation;
+    }
+
+    public void setLocation(URL location){
+        this.fxmlHomeLocation = location;
     }
 }

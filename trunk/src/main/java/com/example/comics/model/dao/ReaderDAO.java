@@ -72,12 +72,12 @@ public class ReaderDAO {
             });
             t4.start();
 
-
             t.join();
             t1.join();
             t2.join();
             t3.join();
             t4.join();
+
 
             reader = new Reader(favSeries, toReadSeries, readingSeries, username, followedAuthors, discountCodes);
 

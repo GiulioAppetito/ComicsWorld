@@ -169,28 +169,14 @@ public class LoginControllerG {
             if (loginController.login(loginBean)) {
                 Stage stage = new Stage();
                 FXMLLoader loader = new FXMLLoader();
-                URL fxmlLocation;
                 Scene scene;
 
-                String role = UserLogin.getInstance().getAccount().getRole();
-
-                if (role.equals("reader")) {
-                    ReaderHomeControllerG readerHomeControllerG = ReaderHomeControllerG.getInstance();
-
-                    fxmlLocation = ReaderHomeControllerG.class.getResource("readerhome.fxml");
-                    loader.setLocation(fxmlLocation);
-                    loader.setController(readerHomeControllerG);
-                    scene = new Scene(loader.load());
-                    readerHomeControllerG.init();
-                } else {
-                    AuthorHomeControllerG authorHomeControllerG = AuthorHomeControllerG.getInstance();
-
-                    fxmlLocation = AuthorHomeControllerG.class.getResource("authorhome.fxml");
-                    loader.setLocation(fxmlLocation);
-                    loader.setController(authorHomeControllerG);
-                    scene = new Scene(loader.load());
-                    authorHomeControllerG.init();
-                }
+                HomeFactory homeFactory = new HomeFactory();
+                HomeControllerG homeControllerG = homeFactory.getHomeControllerG();
+                loader.setLocation(homeControllerG.getLocation());
+                loader.setController(homeControllerG);
+                scene = new Scene(loader.load());
+                homeControllerG.init();
 
                 stage.setTitle("ComicsWorld");
                 stage.setScene(scene);

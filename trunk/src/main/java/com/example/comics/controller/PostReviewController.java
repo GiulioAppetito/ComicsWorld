@@ -2,7 +2,6 @@ package com.example.comics.controller;
 
 import com.example.comics.controller.boundaries.PostReviewAuthorBoundary;
 import com.example.comics.controller.boundaries.PostReviewReaderBoundary;
-import com.example.comics.model.dao.ReviewDAO;
 import com.example.comics.model.fagioli.*;
 import com.example.comics.model.*;
 import com.example.comics.model.dao.SeriesDAO;
@@ -21,6 +20,7 @@ public class PostReviewController{
         author.setProPic(seriesBean.getAuthor().getProPic());
         author.setLastName(seriesBean.getAuthor().getLastName());
         author.setEmail(seriesBean.getAuthor().getEmail());
+
 
         Series series = null;
 

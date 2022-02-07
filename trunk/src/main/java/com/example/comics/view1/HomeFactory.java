@@ -2,6 +2,7 @@ package com.example.comics.view1;
 
 import com.example.comics.model.UserLogin;
 
+
 public class HomeFactory {
 
     public HomeControllerG getHomeControllerG(){
@@ -11,9 +12,11 @@ public class HomeFactory {
 
         if(role.equals("reader")){
             homeControllerG = ReaderHomeControllerG.getInstance();
+            homeControllerG.setLocation(ReaderHomeControllerG.class.getResource("readerhome.fxml"));
         }
         else{
             homeControllerG = AuthorHomeControllerG.getInstance();
+            homeControllerG.setLocation(HomeControllerG.class.getResource("authorhome.fxml"));
         }
 
         return homeControllerG;
