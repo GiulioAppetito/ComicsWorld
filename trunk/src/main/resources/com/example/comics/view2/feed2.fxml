@@ -54,11 +54,11 @@
                         </VBox>
                         <VBox alignment="CENTER" prefHeight="43.0" prefWidth="41.0">
                            <children>
-                              <Button fx:id="btnProfile" mnemonicParsing="false" styleClass="transparent">
+                              <Button fx:id="notifications" mnemonicParsing="false" prefHeight="42.0" prefWidth="42.0" styleClass="transparent">
                                  <graphic>
-                                    <ImageView fitHeight="34.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true">
+                                    <ImageView fitHeight="48.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
-                                          <Image url="@../../../../img/img2/user.png" />
+                                          <Image url="@../../../../img/img2/icons8-notification-64.png" />
                                        </image>
                                     </ImageView>
                                  </graphic>
@@ -849,11 +849,25 @@
                                     <Button fx:id="btnStatistics" mnemonicParsing="false" prefHeight="46.0" prefWidth="206.0" styleClass="menu-button" text="Statistics" textFill="WHITE" />
                                  </children>
                               </VBox>
+                              <Button fx:id="btnProfile" layoutX="-1.0" layoutY="395.0" mnemonicParsing="false" prefHeight="54.0" prefWidth="206.0" text="Profile" textFill="WHITE">
+                                 <styleClass>
+                                    <String fx:value="menu-button" />
+                                    <String fx:value="menu-keyboard" />
+                                 </styleClass>
+                              </Button>
                            </children>
                            <styleClass>
                               <String fx:value="menu-background" />
                               <String fx:value="menu-keyboard" />
                            </styleClass>
+                        </Pane>
+                        <Pane fx:id="paneNotifications" prefHeight="512.0" prefWidth="286.0" style="-fx-background-color: #c28bf5;" styleClass="keyboard">
+                           <StackPane.margin>
+                              <Insets />
+                           </StackPane.margin>
+                           <children>
+                              <VBox fx:id="boxNotifications" layoutY="4.0" prefHeight="470.0" prefWidth="286.0" />
+                           </children>
                         </Pane>
                      </children>
                   </StackPane>
