@@ -11,11 +11,7 @@ Ctrunk/src/main/java/com/example/comics/model/fagioli/OrderBean.java,b\0\b0ec32
 Ltrunk/src/main/java/com/example/comics/model/fagioli/bundle/OrderBundle.java,0\b\0b33915c6ce9dd0fce3c1c2661661adc04470f28
 g
 7trunk/src/main/java/com/example/comics/model/Order.java,f\3\f3aa90c62a1c7c556c80eaadd9a7153c2a587258
-‰
-Ytrunk/src/main/java/com/example/comics/controller/boundaries/BuyComicsAuthorBoundary.java,9\9\995c02d90ed610166cff774635c865bc3cfb59b1
 i
 9trunk/src/main/java/com/example/comics/model/Account.java,9\a\9a56b31fe52b942392371e7a8bc9f9ad131d226e
 v
 Ftrunk/src/main/java/com/example/comics/view1/OrderCardControllerG.java,c\d\cd3c8faacf27f14d192b331dba9740edfd361869
-n
->trunk/src/main/java/com/example/comics/model/dao/OrderDAO.java,d\8\d8cfed98e220b0cb248bd1e499e7c3c2216413b5

@@ -43,6 +43,7 @@ public class ReviewDAO {
         }finally{
             assert conn!=null;
             try {
+                assert conn!=null;
                 conn.close();
             } catch (SQLException e) {
                 e.printStackTrace();

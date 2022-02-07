@@ -1,9 +1,0 @@
-<component name="libraryTable">
-  <library name="tornadofx-1.7.201" type="kotlin.js">
-    <CLASSES>
-      <root url="jar://$PROJECT_DIR$/trunk/lib/tornadofx-1.7.20.jar!/" />
-    </CLASSES>
-    <JAVADOC />
-    <SOURCES />
-  </library>
-</component>

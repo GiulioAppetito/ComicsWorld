@@ -78,4 +78,37 @@ public class OrderDAO {
         }
         return orders;
     }
+
+    public void insertOrder(Order order) {
+        Statement stmt = null;
+        Connection conn = null;
+
+
+        try {
+            conn = DriverManager.getConnection(DB_URL, USER, PASS);
+
+            stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
+            Queries.insertOrder(stmt, order, UserLogin.getInstance().getReader());
+
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        finally {
+            try {
+                if (stmt != null)
+                    stmt.close();
+            } catch (SQLException se2) {
+                //TO-DO
+            }
+            try {
+                if (conn != null)
+                    conn.close();
+            } catch (SQLException se) {
+                se.printStackTrace();
+            }
+
+        }
+    }
 }

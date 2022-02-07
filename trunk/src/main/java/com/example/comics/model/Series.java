@@ -147,7 +147,7 @@ public class Series extends SeriesSubject{
 	public void notifyNewReview(String chapterTitle, String comment, int rating){
 		for(int i=0; i< chapters.size(); i++){
 			if(chapters.get(i).getTitle().equals(chapterTitle)){
-				chapters.get(i).notifyNewReview(comment, rating, UserLogin.getInstance().getReader());
+				chapters.get(i).notifyNewReview(this, comment, rating, UserLogin.getInstance().getReader());
 			}
 		}
 	}
@@ -155,7 +155,7 @@ public class Series extends SeriesSubject{
 	public void addReviewInSilence(String chapterTitle, String reviewComment, int rating) {
 		for(int i=0; i< chapters.size(); i++){
 			if(chapters.get(i).getTitle().equals(chapterTitle)){
-				chapters.get(i).addReviewInSilence(this, reviewComment, rating, UserLogin.getInstance().getReader());
+				chapters.get(i).addReviewInSilence(reviewComment, rating, UserLogin.getInstance().getReader());
 			}
 		}
 		calculateAverageRating();
