@@ -15,8 +15,8 @@ public class ObjectiveDAO {
 
 
     public List<Objective> retrieveSeriesObjectives(String series){
-        Statement stmt = null;
-        Connection conn = null;
+        Statement stmt;
+        Connection conn;
 
         List<Objective> objectives = new ArrayList<>();
 
@@ -40,13 +40,7 @@ public class ObjectiveDAO {
                 Discount discount = new Discount(rs.getFloat("discountPercentage"));
                 discount.setLimitDays(rs.getInt("limitDays"));
 
-                objective = objectiveFactory.createObjective(rs.getString("type"));
-                objective.setId(rs.getInt("objective_id"));
-                objective.setBadge(badge);
-                objective.setDiscount(discount);
-                objective.setRequirement(rs.getInt("number"));
-                objective.setLevel(Levels.valueOf(rs.getString("level")));
-
+                objective = objectiveFactory.retreiveObjective(rs.getString("type"),badge,discount,Levels.valueOf(rs.getString("level")),rs.getFloat("number"));
                 objectives.add(objective);
             } while (rs.next());
 

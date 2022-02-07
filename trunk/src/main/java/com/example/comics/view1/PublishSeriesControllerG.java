@@ -184,21 +184,28 @@ public class PublishSeriesControllerG {
     private void applyObjectives() {
         objectiveBeanList.clear();
 
-        DiscountBean1 discountBean1 = new DiscountBean1();
-        BadgeBean1 badgeBean1 = new BadgeBean1();
-        ObjectiveBean1 objectiveBean = new ObjectiveBean1();
+        DiscountBean1 discountBean1;
+        BadgeBean1 badgeBean1;
+        ObjectiveBean1 objectiveBean;
 
         if(isThisObjectiveCompiled(Levels.BEGINNER)){
 
+            discountBean1 = new DiscountBean1();
             discountBean1.setPercentage(Float.parseFloat(tfDiscountPercB.getText()));
             discountBean1.setLimitDays(Integer.parseInt(tfDiscountDaysB.getText()));
 
+            badgeBean1 = new BadgeBean1();
             badgeBean1.setName(tfBadgeNameB.getText());
             badgeBean1.setIcon(new Image(badgeIconPathB));
 
+            objectiveBean = new ObjectiveBean1();
             objectiveBean.setLevel(Levels.BEGINNER);
             objectiveBean.setType(choiceBoxTypeB.getValue());
-            objectiveBean.setRequirement(Integer.parseInt(tfTargetNumberB.getText()));
+            objectiveBean.setRequirement(Float.parseFloat(tfTargetNumberB.getText()));
+
+            objectiveBean.setDiscountBean(discountBean1);
+            objectiveBean.setBadgeBean(badgeBean1);
+            objectiveBeanList.add(objectiveBean);
             try {
                 objectiveBean.setBadgeIconInputStream(new FileInputStream(badgeIconPathB));
             } catch (FileNotFoundException e) {
@@ -206,15 +213,22 @@ public class PublishSeriesControllerG {
             }
         }
         if(isThisObjectiveCompiled(Levels.INTERMEDIATE)){
+            discountBean1 = new DiscountBean1();
             discountBean1.setPercentage(Float.parseFloat(tfDiscountPercI.getText()));
             discountBean1.setLimitDays(Integer.parseInt(tfDiscountDaysI.getText()));
 
+            badgeBean1 = new BadgeBean1();
             badgeBean1.setName(tfBadgeNameI.getText());
             badgeBean1.setIcon(new Image(badgeIconPathI));
 
+            objectiveBean = new ObjectiveBean1();
             objectiveBean.setLevel(Levels.INTERMEDIATE);
             objectiveBean.setType(choiceBoxTypeI.getValue());
-            objectiveBean.setRequirement(Integer.parseInt(tfTargetNumberI.getText()));
+            objectiveBean.setRequirement(Float.parseFloat(tfTargetNumberI.getText()));
+
+            objectiveBean.setDiscountBean(discountBean1);
+            objectiveBean.setBadgeBean(badgeBean1);
+            objectiveBeanList.add(objectiveBean);
             try {
                 objectiveBean.setBadgeIconInputStream(new FileInputStream(badgeIconPathI));
             } catch (FileNotFoundException e) {
@@ -223,15 +237,22 @@ public class PublishSeriesControllerG {
 
         }
         if(isThisObjectiveCompiled(Levels.EXPERT)){
+            discountBean1 = new DiscountBean1();
             discountBean1.setPercentage(Float.parseFloat(tfDiscountPercE.getText()));
             discountBean1.setLimitDays(Integer.parseInt(tfDiscountDaysE.getText()));
 
+            badgeBean1 = new BadgeBean1();
             badgeBean1.setName(tfBadgeNameE.getText());
             badgeBean1.setIcon(new Image(badgeIconPathE));
 
+            objectiveBean = new ObjectiveBean1();
             objectiveBean.setLevel(Levels.EXPERT);
             objectiveBean.setType(choiceBoxTypeE.getValue());
-            objectiveBean.setRequirement(Integer.parseInt(tfTargetNumberE.getText()));
+            objectiveBean.setRequirement(Float.parseFloat(tfTargetNumberE.getText()));
+
+            objectiveBean.setDiscountBean(discountBean1);
+            objectiveBean.setBadgeBean(badgeBean1);
+            objectiveBeanList.add(objectiveBean);
             try {
                 objectiveBean.setBadgeIconInputStream(new FileInputStream(badgeIconPathE));
             } catch (FileNotFoundException e) {
@@ -239,9 +260,7 @@ public class PublishSeriesControllerG {
             }
         }
 
-        objectiveBean.setDiscountBean(discountBean1);
-        objectiveBean.setBadgeBean(badgeBean1);
-        objectiveBeanList.add(objectiveBean);
+
         closeObjectives();
     }
 

@@ -31,7 +31,7 @@ public class PublishSeriesController {
             discount.setLimitDays(objectiveBean.getDiscountBean().getLimitDays());
 
             ObjectiveFactory objectiveFactory = new ObjectiveFactory();
-            Objective objective = objectiveFactory.createObjective(objectiveBean.getType());
+            Objective objective = objectiveFactory.createObjective(objectiveBean.getType(),badge,discount,Levels.valueOf(objectiveBean.getLevel()),objectiveBean.getRequirement());
 
             objectives.add(objective);
             objectiveBadgeHM.put(objective,objectiveBean.getBadgeIconInputStream());

@@ -24,7 +24,11 @@ public class PostReviewController{
 
         Series series = null;
 
+
         for(Series favs : UserLogin.getInstance().getReader().getFavourites()){
+            if(favs == null){
+                break;
+            }
             if(favs.getTitle().equals(seriesBean.getTitle())){
                 favs.addReviewInSilence(chapterBean.getTitle(), reviewBean.getComment(), reviewBean.getRating());
                 series = favs;
@@ -33,6 +37,9 @@ public class PostReviewController{
         }
 
         for(Series toread : UserLogin.getInstance().getReader().getToRead()){
+            if(toread == null){
+                break;
+            }
             if(toread.getTitle().equals(seriesBean.getTitle())){
                 toread.addReviewInSilence(chapterBean.getTitle(), reviewBean.getComment(), reviewBean.getRating());
                 series = toread;
@@ -41,6 +48,9 @@ public class PostReviewController{
         }
 
         for(Series reading : UserLogin.getInstance().getReader().getReading()){
+            if(reading == null){
+                break;
+            }
             if(reading.getTitle().equals(seriesBean.getTitle())){
                 reading.addReviewInSilence(chapterBean.getTitle(), reviewBean.getComment(), reviewBean.getRating());
                 series = reading;
@@ -49,6 +59,9 @@ public class PostReviewController{
         }
 
         for(Author author1 : UserLogin.getInstance().getReader().getFollowedAuthors()){
+            if(author1 == null){
+                break;
+            }
             for(Series series1 : author1.getPublishedSeries()){
                 if(series1.getTitle().equals(seriesBean.getTitle())){
                     series1.addReviewInSilence(chapterBean.getTitle(), reviewBean.getComment(), reviewBean.getRating());
@@ -84,7 +97,7 @@ public class PostReviewController{
         boolean isNewObjectiveAchieved;
 
         //numero di review del lettore
-        int numOfReviews = 0;
+        Float numOfReviews = 0f;
         for(Chapter chapter : series.getChapters()){
             for(Review review : chapter.getReviews()){
                 if(review.getAccount().getUsername().equals(UserLogin.getInstance().getReader().getUsername())){
@@ -96,7 +109,7 @@ public class PostReviewController{
         //controllo degli obiettivi di tipo review
         for(Objective objective : series.getObjectives()){
 
-            isReviewsType = objective.getType().equals("reviewsObjective");
+            isReviewsType = objective.getType().equals("reviews");
             if(isReviewsType){
                 isBadgeAlreadyAchieved = UserLogin.getInstance().getReader().hasAchievedThisBadge(objective.getBadge());
                 isNewObjectiveAchieved = objective.isObjectiveAchieved(numOfReviews);
@@ -110,7 +123,7 @@ public class PostReviewController{
     private void assignBadgeAndDiscountCodeToReader(Objective objective,Series series,SeriesBean seriesBean) {
 
         //aggiungo badge alla lista e salvo sul DB + assegno badge
-        new Thread(()-> UserLogin.getInstance().getReader().addAchievedBadge(objective.getBadge())).start();
+        UserLogin.getInstance().getReader().addAchievedBadge(objective.getBadge());
 
         //genero discount code
         DiscountCode discountCode = new DiscountCode(objective.getDiscount());

@@ -261,12 +261,12 @@ public class Queries {
         String seriesTitle = series.getTitle();
         String level = objective.getLevel().toString();
         String type;
-        int requirement = objective.getRequirement();
+        Float requirement = objective.getRequirement();
         switch (objective.getType()){
-            case "reviewsObjective":
+            case "reviews":
                 type =  "reviews";
                 break;
-            case "chapterObjective":
+            case "chapters":
                 type = "chapters";
                 break;
             default:
@@ -275,7 +275,7 @@ public class Queries {
 
         Float discountPercentage = objective.getDiscount().getPercentage();
 
-        String insertStatement = String.format("INSERT INTO objectives (limitDays,level,type,seriesTitle,discountPercentage,associatedBadgeID,number) values ('%s', '%s','%s','%s','%s','%d','%d')",limitDays,level,type,seriesTitle,discountPercentage,bagdeID,requirement);
+        String insertStatement = String.format("INSERT INTO objectives (limitDays,level,type,seriesTitle,discountPercentage,associatedBadgeID,number) values ('%s', '%s','%s','%s','%s','%d','%f')",limitDays,level,type,seriesTitle,discountPercentage,bagdeID,requirement);
         System.out.println(insertStatement);
         stmt.executeUpdate(insertStatement);
     }

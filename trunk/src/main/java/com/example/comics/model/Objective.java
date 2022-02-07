@@ -5,13 +5,12 @@ public abstract class Objective{
     protected Levels level;
     protected Discount discount;
     protected Badge badge;
-    protected int id;
 
-    public abstract void setRequirement(int requirement);
-    public abstract int getRequirement();
+    public abstract void setRequirement(Float requirement);
+    public abstract Float getRequirement();
     public abstract String getType();
 
-    public abstract boolean isObjectiveAchieved(int achievement);
+    public abstract boolean isObjectiveAchieved(Float achievement);
 
     public Levels getLevel() {return level;}
     public void setLevel(Levels level) {
@@ -32,10 +31,4 @@ public abstract class Objective{
         this.discount = discount;
     }
 
-    public int getId() {
-        return id;
-    }
-    public void setId(int id) {
-        this.id = id;
-    }
 }

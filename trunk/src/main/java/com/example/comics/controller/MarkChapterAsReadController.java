@@ -14,27 +14,27 @@ public class MarkChapterAsReadController {
 
     public void markChapterAsRead(SeriesBean seriesBean, ChapterBean chapterBean){
 
+        System.out.println("[MARK CHAPTER CONTROLLER] running markchapterasread.");
+
         Series series = null;
         for(Series series1 : seriesBean.getAuthor().getPublishedSeries()){
             if(series1.getTitle().equals(seriesBean.getTitle())){
                 series = series1;
             }
         }
-        Series finalSeries = series;
-        UserLogin.getInstance().getReader().markChapter(finalSeries,chapterBean.getTitle());
-
-        Series finalSeries1 = series;
+        System.out.println("[MARK] Series = "+series.getTitle());
+        UserLogin.getInstance().getReader().markChapter(series,chapterBean.getTitle());
 
         ReaderDAO readerDAO = new ReaderDAO();
-        readerDAO.saveReadChapter(finalSeries1, chapterBean.getTitle());
+        readerDAO.saveReadChapter(series, chapterBean.getTitle());
         
         checkObjectives(series);
     }
 
     private void checkObjectives(Series series) {
-
-        int readersReadings = 0;
-        int achievement = 0;
+        System.out.println("[MARK] CheckObjectives("+series.getTitle()+")");
+        Float readersReadings = 0f;
+        Float achievement = 0f;
 
         for(Series readersSeries : UserLogin.getInstance().getReader().getReading()){
             if(readersSeries == null){
@@ -47,16 +47,20 @@ public class MarkChapterAsReadController {
                     }
                 }
             }
+            System.out.println("[MARK] readerReadings : "+readersReadings);
+            System.out.println("[MARK] seriesChapters size : "+series.getChapters().size());
             achievement =(readersReadings / series.getChapters().size());
+            System.out.println("[MARK CH C] Achievement : "+achievement);
 
         }
 
         //controllo degli obiettivi
         for(Objective objective : series.getObjectives()){
-            if((objective.getType().equals("chapterObjective"))&&(!UserLogin.getInstance().getReader().hasAchievedThisBadge(objective.getBadge()))&&(objective.isObjectiveAchieved(achievement))){
+            if((objective.getType().equals("chapters"))&&(!UserLogin.getInstance().getReader().hasAchievedThisBadge(objective.getBadge()))&&(objective.isObjectiveAchieved(achievement))){
 
+                System.out.println("[MARK] Badge won....");
                 //aggiungo badge alla lista e salvo sul DB + assegno badge
-                new Thread(()-> UserLogin.getInstance().getReader().addAchievedBadge(objective.getBadge())).start();
+                UserLogin.getInstance().getReader().addAchievedBadge(objective.getBadge());
 
                 //genero discount code
                 DiscountCode discountCode = new DiscountCode(objective.getDiscount());

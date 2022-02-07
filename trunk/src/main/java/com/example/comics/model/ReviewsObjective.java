@@ -2,36 +2,31 @@ package com.example.comics.model;
 
 public class ReviewsObjective extends Objective{
 
-    private int requiredReviews;
+    private Float requiredReviews;
 
     public ReviewsObjective(){
-        //costruttore
     }
-
-    public ReviewsObjective(Badge badge, Discount discount, int requiredReviews){
-        this.badge = badge;
-        this.discount = discount;
-        this.requiredReviews = requiredReviews;
-    }
-
 
     @Override
-    public void setRequirement(int requirement) {
+    public void setRequirement(Float requirement) {
         this.requiredReviews = requirement;
     }
 
     @Override
-    public int getRequirement() {
+    public Float getRequirement() {
         return requiredReviews;
     }
 
-    public boolean isObjectiveAchieved(int readersReviews){
+    @Override
+    public boolean isObjectiveAchieved(Float readersReviews){
+        System.out.println("* * * * * Verifying reviews objective. * * * * * ");
         return readersReviews >= requiredReviews;
     }
 
     @Override
     public final String getType() {
-        return "reviewsObjective";
+        return "reviews";
     }
+
 
 }

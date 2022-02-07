@@ -1,25 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.String?>
-<?import java.net.URL?>
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ChoiceBox?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TextArea?>
-<?import javafx.scene.control.TextField?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.Pane?>
-<?import javafx.scene.layout.StackPane?>
-<?import javafx.scene.layout.VBox?>
-<?import javafx.scene.paint.Color?>
-<?import javafx.scene.paint.LinearGradient?>
-<?import javafx.scene.paint.Stop?>
-<?import javafx.scene.text.Font?>
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
 
-<StackPane xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.comics.view1.PublishSeriesControllerG">
+<StackPane xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.comics.view1.PublishSeriesControllerG">
    <children>
       <Pane>
          <children>
@@ -304,9 +294,9 @@
                         </Button>
                      </children>
                   </HBox>
-                  <Label text="Set objectives settings for each level." textFill="WHITE">
+                  <Label prefHeight="13.0" prefWidth="597.0" text="NOTE : Target number stays for minimum reviews for series (type Reviews), or minimum read chapters percentage (type Chapters)" textFill="WHITE">
                      <font>
-                        <Font name="Berlin Sans FB" size="20.0" />
+                        <Font name="Berlin Sans FB" size="11.0" />
                      </font>
                      <VBox.margin>
                         <Insets left="20.0" />
