@@ -153,6 +153,25 @@ public class Series extends SeriesSubject{
 				}
 			}
 			calculateAverageRating();
+
+	}
+
+
+	public void notifyNewReview(String chapterTitle, String comment, int rating){
+		for(int i=0; i< chapters.size(); i++){
+			if(chapters.get(i).getTitle().equals(chapterTitle)){
+				chapters.get(i).notifyNewReview(comment, rating, UserLogin.getInstance().getReader());
+			}
+		}
+	}
+
+	public void addReviewInSilence(String chapterTitle, String reviewComment, int rating) {
+		for(int i=0; i< chapters.size(); i++){
+			if(chapters.get(i).getTitle().equals(chapterTitle)){
+				chapters.get(i).addReviewInSilence(this, reviewComment, rating, UserLogin.getInstance().getReader());
+			}
+		}
+		calculateAverageRating();
 	}
 
 	public void calculateAverageRating(){
@@ -189,5 +208,7 @@ public class Series extends SeriesSubject{
 	public void setDescription(String description) {
 		this.description = description;
 	}
+
+
 }
 

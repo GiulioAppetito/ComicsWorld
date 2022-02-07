@@ -1,9 +1,7 @@
 package com.example.comics.view2;
 
 import com.example.comics.controller.*;
-import com.example.comics.model.AccountObserver;
-import com.example.comics.model.AccountSubject;
-import com.example.comics.model.UserLogin;
+import com.example.comics.model.*;
 import com.example.comics.model.fagioli.*;
 import com.example.comics.view1.beans.AccountBean1;
 import com.example.comics.view2.beans.AccountBean2;
@@ -23,7 +21,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class FeedControllerG2{
+public class FeedControllerG2 implements ChapterObserver {
 
     @FXML
     private Button author;
@@ -257,6 +255,17 @@ public class FeedControllerG2{
     @FXML
     private Label lblEmail;
 
+    @FXML
+    private VBox vBoxOrderedSeries;
+
+    @FXML
+    private VBox vBoxMyOrders;
+
+
+    @FXML
+    private Button btnMyOrders;
+
+
 
     private static final String READER = "reader";
     private static final String BORDER_STYLE = "-fx-border-color: #9b55dc; -fx-background-radius: 20";
@@ -265,7 +274,8 @@ public class FeedControllerG2{
     private boolean openMenu = true;
     private static FeedControllerG2 instance;
     private static List<SeriesBean> latestSeries;
-    private List<SeriesBean> mySeries;
+    private static List<SeriesBean> mySeries;
+    private static List<OrderBean> myOrders;
 
     private FeedControllerG2(){
         loadLatestSeries();
@@ -273,6 +283,7 @@ public class FeedControllerG2{
     public static synchronized FeedControllerG2 getInstance(){
         if(instance == null){
             instance = new FeedControllerG2();
+            ChapterSubject.attach(instance, "reviews");
         }
         return instance;
     }
@@ -280,6 +291,7 @@ public class FeedControllerG2{
         ResearchController researchController = new ResearchController();
         latestSeries = researchController.getLatestSeries();
     }
+
     public void init() {
 
         openFeed();
@@ -303,6 +315,7 @@ public class FeedControllerG2{
         btnReading.setOnAction(event -> openReading());
         btnToRead.setOnAction(event -> openToRead());
         btnMyBadges.setOnAction(event -> openMyBadges());
+        btnMyOrders.setOnAction(event -> openMyOrders());
 
         //author menu
         btnStatistics.setOnAction(event -> openStats());
@@ -311,11 +324,7 @@ public class FeedControllerG2{
         displayListOfSeries(latestSeries, vBoxSeries);
     }
 
-    private void openMyBadges() {
-        closeAll();
-        vBoxMyBadges.setVisible(true);
-        displayListOfBadges();
-    }
+
 
     private void displayListOfBadges() {
         vBoxBadgesList.getChildren().clear();
@@ -352,7 +361,6 @@ public class FeedControllerG2{
             }
         }
     }
-
     private void displayListOfSeries(List<SeriesBean> series, VBox box){
 
         box.getChildren().clear();
@@ -437,6 +445,25 @@ public class FeedControllerG2{
             }
         }
     }
+    private void displayListOfOrders(List<OrderBean> orders, VBox box) {
+
+        box.getChildren().clear();
+        int actualSize = orders.size();
+
+        for(int j=0; j<actualSize; j++){
+            FXMLLoader fxmlLoader = new FXMLLoader();
+            fxmlLoader.setLocation(getClass().getResource("orderCard.fxml"));
+            try {
+                VBox card = fxmlLoader.load();
+                OrderCardControllerG2 cardController = fxmlLoader.getController();
+                cardController.setData(orders.get(j));
+                box.getChildren().add(card);
+
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+    }
 
     //reader
     private void openFav() {
@@ -494,6 +521,20 @@ public class FeedControllerG2{
         List<SeriesBean> toReadSeries = researchController.getToReadSeries();
         displayListOfSeries(toReadSeries, vBoxToReadSeries);
     }
+    private void openMyOrders(){
+        openMenu();
+        closeAll();
+        vBoxMyOrders.setVisible(true);
+
+        ResearchController researchController = new ResearchController();
+        myOrders = researchController.getUserOrders();
+        displayListOfOrders(myOrders, vBoxOrderedSeries);
+    }
+    private void openMyBadges() {
+        closeAll();
+        vBoxMyBadges.setVisible(true);
+        displayListOfBadges();
+    }
     //author
     private void openStats(){
         openMenu();
@@ -539,6 +580,15 @@ public class FeedControllerG2{
         btnChangeUsername.setOnAction(event -> changeUsername());
 
     }
+    public void openProfile(){
+        closeAll();
+        boxProfile.setVisible(true);
+    }
+    public void openFeed(){
+        closeAll();
+        boxFeed.setVisible(true);
+        vBoxSeries.setVisible(true);
+    }
 
     private void changeUsername() {
         AccountBean2 accountBean = new AccountBean2();
@@ -567,16 +617,6 @@ public class FeedControllerG2{
 
         CustomizeProfileController customizeProfileController = new CustomizeProfileController();
         customizeProfileController.changeEmail(accountBean);
-    }
-
-    public void openProfile(){
-        closeAll();
-        boxProfile.setVisible(true);
-    }
-    public void openFeed(){
-        closeAll();
-        boxFeed.setVisible(true);
-        vBoxSeries.setVisible(true);
     }
 
     private void likeSeries(SeriesBean seriesBean) {
@@ -651,44 +691,6 @@ public class FeedControllerG2{
         btnFollow.setOnAction(event -> unfollowAuthor(authorBean));
     }
 
-    private void openChapter(ChapterBean chapterBean, SeriesBean seriesBean) {
-        closeAll();
-        vBoxChapter.setVisible(true);
-
-        chapterTitle.setText(chapterBean.getTitle());
-        chapterCover.setImage(chapterBean.getCover());
-        description.setText(chapterBean.getDescription());
-
-        displayListOfReviews(chapterBean.getReviews(), vBoxReviews);
-        if(UserLogin.getInstance().getAccount().getRole().equals(READER)) {
-            readChapter(chapterBean);
-            btnPostReview.setOnAction(event -> openBoxReview(chapterBean, seriesBean));
-        }else{
-            btnBuy.setVisible(false);
-            btnPostReview.setVisible(false);
-        }
-    }
-
-    private void openBoxReview(ChapterBean chapterBean, SeriesBean seriesBean) {
-        closeAll();
-        vBoxPostReview.setVisible(true);
-        btnSubmit.setOnAction(event -> postReview(chapterBean, seriesBean));
-        btnBackFromChaptee.setOnAction(event -> openChapter(chapterBean, seriesBean));
-    }
-
-    public void postReview(ChapterBean chapterBean, SeriesBean seriesBean){
-        ReviewBean2 reviewBean = new ReviewBean2();
-        reviewBean.setComment(taComment.getText());
-        reviewBean.setAccount(UserLogin.getInstance().getAccount());
-        reviewBean.setRating(ratingSlider.getValue());
-        //e magari anche la foto
-        PostReviewController postReviewController = new PostReviewController();
-        postReviewController.post(reviewBean, chapterBean, seriesBean);
-
-        taComment.setText("");
-        openChapter(chapterBean, seriesBean);
-    }
-
     public void openSerie(SeriesBean seriesBean){
 
         closeAll();
@@ -725,6 +727,46 @@ public class FeedControllerG2{
             btnFollow.setVisible(false);
         }
     }
+    private void openChapter(ChapterBean chapterBean, SeriesBean seriesBean) {
+        closeAll();
+        vBoxChapter.setVisible(true);
+
+        currentChapter = chapterBean;
+
+        chapterTitle.setText(chapterBean.getTitle());
+        chapterCover.setImage(chapterBean.getCover());
+        description.setText(chapterBean.getDescription());
+
+        displayListOfReviews(chapterBean.getReviews(), vBoxReviews);
+        if(UserLogin.getInstance().getAccount().getRole().equals(READER)) {
+            readChapter(chapterBean);
+            btnPostReview.setOnAction(event -> openBoxReview(chapterBean, seriesBean));
+        }else{
+            btnBuy.setVisible(false);
+            btnPostReview.setVisible(false);
+        }
+    }
+    private void openBoxReview(ChapterBean chapterBean, SeriesBean seriesBean) {
+        closeAll();
+        vBoxChapter.setVisible(true);
+        vBoxPostReview.setVisible(true);
+        btnSubmit.setOnAction(event -> postReview(chapterBean, seriesBean));
+        btnBackFromChaptee.setOnAction(event -> openChapter(chapterBean, seriesBean));
+    }
+
+    public void postReview(ChapterBean chapterBean, SeriesBean seriesBean){
+        ReviewBean2 reviewBean = new ReviewBean2();
+        reviewBean.setComment(taComment.getText());
+        reviewBean.setAccount(UserLogin.getInstance().getAccount());
+        reviewBean.setRating(ratingSlider.getValue());
+        //e magari anche la foto
+        PostReviewController postReviewController = new PostReviewController();
+        postReviewController.post(reviewBean, chapterBean, seriesBean);
+
+        taComment.setText("");
+        vBoxPostReview.setVisible(false);
+    }
+
 
     private void initProfile(){
         lblFirstName.setText(UserLogin.getInstance().getAccount().getFirstName());
@@ -763,6 +805,7 @@ public class FeedControllerG2{
         vBoxReading.setVisible(false);
         vBoxMySeries.setVisible(false);
         vBoxFollowing.setVisible(false);
+        vBoxMyOrders.setVisible(false);
         vBoxStats.setVisible(false);
         vBoxSerie.setVisible(false);
         vBoxSettings.setVisible(false);
@@ -770,7 +813,17 @@ public class FeedControllerG2{
         vBoxChapter.setVisible(false);
         vBoxPostReview.setVisible(false);
         vBoxMyBadges.setVisible(false);
+        vBoxMyOrders.setVisible(false);
     }
 
+    private static ChapterBean currentChapter = null;
 
+    @Override
+    public void update(ReviewBean reviewBean) {
+        if(currentChapter!=null){
+            List<ReviewBean> reviews = currentChapter.getReviews();
+            reviews.add(reviewBean);
+            displayListOfReviews(reviews, vBoxReviews);
+        }
+    }
 }

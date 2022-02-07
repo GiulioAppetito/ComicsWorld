@@ -2,6 +2,7 @@ package com.example.comics.controller;
 
 import com.example.comics.controller.boundaries.PostReviewAuthorBoundary;
 import com.example.comics.controller.boundaries.PostReviewReaderBoundary;
+import com.example.comics.model.dao.ReviewDAO;
 import com.example.comics.model.fagioli.*;
 import com.example.comics.model.*;
 import com.example.comics.model.dao.SeriesDAO;
@@ -21,9 +22,49 @@ public class PostReviewController{
         author.setLastName(seriesBean.getAuthor().getLastName());
         author.setEmail(seriesBean.getAuthor().getEmail());
 
-        SeriesDAO seriesDAO = new SeriesDAO();
-        Series series = seriesDAO.retreiveSeriesWithAuthor(seriesBean.getTitle(),author);
-        series.addReview(chapterBean.getTitle(), reviewBean.getComment(), reviewBean.getRating());
+        Series series = null;
+
+        for(Series favs : UserLogin.getInstance().getReader().getFavourites()){
+            if(favs.getTitle().equals(seriesBean.getTitle())){
+                favs.addReviewInSilence(chapterBean.getTitle(), reviewBean.getComment(), reviewBean.getRating());
+                series = favs;
+                break;
+            }
+        }
+
+        for(Series toread : UserLogin.getInstance().getReader().getToRead()){
+            if(toread.getTitle().equals(seriesBean.getTitle())){
+                toread.addReviewInSilence(chapterBean.getTitle(), reviewBean.getComment(), reviewBean.getRating());
+                series = toread;
+                break;
+            }
+        }
+
+        for(Series reading : UserLogin.getInstance().getReader().getReading()){
+            if(reading.getTitle().equals(seriesBean.getTitle())){
+                reading.addReviewInSilence(chapterBean.getTitle(), reviewBean.getComment(), reviewBean.getRating());
+                series = reading;
+                break;
+            }
+        }
+
+        for(Author author1 : UserLogin.getInstance().getReader().getFollowedAuthors()){
+            for(Series series1 : author1.getPublishedSeries()){
+                if(series1.getTitle().equals(seriesBean.getTitle())){
+                    series1.addReviewInSilence(chapterBean.getTitle(), reviewBean.getComment(), reviewBean.getRating());
+                    series = series1;
+                    break;
+                }
+            }
+        }
+
+        if(series == null){
+            SeriesDAO seriesDAO = new SeriesDAO();
+            series = seriesDAO.retrieveSeries(seriesBean.getTitle());
+        }
+
+        series.notifyNewReview(chapterBean.getTitle(), reviewBean.getComment(), reviewBean.getRating());
+
 
         //invio mail all'autore di una nuova review
         Thread emailThread;

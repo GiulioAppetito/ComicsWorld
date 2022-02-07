@@ -597,9 +597,8 @@ public class ChapterControllerG implements ChapterObserver, ReaderObserver{
         reviewBean.setComment(txtAreaComment.getText());
         reviewBean.setAccount(UserLogin.getInstance().getAccount());
         reviewBean.setRating(reviewRating);
-        //e magari anche la foto
-        PostReviewController postReviewController = new PostReviewController();
 
+        PostReviewController postReviewController = new PostReviewController();
         postReviewController.post(reviewBean, chapterBean, seriesBean);
 
         paneInsertReview.setVisible(false);

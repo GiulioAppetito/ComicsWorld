@@ -39,11 +39,11 @@ public class ReviewBean2 implements ReviewBean {
 
     @Override
     public void setRating(int rating) {
-        this.rating = rating;
+        this.rating = rating/100;
     }
 
     public void setRating(Double rating){
-        this.rating = rating.intValue();
+        this.rating = rating.intValue()/20;
     }
 
 }

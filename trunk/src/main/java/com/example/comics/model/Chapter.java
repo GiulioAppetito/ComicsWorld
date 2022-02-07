@@ -105,6 +105,21 @@ public class Chapter extends ChapterSubject {
         notifyObserversNewReview(reviewBundle);
     }
 
+    public void notifyNewReview(String comment, int rating, Reader reader){
+        ReviewBundle reviewBundle = new ReviewBundle();
+        reviewBundle.setRating(rating);
+        reviewBundle.setComment(comment);
+        reviewBundle.setAccount(reader);
+
+        notifyObserversNewReview(reviewBundle);
+    }
+
+    public void addReviewInSilence(Series series, String comment, int rating, Reader reader){
+        Review review = new Review(comment, rating, reader);
+        reviews.add(review);
+        this.averageRating = calculateAverageRating();
+    }
+
     public int calculateAverageRating() {
         averageRating = 0;
         int count = 0;

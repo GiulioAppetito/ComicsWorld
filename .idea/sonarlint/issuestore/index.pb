@@ -13,12 +13,8 @@ g
 7trunk/src/main/java/com/example/comics/model/Order.java,f\3\f3aa90c62a1c7c556c80eaadd9a7153c2a587258
 ‰
 Ytrunk/src/main/java/com/example/comics/controller/boundaries/BuyComicsAuthorBoundary.java,9\9\995c02d90ed610166cff774635c865bc3cfb59b1
-p
-@trunk/src/main/java/com/example/comics/model/ChapterSubject.java,c\b\cbef2f5c28e0525fe37bc3006eb93dd3e76f3b3d
 i
 9trunk/src/main/java/com/example/comics/model/Account.java,9\a\9a56b31fe52b942392371e7a8bc9f9ad131d226e
-r
-Btrunk/src/main/java/com/example/comics/view2/FeedControllerG2.java,7\b\7b0422c54b82c7983178cbae05dfa5d9d950e7e1
 v
 Ftrunk/src/main/java/com/example/comics/view1/OrderCardControllerG.java,c\d\cd3c8faacf27f14d192b331dba9740edfd361869
 n

@@ -28,8 +28,8 @@ public class ReviewCardControllerG {
         username.setText(reviewBean.getAccount().getUsername());
         propic.setImage(reviewBean.getAccount().getProPic());
         comment.setText(reviewBean.getComment());
-        ratingBar.setProgress(reviewBean.getRating()/10f);
-        lblRating.setText(reviewBean.getRating() * 10 + "%");
+        ratingBar.setProgress(reviewBean.getRating()/5f);
+        lblRating.setText(reviewBean.getRating() * 20 + "%");
 
     }
 
