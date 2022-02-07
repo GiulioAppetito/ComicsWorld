@@ -183,48 +183,9 @@ public class Reader extends Account{
         }
     }
 
-    public void markChapter(Series series,String chapterTitle){
-        addSeriesToReading(series);
-        removeSeriesFromToRead(series);
-        for(Chapter chapter : series.getChapters()){
-            if(chapter.getTitle().equals(chapterTitle)){
-                chapter.setRead(true);
-            }
-        }
-    }
 
-    public void unmarkChapter(Series series, String chapterTitle) {
 
-        boolean isToBeRemoved = true;
-        Series seriesToRemove = null;
-
-        for(Series readerSeries : reading){
-            if(readerSeries == null){
-                return;
-            }
-            if(readerSeries.getTitle().equals(series.getTitle())){
-                for(Chapter chapter : readerSeries.getChapters()){
-                    if(chapter.getTitle().equals(chapterTitle)){
-                        chapter.setRead(false);
-                        seriesToRemove = readerSeries;
-                    }
-                }
-
-                for(Chapter chapter : readerSeries.getChapters()){
-                    if(chapter.getRead()){
-                        isToBeRemoved = false;
-                    }
-                }
-
-            }
-        }
-        if(isToBeRemoved){
-            reading.remove(seriesToRemove);
-        }
-
-    }
-
-    private void addSeriesToReading(Series seriesToAdd){
+    public void addSeriesToReading(Series seriesToAdd){
         for(Series series : this.reading){
             if(series == null){
                 break;

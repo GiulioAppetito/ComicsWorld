@@ -28,7 +28,7 @@ public class ResearchController {
 
     public List<SeriesBean> getLatestSeries() {
         SeriesDAO seriesdao = new SeriesDAO();
-        List<Series> latestSeries = seriesdao.retriveLatestSeries();
+        List<Series> latestSeries = seriesdao.retrieveLatestSeries();
         return getSeriesBeans(latestSeries);
     }
 

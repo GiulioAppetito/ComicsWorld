@@ -3,6 +3,7 @@ package com.example.comics.model;
 import com.example.comics.model.dao.AccountDAO;
 import com.example.comics.model.dao.AuthorDAO;
 import com.example.comics.model.dao.ReaderDAO;
+import com.example.comics.model.dao.SeriesDAO;
 import com.example.comics.model.exceptions.FailedRegistrationException;
 
 public class UserLogin{
@@ -36,6 +37,8 @@ public class UserLogin{
 
     public static boolean createAccount(String credential, String password, String role){
 
+
+        SeriesDAO.retriveAllSeries();
         UserLogin.account = new Author();
         if(role.equals("author")){
             AuthorDAO authorDAO = new AuthorDAO();

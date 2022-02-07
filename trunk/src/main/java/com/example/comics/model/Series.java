@@ -197,5 +197,44 @@ public class Series extends SeriesSubject{
 	}
 
 
+	public void markChapter(Series series,String chapterTitle){
+		for(Chapter chapter : series.getChapters()){
+			if(chapter.getTitle().equals(chapterTitle)){
+				chapter.setRead(true);
+			}
+		}
+	}
+/*
+	public void unmarkChapter(Series series, String chapterTitle) {
+
+		boolean isToBeRemoved = true;
+		Series seriesToRemove = null;
+
+		for(Series readerSeries : reading){
+			if(readerSeries == null){
+				return;
+			}
+			if(readerSeries.getTitle().equals(series.getTitle())){
+				for(Chapter chapter : readerSeries.getChapters()){
+					if(chapter.getTitle().equals(chapterTitle)){
+						chapter.setRead(false);
+						seriesToRemove = readerSeries;
+					}
+				}
+
+				for(Chapter chapter : readerSeries.getChapters()){
+					if(chapter.getRead()){
+						isToBeRemoved = false;
+					}
+				}
+
+			}
+		}
+		if(isToBeRemoved){
+			reading.remove(seriesToRemove);
+		}
+
+	}
+*/
 }
 

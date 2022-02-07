@@ -23,6 +23,12 @@ public class ReaderDAO {
     private List<Author> followedAuthors = new ArrayList<>();
     private List<Series> readingSeries = new ArrayList<>();
 
+
+    private List<Series> all = new ArrayList<>();
+    private List<String> favTitles = new ArrayList<>();
+    private List<String> toReadTitles = new ArrayList<>();
+    private List<String> readingTitles = new ArrayList<>();
+
     public Reader retrieveReader(String identifier, String password){
 
         Statement stmt = null;
@@ -44,21 +50,26 @@ public class ReaderDAO {
 
             String username = rs.getString("username");
 
+            favTitles = seriesDAO.retrieveFavouriteSeriesTitles(username);
+            toReadTitles = seriesDAO.retrieveToReadSeriesTitles(username);
+            readingTitles = seriesDAO.retrieveReadingSeriesTitles(username);
 
-            Thread t = new Thread(()->{
-                favSeries = seriesDAO.retrieveFavouriteSeries(username);
-            });
-            t.start();
+            for(String title : favTitles){
+                Series series = seriesDAO.retrieveSeries(title);
+                favSeries.add(series);
+            }
 
-            Thread t1 = new Thread(()->{
-                toReadSeries = seriesDAO.retrieveToReadSeries(username);
-            });
-            t1.start();
+            for(String title : toReadTitles){
+                Series series = seriesDAO.retrieveSeries(title);
+                toReadSeries.add(series);
+            }
 
-            Thread t2 = new Thread(()->{
-                readingSeries = seriesDAO.retrieveReadingSeries(username);
-            });
-            t2.start();
+            for(String title : readingTitles){
+                Series series = seriesDAO.retrieveSeries(title);
+                readingSeries.add(series);
+            }
+
+
 
             DiscountCodeDAO discountCodeDAO = new DiscountCodeDAO();
             Thread t3 = new Thread(()->{
@@ -72,12 +83,9 @@ public class ReaderDAO {
             });
             t4.start();
 
-            t.join();
-            t1.join();
-            t2.join();
+
             t3.join();
             t4.join();
-
 
             reader = new Reader(favSeries, toReadSeries, readingSeries, username, followedAuthors, discountCodes);
 

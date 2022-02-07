@@ -22,6 +22,9 @@ public class SeriesDAO {
     private static final String AUTHOR = "author";
     private static final String NOSERIESFOUND = "No series Found ";
 
+
+    private static List<Series> all = new ArrayList<>();
+
     public List<Series> retrieveFavouriteSeries(String user) {
         Statement stmt = null;
         Connection conn = null;
@@ -219,114 +222,34 @@ public class SeriesDAO {
         return seriesList;
     }
 
+
     public Series retrieveSeries(String title) {
-        Statement stmt = null;
-        Connection conn = null;
-
-        Series series = null;
-        Author author;
-        try {
-            conn = DriverManager.getConnection(DB_URL, USER, PASS);
-
-            stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
-            ResultSet rs = Queries.retrieveSeries(stmt, title);
-
-            if (!rs.first()) {
-                throw new Exception(NOSERIESFOUND);
+        for(Series s : all){
+            if(s.getTitle().equals(title)){
+                return s;
             }
-            rs.first();
-
-            do {
-
-                title = rs.getString(TITLE);
-
-                AuthorDAO authorDAO = new AuthorDAO();
-                author = authorDAO.retrieveAuthorWithoutPassword(rs.getString(AUTHOR));
-                series = new Series(title, author);
-                Blob bl = rs.getBlob(COVER);
-                InputStream inputStream = bl.getBinaryStream();
-                Image image = new Image(inputStream);
-                series.setCover(image);
-            } while (rs.next());
-
-
-        } catch (Exception throwables) {
-            throwables.printStackTrace();
-        } finally {
-            try {
-                if (stmt != null)
-                    stmt.close();
-            } catch (SQLException se2) {
-                //TO-DO
-            }
-            try {
-                if (conn != null)
-                    conn.close();
-            } catch (SQLException se) {
-                se.printStackTrace();
-            }
-
         }
-        return series;
+        return null;
     }
 
     public List<Series> retrieveSeriesFromCategory(Genres genre){
 
-        Statement stmt = null;
-        Connection conn = null;
-
         List<Series> seriesList = new ArrayList<>();
 
-        Author author;
-        Series series;
-
-        try {
-            conn = DriverManager.getConnection(DB_URL, USER, PASS);
-
-            stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
-            ResultSet rs = Queries.retrieveCategorySeries(stmt, genre);
-
-            if (!rs.first()) {
-                throw new Exception(NOSERIESFOUND);
-            }
-            rs.first();
-            do {
-
-                AuthorDAO authorDAO = new AuthorDAO();
-                author = authorDAO.retrieveAuthorWithoutPassword(rs.getString(AUTHOR));
-                series = new Series(rs.getString(TITLE), author);
-
-                Blob bl = rs.getBlob(COVER);
-                InputStream inputStream = bl.getBinaryStream();
-                Image image = new Image(inputStream);
-                series.setCover(image);
-
-                seriesList.add(series);
-
-            } while (rs.next());
-
-
-        } catch (Exception throwables) {
-            throwables.printStackTrace();
-        } finally {
-            try {
-                if (stmt != null)
-                    stmt.close();
-            } catch (SQLException se2) {
-                //TO-DO
-            }
-            try {
-                if (conn != null)
-                    conn.close();
-            } catch (SQLException se) {
-                se.printStackTrace();
-            }
-
+        for(Series s : all){
+           if(s.getGenre1().equals(genre) || s.getGenre2().equals(genre) || s.getGenre3().equals(genre)){
+               seriesList.add(s);
+           }
         }
         return seriesList;
     }
 
-    public List<Series> retriveLatestSeries() {
+    public List<Series> retrieveLatestSeries(){
+        //facciamo finta
+        return all;
+    }
+
+    public static void retriveAllSeries() {
 
         Statement stmt = null;
         Connection conn = null;
@@ -341,7 +264,7 @@ public class SeriesDAO {
             ResultSet rs = Queries.retriveLatestSeries(stmt);
 
             if (!rs.first()) {
-                return seriesList;
+                all = null;
             }
             rs.first();
             do {
@@ -351,6 +274,9 @@ public class SeriesDAO {
                         author = authorDAO.retrieveAuthorWithoutPassword(rs.getString(AUTHOR));
                         series = new Series(rs.getString(TITLE), author);
                         series.setDescription(rs.getString("description"));
+                        series.setGenre1(Genres.valueOf(rs.getString("genre1")));
+                        series.setGenre2(Genres.valueOf(rs.getString("genre2")));
+                        series.setGenre3(Genres.valueOf(rs.getString("genre3")));
 
                         Blob bl = rs.getBlob(COVER);
                         if(bl != null){
@@ -381,13 +307,14 @@ public class SeriesDAO {
             }
 
         }
-        return seriesList;
+        all = seriesList;
     }
 
     public List<Objective> retrieveObjectives(String series) {
         ObjectiveDAO objectiveDAO = new ObjectiveDAO();
         return objectiveDAO.retrieveSeriesObjectives(series);
     }
+
 
     public void savePublishedSeries(Series series, InputStream seriesCoverInputStream, Map<Objective,InputStream> hashMap) {
         Statement stmt = null;
@@ -447,7 +374,146 @@ public class SeriesDAO {
         savePublishedSeries(series,coverInputStream,badgeIconHM);
 
         return series;
+    }
 
+
+    public List<String> retrieveFavouriteSeriesTitles(String user) {
+        Statement stmt = null;
+        Connection conn = null;
+
+        List<String> seriesList = new ArrayList<>();
+
+        String title;
+
+        Series series;
+
+        try {
+            conn = DriverManager.getConnection(DB_URL, USER, PASS);
+
+            stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
+            ResultSet rs = Queries.retriveFavouriteSeries(stmt, user);
+
+            if (!rs.first()) {
+                return seriesList;
+            }
+            rs.first();
+
+            do {
+                title = rs.getString(SERIES);
+                seriesList.add(title);
+            } while (rs.next());
+
+
+        } catch (Exception throwables) {
+            throwables.printStackTrace();
+        } finally {
+            try {
+                if (stmt != null)
+                    stmt.close();
+            } catch (SQLException se2) {
+                //TO-DO
+            }
+            try {
+                if (conn != null)
+                    conn.close();
+            } catch (SQLException se) {
+                se.printStackTrace();
+            }
+
+        }
+        return seriesList;
+    }
+
+    public List<String> retrieveToReadSeriesTitles(String user) {
+        Statement stmt = null;
+        Connection conn = null;
+
+        List<String> seriesList = new ArrayList<>();
+
+        String title;
+
+        Series series;
+
+        try {
+            conn = DriverManager.getConnection(DB_URL, USER, PASS);
+
+            stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
+            ResultSet rs = Queries.retriveToReadSeries(stmt, user);
+
+            if (!rs.first()) {
+                return seriesList;
+            }
+            rs.first();
+
+            do {
+                title = rs.getString(SERIES);
+                seriesList.add(title);
+            } while (rs.next());
+
+
+        } catch (Exception throwables) {
+            throwables.printStackTrace();
+        } finally {
+            try {
+                if (stmt != null)
+                    stmt.close();
+            } catch (SQLException se2) {
+                //TO-DO
+            }
+            try {
+                if (conn != null)
+                    conn.close();
+            } catch (SQLException se) {
+                se.printStackTrace();
+            }
+
+        }
+        return seriesList;
+    }
+
+    public List<String> retrieveReadingSeriesTitles(String user) {
+        Statement stmt = null;
+        Connection conn = null;
+
+        List<String> seriesList = new ArrayList<>();
+
+        String title;
+
+        try {
+            conn = DriverManager.getConnection(DB_URL, USER, PASS);
+
+            stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
+            ResultSet rs = Queries.retriveReadingSeries(stmt, user);
+
+            if (!rs.first()) {
+                return seriesList;
+            }
+            rs.first();
+
+            do {
+                title = rs.getString(SERIES);
+                seriesList.add(title);
+            } while (rs.next());
+
+
+        } catch (Exception throwables) {
+            throwables.printStackTrace();
+        } finally {
+            try {
+                if (stmt != null)
+                    stmt.close();
+            } catch (SQLException se2) {
+                //TO-DO
+            }
+            try {
+                if (conn != null)
+                    conn.close();
+            } catch (SQLException se) {
+                se.printStackTrace();
+            }
+
+        }
+        return seriesList;
     }
 
 }

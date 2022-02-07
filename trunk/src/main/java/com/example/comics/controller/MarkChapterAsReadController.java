@@ -22,8 +22,12 @@ public class MarkChapterAsReadController {
                 series = series1;
             }
         }
+
+        //su tutte le istanze sparse, segnare quel capitolo letto
+
+
         System.out.println("[MARK] Series = "+series.getTitle());
-        UserLogin.getInstance().getReader().markChapter(series,chapterBean.getTitle());
+        UserLogin.getInstance().getReader().addSeriesToReading(series);
 
         ReaderDAO readerDAO = new ReaderDAO();
         readerDAO.saveReadChapter(series, chapterBean.getTitle());
@@ -105,7 +109,7 @@ public class MarkChapterAsReadController {
         }
 
         Series finalSeries = series;
-        UserLogin.getInstance().getReader().unmarkChapter(finalSeries,chapterBean.getTitle());
+        //UserLogin.getInstance().getReader().unmarkChapter(finalSeries,chapterBean.getTitle());
 
         Series finalSeries1 = series;
 
