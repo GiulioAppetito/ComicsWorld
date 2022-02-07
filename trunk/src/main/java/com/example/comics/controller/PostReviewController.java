@@ -24,40 +24,6 @@ public class PostReviewController{
 
         Series series = null;
 
-
-        for(Series favs : UserLogin.getInstance().getReader().getFavourites()){
-            if(favs == null){
-                break;
-            }
-            if(favs.getTitle().equals(seriesBean.getTitle())){
-                favs.addReviewInSilence(chapterBean.getTitle(), reviewBean.getComment(), reviewBean.getRating());
-                series = favs;
-                break;
-            }
-        }
-
-        for(Series toread : UserLogin.getInstance().getReader().getToRead()){
-            if(toread == null){
-                break;
-            }
-            if(toread.getTitle().equals(seriesBean.getTitle())){
-                toread.addReviewInSilence(chapterBean.getTitle(), reviewBean.getComment(), reviewBean.getRating());
-                series = toread;
-                break;
-            }
-        }
-
-        for(Series reading : UserLogin.getInstance().getReader().getReading()){
-            if(reading == null){
-                break;
-            }
-            if(reading.getTitle().equals(seriesBean.getTitle())){
-                reading.addReviewInSilence(chapterBean.getTitle(), reviewBean.getComment(), reviewBean.getRating());
-                series = reading;
-                break;
-            }
-        }
-
         for(Author author1 : UserLogin.getInstance().getReader().getFollowedAuthors()){
             if(author1 == null){
                 break;
@@ -65,18 +31,14 @@ public class PostReviewController{
             for(Series series1 : author1.getPublishedSeries()){
                 if(series1.getTitle().equals(seriesBean.getTitle())){
                     series1.addReviewInSilence(chapterBean.getTitle(), reviewBean.getComment(), reviewBean.getRating());
-                    series = series1;
                     break;
                 }
             }
         }
 
-        if(series == null){
-            SeriesDAO seriesDAO = new SeriesDAO();
-            series = seriesDAO.retrieveSeries(seriesBean.getTitle());
-        }
-
-        series.notifyNewReview(chapterBean.getTitle(), reviewBean.getComment(), reviewBean.getRating());
+        SeriesDAO seriesDAO = new SeriesDAO();
+        series = seriesDAO.retrieveSeries(seriesBean.getTitle());
+        series.addReview(chapterBean.getTitle(), reviewBean.getComment(), reviewBean.getRating());
 
 
         //invio mail all'autore di una nuova review

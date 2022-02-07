@@ -197,6 +197,19 @@ public class Reader extends Account{
         this.reading.add(seriesToAdd);
     }
 
+    public void removeFromReading(Series series){
+
+        if(this.reading.size() == 0){
+            return;
+        }
+
+        for (int i = this.reading.size() - 1; i > 0; i--) {
+            if (reading.get(i).getTitle().equals(series.getTitle())) {
+                this.reading.remove(i);
+            }
+        }
+    }
+
     public Map<DiscountCode,Series> getDiscountCodes() {
         return discountCodes;
     }

@@ -14,23 +14,29 @@ public class MarkChapterAsReadController {
 
     public void markChapterAsRead(SeriesBean seriesBean, ChapterBean chapterBean){
 
-        System.out.println("[MARK CHAPTER CONTROLLER] running markchapterasread.");
-
-        Series series = null;
-        for(Series series1 : seriesBean.getAuthor().getPublishedSeries()){
-            if(series1.getTitle().equals(seriesBean.getTitle())){
-                series = series1;
+        for(Author author1 : UserLogin.getInstance().getReader().getFollowedAuthors()){
+            if(author1 == null){
+                break;
+            }
+            for(Series series1 : author1.getPublishedSeries()){
+                if(series1.getTitle().equals(seriesBean.getTitle())){
+                    series1.markChapter(chapterBean.getTitle());
+                    break;
+                }
             }
         }
 
-        //su tutte le istanze sparse, segnare quel capitolo letto
+        SeriesDAO seriesDAO = new SeriesDAO();
+        Series series = seriesDAO.retrieveSeries(seriesBean.getTitle());
+        series.markChapter(chapterBean.getTitle());
 
-
-        System.out.println("[MARK] Series = "+series.getTitle());
         UserLogin.getInstance().getReader().addSeriesToReading(series);
 
-        ReaderDAO readerDAO = new ReaderDAO();
-        readerDAO.saveReadChapter(series, chapterBean.getTitle());
+        Series finalSeries = series;
+        new Thread(()-> {
+            ReaderDAO readerDAO = new ReaderDAO();
+            readerDAO.saveReadChapter(finalSeries, chapterBean.getTitle());
+        }).start();
         
         checkObjectives(series);
     }
@@ -99,21 +105,28 @@ public class MarkChapterAsReadController {
     }
 
     public void unmarkChapterAsRead(SeriesBean seriesBean, ChapterBean chapterBean){
-        Series series = null;
-        SeriesDAO seriesDAO = new SeriesDAO();
 
-        for(Series series1 : seriesBean.getAuthor().getPublishedSeries()){
-            if(series1.getTitle().equals(seriesBean.getTitle())){
-                series = series1;
+        for(Author author1 : UserLogin.getInstance().getReader().getFollowedAuthors()){
+            if(author1 == null){
+                break;
+            }
+            for(Series series1 : author1.getPublishedSeries()){
+                if(series1.getTitle().equals(seriesBean.getTitle())){
+                    series1.unmarkChapter(chapterBean.getTitle());
+                    break;
+                }
             }
         }
 
+        SeriesDAO seriesDAO = new SeriesDAO();
+        Series series = seriesDAO.retrieveSeries(seriesBean.getTitle());
+        series.unmarkChapter(chapterBean.getTitle());
+
         Series finalSeries = series;
-        //UserLogin.getInstance().getReader().unmarkChapter(finalSeries,chapterBean.getTitle());
+        new Thread(()-> {
+            ReaderDAO readerDAO = new ReaderDAO();
+            readerDAO.removeReadChapter(finalSeries, chapterBean.getTitle());
+        }).start();
 
-        Series finalSeries1 = series;
-
-        ReaderDAO readerDAO = new ReaderDAO();
-        readerDAO.removeReadChapter(finalSeries1, chapterBean.getTitle());
     }
 }

@@ -88,25 +88,6 @@ public class Chapter extends ChapterSubject {
 
         this.averageRating = calculateAverageRating();
 
-        ReviewBundle reviewBundle = new ReviewBundle();
-        reviewBundle.setRating(rating);
-        reviewBundle.setComment(comment);
-        reviewBundle.setAccount(reader);
-
-        notifyObserversNewReview(reviewBundle);
-    }
-
-    public void notifyNewReview(Series series, String comment, int rating, Reader reader){
-
-        ReviewBundle reviewBundle = new ReviewBundle();
-        reviewBundle.setRating(rating);
-        reviewBundle.setComment(comment);
-        reviewBundle.setAccount(reader);
-
-        notifyObserversNewReview(reviewBundle);
-
-        Review review = new Review(comment, rating, reader);
-
         new Thread(()-> {
             ReviewDAO reviewDAO = new ReviewDAO();
             try {
@@ -115,6 +96,13 @@ public class Chapter extends ChapterSubject {
                 e.printStackTrace();
             }
         }).start();
+
+        ReviewBundle reviewBundle = new ReviewBundle();
+        reviewBundle.setRating(rating);
+        reviewBundle.setComment(comment);
+        reviewBundle.setAccount(reader);
+
+        notifyObserversNewReview(reviewBundle);
     }
 
     public void addReviewInSilence(String comment, int rating, Reader reader){

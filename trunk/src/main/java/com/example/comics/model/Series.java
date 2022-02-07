@@ -130,7 +130,6 @@ public class Series extends SeriesSubject{
 		this.chapters.add(chapter);
 
 		return chapter;
-
 	}
 
 	public void addReview(String chapterTitle, String reviewComment, int rating) {
@@ -140,16 +139,6 @@ public class Series extends SeriesSubject{
 				}
 			}
 			calculateAverageRating();
-
-	}
-
-
-	public void notifyNewReview(String chapterTitle, String comment, int rating){
-		for(int i=0; i< chapters.size(); i++){
-			if(chapters.get(i).getTitle().equals(chapterTitle)){
-				chapters.get(i).notifyNewReview(this, comment, rating, UserLogin.getInstance().getReader());
-			}
-		}
 	}
 
 	public void addReviewInSilence(String chapterTitle, String reviewComment, int rating) {
@@ -197,24 +186,24 @@ public class Series extends SeriesSubject{
 	}
 
 
-	public void markChapter(Series series,String chapterTitle){
-		for(Chapter chapter : series.getChapters()){
+	public void markChapter(String chapterTitle){
+		for(Chapter chapter : this.chapters){
 			if(chapter.getTitle().equals(chapterTitle)){
 				chapter.setRead(true);
 			}
 		}
 	}
-/*
-	public void unmarkChapter(Series series, String chapterTitle) {
+
+	public void unmarkChapter(String chapterTitle) {
 
 		boolean isToBeRemoved = true;
 		Series seriesToRemove = null;
 
-		for(Series readerSeries : reading){
+		for(Series readerSeries : UserLogin.getInstance().getReader().getReading()){
 			if(readerSeries == null){
 				return;
 			}
-			if(readerSeries.getTitle().equals(series.getTitle())){
+			if(readerSeries.getTitle().equals(this.title)){
 				for(Chapter chapter : readerSeries.getChapters()){
 					if(chapter.getTitle().equals(chapterTitle)){
 						chapter.setRead(false);
@@ -231,10 +220,10 @@ public class Series extends SeriesSubject{
 			}
 		}
 		if(isToBeRemoved){
-			reading.remove(seriesToRemove);
+			UserLogin.getInstance().getReader().removeFromReading(seriesToRemove);
 		}
 
 	}
-*/
+
 }
 
