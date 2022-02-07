@@ -1,7 +1,7 @@
 package com.example.comics.model.exceptions;
 
 public class FailedRegistrationException extends Exception{
-    private static final long serialVersionUID = 2L;
+    private static final long serialVersionUID = 1L;
 
     public FailedRegistrationException (String message){
         super(message);
