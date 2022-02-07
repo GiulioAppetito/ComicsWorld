@@ -28,6 +28,7 @@ public class ReaderDAO {
     private List<String> favTitles = new ArrayList<>();
     private List<String> toReadTitles = new ArrayList<>();
     private List<String> readingTitles = new ArrayList<>();
+    private List<String> followedAuthorsNames = new ArrayList<>();
 
     public Reader retrieveReader(String identifier, String password){
 
@@ -47,12 +48,14 @@ public class ReaderDAO {
             rs.first();
 
             SeriesDAO seriesDAO = new SeriesDAO();
+            AuthorDAO authorDAO = new AuthorDAO();
 
             String username = rs.getString("username");
 
             favTitles = seriesDAO.retrieveFavouriteSeriesTitles(username);
             toReadTitles = seriesDAO.retrieveToReadSeriesTitles(username);
             readingTitles = seriesDAO.retrieveReadingSeriesTitles(username);
+            followedAuthorsNames = authorDAO.retrieveFollowedAuthorsNames(username);
 
             for(String title : favTitles){
                 Series series = seriesDAO.retrieveSeries(title);
@@ -69,6 +72,11 @@ public class ReaderDAO {
                 readingSeries.add(series);
             }
 
+            for(String name : followedAuthorsNames){
+                Author author = authorDAO.retrieveAuthor(name);
+                followedAuthors.add(author);
+            }
+
 
 
             DiscountCodeDAO discountCodeDAO = new DiscountCodeDAO();
@@ -77,16 +85,9 @@ public class ReaderDAO {
             });
             t3.start();
 
-            AuthorDAO authorDAO = new AuthorDAO();
-            Thread t4 = new Thread(()->{
-                followedAuthors = authorDAO.retreiveFollowedAuthorsByReader(username);
-            });
-            t4.start();
 
 
             t3.join();
-            t4.join();
-
             reader = new Reader(favSeries, toReadSeries, readingSeries, username, followedAuthors, discountCodes);
 
             reader.setFirstName(rs.getString("firstname"));

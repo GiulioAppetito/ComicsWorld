@@ -28,11 +28,6 @@ public class Queries {
         return stmt.executeQuery(selectStatement);
     }
 
-    public static ResultSet retrieveSeries(Statement stmt, String title) throws SQLException {
-        String selectStatement = String.format("SELECT * FROM series where title = '%s'", title);
-        return stmt.executeQuery(selectStatement);
-    }
-
     public static ResultSet retriveFavouriteSeries(Statement stmt, String user) throws SQLException {
         String selectStatement = String.format("SELECT * from userFavouriteSeries where user = '%s' ", user);
         return stmt.executeQuery(selectStatement);
@@ -327,6 +322,12 @@ public class Queries {
 
     public static ResultSet retreiveOrdersByReader(Statement stmt, String reader) throws SQLException {
         String selectStatement = String.format("SELECT * FROM orders WHERE (reader = '%s')",reader);
+        System.out.println(selectStatement);
+        return stmt.executeQuery(selectStatement);
+    }
+
+    public static ResultSet retreiveAllAuthors(Statement stmt) throws SQLException {
+        String selectStatement = String.format("SELECT * FROM users WHERE (role = 'author')");
         System.out.println(selectStatement);
         return stmt.executeQuery(selectStatement);
     }

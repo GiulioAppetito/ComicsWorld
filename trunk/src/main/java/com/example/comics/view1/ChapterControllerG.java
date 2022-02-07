@@ -437,6 +437,7 @@ public class ChapterControllerG implements ChapterObserver, ReaderObserver{
         }else{
             btnAddReview.setVisible(false);
             btnBuyComics.setVisible(false);
+            btnChapterRead.setVisible(false);
         }
         List<ReviewBean> listOfReviews = chapterBean.getReviews();
 

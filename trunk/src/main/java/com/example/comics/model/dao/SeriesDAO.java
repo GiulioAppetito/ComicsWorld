@@ -25,204 +25,6 @@ public class SeriesDAO {
 
     private static List<Series> all = new ArrayList<>();
 
-    public List<Series> retrieveFavouriteSeries(String user) {
-        Statement stmt = null;
-        Connection conn = null;
-
-        List<Series> seriesList = new ArrayList<>();
-
-        String title;
-
-        Series series;
-
-        try {
-            conn = DriverManager.getConnection(DB_URL, USER, PASS);
-
-            stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
-            ResultSet rs = Queries.retriveFavouriteSeries(stmt, user);
-
-            if (!rs.first()) {
-                return seriesList;
-            }
-            rs.first();
-
-            do {
-                title = rs.getString(SERIES);
-                series = retrieveSeries(title);
-                seriesList.add(series);
-            } while (rs.next());
-
-
-        } catch (Exception throwables) {
-            throwables.printStackTrace();
-        } finally {
-            try {
-                if (stmt != null)
-                    stmt.close();
-            } catch (SQLException se2) {
-                //TO-DO
-            }
-            try {
-                if (conn != null)
-                    conn.close();
-            } catch (SQLException se) {
-                se.printStackTrace();
-            }
-
-        }
-        return seriesList;
-    }
-
-    public List<Series> retrieveToReadSeries(String user) {
-        Statement stmt = null;
-        Connection conn = null;
-
-        List<Series> seriesList = new ArrayList<>();
-
-        String title;
-        Series series;
-
-        try {
-            conn = DriverManager.getConnection(DB_URL, USER, PASS);
-
-            stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
-            ResultSet rs = Queries.retriveToReadSeries(stmt, user);
-
-            if (!rs.first()) {
-                return seriesList;
-            }
-            rs.first();
-
-            do {
-                title = rs.getString(SERIES);
-                series = retrieveSeries(title);
-
-                seriesList.add(series);
-            } while (rs.next());
-
-
-        } catch (Exception throwables) {
-            throwables.printStackTrace();
-        } finally {
-            try {
-                if (stmt != null)
-                    stmt.close();
-            } catch (SQLException se2) {
-                //TO-DO
-            }
-            try {
-                if (conn != null)
-                    conn.close();
-            } catch (SQLException se) {
-                se.printStackTrace();
-            }
-
-        }
-        return seriesList;
-    }
-
-    public List<Series> retrievePublishedSeries(Author author) {
-        Statement stmt = null;
-        Connection conn = null;
-
-        List<Series> seriesList = new ArrayList<>();
-
-        Series series;
-
-        try {
-            conn = DriverManager.getConnection(DB_URL, USER, PASS);
-
-            stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
-            ResultSet rs = Queries.retrivePublishedSeries(stmt, author.getUsername());
-
-            if (!rs.first()) {
-                return seriesList;
-            }
-            rs.first();
-
-            do {
-                series = new Series(rs.getString(TITLE), author);
-
-                Blob bl = rs.getBlob(COVER);
-                if(bl!=null){
-                    InputStream inputStream = bl.getBinaryStream();
-                    Image image = new Image(inputStream);
-                    series.setCover(image);
-
-                }
-
-                seriesList.add(series);
-            } while (rs.next());
-
-
-        } catch (Exception throwables) {
-            throwables.printStackTrace();
-        } finally {
-            try {
-                if (stmt != null)
-                    stmt.close();
-            } catch (SQLException se2) {
-                //TO-DO
-            }
-            try {
-                if (conn != null)
-                    conn.close();
-            } catch (SQLException se) {
-                se.printStackTrace();
-            }
-
-        }
-        return seriesList;
-    }
-
-    public List<Series> retrieveReadingSeries(String user) {
-        Statement stmt = null;
-        Connection conn = null;
-
-        List<Series> seriesList = new ArrayList<>();
-
-        String title;
-        Series series;
-
-        try {
-            conn = DriverManager.getConnection(DB_URL, USER, PASS);
-
-            stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
-            ResultSet rs = Queries.retriveReadingSeries(stmt, user);
-
-            if (!rs.first()) {
-                return seriesList;
-            }
-            rs.first();
-
-            do {
-                title = rs.getString(SERIES);
-                series = retrieveSeries(title);
-                seriesList.add(series);
-            } while (rs.next());
-
-
-        } catch (Exception throwables) {
-            throwables.printStackTrace();
-        } finally {
-            try {
-                if (stmt != null)
-                    stmt.close();
-            } catch (SQLException se2) {
-                //TO-DO
-            }
-            try {
-                if (conn != null)
-                    conn.close();
-            } catch (SQLException se) {
-                se.printStackTrace();
-            }
-
-        }
-        return seriesList;
-    }
-
-
     public Series retrieveSeries(String title) {
         for(Series s : all){
             if(s.getTitle().equals(title)){
@@ -251,6 +53,8 @@ public class SeriesDAO {
 
     public static void retriveAllSeries() {
 
+        List<Author> allAuthors = AuthorDAO.retriveAllAuthors();
+
         Statement stmt = null;
         Connection conn = null;
 
@@ -268,10 +72,14 @@ public class SeriesDAO {
             }
             rs.first();
             do {
-                        Author author;
+                        Author author = null;
                         Series series;
-                        AuthorDAO authorDAO = new AuthorDAO();
-                        author = authorDAO.retrieveAuthorWithoutPassword(rs.getString(AUTHOR));
+                        for(Author a: allAuthors){
+                            if(a.getUsername().equals(rs.getString(AUTHOR))){
+                                author = a;
+                            }
+                        }
+
                         series = new Series(rs.getString(TITLE), author);
                         series.setDescription(rs.getString("description"));
                         series.setGenre1(Genres.valueOf(rs.getString("genre1")));
@@ -285,6 +93,7 @@ public class SeriesDAO {
                             series.setCover(image);
                         }
                         seriesList.add(series);
+                        author.addPublishedSeries(series);
 
 
             } while (rs.next());
@@ -515,5 +324,8 @@ public class SeriesDAO {
         }
         return seriesList;
     }
+
+
+
 
 }
