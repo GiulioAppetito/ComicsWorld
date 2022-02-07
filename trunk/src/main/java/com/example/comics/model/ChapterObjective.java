@@ -4,6 +4,7 @@ public class ChapterObjective extends Objective{
 
     private int requiredChaptersPercentage;
 
+
     public ChapterObjective(){
         //costruttore
     }
@@ -25,8 +26,9 @@ public class ChapterObjective extends Objective{
     }
 
     @Override
-    public boolean achieveObjective(int readersChapters, Badge badge) {
-        return readersChapters >= requiredChaptersPercentage;
+    public boolean isObjectiveAchieved(int achievement){
+        int percentageAchievement = achievement *100;
+        return percentageAchievement >= requiredChaptersPercentage;
     }
 
     @Override

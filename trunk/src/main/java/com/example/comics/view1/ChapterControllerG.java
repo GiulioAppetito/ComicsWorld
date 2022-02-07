@@ -644,7 +644,4 @@ public class ChapterControllerG implements ChapterObserver, ReaderObserver{
         }
 
     }
-
-
-
 }
