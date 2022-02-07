@@ -2,39 +2,31 @@ package com.example.comics.model;
 
 public class ChapterObjective extends Objective{
 
-    private int requiredChaptersPercentage;
-
+    private Float requiredChaptersPercentage;
 
     public ChapterObjective(){
-        //costruttore
     }
 
-    public ChapterObjective(Badge badge, Discount discount, int requirement) {
-        this.badge = badge;
-        this.discount = discount;
+    @Override
+    public void setRequirement(Float requirement) {
         this.requiredChaptersPercentage = requirement;
     }
 
     @Override
-    public void setRequirement(int requirement) {
-        this.requiredChaptersPercentage = requirement;
-    }
-
-    @Override
-    public int getRequirement() {
+    public Float getRequirement() {
         return this.requiredChaptersPercentage;
     }
 
     @Override
-    public boolean isObjectiveAchieved(int achievement){
-        int percentageAchievement = achievement *100;
+    public boolean isObjectiveAchieved(Float achievement){
+        System.out.println("* * * * * Verifying chapters objective. * * * * * ");
+        Float percentageAchievement = achievement *100;
         return percentageAchievement >= requiredChaptersPercentage;
     }
 
     @Override
     public final String getType() {
-        return "chapterObjective";
+        return "chapters";
     }
-
 
 }

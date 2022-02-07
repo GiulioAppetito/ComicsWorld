@@ -156,10 +156,11 @@ public class Reader extends Account{
 
     public void removeSeriesFromToRead(Series series) {
 
-        for (int i = this.toRead.size() - 1; i >= 0; i--) {
-            if(this.toRead.size() == 0){
-                return;
-            }
+        if(this.toRead.size() == 0){
+            return;
+        }
+
+        for (int i = this.toRead.size() - 1; i > 0; i--) {
             if (toRead.get(i).getTitle().equals(series.getTitle())) {
                 this.toRead.remove(i);
             }

@@ -15,7 +15,7 @@ public class ObjectiveBean1 implements ObjectiveBean {
     private Levels level;
     private DiscountBean discountBean;
     private String type;
-    private int requirement;
+    private Float requirement;
     private InputStream badgeIconInputStream;
 
 
@@ -68,12 +68,12 @@ public class ObjectiveBean1 implements ObjectiveBean {
     }
 
     @Override
-    public void setRequirement(int requirement) {
+    public void setRequirement(Float requirement) {
         this.requirement = requirement;
     }
 
     @Override
-    public int getRequirement() {
+    public Float getRequirement() {
         return this.requirement;
     }
 

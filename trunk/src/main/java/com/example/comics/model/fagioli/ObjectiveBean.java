@@ -22,8 +22,8 @@ public interface ObjectiveBean {
     DiscountBean getDiscountBean();
     void setDiscountBean(DiscountBean discountBean);
 
-    void setRequirement(int requirement);
-    int getRequirement();
+    void setRequirement(Float requirement);
+    Float getRequirement();
 
     void setBadgeIconInputStream(InputStream inputStream);
     InputStream getBadgeIconInputStream();
