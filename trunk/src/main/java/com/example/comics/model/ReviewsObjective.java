@@ -25,11 +25,8 @@ public class ReviewsObjective extends Objective{
         return requiredReviews;
     }
 
-    @Override
-    public boolean achieveObjective(int readersReviews, Badge badge){
-
-        return (readersReviews >= requiredReviews);
-
+    public boolean isObjectiveAchieved(int readersReviews){
+        return readersReviews >= requiredReviews;
     }
 
     @Override

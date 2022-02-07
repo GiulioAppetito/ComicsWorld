@@ -6,6 +6,8 @@ import com.example.comics.model.UserLogin;
 import com.example.comics.model.dao.ChapterDAO;
 import com.example.comics.model.fagioli.ChapterBean;
 
+import java.util.Observer;
+
 public class PublishChapterController {
 
     public void publishChapter(ChapterBean chapterBean, String seriesTitle){
@@ -20,4 +22,5 @@ public class PublishChapterController {
         chapterDAO.saveChapter(chapter,seriesTitle,chapterBean.getCoverInputStream());
 
     }
+
 }

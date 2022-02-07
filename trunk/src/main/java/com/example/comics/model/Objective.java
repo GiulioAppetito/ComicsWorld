@@ -9,14 +9,14 @@ public abstract class Objective{
 
     public abstract void setRequirement(int requirement);
     public abstract int getRequirement();
+    public abstract String getType();
+
+    public abstract boolean isObjectiveAchieved(int achievement);
 
     public Levels getLevel() {return level;}
     public void setLevel(Levels level) {
         this.level = level;
     }
-
-    public abstract boolean achieveObjective(int input, Badge badge);
-    public abstract String getType();
 
     public Badge getBadge() {
         return badge;

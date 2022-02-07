@@ -32,9 +32,9 @@ public class MarkChapterAsReadController {
     }
 
     private void checkObjectives(Series series) {
-        //numero di capitoli letti del lettore
-        int numOfChapters = series.getChapters().size();
+
         int readersReadings = 0;
+        int achievement = 0;
 
         for(Series readersSeries : UserLogin.getInstance().getReader().getReading()){
             if(readersSeries == null){
@@ -47,11 +47,13 @@ public class MarkChapterAsReadController {
                     }
                 }
             }
+            achievement =(readersReadings / series.getChapters().size());
+
         }
 
         //controllo degli obiettivi
         for(Objective objective : series.getObjectives()){
-            if((objective.getType().equals("chapterObjective"))&&(!UserLogin.getInstance().getReader().hasAchievedThisBadge(objective.getBadge()))&&(objective.achieveObjective(readersReadings, objective.getBadge()))){
+            if((objective.getType().equals("chapterObjective"))&&(!UserLogin.getInstance().getReader().hasAchievedThisBadge(objective.getBadge()))&&(objective.isObjectiveAchieved(achievement))){
 
                 //aggiungo badge alla lista e salvo sul DB + assegno badge
                 new Thread(()-> UserLogin.getInstance().getReader().addAchievedBadge(objective.getBadge())).start();

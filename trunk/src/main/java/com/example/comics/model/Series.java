@@ -133,19 +133,6 @@ public class Series extends SeriesSubject{
 
 	}
 
-	public int getNumberOfReviews(Reader reader) {
-		int numOfReviews = 0;
-
-		for(Chapter chapter : this.chapters){
-			for(Review review : chapter.getReviews()){
-				if(review.getAccount().getUsername().equals(reader.getUsername())){
-					numOfReviews++;
-				}
-			}
-		}
-		return numOfReviews;
-	}
-
 	public void addReview(String chapterTitle, String reviewComment, int rating) {
 			for(int i=0; i< chapters.size(); i++){
 				if(chapters.get(i).getTitle().equals(chapterTitle)){

@@ -668,77 +668,6 @@
             </padding>
          </Button>
       </Pane>
-      <Pane fx:id="newBadgeWonPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="252.0" prefWidth="366.0" styleClass="linear-grad" stylesheets="@../../../../css/css1/fullpackstyling.css">
-         <children>
-            <VBox prefHeight="252.0" prefWidth="362.0">
-               <children>
-                  <HBox>
-                     <VBox.margin>
-                        <Insets top="20.0" />
-                     </VBox.margin>
-                     <children>
-                        <Label prefHeight="49.0" prefWidth="296.0" text="New badge won!" textFill="WHITE">
-                           <font>
-                              <Font name="Berlin Sans FB" size="24.0" />
-                           </font>
-                           <padding>
-                              <Insets left="20.0" />
-                           </padding>
-                        </Label>
-                        <Button fx:id="btnCloseBadge" alignment="CENTER_RIGHT" mnemonicParsing="false" prefHeight="49.0" prefWidth="65.0" stylesheets="@../../../../css/css1/fullpackstyling.css" text="X" textAlignment="CENTER" textFill="WHITE">
-                           <font>
-                              <Font name="Berlin Sans FB" size="24.0" />
-                           </font>
-                           <styleClass>
-                              <String fx:value="oval-layout" />
-                              <String fx:value="transparent" />
-                              <String fx:value="buttonEdit" />
-                           </styleClass>
-                           <padding>
-                              <Insets right="20.0" />
-                           </padding>
-                           <HBox.margin>
-                              <Insets right="20.0" />
-                           </HBox.margin>
-                        </Button>
-                     </children>
-                  </HBox>
-                  <HBox>
-                     <VBox.margin>
-                        <Insets left="20.0" top="10.0" />
-                     </VBox.margin>
-                     <children>
-                        <ImageView fx:id="badgeIconView" fitHeight="127.0" fitWidth="128.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../../../../img/img1/download%20(2).png" />
-                           </image>
-                        </ImageView>
-                        <VBox prefHeight="127.0" prefWidth="201.0">
-                           <children>
-                              <Label fx:id="lblBadgeName" prefHeight="37.0" prefWidth="203.0" text="BadgeName" textFill="WHITE">
-                                 <font>
-                                    <Font name="Berlin Sans FB" size="22.0" />
-                                 </font>
-                                 <VBox.margin>
-                                    <Insets left="10.0" />
-                                 </VBox.margin>
-                              </Label>
-                              <Label fx:id="lblBadgeSeries" prefHeight="37.0" prefWidth="203.0" text="Relative series" textFill="WHITE">
-                                 <font>
-                                    <Font name="Berlin Sans FB" size="20.0" />
-                                 </font>
-                                 <VBox.margin>
-                                    <Insets left="10.0" />
-                                 </VBox.margin>
-                              </Label>
-                           </children>
-                        </VBox>
-                     </children>
-                  </HBox>
-               </children>
-            </VBox>
-         </children>
-      </Pane>
       <Pane fx:id="paymentPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="252.0" prefWidth="366.0" styleClass="linear-grad" stylesheets="@../../../../css/css1/fullpackstyling.css">
          <children>
             <VBox prefHeight="252.0" prefWidth="362.0">
@@ -832,6 +761,77 @@
                                     <Insets top="20.0" />
                                  </VBox.margin>
                               </HBox>
+                           </children>
+                        </VBox>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+         </children>
+      </Pane>
+      <Pane fx:id="newBadgeWonPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="252.0" prefWidth="366.0" styleClass="linear-grad" stylesheets="@../../../../css/css1/fullpackstyling.css">
+         <children>
+            <VBox prefHeight="252.0" prefWidth="362.0">
+               <children>
+                  <HBox>
+                     <VBox.margin>
+                        <Insets top="20.0" />
+                     </VBox.margin>
+                     <children>
+                        <Label prefHeight="49.0" prefWidth="296.0" text="New badge won!" textFill="WHITE">
+                           <font>
+                              <Font name="Berlin Sans FB" size="24.0" />
+                           </font>
+                           <padding>
+                              <Insets left="20.0" />
+                           </padding>
+                        </Label>
+                        <Button fx:id="btnCloseBadge" alignment="CENTER_RIGHT" mnemonicParsing="false" prefHeight="49.0" prefWidth="65.0" stylesheets="@../../../../css/css1/fullpackstyling.css" text="X" textAlignment="CENTER" textFill="WHITE">
+                           <font>
+                              <Font name="Berlin Sans FB" size="24.0" />
+                           </font>
+                           <styleClass>
+                              <String fx:value="oval-layout" />
+                              <String fx:value="transparent" />
+                              <String fx:value="buttonEdit" />
+                           </styleClass>
+                           <padding>
+                              <Insets right="20.0" />
+                           </padding>
+                           <HBox.margin>
+                              <Insets right="20.0" />
+                           </HBox.margin>
+                        </Button>
+                     </children>
+                  </HBox>
+                  <HBox>
+                     <VBox.margin>
+                        <Insets left="20.0" top="10.0" />
+                     </VBox.margin>
+                     <children>
+                        <ImageView fx:id="badgeIconView" fitHeight="127.0" fitWidth="128.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../../img/img1/download%20(2).png" />
+                           </image>
+                        </ImageView>
+                        <VBox prefHeight="127.0" prefWidth="201.0">
+                           <children>
+                              <Label fx:id="lblBadgeName" prefHeight="37.0" prefWidth="203.0" text="BadgeName" textFill="WHITE">
+                                 <font>
+                                    <Font name="Berlin Sans FB" size="22.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets left="10.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <Label fx:id="lblBadgeSeries" prefHeight="37.0" prefWidth="203.0" text="Relative series" textFill="WHITE">
+                                 <font>
+                                    <Font name="Berlin Sans FB" size="20.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets left="10.0" />
+                                 </VBox.margin>
+                              </Label>
                            </children>
                         </VBox>
                      </children>

@@ -84,17 +84,25 @@ public class PostReviewController{
         boolean isNewObjectiveAchieved;
 
         //numero di review del lettore
-        int numOfReviews = series.getNumberOfReviews(UserLogin.getInstance().getReader());
+        int numOfReviews = 0;
+        for(Chapter chapter : series.getChapters()){
+            for(Review review : chapter.getReviews()){
+                if(review.getAccount().getUsername().equals(UserLogin.getInstance().getReader().getUsername())){
+                    numOfReviews++;
+                }
+            }
+        }
 
-        //controllo degli obiettivi
+        //controllo degli obiettivi di tipo review
         for(Objective objective : series.getObjectives()){
 
             isReviewsType = objective.getType().equals("reviewsObjective");
-            isBadgeAlreadyAchieved = UserLogin.getInstance().getReader().hasAchievedThisBadge(objective.getBadge());
-            isNewObjectiveAchieved = objective.achieveObjective(numOfReviews, objective.getBadge());
-
-            if(isReviewsType && !isBadgeAlreadyAchieved && isNewObjectiveAchieved){
-                assignBadgeAndDiscountCodeToReader(objective,series,seriesBean);
+            if(isReviewsType){
+                isBadgeAlreadyAchieved = UserLogin.getInstance().getReader().hasAchievedThisBadge(objective.getBadge());
+                isNewObjectiveAchieved = objective.isObjectiveAchieved(numOfReviews);
+                if(!isBadgeAlreadyAchieved && isNewObjectiveAchieved){
+                    assignBadgeAndDiscountCodeToReader(objective,series,seriesBean);
+                }
             }
         }
     }

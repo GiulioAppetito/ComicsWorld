@@ -31,25 +31,10 @@ public class PublishSeriesController {
             discount.setLimitDays(objectiveBean.getDiscountBean().getLimitDays());
 
             ObjectiveFactory objectiveFactory = new ObjectiveFactory();
-            Objective objective;
-            objective = objectiveFactory.createObjective(objectiveBean.getType());
-
-            objective.setBadge(badge);
-            objective.setDiscount(discount);
-            objective.setRequirement(objectiveBean.getRequirement());
-            objective.setLevel(Levels.valueOf(objectiveBean.getLevel()));
-            objective.setRequirement(objectiveBean.getRequirement());
+            Objective objective = objectiveFactory.createObjective(objectiveBean.getType());
 
             objectives.add(objective);
             objectiveBadgeHM.put(objective,objectiveBean.getBadgeIconInputStream());
-
-            /*if(objectiveBean.getType().equals("reviews")){
-                objective = new ReviewsObjective(badge, discount,objectiveBean.getRequirement());
-            }else{
-                objective = new ChapterObjective(badge,discount,objectiveBean.getRequirement());
-            }*/
-
-
         }
 
         //istanziazione e salvataggio su DB

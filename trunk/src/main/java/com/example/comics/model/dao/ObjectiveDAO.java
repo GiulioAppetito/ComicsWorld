@@ -30,58 +30,24 @@ public class ObjectiveDAO {
                 return objectives;
             }
             rs.first();
+            BadgeDAO badgeDAO = new BadgeDAO();
+            Objective objective;
+            ObjectiveFactory objectiveFactory = new ObjectiveFactory();
+
             do {
-                BadgeDAO badgeDAO = new BadgeDAO();
                 Badge badge = badgeDAO.retreiveAssociatedBadge(rs.getInt("associatedBadgeID"));
 
                 Discount discount = new Discount(rs.getFloat("discountPercentage"));
                 discount.setLimitDays(rs.getInt("limitDays"));
 
-                Objective objective;
-                
+                objective = objectiveFactory.createObjective(rs.getString("type"));
+                objective.setId(rs.getInt("objective_id"));
+                objective.setBadge(badge);
+                objective.setDiscount(discount);
+                objective.setRequirement(rs.getInt("number"));
+                objective.setLevel(Levels.valueOf(rs.getString("level")));
 
-                if(rs.getString("type").equals("reviews")){
-                    objective = new ReviewsObjective(badge,discount, rs.getInt("number"));
-                    objective.setId(rs.getInt("objective_id"));
-
-                    switch (rs.getString("level")){
-                        case "beginner":
-                            objective.setLevel(Levels.BEGINNER);
-                            break;
-                        case "intermediate":
-                            objective.setLevel(Levels.INTERMEDIATE);
-                            break;
-                        case "expert":
-                            objective.setLevel(Levels.EXPERT);
-                            break;
-                        default:
-                            break;
-                    }
-                    objectives.add(objective);
-
-                }else if(rs.getString("type").equals("chapters")){
-                    objective = new ChapterObjective(badge,discount,rs.getInt("number"));
-                    objective.setId(rs.getInt("objective_id"));
-
-                    switch (rs.getString("level")){
-                        case "beginner":
-                            objective.setLevel(Levels.BEGINNER);
-                            break;
-                        case "intermediate":
-                            objective.setLevel(Levels.INTERMEDIATE);
-                            break;
-                        case "expert":
-                            objective.setLevel(Levels.EXPERT);
-                            break;
-                        default:
-                            break;
-                    }
-                    objectives.add(objective);
-
-
-                }
-
-
+                objectives.add(objective);
             } while (rs.next());
 
         } catch (SQLException e) {
