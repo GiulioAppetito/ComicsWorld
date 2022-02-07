@@ -55,14 +55,15 @@ public class ChapterDAO {
                     chapter.setCover(image);
                 }
 
+                if(UserLogin.getInstance().getAccount().getRole().equals("reader")) {
+                    rs2 = Queries.isChapterRead(stmt2, chapterTitle, UserLogin.getInstance().getAccount().getUsername());
+                    //il capitolo non è letto
+                    if(!rs2.first()){
+                        chapter.setRead(false);
+                    }else{
+                        chapter.setRead(true);
+                    }
 
-                rs2 = Queries.isChapterRead(stmt2,chapterTitle, UserLogin.getInstance().getAccount().getUsername());
-
-                //il capitolo non è letto
-                if(!rs2.first()){
-                    chapter.setRead(false);
-                }else{
-                    chapter.setRead(true);
                 }
 
 

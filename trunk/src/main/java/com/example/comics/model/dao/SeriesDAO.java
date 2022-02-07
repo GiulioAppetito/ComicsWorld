@@ -326,54 +326,6 @@ public class SeriesDAO {
         return seriesList;
     }
 
-    public Series retreiveSeriesWithAuthor(String title,Author author){
-        Statement stmt = null;
-        Connection conn = null;
-
-        Series series = null;
-
-        try {
-            conn = DriverManager.getConnection(DB_URL, USER, PASS);
-
-            stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
-            ResultSet rs = Queries.retrieveSeries(stmt, title);
-
-            if (!rs.first()) {
-                throw new Exception(NOSERIESFOUND);
-            }
-            rs.first();
-
-            do {
-                title = rs.getString(TITLE);
-
-                series = new Series(title, author);
-                Blob bl = rs.getBlob(COVER);
-                InputStream inputStream = bl.getBinaryStream();
-                Image image = new Image(inputStream);
-                series.setCover(image);
-            } while (rs.next());
-
-
-        } catch (Exception throwables) {
-            throwables.printStackTrace();
-        } finally {
-            try {
-                if (stmt != null)
-                    stmt.close();
-            } catch (SQLException se2) {
-                //TO-DO
-            }
-            try {
-                if (conn != null)
-                    conn.close();
-            } catch (SQLException se) {
-                se.printStackTrace();
-            }
-
-        }
-        return series;
-    }
-
     public List<Series> retriveLatestSeries() {
 
         Statement stmt = null;
@@ -498,34 +450,4 @@ public class SeriesDAO {
 
     }
 
-    public void changeLatestPurchase(Series series) {
-
-        Statement stmt = null;
-        Connection conn = null;
-
-        try {
-
-            // STEP 3: apertura connessione
-            conn = DriverManager.getConnection(DB_URL, USER, PASS);
-            stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
-            // STEP 4.2: creazione ed esecuzione della query
-            Queries.changeLatestPurchaseSeries(stmt,series,UserLogin.getInstance().getAccount());
-
-        } catch (SQLException throwables) {
-            throwables.printStackTrace();
-        }finally {
-            try {
-                assert conn != null;
-                conn.close();
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
-            try {
-                assert stmt!=null;
-                stmt.close();
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
-        }
-    }
 }

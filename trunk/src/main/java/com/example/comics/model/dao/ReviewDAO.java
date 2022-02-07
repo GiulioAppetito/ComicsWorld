@@ -53,7 +53,6 @@ public class ReviewDAO {
 
     }
 
-
     public void saveReview(Review review, Chapter chapter, Series series) throws Exception {
         // STEP 1: dichiarazioni
         Statement stmt;

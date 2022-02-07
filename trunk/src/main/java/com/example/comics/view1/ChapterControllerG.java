@@ -414,13 +414,6 @@ public class ChapterControllerG implements ChapterObserver, ReaderObserver{
             btnChapterRead.setOnAction(event -> markChapterAsRead(seriesBean,chapterBean));
         }
 
-        List<String> codes = new ArrayList<>();
-        for(DiscountCode discountCode : UserLogin.getInstance().getReader().getDiscountCodes().keySet()){
-            if(UserLogin.getInstance().getReader().getDiscountCodes().get(discountCode).getTitle().equals(seriesBean.getTitle())){
-                codes.add(discountCode.getCode());
-            }
-        }
-        choiceBoxCodes.getItems().setAll(codes);
 
         chapterCoverIV.setImage(chapterBean.getCover());
 
@@ -434,6 +427,13 @@ public class ChapterControllerG implements ChapterObserver, ReaderObserver{
 
         if(UserLogin.getInstance().getAccount().getRole().equals("reader")) {
             btnAddReview.setOnAction(event -> openEditor());
+            List<String> codes = new ArrayList<>();
+            for(DiscountCode discountCode : UserLogin.getInstance().getReader().getDiscountCodes().keySet()){
+                if(UserLogin.getInstance().getReader().getDiscountCodes().get(discountCode).getTitle().equals(seriesBean.getTitle())){
+                    codes.add(discountCode.getCode());
+                }
+            }
+            choiceBoxCodes.getItems().setAll(codes);
         }else{
             btnAddReview.setVisible(false);
         }
