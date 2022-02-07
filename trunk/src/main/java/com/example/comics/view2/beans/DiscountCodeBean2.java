@@ -1,8 +1,8 @@
-package com.example.comics.view1.beans;
+package com.example.comics.view2.beans;
 
 import com.example.comics.model.fagioli.bundle.AbstractDiscountCodeBean;
 
-public class DiscountCodeBean1 extends AbstractDiscountCodeBean {
+public class DiscountCodeBean2 extends AbstractDiscountCodeBean {
 
     private String code;
 
@@ -15,5 +15,4 @@ public class DiscountCodeBean1 extends AbstractDiscountCodeBean {
     public void setCode(String code) {
         this.code = code;
     }
-
 }

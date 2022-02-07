@@ -436,6 +436,7 @@ public class ChapterControllerG implements ChapterObserver, ReaderObserver{
             choiceBoxCodes.getItems().setAll(codes);
         }else{
             btnAddReview.setVisible(false);
+            btnBuyComics.setVisible(false);
         }
         List<ReviewBean> listOfReviews = chapterBean.getReviews();
 
@@ -554,7 +555,6 @@ public class ChapterControllerG implements ChapterObserver, ReaderObserver{
         DiscountCodeBean1 discountCodeBean1 = new DiscountCodeBean1();
         discountCodeBean1.setCode(choiceBoxCodes.getValue());
         try {
-
             buyComicController.buyComic(seriesBean, chapterBean, discountCodeBean1);
         } catch (InvalidPaymentException | DiscountCodeException e) {
             e.printStackTrace();
@@ -566,12 +566,7 @@ public class ChapterControllerG implements ChapterObserver, ReaderObserver{
         paymentPane.setVisible(false);
     }
     private void buyComics() {
-        if(UserLogin.getInstance().getReader().getDiscountCodes().isEmpty()){
-
-        }else{
             paymentPane.setVisible(true);
-        }
-
     }
 
     private void removeChapterFromRead(SeriesBean seriesBean, ChapterBean chapterBean) {

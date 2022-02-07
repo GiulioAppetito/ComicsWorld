@@ -2,9 +2,13 @@ package com.example.comics.view2;
 
 import com.example.comics.controller.*;
 import com.example.comics.model.*;
+import com.example.comics.model.exceptions.DiscountCodeException;
+import com.example.comics.model.exceptions.InvalidPaymentException;
 import com.example.comics.model.fagioli.*;
 import com.example.comics.view1.beans.AccountBean1;
+import com.example.comics.view1.beans.DiscountCodeBean1;
 import com.example.comics.view2.beans.AccountBean2;
+import com.example.comics.view2.beans.DiscountCodeBean2;
 import com.example.comics.view2.beans.ReviewBean2;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -40,6 +44,9 @@ public class FeedControllerG2 implements ChapterObserver, AccountObserver, Reade
     private VBox boxFeed;
 
     @FXML
+    private VBox boxNoBadges;
+
+    @FXML
     private VBox boxNoChapters;
 
     @FXML
@@ -47,6 +54,9 @@ public class FeedControllerG2 implements ChapterObserver, AccountObserver, Reade
 
     @FXML
     private VBox boxNoSeries;
+
+    @FXML
+    private VBox boxNotifications;
 
     @FXML
     private VBox boxProfile;
@@ -58,7 +68,22 @@ public class FeedControllerG2 implements ChapterObserver, AccountObserver, Reade
     private Button btnBackFromChaptee;
 
     @FXML
+    private Button btnBackFromChaptee1;
+
+    @FXML
     private Button btnBuy;
+
+    @FXML
+    private Button btnChangeEmail;
+
+    @FXML
+    private Button btnChangeFirstName;
+
+    @FXML
+    private Button btnChangeLastName;
+
+    @FXML
+    private Button btnChangeUsername;
 
     @FXML
     private Button btnFav;
@@ -73,6 +98,9 @@ public class FeedControllerG2 implements ChapterObserver, AccountObserver, Reade
     private Button btnFollowing;
 
     @FXML
+    private Button btnGoToPayment;
+
+    @FXML
     private Button btnLikeSerie;
 
     @FXML
@@ -80,6 +108,9 @@ public class FeedControllerG2 implements ChapterObserver, AccountObserver, Reade
 
     @FXML
     private Button btnMyBadges;
+
+    @FXML
+    private Button btnMyOrders;
 
     @FXML
     private Button btnMySeries;
@@ -127,19 +158,34 @@ public class FeedControllerG2 implements ChapterObserver, AccountObserver, Reade
     private Label lblDate;
 
     @FXML
+    private Label lblEmail;
+
+    @FXML
     private Label lblFirstName;
 
     @FXML
     private Label lblLastName;
 
     @FXML
+    private Button notifications;
+
+    @FXML
     private Pane paneMenu;
+
+    @FXML
+    private Pane paneNotifications;
+
+    @FXML
+    private Pane panePayment;
 
     @FXML
     private ImageView propic;
 
     @FXML
     private PieChart ratingChart;
+
+    @FXML
+    private Slider ratingSlider;
 
     @FXML
     private VBox readerMenu;
@@ -151,10 +197,28 @@ public class FeedControllerG2 implements ChapterObserver, AccountObserver, Reade
     private TextArea taComment;
 
     @FXML
+    private TextField tfDiscountCode;
+
+    @FXML
+    private TextField tfEmail;
+
+    @FXML
+    private TextField tfFirstName;
+
+    @FXML
+    private TextField tfLastName;
+
+    @FXML
+    private TextField tfUsername;
+
+    @FXML
     private Label title;
 
     @FXML
     private VBox vBoxAuthorFromOutside;
+
+    @FXML
+    private GridPane vBoxBadgesList;
 
     @FXML
     private VBox vBoxChapter;
@@ -175,10 +239,19 @@ public class FeedControllerG2 implements ChapterObserver, AccountObserver, Reade
     private VBox vBoxFollowingAuthors;
 
     @FXML
+    private VBox vBoxMyBadges;
+
+    @FXML
+    private VBox vBoxMyOrders;
+
+    @FXML
     private VBox vBoxMySeries;
 
     @FXML
     private VBox vBoxMySeriesSeries;
+
+    @FXML
+    private VBox vBoxOrderedSeries;
 
     @FXML
     private VBox vBoxOriginalSeries;
@@ -212,71 +285,6 @@ public class FeedControllerG2 implements ChapterObserver, AccountObserver, Reade
 
     @FXML
     private VBox vBoxToReadSeries;
-
-    @FXML
-    private Slider ratingSlider;
-
-
-    @FXML
-    private VBox vBoxMyBadges;
-
-    @FXML
-    private GridPane vBoxBadgesList;
-
-    @FXML
-    private VBox boxNoBadges;
-
-    @FXML
-    private Button btnChangeBirthday;
-
-    @FXML
-    private Button btnChangeEmail;
-
-    @FXML
-    private Button btnChangeFirstName;
-
-    @FXML
-    private Button btnChangeLastName;
-
-    @FXML
-    private Button btnChangeUsername;
-
-    @FXML
-    private TextField tfEmail;
-
-    @FXML
-    private TextField tfFirstName;
-
-    @FXML
-    private TextField tfLastName;
-
-    @FXML
-    private TextField tfUsername;
-
-    @FXML
-    private Label lblEmail;
-
-    @FXML
-    private VBox vBoxOrderedSeries;
-
-    @FXML
-    private VBox vBoxMyOrders;
-
-
-    @FXML
-    private Button btnMyOrders;
-
-
-    @FXML
-    private Button notifications;
-
-
-    @FXML
-    private VBox boxNotifications;
-
-
-    @FXML
-    private Pane paneNotifications;
 
 
 
@@ -327,6 +335,9 @@ public class FeedControllerG2 implements ChapterObserver, AccountObserver, Reade
         }else{
             authorMenu();
             notifications.setVisible(false);
+            btnBuy.setVisible(false);
+            btnPostReview.setVisible(false);
+            btnFollow.setVisible(false);
         }
 
         //reader menu
@@ -759,12 +770,45 @@ public class FeedControllerG2 implements ChapterObserver, AccountObserver, Reade
         displayListOfReviews(chapterBean.getReviews(), vBoxReviews);
         if(UserLogin.getInstance().getAccount().getRole().equals(READER)) {
             readChapter(chapterBean);
+            btnBuy.setOnAction(event -> openBoxPayment(chapterBean, seriesBean));
             btnPostReview.setOnAction(event -> openBoxReview(chapterBean, seriesBean));
         }else{
             btnBuy.setVisible(false);
             btnPostReview.setVisible(false);
         }
     }
+
+    private void openBoxPayment(ChapterBean chapterBean, SeriesBean seriesBean){
+        closeAll();
+        vBoxChapter.setVisible(true);
+        panePayment.setVisible(true);
+
+        btnGoToPayment.setOnAction(event -> buyComic(chapterBean, seriesBean));
+        btnBackFromChaptee1.setOnAction(event -> openChapter(chapterBean, seriesBean));
+    }
+
+    private void buyComic(ChapterBean chapterBean, SeriesBean seriesBean) {
+
+        System.out.println("buying comic");
+        BuyComicController buyComicController = new BuyComicController();
+        DiscountCodeBean2 discountCodeBean2 = new DiscountCodeBean2();
+
+        String code = tfDiscountCode.getText();
+        if(code.equals("")){
+            discountCodeBean2 = null;
+        }else {
+            discountCodeBean2.setCode(code);
+        }
+
+        try {
+            buyComicController.buyComic(seriesBean, chapterBean, discountCodeBean2);
+        } catch (InvalidPaymentException | DiscountCodeException e) {
+            e.printStackTrace();
+        }
+
+        panePayment.setVisible(false);
+    }
+
     private void openBoxReview(ChapterBean chapterBean, SeriesBean seriesBean) {
         closeAll();
         vBoxChapter.setVisible(true);
@@ -785,8 +829,7 @@ public class FeedControllerG2 implements ChapterObserver, AccountObserver, Reade
         taComment.setText("");
         vBoxPostReview.setVisible(false);
     }
-
-
+    
     private void initProfile(){
         lblFirstName.setText(UserLogin.getInstance().getAccount().getFirstName());
         lblLastName.setText(UserLogin.getInstance().getAccount().getLastName());
@@ -815,7 +858,6 @@ public class FeedControllerG2 implements ChapterObserver, AccountObserver, Reade
         openMenu = true;
     }
 
-    private List<Notification> notifs = new ArrayList<>();
 
     private void readerMenu(){
         readerMenu.setVisible(true);
@@ -849,6 +891,7 @@ public class FeedControllerG2 implements ChapterObserver, AccountObserver, Reade
         vBoxMyBadges.setVisible(false);
         vBoxMyOrders.setVisible(false);
         paneNotifications.setVisible(false);
+        panePayment.setVisible(false);
     }
 
     private static ChapterBean currentChapter = null;
