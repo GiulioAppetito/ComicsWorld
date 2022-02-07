@@ -37,9 +37,9 @@ public class UserLogin{
 
     public static boolean createAccount(String credential, String password, String role){
 
-
-        SeriesDAO.retriveAllSeries();
         UserLogin.account = new Author();
+        account.setUsername(credential);
+        SeriesDAO.retriveAllSeries();
         if(role.equals("author")){
             AuthorDAO authorDAO = new AuthorDAO();
             UserLogin.author = authorDAO.retrieveAuthor(credential, password);
