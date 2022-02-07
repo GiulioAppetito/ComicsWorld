@@ -7,6 +7,7 @@ import com.example.comics.model.Order;
 import com.example.comics.model.Series;
 import com.example.comics.model.UserLogin;
 import com.example.comics.model.dao.DiscountCodeDAO;
+import com.example.comics.model.dao.OrderDAO;
 import com.example.comics.model.exceptions.DiscountCodeException;
 import com.example.comics.model.exceptions.InvalidPaymentException;
 import com.example.comics.model.fagioli.AccountBean;
@@ -75,6 +76,11 @@ public class BuyComicController {
         Order order = new Order(orderedSeries);
         order.setDate(LocalDate.now());
         order.setExpense(chapterBean.getPrice());
+
+
+        OrderDAO orderDAO = new OrderDAO();
+        orderDAO.insertOrder(order);
+
 
         System.out.println("BCC : new order to be inserted");
         UserLogin.getInstance().getReader().addNewOrder(order);

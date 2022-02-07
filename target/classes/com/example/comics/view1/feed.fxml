@@ -4,8 +4,13 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Circle?>
 <?import javafx.scene.text.Font?>
 
 <Pane prefHeight="729.0" prefWidth="980.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
@@ -25,6 +30,34 @@
                </rowConstraints>
            </GridPane>
        </ScrollPane>
+      <Pane fx:id="animationPane" layoutX="10.0" layoutY="61.0" prefHeight="611.0" prefWidth="862.0" styleClass="white-background">
+         <children>
+            <HBox layoutX="344.0" layoutY="267.0" prefHeight="64.0" prefWidth="204.0" spacing="10.0">
+               <children>
+                  <Circle fx:id="circle1" fill="#75bbfc" radius="30.0" stroke="BLACK" strokeType="INSIDE" />
+                  <Circle fx:id="circle2" radius="30.0" stroke="BLACK" strokeType="INSIDE">
+                     <fill>
+                        <LinearGradient endX="1.0" endY="1.0">
+                           <stops>
+                              <Stop>
+                                 <color>
+                                    <Color red="0.2222222238779068" green="0.6240741014480591" blue="1.0" />
+                                 </color>
+                              </Stop>
+                              <Stop offset="1.0">
+                                 <color>
+                                    <Color red="0.9789473414421082" green="0.27918127179145813" blue="0.8389941453933716" />
+                                 </color>
+                              </Stop>
+                           </stops>
+                        </LinearGradient>
+                     </fill>
+                  </Circle>
+                  <Circle fx:id="circle3" fill="#ff5ffa" radius="30.0" stroke="BLACK" strokeType="INSIDE" />
+               </children>
+            </HBox>
+         </children>
+      </Pane>
    
    </Pane>
 </Pane>

@@ -1,7 +1,7 @@
 <component name="libraryTable">
-  <library name="tornadofx-1.7.20">
+  <library name="AnimateFX-1.2.1 (2)">
     <CLASSES>
-      <root url="jar://$PROJECT_DIR$/trunk/lib/tornadofx-1.7.20.jar!/" />
+      <root url="jar://$PROJECT_DIR$/trunk/src/AnimateFX-1.2.1.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

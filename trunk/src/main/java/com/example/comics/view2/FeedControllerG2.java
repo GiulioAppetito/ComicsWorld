@@ -14,6 +14,7 @@ import javafx.scene.chart.PieChart;
 import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 
@@ -21,7 +22,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class FeedControllerG2 implements ChapterObserver {
+public class FeedControllerG2 implements ChapterObserver, AccountObserver, ReaderObserver {
 
     @FXML
     private Button author;
@@ -266,12 +267,25 @@ public class FeedControllerG2 implements ChapterObserver {
     private Button btnMyOrders;
 
 
+    @FXML
+    private Button notifications;
+
+
+    @FXML
+    private VBox boxNotifications;
+
+
+    @FXML
+    private Pane paneNotifications;
+
+
 
     private static final String READER = "reader";
     private static final String BORDER_STYLE = "-fx-border-color: #9b55dc; -fx-background-radius: 20";
     private static final String PLAIN_STYLE = "-fx-border-color: #ffffff;";
 
     private boolean openMenu = true;
+    private boolean openNotifs = true;
     private static FeedControllerG2 instance;
     private static List<SeriesBean> latestSeries;
     private static List<SeriesBean> mySeries;
@@ -284,6 +298,9 @@ public class FeedControllerG2 implements ChapterObserver {
         if(instance == null){
             instance = new FeedControllerG2();
             ChapterSubject.attach(instance, "reviews");
+            AccountSubject.attach(instance, "badges");
+            AccountSubject.attach(instance, "orders");
+            AccountSubject.attach(instance);
         }
         return instance;
     }
@@ -296,6 +313,7 @@ public class FeedControllerG2 implements ChapterObserver {
 
         openFeed();
         openMenu();
+        openNotifications();
         initProfile();
 
         btnProfile.setOnAction(event -> openProfile());
@@ -305,8 +323,10 @@ public class FeedControllerG2 implements ChapterObserver {
 
         if(UserLogin.getInstance().getAccount().getRole().equals(READER)){
             readerMenu();
+            notifications.setOnAction(event -> openNotifications());
         }else{
             authorMenu();
+            notifications.setVisible(false);
         }
 
         //reader menu
@@ -323,7 +343,6 @@ public class FeedControllerG2 implements ChapterObserver {
 
         displayListOfSeries(latestSeries, vBoxSeries);
     }
-
 
 
     private void displayListOfBadges() {
@@ -774,6 +793,18 @@ public class FeedControllerG2 implements ChapterObserver {
         lblEmail.setText(UserLogin.getInstance().getAccount().getEmail());
         propic.setImage(UserLogin.getInstance().getAccount().getProPic());
     }
+
+    private void openNotifications() {
+        if(openNotifs){
+            paneNotifications.setVisible(false);
+            boxNotifications.getChildren().clear();
+
+            openNotifs = false;
+            return;
+        }
+        paneNotifications.setVisible(true);
+        openNotifs = true;
+    }
     private void openMenu(){
         if(openMenu){
             paneMenu.setVisible(false);
@@ -783,6 +814,9 @@ public class FeedControllerG2 implements ChapterObserver {
         paneMenu.setVisible(true);
         openMenu = true;
     }
+
+    private List<Notification> notifs = new ArrayList<>();
+
     private void readerMenu(){
         readerMenu.setVisible(true);
         authorMenu.setVisible(false);
@@ -814,6 +848,7 @@ public class FeedControllerG2 implements ChapterObserver {
         vBoxPostReview.setVisible(false);
         vBoxMyBadges.setVisible(false);
         vBoxMyOrders.setVisible(false);
+        paneNotifications.setVisible(false);
     }
 
     private static ChapterBean currentChapter = null;
@@ -824,6 +859,45 @@ public class FeedControllerG2 implements ChapterObserver {
             List<ReviewBean> reviews = currentChapter.getReviews();
             reviews.add(reviewBean);
             displayListOfReviews(reviews, vBoxReviews);
+        }
+    }
+
+    @Override
+    public void update() {
+        //to-do
+    }
+
+    @Override
+    public void update(BadgeBean badgeBean) {
+
+            FXMLLoader fxmlLoader = new FXMLLoader();
+            fxmlLoader.setLocation(getClass().getResource("notifCard.fxml"));
+            try {
+                VBox card = fxmlLoader.load();
+                NotifcationCardControllerG cardController = fxmlLoader.getController();
+                cardController.setData("New badge won!", badgeBean);
+                boxNotifications.getChildren().add(card);
+
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+    }
+
+    @Override
+    public void update(Boolean payment) {
+        if(payment) {
+            FXMLLoader fxmlLoader = new FXMLLoader();
+            fxmlLoader.setLocation(getClass().getResource("notifCard.fxml"));
+            try {
+                VBox card = fxmlLoader.load();
+                NotifcationCardControllerG cardController = fxmlLoader.getController();
+                cardController.setData("New order received!");
+                boxNotifications.getChildren().add(card);
+
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
     }
 }

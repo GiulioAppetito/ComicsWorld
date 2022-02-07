@@ -324,15 +324,16 @@ public class Queries {
         stmt.executeUpdate(deleteStatement);
     }
 
-    public static void changeLatestPurchaseSeries(Statement stmt, Series series, Account account) throws SQLException {
-        String updateStatement = String.format("UPDATE users SET purchase = '%s' WHERE username = '%s' ", series.getTitle(), account.getUsername());
-        stmt.executeUpdate(updateStatement);
-    }
 
     public static ResultSet retreiveOrdersByReader(Statement stmt, String reader) throws SQLException {
         String selectStatement = String.format("SELECT * FROM orders WHERE (reader = '%s')",reader);
         System.out.println(selectStatement);
         return stmt.executeQuery(selectStatement);
+    }
+
+    public static void insertOrder(Statement stmt, Order order, Reader reader) throws SQLException {
+        String insertStatement = String.format("INSERT INTO orders values ('%s', '%s', '%s', '%s')", order.getSeries().getTitle(), order.getDate(), order.getExpense(), reader.getUsername());
+        stmt.executeUpdate(insertStatement);
     }
 
     public static ResultSet retreiveObjectivesByDiscountCode(Statement stmt, int objectiveID) throws SQLException {
