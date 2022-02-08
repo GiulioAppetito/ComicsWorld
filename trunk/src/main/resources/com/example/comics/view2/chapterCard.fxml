@@ -33,6 +33,11 @@
                         <Font name="Berlin Sans FB" size="14.0" />
                      </font>
                   </Label>
+                  <ImageView fx:id="imgRead" fitHeight="41.0" fitWidth="52.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../img/img2/icons8-reading-50.png" />
+                     </image>
+                  </ImageView>
                </children>
                <HBox.margin>
                   <Insets />

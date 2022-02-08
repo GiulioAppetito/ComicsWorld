@@ -744,6 +744,30 @@
                               <String fx:value="keyboard" />
                            </styleClass>
                         </VBox>
+                        <Pane fx:id="panePayment" prefHeight="512.0" prefWidth="286.0">
+                           <children>
+                              <Label layoutX="14.0" layoutY="66.0" prefHeight="26.0" prefWidth="257.0" text="Apply a discount code:" textFill="WHITE" />
+                              <Label layoutX="15.0" layoutY="201.0" prefHeight="26.0" prefWidth="257.0" text="Skip to payment:" textFill="WHITE" />
+                              <Button fx:id="btnGoToPayment" alignment="CENTER" layoutX="41.0" layoutY="245.0" mnemonicParsing="false" prefHeight="54.0" prefWidth="206.0" styleClass="darkButton" text="Go to payment" />
+                              <TextField fx:id="tfDiscountCode" layoutX="60.0" layoutY="115.0" prefHeight="25.0" prefWidth="174.0" promptText="XXX-XXX" />
+                              <Button fx:id="btnBackFromChaptee1" layoutX="2.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="78.0" styleClass="header-background" text="Back" textFill="WHITE">
+                                 <graphic>
+                                    <ImageView fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../../../img/img2/icons8-back-64.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                           </children>
+                           <styleClass>
+                              <String fx:value="header-background" />
+                              <String fx:value="keyboard" />
+                           </styleClass>
+                           <StackPane.margin>
+                              <Insets right="-1.0" top="-2.0" />
+                           </StackPane.margin>
+                        </Pane>
                         <VBox fx:id="boxProfile" prefHeight="439.0" prefWidth="286.0">
                            <children>
                               <HBox alignment="CENTER">
@@ -785,31 +809,7 @@
                               <String fx:value="keyboard" />
                            </styleClass>
                         </VBox>
-                        <Pane fx:id="panePayment" prefHeight="512.0" prefWidth="286.0">
-                           <children>
-                              <Label layoutX="14.0" layoutY="66.0" prefHeight="26.0" prefWidth="257.0" text="Apply a discount code:" textFill="WHITE" />
-                              <Label layoutX="15.0" layoutY="201.0" prefHeight="26.0" prefWidth="257.0" text="Skip to payment:" textFill="WHITE" />
-                              <Button fx:id="btnGoToPayment" alignment="CENTER" layoutX="41.0" layoutY="245.0" mnemonicParsing="false" prefHeight="54.0" prefWidth="206.0" styleClass="darkButton" text="Go to payment" />
-                              <TextField fx:id="tfDiscountCode" layoutX="60.0" layoutY="115.0" prefHeight="25.0" prefWidth="174.0" promptText="XXX-XXX" />
-                              <Button fx:id="btnBackFromChaptee1" layoutX="2.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="78.0" styleClass="header-background" text="Back" textFill="WHITE">
-                                 <graphic>
-                                    <ImageView fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
-                                       <image>
-                                          <Image url="@../../../../img/img2/icons8-back-64.png" />
-                                       </image>
-                                    </ImageView>
-                                 </graphic>
-                              </Button>
-                           </children>
-                           <styleClass>
-                              <String fx:value="header-background" />
-                              <String fx:value="keyboard" />
-                           </styleClass>
-                           <StackPane.margin>
-                              <Insets right="-1.0" top="-2.0" />
-                           </StackPane.margin>
-                        </Pane>
-                        <Pane fx:id="paneNotifications" prefHeight="286.0" prefWidth="286.0" style="-fx-background-color: #c28bf5;">
+                        <Pane fx:id="paneNotifications" prefHeight="286.0" prefWidth="286.0" styleClass="darkButton">
                            <StackPane.margin>
                               <Insets bottom="200.0" left="10.0" right="10.0" top="100.0" />
                            </StackPane.margin>
@@ -818,10 +818,10 @@
                                  <children>
                                     <VBox alignment="CENTER" prefHeight="150.0" prefWidth="134.0">
                                        <children>
-                                          <Label fx:id="message" prefHeight="40.0" prefWidth="265.0" text="Label" textFill="WHITE" />
+                                          <Label fx:id="message" prefHeight="40.0" prefWidth="110.0" text="Label" textFill="WHITE" />
                                        </children>
                                        <HBox.margin>
-                                          <Insets left="10.0" />
+                                          <Insets bottom="10.0" left="10.0" top="10.0" />
                                        </HBox.margin>
                                     </VBox>
                                     <ImageView fx:id="badgeIcon" fitHeight="123.0" fitWidth="116.0" pickOnBounds="true" preserveRatio="true">
@@ -831,17 +831,13 @@
                                     </ImageView>
                                  </children>
                               </HBox>
-                              <Button fx:id="btnCloseNotif" layoutX="211.0" layoutY="1.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="55.0" styleClass="menu-background" text="x" textFill="WHITE">
+                              <Button fx:id="btnCloseNotif" layoutX="203.0" layoutY="1.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="50.0" styleClass="darkButton" text="x" textFill="WHITE">
                                  <font>
                                     <Font size="20.0" />
                                  </font>
                               </Button>
-                              <Label fx:id="notifTitle" layoutX="7.0" layoutY="1.0" prefHeight="40.0" prefWidth="206.0" text="Label" textFill="WHITE" />
+                              <Label fx:id="notifTitle" layoutX="31.0" layoutY="1.0" prefHeight="40.0" prefWidth="182.0" text="Label" textFill="WHITE" />
                            </children>
-                           <styleClass>
-                              <String fx:value="background-display" />
-                              <String fx:value="notification" />
-                           </styleClass>
                         </Pane>
                         <VBox fx:id="vBoxPostReview" prefHeight="513.0" prefWidth="286.0">
                            <styleClass>

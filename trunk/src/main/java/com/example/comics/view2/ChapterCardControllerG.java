@@ -12,8 +12,12 @@ public class ChapterCardControllerG {
     @FXML
     private Label chapterName;
 
+    @FXML
+    private ImageView imgRead;
+
     public void setData(ChapterBean chapterBean) {
         chapterName.setText(chapterBean.getTitle());
         chapterCover.setImage(chapterBean.getCover());
+        imgRead.setVisible(chapterBean.getRead());
     }
 }
