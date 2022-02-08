@@ -8,6 +8,7 @@ import java.time.LocalDate;
 public class OrderBundle implements OrderBean {
 
     private SeriesBean series;
+    private String chapterTitle;
     private LocalDate date;
     private Float expense;
 
@@ -39,6 +40,16 @@ public class OrderBundle implements OrderBean {
     @Override
     public void setExpense(Float expense) {
         this.expense = expense;
+    }
+
+    @Override
+    public String getChapterTitle() {
+        return chapterTitle;
+    }
+
+    @Override
+    public void setChapterTitle(String chapterTitle) {
+        this.chapterTitle = chapterTitle;
     }
 
 }

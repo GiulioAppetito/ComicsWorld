@@ -77,6 +77,7 @@ public class BuyComicController {
         Order order = new Order(orderedSeries);
         order.setDate(LocalDate.now());
         order.setExpense(chapterBean.getPrice());
+        order.setChapterTitle(chapterBean.getTitle());
 
 
         OrderDAO orderDAO = new OrderDAO();

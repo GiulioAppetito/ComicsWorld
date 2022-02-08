@@ -214,11 +214,6 @@ public class Queries {
         }
     }
 
-    public static ResultSet retrieveCategorySeries(Statement stmt, Genres genre) throws SQLException {
-        String selectStatement = String.format("SELECT * FROM series WHERE genre1 = '%s' OR genre2 = '%s' OR genre3 = '%s'", genre.name(), genre.name(), genre.name());
-        return stmt.executeQuery(selectStatement);
-    }
-
     public static void insertSeries(Connection conn, Series series, InputStream seriesCoverInputStream) throws SQLException {
         PreparedStatement pstmt = conn.prepareStatement("INSERT INTO series (title,author,genre1,genre2,genre3,cover,description) values (?,?,?,?,?,?,?)");
         try{
@@ -323,7 +318,7 @@ public class Queries {
     }
 
     public static void insertOrder(Statement stmt, Order order, Reader reader) throws SQLException {
-        String insertStatement = String.format("INSERT INTO orders values ('%s', '%s', '%s', '%s')", order.getSeries().getTitle(), order.getDate(), order.getExpense(), reader.getUsername());
+        String insertStatement = String.format("INSERT INTO orders values ('%s', '%s', '%s', '%s', '%s')", order.getSeries().getTitle(), order.getChapterTitle(), order.getExpense(), order.getDate(), reader.getUsername());
         stmt.executeUpdate(insertStatement);
     }
 
