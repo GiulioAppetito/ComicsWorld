@@ -95,12 +95,6 @@ public class Reader extends Account{
 
     public void assignDiscountCode(DiscountCode discountCode, Series series) {
         UserLogin.getInstance().getReader().discountCodes.put(discountCode,series);
-        DiscountCodeDAO discountCodeDAO = new DiscountCodeDAO();
-        try {
-            discountCodeDAO.saveObtainedDiscountCode(discountCode,this,series);
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
     }
 
     public boolean likesThisSeries(Series series){

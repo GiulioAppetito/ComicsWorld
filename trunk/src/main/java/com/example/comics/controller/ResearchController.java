@@ -153,4 +153,16 @@ public class ResearchController {
         return authorBeans;
     }
 
+    public List<DiscountCodeBean> getCodesByReaderForSeries(SeriesBean seriesBean) {
+        List<DiscountCodeBean> beans = new ArrayList<>();
+        DiscountCodeBean discountCodeBean ;
+        for(DiscountCode discountCode : UserLogin.getInstance().getReader().getDiscountCodes().keySet()){
+            if(UserLogin.getInstance().getReader().getDiscountCodes().get(discountCode).getTitle().equals(seriesBean.getTitle())){
+                discountCodeBean = new DiscountCodeBundle();
+                discountCodeBean.setCode(discountCode.getCode());
+                beans.add(discountCodeBean);
+            }
+        }
+        return beans;
+    }
 }

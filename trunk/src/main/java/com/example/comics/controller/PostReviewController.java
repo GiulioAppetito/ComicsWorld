@@ -2,6 +2,7 @@ package com.example.comics.controller;
 
 import com.example.comics.controller.boundaries.PostReviewAuthorBoundary;
 import com.example.comics.controller.boundaries.PostReviewReaderBoundary;
+import com.example.comics.model.dao.DiscountCodeDAO;
 import com.example.comics.model.exceptions.IncompleteReviewException;
 import com.example.comics.model.fagioli.*;
 import com.example.comics.model.*;
@@ -26,7 +27,7 @@ public class PostReviewController{
         Series series = null;
 
         SeriesDAO seriesDAO = new SeriesDAO();
-        series = seriesDAO.retrieveSeries(seriesBean.getTitle());
+        series = SeriesDAO.retrieveSeries(seriesBean.getTitle());
         series.addReview(chapterBean.getTitle(), reviewBean.getComment(), reviewBean.getRating());
 
 
@@ -80,6 +81,9 @@ public class PostReviewController{
         //genero discount code
         DiscountCode discountCode = new DiscountCode(objective.getDiscount());
         UserLogin.getInstance().getReader().assignDiscountCode(discountCode,series);
+        DiscountCodeDAO discountCodeDAO = new DiscountCodeDAO();
+        discountCodeDAO.saveObtainedDiscountCode(discountCode,UserLogin.getInstance().getReader(), series,objective);
+
 
         //invio mail al lettore del codice sconto
         new Thread(()->{

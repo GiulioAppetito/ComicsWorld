@@ -23,7 +23,7 @@ public class Series extends SeriesSubject{
 	private Genres genre3;
 
 	public Series(String title, Author author){
-		Thread chaptersThread,objectivesThread;
+		Thread chaptersThread;
 		this.title = title;
 		this.author = author;
 		chaptersThread = new Thread(() -> {
@@ -32,18 +32,20 @@ public class Series extends SeriesSubject{
 		});
 		chaptersThread.start();
 
-		objectivesThread = new Thread(() -> {
-			SeriesDAO seriesDAO = new SeriesDAO();
-			this.objectives = seriesDAO.retrieveObjectives(title);
-			if(objectives==null){
-				objectives = new ArrayList<>();
+		SeriesDAO seriesDAO = new SeriesDAO();
+		this.objectives = seriesDAO.retrieveObjectives(title);
+		if(objectives==null){
+			System.out.println("objectives == null");
+		}else{
+			System.out.println("[Series] "+this.title+" objectives size : "+objectives.size());
+			if(objectives.size()!=0){
+				System.out.println(objectives.get(1).getType());
 			}
-		});
-		objectivesThread.start();
+		}
+
 
 		try {
 			chaptersThread.join();
-			objectivesThread.join();
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
@@ -75,7 +77,8 @@ public class Series extends SeriesSubject{
 	}
 
 	public List<Objective> getObjectives() {
-		return objectives;
+		System.out.println("Series: lista obiettivi: " + this.objectives.get(0).getType());
+		return this.objectives;
 	}
 
 	public void setObjectives(List<Objective> objectives) {

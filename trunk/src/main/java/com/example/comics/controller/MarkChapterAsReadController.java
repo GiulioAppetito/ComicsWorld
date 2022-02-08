@@ -2,6 +2,7 @@ package com.example.comics.controller;
 
 import com.example.comics.controller.boundaries.PostReviewReaderBoundary;
 import com.example.comics.model.*;
+import com.example.comics.model.dao.DiscountCodeDAO;
 import com.example.comics.model.dao.ReaderDAO;
 import com.example.comics.model.dao.SeriesDAO;
 import com.example.comics.model.fagioli.*;
@@ -15,7 +16,7 @@ public class MarkChapterAsReadController {
     public void markChapterAsRead(SeriesBean seriesBean, ChapterBean chapterBean){
 
         SeriesDAO seriesDAO = new SeriesDAO();
-        Series series = seriesDAO.retrieveSeries(seriesBean.getTitle());
+        Series series = SeriesDAO.retrieveSeries(seriesBean.getTitle());
         series.markChapter(chapterBean.getTitle());
 
         UserLogin.getInstance().getReader().addSeriesToReading(series);
@@ -53,6 +54,8 @@ public class MarkChapterAsReadController {
         }
 
         //controllo degli obiettivi
+        System.out.println("[MARK] Controllo obiettivi, sono "+series.getObjectives().size());
+        System.out.println("[MARK] First chapter type : "+series.getObjectives().get(0).getType());
         for(Objective objective : series.getObjectives()){
             if((objective.getType().equals("chapters"))&&(!UserLogin.getInstance().getReader().hasAchievedThisBadge(objective.getBadge()))&&(objective.isObjectiveAchieved(achievement))){
 
@@ -63,6 +66,8 @@ public class MarkChapterAsReadController {
                 //genero discount code
                 DiscountCode discountCode = new DiscountCode(objective.getDiscount());
                 UserLogin.getInstance().getReader().assignDiscountCode(discountCode,series);
+                DiscountCodeDAO discountCodeDAO = new DiscountCodeDAO();
+                discountCodeDAO.saveObtainedDiscountCode(discountCode,UserLogin.getInstance().getReader(), series,objective);
 
                 //invio mail al lettore del codice sconto
                 new Thread(()->{
@@ -107,7 +112,7 @@ public class MarkChapterAsReadController {
         }
 
         SeriesDAO seriesDAO = new SeriesDAO();
-        Series series = seriesDAO.retrieveSeries(seriesBean.getTitle());
+        Series series = SeriesDAO.retrieveSeries(seriesBean.getTitle());
         series.unmarkChapter(chapterBean.getTitle());
 
         Series finalSeries = series;

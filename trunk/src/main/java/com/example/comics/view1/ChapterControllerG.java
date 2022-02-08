@@ -391,6 +391,7 @@ public class ChapterControllerG implements ChapterObserver, ReaderObserver{
 
     private static final String STYLE = ".button2";
     private static final String STYLE2 = "-fx-background-color: #5DADE2; -fx-background-radius: 20";
+    private static SeriesBean currentSeries;
 
 
     public void init(ChapterBean chapterBean, SeriesBean seriesBean){
@@ -398,7 +399,7 @@ public class ChapterControllerG implements ChapterObserver, ReaderObserver{
 
         orderPane.setVisible(false);
         btnCloseOrderPane.setOnAction(event -> orderPane.setVisible(false));
-
+        currentSeries = seriesBean;
 
         ChapterSubject.attach(this, "reviews");
         AccountSubject.attach(this, "badges");
@@ -431,14 +432,10 @@ public class ChapterControllerG implements ChapterObserver, ReaderObserver{
         btnBuyComics.setOnAction(event -> buyComics());
 
         if(UserLogin.getInstance().getAccount().getRole().equals("reader")) {
+            System.out.println("INITING CHOICE BOX");
             btnAddReview.setOnAction(event -> openEditor());
-            List<String> codes = new ArrayList<>();
-            for(DiscountCode discountCode : UserLogin.getInstance().getReader().getDiscountCodes().keySet()){
-                if(UserLogin.getInstance().getReader().getDiscountCodes().get(discountCode).getTitle().equals(seriesBean.getTitle())){
-                    codes.add(discountCode.getCode());
-                }
-            }
-            choiceBoxCodes.getItems().setAll(codes);
+            initChoiceBoxCodes();
+
         }else{
             btnAddReview.setVisible(false);
             btnBuyComics.setVisible(false);
@@ -541,6 +538,18 @@ public class ChapterControllerG implements ChapterObserver, ReaderObserver{
         btnSkip.setOnAction(event -> applyNoDiscountCode(seriesBean, chapterBean));
     }
 
+    private void initChoiceBoxCodes() {
+        List<DiscountCodeBean> codeBeans;
+        ResearchController researchController = new ResearchController();
+        codeBeans = researchController.getCodesByReaderForSeries(currentSeries);
+        List<String> strings = new ArrayList<>();
+        for(DiscountCodeBean bean : codeBeans){
+            System.out.println("Bean1 : "+bean.getCode());
+            strings.add(bean.getCode());
+        }
+        choiceBoxCodes.getItems().setAll(strings);
+    }
+
     private void applyNoDiscountCode(SeriesBean seriesBean, ChapterBean chapterBean) {
         BuyComicController buyComicController = new BuyComicController();
         try {
@@ -638,6 +647,7 @@ public class ChapterControllerG implements ChapterObserver, ReaderObserver{
         newBadgeWonPane.setVisible(true);
         lblBadgeName.setText(badgeBean.getName());
         badgeIconView.setImage(badgeBean.getIcon());
+        initChoiceBoxCodes();
     }
 
 
@@ -645,6 +655,7 @@ public class ChapterControllerG implements ChapterObserver, ReaderObserver{
         if(payment){
             orderPane.setVisible(true);
             lblOrderResult.setText("Completed payment!");
+            initChoiceBoxCodes();
         }
 
     }

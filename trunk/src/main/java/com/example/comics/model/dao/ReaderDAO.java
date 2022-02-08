@@ -17,14 +17,14 @@ public class ReaderDAO {
     private static final String PASS = "passwordanastasia";
     private static final String DB_URL = "jdbc:mysql://comics-world.ce9t0fxhansh.eu-west-2.rds.amazonaws.com:3306/ComicsWorld?autoReconnect=true&useSSL=false";
 
-    private List<Series> favSeries = new ArrayList<>();
-    private List<Series> toReadSeries = new ArrayList<>();
+    private final List<Series> favSeries = new ArrayList<>();
+    private final List<Series> toReadSeries = new ArrayList<>();
     private Map<DiscountCode,Series> discountCodes = new HashMap<>();
-    private List<Author> followedAuthors = new ArrayList<>();
-    private List<Series> readingSeries = new ArrayList<>();
+    private final List<Author> followedAuthors = new ArrayList<>();
+    private final List<Series> readingSeries = new ArrayList<>();
 
 
-    private List<Series> all = new ArrayList<>();
+    private final List<Series> all = new ArrayList<>();
     private List<String> favTitles = new ArrayList<>();
     private List<String> toReadTitles = new ArrayList<>();
     private List<String> readingTitles = new ArrayList<>();
@@ -58,17 +58,17 @@ public class ReaderDAO {
             followedAuthorsNames = authorDAO.retrieveFollowedAuthorsNames(username);
 
             for(String title : favTitles){
-                Series series = seriesDAO.retrieveSeries(title);
+                Series series = SeriesDAO.retrieveSeries(title);
                 favSeries.add(series);
             }
 
             for(String title : toReadTitles){
-                Series series = seriesDAO.retrieveSeries(title);
+                Series series = SeriesDAO.retrieveSeries(title);
                 toReadSeries.add(series);
             }
 
             for(String title : readingTitles){
-                Series series = seriesDAO.retrieveSeries(title);
+                Series series = SeriesDAO.retrieveSeries(title);
                 readingSeries.add(series);
             }
 
@@ -89,6 +89,8 @@ public class ReaderDAO {
 
             t3.join();
             reader = new Reader(favSeries, toReadSeries, readingSeries, username, followedAuthors, discountCodes);
+
+            System.out.println("You have this first discount code : "+discountCodes);
 
             reader.setFirstName(rs.getString("firstname"));
             reader.setLastName(rs.getString("lastname"));

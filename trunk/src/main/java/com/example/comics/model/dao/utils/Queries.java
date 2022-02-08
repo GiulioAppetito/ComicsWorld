@@ -101,9 +101,9 @@ public class Queries {
     }
 
 
-    public static void saveReadersDiscountCode(Statement stmt, DiscountCode discountCode, Reader reader,Series series) throws SQLException {
+    public static void saveReadersDiscountCode(Statement stmt, DiscountCode discountCode, Reader reader,Series series,Objective objective) throws SQLException {
 
-        String insertStatement = String.format("INSERT INTO discountCodes (username, code, expiringDate, percentage,startingDate,series) values ('%s', '%s', '%s', '%s','%s','%s')", reader.getUsername(), discountCode.getCode(), DatesConverter.toString(discountCode.getExpiringDate()), discountCode.getDiscount().getPercentage(),DatesConverter.toString(LocalDate.now()),series.getTitle());
+        String insertStatement = String.format("INSERT INTO discountCodes (username, code, expiringDate, percentage,startingDate,series,objectiveID) values ('%s', '%s', '%s', '%s','%s','%s','%d')", reader.getUsername(), discountCode.getCode(), DatesConverter.toString(discountCode.getExpiringDate()), discountCode.getDiscount().getPercentage(),DatesConverter.toString(LocalDate.now()),series.getTitle(),objective.getBadge().getId());
         System.out.println(insertStatement);
         stmt.executeUpdate(insertStatement);
     }
@@ -304,6 +304,7 @@ public class Queries {
 
     public static ResultSet retreiveDiscountCodesByReader(Statement stmt, String username) throws SQLException {
         String selectStatement = String.format("SELECT * FROM discountCodes WHERE (username = '%s')  ",username);
+        System.out.println(selectStatement);
         return stmt.executeQuery(selectStatement);
     }
 
@@ -337,8 +338,8 @@ public class Queries {
         stmt.executeUpdate(insertStatement);
     }
 
-    public static ResultSet retreiveObjectivesByDiscountCode(Statement stmt, int objectiveID) throws SQLException {
-        String selectStatement = String.format("SELECT DISTINCT seriesTitle FROM objectives WHERE (objective_id = '%d')",objectiveID);
+    public static ResultSet retreiveObjectivesByDiscountCode(Statement stmt, int badgeID) throws SQLException {
+        String selectStatement = String.format("SELECT DISTINCT seriesTitle FROM objectives WHERE (associatedBadgeID = '%d')",badgeID);
         System.out.println(selectStatement);
         return stmt.executeQuery(selectStatement);
     }

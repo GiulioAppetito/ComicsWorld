@@ -117,7 +117,7 @@ public class PublishSeriesControllerG {
     @FXML
     private Button btnChangeCover;
 
-    private static final String CHAPTERS = "CHAPTER";
+    private static final String CHAPTERS = "CHAPTERS";
     private static final String REVIEWS = "REVIEWS";
     private static final String PNG = "*.png";
 

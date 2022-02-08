@@ -1,9 +1,6 @@
 package com.example.comics.model.dao;
 
-import com.example.comics.model.Discount;
-import com.example.comics.model.DiscountCode;
-import com.example.comics.model.Reader;
-import com.example.comics.model.Series;
+import com.example.comics.model.*;
 import com.example.comics.model.dao.utils.DatesConverter;
 import com.example.comics.model.dao.utils.Queries;
 
@@ -67,13 +64,14 @@ public class DiscountCodeDAO {
                 if(!rs2.first()){
                     return discountCodes;
                 }
-                series = seriesDAO.retrieveSeries(rs2.getString("seriesTitle"));
+                series = SeriesDAO.retrieveSeries(rs2.getString("seriesTitle"));
 
                 DiscountCode discountCode = new DiscountCode(discount,code,expiringDate);
                 discountCodes.put(discountCode,series);
 
 
             } while (rs.next());
+            System.out.println("[DISCOUNT CODE DAO] I found these codes : "+discountCodes);
 
 
         } catch (SQLException throwables) {
@@ -99,7 +97,7 @@ public class DiscountCodeDAO {
         return discountCodes;
     }
 
-    public void saveObtainedDiscountCode(DiscountCode discountCode, Reader reader,Series series) throws SQLException {
+    public void saveObtainedDiscountCode(DiscountCode discountCode, Reader reader, Series series, Objective objective) {
 
         Connection conn = null;
         Statement stmt = null;
@@ -107,14 +105,18 @@ public class DiscountCodeDAO {
         try {
             conn = DriverManager.getConnection(DB_URL, USER, PASS);
             stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
-            Queries.saveReadersDiscountCode(stmt,discountCode,reader,series);
+            Queries.saveReadersDiscountCode(stmt,discountCode,reader,series,objective);
 
         } catch (SQLException e) {
             e.printStackTrace();
         }
         finally{
             assert conn != null;
-            conn.close();
+            try {
+                conn.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
         }
     }
 

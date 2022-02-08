@@ -19,9 +19,8 @@ public class ChapterObjective extends Objective{
 
     @Override
     public boolean isObjectiveAchieved(Float achievement){
-        System.out.println("* * * * * Verifying chapters objective. * * * * * ");
+        //L'obiettivo è raggiunto se la percentuale di capitoli della serie letti dal lettore è maggiore o uguale della percentuale richiesta
         Float percentageAchievement = achievement *100;
-        System.out.println("percentageAchievement : "+percentageAchievement+"  >= requiredChaptersPercentage : "+requiredChaptersPercentage +"?");
         return percentageAchievement >= requiredChaptersPercentage;
     }
 

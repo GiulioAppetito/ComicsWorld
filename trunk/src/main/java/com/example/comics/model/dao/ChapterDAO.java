@@ -55,17 +55,9 @@ public class ChapterDAO {
                     chapter.setCover(image);
                 }
 
-                    System.out.println("### [ChapterDAO] setting read or not to chapter.");
                     rs2 = Queries.isChapterRead(stmt2, chapterTitle, UserLogin.getInstance().getAccount().getUsername());
                     //il capitolo non è letto
-                    if(!rs2.first()){
-                        chapter.setRead(false);
-                        System.out.println("### [ChapterDAO] setted FALSE.");
-                    }else{
-                        chapter.setRead(true);
-                        System.out.println("### [ChapterDAO] setted TRUE.");
-
-                    }
+                chapter.setRead(rs2.first());
 
 
                 chaptersList.add(chapter);

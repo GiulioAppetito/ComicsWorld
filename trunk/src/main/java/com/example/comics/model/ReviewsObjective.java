@@ -19,9 +19,7 @@ public class ReviewsObjective extends Objective{
 
     @Override
     public boolean isObjectiveAchieved(Float readersReviews){
-        System.out.println("* * * * * Verifying reviews objective. * * * * * ");
-        System.out.println("readersReviews : "+readersReviews+"  >= requiredReviews : "+requiredReviews +"?");
-
+        //L'obiettivo è raggiunto se il numero di reviews lasciate dal lettore è maggiore o uguale del numero richiesto
         return readersReviews >= requiredReviews ;
     }
 
