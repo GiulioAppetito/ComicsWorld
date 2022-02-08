@@ -23,10 +23,10 @@
                   <Image url="@../../../../img/img1/2-1.jpg" />
                </image>
                <HBox.margin>
-                  <Insets left="-30.0" />
+                  <Insets />
                </HBox.margin>
             </ImageView>
-            <VBox prefHeight="104.0" prefWidth="110.0">
+            <VBox prefHeight="104.0" prefWidth="83.0">
                <children>
                   <Label fx:id="seriesTitle" alignment="CENTER" prefHeight="30.0" prefWidth="112.0" text="Series">
                      <font>
@@ -47,6 +47,15 @@
                <HBox.margin>
                   <Insets left="10.0" />
                </HBox.margin>
+            </VBox>
+            <VBox>
+               <children>
+                  <Label fx:id="chapterTitle" alignment="CENTER" prefHeight="30.0" prefWidth="74.0" text="chapter">
+                     <font>
+                        <Font name="Berlin Sans FB" size="14.0" />
+                     </font>
+                  </Label>
+               </children>
             </VBox>
          </children>
       </HBox>

@@ -38,6 +38,9 @@ public class FeedControllerG2 implements ChapterObserver, AccountObserver, Reade
     private Label authorusername;
 
     @FXML
+    private ImageView badgeIcon;
+
+    @FXML
     private VBox boxFeed;
 
     @FXML
@@ -51,9 +54,6 @@ public class FeedControllerG2 implements ChapterObserver, AccountObserver, Reade
 
     @FXML
     private VBox boxNoSeries;
-
-    @FXML
-    private VBox boxNotifications;
 
     @FXML
     private VBox boxProfile;
@@ -164,7 +164,10 @@ public class FeedControllerG2 implements ChapterObserver, AccountObserver, Reade
     private Label lblLastName;
 
     @FXML
-    private Button notifications;
+    private Label message;
+
+    @FXML
+    private Label notifTitle;
 
     @FXML
     private Pane paneMenu;
@@ -281,6 +284,9 @@ public class FeedControllerG2 implements ChapterObserver, AccountObserver, Reade
     private VBox vBoxToRead;
 
     @FXML
+    private Button btnCloseNotif;
+
+    @FXML
     private VBox vBoxToReadSeries;
 
 
@@ -328,10 +334,8 @@ public class FeedControllerG2 implements ChapterObserver, AccountObserver, Reade
 
         if(UserLogin.getInstance().getAccount().getRole().equals(READER)){
             readerMenu();
-            notifications.setOnAction(event -> openNotifications());
         }else{
             authorMenu();
-            notifications.setVisible(false);
             btnBuy.setVisible(false);
             btnPostReview.setVisible(false);
             btnFollow.setVisible(false);
@@ -344,6 +348,7 @@ public class FeedControllerG2 implements ChapterObserver, AccountObserver, Reade
         btnToRead.setOnAction(event -> openToRead());
         btnMyBadges.setOnAction(event -> openMyBadges());
         btnMyOrders.setOnAction(event -> openMyOrders());
+        btnCloseNotif.setOnAction(event -> paneNotifications.setVisible(false));
 
         //author menu
         btnStatistics.setOnAction(event -> openStats());
@@ -768,7 +773,14 @@ public class FeedControllerG2 implements ChapterObserver, AccountObserver, Reade
 
         displayListOfReviews(chapterBean.getReviews(), vBoxReviews);
         if(UserLogin.getInstance().getAccount().getRole().equals(READER)) {
-            readChapter(chapterBean);
+            if(chapterBean.getRead()){
+                btnReadChapter.setOnAction(event -> unmarkReadChapter(seriesBean, chapterBean));
+                btnReadChapter.setStyle(BORDER_STYLE);
+            }else{
+                btnReadChapter.setOnAction(event->readChapter(seriesBean, chapterBean));
+                btnReadChapter.setStyle(PLAIN_STYLE);
+            }
+
             btnBuy.setOnAction(event -> openBoxPayment(chapterBean, seriesBean));
             btnPostReview.setOnAction(event -> openBoxReview(chapterBean, seriesBean));
         }else{
@@ -845,8 +857,6 @@ public class FeedControllerG2 implements ChapterObserver, AccountObserver, Reade
     private void openNotifications() {
         if(openNotifs){
             paneNotifications.setVisible(false);
-            boxNotifications.getChildren().clear();
-
             openNotifs = false;
             return;
         }
@@ -873,8 +883,20 @@ public class FeedControllerG2 implements ChapterObserver, AccountObserver, Reade
         authorMenu.setVisible(true);
     }
     
-    private void readChapter(ChapterBean chapterBean) {
-        //TO-DO
+    private void readChapter(SeriesBean seriesBean, ChapterBean chapterBean) {
+        MarkChapterAsReadController markChapterAsReadController = new MarkChapterAsReadController();
+        markChapterAsReadController.markChapterAsRead(seriesBean, chapterBean);
+
+        btnReadChapter.setOnAction(event -> unmarkReadChapter(seriesBean, chapterBean));
+        btnReadChapter.setStyle(BORDER_STYLE);
+    }
+
+    public void unmarkReadChapter(SeriesBean seriesBean, ChapterBean chapterBean){
+        MarkChapterAsReadController markChapterAsReadController = new MarkChapterAsReadController();
+        markChapterAsReadController.unmarkChapterAsRead(seriesBean, chapterBean);
+
+        btnReadChapter.setOnAction(event -> readChapter(seriesBean, chapterBean));
+        btnReadChapter.setStyle(PLAIN_STYLE);
     }
 
     private void closeAll(){
@@ -917,36 +939,25 @@ public class FeedControllerG2 implements ChapterObserver, AccountObserver, Reade
 
     @Override
     public void update(BadgeBean badgeBean) {
+        System.out.println("new badge won");
+        badgeIcon.setImage(badgeBean.getIcon());
+        notifTitle.setText("New badge!");
+        message.setText(badgeBean.getName());
 
-            FXMLLoader fxmlLoader = new FXMLLoader();
-            fxmlLoader.setLocation(getClass().getResource("notifCard.fxml"));
-            try {
-                VBox card = fxmlLoader.load();
-                NotifcationCardControllerG cardController = fxmlLoader.getController();
-                cardController.setData("New badge won!", badgeBean);
-                boxNotifications.getChildren().add(card);
-
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-
+        paneNotifications.setVisible(true);
     }
 
     @Override
     public void update(Boolean payment) {
+        badgeIcon.setVisible(false);
         if(payment) {
-            System.out.println("elaborating payment response");
-            FXMLLoader fxmlLoader = new FXMLLoader();
-            fxmlLoader.setLocation(getClass().getResource("notifCard.fxml"));
-            try {
-                VBox card = fxmlLoader.load();
-                NotifcationCardControllerG cardController = fxmlLoader.getController();
-                cardController.setData("New order received!");
-                boxNotifications.getChildren().add(card);
-
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
+            System.out.println("new order");
+            notifTitle.setText("New order!");
+            message.setText("check your orders");
+        }else{
+            notifTitle.setText("Error");
+            message.setText("Failed payment");
         }
+        paneNotifications.setVisible(true);
     }
 }

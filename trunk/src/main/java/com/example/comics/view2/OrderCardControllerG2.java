@@ -19,10 +19,14 @@ public class OrderCardControllerG2 {
     @FXML
     private Label seriesTitle;
 
+    @FXML
+    private Label chapterTitle;
+
     public void setData(OrderBean orderBean){
         lblDate.setText(String.valueOf(orderBean.getDate()));
         lblExpense.setText(String.valueOf(orderBean.getExpense()));
         seriesCover.setImage(orderBean.getSeries().getCover());
         seriesTitle.setText(orderBean.getSeries().getTitle());
+        chapterTitle.setText(orderBean.getChapterTitle());
     }
 }

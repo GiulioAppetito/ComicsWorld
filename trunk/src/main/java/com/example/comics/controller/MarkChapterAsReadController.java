@@ -15,7 +15,6 @@ public class MarkChapterAsReadController {
 
     public void markChapterAsRead(SeriesBean seriesBean, ChapterBean chapterBean){
 
-        SeriesDAO seriesDAO = new SeriesDAO();
         Series series = SeriesDAO.retrieveSeries(seriesBean.getTitle());
         series.markChapter(chapterBean.getTitle());
 
@@ -31,7 +30,6 @@ public class MarkChapterAsReadController {
     }
 
     private void checkObjectives(Series series) {
-        System.out.println("[MARK] CheckObjectives("+series.getTitle()+")");
         Float readersReadings = 0f;
         Float achievement = 0f;
 
@@ -46,20 +44,14 @@ public class MarkChapterAsReadController {
                     }
                 }
             }
-            System.out.println("[MARK] readerReadings : "+readersReadings);
-            System.out.println("[MARK] seriesChapters size : "+series.getChapters().size());
             achievement =(readersReadings / series.getChapters().size());
-            System.out.println("[MARK CH C] Achievement : "+achievement);
 
         }
 
         //controllo degli obiettivi
-        System.out.println("[MARK] Controllo obiettivi, sono "+series.getObjectives().size());
-        System.out.println("[MARK] First chapter type : "+series.getObjectives().get(0).getType());
         for(Objective objective : series.getObjectives()){
             if((objective.getType().equals("chapters"))&&(!UserLogin.getInstance().getReader().hasAchievedThisBadge(objective.getBadge()))&&(objective.isObjectiveAchieved(achievement))){
 
-                System.out.println("[MARK] Badge won....");
                 //aggiungo badge alla lista e salvo sul DB + assegno badge
                 UserLogin.getInstance().getReader().addAchievedBadge(objective.getBadge());
 
