@@ -5,6 +5,7 @@ import com.example.comics.model.Author;
 import com.example.comics.model.Reader;
 import com.example.comics.model.dao.utils.Queries;
 import com.example.comics.model.exceptions.FailedLoginException;
+import com.example.comics.model.exceptions.FailedProfileCustomizationException;
 import com.example.comics.model.exceptions.FailedRegistrationException;
 import javafx.scene.image.Image;
 
@@ -107,7 +108,7 @@ public class AccountDAO {
 
     }
 
-    public void changeUsername(String newUsername, String oldUsername){
+    public void changeUsername(String newUsername, String oldUsername) throws FailedProfileCustomizationException {
 
         Statement stmt=null;
         Connection conn=null;
@@ -121,7 +122,7 @@ public class AccountDAO {
 
 
         } catch (SQLException e) {
-            e.printStackTrace();
+            throw new FailedProfileCustomizationException("This username is already used!");
         } finally {
             try {
                 if (stmt != null)

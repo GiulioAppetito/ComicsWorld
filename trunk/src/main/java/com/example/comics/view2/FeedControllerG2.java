@@ -3,6 +3,7 @@ package com.example.comics.view2;
 import com.example.comics.controller.*;
 import com.example.comics.model.*;
 import com.example.comics.model.exceptions.DiscountCodeException;
+import com.example.comics.model.exceptions.FailedProfileCustomizationException;
 import com.example.comics.model.exceptions.IncompleteReviewException;
 import com.example.comics.model.fagioli.*;
 import com.example.comics.view2.beans.AccountBean2;
@@ -629,7 +630,11 @@ public class FeedControllerG2 implements ChapterObserver, AccountObserver, Reade
         accountBean.setUsername(tfUsername.getText());
 
         CustomizeProfileController customizeProfileController = new CustomizeProfileController();
-        customizeProfileController.changeUsername(accountBean);
+        try {
+            customizeProfileController.changeUsername(accountBean);
+        } catch (FailedProfileCustomizationException e) {
+
+        }
     }
     private void changeLastName() {
         AccountBean2 accountBean = new AccountBean2();

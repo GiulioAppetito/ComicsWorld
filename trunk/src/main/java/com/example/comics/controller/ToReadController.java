@@ -47,8 +47,6 @@ public class ToReadController {
                 readerDAO.removeSeriesFromToRead(series,UserLogin.getInstance().getReader());
             }
         }
-
-
     }
 }
 

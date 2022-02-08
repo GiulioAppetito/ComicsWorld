@@ -12,7 +12,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="729.0" prefWidth="600.0" styleClass="transparent" stylesheets="@../../../../css/css1/fullpackstyling.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.comics.view1.ProfileSettingsControllerG">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="729.0" prefWidth="600.0" styleClass="transparent" stylesheets="@../../../../css/css1/fullpackstyling.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.comics.view1.ProfileSettingsControllerG">
    <HBox prefHeight="729.0" prefWidth="600.0">
       <Pane prefHeight="650.0" prefWidth="520.0" stylesheets="@../../../../css/css1/fullpackstyling.css">
          <HBox.margin>
@@ -120,7 +120,15 @@
                      </Button>
                   </children>
                </HBox>
-               <TextArea fx:id="taNewUsername" minHeight="-Infinity" minWidth="-Infinity" prefHeight="50.0" prefWidth="419.0">
+               <Label fx:id="lblError" prefHeight="34.0" prefWidth="359.0" textFill="#862929">
+                  <VBox.margin>
+                     <Insets left="20.0" />
+                  </VBox.margin>
+                  <font>
+                     <Font name="Berlin Sans FB" size="20.0" />
+                  </font>
+               </Label>
+               <TextArea fx:id="taNewUsername" minHeight="-Infinity" minWidth="-Infinity" prefHeight="50.0" prefWidth="419.0" promptText="Username">
                   <VBox.margin>
                      <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
                   </VBox.margin>

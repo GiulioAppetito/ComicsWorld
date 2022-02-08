@@ -4,6 +4,7 @@ import com.example.comics.model.AccountSubject;
 import com.example.comics.controller.CustomizeProfileController;
 import com.example.comics.model.AccountObserver;
 import com.example.comics.model.UserLogin;
+import com.example.comics.model.exceptions.FailedProfileCustomizationException;
 import com.example.comics.view1.beans.AccountBean1;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -31,6 +32,9 @@ public class ProfileSettingsControllerG implements AccountObserver {
     private Label lblUsername;
 
     @FXML
+    private Label lblError;
+
+    @FXML
     private Button btnEditUsername;
 
     @FXML
@@ -55,6 +59,7 @@ public class ProfileSettingsControllerG implements AccountObserver {
         //stessa cosa con la propic
         btnEditProPic.setOnAction(event -> changeProPic());
         imgProPic.setImage(UserLogin.getInstance().getAccount().getProPic());
+        lblError.setText("");
 
         AccountSubject.attach(this);
     }
@@ -110,8 +115,14 @@ public class ProfileSettingsControllerG implements AccountObserver {
         AccountBean1 profileBean = new AccountBean1();
         profileBean.setUsername(taNewUsername.getText());
 
-        CustomizeProfileController customizeProfileController = new CustomizeProfileController();
-        customizeProfileController.changeUsername(profileBean);
+        try{
+            CustomizeProfileController customizeProfileController = new CustomizeProfileController();
+            customizeProfileController.changeUsername(profileBean);
+        }catch (FailedProfileCustomizationException e){
+            lblError.setText(e.getMessage());
+            taNewUsername.setText("");
+        }
+
     }
 
     @Override

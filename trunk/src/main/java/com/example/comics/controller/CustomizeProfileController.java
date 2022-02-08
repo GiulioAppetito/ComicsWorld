@@ -1,12 +1,13 @@
 package com.example.comics.controller;
 
+import com.example.comics.model.exceptions.FailedProfileCustomizationException;
 import com.example.comics.model.fagioli.AccountBean;
 import com.example.comics.model.UserLogin;
 import com.example.comics.model.dao.AccountDAO;
 
 public class CustomizeProfileController {
 
-    public void changeUsername(AccountBean accountBean){
+    public void changeUsername(AccountBean accountBean) throws FailedProfileCustomizationException {
         AccountDAO accountDAO = new AccountDAO();
         accountDAO.changeUsername(accountBean.getUsername(), UserLogin.getInstance().getAccount().getUsername());
         UserLogin.getInstance().getAccount().changeCredential("username", accountBean.getUsername());
