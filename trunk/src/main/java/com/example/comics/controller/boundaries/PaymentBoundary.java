@@ -20,7 +20,8 @@ public class PaymentBoundary {
         //contattiamo la boundary di paypal, tipo set di api offerto
         PayPalInterface paypal = new PayPalBoundary();
 
-        String payment = String.valueOf(chapterBean.getPrice());
+        Float expense = (chapterBean.getPrice()*discountCodeBean.getDiscountBean().getPercentage())/100;
+        String payment = String.valueOf(expense);
         //magari non facciamo due stringhette
         paypal.startTransaction(accountBean.getFirstName(), accountBean.getLastName(), payment);
 
