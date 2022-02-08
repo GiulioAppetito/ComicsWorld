@@ -34,15 +34,6 @@ public class Series extends SeriesSubject{
 
 		SeriesDAO seriesDAO = new SeriesDAO();
 		this.objectives = seriesDAO.retrieveObjectives(title);
-		if(objectives==null){
-			System.out.println("objectives == null");
-		}else{
-			System.out.println("[Series] "+this.title+" objectives size : "+objectives.size());
-			if(objectives.size()!=0){
-				System.out.println(objectives.get(1).getType());
-			}
-		}
-
 
 		try {
 			chaptersThread.join();

@@ -71,7 +71,9 @@ public class DiscountCodeDAO {
 
 
             } while (rs.next());
-            System.out.println("[DISCOUNT CODE DAO] I found these codes : "+discountCodes);
+            for(DiscountCode discountCode : discountCodes.keySet()){
+                System.out.println("[DISCOUNT CODE DAO] I found these codes : <"+discountCode.getCode()+","+discountCodes.get(discountCode).getTitle()+">");
+            }
 
 
         } catch (SQLException throwables) {

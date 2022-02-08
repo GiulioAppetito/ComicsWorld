@@ -4,6 +4,7 @@ import com.example.comics.controller.*;
 import com.example.comics.model.*;
 import com.example.comics.model.exceptions.DiscountCodeException;
 import com.example.comics.model.exceptions.FailedPaymentException;
+import com.example.comics.model.exceptions.IncompleteReviewException;
 import com.example.comics.model.fagioli.*;
 import com.example.comics.view2.beans.AccountBean2;
 import com.example.comics.view2.beans.DiscountCodeBean2;
@@ -818,16 +819,21 @@ public class FeedControllerG2 implements ChapterObserver, AccountObserver, Reade
     }
 
     public void postReview(ChapterBean chapterBean, SeriesBean seriesBean){
-        ReviewBean2 reviewBean = new ReviewBean2();
-        reviewBean.setComment(taComment.getText());
-        reviewBean.setAccount(UserLogin.getInstance().getAccount());
-        reviewBean.setRating(ratingSlider.getValue());
-        //e magari anche la foto
-        PostReviewController postReviewController = new PostReviewController();
-        postReviewController.post(reviewBean, chapterBean, seriesBean);
+        try{
+            ReviewBean2 reviewBean = new ReviewBean2();
+            reviewBean.setComment(taComment.getText());
+            reviewBean.setAccount(UserLogin.getInstance().getAccount());
+            reviewBean.setRating(ratingSlider.getValue());
+            //e magari anche la foto
+            PostReviewController postReviewController = new PostReviewController();
+            postReviewController.post(reviewBean, chapterBean, seriesBean);
 
-        taComment.setText("");
-        vBoxPostReview.setVisible(false);
+            taComment.setText("");
+            vBoxPostReview.setVisible(false);
+        }catch(IncompleteReviewException e){
+
+        }
+
     }
     
     private void initProfile(){

@@ -3,6 +3,7 @@ package com.example.comics.controller;
 import com.example.comics.controller.boundaries.PostReviewAuthorBoundary;
 import com.example.comics.controller.boundaries.PostReviewReaderBoundary;
 import com.example.comics.model.dao.DiscountCodeDAO;
+import com.example.comics.model.exceptions.IncompleteReviewException;
 import com.example.comics.model.fagioli.*;
 import com.example.comics.model.*;
 import com.example.comics.model.dao.SeriesDAO;
@@ -12,8 +13,12 @@ import com.example.comics.model.fagioli.bundle.DiscountCodeBundle;
 
 public class PostReviewController{
 
-    public void post(ReviewBean reviewBean, ChapterBean chapterBean, SeriesBean seriesBean) {
-
+    public void post(ReviewBean reviewBean, ChapterBean chapterBean, SeriesBean seriesBean) throws IncompleteReviewException {
+        //verifica completezza della review
+        if(reviewBean.getComment().equals("") || reviewBean.getComment() == null){
+            throw new IncompleteReviewException("Fill every field to post!");
+        }
+        Review review = new Review(reviewBean.getComment(),reviewBean.getRating(),reviewBean.getAccount());
 
         //salvataggio sul DB
         Author author = new Author();
@@ -25,7 +30,6 @@ public class PostReviewController{
 
         Series series;
         series = SeriesDAO.retrieveSeries(seriesBean.getTitle());
-        Review review = new Review(reviewBean.getComment(),reviewBean.getRating(),reviewBean.getAccount());
         series.addReview(chapterBean.getTitle(),review);
 
         //invio mail all'autore di una nuova review

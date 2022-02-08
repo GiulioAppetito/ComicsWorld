@@ -7,6 +7,7 @@ import com.example.comics.controller.ResearchController;
 import com.example.comics.model.*;
 import com.example.comics.model.exceptions.DiscountCodeException;
 import com.example.comics.model.exceptions.FailedPaymentException;
+import com.example.comics.model.exceptions.IncompleteReviewException;
 import com.example.comics.model.fagioli.*;
 import com.example.comics.view1.beans.DiscountCodeBean1;
 import com.example.comics.view1.beans.ReviewBean1;
@@ -541,8 +542,14 @@ public class ChapterControllerG implements ChapterObserver, ReaderObserver{
         List<DiscountCodeBean> codeBeans;
         ResearchController researchController = new ResearchController();
         codeBeans = researchController.getCodesByReaderForSeries(currentSeries);
+        if(codeBeans == null){
+            return;
+        }
         List<String> strings = new ArrayList<>();
         for(DiscountCodeBean bean : codeBeans){
+            if(bean == null){
+                break;
+            }
             System.out.println("Bean1 : "+bean.getCode());
             strings.add(bean.getCode());
         }
@@ -601,15 +608,21 @@ public class ChapterControllerG implements ChapterObserver, ReaderObserver{
 
     public void postReview(ChapterBean chapterBean, SeriesBean seriesBean){
 
-        ReviewBean1 reviewBean = new ReviewBean1();
-        reviewBean.setComment(txtAreaComment.getText());
-        reviewBean.setAccount(UserLogin.getInstance().getAccount());
-        reviewBean.setRating(reviewRating);
+        try{
+            ReviewBean1 reviewBean = new ReviewBean1();
+            reviewBean.setComment(txtAreaComment.getText());
+            reviewBean.setAccount(UserLogin.getInstance().getAccount());
+            reviewBean.setRating(reviewRating);
 
-        PostReviewController postReviewController = new PostReviewController();
-        postReviewController.post(reviewBean, chapterBean, seriesBean);
+            PostReviewController postReviewController = new PostReviewController();
+            postReviewController.post(reviewBean, chapterBean, seriesBean);
 
-        paneInsertReview.setVisible(false);
+            paneInsertReview.setVisible(false);
+        }catch(IncompleteReviewException e){
+            orderPane.setVisible(true);
+            lblOrderResult.setText(e.getMessage());
+        }
+
 
     }
 

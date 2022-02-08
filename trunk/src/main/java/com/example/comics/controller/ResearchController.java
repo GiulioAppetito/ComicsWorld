@@ -158,7 +158,11 @@ public class ResearchController {
         List<DiscountCodeBean> beans = new ArrayList<>();
         DiscountCodeBean discountCodeBean ;
         for(DiscountCode discountCode : UserLogin.getInstance().getReader().getDiscountCodes().keySet()){
-            if(UserLogin.getInstance().getReader().getDiscountCodes().get(discountCode).getTitle().equals(seriesBean.getTitle())){
+            Series series = UserLogin.getInstance().getReader().getDiscountCodes().get(discountCode);
+            if(series == null){
+                return null;
+            }
+            if(series.getTitle().equals(seriesBean.getTitle())){
                 discountCodeBean = new DiscountCodeBundle();
                 discountCodeBean.setCode(discountCode.getCode());
                 beans.add(discountCodeBean);
