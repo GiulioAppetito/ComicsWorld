@@ -1,12 +1,15 @@
 package com.example.comics.view1;
 
+import com.example.comics.model.fagioli.ChapterBean;
 import javafx.fxml.FXML;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.text.Text;
 
 public class ChapterItemControllerG {
+
     @FXML
     private ImageView ivCover;
 
@@ -14,12 +17,16 @@ public class ChapterItemControllerG {
     private Label lblName;
 
     @FXML
-    private Text lblSeries;
+    private Button btnCheckRead;
 
-    public void setData(String chaptersTitle, String chaptersSeries, Image chaptersCover){
-        lblName.setText(chaptersTitle);
-        lblSeries.setText(chaptersSeries);
-        ivCover.setImage(chaptersCover);
 
+    public void setData(ChapterBean chapterBean){
+        lblName.setText(chapterBean.getTitle());
+        ivCover.setImage(chapterBean.getCover());
+        if(chapterBean.getRead()){
+            btnCheckRead.setVisible(true);
+        }else{
+            btnCheckRead.setVisible(false);
+        }
     }
 }
