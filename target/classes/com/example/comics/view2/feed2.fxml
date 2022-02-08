@@ -846,6 +846,14 @@
                               <String fx:value="keyboard" />
                            </styleClass>
                         </VBox>
+                        <Pane fx:id="paneNotifications" prefHeight="512.0" prefWidth="286.0" style="-fx-background-color: #c28bf5;" styleClass="keyboard">
+                           <StackPane.margin>
+                              <Insets />
+                           </StackPane.margin>
+                           <children>
+                              <VBox fx:id="boxNotifications" layoutY="4.0" prefHeight="470.0" prefWidth="286.0" />
+                           </children>
+                        </Pane>
                         <Pane fx:id="paneMenu" prefHeight="512.0" prefWidth="206.0">
                            <StackPane.margin>
                               <Insets bottom="-1.0" right="80.0" />
@@ -873,25 +881,12 @@
                                     <Button fx:id="btnStatistics" mnemonicParsing="false" prefHeight="46.0" prefWidth="206.0" styleClass="menu-button" text="Statistics" textFill="WHITE" />
                                  </children>
                               </VBox>
-                              <Button fx:id="btnProfile" layoutX="-1.0" layoutY="395.0" mnemonicParsing="false" prefHeight="54.0" prefWidth="206.0" text="Profile" textFill="WHITE">
-                                 <styleClass>
-                                    <String fx:value="menu-button" />
-                                    <String fx:value="menu-keyboard" />
-                                 </styleClass>
-                              </Button>
+                              <Button fx:id="btnProfile" layoutX="-1.0" layoutY="395.0" mnemonicParsing="false" prefHeight="54.0" prefWidth="206.0" styleClass="menu-button" text="Profile" textFill="WHITE" />
                            </children>
                            <styleClass>
                               <String fx:value="menu-background" />
                               <String fx:value="menu-keyboard" />
                            </styleClass>
-                        </Pane>
-                        <Pane fx:id="paneNotifications" prefHeight="512.0" prefWidth="286.0" style="-fx-background-color: #c28bf5;" styleClass="keyboard">
-                           <StackPane.margin>
-                              <Insets />
-                           </StackPane.margin>
-                           <children>
-                              <VBox fx:id="boxNotifications" layoutY="4.0" prefHeight="470.0" prefWidth="286.0" />
-                           </children>
                         </Pane>
                      </children>
                   </StackPane>
