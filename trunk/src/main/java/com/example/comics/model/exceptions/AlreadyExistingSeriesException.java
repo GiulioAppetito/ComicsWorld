@@ -7,11 +7,4 @@ public class AlreadyExistingSeriesException extends Exception {
         super(message);
     }
 
-    public AlreadyExistingSeriesException (Throwable cause) {
-        super(cause);
-    }
-
-    public AlreadyExistingSeriesException (String message, Throwable cause) {
-        super(" +++ " + message + " +++ ", cause);
-    }
 }
