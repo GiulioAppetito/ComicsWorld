@@ -4,6 +4,7 @@ import com.example.comics.controller.boundaries.PublishSeriesReaderBoundary;
 import com.example.comics.model.*;
 import com.example.comics.model.dao.AccountDAO;
 import com.example.comics.model.dao.SeriesDAO;
+import com.example.comics.model.exceptions.AlreadyExistingSeriesException;
 import com.example.comics.model.fagioli.*;
 import com.example.comics.model.fagioli.bundle.AccountBundle;
 import com.example.comics.model.fagioli.bundle.AuthorBundle;
@@ -18,7 +19,7 @@ import java.util.Locale;
 
 public class PublishSeriesController {
 
-    public void publishSeries(SeriesBean seriesBean, List<ObjectiveBean>objectiveBeans){
+    public void publishSeries(SeriesBean seriesBean, List<ObjectiveBean>objectiveBeans) throws AlreadyExistingSeriesException {
 
         Series series;
         SeriesDAO seriesDAO = new SeriesDAO();

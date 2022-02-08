@@ -4,13 +4,11 @@ import com.example.comics.controller.PublishSeriesController;
 import com.example.comics.model.Genres;
 import com.example.comics.model.Levels;
 import com.example.comics.model.UserLogin;
+import com.example.comics.model.exceptions.AlreadyExistingSeriesException;
 import com.example.comics.model.fagioli.*;
 import com.example.comics.view1.beans.*;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.ChoiceBox;
-import javafx.scene.control.TextArea;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
@@ -62,6 +60,12 @@ public class PublishSeriesControllerG {
     private Pane objectivesSettingsPane;
 
     @FXML
+    private Label lblPublishResult;
+
+    @FXML
+    private Pane publishPane;
+
+    @FXML
     private Button btnCloseObjectives;
 
     @FXML
@@ -90,6 +94,9 @@ public class PublishSeriesControllerG {
 
     @FXML
     private TextField tfDiscountPercI;
+
+    @FXML
+    private Button btnClosePublishPane;
 
     @FXML
     private TextField tfDiscountDaysI;
@@ -138,6 +145,8 @@ public class PublishSeriesControllerG {
         btnBadgeIconI.setOnAction(event -> changeBagdeIconI());
         btnBadgeIconE.setOnAction(event -> changeBagdeIconE());
 
+        btnClosePublishPane.setOnAction(event -> closePublishPane());
+
 
         btnPublishSeries.setOnAction(event -> publishSeries());
 
@@ -148,6 +157,12 @@ public class PublishSeriesControllerG {
         choiceBoxTypeI.getItems().setAll(REVIEWS,CHAPTERS);
         choiceBoxTypeE.getItems().setAll(REVIEWS,CHAPTERS);
 
+        closePublishPane();
+
+    }
+
+    private void closePublishPane() {
+        publishPane.setVisible(false);
     }
 
     public void changeIcon(String choice){
@@ -276,18 +291,20 @@ public class PublishSeriesControllerG {
 
         try {
             seriesBean1.setCoverInputStream(new FileInputStream(imageCoverPath));
+            seriesBean1.setTitle(seriesTitle);
+            seriesBean1.setGenre1(genre1);
+            seriesBean1.setGenre2(genre2);
+            seriesBean1.setGenre3(genre3);
+            seriesBean1.setDescription(taDescription.getText());
+            PublishSeriesController publishSeriesController = new PublishSeriesController();
+            publishSeriesController.publishSeries(seriesBean1,objectiveBeanList);
         } catch (FileNotFoundException e) {
             e.printStackTrace();
+        } catch (AlreadyExistingSeriesException e) {
+            publishPane.setVisible(true);
+            lblPublishResult.setText(e.getMessage());
+            tfTitle.setText("");
         }
-
-        seriesBean1.setTitle(seriesTitle);
-        seriesBean1.setGenre1(genre1);
-        seriesBean1.setGenre2(genre2);
-        seriesBean1.setGenre3(genre3);
-        seriesBean1.setDescription(taDescription.getText());
-
-        PublishSeriesController publishSeriesController = new PublishSeriesController();
-        publishSeriesController.publishSeries(seriesBean1,objectiveBeanList);
     }
 
     private boolean isThisObjectiveCompiled(Levels level){

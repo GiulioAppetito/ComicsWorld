@@ -148,7 +148,7 @@ public class Queries {
 
 
         PreparedStatement pstmt = connection.prepareStatement("INSERT INTO chapters (series_title,chapter_title,chapterDescription,chapterCover,chapterPrice) values (?, ?,?,?,?)");
-        try{
+
             pstmt.setString(1, seriesTitle);
             pstmt.setString(2,chapter.getTitle());
             pstmt.setString(3,chapter.getDescription());
@@ -159,14 +159,7 @@ public class Queries {
             System.out.println(pstmt);
             //Executing the statement
             pstmt.execute();
-        }
-        catch (Exception e){
-            //TO-DO
-            e.printStackTrace();
-        }
-        finally {
-            pstmt.close();
-        }
+
     }
 
     public static ResultSet retreiveAuthor(Statement stmt, String username) throws SQLException {
@@ -236,10 +229,6 @@ public class Queries {
             System.out.println(pstmt);
             //Executing the statement
             pstmt.execute();
-        }
-        catch (Exception e){
-            //TO-DO
-            e.printStackTrace();
         }
         finally {
             pstmt.close();

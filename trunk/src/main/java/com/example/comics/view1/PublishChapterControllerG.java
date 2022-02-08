@@ -3,12 +3,14 @@ package com.example.comics.view1;
 import com.example.comics.controller.PublishChapterController;
 import com.example.comics.model.Series;
 import com.example.comics.model.UserLogin;
+import com.example.comics.model.exceptions.AlreadyExistingChapterException;
 import com.example.comics.model.fagioli.ChapterBean;
 import com.example.comics.view1.beans.ChapterBean1;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.Pane;
 import javafx.stage.FileChooser;
 
 import java.io.File;
@@ -30,6 +32,12 @@ public class PublishChapterControllerG {
 
     @FXML
     private Button btnChangeCover;
+
+    @FXML
+    private Pane publishPane;
+
+    @FXML
+    private Label lblPublishResult;
 
     @FXML
     private TextField tfChapterTitle;
@@ -86,17 +94,21 @@ public class PublishChapterControllerG {
         chapterBean.setTitle(chapterTitle);
         chapterBean.setDescription(chapterDescription);
         chapterBean.setPrice(Float.parseFloat(tfPrice.getText()));
-
         chapterBean.setCover(chapterCover);
         try {
             chapterBean.setCoverInputStream(new FileInputStream(imageCoverPath));
+            PublishChapterController publishChapterController = new PublishChapterController();
+            publishChapterController.publishChapter(chapterBean,seriesTitle);
         } catch (FileNotFoundException e) {
             e.printStackTrace();
+        } catch (AlreadyExistingChapterException e){
+            publishPane.setVisible(true);
+            lblPublishResult.setText(e.getMessage());
+            tfChapterTitle.setText("");
         }
 
 
-        PublishChapterController publishChapterController = new PublishChapterController();
-        publishChapterController.publishChapter(chapterBean,seriesTitle);
+
 
     }
 
