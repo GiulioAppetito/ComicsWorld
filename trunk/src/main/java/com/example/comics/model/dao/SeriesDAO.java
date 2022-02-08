@@ -25,7 +25,7 @@ public class SeriesDAO {
 
     private static List<Series> all = new ArrayList<>();
 
-    public Series retrieveSeries(String title) {
+    public static Series retrieveSeries(String title) {
         for(Series s : all){
             if(s.getTitle().equals(title)){
                 return s;
