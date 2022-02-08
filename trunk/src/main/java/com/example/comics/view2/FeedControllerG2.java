@@ -633,7 +633,10 @@ public class FeedControllerG2 implements ChapterObserver, AccountObserver, Reade
         try {
             customizeProfileController.changeUsername(accountBean);
         } catch (FailedProfileCustomizationException e) {
-
+            notifTitle.setText("Error");
+            message.setText(e.getMessage());
+            badgeIcon.setVisible(false);
+            paneNotifications.setVisible(true);
         }
     }
     private void changeLastName() {
