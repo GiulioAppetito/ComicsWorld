@@ -76,14 +76,15 @@ public class PostReviewController{
 
     private void assignBadgeAndDiscountCodeToReader(Objective objective,Series series,SeriesBean seriesBean) {
 
-        //aggiungo badge alla lista e salvo sul DB + assegno badge
-        UserLogin.getInstance().getReader().addAchievedBadge(objective.getBadge());
-
         //genero discount code
         DiscountCode discountCode = new DiscountCode(objective.getDiscount());
         UserLogin.getInstance().getReader().assignDiscountCode(discountCode,series);
         DiscountCodeDAO discountCodeDAO = new DiscountCodeDAO();
         discountCodeDAO.saveObtainedDiscountCode(discountCode,UserLogin.getInstance().getReader(), series,objective);
+
+
+        //aggiungo badge alla lista e salvo sul DB + assegno badge
+        UserLogin.getInstance().getReader().addAchievedBadge(objective.getBadge());
 
 
         //invio mail al lettore del codice sconto

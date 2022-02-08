@@ -80,14 +80,8 @@ public class ReaderDAO {
 
 
             DiscountCodeDAO discountCodeDAO = new DiscountCodeDAO();
-            Thread t3 = new Thread(()->{
-                discountCodes = discountCodeDAO.retreiveDiscountCodesByReader(username);
-            });
-            t3.start();
+            discountCodes = discountCodeDAO.retreiveDiscountCodesByReader(username);
 
-
-
-            t3.join();
             reader = new Reader(favSeries, toReadSeries, readingSeries, username, followedAuthors, discountCodes);
 
             System.out.println("You have this first discount code : "+discountCodes);
@@ -105,8 +99,6 @@ public class ReaderDAO {
         } catch (SQLException throwables) {
             throwables.printStackTrace();
 
-        } catch (InterruptedException e) {
-            e.printStackTrace();
         } finally{
             try {
                 assert conn != null;

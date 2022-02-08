@@ -93,6 +93,10 @@ public class Reader extends Account{
 
     public void assignDiscountCode(DiscountCode discountCode, Series series) {
         UserLogin.getInstance().getReader().discountCodes.put(discountCode,series);
+        System.out.println("sono dentro reader, ecco tutti i codici:");
+        for(DiscountCode d : this.discountCodes.keySet()){
+            System.out.println(d.getCode());
+        }
     }
 
     public boolean likesThisSeries(Series series){

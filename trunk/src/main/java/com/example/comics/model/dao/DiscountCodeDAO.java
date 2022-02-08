@@ -58,7 +58,6 @@ public class DiscountCodeDAO {
                 rs2 = Queries.retreiveObjectivesByDiscountCode(stmt2,rs.getInt("objectiveID"));
 
                 Series series;
-                SeriesDAO seriesDAO = new SeriesDAO();
                 if(!rs2.first()){
                     return discountCodes;
                 }

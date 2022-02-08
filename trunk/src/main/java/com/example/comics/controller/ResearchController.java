@@ -165,6 +165,7 @@ public class ResearchController {
             if(series.getTitle().equals(seriesBean.getTitle())){
                 discountCodeBean = new DiscountCodeBundle();
                 discountCodeBean.setCode(discountCode.getCode());
+                System.out.println("dentro res con, codici :" + discountCodeBean.getCode());
                 beans.add(discountCodeBean);
             }
         }

@@ -656,6 +656,10 @@ public class ChapterControllerG implements ChapterObserver, ReaderObserver{
         lblBadgeName.setText(badgeBean.getName());
         badgeIconView.setImage(badgeBean.getIcon());
         initChoiceBoxCodes();
+        System.out.println("aggiorno live i discount codes");
+        for(String s : choiceBoxCodes.getItems()){
+            System.out.println(s);
+        }
     }
 
 
