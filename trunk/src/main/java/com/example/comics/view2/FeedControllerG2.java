@@ -301,7 +301,7 @@ public class FeedControllerG2 implements ChapterObserver, AccountObserver, Reade
     private static List<OrderBean> myOrders;
 
     private FeedControllerG2(){
-        loadLatestSeries();
+        //costruttore
     }
     public static synchronized FeedControllerG2 getInstance(){
         if(instance == null){
@@ -353,7 +353,6 @@ public class FeedControllerG2 implements ChapterObserver, AccountObserver, Reade
         btnStatistics.setOnAction(event -> openStats());
         btnMySeries.setOnAction(event -> openMySeries());
 
-        displayListOfSeries(latestSeries, vBoxSeries);
     }
 
 
@@ -619,6 +618,9 @@ public class FeedControllerG2 implements ChapterObserver, AccountObserver, Reade
         closeAll();
         boxFeed.setVisible(true);
         vBoxSeries.setVisible(true);
+
+        loadLatestSeries();
+        displayListOfSeries(latestSeries, vBoxSeries);
     }
 
     private void changeUsername() {
