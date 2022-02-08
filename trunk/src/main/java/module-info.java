@@ -38,6 +38,8 @@ module com.example.coomics {
     opens com.example.comics.view2.beans to org.junit.jupiter.api;
     exports com.example.comics.controller.boundaries;
     opens com.example.comics.controller.boundaries to org.junit.jupiter.api;
+    exports com.example.comics.model.fagioli.bundle;
+    opens com.example.comics.model.fagioli.bundle to org.junit.jupiter.api;
 
 
 }

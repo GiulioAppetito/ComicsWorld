@@ -48,7 +48,7 @@ public class ResearchController {
         return getSeriesBeans(series);
     }
 
-    private List<SeriesBean> getSeriesBeans(List<Series> seriesList) {
+    public List<SeriesBean> getSeriesBeans(List<Series> seriesList) {
 
         List<SeriesBean> seriesBeans = new ArrayList<>();
 
