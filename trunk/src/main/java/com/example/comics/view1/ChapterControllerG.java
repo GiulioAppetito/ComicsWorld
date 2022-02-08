@@ -6,6 +6,7 @@ import com.example.comics.controller.PostReviewController;
 import com.example.comics.controller.ResearchController;
 import com.example.comics.model.*;
 import com.example.comics.model.exceptions.DiscountCodeException;
+import com.example.comics.model.exceptions.FailedPaymentException;
 import com.example.comics.model.exceptions.InvalidPaymentException;
 import com.example.comics.model.fagioli.*;
 import com.example.comics.view1.beans.DiscountCodeBean1;
@@ -40,6 +41,10 @@ public class ChapterControllerG implements ChapterObserver, ReaderObserver{
 
     @FXML
     private Label lblPrice;
+
+
+    @FXML
+    private Label lblOrderResult;
 
     @FXML
     private Pane paneInsertReview;
@@ -540,8 +545,9 @@ public class ChapterControllerG implements ChapterObserver, ReaderObserver{
         BuyComicController buyComicController = new BuyComicController();
         try {
             buyComicController.buyComic(seriesBean, chapterBean, null);
-        } catch (InvalidPaymentException e) {
-            e.printStackTrace();
+        } catch (FailedPaymentException e) {
+            orderPane.setVisible(true);
+            lblOrderResult.setText(e.getMessage());
         } catch (DiscountCodeException e) {
             e.printStackTrace();
         }
@@ -557,8 +563,9 @@ public class ChapterControllerG implements ChapterObserver, ReaderObserver{
         discountCodeBean1.setCode(choiceBoxCodes.getValue());
         try {
             buyComicController.buyComic(seriesBean, chapterBean, discountCodeBean1);
-        } catch (InvalidPaymentException | DiscountCodeException e) {
-            e.printStackTrace();
+        } catch (FailedPaymentException | DiscountCodeException e) {
+            orderPane.setVisible(true);
+            lblOrderResult.setText(e.getMessage());
         }
         closePaymentPane();
     }
@@ -637,6 +644,7 @@ public class ChapterControllerG implements ChapterObserver, ReaderObserver{
     public void update(Boolean payment){
         if(payment){
             orderPane.setVisible(true);
+            lblOrderResult.setText("Completed payment!");
         }
 
     }

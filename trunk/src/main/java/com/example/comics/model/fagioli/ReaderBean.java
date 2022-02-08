@@ -2,7 +2,11 @@ package com.example.comics.model.fagioli;
 
 public interface ReaderBean {
 
-    public String getUsername();
+    String getEmail();
 
-    public void setUsername(String username);
+    void setEmail(String email);
+
+
+
+
 }

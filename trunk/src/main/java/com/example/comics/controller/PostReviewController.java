@@ -2,6 +2,7 @@ package com.example.comics.controller;
 
 import com.example.comics.controller.boundaries.PostReviewAuthorBoundary;
 import com.example.comics.controller.boundaries.PostReviewReaderBoundary;
+import com.example.comics.model.exceptions.IncompleteReviewException;
 import com.example.comics.model.fagioli.*;
 import com.example.comics.model.*;
 import com.example.comics.model.dao.SeriesDAO;
@@ -13,6 +14,7 @@ public class PostReviewController{
 
     public void post(ReviewBean reviewBean, ChapterBean chapterBean, SeriesBean seriesBean) {
 
+
         //salvataggio sul DB
         Author author = new Author();
         author.setFirstName(seriesBean.getAuthor().getFirstName());
@@ -21,20 +23,7 @@ public class PostReviewController{
         author.setLastName(seriesBean.getAuthor().getLastName());
         author.setEmail(seriesBean.getAuthor().getEmail());
 
-
         Series series = null;
-
-        for(Author author1 : UserLogin.getInstance().getReader().getFollowedAuthors()){
-            if(author1 == null){
-                break;
-            }
-            for(Series series1 : author1.getPublishedSeries()){
-                if(series1.getTitle().equals(seriesBean.getTitle())){
-                    series1.addReviewInSilence(chapterBean.getTitle(), reviewBean.getComment(), reviewBean.getRating());
-                    break;
-                }
-            }
-        }
 
         SeriesDAO seriesDAO = new SeriesDAO();
         series = seriesDAO.retrieveSeries(seriesBean.getTitle());
@@ -63,10 +52,11 @@ public class PostReviewController{
         for(Chapter chapter : series.getChapters()){
             for(Review review : chapter.getReviews()){
                 if(review.getAccount().getUsername().equals(UserLogin.getInstance().getReader().getUsername())){
-                    numOfReviews++;
+                    numOfReviews+=1;
                 }
             }
         }
+
 
         //controllo degli obiettivi di tipo review
         for(Objective objective : series.getObjectives()){

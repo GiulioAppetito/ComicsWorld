@@ -14,18 +14,6 @@ public class MarkChapterAsReadController {
 
     public void markChapterAsRead(SeriesBean seriesBean, ChapterBean chapterBean){
 
-        for(Author author1 : UserLogin.getInstance().getReader().getFollowedAuthors()){
-            if(author1 == null){
-                break;
-            }
-            for(Series series1 : author1.getPublishedSeries()){
-                if(series1.getTitle().equals(seriesBean.getTitle())){
-                    series1.markChapter(chapterBean.getTitle());
-                    break;
-                }
-            }
-        }
-
         SeriesDAO seriesDAO = new SeriesDAO();
         Series series = seriesDAO.retrieveSeries(seriesBean.getTitle());
         series.markChapter(chapterBean.getTitle());

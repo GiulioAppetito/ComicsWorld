@@ -185,7 +185,6 @@ public class Series extends SeriesSubject{
 		this.description = description;
 	}
 
-
 	public void markChapter(String chapterTitle){
 		for(Chapter chapter : this.chapters){
 			if(chapter.getTitle().equals(chapterTitle)){

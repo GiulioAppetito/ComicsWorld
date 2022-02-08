@@ -127,7 +127,6 @@ public class LoginControllerG {
             showErrorMessage(e.getMessage());
             textFieldUsername.setText("");
         }
-
     }
 
 

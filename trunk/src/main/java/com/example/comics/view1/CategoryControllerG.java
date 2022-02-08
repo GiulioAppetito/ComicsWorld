@@ -65,8 +65,10 @@ public class CategoryControllerG {
         loader.setLocation(fxmlLocation);
         loader.setController(serieController);
 
-        ReaderHomeControllerG readerHomeControllerG = ReaderHomeControllerG.getInstance();
-        readerHomeControllerG.changeCenter(loader.load());
+        HomeFactory homeFactory = new HomeFactory();
+        HomeControllerG homeControllerG = homeFactory.getHomeControllerG();
+
+        homeControllerG.changeCenter(loader.load());
 
         serieController.setData(seriesBean);
 

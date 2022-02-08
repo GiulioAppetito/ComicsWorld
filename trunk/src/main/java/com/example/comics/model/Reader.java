@@ -183,8 +183,6 @@ public class Reader extends Account{
         }
     }
 
-
-
     public void addSeriesToReading(Series seriesToAdd){
         for(Series series : this.reading){
             if(series == null){
@@ -245,12 +243,5 @@ public class Reader extends Account{
         notifyObserversNewOrder(true);
     }
 
-
-
-    /*
-    public Badge getLatestBadge(){
-        return latestBadge;
-    }
-    */
 
 }

@@ -882,7 +882,7 @@
                      <children>
                         <VBox prefHeight="127.0" prefWidth="321.0">
                            <children>
-                              <Label prefHeight="126.0" prefWidth="322.0" text="Your order has been received" textFill="WHITE">
+                              <Label fx:id="lblOrderResult" prefHeight="126.0" prefWidth="322.0" text="Your order has been received" textFill="WHITE">
                                  <font>
                                     <Font name="Berlin Sans FB" size="22.0" />
                                  </font>

@@ -10,6 +10,8 @@ import javafx.scene.image.Image;
 
 import java.io.InputStream;
 import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class AccountDAO {
     private static final String USER = "anastasia";
@@ -226,4 +228,42 @@ public class AccountDAO {
         return author;
     }
 
+    public List<String> retreiveAuthorFollowersMails(Author author) {
+        Statement stmt = null;
+        Connection conn = null;
+        List<String> mails = new ArrayList<>();
+        String mail;
+
+        try {
+
+            conn = DriverManager.getConnection(DB_URL, USER, PASS);
+            stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
+            ResultSet rs = Queries.retrieveFollowersMails(stmt, author.getUsername());
+
+            if (!rs.first()) {
+                return null;
+            }
+            rs.first();
+
+            do{
+                mail = rs.getString("email");
+                mails.add(mail);
+            }while (rs.next());
+
+
+
+
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        } finally{
+            try {
+                assert conn != null;
+                conn.close();
+            } catch (SQLException | NullPointerException e) {
+                e.printStackTrace();
+            }
+        }
+
+        return mails;
+    }
 }

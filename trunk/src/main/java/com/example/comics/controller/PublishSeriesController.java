@@ -1,9 +1,14 @@
 package com.example.comics.controller;
 
+import com.example.comics.controller.boundaries.PublishSeriesReaderBoundary;
 import com.example.comics.model.*;
+import com.example.comics.model.dao.AccountDAO;
 import com.example.comics.model.dao.SeriesDAO;
-import com.example.comics.model.fagioli.ObjectiveBean;
-import com.example.comics.model.fagioli.SeriesBean;
+import com.example.comics.model.fagioli.*;
+import com.example.comics.model.fagioli.bundle.AccountBundle;
+import com.example.comics.model.fagioli.bundle.AuthorBundle;
+import com.example.comics.model.fagioli.bundle.ReaderBundle;
+import com.example.comics.view1.beans.ReaderBean1;
 
 import java.io.InputStream;
 import java.util.ArrayList;
@@ -43,7 +48,22 @@ public class PublishSeriesController {
         //aggiunta della serie all'autore
         UserLogin.getInstance().getAuthor().addPublishedSeries(series);
 
-
-
+        new Thread(()->{
+            //invio mail ai lettori che seguono l'autore
+            PublishSeriesReaderBoundary boundary = new PublishSeriesReaderBoundary();
+            AccountDAO accountDAO = new AccountDAO();
+            List<String> followersMails = accountDAO.retreiveAuthorFollowersMails(UserLogin.getInstance().getAuthor());
+            ReaderBean readerBean;
+            AuthorBean authorBean = new AuthorBundle();
+            authorBean.setUsername(UserLogin.getInstance().getAccount().getUsername());
+            authorBean.setFirstName(UserLogin.getInstance().getAccount().getFirstName());
+            authorBean.setLastName(UserLogin.getInstance().getAccount().getLastName());
+            authorBean.setEmail(UserLogin.getInstance().getAccount().getEmail());
+            for(String followerMail : followersMails){
+                readerBean = new ReaderBundle();
+                readerBean.setEmail(followerMail);
+                boundary.sendEmailForSeriesPublished(authorBean,seriesBean,readerBean);
+            }
+        }).start();
     }
 }

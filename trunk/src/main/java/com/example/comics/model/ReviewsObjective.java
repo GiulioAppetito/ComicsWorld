@@ -20,7 +20,9 @@ public class ReviewsObjective extends Objective{
     @Override
     public boolean isObjectiveAchieved(Float readersReviews){
         System.out.println("* * * * * Verifying reviews objective. * * * * * ");
-        return readersReviews >= requiredReviews;
+        System.out.println("readersReviews : "+readersReviews+"  >= requiredReviews : "+requiredReviews +"?");
+
+        return readersReviews >= requiredReviews ;
     }
 
     @Override

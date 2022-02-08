@@ -3,6 +3,7 @@ package com.example.comics.view1;
 import com.example.comics.controller.PublishSeriesController;
 import com.example.comics.model.Genres;
 import com.example.comics.model.Levels;
+import com.example.comics.model.UserLogin;
 import com.example.comics.model.fagioli.*;
 import com.example.comics.view1.beans.*;
 import javafx.fxml.FXML;
@@ -284,7 +285,6 @@ public class PublishSeriesControllerG {
         seriesBean1.setGenre2(genre2);
         seriesBean1.setGenre3(genre3);
         seriesBean1.setDescription(taDescription.getText());
-
 
         PublishSeriesController publishSeriesController = new PublishSeriesController();
         publishSeriesController.publishSeries(seriesBean1,objectiveBeanList);

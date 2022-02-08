@@ -130,7 +130,6 @@ public class SeriesDAO {
         Connection conn = null;
         int bagdeID = 0;
         try {
-
             // STEP 3: apertura connessione
             conn = DriverManager.getConnection(DB_URL, USER, PASS);
             stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
@@ -149,6 +148,8 @@ public class SeriesDAO {
 
                 int id = bagdeID;
                 Queries.insertObjective(stmt,objective,series,id);
+
+                all.add(series);
             }
         } catch (SQLException throwables) {
             throwables.printStackTrace();

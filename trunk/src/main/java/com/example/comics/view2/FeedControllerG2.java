@@ -3,6 +3,7 @@ package com.example.comics.view2;
 import com.example.comics.controller.*;
 import com.example.comics.model.*;
 import com.example.comics.model.exceptions.DiscountCodeException;
+import com.example.comics.model.exceptions.FailedPaymentException;
 import com.example.comics.model.exceptions.InvalidPaymentException;
 import com.example.comics.model.fagioli.*;
 import com.example.comics.view1.beans.AccountBean1;
@@ -802,8 +803,8 @@ public class FeedControllerG2 implements ChapterObserver, AccountObserver, Reade
 
         try {
             buyComicController.buyComic(seriesBean, chapterBean, discountCodeBean2);
-        } catch (InvalidPaymentException | DiscountCodeException e) {
-            e.printStackTrace();
+        } catch (FailedPaymentException | DiscountCodeException e) {
+            //TO-DO
         }
 
         panePayment.setVisible(false);

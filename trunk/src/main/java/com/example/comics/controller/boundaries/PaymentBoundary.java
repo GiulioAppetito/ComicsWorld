@@ -3,6 +3,7 @@ package com.example.comics.controller.boundaries;
 import com.example.comics.controller.BuyComicController;
 import com.example.comics.fakepaypal.PayPalBoundary;
 import com.example.comics.fakepaypal.PayPalInterface;
+import com.example.comics.model.exceptions.FailedPaymentException;
 import com.example.comics.model.fagioli.AccountBean;
 import com.example.comics.model.fagioli.ChapterBean;
 import com.example.comics.model.fagioli.DiscountCodeBean;
@@ -15,7 +16,7 @@ public class PaymentBoundary {
     }
 
 
-    public void convalidPayment(AccountBean accountBean, ChapterBean chapterBean, SeriesBean seriesBean, DiscountCodeBean discountCodeBean) {
+    public void convalidPayment(AccountBean accountBean, ChapterBean chapterBean, SeriesBean seriesBean, DiscountCodeBean discountCodeBean)throws FailedPaymentException{
         //contattiamo la boundary di paypal, tipo set di api offerto
         PayPalInterface paypal = new PayPalBoundary();
 
@@ -29,20 +30,17 @@ public class PaymentBoundary {
             while(waiting[0] == 0){
                 waiting[0] = paypal.convalidPayment();
             }
-            //quando arriva
-            if(waiting[0]==1){
-                signalPayment(true, seriesBean , chapterBean, discountCodeBean);
-            }else{
-                signalPayment(false, seriesBean, chapterBean, discountCodeBean);
-            }
 
         });
         waitForPayment.start();
+
+        signalPayment(waiting[0], seriesBean , chapterBean, discountCodeBean);
+
     }
 
-    private void signalPayment(boolean b, SeriesBean seriesBean, ChapterBean chapterBean, DiscountCodeBean discountCodeBean) {
+    private void signalPayment(int b, SeriesBean seriesBean, ChapterBean chapterBean, DiscountCodeBean discountCodeBean) throws FailedPaymentException {
         BuyComicController buyComicController = new BuyComicController();
-        if(b){
+        if(b==1){
             System.out.println("PAymentBOUNDARY: "+ "good payment");
             buyComicController.completedPayment(seriesBean, chapterBean, discountCodeBean);
         }else{

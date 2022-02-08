@@ -21,6 +21,7 @@ public class ChapterObjective extends Objective{
     public boolean isObjectiveAchieved(Float achievement){
         System.out.println("* * * * * Verifying chapters objective. * * * * * ");
         Float percentageAchievement = achievement *100;
+        System.out.println("percentageAchievement : "+percentageAchievement+"  >= requiredChaptersPercentage : "+requiredChaptersPercentage +"?");
         return percentageAchievement >= requiredChaptersPercentage;
     }
 

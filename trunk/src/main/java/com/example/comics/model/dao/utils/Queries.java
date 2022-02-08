@@ -270,7 +270,7 @@ public class Queries {
 
         Float discountPercentage = objective.getDiscount().getPercentage();
 
-        String insertStatement = String.format("INSERT INTO objectives (limitDays,level,type,seriesTitle,discountPercentage,associatedBadgeID,number) values ('%s', '%s','%s','%s','%s','%d','%f')",limitDays,level,type,seriesTitle,discountPercentage,bagdeID,requirement);
+        String insertStatement = String.format("INSERT INTO objectives (limitDays,level,type,seriesTitle,discountPercentage,associatedBadgeID,number) values ('%s', '%s','%s','%s','%s','%d','%s')",limitDays,level,type,seriesTitle,discountPercentage,bagdeID,requirement);
         System.out.println(insertStatement);
         stmt.executeUpdate(insertStatement);
     }
@@ -339,6 +339,12 @@ public class Queries {
 
     public static ResultSet retreiveObjectivesByDiscountCode(Statement stmt, int objectiveID) throws SQLException {
         String selectStatement = String.format("SELECT DISTINCT seriesTitle FROM objectives WHERE (objective_id = '%d')",objectiveID);
+        System.out.println(selectStatement);
+        return stmt.executeQuery(selectStatement);
+    }
+
+    public static ResultSet retrieveFollowersMails(Statement stmt, String username) throws SQLException {
+        String selectStatement = String.format("SELECT DISTINCT email FROM followedAuthors JOIN users ON reader = username WHERE (author = '%s')",username);
         System.out.println(selectStatement);
         return stmt.executeQuery(selectStatement);
     }
