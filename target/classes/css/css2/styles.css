@@ -26,6 +26,12 @@
 }
 
 
+
+.notification
+{
+    -fx-background-radius :  35 35 35 35;
+}
+
 .keyboard
 {
     -fx-background-radius :  0 0 35 35;
