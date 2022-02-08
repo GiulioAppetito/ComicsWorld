@@ -62,8 +62,7 @@ public class AuthorMySeriesControllerG {
         loader.setLocation(fxmlLocation);
         loader.setController(serieController);
 
-        HomeFactory homeFactory = new HomeFactory();
-        HomeControllerG homeControllerG = homeFactory.getHomeControllerG();
+        HomeControllerG homeControllerG = HomeFactory.getHomeControllerG();
         homeControllerG.changeCenter(loader.load());
 
         serieController.setData(seriesBean);

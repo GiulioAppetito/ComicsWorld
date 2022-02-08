@@ -67,14 +67,13 @@ public abstract class HomeControllerG {
 
     public void openSeries(SeriesBean seriesBean){
         SeriesControllerG serieControllerG = new SeriesControllerG();
-        HomeFactory homeFactory = new HomeFactory();
 
         URL fxmlLocation = SeriesControllerG.class.getResource("serie.fxml");
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(fxmlLocation);
         loader.setController(serieControllerG);
 
-        HomeControllerG homeControllerG = homeFactory.getHomeControllerG();
+        HomeControllerG homeControllerG = HomeFactory.getHomeControllerG();
         try {
             homeControllerG.changeCenter(loader.load());
         } catch (IOException e) {

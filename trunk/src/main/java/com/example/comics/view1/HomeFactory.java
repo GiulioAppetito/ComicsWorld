@@ -5,7 +5,7 @@ import com.example.comics.model.UserLogin;
 
 public class HomeFactory {
 
-    public HomeControllerG getHomeControllerG(){
+    public static HomeControllerG getHomeControllerG(){
 
         HomeControllerG homeControllerG;
         String role = UserLogin.getInstance().getAccount().getRole();

@@ -57,8 +57,7 @@ public class FollowingControllerG {
         loader.setLocation(fxmlLocation);
         loader.setController(authorFromOutsideControllerG);
 
-        HomeFactory homeFactory = new HomeFactory();
-        HomeControllerG homeControllerG = homeFactory.getHomeControllerG();
+        HomeControllerG homeControllerG = HomeFactory.getHomeControllerG();
         homeControllerG.changeCenter(loader.load());
 
         authorFromOutsideControllerG.init(authorBean);

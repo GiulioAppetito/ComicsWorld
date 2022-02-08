@@ -112,8 +112,7 @@ public class SeriesControllerG {
             }
 
             btnBack.setOnAction(event -> {
-                HomeFactory homeFactory = new HomeFactory();
-                HomeControllerG homeControllerG = homeFactory.getHomeControllerG();
+                HomeControllerG homeControllerG = HomeFactory.getHomeControllerG();
                 homeControllerG.openFeed();
             });
         }else{
@@ -131,9 +130,7 @@ public class SeriesControllerG {
         loader.setLocation(fxmlLocation);
         loader.setController(authorFromOutsideControllerG);
 
-        HomeFactory homeFactory = new HomeFactory();
-
-        HomeControllerG homeControllerG = homeFactory.getHomeControllerG();
+        HomeControllerG homeControllerG = HomeFactory.getHomeControllerG();
         try {
             homeControllerG.changeCenter(loader.load());
         } catch (IOException e) {
@@ -186,9 +183,7 @@ public class SeriesControllerG {
         loader.setLocation(fxmlLocation);
         loader.setController(chapterControllerG);
 
-        HomeFactory homeFactory = new HomeFactory();
-
-        HomeControllerG homeControllerG = homeFactory.getHomeControllerG();
+        HomeControllerG homeControllerG = HomeFactory.getHomeControllerG();
         homeControllerG.changeCenter(loader.load());
 
         chapterControllerG.init(chapterBean, seriesBean);

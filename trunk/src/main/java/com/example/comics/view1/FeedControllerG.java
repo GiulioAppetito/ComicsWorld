@@ -96,8 +96,7 @@ public class FeedControllerG{
     }
 
     public void openSerie(SeriesBean seriesBean){
-        HomeFactory homeFactory = new HomeFactory();
-        HomeControllerG homeControllerG = homeFactory.getHomeControllerG();
+        HomeControllerG homeControllerG = HomeFactory.getHomeControllerG();
         homeControllerG.openSeries(seriesBean);
     }
 

@@ -65,8 +65,7 @@ public class CategoryControllerG {
         loader.setLocation(fxmlLocation);
         loader.setController(serieController);
 
-        HomeFactory homeFactory = new HomeFactory();
-        HomeControllerG homeControllerG = homeFactory.getHomeControllerG();
+        HomeControllerG homeControllerG = HomeFactory.getHomeControllerG();
 
         homeControllerG.changeCenter(loader.load());
 
@@ -79,8 +78,7 @@ public class CategoryControllerG {
     }
 
     public void back(){
-        HomeFactory homeFactory = new HomeFactory();
-        HomeControllerG homeControllerG = homeFactory.getHomeControllerG();
+        HomeControllerG homeControllerG = HomeFactory.getHomeControllerG();
         try {
             homeControllerG.openCategories();
         } catch (IOException e) {

@@ -459,11 +459,8 @@ public class ChapterControllerG implements ChapterObserver, ReaderObserver{
 
 
         btnBack.setOnAction(event -> {
-
-
-                HomeFactory homeFactory = new HomeFactory();
-                HomeControllerG homeControllerG = homeFactory.getHomeControllerG();
-                homeControllerG.openFeed();
+            HomeControllerG homeControllerG = HomeFactory.getHomeControllerG();
+            homeControllerG.openSeries(currentSeries);
         });
 
         btnStar01.setOnAction(event -> oneStar());
@@ -549,7 +546,6 @@ public class ChapterControllerG implements ChapterObserver, ReaderObserver{
             if(bean == null){
                 break;
             }
-            System.out.println("Bean1 : "+bean.getCode());
             strings.add(bean.getCode());
         }
         choiceBoxCodes.getItems().setAll(strings);
@@ -561,7 +557,8 @@ public class ChapterControllerG implements ChapterObserver, ReaderObserver{
             buyComicController.buyComic(seriesBean, chapterBean, null);
         } catch (DiscountCodeException e) {
             orderPane.setVisible(true);
-            lblOrderResult.setText(e.getMessage());        }
+            lblOrderResult.setText(e.getMessage());
+        }
         closePaymentPane();
     }
 
@@ -648,21 +645,13 @@ public class ChapterControllerG implements ChapterObserver, ReaderObserver{
             e.printStackTrace();
         }
     }
-
-
     @Override
     public void update(BadgeBean badgeBean) {
         newBadgeWonPane.setVisible(true);
         lblBadgeName.setText(badgeBean.getName());
         badgeIconView.setImage(badgeBean.getIcon());
         initChoiceBoxCodes();
-        System.out.println("aggiorno live i discount codes");
-        for(String s : choiceBoxCodes.getItems()){
-            System.out.println(s);
-        }
     }
-
-
     public void update(Boolean payment){
         if(payment){
             orderPane.setVisible(true);

@@ -162,8 +162,7 @@ public class CategoriesControllerG {
         categoryController.setData(category);
         categoryController.init(category);
 
-        HomeFactory homeFactory = new HomeFactory();
-        HomeControllerG homeControllerG = homeFactory.getHomeControllerG();
+        HomeControllerG homeControllerG = HomeFactory.getHomeControllerG();
         homeControllerG.changeCenter(view);
     }
 
