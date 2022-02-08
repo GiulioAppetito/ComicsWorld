@@ -69,7 +69,7 @@ public class SeriesControllerG {
             try {
                 VBox vbChapter = fxmlLoader.load();
                 ChapterItemControllerG chapterControllerItem = fxmlLoader.getController();
-                chapterControllerItem.setData(chapterBean.getTitle(),seriesBean.getTitle(),chapterBean.getCover());
+                chapterControllerItem.setData(chapterBean);
 
                 vbChapter.setOnMouseClicked(event -> {
                     try {
