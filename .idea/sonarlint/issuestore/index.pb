@@ -1,6 +1,4 @@
 
-v
-Ftrunk/src/main/java/com/example/comics/view1/FollowingControllerG.java,5\b\5b83aa37f1ae076a1d49a047a71aac1e675f370c
 
 Otrunk/src/main/java/com/example/comics/view1/FollowedAuthorCardControllerG.java,0\8\0899b8dc1b081b812d7c2c8aa11a0dc585fca948
 n

@@ -387,11 +387,9 @@ public class ChapterControllerG implements ChapterObserver, ReaderObserver{
         paneInsertReview.setVisible(false);
     }
 
-
     private static final String STYLE = ".button2";
     private static final String STYLE2 = "-fx-background-color: #5DADE2; -fx-background-radius: 20";
     private static SeriesBean currentSeries;
-
 
     public void init(ChapterBean chapterBean, SeriesBean seriesBean){
 
@@ -533,7 +531,6 @@ public class ChapterControllerG implements ChapterObserver, ReaderObserver{
         btnApply.setOnAction(event -> applyDiscountCode(seriesBean, chapterBean));
         btnSkip.setOnAction(event -> applyNoDiscountCode(seriesBean, chapterBean));
     }
-
     private void initChoiceBoxCodes() {
         List<DiscountCodeBean> codeBeans;
         ResearchController researchController = new ResearchController();
@@ -561,7 +558,6 @@ public class ChapterControllerG implements ChapterObserver, ReaderObserver{
         }
         closePaymentPane();
     }
-
     private void applyDiscountCode(SeriesBean seriesBean, ChapterBean chapterBean)  {
         if(choiceBoxCodes.getValue()==null){
             applyNoDiscountCode(seriesBean, chapterBean);
@@ -628,7 +624,6 @@ public class ChapterControllerG implements ChapterObserver, ReaderObserver{
         txtAreaComment.setText("");
         newBadgeWonPane.setVisible(false);
     }
-
 
     @Override
     public void update(ReviewBean reviewBean) {
