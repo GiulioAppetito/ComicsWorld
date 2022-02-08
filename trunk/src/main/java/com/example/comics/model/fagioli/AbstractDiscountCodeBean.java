@@ -1,7 +1,4 @@
-package com.example.comics.model.fagioli.bundle;
-
-import com.example.comics.model.fagioli.DiscountBean;
-import com.example.comics.model.fagioli.DiscountCodeBean;
+package com.example.comics.model.fagioli;
 
 public abstract class AbstractDiscountCodeBean implements DiscountCodeBean {
 

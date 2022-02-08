@@ -933,6 +933,7 @@ public class FeedControllerG2 implements ChapterObserver, AccountObserver, Reade
     @Override
     public void update(Boolean payment) {
         if(payment) {
+            System.out.println("elaborating payment response");
             FXMLLoader fxmlLoader = new FXMLLoader();
             fxmlLoader.setLocation(getClass().getResource("notifCard.fxml"));
             try {

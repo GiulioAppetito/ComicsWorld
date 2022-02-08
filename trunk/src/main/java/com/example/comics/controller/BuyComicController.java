@@ -89,7 +89,7 @@ public class BuyComicController {
     }
 
 
-    public void failedPayment() throws FailedPaymentException{
-        throw new FailedPaymentException("Declined payment.");
+    public void failedPayment(){
+        System.out.println("failed payment");
     }
 }

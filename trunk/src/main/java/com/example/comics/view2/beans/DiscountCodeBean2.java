@@ -1,6 +1,6 @@
 package com.example.comics.view2.beans;
 
-import com.example.comics.model.fagioli.bundle.AbstractDiscountCodeBean;
+import com.example.comics.model.fagioli.AbstractDiscountCodeBean;
 
 public class DiscountCodeBean2 extends AbstractDiscountCodeBean {
 

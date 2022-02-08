@@ -230,9 +230,6 @@ public class Reader extends Account{
     }
 
     public List<Order> getOrdersHistory() {
-
-        System.out.println("[READER]: history:" + ordersHistory.get(0).getDate());
-        System.out.println("[READER]: history:" + ordersHistory.get(0).getExpense());
         return ordersHistory;
     }
 

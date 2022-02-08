@@ -16,7 +16,7 @@ public class PaymentBoundary {
     }
 
 
-    public void convalidPayment(AccountBean accountBean, ChapterBean chapterBean, SeriesBean seriesBean, DiscountCodeBean discountCodeBean)throws FailedPaymentException{
+    public void convalidPayment(AccountBean accountBean, ChapterBean chapterBean, SeriesBean seriesBean, DiscountCodeBean discountCodeBean){
         //contattiamo la boundary di paypal, tipo set di api offerto
         PayPalInterface paypal = new PayPalBoundary();
 
@@ -31,20 +31,19 @@ public class PaymentBoundary {
                 waiting[0] = paypal.convalidPayment();
             }
 
+            signalPayment(waiting[0], seriesBean , chapterBean, discountCodeBean);
         });
         waitForPayment.start();
 
-        signalPayment(waiting[0], seriesBean , chapterBean, discountCodeBean);
-
     }
 
-    private void signalPayment(int b, SeriesBean seriesBean, ChapterBean chapterBean, DiscountCodeBean discountCodeBean) throws FailedPaymentException {
+    private void signalPayment(int b, SeriesBean seriesBean, ChapterBean chapterBean, DiscountCodeBean discountCodeBean){
         BuyComicController buyComicController = new BuyComicController();
         if(b==1){
-            System.out.println("PAymentBOUNDARY: "+ "good payment");
+            System.out.println("PaymentBOUNDARY: "+ "good payment");
             buyComicController.completedPayment(seriesBean, chapterBean, discountCodeBean);
         }else{
-            System.out.println("BUYCOMICBOUNDARY: "+ "bad payment");
+            System.out.println("PaymentBOUNDARY: "+ "bad payment");
             buyComicController.failedPayment();
         }
     }
