@@ -3,7 +3,6 @@ package com.example.comics.controller;
 import com.example.comics.controller.boundaries.PostReviewAuthorBoundary;
 import com.example.comics.controller.boundaries.PostReviewReaderBoundary;
 import com.example.comics.model.dao.DiscountCodeDAO;
-import com.example.comics.model.exceptions.IncompleteReviewException;
 import com.example.comics.model.fagioli.*;
 import com.example.comics.model.*;
 import com.example.comics.model.dao.SeriesDAO;
@@ -24,12 +23,10 @@ public class PostReviewController{
         author.setLastName(seriesBean.getAuthor().getLastName());
         author.setEmail(seriesBean.getAuthor().getEmail());
 
-        Series series = null;
-
-        SeriesDAO seriesDAO = new SeriesDAO();
+        Series series;
         series = SeriesDAO.retrieveSeries(seriesBean.getTitle());
-        series.addReview(chapterBean.getTitle(), reviewBean.getComment(), reviewBean.getRating());
-
+        Review review = new Review(reviewBean.getComment(),reviewBean.getRating(),reviewBean.getAccount());
+        series.addReview(chapterBean.getTitle(),review);
 
         //invio mail all'autore di una nuova review
         Thread emailThread;

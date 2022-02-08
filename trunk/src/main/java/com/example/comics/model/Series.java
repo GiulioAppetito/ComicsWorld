@@ -77,7 +77,6 @@ public class Series extends SeriesSubject{
 	}
 
 	public List<Objective> getObjectives() {
-		System.out.println("Series: lista obiettivi: " + this.objectives.get(0).getType());
 		return this.objectives;
 	}
 
@@ -135,10 +134,10 @@ public class Series extends SeriesSubject{
 		return chapter;
 	}
 
-	public void addReview(String chapterTitle, String reviewComment, int rating) {
+	public void addReview(String chapterTitle, Review review) {
 			for(int i=0; i< chapters.size(); i++){
 				if(chapters.get(i).getTitle().equals(chapterTitle)){
-					chapters.get(i).addReview(this, reviewComment, rating, UserLogin.getInstance().getReader());
+					chapters.get(i).addReview(this,review);
 				}
 			}
 			calculateAverageRating();

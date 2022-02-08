@@ -82,8 +82,8 @@ public class Chapter extends ChapterSubject {
         this.description = description;
     }
 
-    public void addReview(Series series, String comment, int rating, Reader reader){
-        Review review = new Review(comment, rating, reader);
+    public void addReview(Series series,Review review){
+
         reviews.add(review);
 
         this.averageRating = calculateAverageRating();
@@ -98,9 +98,9 @@ public class Chapter extends ChapterSubject {
         }).start();
 
         ReviewBundle reviewBundle = new ReviewBundle();
-        reviewBundle.setRating(rating);
-        reviewBundle.setComment(comment);
-        reviewBundle.setAccount(reader);
+        reviewBundle.setRating(review.getRating());
+        reviewBundle.setComment(review.getComment());
+        reviewBundle.setAccount(review.getAccount());
 
         notifyObserversNewReview(reviewBundle);
     }

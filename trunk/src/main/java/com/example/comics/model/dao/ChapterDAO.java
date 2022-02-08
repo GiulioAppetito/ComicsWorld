@@ -2,6 +2,7 @@ package com.example.comics.model.dao;
 
 import com.example.comics.model.*;
 import com.example.comics.model.dao.utils.Queries;
+import com.example.comics.model.exceptions.AlreadyExistingChapterException;
 import javafx.scene.image.Image;
 
 import java.io.InputStream;
@@ -104,7 +105,7 @@ public class ChapterDAO {
 
     }
 
-    public void saveChapter(Chapter chapter,String seriesTitle,InputStream coverInputStream) {
+    public void saveChapter(Chapter chapter,String seriesTitle,InputStream coverInputStream) throws AlreadyExistingChapterException {
 
         Connection conn;
 
@@ -117,7 +118,7 @@ public class ChapterDAO {
 
 
         } catch (SQLException throwables) {
-            throwables.printStackTrace();
+            throw new AlreadyExistingChapterException("Unavailable title! Try another one.");
         }
     }
 }

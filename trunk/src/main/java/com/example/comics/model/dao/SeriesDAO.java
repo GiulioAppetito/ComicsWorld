@@ -2,7 +2,10 @@ package com.example.comics.model.dao;
 
 import com.example.comics.model.*;
 import com.example.comics.model.dao.utils.Queries;
+import com.example.comics.model.exceptions.AlreadyExistingSeriesException;
 import javafx.scene.image.Image;
+import java.sql.SQLIntegrityConstraintViolationException;
+
 
 import java.io.InputStream;
 import java.sql.*;
@@ -125,7 +128,7 @@ public class SeriesDAO {
     }
 
 
-    public void savePublishedSeries(Series series, InputStream seriesCoverInputStream, Map<Objective,InputStream> hashMap) {
+    public void savePublishedSeries(Series series, InputStream seriesCoverInputStream, Map<Objective,InputStream> hashMap) throws AlreadyExistingSeriesException {
         Statement stmt = null;
         Connection conn = null;
         int bagdeID = 0;
@@ -152,8 +155,8 @@ public class SeriesDAO {
                 all.add(series);
             }
         } catch (SQLException throwables) {
-            throwables.printStackTrace();
-        }finally {
+            throw new AlreadyExistingSeriesException("This title is already used for another series!");
+        } finally {
             try {
                 assert conn != null;
                 conn.close();
@@ -169,7 +172,7 @@ public class SeriesDAO {
         }
     }
 
-    public Series createSeries(Author author, String title, Genres genre1, Genres genre2, Genres genre3, Image cover, InputStream coverInputStream, List<Objective> objectives, Map<Objective, InputStream> badgeIconHM, String description) {
+    public Series createSeries(Author author, String title, Genres genre1, Genres genre2, Genres genre3, Image cover, InputStream coverInputStream, List<Objective> objectives, Map<Objective, InputStream> badgeIconHM, String description) throws AlreadyExistingSeriesException {
         Series series;
         series = new Series();
         series.setAuthor(author);

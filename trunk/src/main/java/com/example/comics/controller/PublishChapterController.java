@@ -7,6 +7,7 @@ import com.example.comics.model.Series;
 import com.example.comics.model.UserLogin;
 import com.example.comics.model.dao.AccountDAO;
 import com.example.comics.model.dao.ChapterDAO;
+import com.example.comics.model.exceptions.AlreadyExistingChapterException;
 import com.example.comics.model.fagioli.AuthorBean;
 import com.example.comics.model.fagioli.ChapterBean;
 import com.example.comics.model.fagioli.ReaderBean;
@@ -18,12 +19,14 @@ import java.util.Observer;
 
 public class PublishChapterController {
 
-    public void publishChapter(ChapterBean chapterBean, String seriesTitle){
+    public void publishChapter(ChapterBean chapterBean, String seriesTitle)throws AlreadyExistingChapterException {
+
+
         Chapter chapter = null;
         //cerca la serie dell'author relativa al capitolo e aggiungi capitolo
         for(Series series : UserLogin.getInstance().getAuthor().getPublishedSeries()){
             if(series.getTitle().equals(seriesTitle)){
-                    chapter = series.addChapter(chapterBean.getTitle(),chapterBean.getCover(),chapterBean.getDescription(),chapterBean.getPrice());
+                chapter = series.addChapter(chapterBean.getTitle(),chapterBean.getCover(),chapterBean.getDescription(),chapterBean.getPrice());
             }
         }
 
