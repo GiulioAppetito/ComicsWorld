@@ -53,6 +53,18 @@
          </VBox>
       </children>
    </VBox>
+   <VBox prefHeight="133.0" prefWidth="179.0">
+      <children>
+         <Label fx:id="lblchapter" alignment="CENTER" prefHeight="32.0" prefWidth="179.0" text="Chapter">
+            <font>
+               <Font name="Berlin Sans FB" size="20.0" />
+            </font>
+         </Label>
+      </children>
+      <HBox.margin>
+         <Insets bottom="30.0" top="35.0" />
+      </HBox.margin>
+   </VBox>
     <styleClass>
         <String fx:value="white-background" />
         <String fx:value="oval-layout" />
