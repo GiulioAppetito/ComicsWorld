@@ -25,6 +25,7 @@ public class OrderDAO {
         LocalDate date;
         Float expense;
         Series series;
+        String chapterTitle = "unknown";
 
 
         try {
@@ -46,9 +47,17 @@ public class OrderDAO {
                 SeriesDAO seriesDAO = new SeriesDAO();
                 series = seriesDAO.retrieveSeries(rs.getString("series"));
 
+                for(Chapter c : series.getChapters()){
+                    if(c.getTitle().equals(rs.getString("chapterTitle"))){
+                        chapterTitle = c.getTitle();
+                    }
+                }
+
+
                 Order order = new Order(series);
                 order.setDate(date);
                 order.setExpense(expense);
+                order.setChapterTitle(chapterTitle);
 
                 orders.add(order);
 

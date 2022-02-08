@@ -7,6 +7,7 @@ import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 
 public class OrderCardControllerG {
+
     @FXML
     private ImageView imgCover;
 
@@ -19,11 +20,15 @@ public class OrderCardControllerG {
     @FXML
     private Label lblSeries;
 
+    @FXML
+    private Label lblchapter;
+
     public void setData(OrderBean orderBean){
         lblDate.setText(DatesConverter.toString(orderBean.getDate()));
         lblPrice.setText(orderBean.getExpense().toString());
         lblSeries.setText(orderBean.getSeries().getTitle());
         imgCover.setImage(orderBean.getSeries().getCover());
+        lblchapter.setText(orderBean.getChapterTitle());
     }
 
 }

@@ -3,7 +3,9 @@ package com.example.comics.model;
 import java.time.LocalDate;
 
 public class Order {
+
     private Series series;
+    private String chapterTitle;
     private LocalDate date;
     private Float expense;
 
@@ -33,5 +35,13 @@ public class Order {
 
     public void setExpense(Float expense) {
         this.expense = expense;
+    }
+
+    public String getChapterTitle() {
+        return chapterTitle;
+    }
+
+    public void setChapterTitle(String chapterTitle) {
+        this.chapterTitle = chapterTitle;
     }
 }

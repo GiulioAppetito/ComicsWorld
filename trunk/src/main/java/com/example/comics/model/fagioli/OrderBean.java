@@ -13,4 +13,7 @@ public interface OrderBean {
     Float getExpense();
     void setExpense(Float expense);
 
+    String getChapterTitle();
+    void setChapterTitle(String chapterTitle);
+
 }

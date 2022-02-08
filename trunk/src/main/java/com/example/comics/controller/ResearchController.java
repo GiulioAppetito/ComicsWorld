@@ -122,6 +122,7 @@ public class ResearchController {
             orderBundle = new OrderBundle();
             orderBundle.setExpense(order.getExpense());
             orderBundle.setDate(order.getDate());
+            orderBundle.setChapterTitle(order.getChapterTitle());
 
             series.add(SeriesDAO.retrieveSeries(order.getSeries().getTitle()));
             SeriesBean seriesBean = getSeriesBeans(series).get(0);
