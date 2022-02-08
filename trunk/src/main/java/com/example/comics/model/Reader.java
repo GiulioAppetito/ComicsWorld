@@ -1,12 +1,10 @@
 package com.example.comics.model;
 
 import com.example.comics.model.dao.BadgeDAO;
-import com.example.comics.model.dao.DiscountCodeDAO;
 import com.example.comics.model.dao.OrderDAO;
 import com.example.comics.model.dao.ReaderDAO;
 import com.example.comics.model.fagioli.bundle.BadgeBundle;
 
-import java.sql.SQLException;
 import java.util.List;
 import java.util.Map;
 

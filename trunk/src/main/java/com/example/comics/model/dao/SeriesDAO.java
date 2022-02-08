@@ -4,7 +4,6 @@ import com.example.comics.model.*;
 import com.example.comics.model.dao.utils.Queries;
 import com.example.comics.model.exceptions.AlreadyExistingSeriesException;
 import javafx.scene.image.Image;
-import java.sql.SQLIntegrityConstraintViolationException;
 
 
 import java.io.InputStream;

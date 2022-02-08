@@ -3,8 +3,6 @@ package com.example.comics.view2.beans;
 import com.example.comics.model.Account;
 import com.example.comics.model.fagioli.ReviewBean;
 
-import java.beans.BeanProperty;
-
 public class ReviewBean2 implements ReviewBean {
 
     private String comment;

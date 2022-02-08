@@ -4,9 +4,9 @@ import com.example.comics.controller.LoginController;
 import com.example.comics.controller.RegistrationController;
 import com.example.comics.model.exceptions.FailedLoginException;
 import com.example.comics.model.exceptions.FailedRegistrationException;
+import com.example.comics.model.exceptions.MalformedEmailException;
 import com.example.comics.model.fagioli.LoginBean;
 import com.example.comics.model.fagioli.RegistrationBean;
-import com.example.comics.model.UserLogin;
 import com.example.comics.view1.beans.LoginBean1;
 import com.example.comics.view1.beans.RegistrationBean1;
 import javafx.event.ActionEvent;
@@ -18,9 +18,6 @@ import javafx.scene.control.*;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
-
-import java.net.URL;
-
 
 
 public class LoginControllerG {
@@ -126,6 +123,9 @@ public class LoginControllerG {
         }catch(FailedRegistrationException e){
             showErrorMessage(e.getMessage());
             textFieldUsername.setText("");
+        } catch (MalformedEmailException e) {
+            showErrorMessage(e.getMessage());
+            textFieldEmail.setText("");
         }
     }
 

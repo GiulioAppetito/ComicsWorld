@@ -5,8 +5,6 @@ import com.example.comics.model.fagioli.LoginBean;
 import com.example.comics.model.UserLogin;
 import com.example.comics.model.dao.AccountDAO;
 
-import java.util.concurrent.Semaphore;
-
 public class LoginController {
 
     public boolean login(LoginBean loginBean) throws FailedLoginException {

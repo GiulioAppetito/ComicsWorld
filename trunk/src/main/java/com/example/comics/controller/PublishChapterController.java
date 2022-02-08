@@ -1,7 +1,6 @@
 package com.example.comics.controller;
 
 import com.example.comics.controller.boundaries.PublishChapterReaderBoundary;
-import com.example.comics.controller.boundaries.PublishSeriesReaderBoundary;
 import com.example.comics.model.Chapter;
 import com.example.comics.model.Series;
 import com.example.comics.model.UserLogin;
@@ -15,7 +14,6 @@ import com.example.comics.model.fagioli.bundle.AuthorBundle;
 import com.example.comics.model.fagioli.bundle.ReaderBundle;
 
 import java.util.List;
-import java.util.Observer;
 
 public class PublishChapterController {
 

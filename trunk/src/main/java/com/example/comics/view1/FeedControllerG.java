@@ -1,6 +1,5 @@
 package com.example.comics.view1;
 
-import animatefx.animation.Bounce;
 import com.example.comics.controller.ResearchController;
 import com.example.comics.model.fagioli.SeriesBean;
 import javafx.fxml.FXML;

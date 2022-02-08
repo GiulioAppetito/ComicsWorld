@@ -33,6 +33,7 @@
       <sourceFolder url="file://$MODULE_DIR$/src/main/resources" type="java-resource" />
       <sourceFolder url="file://$MODULE_DIR$/trunk/src/main/java" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/trunk/src/main/resources" type="java-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/trunk/src/test/java" isTestSource="true" />
       <excludeFolder url="file://$MODULE_DIR$/target" />
       <excludeFolder url="file://$MODULE_DIR$/venv" />
     </content>

@@ -3,7 +3,6 @@ package com.example.comics.view1;
 import com.example.comics.controller.PublishSeriesController;
 import com.example.comics.model.Genres;
 import com.example.comics.model.Levels;
-import com.example.comics.model.UserLogin;
 import com.example.comics.model.exceptions.AlreadyExistingSeriesException;
 import com.example.comics.model.fagioli.*;
 import com.example.comics.view1.beans.*;
@@ -12,7 +11,6 @@ import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
-import javafx.scene.text.Text;
 import javafx.stage.FileChooser;
 
 import java.io.*;

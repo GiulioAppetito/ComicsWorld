@@ -2,7 +2,6 @@ package com.example.comics.model.fagioli;
 
 import com.example.comics.model.Genres;
 import javafx.scene.image.Image;
-import javafx.scene.text.Text;
 
 import java.io.InputStream;
 import java.util.List;

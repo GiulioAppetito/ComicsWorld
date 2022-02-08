@@ -6,7 +6,6 @@ import com.example.comics.controller.PostReviewController;
 import com.example.comics.controller.ResearchController;
 import com.example.comics.model.*;
 import com.example.comics.model.exceptions.DiscountCodeException;
-import com.example.comics.model.exceptions.FailedPaymentException;
 import com.example.comics.model.exceptions.IncompleteReviewException;
 import com.example.comics.model.fagioli.*;
 import com.example.comics.view1.beans.DiscountCodeBean1;

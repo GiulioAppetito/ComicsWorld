@@ -5,9 +5,6 @@ import com.example.comics.model.Reader;
 import java.io.*;
 import java.sql.*;
 import java.time.LocalDate;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.GregorianCalendar;
 
 public class Queries {
 

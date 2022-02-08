@@ -6,16 +6,13 @@ import com.example.comics.model.dao.AccountDAO;
 import com.example.comics.model.dao.SeriesDAO;
 import com.example.comics.model.exceptions.AlreadyExistingSeriesException;
 import com.example.comics.model.fagioli.*;
-import com.example.comics.model.fagioli.bundle.AccountBundle;
 import com.example.comics.model.fagioli.bundle.AuthorBundle;
 import com.example.comics.model.fagioli.bundle.ReaderBundle;
-import com.example.comics.view1.beans.ReaderBean1;
 
 import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
-import java.util.Locale;
 
 public class PublishSeriesController {
 

@@ -1,6 +1,5 @@
 package com.example.comics.view2;
 
-import com.example.comics.controller.StatisticsController;
 import com.example.comics.model.fagioli.ReviewBean;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;

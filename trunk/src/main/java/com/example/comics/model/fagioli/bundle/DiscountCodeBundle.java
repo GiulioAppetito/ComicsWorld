@@ -3,8 +3,6 @@ package com.example.comics.model.fagioli.bundle;
 import com.example.comics.model.fagioli.DiscountBean;
 import com.example.comics.model.fagioli.DiscountCodeBean;
 
-import java.time.LocalDate;
-
 public class DiscountCodeBundle implements DiscountCodeBean {
 
     private String code;

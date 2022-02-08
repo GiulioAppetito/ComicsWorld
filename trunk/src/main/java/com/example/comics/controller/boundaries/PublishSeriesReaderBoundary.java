@@ -7,7 +7,6 @@ import javax.mail.Session;
 import javax.mail.Transport;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
-import java.util.List;
 
 import static com.example.comics.controller.boundaries.MailProperties.FROM;
 import static com.example.comics.controller.boundaries.MailProperties.initializeProperties;

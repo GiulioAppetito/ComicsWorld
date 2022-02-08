@@ -3,7 +3,6 @@ package com.example.comics.view2;
 import com.example.comics.controller.*;
 import com.example.comics.model.*;
 import com.example.comics.model.exceptions.DiscountCodeException;
-import com.example.comics.model.exceptions.FailedPaymentException;
 import com.example.comics.model.exceptions.IncompleteReviewException;
 import com.example.comics.model.fagioli.*;
 import com.example.comics.view2.beans.AccountBean2;

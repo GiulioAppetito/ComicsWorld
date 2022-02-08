@@ -5,7 +5,6 @@ import com.example.comics.model.fagioli.AuthorBean;
 import com.example.comics.model.fagioli.ChapterBean;
 import com.example.comics.model.fagioli.SeriesBean;
 import javafx.scene.image.Image;
-import javafx.scene.text.Text;
 
 import java.io.InputStream;
 import java.util.List;

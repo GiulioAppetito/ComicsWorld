@@ -2,11 +2,9 @@ package com.example.comics.model;
 
 import com.example.comics.model.dao.ChapterDAO;
 import com.example.comics.model.dao.ReviewDAO;
-import com.example.comics.model.fagioli.ReviewBean;
 import com.example.comics.model.fagioli.bundle.ReviewBundle;
 import javafx.scene.image.Image;
 
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 

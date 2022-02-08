@@ -22,4 +22,22 @@ module com.example.coomics {
     opens com.example.comics.view2 to javafx.fxml;
     exports com.example.comics.fakepaypal;
     opens com.example.comics.fakepaypal to javafx.fxml;
+    exports com.example.comics.controller;
+    opens com.example.comics.controller to org.junit.jupiter.api;
+    exports com.example.comics.view1.beans;
+    opens com.example.comics.view1.beans to org.junit.jupiter.api;
+    exports com.example.comics.model;
+    opens com.example.comics.model to org.junit.jupiter.api;
+    exports com.example.comics.model.fagioli;
+    opens com.example.comics.model.fagioli to org.junit.jupiter.api;
+    exports com.example.comics.model.exceptions;
+    opens com.example.comics.model.exceptions to org.junit.jupiter.api;
+    exports com.example.comics.model.dao;
+    opens com.example.comics.model.dao to org.junit.jupiter.api;
+    exports com.example.comics.view2.beans;
+    opens com.example.comics.view2.beans to org.junit.jupiter.api;
+    exports com.example.comics.controller.boundaries;
+    opens com.example.comics.controller.boundaries to org.junit.jupiter.api;
+
+
 }
