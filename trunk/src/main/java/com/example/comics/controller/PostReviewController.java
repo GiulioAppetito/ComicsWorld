@@ -59,7 +59,6 @@ public class PostReviewController{
             }
         }
 
-
         //controllo degli obiettivi di tipo review
         for(Objective objective : series.getObjectives()){
 

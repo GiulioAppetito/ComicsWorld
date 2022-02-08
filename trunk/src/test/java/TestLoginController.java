@@ -7,7 +7,7 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
-public class TestLogin {
+public class TestLoginController {
 
     @Test
     public void testLoginCorrectCredentials() {

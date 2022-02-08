@@ -28,6 +28,9 @@ public class SeriesDAO {
     private static List<Series> all = new ArrayList<>();
 
     public static Series retrieveSeries(String title) {
+        if(all.isEmpty()){
+            retriveAllSeries();
+        }
         for(Series s : all){
             if(s.getTitle().equals(title)){
                 return s;
