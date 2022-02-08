@@ -10,7 +10,6 @@ import com.example.comics.model.dao.DiscountCodeDAO;
 import com.example.comics.model.dao.OrderDAO;
 import com.example.comics.model.exceptions.DiscountCodeException;
 import com.example.comics.model.exceptions.FailedPaymentException;
-import com.example.comics.model.exceptions.InvalidPaymentException;
 import com.example.comics.model.fagioli.AccountBean;
 import com.example.comics.model.fagioli.ChapterBean;
 import com.example.comics.model.fagioli.DiscountCodeBean;
@@ -21,7 +20,7 @@ import java.time.LocalDate;
 
 public class BuyComicController {
 
-    public void buyComic(SeriesBean seriesBean, ChapterBean chapterBean, DiscountCodeBean discountCodeBean) throws FailedPaymentException, DiscountCodeException {
+    public void buyComic(SeriesBean seriesBean, ChapterBean chapterBean, DiscountCodeBean discountCodeBean) throws DiscountCodeException {
 
         DiscountCode discountCode;
         if(discountCodeBean != null){
@@ -48,7 +47,7 @@ public class BuyComicController {
 
     }
 
-    public void completedPayment(SeriesBean seriesBean, ChapterBean chapterBean, DiscountCodeBean discountCodeBean){
+    public void completedPayment(SeriesBean seriesBean, ChapterBean chapterBean, DiscountCodeBean discountCodeBean)throws FailedPaymentException{
 
         //mail all'autore
         BuyComicsAuthorBoundary buyComicsAuthorBoundary = new BuyComicsAuthorBoundary();
@@ -89,7 +88,9 @@ public class BuyComicController {
     }
 
 
-    public void failedPayment(){
-        System.out.println("failed payment");
+    public void failedPayment() {
+        System.out.println("FAILED PAYMENT");
+        UserLogin.getInstance().getReader().notifyFailedOrder();
+
     }
 }

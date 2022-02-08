@@ -117,13 +117,13 @@ public class ResearchController {
 
         List<Order> orders = UserLogin.getInstance().getReader().getOrdersHistory();
 
-        for(int i=0; i<orders.size();i++){
+        for (Order order : orders) {
 
             orderBundle = new OrderBundle();
-            orderBundle.setExpense(orders.get(i).getExpense());
-            orderBundle.setDate(orders.get(i).getDate());
+            orderBundle.setExpense(order.getExpense());
+            orderBundle.setDate(order.getDate());
 
-            series.add(SeriesDAO.retrieveSeries(orders.get(i).getSeries().getTitle()));
+            series.add(SeriesDAO.retrieveSeries(order.getSeries().getTitle()));
             SeriesBean seriesBean = getSeriesBeans(series).get(0);
             orderBundle.setSeries(seriesBean);
 
@@ -139,14 +139,14 @@ public class ResearchController {
         AuthorBundle authorBundle;
 
         List<Author> followedAuthors = UserLogin.getInstance().getReader().getFollowedAuthors();
-        for(int i=0; i<followedAuthors.size();i++){
+        for (Author followedAuthor : followedAuthors) {
             authorBundle = new AuthorBundle();
-            authorBundle.setUsername(followedAuthors.get(i).getUsername());
-            authorBundle.setFirstName(followedAuthors.get(i).getFirstName());
-            authorBundle.setLastName(followedAuthors.get(i).getLastName());
-            authorBundle.setEmail(followedAuthors.get(i).getEmail());
-            authorBundle.setProPic(followedAuthors.get(i).getProPic());
-            authorBundle.setPublishedSeries(followedAuthors.get(i).getPublishedSeries());
+            authorBundle.setUsername(followedAuthor.getUsername());
+            authorBundle.setFirstName(followedAuthor.getFirstName());
+            authorBundle.setLastName(followedAuthor.getLastName());
+            authorBundle.setEmail(followedAuthor.getEmail());
+            authorBundle.setProPic(followedAuthor.getProPic());
+            authorBundle.setPublishedSeries(followedAuthor.getPublishedSeries());
             authorBeans.add(authorBundle);
         }
 

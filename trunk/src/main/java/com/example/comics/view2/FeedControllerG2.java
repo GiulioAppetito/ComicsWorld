@@ -4,10 +4,7 @@ import com.example.comics.controller.*;
 import com.example.comics.model.*;
 import com.example.comics.model.exceptions.DiscountCodeException;
 import com.example.comics.model.exceptions.FailedPaymentException;
-import com.example.comics.model.exceptions.InvalidPaymentException;
 import com.example.comics.model.fagioli.*;
-import com.example.comics.view1.beans.AccountBean1;
-import com.example.comics.view1.beans.DiscountCodeBean1;
 import com.example.comics.view2.beans.AccountBean2;
 import com.example.comics.view2.beans.DiscountCodeBean2;
 import com.example.comics.view2.beans.ReviewBean2;
@@ -19,7 +16,6 @@ import javafx.scene.chart.PieChart;
 import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
-import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 
@@ -805,8 +801,9 @@ public class FeedControllerG2 implements ChapterObserver, AccountObserver, Reade
 
         try {
             buyComicController.buyComic(seriesBean, chapterBean, discountCodeBean2);
-        } catch (FailedPaymentException | DiscountCodeException e) {
-            //TO-DO
+        } catch (DiscountCodeException e) {
+            panePayment.setVisible(true);
+
         }
 
         panePayment.setVisible(false);

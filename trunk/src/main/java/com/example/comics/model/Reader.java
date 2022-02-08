@@ -235,4 +235,7 @@ public class Reader extends Account{
     }
 
 
+    public void notifyFailedOrder() {
+        notifyObserversNewOrder(false);
+    }
 }

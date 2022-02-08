@@ -7,7 +7,6 @@ import com.example.comics.controller.ResearchController;
 import com.example.comics.model.*;
 import com.example.comics.model.exceptions.DiscountCodeException;
 import com.example.comics.model.exceptions.FailedPaymentException;
-import com.example.comics.model.exceptions.InvalidPaymentException;
 import com.example.comics.model.fagioli.*;
 import com.example.comics.view1.beans.DiscountCodeBean1;
 import com.example.comics.view1.beans.ReviewBean1;
@@ -554,12 +553,9 @@ public class ChapterControllerG implements ChapterObserver, ReaderObserver{
         BuyComicController buyComicController = new BuyComicController();
         try {
             buyComicController.buyComic(seriesBean, chapterBean, null);
-        } catch (FailedPaymentException e) {
-            orderPane.setVisible(true);
-            lblOrderResult.setText(e.getMessage());
         } catch (DiscountCodeException e) {
-            e.printStackTrace();
-        }
+            orderPane.setVisible(true);
+            lblOrderResult.setText(e.getMessage());        }
         closePaymentPane();
     }
 
@@ -572,7 +568,7 @@ public class ChapterControllerG implements ChapterObserver, ReaderObserver{
         discountCodeBean1.setCode(choiceBoxCodes.getValue());
         try {
             buyComicController.buyComic(seriesBean, chapterBean, discountCodeBean1);
-        } catch (FailedPaymentException | DiscountCodeException e) {
+        } catch (DiscountCodeException e) {
             orderPane.setVisible(true);
             lblOrderResult.setText(e.getMessage());
         }
@@ -656,7 +652,10 @@ public class ChapterControllerG implements ChapterObserver, ReaderObserver{
             orderPane.setVisible(true);
             lblOrderResult.setText("Completed payment!");
             initChoiceBoxCodes();
+        }else {
+            orderPane.setVisible(true);
+            lblOrderResult.setText("Failed payment!");
+            initChoiceBoxCodes();
         }
-
     }
 }

@@ -31,21 +31,24 @@ public class PaymentBoundary {
                 waiting[0] = paypal.convalidPayment();
             }
 
-            signalPayment(waiting[0], seriesBean , chapterBean, discountCodeBean);
+            signalPayment(seriesBean , chapterBean, discountCodeBean);
         });
         waitForPayment.start();
 
     }
 
-    private void signalPayment(int b, SeriesBean seriesBean, ChapterBean chapterBean, DiscountCodeBean discountCodeBean){
+    private void signalPayment(SeriesBean seriesBean, ChapterBean chapterBean, DiscountCodeBean discountCodeBean){
         BuyComicController buyComicController = new BuyComicController();
-        if(b==1){
-            System.out.println("PaymentBOUNDARY: "+ "good payment");
+        try{
             buyComicController.completedPayment(seriesBean, chapterBean, discountCodeBean);
-        }else{
-            System.out.println("PaymentBOUNDARY: "+ "bad payment");
+            System.out.println("PaymentBOUNDARY: "+ "good payment");
+        }catch (FailedPaymentException e){
             buyComicController.failedPayment();
         }
+
+
+
+
     }
 
 }
