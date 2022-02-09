@@ -21,11 +21,14 @@ public class AuthorMySeriesControllerG {
         ResearchController researchController = new ResearchController();
         List<SeriesBean> listOfCards = researchController.getPublishedSeries();
 
+        FXMLLoader fxmlLoader;
+
         int size = listOfCards.size();
         int columns = 3;
         int i=1;
         for(int j=0; j<size; j++) {
-            FXMLLoader fxmlLoader = new FXMLLoader();
+
+            fxmlLoader = new FXMLLoader();
             fxmlLoader.setLocation(getClass().getResource("vcard.fxml"));
             try {
                 VBox card = fxmlLoader.load();
@@ -33,13 +36,7 @@ public class AuthorMySeriesControllerG {
                 cardController.setData(listOfCards.get(j));
 
                 int finalJ = j;
-                card.setOnMouseClicked(event -> {
-                    try {
-                        openSerie(listOfCards.get(finalJ));
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
-                });
+                card.setOnMouseClicked(event -> openSerie(listOfCards.get(finalJ)));
 
                 gpMySeries.add(card,j%columns,i);
                 if(j%columns == columns-1){
@@ -53,19 +50,9 @@ public class AuthorMySeriesControllerG {
     }
 
 
-    public void openSerie(SeriesBean seriesBean) throws IOException {
-
-        SeriesControllerG serieController = new SeriesControllerG();
-        FXMLLoader loader = new FXMLLoader();
-
-        URL fxmlLocation = FavouritesControllerG.class.getResource("serie.fxml");
-        loader.setLocation(fxmlLocation);
-        loader.setController(serieController);
-
+    public void openSerie(SeriesBean seriesBean){
         HomeControllerG homeControllerG = HomeFactory.getHomeControllerG();
-        homeControllerG.changeCenter(loader.load());
-
-        serieController.setData(seriesBean);
+        homeControllerG.openSeries(seriesBean);
 
     }
 }
