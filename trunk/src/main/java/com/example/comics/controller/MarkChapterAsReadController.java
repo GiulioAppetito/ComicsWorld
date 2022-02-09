@@ -59,13 +59,6 @@ public class MarkChapterAsReadController {
 
                 //invio mail al lettore del codice sconto
                 new Thread(()->{
-                    AccountBean accountBean = new AccountBundle();
-                    accountBean.setFirstName(UserLogin.getInstance().getAccount().getFirstName());
-                    accountBean.setLastName(UserLogin.getInstance().getAccount().getLastName());
-                    accountBean.setUsername(UserLogin.getInstance().getAccount().getUsername());
-                    accountBean.setEmail(UserLogin.getInstance().getAccount().getEmail());
-                    accountBean.setProPic(UserLogin.getInstance().getAccount().getProPic());
-
 
                     DiscountBean discountBean = new DiscountBundle();
                     discountBean.setLimitDays(discountCode.getDiscount().getLimitDays());
@@ -77,6 +70,12 @@ public class MarkChapterAsReadController {
 
                     SeriesBean seriesBean = new SeriesBundle();
                     seriesBean.setTitle(series.getTitle());
+
+                    AccountBean accountBean = new AccountBundle();
+                    accountBean.setFirstName(UserLogin.getInstance().getAccount().getFirstName());
+                    accountBean.setLastName(UserLogin.getInstance().getAccount().getLastName());
+                    accountBean.setUsername(UserLogin.getInstance().getAccount().getUsername());
+                    accountBean.setEmail(UserLogin.getInstance().getAccount().getEmail());
 
                     PostReviewReaderBoundary postReviewReaderBoundary = new PostReviewReaderBoundary();
                     postReviewReaderBoundary.sendEmailForDiscountCode(accountBean, seriesBean, discountCodeBean);

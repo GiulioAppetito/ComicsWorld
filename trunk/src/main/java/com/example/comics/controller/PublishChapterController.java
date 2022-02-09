@@ -40,9 +40,9 @@ public class PublishChapterController {
             ReaderBean readerBean;
             AuthorBean authorBean = new AuthorBundle();
             authorBean.setUsername(UserLogin.getInstance().getAccount().getUsername());
-            authorBean.setFirstName(UserLogin.getInstance().getAccount().getFirstName());
             authorBean.setLastName(UserLogin.getInstance().getAccount().getLastName());
             authorBean.setEmail(UserLogin.getInstance().getAccount().getEmail());
+
             for(String followerMail : followersMails){
                 readerBean = new ReaderBundle();
                 readerBean.setEmail(followerMail);
