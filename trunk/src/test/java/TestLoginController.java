@@ -9,6 +9,8 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 
 class TestLoginController {
 
+    private static final String GIULIO = "giulio";
+
     @Test
     void testLoginCorrectCredentials() {
         boolean result;
@@ -16,8 +18,8 @@ class TestLoginController {
         LoginController controlLogin = new LoginController();
 
         LoginBean loginBean = new LoginBean1();
-        loginBean.setEmail("giulio");
-        loginBean.setPassword("giulio");
+        loginBean.setEmail(GIULIO);
+        loginBean.setPassword(GIULIO);
 
         try {
             controlLogin.login(loginBean);
@@ -36,7 +38,7 @@ class TestLoginController {
         LoginController controlLogin = new LoginController();
 
         LoginBean loginBean = new LoginBean1();
-        loginBean.setEmail("giulio");
+        loginBean.setEmail(GIULIO);
         loginBean.setPassword("password");
 
         assertThrows(FailedLoginException.class, ()->controlLogin.login(loginBean));
@@ -50,7 +52,7 @@ class TestLoginController {
 
         LoginBean loginBean = new LoginBean1();
         loginBean.setEmail("username");
-        loginBean.setPassword("giulio");
+        loginBean.setPassword(GIULIO);
 
         try {
             controlLogin.login(loginBean);

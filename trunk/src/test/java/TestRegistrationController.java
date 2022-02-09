@@ -10,16 +10,21 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 
 class TestRegistrationController {
 
+    private static final String AUTHOR = "author";
+    private static final String GIULIO = "giulio";
+    private static final String APPETITO = "Appetito";
+    private static final String GIULIOUP = "Giulio";
+
     @Test
     void testRegistrationExistingUsername(){
 
         RegistrationBean registrationBean = new RegistrationBean1();
-        registrationBean.setFirstName("Giulio");
-        registrationBean.setLastName("Appetito");
+        registrationBean.setFirstName(GIULIOUP);
+        registrationBean.setLastName(APPETITO);
         registrationBean.setEmail("giulio.appetito.ga@gmail.com");
-        registrationBean.setUsername("giulio");
-        registrationBean.setRole("author");
-        registrationBean.setPassword("giulio");
+        registrationBean.setUsername(GIULIO);
+        registrationBean.setRole(AUTHOR);
+        registrationBean.setPassword(GIULIO);
 
         RegistrationController registrationController = new RegistrationController();
 
@@ -30,12 +35,12 @@ class TestRegistrationController {
     void testRegistrationMalformedEmail(){
 
         RegistrationBean registrationBean = new RegistrationBean1();
-        registrationBean.setFirstName("Giulio");
-        registrationBean.setLastName("Appetito");
+        registrationBean.setFirstName(GIULIOUP);
+        registrationBean.setLastName(APPETITO);
         registrationBean.setEmail("giulio.appetito.gagmail.com");
         registrationBean.setUsername("giuliauswdbiwbdfssdaafs");
-        registrationBean.setRole("author");
-        registrationBean.setPassword("giulio");
+        registrationBean.setRole(AUTHOR);
+        registrationBean.setPassword(GIULIO);
 
         RegistrationController registrationController = new RegistrationController();
 
@@ -47,12 +52,12 @@ class TestRegistrationController {
         boolean isRegistrationSuccessed;
 
         RegistrationBean registrationBean = new RegistrationBean1();
-        registrationBean.setFirstName("Giulio");
-        registrationBean.setLastName("Appetito");
+        registrationBean.setFirstName(GIULIOUP);
+        registrationBean.setLastName(APPETITO);
         registrationBean.setEmail("giulio.appetito.ga@gmail.com");
         registrationBean.setUsername("giuliauswdbiwbdsdsfssdaafs");
-        registrationBean.setRole("author");
-        registrationBean.setPassword("giulio");
+        registrationBean.setRole(AUTHOR);
+        registrationBean.setPassword(GIULIO);
 
         try{
             RegistrationController registrationController = new RegistrationController();
