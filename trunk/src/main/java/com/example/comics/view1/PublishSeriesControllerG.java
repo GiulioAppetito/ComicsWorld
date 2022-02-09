@@ -325,11 +325,11 @@ public class PublishSeriesControllerG {
 
     private void changeCover() {
         FileChooser fc = new FileChooser();
+        InputStream inputStream = null;
         fc.getExtensionFilters().add(new FileChooser.ExtensionFilter(PNG,"*.jpg","*.jpg",PNG));
-        File f = fc.showOpenDialog(null);
-        if(f!=null){
-            imageCoverPath = f.getAbsolutePath();
-            InputStream inputStream = null;
+        File file = fc.showOpenDialog(null);
+        if(file!=null){
+            imageCoverPath = file.getAbsolutePath();
             try {
                 inputStream = new FileInputStream(imageCoverPath);
             } catch (FileNotFoundException e) {
