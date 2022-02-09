@@ -91,20 +91,20 @@ public class Series extends SeriesSubject{
 		this.genre1 = genre1;
 	}
 
-	public Genres getGenre2() {
-		return genre2;
-	}
-
-	public void setGenre2(Genres genre2) {
-		this.genre2 = genre2;
-	}
-
 	public Genres getGenre3() {
 		return genre3;
 	}
 
 	public void setGenre3(Genres genre3) {
 		this.genre3 = genre3;
+	}
+
+	public Genres getGenre2() {
+		return genre2;
+	}
+
+	public void setGenre2(Genres genre2) {
+		this.genre2 = genre2;
 	}
 
 	public Author getAuthor() {
