@@ -23,15 +23,15 @@ public class AccountDAO {
     public String verifyCredentials(String credential,String password) throws FailedLoginException {
 
         //dichiarazioni
-        Statement stmt=null;
-        Connection conn=null;
+        Statement stmt1=null;
+        Connection conn1=null;
         String role=null;
 
         try {
-            conn= DriverManager.getConnection(DB_URL,USER,PASS);
+            conn1= DriverManager.getConnection(DB_URL,USER,PASS);
 
-            stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE,ResultSet.CONCUR_READ_ONLY);
-            ResultSet rs = Queries.checkSignedUserByEmail(stmt, credential);
+            stmt1 = conn1.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE,ResultSet.CONCUR_READ_ONLY);
+            ResultSet rs = Queries.checkSignedUserByEmail(stmt1, credential);
 
             if (!rs.first()){
                 throw new FailedLoginException("Username not registered!");
@@ -54,14 +54,14 @@ public class AccountDAO {
             throwables.printStackTrace();
         } finally {
             try {
-                if (stmt != null)
-                    stmt.close();
+                if (stmt1 != null)
+                    stmt1.close();
             } catch (SQLException se2) {
                 //TO-DO
             }
             try {
-                if (conn != null)
-                    conn.close();
+                if (conn1 != null)
+                    conn1.close();
             } catch (SQLException se) {
                 se.printStackTrace();
             }
@@ -74,15 +74,15 @@ public class AccountDAO {
 
     public void changeCredentials(String newName, String newSurname, String email, String newUsername){
 
-        Statement stmt=null;
-        Connection conn=null;
+        Statement stmt2=null;
+        Connection conn2=null;
 
 
         try {
-            conn= DriverManager.getConnection(DB_URL,USER,PASS);
+            conn2= DriverManager.getConnection(DB_URL,USER,PASS);
 
-            stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE,ResultSet.CONCUR_READ_ONLY);
-            Queries.updateCredentials(stmt, newName, newSurname, email, newUsername);
+            stmt2 = conn2.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE,ResultSet.CONCUR_READ_ONLY);
+            Queries.updateCredentials(stmt2, newName, newSurname, email, newUsername);
 
 
         }
@@ -92,14 +92,14 @@ public class AccountDAO {
             e.printStackTrace();
         } finally {
             try {
-                if (stmt != null)
-                    stmt.close();
+                if (stmt2 != null)
+                    stmt2.close();
             } catch (SQLException se2) {
                 //TO-DO
             }
             try {
-                if (conn != null)
-                    conn.close();
+                if (conn2 != null)
+                    conn2.close();
             } catch (SQLException se) {
                 se.printStackTrace();
             }
@@ -110,29 +110,29 @@ public class AccountDAO {
 
     public void changeUsername(String newUsername, String oldUsername) throws FailedProfileCustomizationException {
 
-        Statement stmt=null;
-        Connection conn=null;
+        Statement stmt3=null;
+        Connection conn3=null;
 
 
         try {
-            conn= DriverManager.getConnection(DB_URL,USER,PASS);
+            conn3= DriverManager.getConnection(DB_URL,USER,PASS);
 
-            stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE,ResultSet.CONCUR_READ_ONLY);
-            Queries.updateUsername(stmt, newUsername, oldUsername);
+            stmt3 = conn3.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE,ResultSet.CONCUR_READ_ONLY);
+            Queries.updateUsername(stmt3, newUsername, oldUsername);
 
 
         } catch (SQLException e) {
             throw new FailedProfileCustomizationException("This username is already used!");
         } finally {
             try {
-                if (stmt != null)
-                    stmt.close();
+                if (stmt3 != null)
+                    stmt3.close();
             } catch (SQLException se2) {
                 //TO-DO
             }
             try {
-                if (conn != null)
-                    conn.close();
+                if (conn3 != null)
+                    conn3.close();
             } catch (SQLException se) {
                 se.printStackTrace();
             }
@@ -142,13 +142,13 @@ public class AccountDAO {
     }
 
     public void registerNewAccount(String firstName, String lastName, String username, String email, String password, String role) throws FailedRegistrationException {
-        Statement stmt=null;
-        Connection conn=null;
+        Statement stmt4=null;
+        Connection conn4=null;
 
         try {
-            conn=DriverManager.getConnection(DB_URL,USER,PASS);
-            stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE,ResultSet.CONCUR_READ_ONLY);
-            Queries.addProfile(stmt, firstName, lastName, username, email, password,role);
+            conn4=DriverManager.getConnection(DB_URL,USER,PASS);
+            stmt4 = conn4.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE,ResultSet.CONCUR_READ_ONLY);
+            Queries.addProfile(stmt4, firstName, lastName, username, email, password,role);
 
         }
         catch (SQLException se) {
@@ -156,14 +156,14 @@ public class AccountDAO {
         }
         finally {
             try {
-                if (stmt != null)
-                    stmt.close();
+                if (stmt4 != null)
+                    stmt4.close();
             } catch (SQLException se2) {
                 //TO-DO
             }
             try {
-                if (conn != null)
-                    conn.close();
+                if (conn4 != null)
+                    conn4.close();
             } catch (SQLException se) {
                 se.printStackTrace();
             }
@@ -172,11 +172,11 @@ public class AccountDAO {
     }
 
     public void changeProPic(InputStream inputStream, Reader reader) {
-        Connection conn = null;
+        Connection conn5 = null;
 
         try {
-            conn = DriverManager.getConnection(DB_URL, USER, PASS);
-            Queries.updateUserProPic(conn,inputStream,reader);
+            conn5 = DriverManager.getConnection(DB_URL, USER, PASS);
+            Queries.updateUserProPic(conn5,inputStream,reader);
 
         } catch (SQLException throwables) {
             throwables.printStackTrace();
@@ -184,16 +184,16 @@ public class AccountDAO {
     }
 
     public Account retriveReviewAuthor(String username){
-        Statement stmt = null;
-        Connection conn = null;
+        Statement stmt6 = null;
+        Connection conn6 = null;
 
         Author author = null;
 
         try {
 
-            conn = DriverManager.getConnection(DB_URL, USER, PASS);
-            stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
-            ResultSet rs = Queries.retreiveAuthor(stmt, username);
+            conn6 = DriverManager.getConnection(DB_URL, USER, PASS);
+            stmt6 = conn6.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
+            ResultSet rs = Queries.retreiveAuthor(stmt6, username);
 
             if (!rs.first()) {
                 return null;
@@ -219,8 +219,8 @@ public class AccountDAO {
             throwables.printStackTrace();
         } finally{
             try {
-                assert conn != null;
-                conn.close();
+                assert conn6 != null;
+                conn6.close();
             } catch (SQLException | NullPointerException e) {
                 e.printStackTrace();
             }
@@ -230,16 +230,16 @@ public class AccountDAO {
     }
 
     public List<String> retreiveAuthorFollowersMails(Author author) {
-        Statement stmt = null;
-        Connection conn = null;
+        Statement stmt7 = null;
+        Connection conn7 = null;
         List<String> mails = new ArrayList<>();
         String mail;
 
         try {
 
-            conn = DriverManager.getConnection(DB_URL, USER, PASS);
-            stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
-            ResultSet rs = Queries.retrieveFollowersMails(stmt, author.getUsername());
+            conn7 = DriverManager.getConnection(DB_URL, USER, PASS);
+            stmt7 = conn7.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
+            ResultSet rs = Queries.retrieveFollowersMails(stmt7, author.getUsername());
 
             if (!rs.first()) {
                 return mails;
@@ -258,16 +258,16 @@ public class AccountDAO {
             throwables.printStackTrace();
         } finally{
             try {
-                assert conn != null;
-                conn.close();
+                assert conn7 != null;
+                conn7.close();
 
             } catch (SQLException | NullPointerException e) {
                 e.printStackTrace();
             }
 
             try{
-                assert stmt!= null;
-                stmt.close();
+                assert stmt7!= null;
+                stmt7.close();
             } catch (SQLException | NullPointerException e) {
                 e.printStackTrace();
             }
