@@ -37,13 +37,7 @@ public class CategoryControllerG {
                 cardController.setData(series.get(j));
 
                 int finalJ = j;
-                card.setOnMouseClicked(event -> {
-                    try {
-                        openSerie(series.get(finalJ));
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
-                });
+                card.setOnMouseClicked(event -> openCategorySerie(series.get(finalJ)));
 
                 gpComic.add(card,j%columns,i);
                 if(j%columns == columns-1){
@@ -56,21 +50,9 @@ public class CategoryControllerG {
 
     }
 
-    public void openSerie(SeriesBean seriesBean) throws IOException {
-
-        SeriesControllerG serieController = new SeriesControllerG();
-        FXMLLoader loader = new FXMLLoader();
-
-        URL fxmlLocation = FavouritesControllerG.class.getResource("serie.fxml");
-        loader.setLocation(fxmlLocation);
-        loader.setController(serieController);
-
+    public void openCategorySerie(SeriesBean seriesBean){
         HomeControllerG homeControllerG = HomeFactory.getHomeControllerG();
-
-        homeControllerG.changeCenter(loader.load());
-
-        serieController.setData(seriesBean);
-
+        homeControllerG.openSeries(seriesBean);
     }
 
     public void setData(Genres genre){

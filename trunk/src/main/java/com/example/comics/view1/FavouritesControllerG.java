@@ -19,23 +19,24 @@ public class FavouritesControllerG {
 
         ResearchController researchController = new ResearchController();
         List<SeriesBean> listOfCards = researchController.getFavouriteSeries();
+        FXMLLoader fxmlLoader;
+        VBox favCard;
 
-        int size = listOfCards.size();
-        int columns = 3;
         int i=1;
-        for(int j=0; j<size; j++) {
-            FXMLLoader fxmlLoader = new FXMLLoader();
+        int columns = 3;
+        for(int k=0; k<listOfCards.size(); k++) {
+            fxmlLoader = new FXMLLoader();
             fxmlLoader.setLocation(getClass().getResource("vcard.fxml"));
             try {
-                VBox card = fxmlLoader.load();
+                favCard = fxmlLoader.load();
                 CardControllerG cardController = fxmlLoader.getController();
-                cardController.setData(listOfCards.get(j));
+                cardController.setData(listOfCards.get(k));
 
-                int finalJ = j;
-                card.setOnMouseClicked(event -> openSerie(listOfCards.get(finalJ)));
+                int finalK = k;
+                favCard.setOnMouseClicked(event -> openFavSerie(listOfCards.get(finalK)));
 
-                gpFavComic.add(card,j%columns,i);
-                if(j%columns == columns-1){
+                gpFavComic.add(favCard, k%columns,i);
+                if(k%columns == columns-1){
                     i++;
                 }
             } catch (IOException e) {
@@ -46,7 +47,7 @@ public class FavouritesControllerG {
     }
 
 
-    public void openSerie(SeriesBean seriesBean){
+    public void openFavSerie(SeriesBean seriesBean){
         ReaderHomeControllerG readerHomeControllerG = ReaderHomeControllerG.getInstance();
         readerHomeControllerG.openSeries(seriesBean);
     }
