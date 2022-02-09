@@ -12,16 +12,16 @@ public class ReviewControllerG {
     private ImageView imgStar1;
 
     @FXML
-    private ImageView imgStar2;
-
-    @FXML
-    private ImageView imgStar3;
-
-    @FXML
     private ImageView imgStar4;
 
     @FXML
     private ImageView imgStar5;
+
+    @FXML
+    private ImageView imgStar2;
+
+    @FXML
+    private ImageView imgStar3;
 
     @FXML
     private ImageView ivProPic;
@@ -66,18 +66,18 @@ public class ReviewControllerG {
                 imgStar5.setVisible(false);
                 break;
             case "5":
-                imgStar1.setVisible(true);
                 imgStar2.setVisible(true);
                 imgStar3.setVisible(true);
                 imgStar4.setVisible(true);
                 imgStar5.setVisible(true);
+                imgStar1.setVisible(true);
                 break;
             default:
-                imgStar1.setVisible(false);
-                imgStar2.setVisible(false);
                 imgStar3.setVisible(false);
                 imgStar4.setVisible(false);
                 imgStar5.setVisible(false);
+                imgStar1.setVisible(false);
+                imgStar2.setVisible(false);
         }
     }
 }

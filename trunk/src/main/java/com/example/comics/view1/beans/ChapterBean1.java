@@ -51,6 +51,16 @@ public class ChapterBean1 implements ChapterBean {
     }
 
     @Override
+    public Float getPrice() {
+        return this.price;
+    }
+
+    @Override
+    public void setPrice(Float price) {
+        this.price = price;
+    }
+
+    @Override
     public void setDescription(String chapterDescription) {
         this.description = chapterDescription;
     }
@@ -88,16 +98,6 @@ public class ChapterBean1 implements ChapterBean {
     @Override
     public void setCoverInputStream(InputStream stream) {
         this.coverStream = stream;
-    }
-
-    @Override
-    public Float getPrice() {
-        return this.price;
-    }
-
-    @Override
-    public void setPrice(Float price) {
-        this.price = price;
     }
 
 
