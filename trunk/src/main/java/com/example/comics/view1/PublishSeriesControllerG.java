@@ -335,9 +335,9 @@ public class PublishSeriesControllerG {
             } catch (FileNotFoundException e) {
                 e.printStackTrace();
             }
-            Image cover = new Image(inputStream);
-            ivComicCover.setImage(cover);
         }
+        Image cover = new Image(inputStream);
+        ivComicCover.setImage(cover);
 
     }
 
