@@ -30,7 +30,6 @@ public class Reader extends Account{
         OrderDAO orderDAO = new OrderDAO();
         this.ordersHistory = orderDAO.retrieveOrders(username);
 
-
         BadgeDAO badgesDAO = new BadgeDAO();
         this.badges = badgesDAO.retrieveAchievedBadges(username);
 

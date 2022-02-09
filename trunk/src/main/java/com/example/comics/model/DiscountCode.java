@@ -61,4 +61,7 @@ public class DiscountCode {
     }
 
 
+    public boolean isExpired() {
+        return expiringDate.isBefore(LocalDate.now());
+    }
 }

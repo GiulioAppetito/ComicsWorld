@@ -13,7 +13,8 @@ module com.example.coomics {
     requires java.desktop;
     requires javax.jms;
     requires AnimateFX;
-    requires mail;
+    requires java.mail;
+
 
     exports com.example.comics.view1;
     opens com.example.comics.view1 to javafx.fxml;
@@ -39,6 +40,8 @@ module com.example.coomics {
     opens com.example.comics.controller.boundaries to org.junit.jupiter.api;
     exports com.example.comics.model.fagioli.bundle;
     opens com.example.comics.model.fagioli.bundle to org.junit.jupiter.api;
+    exports com.example.comics.model.dao.utils;
+    opens com.example.comics.model.dao.utils to org.junit.jupiter.api;
 
 
 }

@@ -27,7 +27,7 @@ public class BuyComicController {
             if(discountCode == null){
                 throw new DiscountCodeException("You don't own this discount code!");
             }
-            if(discountCode.getExpiringDate().isBefore(LocalDate.now())){
+            if(discountCode.isExpired()){
                 throw new DiscountCodeException("Your code is expired!");
             }
 
