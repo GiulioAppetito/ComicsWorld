@@ -14,31 +14,13 @@ public class PostReviewAuthorBoundary extends MailProperties{
 
         // Recipient's email ID needs to be mentioned.
         String to = seriesBean.getAuthor().getEmail();
-        // Get the default Session object.
-        Session session = initializeProperties();
+        // Set Subject: header field
+        String msg = "Hello from ComicsWorld! Your series "+seriesBean.getTitle()+" just received a new review ";
+        // Now set the actual message
+        String sbj = "New review just posted!";
 
-        try {
-            // Create a default MimeMessage object.
-            MimeMessage message = new MimeMessage(session);
+        sendEmail(to, sbj, msg);
 
-            // Set From: header field of the header.
-            message.setFrom(new InternetAddress(FROM));
-
-
-            // Set To: header field of the header.
-            message.addRecipient(javax.mail.Message.RecipientType.TO, new InternetAddress(to));
-
-            // Set Subject: header field
-            message.setSubject("New review just posted!");
-
-            // Now set the actual message
-            message.setText("Hello from ComicsWorld! Your series "+seriesBean.getTitle()+" just received a new review ");
-
-            // Send message
-            Transport.send(message);
-        } catch (MessagingException mex) {
-            mex.printStackTrace();
-        }
     }
 
 

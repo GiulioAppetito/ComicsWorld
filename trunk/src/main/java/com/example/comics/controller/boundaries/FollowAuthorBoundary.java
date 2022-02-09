@@ -12,30 +12,10 @@ public class FollowAuthorBoundary extends MailProperties {
 
         // Recipient's email ID needs to be mentioned.
         String to = author.getEmail();
-        // Get the default Session object.
-        Session session = initializeProperties();
+        String s = "New follower!";
+        String m = "Hello from ComicsWorld! User "+reader.getUsername()+" is now following you.";
 
-        try {
-            // Create a default MimeMessage object.
-            MimeMessage message = new MimeMessage(session);
-
-            // Set From: header field of the header.
-            message.setFrom(new InternetAddress(FROM));
-
-            // Set To: header field of the header.
-            message.addRecipient(javax.mail.Message.RecipientType.TO, new InternetAddress(to));
-
-            // Set Subject: header field
-            message.setSubject("New follower!");
-
-            // Now set the actual message
-            message.setText("Hello from ComicsWorld! User "+reader.getUsername()+" is now following you.");
-
-            // Send message
-            Transport.send(message);
-        } catch (MessagingException mex) {
-            mex.printStackTrace();
-        }
+        sendEmail(to, s, m);
     }
 
 }
