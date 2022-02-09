@@ -175,11 +175,8 @@ public class LoginControllerG {
                 HomeControllerG homeControllerG = HomeFactory.getHomeControllerG();
                 loader.setLocation(homeControllerG.getLocation());
                 loader.setController(homeControllerG);
-                try {
-                    scene = new Scene(loader.load());
-                } catch (IOException e) {
-                    //to-do
-                }
+                scene = new Scene(loader.load());
+
                 homeControllerG.init();
 
                 stage.setTitle("ComicsWorld");
@@ -191,6 +188,8 @@ public class LoginControllerG {
             }
         }catch(FailedLoginException e){
             showErrorMessage(e.getMessage());
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
 
