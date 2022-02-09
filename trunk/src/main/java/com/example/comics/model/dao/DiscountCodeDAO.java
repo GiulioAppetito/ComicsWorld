@@ -17,9 +17,9 @@ public class DiscountCodeDAO {
 
     public Map<DiscountCode, Series> retreiveDiscountCodesByReader(String username) {
 
-        Statement stmt = null;
-        Statement stmt2 = null;
-        Connection conn = null;
+        Statement stmt17 = null;
+        Statement stmt18 = null;
+        Connection conn17 = null;
 
         Map<DiscountCode,Series> discountCodes = new HashMap<>();
         String code;
@@ -31,10 +31,10 @@ public class DiscountCodeDAO {
 
 
         try {
-            conn = DriverManager.getConnection(DB_URL, USER, PASS);
+            conn17 = DriverManager.getConnection(DB_URL, USER, PASS);
 
-            stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
-            ResultSet rs = Queries.retreiveDiscountCodesByReader(stmt, username);
+            stmt17 = conn17.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
+            ResultSet rs = Queries.retreiveDiscountCodesByReader(stmt17, username);
 
             if (!rs.first()) {
                 return discountCodes;
@@ -55,8 +55,8 @@ public class DiscountCodeDAO {
                 discount.setLimitDays(limitDays);
 
                 ResultSet rs2;
-                stmt2 = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
-                rs2 = Queries.retreiveObjectivesByDiscountCode(stmt2,rs.getInt("objectiveID"));
+                stmt18 = conn17.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
+                rs2 = Queries.retreiveObjectivesByDiscountCode(stmt18,rs.getInt("objectiveID"));
 
                 Series series;
                 if(!rs2.first()){
@@ -78,20 +78,20 @@ public class DiscountCodeDAO {
         }
         finally {
             try {
-                if (stmt2 != null)
-                    stmt2.close();
+                if (stmt18 != null)
+                    stmt18.close();
             } catch (SQLException se2) {
                 //TO-DO
             }
             try {
-                if (stmt != null)
-                    stmt.close();
+                if (stmt17 != null)
+                    stmt17.close();
             } catch (SQLException se2) {
                 //TO-DO
             }
             try {
-                if (conn != null)
-                    conn.close();
+                if (conn17 != null)
+                    conn17.close();
             } catch (SQLException se) {
                 se.printStackTrace();
             }
@@ -102,21 +102,21 @@ public class DiscountCodeDAO {
 
     public void saveObtainedDiscountCode(DiscountCode discountCode, Reader reader, Series series, Objective objective) {
 
-        Connection conn = null;
-        Statement stmt = null;
+        Connection conn19 = null;
+        Statement stmt19 = null;
 
         try {
-            conn = DriverManager.getConnection(DB_URL, USER, PASS);
-            stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
-            Queries.saveReadersDiscountCode(stmt,discountCode,reader,series,objective);
+            conn19 = DriverManager.getConnection(DB_URL, USER, PASS);
+            stmt19 = conn19.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
+            Queries.saveReadersDiscountCode(stmt19,discountCode,reader,series,objective);
 
         } catch (SQLException e) {
             e.printStackTrace();
         }
         finally{
-            assert conn != null;
+            assert conn19 != null;
             try {
-                conn.close();
+                conn19.close();
             } catch (SQLException e) {
                 e.printStackTrace();
             }
@@ -124,20 +124,20 @@ public class DiscountCodeDAO {
     }
 
     public void deleteDiscountCode(Reader reader,DiscountCode discountCode) {
-        Statement stmt = null;
-        Connection conn = null;
+        Statement stmt20 = null;
+        Connection conn20 = null;
 
         try {
-            conn = DriverManager.getConnection(DB_URL, USER, PASS);
-            stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
-            Queries.deleteDiscountCode(stmt,reader,discountCode);
+            conn20 = DriverManager.getConnection(DB_URL, USER, PASS);
+            stmt20 = conn20.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
+            Queries.deleteDiscountCode(stmt20,reader,discountCode);
 
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         } finally {
-            assert conn!=null;
+            assert conn20!=null;
             try {
-                conn.close();
+                conn20.close();
             } catch (SQLException e) {
                 e.printStackTrace();
             }

@@ -22,17 +22,17 @@ public class AuthorDAO {
     private static final String USERNAME = "username";
 
     public static List<Author> retriveAllAuthors(){
-        Statement stmt;
-        Connection conn = null;
+        Statement stmt8;
+        Connection conn8 = null;
 
         List<Author> authors = new ArrayList<>();
         Author author;
 
         try {
-            conn = DriverManager.getConnection(DB_URL, USER, PASS);
-            stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
+            conn8 = DriverManager.getConnection(DB_URL, USER, PASS);
+            stmt8 = conn8.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
 
-            ResultSet rs = Queries.retreiveAllAuthors(stmt);
+            ResultSet rs = Queries.retreiveAllAuthors(stmt8);
             if(!rs.first()){
                 return authors;
             }
@@ -61,9 +61,9 @@ public class AuthorDAO {
         } catch (SQLException e) {
             e.printStackTrace();
         }finally{
-            assert conn != null;
+            assert conn8 != null;
             try {
-                conn.close();
+                conn8.close();
             } catch (SQLException e) {
                 e.printStackTrace();
             }
@@ -74,16 +74,16 @@ public class AuthorDAO {
 
     public Author retrieveAuthor(String identifier, String password) {
 
-        Statement stmt;
-        Connection conn = null;
+        Statement stmt9;
+        Connection conn9 = null;
 
         Author author = null;
 
         try {
 
-            conn = DriverManager.getConnection(DB_URL, USER, PASS);
-            stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
-            ResultSet rs = Queries.retrieveUser(stmt, identifier, password);
+            conn9 = DriverManager.getConnection(DB_URL, USER, PASS);
+            stmt9 = conn9.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
+            ResultSet rs = Queries.retrieveUser(stmt9, identifier, password);
 
             if (!rs.first()) {
                 return null;
@@ -115,8 +115,8 @@ public class AuthorDAO {
             throwables.printStackTrace();
         } finally{
             try {
-                assert conn != null;
-                conn.close();
+                assert conn9 != null;
+                conn9.close();
             } catch (SQLException | NullPointerException e) {
                 e.printStackTrace();
             }
@@ -136,18 +136,18 @@ public class AuthorDAO {
     }
 
     public List<String> retrieveFollowedAuthorsNames(String username){
-        Statement stmt = null;
-        Connection conn = null;
+        Statement stmt10 = null;
+        Connection conn10 = null;
 
         List<String> authors = new ArrayList<>();
 
         String name;
 
         try {
-            conn = DriverManager.getConnection(DB_URL, USER, PASS);
+            conn10 = DriverManager.getConnection(DB_URL, USER, PASS);
 
-            stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
-            ResultSet rs = Queries.retreiveFollowedAuthors(stmt, username);
+            stmt10 = conn10.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
+            ResultSet rs = Queries.retreiveFollowedAuthors(stmt10, username);
 
             if (!rs.first()) {
                 return authors;
@@ -164,14 +164,14 @@ public class AuthorDAO {
             throwables.printStackTrace();
         } finally {
             try {
-                if (stmt != null)
-                    stmt.close();
+                if (stmt10 != null)
+                    stmt10.close();
             } catch (SQLException se2) {
                 //TO-DO
             }
             try {
-                if (conn != null)
-                    conn.close();
+                if (conn10 != null)
+                    conn10.close();
             } catch (SQLException se) {
                 se.printStackTrace();
             }

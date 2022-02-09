@@ -58,17 +58,17 @@ public class SeriesDAO {
 
         List<Author> allAuthors = AuthorDAO.retriveAllAuthors();
 
-        Statement stmt = null;
-        Connection conn = null;
+        Statement stmt35 = null;
+        Connection conn35 = null;
 
         List<Series> seriesList = new ArrayList<>();
 
 
         try {
-            conn = DriverManager.getConnection(DB_URL, USER, PASS);
+            conn35 = DriverManager.getConnection(DB_URL, USER, PASS);
 
-            stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
-            ResultSet rs = Queries.retriveLatestSeries(stmt);
+            stmt35 = conn35.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
+            ResultSet rs = Queries.retriveLatestSeries(stmt35);
 
             if (!rs.first()) {
                 all = null;
@@ -108,14 +108,14 @@ public class SeriesDAO {
             throwables.printStackTrace();
         } finally {
             try {
-                if (stmt != null)
-                    stmt.close();
+                if (stmt35 != null)
+                    stmt35.close();
             } catch (SQLException se2) {
                 //TO-DO
             }
             try {
-                if (conn != null)
-                    conn.close();
+                if (conn35 != null)
+                    conn35.close();
             } catch (SQLException se) {
                 se.printStackTrace();
             }
@@ -131,28 +131,28 @@ public class SeriesDAO {
 
 
     public void savePublishedSeries(Series series, InputStream seriesCoverInputStream, Map<Objective,InputStream> hashMap) throws AlreadyExistingSeriesException {
-        Statement stmt = null;
-        Connection conn = null;
+        Statement stmt36 = null;
+        Connection conn36 = null;
         int bagdeID = 0;
         try {
             // STEP 3: apertura connessione
-            conn = DriverManager.getConnection(DB_URL, USER, PASS);
-            stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
+            conn36 = DriverManager.getConnection(DB_URL, USER, PASS);
+            stmt36 = conn36.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
             // STEP 4.2: creazione ed esecuzione della query
-            Queries.insertSeries(conn,series,seriesCoverInputStream);
+            Queries.insertSeries(conn36,series,seriesCoverInputStream);
             for(Objective objective : series.getObjectives()){
 
-                Queries.insertBadge(conn,objective.getBadge(),hashMap.get(objective));
+                Queries.insertBadge(conn36,objective.getBadge(),hashMap.get(objective));
 
                 //retreive last insert id in badge
-                ResultSet rs = Queries.getAllBadges(stmt);
+                ResultSet rs = Queries.getAllBadges(stmt36);
                 rs.first();
                 do{
                     bagdeID = rs.getInt("badgeID");
                 }while(rs.next());
 
                 int id = bagdeID;
-                Queries.insertObjective(stmt,objective,series,id);
+                Queries.insertObjective(stmt36,objective,series,id);
 
                 all.add(series);
             }
@@ -160,14 +160,14 @@ public class SeriesDAO {
             throw new AlreadyExistingSeriesException("This title is already used for another series!");
         } finally {
             try {
-                assert conn != null;
-                conn.close();
+                assert conn36 != null;
+                conn36.close();
             } catch (SQLException e) {
                 e.printStackTrace();
             }
             try {
-                assert stmt!=null;
-                stmt.close();
+                assert stmt36!=null;
+                stmt36.close();
             } catch (SQLException e) {
                 e.printStackTrace();
             }
@@ -193,18 +193,18 @@ public class SeriesDAO {
 
 
     public List<String> retrieveFavouriteSeriesTitles(String user) {
-        Statement stmt = null;
-        Connection conn = null;
+        Statement stmt37 = null;
+        Connection conn37 = null;
 
         List<String> seriesList = new ArrayList<>();
 
         String title;
 
         try {
-            conn = DriverManager.getConnection(DB_URL, USER, PASS);
+            conn37 = DriverManager.getConnection(DB_URL, USER, PASS);
 
-            stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
-            ResultSet rs = Queries.retriveFavouriteSeries(stmt, user);
+            stmt37 = conn37.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
+            ResultSet rs = Queries.retriveFavouriteSeries(stmt37, user);
 
             if (!rs.first()) {
                 return seriesList;
@@ -221,14 +221,14 @@ public class SeriesDAO {
             throwables.printStackTrace();
         } finally {
             try {
-                if (stmt != null)
-                    stmt.close();
+                if (stmt37 != null)
+                    stmt37.close();
             } catch (SQLException se2) {
                 //TO-DO
             }
             try {
-                if (conn != null)
-                    conn.close();
+                if (conn37 != null)
+                    conn37.close();
             } catch (SQLException se) {
                 se.printStackTrace();
             }
@@ -238,18 +238,18 @@ public class SeriesDAO {
     }
 
     public List<String> retrieveToReadSeriesTitles(String user) {
-        Statement stmt = null;
-        Connection conn = null;
+        Statement stmt38 = null;
+        Connection conn38 = null;
 
         List<String> seriesList = new ArrayList<>();
 
         String title;
 
         try {
-            conn = DriverManager.getConnection(DB_URL, USER, PASS);
+            conn38 = DriverManager.getConnection(DB_URL, USER, PASS);
 
-            stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
-            ResultSet rs = Queries.retriveToReadSeries(stmt, user);
+            stmt38 = conn38.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
+            ResultSet rs = Queries.retriveToReadSeries(stmt38, user);
 
             if (!rs.first()) {
                 return seriesList;
@@ -266,14 +266,14 @@ public class SeriesDAO {
             throwables.printStackTrace();
         } finally {
             try {
-                if (stmt != null)
-                    stmt.close();
+                if (stmt38 != null)
+                    stmt38.close();
             } catch (SQLException se2) {
                 //TO-DO
             }
             try {
-                if (conn != null)
-                    conn.close();
+                if (conn38 != null)
+                    conn38.close();
             } catch (SQLException se) {
                 se.printStackTrace();
             }
@@ -283,18 +283,18 @@ public class SeriesDAO {
     }
 
     public List<String> retrieveReadingSeriesTitles(String user) {
-        Statement stmt = null;
-        Connection conn = null;
+        Statement stmt39 = null;
+        Connection conn39 = null;
 
         List<String> seriesList = new ArrayList<>();
 
         String title;
 
         try {
-            conn = DriverManager.getConnection(DB_URL, USER, PASS);
+            conn39 = DriverManager.getConnection(DB_URL, USER, PASS);
 
-            stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
-            ResultSet rs = Queries.retriveReadingSeries(stmt, user);
+            stmt39 = conn39.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
+            ResultSet rs = Queries.retriveReadingSeries(stmt39, user);
 
             if (!rs.first()) {
                 return seriesList;
@@ -311,14 +311,14 @@ public class SeriesDAO {
             throwables.printStackTrace();
         } finally {
             try {
-                if (stmt != null)
-                    stmt.close();
+                if (stmt39 != null)
+                    stmt39.close();
             } catch (SQLException se2) {
                 //TO-DO
             }
             try {
-                if (conn != null)
-                    conn.close();
+                if (conn39 != null)
+                    conn39.close();
             } catch (SQLException se) {
                 se.printStackTrace();
             }

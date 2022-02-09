@@ -17,8 +17,8 @@ public class OrderDAO {
 
     public List<Order> retrieveOrders(String username) {
 
-        Statement stmt = null;
-        Connection conn = null;
+        Statement stmt22 = null;
+        Connection conn22 = null;
 
         List<Order> orders = new ArrayList<>();
 
@@ -29,10 +29,10 @@ public class OrderDAO {
 
 
         try {
-            conn = DriverManager.getConnection(DB_URL, USER, PASS);
+            conn22 = DriverManager.getConnection(DB_URL, USER, PASS);
 
-            stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
-            ResultSet rs = Queries.retreiveOrdersByReader(stmt, username);
+            stmt22 = conn22.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
+            ResultSet rs = Queries.retreiveOrdersByReader(stmt22, username);
 
             if (!rs.first()) {
                 return orders;
@@ -71,14 +71,14 @@ public class OrderDAO {
         }
         finally {
             try {
-                if (stmt != null)
-                    stmt.close();
+                if (stmt22 != null)
+                    stmt22.close();
             } catch (SQLException se2) {
                 //TO-DO
             }
             try {
-                if (conn != null)
-                    conn.close();
+                if (conn22 != null)
+                    conn22.close();
             } catch (SQLException se) {
                 se.printStackTrace();
             }
@@ -88,15 +88,15 @@ public class OrderDAO {
     }
 
     public void insertOrder(Order order) {
-        Statement stmt = null;
-        Connection conn = null;
+        Statement stmt23 = null;
+        Connection conn23 = null;
 
 
         try {
-            conn = DriverManager.getConnection(DB_URL, USER, PASS);
+            conn23 = DriverManager.getConnection(DB_URL, USER, PASS);
 
-            stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
-            Queries.insertOrder(stmt, order, UserLogin.getInstance().getReader());
+            stmt23 = conn23.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
+            Queries.insertOrder(stmt23, order, UserLogin.getInstance().getReader());
 
         } catch (SQLException throwables) {
             throwables.printStackTrace();
@@ -105,14 +105,14 @@ public class OrderDAO {
         }
         finally {
             try {
-                if (stmt != null)
-                    stmt.close();
+                if (stmt23 != null)
+                    stmt23.close();
             } catch (SQLException se2) {
                 //TO-DO
             }
             try {
-                if (conn != null)
-                    conn.close();
+                if (conn23 != null)
+                    conn23.close();
             } catch (SQLException se) {
                 se.printStackTrace();
             }

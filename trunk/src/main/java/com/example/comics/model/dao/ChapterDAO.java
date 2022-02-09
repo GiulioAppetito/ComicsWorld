@@ -18,11 +18,11 @@ public class ChapterDAO {
 
     public List<Chapter> retriveChapters(String seriesTitle) {
 
-        Statement stmt = null;
-        Connection conn = null;
+        Statement stmt14 = null;
+        Connection conn14 = null;
 
-        Connection conn2 = null;
-        Statement stmt2 = null;
+        Connection conn15 = null;
+        Statement stmt15 = null;
 
 
         List<Chapter> chaptersList = new ArrayList<>();
@@ -31,12 +31,12 @@ public class ChapterDAO {
         Chapter chapter;
 
         try {
-            conn = DriverManager.getConnection(DB_URL, USER, PASS);
-            stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
-            ResultSet rs = Queries.retriveChapters(stmt, seriesTitle);
+            conn14 = DriverManager.getConnection(DB_URL, USER, PASS);
+            stmt14 = conn14.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
+            ResultSet rs = Queries.retriveChapters(stmt14, seriesTitle);
 
-            conn2 = DriverManager.getConnection(DB_URL, USER, PASS);
-            stmt2 = conn2.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
+            conn15 = DriverManager.getConnection(DB_URL, USER, PASS);
+            stmt15 = conn15.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
             ResultSet rs2;
 
             if (!rs.first()) {
@@ -56,7 +56,7 @@ public class ChapterDAO {
                     chapter.setCover(image);
                 }
 
-                    rs2 = Queries.isChapterRead(stmt2, chapterTitle, UserLogin.getInstance().getAccount().getUsername());
+                    rs2 = Queries.isChapterRead(stmt15, chapterTitle, UserLogin.getInstance().getAccount().getUsername());
                     //il capitolo non è letto
                 chapter.setRead(rs2.first());
 
@@ -71,26 +71,26 @@ public class ChapterDAO {
             throwables.printStackTrace();
         } finally {
             try {
-                if (stmt != null)
-                    stmt.close();
+                if (stmt14 != null)
+                    stmt14.close();
             } catch (SQLException se2) {
                 //TO-DO
             }
             try {
-                if (conn != null)
-                    conn.close();
+                if (conn14 != null)
+                    conn14.close();
             } catch (SQLException se) {
                 se.printStackTrace();
             }
             try {
-                if (stmt2 != null)
-                    stmt2.close();
+                if (stmt15 != null)
+                    stmt15.close();
             } catch (SQLException se2) {
                 //TO-DO
             }
             try {
-                if (conn2 != null)
-                    conn2.close();
+                if (conn15 != null)
+                    conn15.close();
             } catch (SQLException se) {
                 se.printStackTrace();
             }
@@ -107,14 +107,14 @@ public class ChapterDAO {
 
     public void saveChapter(Chapter chapter,String seriesTitle,InputStream coverInputStream) throws AlreadyExistingChapterException {
 
-        Connection conn;
+        Connection conn16;
 
         try {
             // STEP 3: apertura connessione
-            conn = DriverManager.getConnection(DB_URL, USER, PASS);
+            conn16 = DriverManager.getConnection(DB_URL, USER, PASS);
 
             // STEP 4.2: creazione ed esecuzione della query
-            Queries.insertChapter(conn,chapter,seriesTitle,coverInputStream);
+            Queries.insertChapter(conn16,chapter,seriesTitle,coverInputStream);
 
 
         } catch (SQLException throwables) {

@@ -14,16 +14,16 @@ public class ReviewDAO {
     private static final String DB_URL = "jdbc:mysql://comics-world.ce9t0fxhansh.eu-west-2.rds.amazonaws.com:3306/ComicsWorld?autoReconnect=true&useSSL=false";
 
     public List<Review> retrieveReviews(String chapter)  {
-        Statement stmt;
-        Connection conn = null;
+        Statement stmt33;
+        Connection conn33 = null;
 
         List<Review> reviewsList = new ArrayList<>();
         Review reviewItem;
 
         try {
-            conn = DriverManager.getConnection(DB_URL, USER, PASS);
-            stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
-            ResultSet rs = Queries.retreiveReviewsByChapter(stmt, chapter);
+            conn33 = DriverManager.getConnection(DB_URL, USER, PASS);
+            stmt33 = conn33.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
+            ResultSet rs = Queries.retreiveReviewsByChapter(stmt33, chapter);
 
             if(!rs.first()){
                 return reviewsList;
@@ -41,10 +41,10 @@ public class ReviewDAO {
         } catch (SQLException throwables) {
            return reviewsList;
         }finally{
-            assert conn!=null;
+            assert conn33!=null;
             try {
-                assert conn!=null;
-                conn.close();
+                assert conn33!=null;
+                conn33.close();
             } catch (SQLException e) {
                 e.printStackTrace();
             }
@@ -56,25 +56,25 @@ public class ReviewDAO {
 
     public void saveReview(Review review, Chapter chapter, Series series){
         // STEP 1: dichiarazioni
-        Statement stmt;
-        Connection conn = null;
+        Statement stmt34;
+        Connection conn34 = null;
 
         try {
             // STEP 2: loading dinamico del driver mysql
 
             // STEP 3: apertura connessione
-            conn = DriverManager.getConnection(DB_URL, USER, PASS);
+            conn34 = DriverManager.getConnection(DB_URL, USER, PASS);
 
             // STEP 4.2: creazione ed esecuzione della query
-            stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
-            Queries.saveReview(stmt,review, chapter, series);
+            stmt34 = conn34.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
+            Queries.saveReview(stmt34,review, chapter, series);
 
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         } finally {
-            assert conn!=null;
+            assert conn34!=null;
             try {
-                conn.close();
+                conn34.close();
             } catch (SQLException e) {
                 e.printStackTrace();
             }

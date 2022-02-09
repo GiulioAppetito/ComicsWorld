@@ -15,16 +15,16 @@ public class ObjectiveDAO {
 
 
     public List<Objective> retrieveSeriesObjectives(String series){
-        Statement stmt;
-        Connection conn = null;
+        Statement stmt21;
+        Connection conn21 = null;
 
         List<Objective> objectives = new ArrayList<>();
 
 
         try {
-            conn = DriverManager.getConnection(DB_URL, USER, PASS);
-            stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
-            ResultSet rs = Queries.retreiveObjectivesBySeries(stmt, series);
+            conn21 = DriverManager.getConnection(DB_URL, USER, PASS);
+            stmt21 = conn21.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
+            ResultSet rs = Queries.retreiveObjectivesBySeries(stmt21, series);
 
             if (!rs.first()) {
                 return objectives;
@@ -47,9 +47,9 @@ public class ObjectiveDAO {
         } catch (SQLException e) {
             e.printStackTrace();
         } finally {
-            assert conn!=null;
+            assert conn21!=null;
             try {
-                conn.close();
+                conn21.close();
             } catch (SQLException e) {
                 e.printStackTrace();
             }
