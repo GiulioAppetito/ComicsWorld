@@ -49,8 +49,7 @@ public class ReaderProfileControllerG implements AccountObserver {
     }
 
     private void openSettings() {
-        HomeFactory homeFactory = new HomeFactory();
-        HomeControllerG homeControllerG = homeFactory.getHomeControllerG();
+        HomeControllerG homeControllerG = HomeFactory.getHomeControllerG();
         homeControllerG.openSettings();
     }
 

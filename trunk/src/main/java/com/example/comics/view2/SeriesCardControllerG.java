@@ -25,7 +25,6 @@ public class SeriesCardControllerG {
         comicName.setText(seriesBean.getTitle());
         comicCover.setImage(seriesBean.getCover());
         StatisticsController statisticsController = new StatisticsController();
-        System.out.println("[SeriesCard2] Rating of "+seriesBean.getTitle()+" : "+statisticsController.seriesAverageRating(seriesBean));
         Float averageRating = statisticsController.seriesAverageRating(seriesBean)/5;
         Float percentage = averageRating*100;
         lblRating.setText(percentage +"%");

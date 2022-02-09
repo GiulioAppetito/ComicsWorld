@@ -300,8 +300,7 @@ public class FeedControllerG2 implements ChapterObserver, AccountObserver, Reade
     private boolean openNotifs = true;
     private static FeedControllerG2 instance;
     private static List<SeriesBean> latestSeries;
-    private static List<SeriesBean> mySeries;
-    private static List<OrderBean> myOrders;
+    private List<SeriesBean> mySeries;
 
     private FeedControllerG2(){
         //costruttore
@@ -559,7 +558,7 @@ public class FeedControllerG2 implements ChapterObserver, AccountObserver, Reade
         vBoxMyOrders.setVisible(true);
 
         ResearchController researchController = new ResearchController();
-        myOrders = researchController.getUserOrders();
+        List<OrderBean> myOrders = researchController.getUserOrders();
         displayListOfOrders(myOrders, vBoxOrderedSeries);
     }
     private void openMyBadges() {
@@ -781,7 +780,7 @@ public class FeedControllerG2 implements ChapterObserver, AccountObserver, Reade
 
         displayListOfReviews(chapterBean.getReviews(), vBoxReviews);
         if(UserLogin.getInstance().getAccount().getRole().equals(READER)) {
-            if(chapterBean.getRead()){
+            if(Boolean.TRUE.equals(chapterBean.getRead())){
                 btnReadChapter.setOnAction(event -> unmarkReadChapter(seriesBean, chapterBean));
                 btnReadChapter.setStyle(BORDER_STYLE);
             }else{
@@ -808,7 +807,6 @@ public class FeedControllerG2 implements ChapterObserver, AccountObserver, Reade
 
     private void buyComic(ChapterBean chapterBean, SeriesBean seriesBean) {
 
-        System.out.println("buying comic");
         BuyComicController buyComicController = new BuyComicController();
         DiscountCodeBean2 discountCodeBean2 = new DiscountCodeBean2();
 
@@ -850,7 +848,10 @@ public class FeedControllerG2 implements ChapterObserver, AccountObserver, Reade
             taComment.setText("");
             vBoxPostReview.setVisible(false);
         }catch(IncompleteReviewException e){
-
+            notifTitle.setText("No comment!");
+            badgeIcon.setVisible(false);
+            message.setText(e.getMessage());
+            paneNotifications.setVisible(true);
         }
 
     }
@@ -929,7 +930,7 @@ public class FeedControllerG2 implements ChapterObserver, AccountObserver, Reade
         panePayment.setVisible(false);
     }
 
-    private static ChapterBean currentChapter = null;
+    private ChapterBean currentChapter = null;
 
     @Override
     public void update(ReviewBean reviewBean) {
@@ -947,7 +948,6 @@ public class FeedControllerG2 implements ChapterObserver, AccountObserver, Reade
 
     @Override
     public void update(BadgeBean badgeBean) {
-        System.out.println("new badge won");
         badgeIcon.setImage(badgeBean.getIcon());
         notifTitle.setText("New badge!");
         message.setText(badgeBean.getName());
@@ -958,8 +958,7 @@ public class FeedControllerG2 implements ChapterObserver, AccountObserver, Reade
     @Override
     public void update(Boolean payment) {
         badgeIcon.setVisible(false);
-        if(payment) {
-            System.out.println("new order");
+        if(Boolean.TRUE.equals(payment)) {
             notifTitle.setText("New order!");
             message.setText("check your orders");
         }else{

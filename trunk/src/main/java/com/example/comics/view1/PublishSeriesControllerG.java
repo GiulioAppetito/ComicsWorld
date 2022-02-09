@@ -168,17 +168,10 @@ public class PublishSeriesControllerG {
         fc.getExtensionFilters().add(new FileChooser.ExtensionFilter(PNG,PNG));
         File f = fc.showOpenDialog(null);
         if(f!=null){
-            switch(choice) {
-                case "I":
-                    badgeIconPathI = f.getAbsolutePath();
-                    break;
-
-                case "B":
-                    badgeIconPathB = f.getAbsolutePath();
-                    break;
-                case "E":
-                    badgeIconPathE = f.getAbsolutePath();
-                    break;
+            switch (choice) {
+                case "I" -> badgeIconPathI = f.getAbsolutePath();
+                case "B" -> badgeIconPathB = f.getAbsolutePath();
+                default -> badgeIconPathE = f.getAbsolutePath();
             }
         }
     }
@@ -308,13 +301,13 @@ public class PublishSeriesControllerG {
     private boolean isThisObjectiveCompiled(Levels level){
         switch (level){
             case BEGINNER -> {
-                return !(choiceBoxTypeB.getValue() == null) && !(tfDiscountPercB.getText().equals("")) && !(tfDiscountDaysB.getText().equals("")) && !(tfBadgeNameB.getText().equals("")) && !(tfTargetNumberB.getText().equals(""));
+                return (choiceBoxTypeB.getValue() != null) && !(tfDiscountPercB.getText().equals("")) && !(tfDiscountDaysB.getText().equals("")) && !(tfBadgeNameB.getText().equals("")) && !(tfTargetNumberB.getText().equals(""));
             }
             case INTERMEDIATE -> {
-                return !(choiceBoxTypeI.getValue()== null) && !(tfDiscountPercI.getText().equals("")) && !(tfDiscountDaysI.getText().equals("")) && !(tfBadgeNameI.getText().equals("")) && !(tfTargetNumberI.getText().equals(""));
+                return (choiceBoxTypeI.getValue() != null) && !(tfDiscountPercI.getText().equals("")) && !(tfDiscountDaysI.getText().equals("")) && !(tfBadgeNameI.getText().equals("")) && !(tfTargetNumberI.getText().equals(""));
             }
             case EXPERT -> {
-                return !(choiceBoxTypeE.getValue()== null) && !(tfDiscountPercE.getText().equals("")) && !(tfDiscountDaysE.getText().equals("")) && !(tfBadgeNameE.getText().equals("")) && !(tfTargetNumberE.getText().equals(""));
+                return (choiceBoxTypeE.getValue() != null) && !(tfDiscountPercE.getText().equals("")) && !(tfDiscountDaysE.getText().equals("")) && !(tfBadgeNameE.getText().equals("")) && !(tfTargetNumberE.getText().equals(""));
             }
             default -> {
                 return false;

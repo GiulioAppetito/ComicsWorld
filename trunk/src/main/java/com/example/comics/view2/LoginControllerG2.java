@@ -1,6 +1,7 @@
 package com.example.comics.view2;
 
 import com.example.comics.controller.LoginController;
+import com.example.comics.model.exceptions.FailedLoginException;
 import com.example.comics.model.fagioli.LoginBean;
 import com.example.comics.view2.beans.LoginBean2;
 import javafx.event.ActionEvent;
@@ -13,6 +14,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
 
+import java.io.IOException;
 import java.net.URL;
 
 public class LoginControllerG2 {
@@ -40,7 +42,7 @@ public class LoginControllerG2 {
         hBoxToRegistration.setOnMouseClicked(event -> clickRegister());
     }
 
-    public void login(ActionEvent event) throws Exception {
+    public void login(ActionEvent event) {
         LoginBean loginBean = new LoginBean2();
 
         loginBean.setPassword(txtFieldPassword.getText());
@@ -48,29 +50,33 @@ public class LoginControllerG2 {
 
         LoginController loginController = new LoginController();
 
-        if(loginController.login(loginBean)) {
-            Stage stage = new Stage();
-            FXMLLoader loader = new FXMLLoader();
-            URL fxmlLocation;
-            Scene scene;
+        try {
+            if(loginController.login(loginBean)) {
+                Stage stage = new Stage();
+                FXMLLoader loader = new FXMLLoader();
+                URL fxmlLocation;
+                Scene scene;
 
-                FeedControllerG2 feedControllerG2 = FeedControllerG2.getInstance();
+                    FeedControllerG2 feedControllerG2 = FeedControllerG2.getInstance();
 
-                fxmlLocation = FeedControllerG2.class.getResource("feed2.fxml");
-                loader.setLocation(fxmlLocation);
-                loader.setController(feedControllerG2);
-                scene = new Scene(loader.load());
-                feedControllerG2.init();
-
-
-            stage.setTitle("ComicsWorld Mobile");
-            stage.setScene(scene);
-            stage.setMaxHeight(705);
-            stage.setMaxWidth(425);
-            stage.show();
+                    fxmlLocation = FeedControllerG2.class.getResource("feed2.fxml");
+                    loader.setLocation(fxmlLocation);
+                    loader.setController(feedControllerG2);
+                    scene = new Scene(loader.load());
+                    feedControllerG2.init();
 
 
-            ((Stage) ((Node) event.getSource()).getScene().getWindow()).close();
+                stage.setTitle("ComicsWorld Mobile");
+                stage.setScene(scene);
+                stage.setMaxHeight(705);
+                stage.setMaxWidth(425);
+                stage.show();
+
+
+                ((Stage) ((Node) event.getSource()).getScene().getWindow()).close();
+            }
+        } catch (FailedLoginException | IOException e) {
+            e.printStackTrace();
         }
     }
 
