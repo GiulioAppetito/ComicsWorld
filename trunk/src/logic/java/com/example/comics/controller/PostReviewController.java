@@ -18,13 +18,10 @@ public class PostReviewController{
         if(reviewBean.getComment().equals("") || reviewBean.getComment() == null){
             throw new IncompleteReviewException("Fill every field to post!");
         }
-        Review review = new Review(reviewBean.getComment(),reviewBean.getRating(),reviewBean.getAccount());
 
         Series series;
         series = SeriesDAO.retrieveSeries(seriesBean.getTitle());
-        if (series != null) {
-            series.addReview(chapterBean.getTitle(),review);
-        }
+        series.addReview(chapterBean.getTitle(),reviewBean.getComment(),reviewBean.getRating(),reviewBean.getAccount());
 
         //invio mail all'autore di una nuova review
         Thread emailThread;
@@ -44,7 +41,7 @@ public class PostReviewController{
         boolean isNewObjectiveAchieved;
 
         //numero di review del lettore
-        float numOfReviews = 0f;
+        Float numOfReviews = 0f;
         for(Chapter chapter : series.getChapters()){
             for(Review review : chapter.getReviews()){
                 if(review.getAccount().getUsername().equals(UserLogin.getInstance().getReader().getUsername())){
