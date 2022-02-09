@@ -87,17 +87,7 @@ public class MarkChapterAsReadController {
 
     public void unmarkChapterAsRead(SeriesBean seriesBean, ChapterBean chapterBean){
 
-        for(Author author1 : UserLogin.getInstance().getReader().getFollowedAuthors()){
-            if(author1 == null){
-                break;
-            }
-            for(Series series1 : author1.getPublishedSeries()){
-                if(series1.getTitle().equals(seriesBean.getTitle())){
-                    series1.unmarkChapter(chapterBean.getTitle());
-                    break;
-                }
-            }
-        }
+
         Series series = SeriesDAO.retrieveSeries(seriesBean.getTitle());
         series.unmarkChapter(chapterBean.getTitle());
 
