@@ -1,15 +1,9 @@
-import com.example.comics.controller.LoginController;
 import com.example.comics.controller.ResearchController;
 import com.example.comics.controller.StatisticsController;
 import com.example.comics.model.Series;
 import com.example.comics.model.UserLogin;
 import com.example.comics.model.dao.SeriesDAO;
-import com.example.comics.model.exceptions.FailedLoginException;
-import com.example.comics.model.fagioli.LoginBean;
 import com.example.comics.model.fagioli.SeriesBean;
-import com.example.comics.model.fagioli.bundle.SeriesBundle;
-import com.example.comics.view1.beans.LoginBean1;
-import com.example.comics.view1.beans.SeriesBean1;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
@@ -17,10 +11,10 @@ import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class TestStatisticsController {
+class TestStatisticsController {
 
     @Test
-    public void testSeriesAverageRating(){
+    void testSeriesAverageRating(){
 
         String seriesToTestTitle = "Scarlet Witch";
 

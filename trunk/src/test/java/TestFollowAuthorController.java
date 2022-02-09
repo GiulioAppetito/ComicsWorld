@@ -6,10 +6,10 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class TestFollowAuthorController {
+class TestFollowAuthorController {
 
     @Test
-    public void testFollowAuthorWithFollowedAuthor(){
+    void testFollowAuthorWithFollowedAuthor(){
         UserLogin.createAccount("giulio","giulio","reader");
 
         AuthorBean authorBean = new AuthorBundle();

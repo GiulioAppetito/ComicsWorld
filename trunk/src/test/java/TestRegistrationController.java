@@ -1,5 +1,4 @@
 import com.example.comics.controller.RegistrationController;
-import com.example.comics.model.exceptions.FailedLoginException;
 import com.example.comics.model.exceptions.FailedRegistrationException;
 import com.example.comics.model.exceptions.MalformedEmailException;
 import com.example.comics.model.fagioli.RegistrationBean;
@@ -9,10 +8,10 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
-public class TestRegistrationController {
+class TestRegistrationController {
 
     @Test
-    public void testRegistrationExistingUsername(){
+    void testRegistrationExistingUsername(){
 
         RegistrationBean registrationBean = new RegistrationBean1();
         registrationBean.setFirstName("Giulio");
@@ -28,7 +27,7 @@ public class TestRegistrationController {
     }
 
     @Test
-    public void testRegistrationMalformedEmail(){
+    void testRegistrationMalformedEmail(){
 
         RegistrationBean registrationBean = new RegistrationBean1();
         registrationBean.setFirstName("Giulio");
@@ -44,7 +43,7 @@ public class TestRegistrationController {
     }
 
     @Test
-    public void testRegistrationValidCredentials(){
+    void testRegistrationValidCredentials(){
         boolean isRegistrationSuccessed;
 
         RegistrationBean registrationBean = new RegistrationBean1();
@@ -59,9 +58,7 @@ public class TestRegistrationController {
             RegistrationController registrationController = new RegistrationController();
             registrationController.registerNewAccount(registrationBean);
             isRegistrationSuccessed = true;
-        } catch (FailedRegistrationException e) {
-            isRegistrationSuccessed = false;
-        } catch (MalformedEmailException e) {
+        } catch (FailedRegistrationException | MalformedEmailException e) {
             isRegistrationSuccessed = false;
         }
 

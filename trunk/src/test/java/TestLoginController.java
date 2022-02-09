@@ -7,10 +7,10 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
-public class TestLoginController {
+class TestLoginController {
 
     @Test
-    public void testLoginCorrectCredentials() {
+    void testLoginCorrectCredentials() {
         boolean result;
 
         LoginController controlLogin = new LoginController();
@@ -31,7 +31,7 @@ public class TestLoginController {
     }
 
     @Test
-    public void testLoginIncorrectPassword(){
+    void testLoginIncorrectPassword(){
 
         LoginController controlLogin = new LoginController();
 
@@ -43,7 +43,7 @@ public class TestLoginController {
     }
 
     @Test
-    public void testLoginNotRegisteredUsername(){
+    void testLoginNotRegisteredUsername(){
         boolean result;
 
         LoginController controlLogin = new LoginController();

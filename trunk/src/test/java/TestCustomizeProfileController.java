@@ -7,10 +7,10 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class TestCustomizeProfileController {
+class TestCustomizeProfileController {
 
     @Test
-    public void testChangeUsername(){
+     void testChangeUsername(){
         String newUsername = "giulietto";
 
         String actual;
