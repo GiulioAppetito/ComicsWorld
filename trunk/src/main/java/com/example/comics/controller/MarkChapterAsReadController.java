@@ -16,22 +16,22 @@ public class MarkChapterAsReadController {
     public void markChapterAsRead(SeriesBean seriesBean, ChapterBean chapterBean){
 
         Series series = SeriesDAO.retrieveSeries(seriesBean.getTitle());
+        assert series != null;
         series.markChapter(chapterBean.getTitle());
 
         UserLogin.getInstance().getReader().addSeriesToReading(series);
 
-        Series finalSeries = series;
         new Thread(()-> {
             ReaderDAO readerDAO = new ReaderDAO();
-            readerDAO.saveReadChapter(finalSeries, chapterBean.getTitle());
+            readerDAO.saveReadChapter(series, chapterBean.getTitle());
         }).start();
         
         checkObjectives(series);
     }
 
     private void checkObjectives(Series series) {
-        Float readersReadings = 0f;
-        Float achievement = 0f;
+        float readersReadings = 0f;
+        float achievement = 0f;
 
         for(Series readersSeries : UserLogin.getInstance().getReader().getReading()){
             if(readersSeries.getTitle().equals(series.getTitle())){
