@@ -126,12 +126,12 @@ public class Series extends SeriesSubject{
 	}
 
 	public void addReview(String chapterTitle, String comment, int rating, Account account) {
-			for(int i=0; i< chapters.size(); i++){
-				if(chapters.get(i).getTitle().equals(chapterTitle)){
-					chapters.get(i).addReview(this,comment, rating, account);
-				}
+		for (Chapter chapter : chapters) {
+			if (chapter.getTitle().equals(chapterTitle)) {
+				chapter.addReview(this, comment, rating, account);
 			}
-			calculateAverageRating();
+		}
+		calculateAverageRating();
 	}
 
 	public void addReviewInSilence(String chapterTitle, String reviewComment, int rating) {

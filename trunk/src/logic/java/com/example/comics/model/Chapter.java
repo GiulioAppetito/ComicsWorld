@@ -80,9 +80,9 @@ public class Chapter extends ChapterSubject {
         this.description = description;
     }
 
-    public void addReview(Series series, String comment, int rating, Account account){
+    public void addReview(Series series,String comment, int rating, Account account){
+        Review review = new Review(comment, rating,account);
 
-        Review review = new Review(comment, rating, account);
         reviews.add(review);
 
         this.averageRating = calculateAverageRating();
