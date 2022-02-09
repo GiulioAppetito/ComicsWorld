@@ -21,6 +21,7 @@ public class TestObjective {
 
         UserLogin.createAccount("giulio","giulio","reader");
         Series series = SeriesDAO.retrieveSeries(seriesToTest);
+        assert series != null;
         Objective objective = series.getObjectives().get(0);
 
         Float achievement = objective.getRequirement();
@@ -34,11 +35,7 @@ public class TestObjective {
         WebElement result = driver.findElement(By.xpath("//*[@id=\"outintro\"]/div/fmath/mrow/mrow/mrow[2]/mn"));
 
         boolean expected;
-        switch (result.getText()){
-            case "0" -> expected = false;
-            case "1" -> expected = true;
-            default -> expected = false;
-        }
+        expected = "1".equals(result.getText());
 
         boolean actual = objective.isObjectiveAchieved(achievement);
 

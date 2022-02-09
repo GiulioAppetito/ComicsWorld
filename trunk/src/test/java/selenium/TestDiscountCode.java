@@ -1,7 +1,6 @@
 package selenium;
 
 import com.example.comics.model.*;
-import com.example.comics.model.dao.SeriesDAO;
 import com.example.comics.model.dao.utils.DatesConverter;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
@@ -11,7 +10,6 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.time.LocalDate;
 import java.util.Date;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -23,8 +21,8 @@ public class TestDiscountCode {
         //test if discount code is expired by checking on RapidTables today's date
 
         String codeToTest = "MFR458";
-        String FINAL_FORMAT = "yyyy-MM-dd";
-        String OLD_FORMAT_WEB = "MM/dd/yyyy";
+        String finalFormat = "yyyy-MM-dd";
+        String oldFormatWeb = "MM/dd/yyyy";
 
         UserLogin.createAccount("giulio","giulio","reader");
         DiscountCode discountCode = UserLogin.getInstance().getReader().getDiscountCodeByCode(codeToTest);
@@ -37,14 +35,14 @@ public class TestDiscountCode {
         String todaysDate = result.getAttribute("value");
         String expiringDateString = discountCode.getExpiringDate().toString();
 
-        SimpleDateFormat sdf2 = new SimpleDateFormat(OLD_FORMAT_WEB);
+        SimpleDateFormat sdf2 = new SimpleDateFormat(oldFormatWeb);
         Date d2 = null;
         try {
             d2 = sdf2.parse(todaysDate);
         } catch (ParseException e) {
             e.printStackTrace();
         }
-        sdf2.applyPattern(FINAL_FORMAT);
+        sdf2.applyPattern(finalFormat);
         String todaysDateWebString = sdf2.format(d2);
 
         boolean expected = DatesConverter.toLocalDate(expiringDateString).isBefore(DatesConverter.toLocalDate(todaysDateWebString));
