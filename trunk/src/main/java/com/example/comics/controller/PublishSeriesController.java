@@ -40,8 +40,10 @@ public class PublishSeriesController {
             objectiveBadgeHM.put(objective,objectiveBean.getBadgeIconInputStream());
         }
 
+        List<Genres> genresList = new ArrayList<>(List.of(seriesBean.getGenre1(), seriesBean.getGenre2(), seriesBean.getGenre3()));
+
         //istanziazione e salvataggio su DB
-        series = seriesDAO.createSeries(UserLogin.getInstance().getAuthor(),seriesBean.getTitle(),seriesBean.getGenre1(),seriesBean.getGenre2(),seriesBean.getGenre3(),seriesBean.getCover(),seriesBean.getCoverInputStream(), objectives,objectiveBadgeHM,seriesBean.getDescription());
+        series = seriesDAO.createSeries(seriesBean.getTitle(),genresList,seriesBean.getCover(),seriesBean.getCoverInputStream(), objectives,objectiveBadgeHM,seriesBean.getDescription());
 
         //aggiunta della serie all'autore
         UserLogin.getInstance().getAuthor().addPublishedSeries(series);

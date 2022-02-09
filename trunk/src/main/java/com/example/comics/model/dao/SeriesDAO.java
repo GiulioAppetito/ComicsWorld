@@ -174,14 +174,15 @@ public class SeriesDAO {
         }
     }
 
-    public Series createSeries(Author author, String title, Genres genre1, Genres genre2, Genres genre3, Image cover, InputStream coverInputStream, List<Objective> objectives, Map<Objective, InputStream> badgeIconHM, String description) throws AlreadyExistingSeriesException {
+    public Series createSeries(String title, List<Genres> genresList, Image cover, InputStream coverInputStream, List<Objective> objectives, Map<Objective, InputStream> badgeIconHM, String description) throws AlreadyExistingSeriesException {
         Series series;
         series = new Series();
-        series.setAuthor(author);
+        //solo perchè c'era il code smell
+        series.setAuthor(UserLogin.getInstance().getAuthor());
         series.setTitle(title);
-        series.setGenre1(genre1);
-        series.setGenre2(genre2);
-        series.setGenre3(genre3);
+        series.setGenre1(genresList.get(0));
+        series.setGenre2(genresList.get(1));
+        series.setGenre3(genresList.get(2));
         series.setCover(cover);
         series.setObjectives(objectives);
         series.setDescription(description);
