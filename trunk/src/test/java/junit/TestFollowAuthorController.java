@@ -1,4 +1,4 @@
-package JUnit;
+package junit;
 
 import com.example.comics.controller.FollowAuthorController;
 import com.example.comics.model.UserLogin;

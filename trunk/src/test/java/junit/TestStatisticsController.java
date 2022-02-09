@@ -1,4 +1,4 @@
-package JUnit;
+package junit;
 
 import com.example.comics.controller.ResearchController;
 import com.example.comics.controller.StatisticsController;

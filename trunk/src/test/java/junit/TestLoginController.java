@@ -1,4 +1,4 @@
-package JUnit;
+package junit;
 
 import com.example.comics.controller.LoginController;
 import com.example.comics.model.exceptions.FailedLoginException;

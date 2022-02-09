@@ -1,4 +1,4 @@
-package JUnit;
+package junit;
 
 import com.example.comics.controller.RegistrationController;
 import com.example.comics.model.exceptions.FailedRegistrationException;
