@@ -1,4 +1,4 @@
-package junit;
+package selenium;
 
 import com.example.comics.model.Objective;
 import com.example.comics.model.Series;
