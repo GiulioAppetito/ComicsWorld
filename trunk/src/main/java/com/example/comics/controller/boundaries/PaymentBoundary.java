@@ -42,7 +42,7 @@ public class PaymentBoundary {
         BuyComicController buyComicController = new BuyComicController();
         try{
             buyComicController.completedPayment(seriesBean, chapterBean, discountCodeBean);
-            System.out.println("PaymentBOUNDARY: "+ "good payment");
+
         }catch (FailedPaymentException e){
             buyComicController.failedPayment();
         }

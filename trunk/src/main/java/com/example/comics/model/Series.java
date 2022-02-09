@@ -38,7 +38,7 @@ public class Series extends SeriesSubject{
 		try {
 			chaptersThread.join();
 		} catch (InterruptedException e) {
-			e.printStackTrace();
+			chaptersThread.interrupt();
 		}
 
 		calculateAverageRating();
@@ -191,26 +191,18 @@ public class Series extends SeriesSubject{
 		boolean isToBeRemoved = true;
 		Series seriesToRemove = null;
 
-		for(Series readerSeries : UserLogin.getInstance().getReader().getReading()){
-			if(readerSeries == null){
-				return;
-			}
-			if(readerSeries.getTitle().equals(this.title)){
-				for(Chapter chapter : readerSeries.getChapters()){
-					if(chapter.getTitle().equals(chapterTitle)){
-						chapter.setRead(false);
-						seriesToRemove = readerSeries;
-					}
-				}
-
-				for(Chapter chapter : readerSeries.getChapters()){
-					if(chapter.getRead()){
-						isToBeRemoved = false;
-					}
-				}
-
+		for(Chapter chapter : this.getChapters()){
+			if(chapter.getTitle().equals(chapterTitle)){
+				chapter.setRead(false);
 			}
 		}
+
+		for(Chapter chapter : this.getChapters()){
+			if(Boolean.TRUE.equals(chapter.getRead())){
+				isToBeRemoved = false;
+			}
+		}
+
 		if(isToBeRemoved){
 			UserLogin.getInstance().getReader().removeFromReading(seriesToRemove);
 		}

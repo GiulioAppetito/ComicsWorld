@@ -5,6 +5,11 @@ import java.time.format.DateTimeFormatter;
 import java.time.temporal.ChronoUnit;
 
 public class DatesConverter {
+
+    private DatesConverter(){
+        //costruttore
+    }
+
     public static final String PATTERN ="yyyy-MM-dd";
 
     public static LocalDate toLocalDate(String text) {

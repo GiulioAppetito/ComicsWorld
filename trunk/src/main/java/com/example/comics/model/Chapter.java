@@ -21,7 +21,8 @@ public class Chapter extends ChapterSubject {
 
 
     public Chapter(String title){
-        Thread reviewsThread, ratingThread;
+        Thread reviewsThread;
+        Thread ratingThread;
 
         this.title = title;
 
@@ -31,16 +32,15 @@ public class Chapter extends ChapterSubject {
         });
         reviewsThread.start();
 
-        ratingThread = new Thread(() ->{
-            this.averageRating = calculateAverageRating();
-        });
+        ratingThread = new Thread(() -> this.averageRating = calculateAverageRating());
         ratingThread.start();
 
         try {
             reviewsThread.join();
             ratingThread.join();
         } catch (InterruptedException e) {
-            e.printStackTrace();
+            ratingThread.interrupt();
+            reviewsThread.interrupt();
         }
 
     }

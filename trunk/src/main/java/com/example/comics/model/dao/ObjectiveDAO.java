@@ -16,7 +16,7 @@ public class ObjectiveDAO {
 
     public List<Objective> retrieveSeriesObjectives(String series){
         Statement stmt;
-        Connection conn;
+        Connection conn = null;
 
         List<Objective> objectives = new ArrayList<>();
 
@@ -46,6 +46,13 @@ public class ObjectiveDAO {
 
         } catch (SQLException e) {
             e.printStackTrace();
+        } finally {
+            assert conn!=null;
+            try {
+                conn.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
         }
 
 

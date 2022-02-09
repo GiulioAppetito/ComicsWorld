@@ -5,6 +5,10 @@ import com.example.comics.model.UserLogin;
 
 public class HomeFactory {
 
+    private HomeFactory(){
+        //costruttore
+    }
+
     public static HomeControllerG getHomeControllerG(){
 
         HomeControllerG homeControllerG;

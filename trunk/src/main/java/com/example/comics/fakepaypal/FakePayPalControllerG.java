@@ -30,16 +30,16 @@ public class FakePayPalControllerG {
     @FXML
     private TextField tfLastName;
 
-    private static String FIRSTNAME;
-    private static String LASTNAME;
-    private static String EXPENSE;
+    private String firstname;
+    private String lastname;
+    private String expense;
 
     private String result = null;
 
     public FakePayPalControllerG(String firstName, String lastName, String expense){
-        FIRSTNAME = firstName;
-        LASTNAME = lastName;
-        EXPENSE = expense;
+        firstname = firstName;
+        lastname = lastName;
+        this.expense = expense;
     }
     public String getResult(){
         return result;
@@ -47,14 +47,13 @@ public class FakePayPalControllerG {
 
     @FXML
     public void initialize(){
-        tfFirstName.setText(FIRSTNAME);
-        tfLastName.setText(LASTNAME);
-        lblPrice.setText("Payment: "+EXPENSE+"€");
-        btnBuy.setOnAction(event -> convalidateCard(event));
+        tfFirstName.setText(firstname);
+        tfLastName.setText(lastname);
+        lblPrice.setText("Payment: "+ expense +"€");
+        btnBuy.setOnAction(this::convalidateCard);
     }
 
     private void convalidateCard(ActionEvent event) {
-        System.out.println("convalidating card");
         String cardID = tfCard.getText();
         FakePayPal fakePayPal = new FakePayPal();
         if(fakePayPal.isCardValid(cardID)){
@@ -64,7 +63,6 @@ public class FakePayPalControllerG {
         }else{
             result = "wrong";
         }
-        System.out.println("result: "+result);
     }
 
     public void close(ActionEvent event){

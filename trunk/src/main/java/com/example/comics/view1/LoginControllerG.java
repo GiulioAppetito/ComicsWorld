@@ -19,6 +19,8 @@ import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
+import java.io.IOException;
+
 
 public class LoginControllerG {
 
@@ -157,7 +159,7 @@ public class LoginControllerG {
         textFieldPassword.setText("");
     }
 
-    public void login(ActionEvent event) throws Exception {
+    public void login(ActionEvent event){
         LoginBean loginBean = new LoginBean1();
 
         loginBean.setEmail(tfEmail.getText());
@@ -168,13 +170,16 @@ public class LoginControllerG {
             if (loginController.login(loginBean)) {
                 Stage stage = new Stage();
                 FXMLLoader loader = new FXMLLoader();
-                Scene scene;
+                Scene scene = null;
 
-                HomeFactory homeFactory = new HomeFactory();
-                HomeControllerG homeControllerG = homeFactory.getHomeControllerG();
+                HomeControllerG homeControllerG = HomeFactory.getHomeControllerG();
                 loader.setLocation(homeControllerG.getLocation());
                 loader.setController(homeControllerG);
-                scene = new Scene(loader.load());
+                try {
+                    scene = new Scene(loader.load());
+                } catch (IOException e) {
+                    //to-do
+                }
                 homeControllerG.init();
 
                 stage.setTitle("ComicsWorld");

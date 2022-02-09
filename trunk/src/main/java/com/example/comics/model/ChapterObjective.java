@@ -5,6 +5,7 @@ public class ChapterObjective extends Objective{
     private Float requiredChaptersPercentage;
 
     public ChapterObjective(){
+        //costruttore
     }
 
     @Override

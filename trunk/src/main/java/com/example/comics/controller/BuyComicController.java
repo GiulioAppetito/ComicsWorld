@@ -9,7 +9,6 @@ import com.example.comics.model.UserLogin;
 import com.example.comics.model.dao.DiscountCodeDAO;
 import com.example.comics.model.dao.OrderDAO;
 import com.example.comics.model.exceptions.DiscountCodeException;
-import com.example.comics.model.exceptions.FailedPaymentException;
 import com.example.comics.model.fagioli.AccountBean;
 import com.example.comics.model.fagioli.ChapterBean;
 import com.example.comics.model.fagioli.DiscountCodeBean;
@@ -47,7 +46,7 @@ public class BuyComicController {
 
     }
 
-    public void completedPayment(SeriesBean seriesBean, ChapterBean chapterBean, DiscountCodeBean discountCodeBean)throws FailedPaymentException{
+    public void completedPayment(SeriesBean seriesBean, ChapterBean chapterBean, DiscountCodeBean discountCodeBean){
 
         //mail all'autore
         BuyComicsAuthorBoundary buyComicsAuthorBoundary = new BuyComicsAuthorBoundary();
@@ -83,13 +82,10 @@ public class BuyComicController {
         OrderDAO orderDAO = new OrderDAO();
         orderDAO.insertOrder(order);
 
-
-        System.out.println("BCC : new order to be inserted");
         UserLogin.getInstance().getReader().addNewOrder(order);
     }
 
     public void failedPayment() {
-        System.out.println("FAILED PAYMENT");
         UserLogin.getInstance().getReader().notifyFailedOrder();
 
     }

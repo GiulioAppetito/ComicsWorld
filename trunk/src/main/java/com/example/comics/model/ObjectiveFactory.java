@@ -4,7 +4,7 @@ public class ObjectiveFactory {
 
     public Objective createObjective(String type,Badge badge,Discount discount,Levels level,Float requirement){
 
-        Objective objective;
+        Objective objective = null;
 
         switch (type) {
             case "reviews" -> {
@@ -21,7 +21,9 @@ public class ObjectiveFactory {
                 objective.setLevel(level);
                 objective.setRequirement(requirement);
             }
-            default -> objective = null;
+            default -> {
+                //nothing
+            }
         }
         return objective;
     }

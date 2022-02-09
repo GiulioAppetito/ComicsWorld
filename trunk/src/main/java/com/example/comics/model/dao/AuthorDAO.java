@@ -19,6 +19,8 @@ public class AuthorDAO {
 
     private static List<Author> all = new ArrayList<>();
 
+    private static final String USERNAME = "username";
+
     public static List<Author> retriveAllAuthors(){
         Statement stmt;
         Connection conn = null;
@@ -38,7 +40,7 @@ public class AuthorDAO {
             do{
                 author = new Author();
                 author.setFirstName(rs.getString("firstname"));
-                author.setUsername(rs.getString("username"));
+                author.setUsername(rs.getString(USERNAME));
                 author.setLastName(rs.getString("lastname"));
                 author.setEmail(rs.getString("email"));
 
@@ -91,11 +93,11 @@ public class AuthorDAO {
             author = new Author();
             author.setFirstName(rs.getString("firstname"));
             author.setLastName(rs.getString("lastname"));
-            author.setUsername(rs.getString("username"));
+            author.setUsername(rs.getString(USERNAME));
             author.setEmail(rs.getString("email"));
             List<Series> publishedSeries = new ArrayList<>();
             for(Author a: all){
-                if(a.getUsername().equals(rs.getString("username"))){
+                if(a.getUsername().equals(rs.getString(USERNAME))){
                     publishedSeries = a.getPublishedSeries();
                 }
             }

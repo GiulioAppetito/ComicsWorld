@@ -12,7 +12,6 @@ public class ResearchController {
 
     public List<SeriesBean> getFavouriteSeries() {
         List<Series> favouriteSeries = UserLogin.getInstance().getReader().getFavourites();
-        System.out.println("[RESEARCH CONTROLLER] reading list lenght : "+UserLogin.getInstance().getReader().getReading().size());
         return getSeriesBeans(favouriteSeries);
     }
 
@@ -159,13 +158,9 @@ public class ResearchController {
         DiscountCodeBean discountCodeBean ;
         for(DiscountCode discountCode : UserLogin.getInstance().getReader().getDiscountCodes().keySet()){
             Series series = UserLogin.getInstance().getReader().getDiscountCodes().get(discountCode);
-            if(series == null){
-                return null;
-            }
             if(series.getTitle().equals(seriesBean.getTitle())){
                 discountCodeBean = new DiscountCodeBundle();
                 discountCodeBean.setCode(discountCode.getCode());
-                System.out.println("dentro res con, codici :" + discountCodeBean.getCode());
                 beans.add(discountCodeBean);
             }
         }

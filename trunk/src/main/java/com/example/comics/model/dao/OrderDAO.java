@@ -44,8 +44,7 @@ public class OrderDAO {
                 expense = rs.getFloat("expense");
                 date = DatesConverter.toLocalDate(rs.getString("date"));
 
-                SeriesDAO seriesDAO = new SeriesDAO();
-                series = seriesDAO.retrieveSeries(rs.getString("series"));
+                series = SeriesDAO.retrieveSeries(rs.getString("series"));
 
                 for(Chapter c : series.getChapters()){
                     if(c.getTitle().equals(rs.getString("chapterTitle"))){

@@ -34,7 +34,7 @@ public class FeedControllerG{
 
 
     private static FeedControllerG instance;
-    private static List<SeriesBean> latestSeries;
+    private List<SeriesBean> latestSeries;
 
     private FeedControllerG(){
         //costruttore
@@ -47,25 +47,11 @@ public class FeedControllerG{
         return instance;
     }
 
-    public void loadLatestSeries(){
+    public void loadLatestSeries() {
         ResearchController researchController = new ResearchController();
         latestSeries = researchController.getLatestSeries();
     }
-/*
-    private void waitingAnimation() {
-        if(animationPane != null) {
-            animationPane.setVisible(true);
-            new Bounce(circle1).setCycleCount(4).setCycleCount(14).setDelay(Duration.valueOf("500ms")).play();
-            new Bounce(circle1).setCycleCount(14).setDelay(Duration.valueOf("150ms")).play();
-            new Bounce(circle1).setCycleCount(14).setDelay(Duration.valueOf("200ms")).play();
-        }
-    }
 
-    private void stopWaiting(){
-        animationPane.setVisible(false);
-    }
-
- */
     public void init() {
 
         animationPane.setVisible(false);

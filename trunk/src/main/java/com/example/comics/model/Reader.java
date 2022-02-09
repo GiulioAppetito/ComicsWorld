@@ -18,8 +18,6 @@ public class Reader extends Account{
     private final Map<DiscountCode,Series> discountCodes;
     private final List<Order> ordersHistory;
 
-    private static Badge latestBadge = null;
-
     public Reader(List<Series> favourites, List<Series> toRead, List<Series> reading, String username,List<Author> followedAuthors, Map<DiscountCode,Series> discountCodes){
 
         this.setUsername(username);
@@ -77,7 +75,6 @@ public class Reader extends Account{
 
     public void addAchievedBadge(Badge badge) {
         this.badges.add(badge);
-        latestBadge = badge;
 
         new Thread(()->{
             ReaderDAO readerDAO = new ReaderDAO();
@@ -93,15 +90,10 @@ public class Reader extends Account{
 
     public void assignDiscountCode(DiscountCode discountCode, Series series) {
         UserLogin.getInstance().getReader().discountCodes.put(discountCode,series);
-        System.out.println("sono dentro reader, ecco tutti i codici:");
-        for(DiscountCode d : this.discountCodes.keySet()){
-            System.out.println(d.getCode());
-        }
     }
 
     public boolean likesThisSeries(Series series){
         if(favourites.isEmpty()){
-            System.out.println("Reader: No favs");
             return false;
         }
         for(Series fav : this.favourites){
@@ -124,10 +116,6 @@ public class Reader extends Account{
             if(favourites.get(i).getTitle().equals(series.getTitle())){
                 this.favourites.remove(i);
             }
-        }
-
-        for (int i = this.favourites.size() - 1; i >= 0; i--) {
-            System.out.println(favourites.get(i).getTitle());
         }
     }
 
@@ -152,7 +140,7 @@ public class Reader extends Account{
 
     public void removeSeriesFromToRead(Series series) {
 
-        if(this.toRead.size() == 0){
+        if(this.toRead.isEmpty()){
             return;
         }
 
@@ -193,7 +181,7 @@ public class Reader extends Account{
 
     public void removeFromReading(Series series){
 
-        if(this.reading.size() == 0){
+        if(this.reading.isEmpty()){
             return;
         }
 
@@ -231,7 +219,6 @@ public class Reader extends Account{
 
     public void addNewOrder(Order order) {
 
-        System.out.println("adding new order");
         this.ordersHistory.add(order);
         notifyObserversNewOrder(true);
     }

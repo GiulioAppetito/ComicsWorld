@@ -34,18 +34,14 @@ public class MarkChapterAsReadController {
         Float achievement = 0f;
 
         for(Series readersSeries : UserLogin.getInstance().getReader().getReading()){
-            if(readersSeries == null){
-                return;
-            }
             if(readersSeries.getTitle().equals(series.getTitle())){
                 for(Chapter chapter : readersSeries.getChapters()){
-                    if(chapter.getRead()){
+                    if(Boolean.TRUE.equals(chapter.getRead())){
                         readersReadings++;
                     }
                 }
             }
             achievement =(readersReadings / series.getChapters().size());
-
         }
 
         //controllo degli obiettivi
@@ -102,8 +98,6 @@ public class MarkChapterAsReadController {
                 }
             }
         }
-
-        SeriesDAO seriesDAO = new SeriesDAO();
         Series series = SeriesDAO.retrieveSeries(seriesBean.getTitle());
         series.unmarkChapter(chapterBean.getTitle());
 

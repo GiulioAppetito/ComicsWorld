@@ -18,6 +18,7 @@ public class DiscountCodeDAO {
     public Map<DiscountCode, Series> retreiveDiscountCodesByReader(String username) {
 
         Statement stmt = null;
+        Statement stmt2 = null;
         Connection conn = null;
 
         Map<DiscountCode,Series> discountCodes = new HashMap<>();
@@ -54,7 +55,7 @@ public class DiscountCodeDAO {
                 discount.setLimitDays(limitDays);
 
                 ResultSet rs2;
-                Statement stmt2 = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
+                stmt2 = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
                 rs2 = Queries.retreiveObjectivesByDiscountCode(stmt2,rs.getInt("objectiveID"));
 
                 Series series;
@@ -68,9 +69,6 @@ public class DiscountCodeDAO {
 
 
             } while (rs.next());
-            for(DiscountCode discountCode : discountCodes.keySet()){
-                System.out.println("[DISCOUNT CODE DAO] I found these codes : <"+discountCode.getCode()+","+discountCodes.get(discountCode).getTitle()+">");
-            }
 
 
         } catch (SQLException throwables) {
@@ -79,6 +77,12 @@ public class DiscountCodeDAO {
             e.printStackTrace();
         }
         finally {
+            try {
+                if (stmt2 != null)
+                    stmt2.close();
+            } catch (SQLException se2) {
+                //TO-DO
+            }
             try {
                 if (stmt != null)
                     stmt.close();

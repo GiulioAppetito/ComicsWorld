@@ -87,7 +87,7 @@ public class AccountDAO {
 
         }
         catch (SQLException throwables) {
-            System.out.println("ECCEZIONE REGISTRAZIONE");
+            //to-do
         } catch (Exception e) {
             e.printStackTrace();
         } finally {
@@ -242,7 +242,7 @@ public class AccountDAO {
             ResultSet rs = Queries.retrieveFollowersMails(stmt, author.getUsername());
 
             if (!rs.first()) {
-                return null;
+                return mails;
             }
             rs.first();
 
@@ -260,6 +260,14 @@ public class AccountDAO {
             try {
                 assert conn != null;
                 conn.close();
+
+            } catch (SQLException | NullPointerException e) {
+                e.printStackTrace();
+            }
+
+            try{
+                assert stmt!= null;
+                stmt.close();
             } catch (SQLException | NullPointerException e) {
                 e.printStackTrace();
             }

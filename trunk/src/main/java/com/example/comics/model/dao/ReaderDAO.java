@@ -7,7 +7,6 @@ import javafx.scene.image.Image;
 import java.io.InputStream;
 import java.sql.*;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -17,18 +16,6 @@ public class ReaderDAO {
     private static final String PASS = "passwordanastasia";
     private static final String DB_URL = "jdbc:mysql://comics-world.ce9t0fxhansh.eu-west-2.rds.amazonaws.com:3306/ComicsWorld?autoReconnect=true&useSSL=false";
 
-    private final List<Series> favSeries = new ArrayList<>();
-    private final List<Series> toReadSeries = new ArrayList<>();
-    private Map<DiscountCode,Series> discountCodes = new HashMap<>();
-    private final List<Author> followedAuthors = new ArrayList<>();
-    private final List<Series> readingSeries = new ArrayList<>();
-
-
-    private final List<Series> all = new ArrayList<>();
-    private List<String> favTitles = new ArrayList<>();
-    private List<String> toReadTitles = new ArrayList<>();
-    private List<String> readingTitles = new ArrayList<>();
-    private List<String> followedAuthorsNames = new ArrayList<>();
 
     public Reader retrieveReader(String identifier, String password){
 
@@ -36,6 +23,17 @@ public class ReaderDAO {
         Connection conn = null;
 
         Reader reader = null;
+
+        List<Series> favSeries = new ArrayList<>();
+        List<Series> toReadSeries = new ArrayList<>();
+        Map<DiscountCode,Series> discountCodes;
+        List<Author> followedAuthors = new ArrayList<>();
+        List<Series> readingSeries = new ArrayList<>();
+
+        List<String> favTitles;
+        List<String> toReadTitles;
+        List<String> readingTitles;
+        List<String> followedAuthorsNames;
 
         try {
             conn = DriverManager.getConnection(DB_URL, USER, PASS);
@@ -83,8 +81,6 @@ public class ReaderDAO {
             discountCodes = discountCodeDAO.retreiveDiscountCodesByReader(username);
 
             reader = new Reader(favSeries, toReadSeries, readingSeries, username, followedAuthors, discountCodes);
-
-            System.out.println("You have this first discount code : "+discountCodes);
 
             reader.setFirstName(rs.getString("firstname"));
             reader.setLastName(rs.getString("lastname"));
@@ -302,6 +298,12 @@ public class ReaderDAO {
             try {
                 assert conn != null;
                 conn.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+            try {
+                assert stmt != null;
+                stmt.close();
             } catch (SQLException e) {
                 e.printStackTrace();
             }

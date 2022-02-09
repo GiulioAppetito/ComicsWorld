@@ -22,8 +22,6 @@ public class SeriesDAO {
     private static final String TITLE = "title";
     private static final String COVER = "cover";
     private static final String AUTHOR = "author";
-    private static final String NOSERIESFOUND = "No series Found ";
-
 
     private static List<Series> all = new ArrayList<>();
 
@@ -98,10 +96,12 @@ public class SeriesDAO {
                             series.setCover(image);
                         }
                         seriesList.add(series);
+                        assert author != null;
                         author.addPublishedSeries(series);
 
 
             } while (rs.next());
+
 
 
         } catch (Exception throwables) {
@@ -200,8 +200,6 @@ public class SeriesDAO {
 
         String title;
 
-        Series series;
-
         try {
             conn = DriverManager.getConnection(DB_URL, USER, PASS);
 
@@ -246,8 +244,6 @@ public class SeriesDAO {
         List<String> seriesList = new ArrayList<>();
 
         String title;
-
-        Series series;
 
         try {
             conn = DriverManager.getConnection(DB_URL, USER, PASS);

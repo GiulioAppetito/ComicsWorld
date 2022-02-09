@@ -54,14 +54,12 @@ public class Queries {
 
     public static ResultSet checkSignedUserByEmail(Statement stmt, String credential) throws SQLException {
         String selectStatement = String.format("SELECT * FROM users WHERE (email = '%s' OR username = '%s')", credential, credential);
-        System.out.println(selectStatement);
         return stmt.executeQuery(selectStatement);
     }
 
     public static void addProfile(Statement stmt, String firstName, String lastName, String username, String email, String password, String role) throws SQLException {
 
         String insertStatement = String.format("INSERT INTO `users`(firstname,lastname,username,email,password,role) VALUES ('%s','%s','%s','%s','%s','%s')", firstName,lastName,username,email,password,role);
-        System.out.println(insertStatement);
         stmt.executeUpdate(insertStatement);
 
     }
@@ -74,26 +72,22 @@ public class Queries {
 
     public static ResultSet retrieveUser(Statement stmt, String identifier, String password) throws SQLException {
         String selectStatement = String.format("SELECT * FROM users WHERE (username = '%s' OR email = '%s')  AND password = '%s'",identifier,identifier,password);
-        System.out.println(selectStatement);
         return stmt.executeQuery(selectStatement);
     }
 
     public static int saveReview(Statement stmt, Review review, Chapter chapter, Series series) throws SQLException {
         String insertStatement = String.format("INSERT INTO review (user, comment, series_title, chapter_title, rating) VALUES ('%s','%s','%s','%s','%s')", review.getAccount().getUsername(), review.getComment(), series.getTitle(), chapter.getTitle(), review.getRating());
-        System.out.println(insertStatement);
         stmt.executeUpdate(insertStatement);
         return 0;
     }
 
     public static ResultSet retreiveObjectivesBySeries(Statement stmt,String seriesTitle) throws SQLException {
         String selectStatement = String.format("SELECT * FROM objectives WHERE seriesTitle = '%s'",seriesTitle);
-        System.out.println(selectStatement);
         return stmt.executeQuery(selectStatement);
     }
 
     public static ResultSet retreiveBadgeByID(Statement stmt, int badgeID) throws SQLException {
         String selectStatement = String.format("SELECT * FROM badges WHERE badgeID = '%d'",badgeID);
-        System.out.println(selectStatement);
         return stmt.executeQuery(selectStatement);
     }
 
@@ -101,61 +95,58 @@ public class Queries {
     public static void saveReadersDiscountCode(Statement stmt, DiscountCode discountCode, Reader reader,Series series,Objective objective) throws SQLException {
 
         String insertStatement = String.format("INSERT INTO discountCodes (username, code, expiringDate, percentage,startingDate,series,objectiveID) values ('%s', '%s', '%s', '%s','%s','%s','%d')", reader.getUsername(), discountCode.getCode(), DatesConverter.toString(discountCode.getExpiringDate()), discountCode.getDiscount().getPercentage(),DatesConverter.toString(LocalDate.now()),series.getTitle(),objective.getBadge().getId());
-        System.out.println(insertStatement);
         stmt.executeUpdate(insertStatement);
     }
 
     public static void addSeriesToFavourites(Statement stmt, String seriesTitle, String username) throws SQLException {
         String insertStatement = String.format("INSERT INTO userFavouriteSeries(user, series) values ('%s', '%s')", username, seriesTitle);
-        System.out.println(insertStatement);
         stmt.executeUpdate(insertStatement);
     }
 
     public static void removeSeriesFromFavourites(Statement stmt, String seriesTitle, String username) throws SQLException {
         String insertStatement = String.format("DELETE FROM userFavouriteSeries WHERE user = '%s' AND series = '%s'", username, seriesTitle);
-        System.out.println(insertStatement);
         stmt.executeUpdate(insertStatement);
     }
 
     public static void addSeriesToToRead(Statement stmt, Series series, Reader reader) throws SQLException {
         String insertStatement = String.format("INSERT INTO userToReadSeries (user, series) values ('%s', '%s')", reader.getUsername(),series.getTitle());
-        System.out.println(insertStatement);
         stmt.executeUpdate(insertStatement);
     }
 
     public static void removeSeriesFromToRead(Statement stmt, Series series, Reader reader) throws SQLException {
         String deleteStatement = String.format("DELETE FROM userToReadSeries WHERE user = '%s' AND series = '%s'", reader.getUsername(), series.getTitle());
-        System.out.println(deleteStatement);
         stmt.executeUpdate(deleteStatement);
     }
 
     public static ResultSet retrieveBadgesByReader(Statement stmt, String username) throws SQLException {
         String selectStatement = String.format("SELECT * FROM achievedBadges join badges on achievedbadges_id = badgeID WHERE user = '%s'", username);
-        System.out.println(selectStatement);
         return stmt.executeQuery(selectStatement);
     }
 
     public static void addAchievedBadge(Statement stmt, String username, int achievedbadgeID) throws SQLException {
         String insertStatement = String.format("INSERT INTO achievedBadges (user, achievedbadges_id) values ('%s', '%d')", username, achievedbadgeID);
-        System.out.println(insertStatement);
         stmt.executeUpdate(insertStatement);
     }
 
     public static void insertChapter(Connection connection, Chapter chapter,String seriesTitle,InputStream coverInputStream) throws SQLException{
+        PreparedStatement pstmt = null;
 
-
-        PreparedStatement pstmt = connection.prepareStatement("INSERT INTO chapters (series_title,chapter_title,chapterDescription,chapterCover,chapterPrice) values (?, ?,?,?,?)");
+        try {
+            pstmt = connection.prepareStatement("INSERT INTO chapters (series_title,chapter_title,chapterDescription,chapterCover,chapterPrice) values (?, ?,?,?,?)");
 
             pstmt.setString(1, seriesTitle);
-            pstmt.setString(2,chapter.getTitle());
-            pstmt.setString(3,chapter.getDescription());
-            pstmt.setFloat(5,chapter.getPrice());
+            pstmt.setString(2, chapter.getTitle());
+            pstmt.setString(3, chapter.getDescription());
+            pstmt.setFloat(5, chapter.getPrice());
 
             //Inserting Blob type
             pstmt.setBlob(4, coverInputStream);
-            System.out.println(pstmt);
             //Executing the statement
             pstmt.execute();
+        }finally{
+            assert pstmt != null;
+            pstmt.close();
+        }
 
     }
 
@@ -190,21 +181,17 @@ public class Queries {
 
     public static ResultSet isChapterRead(Statement stmt, String chapterTitle, String reader) throws SQLException {
         String selectStatement = String.format("SELECT * FROM userReadChapters WHERE (reader = '%s' AND chapter='%s')",reader,chapterTitle);
-        System.out.println(selectStatement);
         return stmt.executeQuery(selectStatement);
     }
 
     public static void updateUserProPic(Connection conn, InputStream inputStream, Account account) throws SQLException{
-        if(inputStream==null){
-            System.out.println("null input stream");
-        }
+
         try(PreparedStatement pstmt = conn.prepareStatement("UPDATE users SET propic = ? WHERE username = ?")){
             try{
                 pstmt.setString(2, account.getUsername());
                 pstmt.setBlob(1, inputStream);
 
                 pstmt.execute();
-                System.out.println(pstmt);
             } catch (Exception e) {
                 //TO-DO
             }
@@ -223,7 +210,6 @@ public class Queries {
 
             //Inserting Blob type
             pstmt.setBlob(6, seriesCoverInputStream);
-            System.out.println(pstmt);
             //Executing the statement
             pstmt.execute();
         }
@@ -252,7 +238,6 @@ public class Queries {
         Float discountPercentage = objective.getDiscount().getPercentage();
 
         String insertStatement = String.format("INSERT INTO objectives (limitDays,level,type,seriesTitle,discountPercentage,associatedBadgeID,number) values ('%s', '%s','%s','%s','%s','%d','%s')",limitDays,level,type,seriesTitle,discountPercentage,bagdeID,requirement);
-        System.out.println(insertStatement);
         stmt.executeUpdate(insertStatement);
     }
 
@@ -285,32 +270,27 @@ public class Queries {
 
     public static ResultSet retreiveDiscountCodesByReader(Statement stmt, String username) throws SQLException {
         String selectStatement = String.format("SELECT * FROM discountCodes WHERE (username = '%s')  ",username);
-        System.out.println(selectStatement);
         return stmt.executeQuery(selectStatement);
     }
 
     public static void deleteDiscountCode(Statement stmt, Reader reader, DiscountCode discountCode) throws SQLException {
         String deleteStatement = String.format("DELETE FROM discountCodes WHERE (username = '%s' AND code = '%s')  ",reader.getUsername(),discountCode.getCode());
-        System.out.println(deleteStatement);
         stmt.executeUpdate(deleteStatement);
     }
 
     public static void removeChapterFromRead(Statement stmt, Series series, String chapterTitle, Reader reader) throws SQLException {
         String deleteStatement = String.format("DELETE FROM userReadChapters WHERE (reader = '%s' AND series = '%s' AND chapter = '%s')  ",reader.getUsername(),series.getTitle(),chapterTitle);
-        System.out.println(deleteStatement);
         stmt.executeUpdate(deleteStatement);
     }
 
 
     public static ResultSet retreiveOrdersByReader(Statement stmt, String reader) throws SQLException {
         String selectStatement = String.format("SELECT * FROM orders WHERE (reader = '%s')",reader);
-        System.out.println(selectStatement);
         return stmt.executeQuery(selectStatement);
     }
 
     public static ResultSet retreiveAllAuthors(Statement stmt) throws SQLException {
-        String selectStatement = String.format("SELECT * FROM users WHERE (role = 'author')");
-        System.out.println(selectStatement);
+        String selectStatement = "SELECT * FROM users WHERE (role = 'author')";
         return stmt.executeQuery(selectStatement);
     }
 
@@ -321,13 +301,11 @@ public class Queries {
 
     public static ResultSet retreiveObjectivesByDiscountCode(Statement stmt, int badgeID) throws SQLException {
         String selectStatement = String.format("SELECT DISTINCT seriesTitle FROM objectives WHERE (associatedBadgeID = '%d')",badgeID);
-        System.out.println(selectStatement);
         return stmt.executeQuery(selectStatement);
     }
 
     public static ResultSet retrieveFollowersMails(Statement stmt, String username) throws SQLException {
         String selectStatement = String.format("SELECT DISTINCT email FROM followedAuthors JOIN users ON reader = username WHERE (author = '%s')",username);
-        System.out.println(selectStatement);
         return stmt.executeQuery(selectStatement);
     }
 }

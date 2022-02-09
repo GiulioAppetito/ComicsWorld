@@ -389,7 +389,7 @@ public class ChapterControllerG implements ChapterObserver, ReaderObserver{
 
     private static final String STYLE = ".button2";
     private static final String STYLE2 = "-fx-background-color: #5DADE2; -fx-background-radius: 20";
-    private static SeriesBean currentSeries;
+    private SeriesBean currentSeries;
 
     public void init(ChapterBean chapterBean, SeriesBean seriesBean){
 
@@ -429,7 +429,6 @@ public class ChapterControllerG implements ChapterObserver, ReaderObserver{
         btnBuyComics.setOnAction(event -> buyComics());
 
         if(UserLogin.getInstance().getAccount().getRole().equals("reader")) {
-            System.out.println("INITING CHOICE BOX");
             btnAddReview.setOnAction(event -> openEditor());
             initChoiceBoxCodes();
 
@@ -648,7 +647,7 @@ public class ChapterControllerG implements ChapterObserver, ReaderObserver{
         initChoiceBoxCodes();
     }
     public void update(Boolean payment){
-        if(payment){
+        if(Boolean.TRUE.equals(payment)){
             orderPane.setVisible(true);
             lblOrderResult.setText("Completed payment!");
             initChoiceBoxCodes();

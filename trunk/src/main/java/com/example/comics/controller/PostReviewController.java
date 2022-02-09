@@ -87,9 +87,7 @@ public class PostReviewController{
 
 
         //invio mail al lettore del codice sconto
-        new Thread(()->{
-            sendEmailToReader(discountCode,seriesBean);
-        }).start();
+        new Thread(()-> sendEmailToReader(discountCode,seriesBean)).start();
     }
 
     private void sendEmailToReader(DiscountCode discountCode,SeriesBean seriesBean){

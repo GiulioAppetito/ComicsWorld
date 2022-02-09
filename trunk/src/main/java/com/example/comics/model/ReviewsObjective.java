@@ -5,6 +5,7 @@ public class ReviewsObjective extends Objective{
     private Float requiredReviews;
 
     public ReviewsObjective(){
+        //costruttore
     }
 
     @Override

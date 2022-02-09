@@ -42,16 +42,10 @@ public class PayPalBoundary implements PayPalInterface{
 
         String res = fakePayPalControllerG.getResult();
 
-        if (res == null) {
-            System.out.println("PAYPALBOUNDARY: "+ "null");
-            return 0;
-        }
         if(res.equals("right")){
-            System.out.println("PAYPALBOUNDARY: "+ "right");
             return 1;
         }
         if(res.equals("wrong")){
-            System.out.println("PAYPALBOUNDARY: "+ "wrong");
             return 2;
         }else{
             return 0;

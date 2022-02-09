@@ -12,7 +12,7 @@ public abstract class HomeControllerG {
 
     private static final String FEED = "feed";
 
-    private static URL fxmlHomeLocation = null;
+    private URL fxmlHomeLocation = null;
 
     public abstract void init();
 
@@ -88,6 +88,6 @@ public abstract class HomeControllerG {
     }
 
     public void setLocation(URL location){
-        this.fxmlHomeLocation = location;
+        fxmlHomeLocation = location;
     }
 }

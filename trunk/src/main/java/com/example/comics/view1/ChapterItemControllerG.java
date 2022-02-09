@@ -4,9 +4,7 @@ import com.example.comics.model.fagioli.ChapterBean;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.text.Text;
 
 public class ChapterItemControllerG {
 
@@ -23,10 +21,6 @@ public class ChapterItemControllerG {
     public void setData(ChapterBean chapterBean){
         lblName.setText(chapterBean.getTitle());
         ivCover.setImage(chapterBean.getCover());
-        if(chapterBean.getRead()){
-            btnCheckRead.setVisible(true);
-        }else{
-            btnCheckRead.setVisible(false);
-        }
+        btnCheckRead.setVisible(chapterBean.getRead());
     }
 }

@@ -71,15 +71,11 @@ public class ProfileSettingsControllerG implements AccountObserver {
         fc.getExtensionFilters().add(new FileChooser.ExtensionFilter("*.png","*.png"));
         File f = fc.showOpenDialog(null);
         if(f!=null){
-            System.out.println("[PRO SETT CON] : not null f");
             imageCoverPath = f.getAbsolutePath();
 
             try {
                 inputStream = new FileInputStream(imageCoverPath);
                 accountBean.setInputStream(new FileInputStream(imageCoverPath));
-                if(inputStream == null){
-                    System.out.println("input stream == null");
-                }
             } catch (FileNotFoundException e) {
                 e.printStackTrace();
             }

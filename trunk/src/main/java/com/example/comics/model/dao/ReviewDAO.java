@@ -54,7 +54,7 @@ public class ReviewDAO {
 
     }
 
-    public void saveReview(Review review, Chapter chapter, Series series) throws Exception {
+    public void saveReview(Review review, Chapter chapter, Series series){
         // STEP 1: dichiarazioni
         Statement stmt;
         Connection conn = null;
@@ -69,9 +69,15 @@ public class ReviewDAO {
             stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
             Queries.saveReview(stmt,review, chapter, series);
 
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
         } finally {
             assert conn!=null;
-            conn.close();
+            try {
+                conn.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
         }
     }
 
