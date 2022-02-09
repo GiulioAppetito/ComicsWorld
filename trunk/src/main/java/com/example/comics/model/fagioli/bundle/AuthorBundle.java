@@ -15,12 +15,15 @@ public class AuthorBundle implements AuthorBean {
     private Image proPic;
     private String email;
 
-    public List<Series> getPublishedSeries() {
-        return publishedSeries;
+
+
+
+    public Image getProPic() {
+        return this.proPic;
     }
 
-    public void setPublishedSeries(List<Series> publishedSeries) {
-        this.publishedSeries = publishedSeries;
+    public void setProPic(Image image){
+        this.proPic=image;
     }
 
     public String getFirstName() {
@@ -29,6 +32,14 @@ public class AuthorBundle implements AuthorBean {
 
     public void setFirstName(String firstName) {
         this.firstName = firstName;
+    }
+
+    public List<Series> getPublishedSeries() {
+        return publishedSeries;
+    }
+
+    public void setPublishedSeries(List<Series> publishedSeries) {
+        this.publishedSeries = publishedSeries;
     }
 
     public String getLastName() {
@@ -45,14 +56,6 @@ public class AuthorBundle implements AuthorBean {
 
     public void setUsername(String username) {
         this.username = username;
-    }
-
-    public Image getProPic() {
-        return this.proPic;
-    }
-
-    public void setProPic(Image image){
-        this.proPic=image;
     }
 
     @Override
