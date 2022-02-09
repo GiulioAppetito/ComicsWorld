@@ -21,6 +21,14 @@ public class ChapterBean1 implements ChapterBean {
     private Float price;
 
 
+    @Override
+    public Image getCover() {
+        return this.cover;
+    }
+    @Override
+    public void setCover(Image cover) {
+        this.cover = cover;
+    }
 
     @Override
     public String getTitle() {
@@ -31,14 +39,6 @@ public class ChapterBean1 implements ChapterBean {
         this.title = title;
     }
 
-    @Override
-    public Image getCover() {
-        return this.cover;
-    }
-    @Override
-    public void setCover(Image cover) {
-        this.cover = cover;
-    }
 
     @Override
     public List<ReviewBean> getReviews() {

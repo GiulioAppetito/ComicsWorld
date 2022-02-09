@@ -53,6 +53,14 @@ public class AccountBean2 implements AccountBean {
         this.username = username;
     }
 
+    public InputStream getInputStream() {
+        return inputStream;
+    }
+
+    public void setInputStream(InputStream inputStream) {
+        this.inputStream = inputStream;
+    }
+
     public Image getProPic() {
         return this.proPic;
     }
@@ -61,11 +69,4 @@ public class AccountBean2 implements AccountBean {
         this.proPic = proPic;
     }
 
-    public InputStream getInputStream() {
-        return inputStream;
-    }
-
-    public void setInputStream(InputStream inputStream) {
-        this.inputStream = inputStream;
-    }
 }

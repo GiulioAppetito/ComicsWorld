@@ -11,7 +11,6 @@ public class TestSelenium {
         WebDriver driver = new ChromeDriver();
         driver.get("https://it.wikipedia.org/wiki/Uomo_Ragno");
         WebElement txtBox = driver.findElement(By.xpath("//*[@id=\"mw-content-text\"]/div[1]/table[1]/tbody/tr[8]/td/ul/li[1]/a"));
-        System.out.println(txtBox.getText());
     }
 
 }
