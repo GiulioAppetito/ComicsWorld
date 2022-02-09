@@ -18,12 +18,11 @@ public class PostReviewController{
         if(reviewBean.getComment().equals("") || reviewBean.getComment() == null){
             throw new IncompleteReviewException("Fill every field to post!");
         }
-        Review review = new Review(reviewBean.getComment(),reviewBean.getRating(),reviewBean.getAccount());
 
         Series series;
         series = SeriesDAO.retrieveSeries(seriesBean.getTitle());
         if (series != null) {
-            series.addReview(chapterBean.getTitle(),review);
+            series.addReview(chapterBean.getTitle(),reviewBean.getComment(),reviewBean.getRating(),reviewBean.getAccount());
         }
 
         //invio mail all'autore di una nuova review

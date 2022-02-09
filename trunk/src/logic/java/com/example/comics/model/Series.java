@@ -125,10 +125,10 @@ public class Series extends SeriesSubject{
 		return chapter;
 	}
 
-	public void addReview(String chapterTitle, Review review) {
+	public void addReview(String chapterTitle, String comment, int rating, Account account) {
 			for(int i=0; i< chapters.size(); i++){
 				if(chapters.get(i).getTitle().equals(chapterTitle)){
-					chapters.get(i).addReview(this,review);
+					chapters.get(i).addReview(this,comment, rating, account);
 				}
 			}
 			calculateAverageRating();
