@@ -22,7 +22,9 @@ public class PostReviewController{
 
         Series series;
         series = SeriesDAO.retrieveSeries(seriesBean.getTitle());
-        series.addReview(chapterBean.getTitle(),review);
+        if (series != null) {
+            series.addReview(chapterBean.getTitle(),review);
+        }
 
         //invio mail all'autore di una nuova review
         Thread emailThread;
@@ -42,7 +44,7 @@ public class PostReviewController{
         boolean isNewObjectiveAchieved;
 
         //numero di review del lettore
-        Float numOfReviews = 0f;
+        float numOfReviews = 0f;
         for(Chapter chapter : series.getChapters()){
             for(Review review : chapter.getReviews()){
                 if(review.getAccount().getUsername().equals(UserLogin.getInstance().getReader().getUsername())){

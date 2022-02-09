@@ -8,6 +8,7 @@ import com.example.comics.model.Series;
 import com.example.comics.model.UserLogin;
 import com.example.comics.model.dao.DiscountCodeDAO;
 import com.example.comics.model.dao.OrderDAO;
+import com.example.comics.model.dao.SeriesDAO;
 import com.example.comics.model.exceptions.DiscountCodeException;
 import com.example.comics.model.fagioli.AccountBean;
 import com.example.comics.model.fagioli.ChapterBean;
@@ -34,15 +35,12 @@ public class BuyComicController {
         }
 
             //nel caso vada tutto a buon fine ...
-            //chiamo altra boundary per la carta
             AccountBean accountBean = new AccountBundle();
             accountBean.setFirstName(UserLogin.getInstance().getAccount().getFirstName());
             accountBean.setLastName(UserLogin.getInstance().getAccount().getLastName());
 
             PaymentBoundary paymentBoundary = new PaymentBoundary();
             paymentBoundary.convalidPayment(accountBean, chapterBean, seriesBean, discountCodeBean);
-
-
 
     }
 
@@ -66,12 +64,7 @@ public class BuyComicController {
             }
         }
 
-        Series orderedSeries = null;
-        for(Series series : seriesBean.getAuthor().getPublishedSeries()){
-            if(series.getTitle().equals(seriesBean.getTitle())){
-                orderedSeries = series;
-            }
-        }
+        Series orderedSeries = SeriesDAO.retrieveSeries(seriesBean.getTitle());
 
         Order order = new Order(orderedSeries);
         order.setDate(LocalDate.now());

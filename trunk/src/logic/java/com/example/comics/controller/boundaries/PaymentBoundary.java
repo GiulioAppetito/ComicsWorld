@@ -32,19 +32,20 @@ public class PaymentBoundary {
                 waiting[0] = paypal.convalidPayment();
             }
 
-            signalPayment(seriesBean , chapterBean, discountCodeBean);
+            signalPayment(waiting[0], seriesBean , chapterBean, discountCodeBean);
         });
         waitForPayment.start();
 
     }
 
-    private void signalPayment(SeriesBean seriesBean, ChapterBean chapterBean, DiscountCodeBean discountCodeBean){
+    private void signalPayment(int b, SeriesBean seriesBean, ChapterBean chapterBean, DiscountCodeBean discountCodeBean){
+
         BuyComicController buyComicController = new BuyComicController();
-        buyComicController.completedPayment(seriesBean, chapterBean, discountCodeBean);
-
-
-
-
+        if(b==1) {
+            buyComicController.completedPayment(seriesBean, chapterBean, discountCodeBean);
+        }else{
+            buyComicController.failedPayment();
+        }
     }
 
 }

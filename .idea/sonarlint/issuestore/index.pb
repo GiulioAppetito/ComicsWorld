@@ -45,3 +45,21 @@ g
 Coomics.iml,e\e\ee9c7419ca187f5eb005ec5f6bcb3934bb03ee34
 A
 comando batch.txt,e\c\ec904f9bcd6fb051ee00b231734dbc0e5d956b96
+[
++Deliverables/ProcessControlChart/report.csv,3\a\3a7527770859781863d37c0e7908011bea46065e
+Z
+*Deliverables/ProcessControlChart/README.md,8\f\8f4849ca2550657cd7d8b879a508eae8edc3f261
+Z
+*Deliverables/ProcessControlChart/script.py,e\c\ec07e446f634f6e2c8075122a50e891c9ca0c31d
+U
+%trunk/src/logic/java/module-info.java,2\7\272c71f6316650e1d38c1f58dc8158dc777fa843
+s
+Ctrunk/src/logic/java/com/example/comics/view2/FeedControllerG2.java,2\e\2ec2b4557a350159074e3ddc688331681b1c9470
+ä
+Ztrunk/src/logic/java/com/example/comics/controller/boundaries/BuyComicsAuthorBoundary.java,d\2\d20c3134ebf0b7499d7c23ac476f0418c6ebb39c
+Å
+Qtrunk/src/logic/java/com/example/comics/controller/boundaries/MailProperties.java,3\0\309af6b5f5afd986252896d6786ce161a8215805
+[
++Deliverables/ProcessControlChart/report.txt,0\e\0e9494c74bcf03ee4627fe002d1ebc636811dbaa
+g
+7trunk/src/logic/java/com/example/comics/view1/Main.java,f\1\f1698c002f379417be20bcbec0ea81bd6c8a454c
