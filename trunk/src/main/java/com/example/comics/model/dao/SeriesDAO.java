@@ -196,7 +196,7 @@ public class SeriesDAO {
         Statement stmt37 = null;
         Connection conn37 = null;
 
-        List<String> seriesList = new ArrayList<>();
+        List<String> list = new ArrayList<>();
 
         String title;
 
@@ -207,13 +207,13 @@ public class SeriesDAO {
             ResultSet rs = Queries.retriveFavouriteSeries(stmt37, user);
 
             if (!rs.first()) {
-                return seriesList;
+                return list;
             }
             rs.first();
 
             do {
                 title = rs.getString(SERIES);
-                seriesList.add(title);
+                list.add(title);
             } while (rs.next());
 
 
@@ -234,14 +234,14 @@ public class SeriesDAO {
             }
 
         }
-        return seriesList;
+        return list;
     }
 
     public List<String> retrieveToReadSeriesTitles(String user) {
         Statement stmt38 = null;
         Connection conn38 = null;
 
-        List<String> seriesList = new ArrayList<>();
+        List<String> list2 = new ArrayList<>();
 
         String title;
 
@@ -252,13 +252,13 @@ public class SeriesDAO {
             ResultSet rs = Queries.retriveToReadSeries(stmt38, user);
 
             if (!rs.first()) {
-                return seriesList;
+                return list2;
             }
             rs.first();
 
             do {
                 title = rs.getString(SERIES);
-                seriesList.add(title);
+                list2.add(title);
             } while (rs.next());
 
 
@@ -279,7 +279,7 @@ public class SeriesDAO {
             }
 
         }
-        return seriesList;
+        return list2;
     }
 
     public List<String> retrieveReadingSeriesTitles(String user) {
