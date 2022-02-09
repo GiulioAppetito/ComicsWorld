@@ -11,6 +11,14 @@ public class RegistrationBean1 implements RegistrationBean {
     private String role;
 
 
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
     public String getFirstName() {
         return firstName;
     }
@@ -25,14 +33,6 @@ public class RegistrationBean1 implements RegistrationBean {
 
     public void setLastName(String lastName) {
         this.lastName = lastName;
-    }
-
-    public String getUsername() {
-        return username;
-    }
-
-    public void setUsername(String username) {
-        this.username = username;
     }
 
     public String getPassword() {
