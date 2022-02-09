@@ -15,10 +15,10 @@ all the info you want to analyze, in our case it regards commits per month.
 Run this command in the folder of the github project:
 (in our case: C:\..\ComicsWorld) 
 
-git log > Deliverables\report.txt
+git log > report.txt
 
 
-Then, run the script located in the folder of the "report.txt" file.
+Then, run the script located in the same folder of the "report.txt" file.
 (python script.py)
 
 You will now have generated a "report.csv" file, containing two sheets:

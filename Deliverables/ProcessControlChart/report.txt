@@ -1,3 +1,1418 @@
+commit c0e1cd0e68b01380569861e0fd1818aa86f65b54
+Author: Giulio <giulio.appetito.ga@gmail.com>
+Date:   Wed Feb 9 17:05:46 2022 +0100
+
+    tests
+
+commit 3142122022972fdbdf3d34bc4bc64558d24d2d71
+Author: Giulio <giulio.appetito.ga@gmail.com>
+Date:   Wed Feb 9 16:40:51 2022 +0100
+
+    tests
+
+commit a05dde9471d385fccfb56be66250d7e971ffccbb
+Merge: f87a6d3d a2afd84f
+Author: Giulio <giulio.appetito.ga@gmail.com>
+Date:   Wed Feb 9 15:52:26 2022 +0100
+
+    Merge remote-tracking branch 'origin/master'
+    
+    # Conflicts:
+    #       trunk/src/test/java/selenium/TestSelenium.java
+
+commit f87a6d3d326934bb8bb7c11e4a12b2b2ad722082
+Author: Giulio <giulio.appetito.ga@gmail.com>
+Date:   Wed Feb 9 15:52:08 2022 +0100
+
+    tests
+
+commit a2afd84f0fedb95f8980fc97f0b9a5195f418b8d
+Author: Anastasia <anastasia.brinati@students.uniroma2.eu>
+Date:   Wed Feb 9 15:41:59 2022 +0100
+
+    code smells
+
+commit cc31d0ce1a5e050c65b4c5d47f782a3b820819e7
+Author: Anastasia <anastasia.brinati@students.uniroma2.eu>
+Date:   Wed Feb 9 15:29:43 2022 +0100
+
+    code smells
+
+commit 97bd5603ad71a93a470549abc44f296f0d727f39
+Author: Anastasia <anastasia.brinati@students.uniroma2.eu>
+Date:   Wed Feb 9 15:28:39 2022 +0100
+
+    code smells
+
+commit 197f96ab16f2c9c3c55bcd614a4671d93cb4094f
+Author: Anastasia <anastasia.brinati@students.uniroma2.eu>
+Date:   Wed Feb 9 15:22:45 2022 +0100
+
+    code smells
+
+commit 9ae580e8583e4c0d049b3addc3fc460085c12920
+Author: Anastasia <anastasia.brinati@students.uniroma2.eu>
+Date:   Wed Feb 9 15:22:19 2022 +0100
+
+    code smells
+
+commit 3a3b13d456492c5000f4c42d94ddb026ff440e00
+Author: Anastasia <anastasia.brinati@students.uniroma2.eu>
+Date:   Wed Feb 9 14:42:40 2022 +0100
+
+    code smells
+
+commit 57c4ee340a30054946a7a0ce8ba574fda4f2bd69
+Author: Anastasia <anastasia.brinati@students.uniroma2.eu>
+Date:   Wed Feb 9 14:35:14 2022 +0100
+
+    code smells
+
+commit 526feed095559d2e77c054a9cc2b55ac602eee70
+Author: Anastasia <anastasia.brinati@students.uniroma2.eu>
+Date:   Wed Feb 9 14:08:33 2022 +0100
+
+    code smells
+
+commit 4b355b48c7f0df0e81d433f49b1f1d8c4b3c61cb
+Author: Anastasia <anastasia.brinati@students.uniroma2.eu>
+Date:   Wed Feb 9 13:58:11 2022 +0100
+
+    code smells
+
+commit 5803df711d2e4f3016cd76295dfb2ac0f9e920e5
+Author: Anastasia <anastasia.brinati@students.uniroma2.eu>
+Date:   Wed Feb 9 13:50:22 2022 +0100
+
+    code smells
+
+commit 1dbb61ef6b525e64a9474df34b45a5d3a8e22b51
+Author: Anastasia <anastasia.brinati@students.uniroma2.eu>
+Date:   Wed Feb 9 13:43:20 2022 +0100
+
+    code smells
+
+commit d51900cd9eb804516e49533f87a9d5af940c3274
+Author: Anastasia <anastasia.brinati@students.uniroma2.eu>
+Date:   Wed Feb 9 13:42:47 2022 +0100
+
+    code smells
+
+commit a586619a8be06b871821963e41606eaad0585a70
+Author: Anastasia <anastasia.brinati@students.uniroma2.eu>
+Date:   Wed Feb 9 13:39:13 2022 +0100
+
+    code smells
+
+commit 87aaaf3e1d0c7581809f9eb7b73b3e8bbc1b8cfe
+Author: Anastasia <anastasia.brinati@students.uniroma2.eu>
+Date:   Wed Feb 9 13:35:08 2022 +0100
+
+    code smells
+
+commit 7668b4403c51d61bda20325166084318ec9d92d2
+Author: Anastasia <anastasia.brinati@students.uniroma2.eu>
+Date:   Wed Feb 9 13:22:17 2022 +0100
+
+    code smells
+
+commit 122e55f9e787b44882f814aceec35480737446cf
+Author: Anastasia <anastasia.brinati@students.uniroma2.eu>
+Date:   Wed Feb 9 12:19:15 2022 +0100
+
+    code smells
+
+commit 39f4f6e583c672c81357e51dcb3e8df0120e7d74
+Author: Anastasia <anastasia.brinati@students.uniroma2.eu>
+Date:   Wed Feb 9 12:06:46 2022 +0100
+
+    code smells
+
+commit dec33c550009e1537ceea32d0b321d579fef039f
+Author: Anastasia <anastasia.brinati@students.uniroma2.eu>
+Date:   Wed Feb 9 12:00:03 2022 +0100
+
+    code smells
+
+commit 8b9693014e6662b58d454c54ea9625bd653bacfa
+Author: Anastasia <anastasia.brinati@students.uniroma2.eu>
+Date:   Wed Feb 9 11:56:37 2022 +0100
+
+    code smells
+
+commit 9d19d6ed30cf9ea12cb3626ea35009bec34b5504
+Author: Giulio <giulio.appetito.ga@gmail.com>
+Date:   Wed Feb 9 11:52:01 2022 +0100
+
+    selenium fixed
+
+commit b03be01eae605852c7fe943b7eef16df930e69a1
+Author: Giulio <giulio.appetito.ga@gmail.com>
+Date:   Wed Feb 9 11:49:54 2022 +0100
+
+    selenium fixed
+
+commit c48eb472a3706b4367dd5e7efab3cf6b7ffa9002
+Author: Giulio <giulio.appetito.ga@gmail.com>
+Date:   Wed Feb 9 11:46:33 2022 +0100
+
+    selenium fixed
+
+commit cb74d3945900d0aaaaf5756a20705fe132b0f488
+Author: Giulio <giulio.appetito.ga@gmail.com>
+Date:   Wed Feb 9 11:44:24 2022 +0100
+
+    selenium fixed
+
+commit 5d5e30719311d362f6cd406942e7ed8b49c9479a
+Merge: 1e4656e5 c1c0be5d
+Author: Giulio <giulio.appetito.ga@gmail.com>
+Date:   Wed Feb 9 11:38:20 2022 +0100
+
+    Merge remote-tracking branch 'origin/master'
+
+commit 1e4656e52c1670c7697645c2c9be4114810433d5
+Author: Giulio <giulio.appetito.ga@gmail.com>
+Date:   Wed Feb 9 11:38:07 2022 +0100
+
+    selenium fixed
+
+commit c1c0be5db94e1be925dd23b51c2e8b4fe90bcd76
+Author: Anastasia <anastasia.brinati@students.uniroma2.eu>
+Date:   Wed Feb 9 11:32:29 2022 +0100
+
+    code smells
+
+commit e93c7a319d107bb75d83efc7d63d5c9329aa7ca5
+Author: Giulio <giulio.appetito.ga@gmail.com>
+Date:   Wed Feb 9 11:29:17 2022 +0100
+
+    selenium fixed
+
+commit de0fd3549e8b418fa9d6a19480430165ef25cd72
+Author: Giulio <giulio.appetito.ga@gmail.com>
+Date:   Wed Feb 9 11:21:19 2022 +0100
+
+    selenium fixed
+
+commit 2eefc494725a6fdffbd879e52f0d8afe3ee5d522
+Merge: 59af8d37 bc7ba159
+Author: Giulio <giulio.appetito.ga@gmail.com>
+Date:   Wed Feb 9 11:17:02 2022 +0100
+
+    Merge remote-tracking branch 'origin/master'
+
+commit 59af8d3772a1bb1da0a1bfcc414f3c227ad902ef
+Author: Giulio <giulio.appetito.ga@gmail.com>
+Date:   Wed Feb 9 11:16:37 2022 +0100
+
+    selenium fixed
+
+commit bc7ba15937116f68714e1b33a7d675fe4c11c09b
+Author: Anastasia <anastasia.brinati@students.uniroma2.eu>
+Date:   Wed Feb 9 11:16:23 2022 +0100
+
+    code smells
+
+commit 7d252bbecb390ed328b58e44103ab1f3c367381c
+Author: Anastasia <anastasia.brinati@students.uniroma2.eu>
+Date:   Wed Feb 9 11:12:49 2022 +0100
+
+    code smells
+
+commit 9235cd8ca713d055b664faa16936192a826643ad
+Author: Anastasia <anastasia.brinati@students.uniroma2.eu>
+Date:   Wed Feb 9 11:04:41 2022 +0100
+
+    code smells
+
+commit 1db5d8051b90a20b5a21ffec17bc5efe158e51b2
+Author: Anastasia <anastasia.brinati@students.uniroma2.eu>
+Date:   Wed Feb 9 10:49:17 2022 +0100
+
+    code smells
+
+commit 412936c4990edceb16ecd0a8e5664151b90a9fe5
+Author: Anastasia <anastasia.brinati@students.uniroma2.eu>
+Date:   Wed Feb 9 10:33:39 2022 +0100
+
+    code smells
+
+commit 59abd11dcde9a2fd2fe8061d0c117d556ed9b400
+Author: Anastasia <anastasia.brinati@students.uniroma2.eu>
+Date:   Wed Feb 9 01:50:28 2022 +0100
+
+    brillante come una perlina, scattante come un go kart
+
+commit d2c59b7e189a7747bdf135bf18fc0c30b4c09e13
+Author: Anastasia <anastasia.brinati@students.uniroma2.eu>
+Date:   Wed Feb 9 01:44:31 2022 +0100
+
+    brillante come una perlina, scattante come un go kart
+
+commit c41a2cfed56da7036ee1449cdff1b89f3679d454
+Author: Anastasia <anastasia.brinati@students.uniroma2.eu>
+Date:   Wed Feb 9 01:40:26 2022 +0100
+
+    brillante come una perlina, scattante come un go kart
+
+commit 9f975ca345be6580df84e40493e2c06358c8ccc3
+Author: Anastasia <anastasia.brinati@students.uniroma2.eu>
+Date:   Wed Feb 9 01:32:19 2022 +0100
+
+    brillante come una perlina, scattante come un go kart
+
+commit 7734c2bd2c5f4c29b2b4a85f65d692205db8e74b
+Author: Anastasia <anastasia.brinati@students.uniroma2.eu>
+Date:   Wed Feb 9 01:26:55 2022 +0100
+
+    brillante come una perlina, scattante come un go kart
+
+commit a04b1bf9972fe3c1e518304734cfb9afdf33d5b0
+Author: Anastasia <anastasia.brinati@students.uniroma2.eu>
+Date:   Wed Feb 9 01:20:39 2022 +0100
+
+    brillante come una perlina, scattante come un go kart
+
+commit e2bc8424e1cdf61f282257cc1f6b3a0aa0294a21
+Author: Anastasia <anastasia.brinati@students.uniroma2.eu>
+Date:   Wed Feb 9 01:18:11 2022 +0100
+
+    brillante come una perlina, scattante come un go kart
+
+commit 7edcdd249327af14f43f05d91a27394309a90ac2
+Author: Anastasia <anastasia.brinati@students.uniroma2.eu>
+Date:   Wed Feb 9 01:10:16 2022 +0100
+
+    brillante come una perlina, scattante come un go kart
+
+commit ec70fa0c0e2aa1224f63700b4a7fe04925ae0e1f
+Author: Anastasia <anastasia.brinati@students.uniroma2.eu>
+Date:   Tue Feb 8 23:24:16 2022 +0100
+
+    io sono velocità
+
+commit 1aaf61eecb116c84e3a66ba7543d178b0caa7642
+Author: Anastasia <anastasia.brinati@students.uniroma2.eu>
+Date:   Tue Feb 8 23:22:28 2022 +0100
+
+    io sono velocità
+
+commit 390128278bb3164bfc2172a17410728c10b8bb88
+Merge: ee2ec510 265b4415
+Author: Giulio <giulio.appetito.ga@gmail.com>
+Date:   Tue Feb 8 23:21:46 2022 +0100
+
+    Merge remote-tracking branch 'origin/master'
+
+commit ee2ec510a4ff3d476458b7785cbb2e75b3a161a4
+Author: Giulio <giulio.appetito.ga@gmail.com>
+Date:   Tue Feb 8 23:21:36 2022 +0100
+
+    test cases
+
+commit 265b4415af1e087806430489200c37d394124e87
+Author: Anastasia <anastasia.brinati@students.uniroma2.eu>
+Date:   Tue Feb 8 23:19:23 2022 +0100
+
+    io sono velocità
+
+commit 306031531047b252f538ea8d6229933e1b80c19a
+Author: Anastasia <anastasia.brinati@students.uniroma2.eu>
+Date:   Tue Feb 8 23:07:58 2022 +0100
+
+    io sono velocità
+
+commit e3f31780c1ce9a3ac64dd1be5ec3b5dc3878130a
+Author: Anastasia <anastasia.brinati@students.uniroma2.eu>
+Date:   Tue Feb 8 20:02:53 2022 +0100
+
+    io sono velocità
+
+commit 6c3a6f873f939458641125483b5e5ddf95b4316a
+Merge: 39ed8381 eae439ee
+Author: Anastasia <anastasia.brinati@students.uniroma2.eu>
+Date:   Tue Feb 8 20:02:35 2022 +0100
+
+    Merge remote-tracking branch 'origin/master'
+
+commit 39ed838175ab17227cb1e2056fa70e9b8653e8aa
+Author: Anastasia <anastasia.brinati@students.uniroma2.eu>
+Date:   Tue Feb 8 20:02:22 2022 +0100
+
+    io sono velocità
+
+commit eae439ee760f945cf976d9643ce1ac86aba69b86
+Author: Giulio <giulio.appetito.ga@gmail.com>
+Date:   Tue Feb 8 19:46:24 2022 +0100
+
+    test cases
+
+commit 24f057840dd4871de7867bb2fcafe67aeae0c073
+Author: Anastasia <anastasia.brinati@students.uniroma2.eu>
+Date:   Tue Feb 8 19:40:14 2022 +0100
+
+    io sono velocità
+
+commit 2f2d25e0fcd2245bd6491ceec7f557367fc2a725
+Author: Anastasia <anastasia.brinati@students.uniroma2.eu>
+Date:   Tue Feb 8 19:28:00 2022 +0100
+
+    io sono velocità
+
+commit 162aa8a55d984f49ae26b1718734db79320b12db
+Author: Anastasia <anastasia.brinati@students.uniroma2.eu>
+Date:   Tue Feb 8 19:27:38 2022 +0100
+
+    io sono velocità
+
+commit afe206d43d8acd1818e090e5634b6df384f48838
+Author: Anastasia <anastasia.brinati@students.uniroma2.eu>
+Date:   Tue Feb 8 19:24:05 2022 +0100
+
+    io sono velocità
+
+commit 701fd3853aad491cb26182c4b1b1fa9b5767894a
+Author: Anastasia <anastasia.brinati@students.uniroma2.eu>
+Date:   Tue Feb 8 18:52:18 2022 +0100
+
+    io sono velocità
+
+commit 4f75b7e895957d4bf85a00c472a8c16407ef1c57
+Author: Giulio <giulio.appetito.ga@gmail.com>
+Date:   Tue Feb 8 18:23:58 2022 +0100
+
+    test cases
+
+commit ae927e4865a34dd4b1a3dd378ff3afd7caa42750
+Author: Giulio <giulio.appetito.ga@gmail.com>
+Date:   Tue Feb 8 16:30:44 2022 +0100
+
+    codes fixed
+
+commit c9f08c4e7a184a8913d0217d6331344bd0ec4a58
+Merge: 724237bb d535bf2e
+Author: Giulio <giulio.appetito.ga@gmail.com>
+Date:   Tue Feb 8 16:22:22 2022 +0100
+
+    Merge remote-tracking branch 'origin/master'
+
+commit 724237bb95746da3003488a997ad3d4c551b16e2
+Author: Giulio <giulio.appetito.ga@gmail.com>
+Date:   Tue Feb 8 16:21:42 2022 +0100
+
+    codes fixed
+
+commit d535bf2e135b0425884ba47f3b7a20df1e1f4079
+Merge: 6ace53e8 bbdb0fef
+Author: Anastasia <anastasia.brinati@students.uniroma2.eu>
+Date:   Tue Feb 8 15:58:59 2022 +0100
+
+    Merge remote-tracking branch 'origin/master'
+
+commit 6ace53e8edf0142eaa949d387fc3bb816caaf8c8
+Author: Anastasia <anastasia.brinati@students.uniroma2.eu>
+Date:   Tue Feb 8 15:57:49 2022 +0100
+
+    io sono velocità
+
+commit bbdb0fef733d5e01f769362e5cb919d621cc23eb
+Merge: 31c830c6 1c2265e5
+Author: Giulio <giulio.appetito.ga@gmail.com>
+Date:   Tue Feb 8 15:26:45 2022 +0100
+
+    Merge remote-tracking branch 'origin/master'
+    
+    # Conflicts:
+    #       target/classes/com/example/comics/controller/BuyComicController.class
+    #       target/classes/com/example/comics/controller/PostReviewController.class
+    #       target/classes/com/example/comics/controller/ResearchController.class
+    #       target/classes/com/example/comics/model/dao/ChapterDAO.class
+    #       target/classes/com/example/comics/model/dao/utils/Queries.class
+    #       target/classes/com/example/comics/model/exceptions/AlreadyExistingChapterException.class
+
+commit 31c830c675e64cf488b77f8ccaf280f9da80025a
+Author: Giulio <giulio.appetito.ga@gmail.com>
+Date:   Tue Feb 8 15:26:28 2022 +0100
+
+    CHapter and series exceptions fixed
+
+commit 1c2265e577b33c96326562b694900376194a93c9
+Author: Anastasia <anastasia.brinati@students.uniroma2.eu>
+Date:   Tue Feb 8 15:21:37 2022 +0100
+
+    io sono velocità
+
+commit 196080cfe17cdf1e37e7bcebf46e6f25f1609e59
+Author: Giulio <giulio.appetito.ga@gmail.com>
+Date:   Tue Feb 8 14:40:56 2022 +0100
+
+    exception payment
+
+commit d1278f730bf8898053f32569833146937e142829
+Author: Giulio <giulio.appetito.ga@gmail.com>
+Date:   Tue Feb 8 13:03:39 2022 +0100
+
+    BEans fixed
+
+commit daf41a3700d643c6fea09a276440a9e77b0d3b5a
+Author: Anastasia <anastasia.brinati@students.uniroma2.eu>
+Date:   Tue Feb 8 12:28:47 2022 +0100
+
+    io sono velocità
+
+commit ea03f2bdf5e10bffe546568bd172ad7de60f1b37
+Author: Anastasia <anastasia.brinati@students.uniroma2.eu>
+Date:   Tue Feb 8 11:32:43 2022 +0100
+
+    io sono velocità
+
+commit bbe57fc5534987c4ae492cf831b31ef1132b32dd
+Author: Anastasia <anastasia.brinati@students.uniroma2.eu>
+Date:   Tue Feb 8 11:17:46 2022 +0100
+
+    io sono velocità
+
+commit 576094575f0283e12aa810055519d6f32d7bf3d0
+Merge: 20802e19 67aa6a06
+Author: Giulio <giulio.appetito.ga@gmail.com>
+Date:   Tue Feb 8 11:12:35 2022 +0100
+
+    Merge remote-tracking branch 'origin/master'
+    
+    # Conflicts:
+    #       target/classes/com/example/comics/controller/MarkChapterAsReadController.class
+    #       target/classes/com/example/comics/controller/PostReviewController.class
+    #       target/classes/com/example/comics/model/dao/SeriesDAO.class
+    #       target/classes/com/example/comics/view1/ChapterControllerG.class
+
+commit 20802e19c0713699a3a0aaadb72ae44ff45cfd58
+Author: Giulio <giulio.appetito.ga@gmail.com>
+Date:   Tue Feb 8 11:12:13 2022 +0100
+
+    PUBLISHCHAPTER e PUBLISHSERIES mail sending
+
+commit 67aa6a06ba544e17a86d0a6d4961f9513050ad8c
+Author: Anastasia <anastasia.brinati@students.uniroma2.eu>
+Date:   Tue Feb 8 11:09:14 2022 +0100
+
+    io sono velocità
+
+commit 0732bc4628508aeee18c6c482e588527f57d9f5a
+Author: Anastasia <anastasia.brinati@students.uniroma2.eu>
+Date:   Tue Feb 8 11:08:56 2022 +0100
+
+    io sono velocità
+
+commit 6d8b0c5f45143a58b8ac9bc7f303cb0288076eba
+Author: Anastasia <anastasia.brinati@students.uniroma2.eu>
+Date:   Mon Feb 7 21:29:24 2022 +0100
+
+    io sono velocità
+
+commit 336f38c3c4ce834a802a3ebc9895c6b6df8039d6
+Author: Anastasia <anastasia.brinati@students.uniroma2.eu>
+Date:   Mon Feb 7 19:39:30 2022 +0100
+
+    io sono velocità
+
+commit f862e9c8b117470e28524d537a9c95d0d298cda5
+Author: Giulio <giulio.appetito.ga@gmail.com>
+Date:   Mon Feb 7 19:04:33 2022 +0100
+
+    chapters fixed
+
+commit ce29b724cf03702a5658247cf9e878d3e671f155
+Merge: 0d315ddc 8dd16fb6
+Author: Anastasia <anastasia.brinati@students.uniroma2.eu>
+Date:   Mon Feb 7 19:01:58 2022 +0100
+
+    Merge remote-tracking branch 'origin/master'
+
+commit 8dd16fb603c4c889be4e58562fa82fbab8c32e1a
+Author: Giulio <giulio.appetito.ga@gmail.com>
+Date:   Mon Feb 7 19:01:27 2022 +0100
+
+    exceptions fixed
+
+commit 0d315ddc66d8d28cff42aeb160b1065ee353bd46
+Author: Anastasia <anastasia.brinati@students.uniroma2.eu>
+Date:   Mon Feb 7 19:01:13 2022 +0100
+
+    io sono velocità
+
+commit 7d0c2a42e3f54ac36b292815e9c74b9b774d63f0
+Author: Anastasia <anastasia.brinati@students.uniroma2.eu>
+Date:   Mon Feb 7 18:55:02 2022 +0100
+
+    io sono velocità
+
+commit be9a342d5d09c6a6ae5bfdc757f2e38708cdaffc
+Author: Anastasia <anastasia.brinati@students.uniroma2.eu>
+Date:   Mon Feb 7 18:32:49 2022 +0100
+
+    velocità
+
+commit d0cef955cce82ebdd94fc6fa5d761a41cffb1685
+Merge: 4ebc3828 6b285f48
+Author: Anastasia <anastasia.brinati@students.uniroma2.eu>
+Date:   Mon Feb 7 17:02:23 2022 +0100
+
+    Merge remote-tracking branch 'origin/master'
+
+commit 4ebc3828c19d3cbc36c1eaec2b073dcd3de25b39
+Author: Anastasia <anastasia.brinati@students.uniroma2.eu>
+Date:   Mon Feb 7 17:02:10 2022 +0100
+
+    update su seconda interfaccia
+
+commit 6b285f48bd4ddfff1824a937bf721e73a76c9f8d
+Merge: 94ba380c ce79a43f
+Author: Giulio <giulio.appetito.ga@gmail.com>
+Date:   Mon Feb 7 16:52:33 2022 +0100
+
+    Merge remote-tracking branch 'origin/master'
+    
+    # Conflicts:
+    #       target/classes/com/example/comics/controller/MarkChapterAsReadController.class
+    #       target/classes/com/example/comics/controller/PostReviewController.class
+    #       target/classes/com/example/comics/model/ChapterObjective.class
+    #       target/classes/com/example/comics/model/Objective.class
+    #       target/classes/com/example/comics/model/ReviewsObjective.class
+    #       target/classes/com/example/comics/model/dao/utils/Queries.class
+
+commit 94ba380c5d7eba6ad095183e78b10e50cd62cb4d
+Author: Giulio <giulio.appetito.ga@gmail.com>
+Date:   Mon Feb 7 16:52:03 2022 +0100
+
+    MARK CHAPTER and POST REVIEW : fixed
+
+commit ce79a43fc93b9f9460e823160a3a7cce4ae30ff1
+Author: Anastasia <anastasia.brinati@students.uniroma2.eu>
+Date:   Mon Feb 7 15:31:51 2022 +0100
+
+    update su seconda interfaccia
+
+commit 649887d9dc219a3fcdd604fbf5d229a352bc5f8f
+Author: Anastasia <anastasia.brinati@students.uniroma2.eu>
+Date:   Mon Feb 7 14:28:03 2022 +0100
+
+    problemi ovunque..
+
+commit 3ee03e4c655581ca77b82bcd6fc4f1a12d5881b3
+Author: Anastasia <anastasia.brinati@students.uniroma2.eu>
+Date:   Mon Feb 7 11:22:51 2022 +0100
+
+    problemi ovunque..
+
+commit f233d2e5595af9c4ff6656063d90b1959df42c45
+Merge: a014ca5c 2ae35b1f
+Author: Anastasia <anastasia.brinati@students.uniroma2.eu>
+Date:   Mon Feb 7 11:22:33 2022 +0100
+
+    Merge remote-tracking branch 'origin/master'
+
+commit a014ca5ccfb06fb5a26990388f79709077220ca1
+Author: Anastasia <anastasia.brinati@students.uniroma2.eu>
+Date:   Mon Feb 7 11:22:10 2022 +0100
+
+    problemi ovunque..
+
+commit 2ae35b1fd9a04106482b986af6a8842a4cff6984
+Author: Giulio <giulio.appetito.ga@gmail.com>
+Date:   Mon Feb 7 11:16:58 2022 +0100
+
+    post review fixed
+
+commit b789703c901de68a996fc9cfc51b097f61605e27
+Author: Anastasia <anastasia.brinati@students.uniroma2.eu>
+Date:   Mon Feb 7 01:24:29 2022 +0100
+
+    problemi ovunque..
+
+commit 50329587c97813926aac859696ba6af20dc60d50
+Author: Anastasia <anastasia.brinati@students.uniroma2.eu>
+Date:   Mon Feb 7 01:24:19 2022 +0100
+
+    problemi ovunque..
+
+commit 64ad14d58939207e95aef2304897448804a2a287
+Author: Anastasia <anastasia.brinati@students.uniroma2.eu>
+Date:   Mon Feb 7 01:00:56 2022 +0100
+
+    BUY COMIC: use case
+
+commit 1609442f97094aeb3ca1e05cde2792f8b1f1ef81
+Author: Anastasia <anastasia.brinati@students.uniroma2.eu>
+Date:   Sun Feb 6 19:05:49 2022 +0100
+
+    BUY COMIC: use case
+
+commit 20f1e258e183c5632bf5ec1f3394c9d781d67d40
+Author: Anastasia <anastasia.brinati@students.uniroma2.eu>
+Date:   Sun Feb 6 19:00:05 2022 +0100
+
+    BUY COMIC: use case
+
+commit 930f32e6870f61fb76d6f86ca807ddf7e84c2c84
+Author: Anastasia <anastasia.brinati@students.uniroma2.eu>
+Date:   Sun Feb 6 18:59:51 2022 +0100
+
+    BUY COMIC: use case
+
+commit 997d40ae9a081423a3ad687f965fda182d225855
+Author: Giulio <giulio.appetito.ga@gmail.com>
+Date:   Sun Feb 6 17:28:01 2022 +0100
+
+    post review fixed
+
+commit 999e9bf3e0629e57f773ac0f133c14dd65325b7e
+Author: Giulio <giulio.appetito.ga@gmail.com>
+Date:   Sun Feb 6 17:25:55 2022 +0100
+
+    hashmap fixed for discount codes
+
+commit 2d8c38c4cb83df2fac14215230ffb3ecced5572a
+Merge: 099516ea 8fd1c066
+Author: Giulio <giulio.appetito.ga@gmail.com>
+Date:   Sun Feb 6 17:01:51 2022 +0100
+
+    Merge remote-tracking branch 'origin/master'
+
+commit 8fd1c066a5523db57ad3339a99f8ba3330e727ac
+Author: Anastasia <anastasia.brinati@students.uniroma2.eu>
+Date:   Sun Feb 6 17:01:24 2022 +0100
+
+    BUY COMIC: use case
+
+commit 099516ea2f09b6dff6460f2546901fc714c1a71b
+Merge: 134b1deb 47dc508d
+Author: Giulio <giulio.appetito.ga@gmail.com>
+Date:   Sun Feb 6 16:57:33 2022 +0100
+
+    Merge remote-tracking branch 'origin/master'
+    
+    # Conflicts:
+    #       target/classes/com/example/comics/view1/OrdersControllerG.class
+    #       target/classes/com/example/comics/view1/ReaderHomeControllerG.class
+
+commit 134b1deb557f14cb07bd22817251f5ae62f22133
+Author: Giulio <giulio.appetito.ga@gmail.com>
+Date:   Sun Feb 6 16:57:22 2022 +0100
+
+    hashmap fixed for discount codes
+
+commit c4db03f5eb4a64ba9ba2d0ff9588128984489e96
+Author: Giulio <giulio.appetito.ga@gmail.com>
+Date:   Sun Feb 6 16:53:38 2022 +0100
+
+    hashmap fixed for discount codes
+
+commit 47dc508d84984cfbe7a76993356c97dcbe47f493
+Author: Anastasia <anastasia.brinati@students.uniroma2.eu>
+Date:   Sun Feb 6 16:53:00 2022 +0100
+
+    BUY COMIC: use case
+
+commit ac6bc336cdb35fe09a0eeee2fffdc9243cbad8cf
+Author: Anastasia <anastasia.brinati@students.uniroma2.eu>
+Date:   Sun Feb 6 16:52:37 2022 +0100
+
+    BUY COMIC: use case
+
+commit 9685210e28b1eb094f779f1105932f8eb7cdfa10
+Author: Anastasia <anastasia.brinati@students.uniroma2.eu>
+Date:   Sun Feb 6 16:29:54 2022 +0100
+
+    BUY COMIC: use case
+
+commit 54dec39c9e39ded04f9e3562e15bfd3160b5563d
+Author: Anastasia <anastasia.brinati@students.uniroma2.eu>
+Date:   Sun Feb 6 16:29:36 2022 +0100
+
+    BUY COMIC: use case
+
+commit 6bedb900b10e347f809120e1f23a99d2dbbe6b23
+Author: Anastasia <anastasia.brinati@students.uniroma2.eu>
+Date:   Sun Feb 6 16:29:10 2022 +0100
+
+    BUY COMIC: use case
+
+commit 809085670c3ffd0bed8e4858d2a282796358d90e
+Merge: ee20804e 72f80c6c
+Author: Anastasia <anastasia.brinati@students.uniroma2.eu>
+Date:   Sun Feb 6 16:09:00 2022 +0100
+
+    Merge remote-tracking branch 'origin/master'
+    
+    # Conflicts:
+    #       target/classes/com/example/comics/model/dao/OrderDAO.class
+    #       target/classes/com/example/comics/model/fagioli/OrderBean.class
+    #       target/classes/com/example/comics/view1/OrderCardControllerG.class
+    #       target/classes/com/example/comics/view1/OrdersControllerG.class
+    #       target/classes/com/example/comics/view1/ordercard.fxml
+
+commit ee20804ebfc50437cb3ae18a1330dec8d3d633ef
+Author: Anastasia <anastasia.brinati@students.uniroma2.eu>
+Date:   Sun Feb 6 16:07:44 2022 +0100
+
+    BUY COMIC: use case
+
+commit 72f80c6c28170ce3bc0c23a119f3707ad6dd0e63
+Author: Giulio <giulio.appetito.ga@gmail.com>
+Date:   Sun Feb 6 16:04:57 2022 +0100
+
+    hashmap fixed for discount codes
+
+commit c68da21ef2ea6e46e82c34c90e683389e00a53c3
+Author: Anastasia <anastasia.brinati@students.uniroma2.eu>
+Date:   Sun Feb 6 15:53:55 2022 +0100
+
+    BUY COMIC: use case
+
+commit b5794ae211390208ebe72e4995aad7ca3ea0c953
+Merge: 12e46bfb def66d3c
+Author: Anastasia <anastasia.brinati@students.uniroma2.eu>
+Date:   Sun Feb 6 12:57:36 2022 +0100
+
+    Merge remote-tracking branch 'origin/master'
+
+commit 12e46bfb112b318dc253bebca5392fc579c168c9
+Author: Anastasia <anastasia.brinati@students.uniroma2.eu>
+Date:   Sun Feb 6 12:57:27 2022 +0100
+
+    BUY COMIC: use case
+
+commit def66d3c452596811573137a4bbb371dd696ab53
+Merge: 3ec2cc0a e42a153c
+Author: Giulio <giulio.appetito.ga@gmail.com>
+Date:   Sun Feb 6 12:43:55 2022 +0100
+
+    Merge remote-tracking branch 'origin/master'
+
+commit 3ec2cc0ac18cb5c378df858a1e43ea224835e497
+Author: Giulio <giulio.appetito.ga@gmail.com>
+Date:   Sun Feb 6 12:43:42 2022 +0100
+
+    fixed authorbean
+
+commit e42a153cfd99311c52f5fa202f0d9c55d2aa02c1
+Author: Anastasia <anastasia.brinati@students.uniroma2.eu>
+Date:   Sun Feb 6 12:41:09 2022 +0100
+
+    BUY COMIC: use case
+
+commit b5fd23a99db7ffa32b4d3aad550d3b77ab890bd4
+Merge: 057cc542 fd744332
+Author: Giulio <giulio.appetito.ga@gmail.com>
+Date:   Sun Feb 6 12:39:31 2022 +0100
+
+    Merge remote-tracking branch 'origin/master'
+
+commit 057cc542ab9960de86cd98b64b1f21813e916ab1
+Author: Giulio <giulio.appetito.ga@gmail.com>
+Date:   Sun Feb 6 12:39:21 2022 +0100
+
+    order controller g
+
+commit fd74433280794971177c479b567b7c9987e814e7
+Author: Anastasia <anastasia.brinati@students.uniroma2.eu>
+Date:   Sun Feb 6 12:24:42 2022 +0100
+
+    BUY COMIC: use case
+
+commit 0ccaa37e60d782952dcb84182692bf1ccf29c0aa
+Merge: c01a5374 4c9900ad
+Author: Anastasia <anastasia.brinati@students.uniroma2.eu>
+Date:   Sun Feb 6 12:19:31 2022 +0100
+
+    Merge remote-tracking branch 'origin/master'
+
+commit c01a5374664944f20484af7ed290da116b3ecc32
+Author: Anastasia <anastasia.brinati@students.uniroma2.eu>
+Date:   Sun Feb 6 12:19:20 2022 +0100
+
+    BUY COMIC: use case
+
+commit 4c9900adeabfd408d86a248195ea4cf2dd52af40
+Author: Giulio <giulio.appetito.ga@gmail.com>
+Date:   Sun Feb 6 12:18:13 2022 +0100
+
+    RETREIVE ORDERS
+
+commit 7e412fd0d43f621621fd2a9cca4148610d56a15e
+Author: Anastasia <anastasia.brinati@students.uniroma2.eu>
+Date:   Sun Feb 6 02:06:46 2022 +0100
+
+    BUY COMIC: use case
+
+commit 5df1e4c144cb553ce6bd2d86761379109edf95f9
+Author: Anastasia <anastasia.brinati@students.uniroma2.eu>
+Date:   Sun Feb 6 01:50:15 2022 +0100
+
+    BUY COMIC: use case
+
+commit f98521a2dbc488ea5d9832f1738f5041683e2e18
+Merge: 5b26b954 ffdd4363
+Author: Giulio <giulio.appetito.ga@gmail.com>
+Date:   Sat Feb 5 20:23:10 2022 +0100
+
+    Merge remote-tracking branch 'origin/master'
+
+commit 5b26b954cb5e474195bd746ba6a48375b1029d8c
+Author: Giulio <giulio.appetito.ga@gmail.com>
+Date:   Sat Feb 5 20:21:57 2022 +0100
+
+    MARK CHAPTER AS READ use case : fixed
+
+commit ffdd4363ab0a4bdc1c0590a0dc60199867a8ff99
+Author: Anastasia <anastasia.brinati@students.uniroma2.eu>
+Date:   Sat Feb 5 19:51:27 2022 +0100
+
+    BUY COMIC: use case
+
+commit ca95d4bf071602bd63f4c93f2e7e7ea520525eb7
+Author: Anastasia <anastasia.brinati@students.uniroma2.eu>
+Date:   Sat Feb 5 19:21:29 2022 +0100
+
+    BUY COMIC: use case
+
+commit 9138604510dbb599f4162845a2900502bda8397f
+Author: Anastasia <anastasia.brinati@students.uniroma2.eu>
+Date:   Sat Feb 5 19:21:17 2022 +0100
+
+    BUY COMIC: use case
+
+commit 62792548765a057313318ccbc6fc1c82c7b923d7
+Author: Anastasia <anastasia.brinati@students.uniroma2.eu>
+Date:   Sat Feb 5 18:18:24 2022 +0100
+
+    BUY COMIC: use case
+
+commit 1e5f421982eb5fa220a0fb167c55a3fae96d29b4
+Author: Anastasia <anastasia.brinati@students.uniroma2.eu>
+Date:   Sat Feb 5 18:13:59 2022 +0100
+
+    BUY COMIC: use case
+
+commit ba4bf0b5ed36c34c90f3aec566a9eae43d13ad16
+Author: Anastasia <anastasia.brinati@students.uniroma2.eu>
+Date:   Sat Feb 5 17:52:33 2022 +0100
+
+    BUY COMIC: use case
+
+commit bebec28d6e7bb7c4315845b65c74c00c0d7bfbbb
+Merge: d1871be9 f93fe6a1
+Author: Anastasia <anastasia.brinati@students.uniroma2.eu>
+Date:   Sat Feb 5 17:46:24 2022 +0100
+
+    Merge remote-tracking branch 'origin/master'
+
+commit d1871be98e873b596f455640d2803ad1bffa1f1e
+Author: Anastasia <anastasia.brinati@students.uniroma2.eu>
+Date:   Sat Feb 5 17:46:12 2022 +0100
+
+    BUY COMIC: use case
+
+commit f93fe6a187d22f06df8121a0239ff178ae0250b3
+Author: Giulio <giulio.appetito.ga@gmail.com>
+Date:   Sat Feb 5 15:07:29 2022 +0100
+
+    MARK CHAPTER AS READ use case : fixed
+
+commit da2596a76cf7e1b263a7a03dbab00d850d7aaac1
+Author: Anastasia <anastasia.brinati@students.uniroma2.eu>
+Date:   Sat Feb 5 14:57:38 2022 +0100
+
+    BUY COMIC: use case
+
+commit eca9348314c1aaf98db0217d23a772afc989ecf8
+Author: Anastasia <anastasia.brinati@students.uniroma2.eu>
+Date:   Sat Feb 5 14:56:42 2022 +0100
+
+    BUY COMIC: use case
+
+commit d6d21487a1edbb085fb957d5d88bb311a0c0ff80
+Author: Anastasia <anastasia.brinati@students.uniroma2.eu>
+Date:   Fri Feb 4 19:46:17 2022 +0100
+
+    BUY COMIC: use case
+
+commit f2d6053e7d5806bf710a31759f2187b596225b53
+Merge: e7401586 13a9ff6a
+Author: Anastasia <anastasia.brinati@students.uniroma2.eu>
+Date:   Fri Feb 4 19:26:31 2022 +0100
+
+    Merge remote-tracking branch 'origin/master'
+    
+    # Conflicts:
+    #       target/classes/com/example/comics/view1/ChapterControllerG.class
+    #       trunk/src/main/java/com/example/comics/view1/ChapterControllerG.java
+
+commit e74015866b6b1b8c3926b38a3c04452a896450be
+Author: Anastasia <anastasia.brinati@students.uniroma2.eu>
+Date:   Fri Feb 4 19:26:08 2022 +0100
+
+    BUY COMIC: use case
+
+commit 13a9ff6a0cb974c3807e6bdc66b816838896c19b
+Author: Giulio <giulio.appetito.ga@gmail.com>
+Date:   Fri Feb 4 16:43:22 2022 +0100
+
+    MARK CHAPTER AS READ use case : fixed
+
+commit c52e713ff8eed041079b71e411e4849f2eebb449
+Author: Anastasia <anastasia.brinati@students.uniroma2.eu>
+Date:   Fri Feb 4 12:36:38 2022 +0100
+
+    BUY COMIC: use case
+
+commit bc1e9c71802e91aa3da2bdfbbf514be5affb7abb
+Author: Anastasia <anastasia.brinati@students.uniroma2.eu>
+Date:   Fri Feb 4 11:51:10 2022 +0100
+
+    BUY COMIC: use case
+
+commit 3a490a83e177e8cb91ff7904aa060a608c3c5abb
+Author: Anastasia <anastasia.brinati@students.uniroma2.eu>
+Date:   Fri Feb 4 11:41:04 2022 +0100
+
+    BUY COMIC: use case
+
+commit 2bde76cd49599c6006b02b2ec422548729764ad5
+Author: Anastasia <anastasia.brinati@students.uniroma2.eu>
+Date:   Fri Feb 4 10:01:41 2022 +0100
+
+    BUY COMIC: use case
+
+commit e800b43ed15a86dfba08f1f274db9691d4c82070
+Author: Anastasia <anastasia.brinati@students.uniroma2.eu>
+Date:   Fri Feb 4 09:58:28 2022 +0100
+
+    BUY COMIC: use case
+
+commit f0e018fd56681678cc72b592e75385a9b6197b9d
+Merge: e791353a ddf5b33f
+Author: Anastasia <anastasia.brinati@students.uniroma2.eu>
+Date:   Fri Feb 4 09:40:41 2022 +0100
+
+    Merge remote-tracking branch 'origin/master'
+
+commit e791353a86f363f40b178f9ce3e72800666b0e50
+Author: Anastasia <anastasia.brinati@students.uniroma2.eu>
+Date:   Fri Feb 4 09:40:32 2022 +0100
+
+    BUY COMIC: use case
+
+commit cf33bc472bca53682fab91f43150b9ac93582ab9
+Merge: ce325935 9f0d46c0
+Author: Anastasia <anastasia.brinati@students.uniroma2.eu>
+Date:   Fri Feb 4 09:40:21 2022 +0100
+
+    Merge remote-tracking branch 'origin/master'
+    
+    # Conflicts:
+    #       target/classes/com/example/comics/view1/ChapterControllerG.class
+
+commit ddf5b33f0ca8a704f75893c6bcd6e83791b77aa2
+Author: Giulio <giulio.appetito.ga@gmail.com>
+Date:   Fri Feb 4 09:40:09 2022 +0100
+
+    Fixed post review details
+
+commit ce325935eef0ef1604e3ff969c5ec8b63ce17f52
+Author: Anastasia <anastasia.brinati@students.uniroma2.eu>
+Date:   Fri Feb 4 09:39:58 2022 +0100
+
+    BUY COMIC: use case
+
+commit a391c5839039adbbaa01cebe54d1c4c65faf87d6
+Author: Giulio <giulio.appetito.ga@gmail.com>
+Date:   Fri Feb 4 09:39:42 2022 +0100
+
+    Chapter's price added
+
+commit 01fa2e07a1a1e91dab773317a43d90b762ae84c8
+Author: Anastasia <anastasia.brinati@students.uniroma2.eu>
+Date:   Fri Feb 4 09:39:34 2022 +0100
+
+    BUY COMIC: use case
+
+commit 9f0d46c0a374bc6a1d9983d1b7faf2df621355eb
+Author: Giulio <giulio.appetito.ga@gmail.com>
+Date:   Thu Feb 3 19:26:18 2022 +0100
+
+    Chapter's price added
+
+commit 73292184f6388da03886f3f62e2445d970144d97
+Merge: 10593bb3 a95346b3
+Author: Anastasia <anastasia.brinati@students.uniroma2.eu>
+Date:   Wed Feb 2 22:51:41 2022 +0100
+
+    Merge remote-tracking branch 'origin/master'
+    
+    # Conflicts:
+    #       .idea/sonarlint/issuestore/index.pb
+
+commit 10593bb36114d961e1d56460f73172adada4a089
+Author: Anastasia <anastasia.brinati@students.uniroma2.eu>
+Date:   Wed Feb 2 22:50:38 2022 +0100
+
+    customize profile 2
+
+commit a95346b3d763a081e6b6be5e5f54e5820bb92ce5
+Author: Giulio <giulio.appetito.ga@gmail.com>
+Date:   Wed Feb 2 22:40:29 2022 +0100
+
+    VIEW2 : progressbar
+
+commit 041b0347e7f7a95ba7a35a52fee14de53ca295c1
+Author: Anastasia <anastasia.brinati@students.uniroma2.eu>
+Date:   Wed Feb 2 21:23:28 2022 +0100
+
+    code smells
+
+commit 3179e7b805cf9b8243a2b9bcfa3116e04f3b315e
+Author: Anastasia <anastasia.brinati@students.uniroma2.eu>
+Date:   Wed Feb 2 17:59:58 2022 +0100
+
+    code smells
+
+commit 9b1ba4061760eabc73c6f323fdf18a9886d762fb
+Author: Anastasia <anastasia.brinati@students.uniroma2.eu>
+Date:   Wed Feb 2 17:59:37 2022 +0100
+
+    code smells
+
+commit 158cf70f71460079aa3c7a46e32566828336ed65
+Merge: 1219d9e2 c8716309
+Author: Anastasia <anastasia.brinati@students.uniroma2.eu>
+Date:   Wed Feb 2 17:59:32 2022 +0100
+
+    Merge remote-tracking branch 'origin/master'
+    
+    # Conflicts:
+    #       target/classes/com/example/comics/view1/ChapterControllerG.class
+    #       target/classes/com/example/comics/view2/FeedControllerG2.class
+    #       trunk/src/main/java/com/example/comics/view2/FeedControllerG2.java
+
+commit 1219d9e21887f1eb79ec9a0ebd852f930744ffaf
+Author: Anastasia <anastasia.brinati@students.uniroma2.eu>
+Date:   Wed Feb 2 17:58:55 2022 +0100
+
+    code smells
+
+commit c8716309e704ae2f97411f4c2a3ae19624a1ff86
+Author: Giulio <giulio.appetito.ga@gmail.com>
+Date:   Wed Feb 2 17:58:04 2022 +0100
+
+    VIEW2 : progressbar
+
+commit be094f9138f545f90cd3f81e691b63469698f4bb
+Author: Giulio <giulio.appetito.ga@gmail.com>
+Date:   Wed Feb 2 17:48:35 2022 +0100
+
+    VIEW2 : progressbar
+
+commit 98f26cafff27c52f2d77ef5261e01ed9afac390f
+Author: Giulio <giulio.appetito.ga@gmail.com>
+Date:   Wed Feb 2 16:39:42 2022 +0100
+
+    exception fixed
+
+commit 17d654b8b332164bffce13b4139aa6f77816d04d
+Merge: e5ed9392 9cd95fb5
+Author: Giulio <giulio.appetito.ga@gmail.com>
+Date:   Wed Feb 2 16:24:14 2022 +0100
+
+    Merge remote-tracking branch 'origin/master'
+    
+    # Conflicts:
+    #       target/classes/com/example/comics/controller/PostReviewController.class
+    #       target/classes/com/example/comics/model/Chapter.class
+    #       target/classes/com/example/comics/view1/ChapterControllerG.class
+
+commit e5ed9392e83e96d28add0725f39a99e5f46ea9f1
+Author: Giulio <giulio.appetito.ga@gmail.com>
+Date:   Wed Feb 2 16:23:41 2022 +0100
+
+    threads fixed
+
+commit 9cd95fb5b469a4ca7b10cc6e4f4b76c3869f9688
+Author: Anastasia <anastasia.brinati@students.uniroma2.eu>
+Date:   Wed Feb 2 16:15:42 2022 +0100
+
+    code smells
+
+commit 0c91bf2ade92d8337732a4bb054edc736bb45d4a
+Author: Anastasia <anastasia.brinati@students.uniroma2.eu>
+Date:   Wed Feb 2 15:21:21 2022 +0100
+
+    code smells
+
+commit 66a5dd59422aaa1ac16f477fd1bff67f50050941
+Author: Anastasia <anastasia.brinati@students.uniroma2.eu>
+Date:   Wed Feb 2 15:15:25 2022 +0100
+
+    code smells
+
+commit dc9d1ba0cab892e6604e90292085972c27d0b5c2
+Author: Anastasia <anastasia.brinati@students.uniroma2.eu>
+Date:   Wed Feb 2 15:07:08 2022 +0100
+
+    code smells
+
+commit bf65c6b78233dd11e25830c8658896409ad3d825
+Merge: 273de9e8 085930f3
+Author: Anastasia <anastasia.brinati@students.uniroma2.eu>
+Date:   Wed Feb 2 14:54:53 2022 +0100
+
+    Merge remote-tracking branch 'origin/master'
+    
+    # Conflicts:
+    #       target/classes/com/example/comics/controller/MarkChapterAsReadController.class
+    #       target/classes/com/example/comics/view1/ChapterControllerG.class
+
+commit 273de9e8ef6e923ab3328004d7d26cb49a7998df
+Author: Anastasia <anastasia.brinati@students.uniroma2.eu>
+Date:   Wed Feb 2 14:49:56 2022 +0100
+
+    code smells
+
+commit 085930f35facfb337dfe12e104087cc5889bc326
+Merge: 1f9d8a21 6a32d9c4
+Author: Giulio <giulio.appetito.ga@gmail.com>
+Date:   Wed Feb 2 14:48:31 2022 +0100
+
+    Merge remote-tracking branch 'origin/master'
+    
+    # Conflicts:
+    #       target/classes/com/example/comics/controller/PostReviewController.class
+    #       target/classes/com/example/comics/fakepaypal/FakePayPalControllerG.class
+    #       target/classes/com/example/comics/fakepaypal/fakepaypal.fxml
+    #       target/classes/com/example/comics/model/Reader.class
+    #       target/classes/com/example/comics/model/dao/ReaderDAO.class
+    #       trunk/src/main/java/com/example/comics/controller/MarkChapterAsReadController.java
+
+commit 1f9d8a21bdd8ec80e6f0204656b1e9c8b1bb03e3
+Author: Giulio <giulio.appetito.ga@gmail.com>
+Date:   Wed Feb 2 14:48:06 2022 +0100
+
+    MARK AS READ use case : fixed
+
+commit 6a32d9c4c91bbbddcdf79363a5e266a0ac1d41cc
+Merge: 563c26bf 20a7eb31
+Author: Anastasia <anastasia.brinati@students.uniroma2.eu>
+Date:   Tue Feb 1 22:02:47 2022 +0100
+
+    Merge remote-tracking branch 'origin/master'
+
+commit 563c26bf6380d81b0648d5fac1649c29def14279
+Author: Anastasia <anastasia.brinati@students.uniroma2.eu>
+Date:   Tue Feb 1 22:02:25 2022 +0100
+
+    code smells
+
+commit 20a7eb31dbc0f8cd503a29df71d422c66243c65e
+Merge: b5850cc6 4591366b
+Author: Giulio <giulio.appetito.ga@gmail.com>
+Date:   Tue Feb 1 17:56:18 2022 +0100
+
+    Merge remote-tracking branch 'origin/master'
+
+commit b5850cc6c990599b68842b6d0255848309fae665
+Author: Giulio <giulio.appetito.ga@gmail.com>
+Date:   Tue Feb 1 17:56:03 2022 +0100
+
+    Fixed description
+
+commit 4591366b039781b825f9a436b249477888ae0def
+Merge: 56380b82 53d8e12c
+Author: Anastasia <anastasia.brinati@students.uniroma2.eu>
+Date:   Tue Feb 1 17:49:25 2022 +0100
+
+    Merge remote-tracking branch 'origin/master'
+
+commit 56380b82bc66edfaf07daed4e031c67d5d5d623a
+Author: Anastasia <anastasia.brinati@students.uniroma2.eu>
+Date:   Tue Feb 1 17:49:00 2022 +0100
+
+    code smells
+
+commit 53d8e12c23c54915dbc8f82c7ce17cef1be414d9
+Author: Giulio <giulio.appetito.ga@gmail.com>
+Date:   Tue Feb 1 17:27:31 2022 +0100
+
+    Fixed description
+
+commit 469a5eaf8632c8707fea0d7dfbc115efc93030be
+Merge: 5c9638bc 522acc1b
+Author: Giulio <giulio.appetito.ga@gmail.com>
+Date:   Tue Feb 1 17:21:54 2022 +0100
+
+    Merge remote-tracking branch 'origin/master'
+
+commit 5c9638bcb3832557976d09ccff38076e028df518
+Author: Giulio <giulio.appetito.ga@gmail.com>
+Date:   Tue Feb 1 17:21:41 2022 +0100
+
+    Fixed descrription for series
+
+commit 522acc1b5c3ff655fb05dc9bfe88ae28eee75274
+Author: Anastasia <anastasia.brinati@students.uniroma2.eu>
+Date:   Tue Feb 1 16:54:54 2022 +0100
+
+    code smells
+
+commit f4fa371fb6db7da67477fe6d332607b4fb512d11
+Author: Anastasia <anastasia.brinati@students.uniroma2.eu>
+Date:   Tue Feb 1 16:44:49 2022 +0100
+
+    code smells
+
+commit 959bd34e61395afac6e272b7744a3449ec704c15
+Author: Anastasia <anastasia.brinati@students.uniroma2.eu>
+Date:   Tue Feb 1 16:35:21 2022 +0100
+
+    code smells
+
+commit 23753fa1dc75696c538c7307b2a469e21215714b
+Author: Anastasia <anastasia.brinati@students.uniroma2.eu>
+Date:   Tue Feb 1 16:34:07 2022 +0100
+
+    code smells
+
+commit 58e9fe2c4a2c48dbad06cddfc5bd6a22273e7d85
+Author: Anastasia <anastasia.brinati@students.uniroma2.eu>
+Date:   Tue Feb 1 16:31:08 2022 +0100
+
+    code smells
+
+commit c3af141315678f89e8d3ecb61eff0375a16694cf
+Merge: 48a99f5d ef753466
+Author: Anastasia <anastasia.brinati@students.uniroma2.eu>
+Date:   Tue Feb 1 16:28:19 2022 +0100
+
+    Merge remote-tracking branch 'origin/master'
+
+commit 48a99f5d27ee75f68dbab564099a24fc15b790d9
+Author: Anastasia <anastasia.brinati@students.uniroma2.eu>
+Date:   Tue Feb 1 16:28:11 2022 +0100
+
+    code smells
+
+commit ef753466487433e02512e4530e3ce41cfffa122c
+Author: Giulio <giulio.appetito.ga@gmail.com>
+Date:   Tue Feb 1 16:19:03 2022 +0100
+
+    BUY COMICS use case
+
+commit 153b19f69aa7f00563694f5232df105e06db623a
+Author: Anastasia <anastasia.brinati@students.uniroma2.eu>
+Date:   Tue Feb 1 16:15:58 2022 +0100
+
+    code smells
+
+commit 00088ee6a6a1ec5b2d34b15e0618007cd24c2f8a
+Merge: 9e038bc4 7660f757
+Author: Giulio <giulio.appetito.ga@gmail.com>
+Date:   Tue Feb 1 16:04:50 2022 +0100
+
+    Merge remote-tracking branch 'origin/master'
+
+commit 9e038bc456ed6cef2f8f6883e0db438ab89a1d65
+Author: Giulio <giulio.appetito.ga@gmail.com>
+Date:   Tue Feb 1 16:04:36 2022 +0100
+
+    POST REVIEW use case : beans fixed
+
+commit 7660f7577107d6cff1fa3e980633d5eba49a9e07
+Author: Anastasia <anastasia.brinati@students.uniroma2.eu>
+Date:   Tue Feb 1 16:03:33 2022 +0100
+
+    code smells
+
+commit 022598830aa23832bde03ba2b4950ff6b16aeb3f
+Merge: fe6d2e59 1f6e5ee9
+Author: Anastasia <anastasia.brinati@students.uniroma2.eu>
+Date:   Tue Feb 1 15:30:31 2022 +0100
+
+    Merge remote-tracking branch 'origin/master'
+
+commit fe6d2e592b153a1f830a61d616284bc4e84b6e6d
+Author: Anastasia <anastasia.brinati@students.uniroma2.eu>
+Date:   Tue Feb 1 15:30:16 2022 +0100
+
+    code smells
+
+commit 1f6e5ee9a5e166ba3cbc6dc0b7ec3d4470633403
+Author: Giulio <giulio.appetito.ga@gmail.com>
+Date:   Tue Feb 1 15:12:23 2022 +0100
+
+    BUY COMICS use case : fixed
+
+commit 5ddb1e4fea82c365afbcca4c4f7a7e4002624f67
+Merge: 8300ea85 0fd9a9e6
+Author: Anastasia <anastasia.brinati@students.uniroma2.eu>
+Date:   Tue Feb 1 15:06:27 2022 +0100
+
+    Merge remote-tracking branch 'origin/master'
+    
+    # Conflicts:
+    #       target/classes/com/example/comics/controller/BuyComicController.class
+    #       target/classes/com/example/comics/controller/boundaries/BuyComicBoundary.class
+    #       target/classes/com/example/comics/model/DiscountCode.class
+    #       target/classes/com/example/comics/model/Reader.class
+    #       target/classes/com/example/comics/model/dao/AccountDAO.class
+    #       target/classes/com/example/comics/model/dao/AuthorDAO.class
+    #       target/classes/com/example/comics/model/dao/ChapterDAO.class
+    #       target/classes/com/example/comics/model/dao/ObjectiveDAO.class
+    #       target/classes/com/example/comics/model/dao/Queries.class
+    #       target/classes/com/example/comics/model/dao/ReaderDAO.class
+    #       target/classes/com/example/comics/model/dao/ReviewDAO.class
+    #       target/classes/com/example/comics/model/dao/SeriesDAO.class
+    #       target/classes/com/example/comics/view1/ChapterControllerG.class
+    #       target/classes/module-info.class
+    #       trunk/src/main/java/com/example/comics/controller/boundaries/BuyComicBoundary.java
+    #       trunk/src/main/java/com/example/comics/model/DiscountCode.java
+    #       trunk/src/main/java/module-info.java
+
+commit 8300ea85c68f763a888fab1a16f7778904f5470d
+Author: Anastasia <anastasia.brinati@students.uniroma2.eu>
+Date:   Tue Feb 1 15:05:31 2022 +0100
+
+    code smells
+
+commit 92e1bd57b03243b18f9de65aa65082a5c1aa31e3
+Author: Anastasia <anastasia.brinati@students.uniroma2.eu>
+Date:   Tue Feb 1 15:05:16 2022 +0100
+
+    code smells
+
+commit 776d08e015a66ade0d8f4b8aa31241413482017d
+Author: Anastasia <anastasia.brinati@students.uniroma2.eu>
+Date:   Tue Feb 1 15:04:21 2022 +0100
+
+    code smells
+
+commit 0fd9a9e61cd54f682f19aa22349ecf0ec17b75f3
+Author: Giulio <giulio.appetito.ga@gmail.com>
+Date:   Tue Feb 1 15:03:39 2022 +0100
+
+    BUY COMICS use case : doing
+
+commit 56dc4235d98fdd395d01f79a817809332d6d9f6c
+Author: Giulio <giulio.appetito.ga@gmail.com>
+Date:   Tue Feb 1 11:55:38 2022 +0100
+
+    Date format fixed
+
+commit 3bcb7607bdccb1b42b1e5409ec524644c10cb7ab
+Author: Anastasia <anastasia.brinati@students.uniroma2.eu>
+Date:   Tue Feb 1 10:57:10 2022 +0100
+
+    python script
+
 commit 2cd3cb6daef95c9063e88851001a2375acc8c59d
 Author: Anastasia <anastasia.brinati@students.uniroma2.eu>
 Date:   Tue Feb 1 10:49:07 2022 +0100
@@ -35,7 +1450,7 @@ Date:   Mon Jan 31 13:28:50 2022 +0100
     review eith author
 
 commit 513c27bc59c44cf3d1183d2458d77ef584e90f87
-Merge: c29af98 e52c421
+Merge: c29af98a e52c421d
 Author: Anastasia <anastasia.brinati@students.uniroma2.eu>
 Date:   Mon Jan 31 12:25:26 2022 +0100
 
@@ -135,7 +1550,7 @@ Date:   Sat Jan 22 17:46:25 2022 +0100
     series on author profile
 
 commit ef5163564f654da0824e9edd59300e17e8d3e324
-Merge: b70b1bf 88a6682
+Merge: b70b1bf7 88a66822
 Author: Anastasia <anastasia.brinati@students.uniroma2.eu>
 Date:   Sat Jan 22 15:06:37 2022 +0100
 
@@ -154,7 +1569,7 @@ Date:   Sat Jan 22 14:10:41 2022 +0100
     PUBLISH SERIES use case : almost finished
 
 commit 257a9b6d25b569e3fb50c84486fabc2c43b08af3
-Merge: 11f3013 d4fa56b
+Merge: 11f30130 d4fa56b1
 Author: Giulio <giulio.appetito.ga@gmail.com>
 Date:   Sat Jan 22 13:47:15 2022 +0100
 
@@ -184,7 +1599,7 @@ Date:   Fri Jan 21 17:27:51 2022 +0100
     reading
 
 commit 27d9c6bdb8a7584fc74c252e4a32b1dade4ade3f
-Merge: 75226ba 610b69e
+Merge: 75226ba5 610b69ee
 Author: Anastasia <anastasia.brinati@students.uniroma2.eu>
 Date:   Fri Jan 21 17:01:18 2022 +0100
 
@@ -218,7 +1633,7 @@ Date:   Mon Jan 17 12:41:01 2022 +0100
     Update proPic
 
 commit 9262c582c36b5457d1706597d8cf7785bed03b06
-Merge: 0c9441f 45eea46
+Merge: 0c9441f8 45eea465
 Author: Giulio <giulio.appetito.ga@gmail.com>
 Date:   Mon Jan 17 12:16:34 2022 +0100
 
@@ -231,7 +1646,7 @@ Date:   Sun Jan 16 12:32:47 2022 +0100
     reading
 
 commit 0c9441f89bc081c59c3b8422ff7337b75566b68e
-Merge: c3829f1 94ccaa1
+Merge: c3829f1d 94ccaa1c
 Author: Giulio <giulio.appetito.ga@gmail.com>
 Date:   Sun Jan 16 12:10:28 2022 +0100
 
@@ -312,7 +1727,7 @@ Date:   Thu Jan 13 12:46:09 2022 +0100
     Cover upload implemented
 
 commit fca6a159abb715394ca624be2e3ed97410d84d83
-Merge: 4ece2ea 4c08924
+Merge: 4ece2ea3 4c08924f
 Author: Giulio <giulio.appetito.ga@gmail.com>
 Date:   Thu Jan 13 12:12:49 2022 +0100
 
@@ -325,7 +1740,7 @@ Date:   Thu Jan 13 12:12:37 2022 +0100
     Cover upload implemented
 
 commit 4c08924f1be0bea25cc64d72eec08c35134dda09
-Merge: f9560d9 d622883
+Merge: f9560d92 d6228834
 Author: Anastasia <anastasia.brinati@students.uniroma2.eu>
 Date:   Thu Jan 13 11:55:09 2022 +0100
 
@@ -392,7 +1807,7 @@ Date:   Wed Jan 12 13:20:13 2022 +0100
     problemi, troppi..
 
 commit 90f316b70c28723488904eb82b67f6ffb52b568f
-Merge: 3fed5f4 ae977e6
+Merge: 3fed5f48 ae977e6e
 Author: Anastasia <anastasia.brinati@students.uniroma2.eu>
 Date:   Wed Jan 12 13:20:01 2022 +0100
 
@@ -434,7 +1849,7 @@ Date:   Wed Jan 12 13:19:30 2022 +0100
     problemi, troppi..
 
 commit ae977e6e0804fa30f53b732d5efe151dade78a8e
-Merge: 088d068 2795924
+Merge: 088d0687 27959248
 Author: Giulio <giulio.appetito.ga@gmail.com>
 Date:   Wed Jan 12 09:03:50 2022 +0100
 
@@ -520,7 +1935,7 @@ Date:   Sat Jan 8 18:28:20 2022 +0100
     problemi
 
 commit da515132df791e80c26e975eb6ca7ba53cd22867
-Merge: 6268990 3c8152e
+Merge: 62689907 3c8152e8
 Author: Giulio <giulio.appetito.ga@gmail.com>
 Date:   Sat Jan 8 17:54:53 2022 +0100
 
@@ -548,7 +1963,7 @@ Date:   Sat Jan 8 17:53:36 2022 +0100
     FOLLOW AUTHOR use case : finished except email sending
 
 commit 729956e184f394fcc031a31eed3c04595e400b2d
-Merge: 9baa3bc f21b6fc
+Merge: 9baa3bc0 f21b6fcb
 Author: Giulio <giulio.appetito.ga@gmail.com>
 Date:   Sat Jan 8 17:45:18 2022 +0100
 
@@ -595,7 +2010,7 @@ Date:   Sat Jan 8 15:37:56 2022 +0100
     ratings on reviews
 
 commit f513433cd60b8801a5635aca5a6859f81b04db24
-Merge: 31b55fb 5f5b910
+Merge: 31b55fb4 5f5b910c
 Author: Anastasia <anastasia.brinati@students.uniroma2.eu>
 Date:   Sat Jan 8 15:27:29 2022 +0100
 
@@ -608,7 +2023,7 @@ Date:   Sat Jan 8 15:27:19 2022 +0100
     ratings on reviews
 
 commit 5f5b910c677c9a0f905e2f36b63c73175894fbef
-Merge: 3edafc6 5707edc
+Merge: 3edafc62 5707edca
 Author: Giulio <giulio.appetito.ga@gmail.com>
 Date:   Sat Jan 8 15:17:56 2022 +0100
 
@@ -627,7 +2042,7 @@ Date:   Sat Jan 8 14:59:29 2022 +0100
     ratings on reviews
 
 commit 4d8b753f8a26bfd76983c6beb6c84bdb4cbe1899
-Merge: ffc0bb4 f9774df
+Merge: ffc0bb4e f9774dfa
 Author: Anastasia <anastasia.brinati@students.uniroma2.eu>
 Date:   Sat Jan 8 14:59:24 2022 +0100
 
@@ -691,7 +2106,7 @@ Date:   Wed Jan 5 16:02:08 2022 +0100
     PUBLISH NEW CHAPTER use case : missing images
 
 commit 1a2bc3c2699ee86c56feef6a5c23fa3f62048100
-Merge: 054be43 0677e2a
+Merge: 054be438 0677e2ad
 Author: Giulio <giulio.appetito.ga@gmail.com>
 Date:   Wed Jan 5 16:01:22 2022 +0100
 
@@ -761,7 +2176,7 @@ Date:   Tue Jan 4 10:27:50 2022 +0100
     dettagli
 
 commit c2a099ef4f28393f3df4f1ff75f1fcca5d64cee5
-Merge: 4c8fd14 1ad8993
+Merge: 4c8fd14a 1ad8993d
 Author: Giulio <giulio.appetito.ga@gmail.com>
 Date:   Mon Jan 3 13:08:11 2022 +0100
 
@@ -813,7 +2228,7 @@ Date:   Sun Jan 2 21:54:56 2022 +0100
     POST REVIEW use case : chapters image cover added
 
 commit 33f427b650fdb3edf79c132054afaf1bca2b2797
-Merge: 2ea45e3 91646be
+Merge: 2ea45e30 91646be3
 Author: Giulio <giulio.appetito.ga@gmail.com>
 Date:   Sun Jan 2 21:51:56 2022 +0100
 
@@ -874,7 +2289,7 @@ Date:   Thu Dec 30 19:48:18 2021 +0100
     dettagli
 
 commit 9e5a7ac7ba902d34047368c4291053d198d28042
-Merge: bea8043 91a67a1
+Merge: bea8043b 91a67a19
 Author: Anastasia <anastasia.brinati@students.uniroma2.eu>
 Date:   Thu Dec 30 16:28:36 2021 +0100
 
@@ -892,7 +2307,7 @@ Date:   Thu Dec 30 16:27:57 2021 +0100
     dettagli
 
 commit 91a67a19e414bb24dd2b9f08a71f2c234de5eac3
-Merge: 640a324 ef7fada
+Merge: 640a3245 ef7fada6
 Author: Giulio <giulio.appetito.ga@gmail.com>
 Date:   Thu Dec 30 16:06:55 2021 +0100
 
@@ -935,7 +2350,7 @@ Date:   Tue Dec 28 15:30:39 2021 +0100
     POST REVIEW use case graphics
 
 commit f900cb98628dac8b08f441749a19b755c1b11b03
-Merge: ff59e0a 77e317e
+Merge: ff59e0a0 77e317ec
 Author: Giulio <giulio.appetito.ga@gmail.com>
 Date:   Tue Dec 28 11:57:12 2021 +0100
 
@@ -978,7 +2393,7 @@ Date:   Mon Dec 27 11:35:12 2021 +0100
     composizione
 
 commit e2542d189c9b9167e280e7b0cb10030bfcc900f5
-Merge: 9b91b7e 65a5467
+Merge: 9b91b7ee 65a54675
 Author: Anastasia <anastasia.brinati@students.uniroma2.eu>
 Date:   Sun Dec 26 14:36:05 2021 +0100
 
@@ -997,7 +2412,7 @@ Date:   Sun Dec 26 14:34:52 2021 +0100
     READ REVIEWS completed
 
 commit 62f8b4c3d1c766ebe493a92b2210f67c40819aee
-Merge: 5e77387 f6a8053
+Merge: 5e77387b f6a80535
 Author: Giulio <giulio.appetito.ga@gmail.com>
 Date:   Sun Dec 26 14:34:32 2021 +0100
 
@@ -1023,7 +2438,7 @@ Date:   Tue Dec 21 23:58:36 2021 +0100
     composizione
 
 commit 96b0ef3a098ddeeabfcc874438cc426a0d73198d
-Merge: ca032ef ca8c969
+Merge: ca032ef9 ca8c969c
 Author: Giulio <giulio.appetito.ga@gmail.com>
 Date:   Tue Dec 21 14:50:15 2021 +0100
 
@@ -1042,7 +2457,7 @@ Date:   Tue Dec 21 14:42:09 2021 +0100
     composizione
 
 commit ca032ef9577492f4dd5bb63ed0b168990bd7c732
-Merge: bdada16 f8c9a02
+Merge: bdada16d f8c9a02d
 Author: Giulio <giulio.appetito.ga@gmail.com>
 Date:   Tue Dec 21 14:32:43 2021 +0100
 
@@ -1073,7 +2488,7 @@ Date:   Tue Dec 21 10:14:18 2021 +0100
     ritocchi grafici
 
 commit 17dcfdabb002930f4a3002e38f4254f973b64ea4
-Merge: e6a28cf 31befa7
+Merge: e6a28cf5 31befa7e
 Author: Anastasia <anastasia.brinati@students.uniroma2.eu>
 Date:   Tue Dec 21 09:00:12 2021 +0100
 
@@ -1110,7 +2525,7 @@ Date:   Tue Dec 14 15:03:17 2021 +0100
     factory per home grafica, logic for post review, prendere fumetti dal db, prendere chapters dal db
 
 commit 7bc9863b24acb23a37170a5bae395b33c61c18db
-Merge: 6433a36 be7fe45
+Merge: 6433a360 be7fe451
 Author: Anastasia <anastasia.brinati@students.uniroma2.eu>
 Date:   Tue Dec 14 15:02:50 2021 +0100
 
@@ -1138,7 +2553,7 @@ Date:   Sun Dec 12 19:31:35 2021 +0100
     REGISTRATION use case done
 
 commit 5c81b5e42999fa01a7af4c40a0c623752e91d3f9
-Merge: df632ad f0e437e
+Merge: df632ad8 f0e437ed
 Author: Anastasia <anastasia.brinati@students.uniroma2.eu>
 Date:   Sun Dec 12 17:27:15 2021 +0100
 
@@ -1225,7 +2640,7 @@ Date:   Sat Dec 11 18:29:51 2021 +0100
     details
 
 commit f89c00b59065b4cbfc6cecf4300316ab99d84415
-Merge: e6a4684 824fe53
+Merge: e6a46848 824fe53e
 Author: Anastasia <anastasia.brinati@students.uniroma2.eu>
 Date:   Sat Dec 11 18:29:32 2021 +0100
 
@@ -1327,7 +2742,7 @@ Date:   Wed Dec 1 18:20:32 2021 +0100
     login
 
 commit b56bdfff8e74036b73cfedae68aa1ff947de0260
-Merge: be038ab e1227f1
+Merge: be038abb e1227f12
 Author: Anastasia <anastasia.brinati@students.uniroma2.eu>
 Date:   Tue Nov 30 12:29:22 2021 +0100
 
@@ -1362,7 +2777,7 @@ Date:   Tue Nov 30 10:19:39 2021 +0100
     wallpaper
 
 commit fc51b37b4dbf36a7d391c2bf3415a1f5e3f16f4e
-Merge: acfe247 eae6f8f
+Merge: acfe2477 eae6f8fb
 Author: Giulio <giulio.appetito.ga@gmail.com>
 Date:   Tue Nov 30 10:15:25 2021 +0100
 
@@ -1381,7 +2796,7 @@ Date:   Tue Nov 30 10:07:57 2021 +0100
     login
 
 commit 1171ca003436ed9ae37c1ce79662d462c2c9b6cb
-Merge: 93e6c28 a972d9e
+Merge: 93e6c285 a972d9e6
 Author: Giulio <giulio.appetito.ga@gmail.com>
 Date:   Tue Nov 30 09:33:10 2021 +0100
 
@@ -1394,7 +2809,7 @@ Date:   Tue Nov 30 09:29:18 2021 +0100
     login
 
 commit 93e6c2854ec1234327a4b69bf425bdf42e0817c2
-Merge: a2e97d1 fc5f4cb
+Merge: a2e97d10 fc5f4cbc
 Author: Giulio <giulio.appetito.ga@gmail.com>
 Date:   Thu Nov 25 16:16:33 2021 +0100
 
@@ -1422,7 +2837,7 @@ Date:   Thu Nov 25 12:27:17 2021 +0100
     reader e author home distinction
 
 commit e6118cd1b34628f805d5e1e22808a3fb6042238f
-Merge: 8865cc8 3fac01e
+Merge: 8865cc87 3fac01e6
 Author: Anastasia <anastasia.brinati@students.uniroma2.eu>
 Date:   Thu Nov 25 12:25:35 2021 +0100
 
@@ -1482,7 +2897,7 @@ Date:   Thu Nov 25 10:43:32 2021 +0100
     favourite characters added
 
 commit 666edb89126d120a998af89081098267a360593a
-Merge: 98b2b55 d3def70
+Merge: 98b2b557 d3def70d
 Author: Giulio <giulio.appetito.ga@gmail.com>
 Date:   Thu Nov 25 10:31:48 2021 +0100
 
@@ -1525,7 +2940,7 @@ Date:   Wed Nov 24 18:38:17 2021 +0100
     favourites
 
 commit de10c9e48e12648e2f38e4902a76fe4e20021b0a
-Merge: c8825b8 5d75582
+Merge: c8825b8b 5d755827
 Author: Anastasia <anastasia.brinati@students.uniroma2.eu>
 Date:   Wed Nov 24 17:12:33 2021 +0100
 
@@ -1547,7 +2962,7 @@ Date:   Wed Nov 24 14:54:43 2021 +0100
     feed grid migliorata
 
 commit 096339d2659f1298d3add8303eab64ce1ce66d61
-Merge: 5623033 89a63c3
+Merge: 56230330 89a63c3a
 Author: Giulio <giulio.appetito.ga@gmail.com>
 Date:   Wed Nov 24 13:52:48 2021 +0100
 
@@ -1566,7 +2981,7 @@ Date:   Wed Nov 24 11:36:38 2021 +0100
     users
 
 commit 56230330e61574ad2026f9a9a45ca4f3b4c406fb
-Merge: 6c483a0 5df1eb9
+Merge: 6c483a0b 5df1eb9b
 Author: Giulio <giulio.appetito.ga@gmail.com>
 Date:   Wed Nov 24 11:13:35 2021 +0100
 
@@ -1591,7 +3006,7 @@ Date:   Wed Nov 24 11:10:43 2021 +0100
     users
 
 commit 1803df3dcf1e6dba8a159055d18949c23e659049
-Merge: f11d94e d06b816
+Merge: f11d94e9 d06b8166
 Author: Anastasia <anastasia.brinati@students.uniroma2.eu>
 Date:   Wed Nov 24 10:56:50 2021 +0100
 
@@ -1631,7 +3046,7 @@ Date:   Tue Nov 23 10:52:39 2021 +0100
     sfondo e grafica
 
 commit db6b72d2149473f972e6a970bc737fa4f268e2b8
-Merge: 2f8fd46 6d12a0f
+Merge: 2f8fd469 6d12a0fe
 Author: Giulio <giulio.appetito.ga@gmail.com>
 Date:   Tue Nov 23 10:48:56 2021 +0100
 
@@ -1644,7 +3059,7 @@ Date:   Tue Nov 23 10:48:37 2021 +0100
     sfondo e grafica
 
 commit 6d12a0fe6bdcce06ab253790e328ccc1fbf28614
-Merge: e51ff61 064f58b
+Merge: e51ff619 064f58b7
 Author: Anastasia <anastasia.brinati@students.uniroma2.eu>
 Date:   Tue Nov 23 10:46:49 2021 +0100
 
@@ -1663,7 +3078,7 @@ Date:   Tue Nov 23 10:26:15 2021 +0100
     icone modificate
 
 commit df170ed7e25aa10ab267df224fbbbd98595db2ee
-Merge: 7c19675 c6e13a6
+Merge: 7c196751 c6e13a66
 Author: Giulio <giulio.appetito.ga@gmail.com>
 Date:   Tue Nov 23 10:12:30 2021 +0100
 
@@ -1694,7 +3109,7 @@ Date:   Tue Nov 23 09:27:17 2021 +0100
     view migliorata
 
 commit 32208af02ea4ed91cca71f606eaa69113d054dfd
-Merge: 1857067 ab8e6f0
+Merge: 1857067b ab8e6f00
 Author: Anastasia <anastasia.brinati@students.uniroma2.eu>
 Date:   Tue Nov 23 09:12:13 2021 +0100
 
@@ -1747,7 +3162,7 @@ Date:   Mon Nov 22 10:56:53 2021 +0100
     colori bottoni home sistemati
 
 commit edbce7580e402d241d7a1e3b2bf836a7a6c2a87a
-Merge: bf56fcc 91d32cd
+Merge: bf56fcc8 91d32cd9
 Author: Giulio <giulio.appetito.ga@gmail.com>
 Date:   Sat Nov 20 19:48:45 2021 +0100
 
@@ -1771,7 +3186,7 @@ Date:   Sat Nov 20 17:50:19 2021 +0100
     sonar
 
 commit bf56fcc82d44b0d1cfaf68b07673dff2fecf2728
-Merge: 152d834 421a49c
+Merge: 152d8342 421a49cf
 Author: Giulio <giulio.appetito.ga@gmail.com>
 Date:   Sat Nov 20 17:18:03 2021 +0100
 
@@ -1796,7 +3211,7 @@ Date:   Fri Nov 12 16:14:21 2021 +0100
     icone tutte stesse dimensioni, colore bottoni ritoccato
 
 commit e8c3f78303f13ba7f92eb73e469a8fbf158e5a23
-Merge: 0cf47d2 ef11986
+Merge: 0cf47d29 ef119861
 Author: Anastasia <anastasia.brinati@students.uniroma2.eu>
 Date:   Fri Nov 12 16:01:56 2021 +0100
 
@@ -1821,7 +3236,7 @@ Date:   Fri Nov 12 15:53:04 2021 +0100
     prova su sonar
 
 commit 73dcd4575dbff5dd9be300e64dfcdd278778f347
-Merge: 6bfa3dd f1b07cc
+Merge: 6bfa3dd7 f1b07ccb
 Author: Giulio <giulio.appetito.ga@gmail.com>
 Date:   Fri Nov 12 15:22:37 2021 +0100
 
@@ -1864,7 +3279,7 @@ Date:   Thu Nov 11 20:54:01 2021 +0100
     icone tutte stesse dimensioni, colore bottoni ritoccato
 
 commit 5cef5322a63785203364fb544c8aeef18b94f120
-Merge: a14a62d a2fe842
+Merge: a14a62dd a2fe842f
 Author: Giulio <giulio.appetito.ga@gmail.com>
 Date:   Thu Nov 11 16:13:21 2021 +0100
 
@@ -1901,7 +3316,7 @@ Date:   Thu Nov 11 14:46:25 2021 +0100
     recupero2
 
 commit 0129c221767c5da59acce55f1174af91f0a8e8f3
-Merge: cfd1d87 80dc7f0
+Merge: cfd1d879 80dc7f07
 Author: Anastasia <anastasia.brinati@students.uniroma2.eu>
 Date:   Thu Nov 11 12:34:08 2021 +0100
 
@@ -1944,7 +3359,7 @@ Date:   Thu Nov 11 12:09:38 2021 +0100
     recupero
 
 commit 1b8daa9235f5a7dcf8c9a388bf66d6530e573622
-Merge: 03f6392 f77dac0
+Merge: 03f63923 f77dac06
 Author: Anastasia <anastasia.brinati@students.uniroma2.eu>
 Date:   Thu Nov 11 11:59:28 2021 +0100
 
@@ -1985,7 +3400,7 @@ Date:   Thu Nov 11 10:42:15 2021 +0100
     reviews added in chapter
 
 commit 9653536d7f829b41c35ecd384ef16acc7be30666
-Merge: f47988b bc990a5
+Merge: f47988bc bc990a5c
 Author: Giulio <giulio.appetito.ga@gmail.com>
 Date:   Thu Nov 11 09:34:31 2021 +0100
 
@@ -2004,7 +3419,7 @@ Date:   Thu Nov 11 09:33:14 2021 +0100
     cards sul feed
 
 commit a8455054937a65c39d2ce3048a3369b9e3a592c3
-Merge: c7a54f6 7685bf1
+Merge: c7a54f63 7685bf12
 Author: Giulio <giulio.appetito.ga@gmail.com>
 Date:   Wed Nov 10 14:14:11 2021 +0100
 
@@ -2042,7 +3457,7 @@ Date:   Wed Nov 10 11:55:46 2021 +0100
     cards sul feed
 
 commit cb5280c599f29572f117c11ac00052b65a80f78c
-Merge: 11196e6 4729066
+Merge: 11196e6c 47290663
 Author: Anastasia <anastasia.brinati@students.uniroma2.eu>
 Date:   Wed Nov 10 08:36:37 2021 +0100
 
@@ -2087,7 +3502,7 @@ Date:   Tue Nov 9 21:03:30 2021 +0100
     ads pane built
 
 commit e263515b68fc4ff704164f82e8cebe0e41e65c72
-Merge: c1390fc ec573a4
+Merge: c1390fce ec573a44
 Author: Giulio <giulio.appetito.ga@gmail.com>
 Date:   Tue Nov 9 15:25:02 2021 +0100
 
@@ -2100,14 +3515,14 @@ Date:   Tue Nov 9 15:24:46 2021 +0100
     cards sul feel
 
 commit c1390fcea83b0a09ac93f0fc8e2434deb706529d
-Merge: bc44725 97128cf
+Merge: bc44725e 97128cf5
 Author: Giulio <giulio.appetito.ga@gmail.com>
 Date:   Mon Nov 8 17:17:51 2021 +0100
 
     Merge remote-tracking branch 'origin/master'
 
 commit 97128cf579e0a7977779e980c2ac49580a01db29
-Merge: 16f81bc a368467
+Merge: 16f81bca a3684673
 Author: Anastasia <anastasia.brinati@students.uniroma2.eu>
 Date:   Mon Nov 8 17:17:25 2021 +0100
 
@@ -2120,7 +3535,7 @@ Date:   Mon Nov 8 17:17:05 2021 +0100
     ritocchi home
 
 commit bc44725ee39ab748d16aec666a94dd35f67667fe
-Merge: 82cac65 a368467
+Merge: 82cac656 a3684673
 Author: Giulio <giulio.appetito.ga@gmail.com>
 Date:   Mon Nov 8 17:15:48 2021 +0100
 
@@ -2135,7 +3550,7 @@ Author: GiulioAppetito <72864708+GiulioAppetito@users.noreply.github.com>
 Date:   Mon Nov 8 17:07:51 2021 +0100
 
 commit 82cac6560d38c8eeef4002ddfba12e90dc3ad291
-Merge: 22daa6d bfd0213
+Merge: 22daa6d2 bfd02134
 Author: Giulio <giulio.appetito.ga@gmail.com>
 Date:   Mon Nov 8 10:54:14 2021 +0100
 
@@ -2148,7 +3563,7 @@ Date:   Mon Nov 8 10:40:44 2021 +0100
     sbloccato manualmente il controller
 
 commit 22daa6d27968cf689826d4a63ceacd3b3a63fe2f
-Merge: 8284a82 1334b05
+Merge: 8284a824 1334b057
 Author: Giulio <giulio.appetito.ga@gmail.com>
 Date:   Mon Nov 8 08:33:47 2021 +0100
 
@@ -2176,7 +3591,7 @@ Date:   Fri Nov 5 23:41:09 2021 +0100
     sbloccato manualmente il controller
 
 commit 0096ab6f5528a7c48c09ec5e218cd5d8dad65f95
-Merge: a422643 b728e7b
+Merge: a4226439 b728e7b1
 Author: Giulio <giulio.appetito.ga@gmail.com>
 Date:   Fri Nov 5 17:58:17 2021 +0100
 
@@ -2192,7 +3607,7 @@ Date:   Fri Nov 5 17:57:54 2021 +0100
     categories modified
 
 commit b728e7b1ebecd7b9ea85a4cc734e5920fbcaf2b1
-Merge: c1a4518 b11e534
+Merge: c1a45180 b11e5342
 Author: Anastasia <anastasia.brinati@students.uniroma2.eu>
 Date:   Fri Nov 5 17:01:20 2021 +0100
 
@@ -2271,7 +3686,7 @@ Date:   Thu Nov 4 17:11:30 2021 +0100
     boh
 
 commit 1309dc8731116b1f3c55bd167f091e6dde93dfea
-Merge: 83702a3 f16383a
+Merge: 83702a39 f16383a3
 Author: Giulio <giulio.appetito.ga@gmail.com>
 Date:   Thu Nov 4 15:44:38 2021 +0100
 
@@ -2326,7 +3741,7 @@ Date:   Thu Nov 4 12:19:58 2021 +0100
     package controller created
 
 commit 30431bf99b9882ec4bae401fb2111df046cfcddd
-Merge: 93a9cc1 57362ac
+Merge: 93a9cc19 57362ac9
 Author: Giulio <giulio.appetito.ga@gmail.com>
 Date:   Thu Nov 4 12:18:27 2021 +0100
 
@@ -2366,7 +3781,7 @@ Date:   Sun Oct 31 19:20:37 2021 +0100
     Registration and Login form (graphic)
 
 commit 97591b2c5e2d5e80f23cdf180ebba82890839ea4
-Merge: e7383f0 48c5c2c
+Merge: e7383f09 48c5c2c1
 Author: Giulio <giulio.appetito.ga@gmail.com>
 Date:   Sun Oct 31 16:58:27 2021 +0100
 
@@ -2379,7 +3794,7 @@ Date:   Sun Oct 31 16:54:47 2021 +0100
     login try
 
 commit e7383f095c8b411a444bc05c4ca410a8df0f3c4e
-Merge: d0c5853 6b537f4
+Merge: d0c58535 6b537f49
 Author: Giulio <giulio.appetito.ga@gmail.com>
 Date:   Sun Oct 31 12:10:35 2021 +0100
 
@@ -2473,7 +3888,7 @@ Date:   Wed Oct 27 17:38:49 2021 +0200
     Categories icon updated
 
 commit 9e63d2e6f887aab90eebfdcd57abe6d5988cc44e
-Merge: 7265809 7a2463b
+Merge: 72658092 7a2463ba
 Author: Anastasia <anastasia.brinati@students.uniroma2.eu>
 Date:   Wed Oct 27 17:23:52 2021 +0200
 
@@ -2521,7 +3936,7 @@ Date:   Wed Oct 27 16:44:23 2021 +0200
     Categories icon updated
 
 commit 8d2c9669332051d89f036447f9a99fdc5c453bc1
-Merge: 184bf34 7f7d1cb
+Merge: 184bf34b 7f7d1cb6
 Author: Anastasia <anastasia.brinati@students.uniroma2.eu>
 Date:   Wed Oct 27 16:38:29 2021 +0200
 
@@ -2544,7 +3959,7 @@ Date:   Wed Oct 27 15:31:49 2021 +0200
     Categories icon updated
 
 commit 45981ddd7400f1d3d91d0497b1ff1f2d47854b3c
-Merge: 8e5ab11 f38cd6c
+Merge: 8e5ab11b f38cd6c8
 Author: Giulio <giulio.appetito.ga@gmail.com>
 Date:   Wed Oct 27 15:30:51 2021 +0200
 
@@ -2578,7 +3993,7 @@ Date:   Mon Oct 25 10:16:01 2021 +0200
     Giulio1
 
 commit 7914eb9d767073a3022ad464d1365723bee655b3
-Merge: 29eef9a c70a95c
+Merge: 29eef9ab c70a95c3
 Author: Giulio <giulio.appetito.ga@gmail.com>
 Date:   Mon Oct 25 10:01:49 2021 +0200
 
@@ -2606,7 +4021,7 @@ Date:   Mon Oct 25 09:51:30 2021 +0200
     adding settings
 
 commit 5725fe52c4a6608779d4ccf969672aa2ffe8aed8
-Merge: 10c807d 7d68b76
+Merge: 10c807dc 7d68b769
 Author: Anastasia <anastasia.brinati@students.uniroma2.eu>
 Date:   Mon Oct 25 09:50:56 2021 +0200
 
@@ -2631,7 +4046,7 @@ Date:   Mon Oct 25 09:40:35 2021 +0200
     adding settings
 
 commit 4ea9cf829b54e74c2f2c775e9c108434b7888bc8
-Merge: 2ebfbc6 8ac6351
+Merge: 2ebfbc65 8ac6351a
 Author: Anastasia <anastasia.brinati@students.uniroma2.eu>
 Date:   Mon Oct 25 09:13:23 2021 +0200
 
@@ -2644,7 +4059,7 @@ Date:   Mon Oct 25 09:13:06 2021 +0200
     Giulio1
 
 commit 2ebfbc65d1947ca1f2ab8f15d20fe9f00ccf863d
-Merge: 9a321d0 16d3475
+Merge: 9a321d06 16d34753
 Author: Anastasia <anastasia.brinati@students.uniroma2.eu>
 Date:   Mon Oct 25 09:07:45 2021 +0200
 
@@ -2699,7 +4114,7 @@ Date:   Sun Oct 24 17:28:12 2021 +0200
     Giulio1
 
 commit e7eddae301f51b40e13853fd61f6524da0d78ab4
-Merge: 91b7cb2 ecbf585
+Merge: 91b7cb20 ecbf5858
 Author: Giulio <giulio.appetito.ga@gmail.com>
 Date:   Sun Oct 24 17:27:39 2021 +0200
 

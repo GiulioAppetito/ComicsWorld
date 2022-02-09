@@ -509,6 +509,8 @@ public class FeedControllerG2 implements ChapterObserver, AccountObserver, Reade
     private void openFollowing() {
         openMenu();
         closeAll();
+
+        vBoxFollowing.getChildren().clear();
         vBoxFollowing.setVisible(true);
 
         ResearchController researchController = new ResearchController();
