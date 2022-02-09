@@ -32,7 +32,7 @@ public class ReadingControllerG {
                 cardController.setData(listOfCards.get(j));
 
                 int finalJ = j;
-                card.setOnMouseClicked(event -> openSerie(listOfCards.get(finalJ)));
+                card.setOnMouseClicked(event -> openReadingSerie(listOfCards.get(finalJ)));
 
                 gpComic.add(card,j%columns,i);
                 if(j%columns == columns-1){
@@ -46,7 +46,7 @@ public class ReadingControllerG {
     }
 
 
-    public void openSerie(SeriesBean seriesBean){
+    public void openReadingSerie(SeriesBean seriesBean){
         ReaderHomeControllerG readerHomeControllerG = ReaderHomeControllerG.getInstance();
         readerHomeControllerG.openSeries(seriesBean);
     }
