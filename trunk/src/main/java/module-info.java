@@ -13,8 +13,7 @@ module com.example.coomics {
     requires java.desktop;
     requires javax.jms;
     requires AnimateFX;
-    requires java.mail;
-
+    requires mail;
 
     exports com.example.comics.view1;
     opens com.example.comics.view1 to javafx.fxml;
