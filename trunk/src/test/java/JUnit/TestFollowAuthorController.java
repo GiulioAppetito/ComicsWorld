@@ -1,3 +1,5 @@
+package JUnit;
+
 import com.example.comics.controller.FollowAuthorController;
 import com.example.comics.model.UserLogin;
 import com.example.comics.model.fagioli.AuthorBean;

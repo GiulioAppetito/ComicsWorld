@@ -1,3 +1,5 @@
+package JUnit;
+
 import com.example.comics.controller.RegistrationController;
 import com.example.comics.model.exceptions.FailedRegistrationException;
 import com.example.comics.model.exceptions.MalformedEmailException;

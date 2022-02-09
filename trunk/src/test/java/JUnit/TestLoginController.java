@@ -1,3 +1,5 @@
+package JUnit;
+
 import com.example.comics.controller.LoginController;
 import com.example.comics.model.exceptions.FailedLoginException;
 import com.example.comics.model.fagioli.LoginBean;

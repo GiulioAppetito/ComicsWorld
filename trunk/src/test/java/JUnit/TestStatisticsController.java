@@ -1,3 +1,5 @@
+package JUnit;
+
 import com.example.comics.controller.ResearchController;
 import com.example.comics.controller.StatisticsController;
 import com.example.comics.model.Series;

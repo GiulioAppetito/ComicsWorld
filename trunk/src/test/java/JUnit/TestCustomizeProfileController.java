@@ -1,3 +1,5 @@
+package JUnit;
+
 import com.example.comics.controller.CustomizeProfileController;
 import com.example.comics.model.UserLogin;
 import com.example.comics.model.exceptions.FailedProfileCustomizationException;
@@ -11,11 +13,11 @@ class TestCustomizeProfileController {
 
     @Test
      void testChangeUsername(){
-        String newUsername = "giulietto";
+        String newUsername = "giulio";
 
         String actual;
 
-        UserLogin.createAccount("giulio","giulio","reader");
+        UserLogin.createAccount("giulietto","giulio","reader");
 
         AccountBean accountBean = new AccountBundle();
         accountBean.setUsername(newUsername);

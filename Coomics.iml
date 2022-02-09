@@ -35,7 +35,6 @@
       <sourceFolder url="file://$MODULE_DIR$/trunk/src/main/resources" type="java-resource" />
       <sourceFolder url="file://$MODULE_DIR$/trunk/src/test/java" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/trunk/src/test/java/selenium" isTestSource="true" />
-      <sourceFolder url="file://$MODULE_DIR$/trunk/src/test/java/JUnit" isTestSource="true" />
       <excludeFolder url="file://$MODULE_DIR$/venv" />
       <excludeFolder url="file://$MODULE_DIR$/target" />
     </content>

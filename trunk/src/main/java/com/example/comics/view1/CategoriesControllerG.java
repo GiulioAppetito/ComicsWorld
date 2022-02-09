@@ -121,7 +121,7 @@ public class CategoriesControllerG {
                     case "G" -> boxG.getChildren().add(categoryBox);
                     case "H" -> boxH.getChildren().add(categoryBox);
                     case "I" -> boxI.getChildren().add(categoryBox);
-                    case "J" -> boxJ.getChildren().add(categoryBox);
+                    case "JUnit" -> boxJ.getChildren().add(categoryBox);
                     case "K" -> boxK.getChildren().add(categoryBox);
                     case "L" -> boxL.getChildren().add(categoryBox);
                     case "M" -> boxM.getChildren().add(categoryBox);
