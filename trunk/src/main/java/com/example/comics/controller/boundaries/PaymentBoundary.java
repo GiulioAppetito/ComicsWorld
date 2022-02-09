@@ -40,12 +40,7 @@ public class PaymentBoundary {
 
     private void signalPayment(SeriesBean seriesBean, ChapterBean chapterBean, DiscountCodeBean discountCodeBean){
         BuyComicController buyComicController = new BuyComicController();
-        try{
-            buyComicController.completedPayment(seriesBean, chapterBean, discountCodeBean);
-
-        }catch (FailedPaymentException e){
-            buyComicController.failedPayment();
-        }
+        buyComicController.completedPayment(seriesBean, chapterBean, discountCodeBean);
 
 
 

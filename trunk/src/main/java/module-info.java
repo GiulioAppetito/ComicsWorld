@@ -12,8 +12,8 @@ module com.example.coomics {
     requires java.sql;
     requires java.desktop;
     requires javax.jms;
-    requires mail;
     requires AnimateFX;
+    requires java.mail;
 
 
     exports com.example.comics.view1;
