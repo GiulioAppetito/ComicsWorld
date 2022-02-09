@@ -53,10 +53,11 @@ public class PublishSeriesController {
             List<String> followersMails = accountDAO.retreiveAuthorFollowersMails(UserLogin.getInstance().getAuthor());
             ReaderBean readerBean;
             AuthorBean authorBean = new AuthorBundle();
+
+            authorBean.setEmail(UserLogin.getInstance().getAccount().getEmail());
             authorBean.setUsername(UserLogin.getInstance().getAccount().getUsername());
             authorBean.setFirstName(UserLogin.getInstance().getAccount().getFirstName());
             authorBean.setLastName(UserLogin.getInstance().getAccount().getLastName());
-            authorBean.setEmail(UserLogin.getInstance().getAccount().getEmail());
             for(String followerMail : followersMails){
                 readerBean = new ReaderBundle();
                 readerBean.setEmail(followerMail);

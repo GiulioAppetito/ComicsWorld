@@ -20,14 +20,6 @@ public class PostReviewController{
         }
         Review review = new Review(reviewBean.getComment(),reviewBean.getRating(),reviewBean.getAccount());
 
-        //salvataggio sul DB
-        Author author = new Author();
-        author.setFirstName(seriesBean.getAuthor().getFirstName());
-        author.setUsername(seriesBean.getAuthor().getUsername());
-        author.setProPic(seriesBean.getAuthor().getProPic());
-        author.setLastName(seriesBean.getAuthor().getLastName());
-        author.setEmail(seriesBean.getAuthor().getEmail());
-
         Series series;
         series = SeriesDAO.retrieveSeries(seriesBean.getTitle());
         series.addReview(chapterBean.getTitle(),review);
@@ -91,12 +83,12 @@ public class PostReviewController{
     }
 
     private void sendEmailToReader(DiscountCode discountCode,SeriesBean seriesBean){
+
         AccountBean accountBean = new AccountBundle();
-        accountBean.setFirstName(UserLogin.getInstance().getAccount().getFirstName());
         accountBean.setLastName(UserLogin.getInstance().getAccount().getLastName());
         accountBean.setUsername(UserLogin.getInstance().getAccount().getUsername());
+        accountBean.setFirstName(UserLogin.getInstance().getAccount().getFirstName());
         accountBean.setEmail(UserLogin.getInstance().getAccount().getEmail());
-        accountBean.setProPic(UserLogin.getInstance().getAccount().getProPic());
 
         DiscountBean discountBean = new DiscountBundle();
         discountBean.setLimitDays(discountCode.getDiscount().getLimitDays());
