@@ -643,6 +643,7 @@ public class ChapterControllerG implements ChapterObserver, ReaderObserver{
     public void update(BadgeBean badgeBean) {
         newBadgeWonPane.setVisible(true);
         lblBadgeName.setText(badgeBean.getName());
+        lblBadgeSeries.setText(currentSeries.getTitle());
         badgeIconView.setImage(badgeBean.getIcon());
         initChoiceBoxCodes();
     }
