@@ -809,36 +809,6 @@
                               <String fx:value="keyboard" />
                            </styleClass>
                         </VBox>
-                        <Pane fx:id="paneNotifications" prefHeight="286.0" prefWidth="286.0" styleClass="darkButton">
-                           <StackPane.margin>
-                              <Insets bottom="200.0" left="10.0" right="10.0" top="100.0" />
-                           </StackPane.margin>
-                           <children>
-                              <HBox layoutY="51.0" prefHeight="150.0" prefWidth="266.0">
-                                 <children>
-                                    <VBox alignment="CENTER" prefHeight="150.0" prefWidth="134.0">
-                                       <children>
-                                          <Label fx:id="message" prefHeight="40.0" prefWidth="110.0" text="Label" textFill="WHITE" />
-                                       </children>
-                                       <HBox.margin>
-                                          <Insets bottom="10.0" left="10.0" top="10.0" />
-                                       </HBox.margin>
-                                    </VBox>
-                                    <ImageView fx:id="badgeIcon" fitHeight="123.0" fitWidth="116.0" pickOnBounds="true" preserveRatio="true">
-                                       <HBox.margin>
-                                          <Insets bottom="10.0" right="10.0" top="10.0" />
-                                       </HBox.margin>
-                                    </ImageView>
-                                 </children>
-                              </HBox>
-                              <Button fx:id="btnCloseNotif" layoutX="203.0" layoutY="1.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="50.0" styleClass="darkButton" text="x" textFill="WHITE">
-                                 <font>
-                                    <Font size="20.0" />
-                                 </font>
-                              </Button>
-                              <Label fx:id="notifTitle" layoutX="31.0" layoutY="1.0" prefHeight="40.0" prefWidth="182.0" text="Label" textFill="WHITE" />
-                           </children>
-                        </Pane>
                         <VBox fx:id="vBoxPostReview" prefHeight="513.0" prefWidth="286.0">
                            <styleClass>
                               <String fx:value="header-background" />
@@ -876,6 +846,107 @@
                               </Button>
                            </children>
                         </VBox>
+                        <Pane fx:id="paneOrder" prefHeight="286.0" prefWidth="286.0" styleClass="darkButton">
+                           <StackPane.margin>
+                              <Insets bottom="200.0" left="10.0" right="10.0" top="100.0" />
+                           </StackPane.margin>
+                           <children>
+                              <HBox layoutY="51.0" prefHeight="150.0" prefWidth="266.0">
+                                 <children>
+                                    <VBox alignment="CENTER" prefHeight="130.0" prefWidth="250.0">
+                                       <children>
+                                          <Label prefHeight="40.0" prefWidth="189.0" text="You just placed a new order!" textFill="WHITE" />
+                                       </children>
+                                       <HBox.margin>
+                                          <Insets bottom="10.0" left="10.0" top="10.0" />
+                                       </HBox.margin>
+                                    </VBox>
+                                 </children>
+                              </HBox>
+                              <Button fx:id="btnCloseorder" layoutX="203.0" layoutY="1.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="50.0" styleClass="darkButton" text="x" textFill="WHITE">
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font>
+                              </Button>
+                              <Label layoutX="31.0" layoutY="1.0" prefHeight="54.0" prefWidth="182.0" text="New order" textFill="WHITE" />
+                           </children>
+                        </Pane>
+                        <Pane fx:id="paneFailure" prefHeight="343.0" prefWidth="286.0" styleClass="darkButton">
+                           <children>
+                              <HBox layoutY="51.0" prefHeight="150.0" prefWidth="266.0">
+                                 <children>
+                                    <VBox alignment="CENTER" prefHeight="130.0" prefWidth="250.0">
+                                       <children>
+                                          <Label prefHeight="40.0" prefWidth="189.0" text="Sorry, we failed to place the order" textFill="WHITE" />
+                                       </children>
+                                       <HBox.margin>
+                                          <Insets bottom="10.0" left="10.0" top="10.0" />
+                                       </HBox.margin>
+                                    </VBox>
+                                 </children>
+                              </HBox>
+                              <Button fx:id="btnCloseFailure" layoutX="203.0" layoutY="1.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="50.0" styleClass="darkButton" text="x" textFill="WHITE">
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font>
+                              </Button>
+                              <Label layoutX="31.0" layoutY="1.0" prefHeight="54.0" prefWidth="182.0" text="Failed order" textFill="WHITE" />
+                           </children>
+                           <StackPane.margin>
+                              <Insets bottom="150.0" top="100.0" />
+                           </StackPane.margin>
+                        </Pane>
+                        <Pane fx:id="paneBadgeWon" prefHeight="343.0" prefWidth="286.0" styleClass="darkButton">
+                           <children>
+                              <HBox layoutY="51.0" prefHeight="150.0" prefWidth="266.0">
+                                 <children>
+                                    <VBox alignment="CENTER" prefHeight="130.0" prefWidth="102.0">
+                                       <children>
+                                          <Label fx:id="badgeName" prefHeight="40.0" prefWidth="67.0" text="BadgeName" textFill="WHITE" />
+                                       </children>
+                                       <HBox.margin>
+                                          <Insets bottom="10.0" left="10.0" top="10.0" />
+                                       </HBox.margin>
+                                    </VBox>
+                                    <ImageView fx:id="badgeIcon" fitHeight="150.0" fitWidth="130.0" pickOnBounds="true" preserveRatio="true" />
+                                 </children>
+                              </HBox>
+                              <Button fx:id="btnCloseNewBadgeWon" layoutX="203.0" layoutY="1.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="50.0" styleClass="darkButton" text="x" textFill="WHITE">
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font>
+                              </Button>
+                              <Label layoutX="31.0" layoutY="1.0" prefHeight="54.0" prefWidth="182.0" text="New badge won!" textFill="WHITE" />
+                           </children>
+                           <StackPane.margin>
+                              <Insets bottom="150.0" top="100.0" />
+                           </StackPane.margin>
+                        </Pane>
+                        <Pane fx:id="paneNotifications" prefHeight="343.0" prefWidth="286.0" styleClass="darkButton">
+                           <children>
+                              <HBox layoutY="51.0" prefHeight="150.0" prefWidth="266.0">
+                                 <children>
+                                    <VBox alignment="CENTER" prefHeight="130.0" prefWidth="245.0">
+                                       <children>
+                                          <Label fx:id="notifMessage" prefHeight="40.0" prefWidth="219.0" text="BadgeName" textFill="WHITE" />
+                                       </children>
+                                       <HBox.margin>
+                                          <Insets bottom="10.0" left="10.0" top="10.0" />
+                                       </HBox.margin>
+                                    </VBox>
+                                 </children>
+                              </HBox>
+                              <Button fx:id="btnCloseNotif" layoutX="203.0" layoutY="1.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="50.0" styleClass="darkButton" text="x" textFill="WHITE">
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font>
+                              </Button>
+                              <Label fx:id="notifTitle" layoutX="31.0" layoutY="1.0" prefHeight="54.0" prefWidth="182.0" text="New badge won!" textFill="WHITE" />
+                           </children>
+                           <StackPane.margin>
+                              <Insets bottom="150.0" top="100.0" />
+                           </StackPane.margin>
+                        </Pane>
                         <Pane fx:id="paneMenu" prefHeight="512.0" prefWidth="206.0">
                            <StackPane.margin>
                               <Insets bottom="-1.0" right="80.0" />
