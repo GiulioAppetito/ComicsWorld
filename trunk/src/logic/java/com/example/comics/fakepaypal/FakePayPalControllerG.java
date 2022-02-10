@@ -34,7 +34,7 @@ public class FakePayPalControllerG {
     private String lastname;
     private String expense;
 
-    private static String result = null;
+    private String result = null;
 
     public FakePayPalControllerG(String firstName, String lastName, String expense){
         firstname = firstName;

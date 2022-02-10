@@ -45,11 +45,11 @@ public class TestInuyashaAuthor {
         // 6 | click | linkText=Inuyasha. Wide edition. Vol. 3 |  |
         driver.findElement(By.linkText("Inuyasha. Wide edition. Vol. 3")).click();
         // 7 | mouseOver | linkText=Rumiko Takahashi |  |
-        {
-            WebElement element = driver.findElement(By.linkText(AUTHOR));
-            Actions builder = new Actions(driver);
-            builder.moveToElement(element).perform();
-        }
+
+        WebElement element = driver.findElement(By.linkText(AUTHOR));
+        Actions builder = new Actions(driver);
+        builder.moveToElement(element).perform();
+
         // 8 | assertText | linkText=Rumiko Takahashi | Rumiko Takahashi |
         assertThat(driver.findElement(By.linkText(AUTHOR)).getText(), is(AUTHOR));
     }
