@@ -16,6 +16,7 @@ module com.example.coomics {
     requires mail;
 
 
+
     exports com.example.comics.view1;
     opens com.example.comics.view1 to javafx.fxml;
     exports com.example.comics.view2;

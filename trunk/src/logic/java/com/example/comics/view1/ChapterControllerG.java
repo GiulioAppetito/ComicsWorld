@@ -398,13 +398,12 @@ public class ChapterControllerG implements ChapterObserver, ReaderObserver{
         orderPane.setVisible(false);
         btnCloseOrderPane.setOnAction(event -> orderPane.setVisible(false));
         currentSeries = seriesBean;
+        lblAuthor.setText(seriesBean.getAuthor().getUsername());
 
         ChapterSubject.attach(this, "reviews");
         AccountSubject.attach(this, "badges");
         AccountSubject.attach(this, "orders");
 
-
-        lblAuthor.setText("autore");
         lblChapterTitle.setText(chapterBean.getTitle());
         taDescription.setText(chapterBean.getDescription());
         taDescription.setEditable(false);

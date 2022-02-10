@@ -31,6 +31,9 @@ public class ReaderProfileControllerG implements AccountObserver {
     private Label lblUsername;
 
     @FXML
+    private Label lblLastName;
+
+    @FXML
     private Button btnEdit;
 
 
@@ -39,7 +42,8 @@ public class ReaderProfileControllerG implements AccountObserver {
     public void initialize() {
         btnEdit.setOnAction(event -> openSettings());
         lblName.setText(UserLogin.getInstance().getAccount().getFirstName());
-        lblUsername.setText(UserLogin.getInstance().getAccount().getLastName());
+        lblLastName.setText(UserLogin.getInstance().getAccount().getLastName());
+        lblUsername.setText(UserLogin.getInstance().getAccount().getUsername());
         ivProPic.setImage(UserLogin.getInstance().getAccount().getProPic());
 
 

@@ -68,7 +68,7 @@ public class ProfileSettingsControllerG implements AccountObserver {
         FileChooser fc = new FileChooser();
         InputStream inputStream = null;
         AccountBean1 accountBean = new AccountBean1();
-        fc.getExtensionFilters().add(new FileChooser.ExtensionFilter("*.png","*.png"));
+        fc.getExtensionFilters().add(new FileChooser.ExtensionFilter("*.jpg,*.png","*.jpg","*.png"));
         File f = fc.showOpenDialog(null);
         if(f!=null){
             imageCoverPath = f.getAbsolutePath();
