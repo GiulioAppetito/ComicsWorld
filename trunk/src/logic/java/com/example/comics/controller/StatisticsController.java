@@ -7,7 +7,7 @@ import com.example.comics.model.fagioli.SeriesBean;
 public class StatisticsController {
 
 
-    public Float seriesAverageRating(SeriesBean seriesBean) {
+    public float seriesAverageRating(SeriesBean seriesBean) {
 
         Float ratingSum = 0f;
         Float numReviews = 0f;

@@ -28,7 +28,7 @@ public class CardControllerG {
         comicCover.setImage(seriesBean.getCover());
 
         StatisticsController statisticsController = new StatisticsController();
-        switch (statisticsController.seriesAverageRating(seriesBean).intValue()){
+        switch ((int) statisticsController.seriesAverageRating(seriesBean)){
 
             case 1:
                 imgStar1.setVisible(true);

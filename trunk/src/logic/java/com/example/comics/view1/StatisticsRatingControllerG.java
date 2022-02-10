@@ -1,6 +1,7 @@
 package com.example.comics.view1;
 
 import com.example.comics.controller.ResearchController;
+import com.example.comics.controller.StatisticsController;
 import com.example.comics.model.fagioli.SeriesBean;
 import javafx.fxml.FXML;
 import javafx.scene.chart.*;
@@ -24,9 +25,11 @@ public class StatisticsRatingControllerG {
 
         //Prepare XYChart.Series objects by setting data
         XYChart.Series<String, Integer> series1 = new XYChart.Series<>();
+        StatisticsController statisticsController = new StatisticsController();
 
         for(SeriesBean seriesBean : publishedSeries) {
-            series1.getData().add(new XYChart.Data<>(seriesBean.getTitle(), seriesBean.getAverageRating()));
+            Integer rating = (int)statisticsController.seriesAverageRating(seriesBean);
+            series1.getData().add(new XYChart.Data<String, Integer>(seriesBean.getTitle(), rating));
         }
 
         //Setting the XYChart.Series objects to area chart
