@@ -42,6 +42,9 @@ public class FeedControllerG2 implements ChapterObserver, AccountObserver, Reade
     private ImageView badgeIcon;
 
     @FXML
+    private Label badgeName;
+
+    @FXML
     private VBox boxFeed;
 
     @FXML
@@ -82,6 +85,18 @@ public class FeedControllerG2 implements ChapterObserver, AccountObserver, Reade
 
     @FXML
     private Button btnChangeUsername;
+
+    @FXML
+    private Button btnCloseFailure;
+
+    @FXML
+    private Button btnCloseNewBadgeWon;
+
+    @FXML
+    private Button btnCloseNotif;
+
+    @FXML
+    private Button btnCloseorder;
 
     @FXML
     private Button btnFav;
@@ -165,16 +180,25 @@ public class FeedControllerG2 implements ChapterObserver, AccountObserver, Reade
     private Label lblLastName;
 
     @FXML
-    private Label message;
+    private Label notifMessage;
 
     @FXML
     private Label notifTitle;
 
     @FXML
-    private Pane paneMenu;
+    private Pane paneBadgeWon;
 
     @FXML
     private Pane paneNotifications;
+
+    @FXML
+    private Pane paneFailure;
+
+    @FXML
+    private Pane paneMenu;
+
+    @FXML
+    private Pane paneOrder;
 
     @FXML
     private Pane panePayment;
@@ -285,9 +309,6 @@ public class FeedControllerG2 implements ChapterObserver, AccountObserver, Reade
     private VBox vBoxToRead;
 
     @FXML
-    private Button btnCloseNotif;
-
-    @FXML
     private VBox vBoxToReadSeries;
 
 
@@ -348,7 +369,10 @@ public class FeedControllerG2 implements ChapterObserver, AccountObserver, Reade
         btnToRead.setOnAction(event -> openToRead());
         btnMyBadges.setOnAction(event -> openMyBadges());
         btnMyOrders.setOnAction(event -> openMyOrders());
-        btnCloseNotif.setOnAction(event -> paneNotifications.setVisible(false));
+        btnCloseFailure.setOnAction(event -> paneFailure.setVisible(false));
+        btnCloseorder.setOnAction(event -> paneOrder.setVisible(false));
+        btnCloseNewBadgeWon.setOnAction(event -> paneBadgeWon.setVisible(false));
+        btnCloseNotif.setOnAction(event -> openNotifications());
 
         //author menu
         btnStatistics.setOnAction(event -> openStats());
@@ -633,9 +657,9 @@ public class FeedControllerG2 implements ChapterObserver, AccountObserver, Reade
         try {
             customizeProfileController.changeUsername(accountBean);
         } catch (FailedProfileCustomizationException e) {
-            notifTitle.setText("Error");
-            message.setText(e.getMessage());
             badgeIcon.setVisible(false);
+            notifTitle.setText("ops!!!");
+            notifMessage.setText(e.getMessage());
             paneNotifications.setVisible(true);
         }
     }
@@ -851,7 +875,7 @@ public class FeedControllerG2 implements ChapterObserver, AccountObserver, Reade
         }catch(IncompleteReviewException e){
             notifTitle.setText("No comment!");
             badgeIcon.setVisible(false);
-            message.setText(e.getMessage());
+            notifMessage.setText(e.getMessage());
             paneNotifications.setVisible(true);
         }
 
@@ -931,6 +955,9 @@ public class FeedControllerG2 implements ChapterObserver, AccountObserver, Reade
         vBoxMyOrders.setVisible(false);
         paneNotifications.setVisible(false);
         panePayment.setVisible(false);
+        paneFailure.setVisible(false);
+        paneOrder.setVisible(false);
+        paneBadgeWon.setVisible(false);
     }
 
     private ChapterBean currentChapter = null;
@@ -952,22 +979,19 @@ public class FeedControllerG2 implements ChapterObserver, AccountObserver, Reade
     @Override
     public void update(BadgeBean badgeBean) {
         badgeIcon.setImage(badgeBean.getIcon());
-        notifTitle.setText("New badge!");
-        message.setText(badgeBean.getName());
+        badgeName.setText(badgeBean.getName());
+        badgeIcon.setImage(badgeBean.getIcon());
 
-        paneNotifications.setVisible(true);
+        paneBadgeWon.setVisible(true);
     }
 
     @Override
     public void update(Boolean payment) {
         badgeIcon.setVisible(false);
         if(Boolean.TRUE.equals(payment)) {
-            notifTitle.setText("New order!");
-            message.setText("check your orders");
+            paneOrder.setVisible(true);
         }else{
-            notifTitle.setText("Error");
-            message.setText("Failed payment");
+            paneFailure.setVisible(true);
         }
-        paneNotifications.setVisible(true);
     }
 }
