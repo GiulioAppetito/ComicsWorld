@@ -97,14 +97,6 @@ public class SeriesBundle implements SeriesBean {
         this.genre3 = genre3;
     }
 
-    public int getAverageRating() {
-        return averageRating;
-    }
-
-    public void setAverageRating(int averageRating) {
-        this.averageRating = averageRating;
-    }
-
     public String getDescription() {
         return description;
     }

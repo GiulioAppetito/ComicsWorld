@@ -43,8 +43,5 @@ public interface SeriesBean {
 
     void setGenre3(Genres genre3);
 
-    void setAverageRating(int averageRating);
-
-    int getAverageRating();
 
 }

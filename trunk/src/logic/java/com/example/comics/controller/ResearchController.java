@@ -82,7 +82,6 @@ public class ResearchController {
                 chapterBeans.add(chapterBundle);
             }
             seriesBundle.setChapters(chapterBeans);
-            seriesBundle.setAverageRating(series.getAverageRating());
             seriesBeans.add(seriesBundle);
         }
 

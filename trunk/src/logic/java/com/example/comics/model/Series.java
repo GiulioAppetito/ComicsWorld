@@ -166,10 +166,6 @@ public class Series extends SeriesSubject{
 		return this.averageRating;
 	}
 
-	public void setAverageRating(int averageRating) {
-		this.averageRating = averageRating;
-	}
-
 	public String getDescription() {
 		return description;
 	}

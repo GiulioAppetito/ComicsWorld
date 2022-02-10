@@ -93,15 +93,6 @@ public class SeriesBean1 implements SeriesBean {
 
 
     @Override
-    public void setAverageRating(int averageRating) {
-        this.rating = averageRating;
-    }
-    @Override
-    public int getAverageRating() {
-        return rating;
-    }
-
-    @Override
     public String getDescription() {
         return description;
     }
