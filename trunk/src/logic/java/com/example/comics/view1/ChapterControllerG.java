@@ -539,7 +539,7 @@ public class ChapterControllerG implements ChapterObserver, ReaderObserver{
         btnApply.setOnAction(event -> applyDiscountCode(seriesBean, chapterBean));
         btnSkip.setOnAction(event -> applyNoDiscountCode(seriesBean, chapterBean));
     }
-    private void initChoiceBoxCodes() {
+    private synchronized void initChoiceBoxCodes() {
         List<DiscountCodeBean> codeBeans;
         ResearchController researchController = new ResearchController();
         codeBeans = researchController.getCodesByReaderForSeries(currentSeries);

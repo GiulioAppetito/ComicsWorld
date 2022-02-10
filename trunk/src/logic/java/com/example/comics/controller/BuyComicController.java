@@ -49,7 +49,7 @@ public class BuyComicController {
 
     }
 
-    public void completedPayment(SeriesBean seriesBean, ChapterBean chapterBean, DiscountCodeBean discountCodeBean){
+    public synchronized void completedPayment(SeriesBean seriesBean, ChapterBean chapterBean, DiscountCodeBean discountCodeBean){
 
         //mail all'autore
         BuyComicsAuthorBoundary buyComicsAuthorBoundary = new BuyComicsAuthorBoundary();

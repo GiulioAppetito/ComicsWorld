@@ -38,13 +38,12 @@ public class PaymentBoundary {
             }
 
             signalPayment(waiting[0], seriesBean , chapterBean, discountCodeBean);
-            Thread.currentThread().interrupt();
         });
         waitForPayment.start();
 
     }
 
-    private void signalPayment(int b, SeriesBean seriesBean, ChapterBean chapterBean, DiscountCodeBean discountCodeBean){
+    private synchronized void signalPayment(int b, SeriesBean seriesBean, ChapterBean chapterBean, DiscountCodeBean discountCodeBean){
 
         BuyComicController buyComicController = new BuyComicController();
         if(b==1) {
