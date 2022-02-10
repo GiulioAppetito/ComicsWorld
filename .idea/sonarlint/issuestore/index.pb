@@ -63,3 +63,17 @@ Qtrunk/src/logic/java/com/example/comics/controller/boundaries/MailProperties.ja
 +Deliverables/ProcessControlChart/report.txt,0\e\0e9494c74bcf03ee4627fe002d1ebc636811dbaa
 g
 7trunk/src/logic/java/com/example/comics/view1/Main.java,f\1\f1698c002f379417be20bcbec0ea81bd6c8a454c
+v
+Ftrunk/src/logic/java/com/example/comics/fakepaypal/PayPalBoundary.java,0\f\0ff90c28de9dd26aed9e83312eff5bc68a87d161
+z
+Jtrunk/src/logic/java/com/example/comics/controller/BuyComicController.java,9\0\90e51ad918aad492c6ec0c6da27d032a978ff758
+‚
+Rtrunk/src/logic/java/com/example/comics/controller/boundaries/PaymentBoundary.java,3\4\34eba65b12322305aeecf05ed4b0a8961a5a2750
+i
+9trunk/src/logic/java/com/example/comics/model/Reader.java,3\f\3f043bf16dcffa8423515237baf7b83c13d0591c
+h
+8trunk/src/logic/java/com/example/comics/model/Order.java,0\e\0e09775fac39c5d94391827fde00ce10769b56a7
+u
+Etrunk/src/logic/java/com/example/comics/view1/beans/AccountBean1.java,9\5\95ede92e5f1ed5466d645dc1f67b7c5f98f5a267
+€
+Ptrunk/src/logic/java/com/example/comics/controller/PublishChapterController.java,f\9\f95256be769e0aa10f7757d0295414a02137efab

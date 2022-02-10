@@ -41,7 +41,7 @@ public class PostReviewController{
         boolean isNewObjectiveAchieved;
 
         //numero di review del lettore
-        Float numOfReviews = 0f;
+        float numOfReviews = 0f;
         for(Chapter chapter : series.getChapters()){
             for(Review review : chapter.getReviews()){
                 if(review.getAccount().getUsername().equals(UserLogin.getInstance().getReader().getUsername())){
