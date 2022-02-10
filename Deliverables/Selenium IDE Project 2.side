@@ -1,0 +1,99 @@
+{
+  "id": "dfd20d09-d7e6-4643-a677-4bedabfb1379",
+  "version": "2.0",
+  "name": "Selenium IDE Project 2",
+  "url": "https://it.wikipedia.org",
+  "tests": [{
+    "id": "cff1a6ef-0702-4d42-a450-318f20f811c8",
+    "name": "testSpidermanAuthor",
+    "commands": [{
+      "id": "fd9271ea-49d8-4c17-bfe2-a6ba15351a17",
+      "comment": "",
+      "command": "open",
+      "target": "/wiki/Pagina_principale",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "3d03aff7-c45c-4c08-927b-4e2520d73d55",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "945x1012",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "988702bf-2d0a-4011-8ead-7cc3c0795f95",
+      "comment": "",
+      "command": "click",
+      "target": "id=searchInput",
+      "targets": [
+        ["id=searchInput", "id"],
+        ["name=search", "name"],
+        ["css=#searchInput", "css:finder"],
+        ["xpath=//input[@id='searchInput']", "xpath:attributes"],
+        ["xpath=//div[@id='simpleSearch']/input", "xpath:idRelative"],
+        ["xpath=//div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "f7d82de5-8a9c-4e94-bab3-25a1b36f1f71",
+      "comment": "",
+      "command": "type",
+      "target": "id=searchInput",
+      "targets": [
+        ["id=searchInput", "id"],
+        ["name=search", "name"],
+        ["css=#searchInput", "css:finder"],
+        ["xpath=//input[@id='searchInput']", "xpath:attributes"],
+        ["xpath=//div[@id='simpleSearch']/input", "xpath:idRelative"],
+        ["xpath=//div/input", "xpath:position"]
+      ],
+      "value": "uomo ragno"
+    }, {
+      "id": "524c08d7-99b9-4ee9-80f1-c52939daf700",
+      "comment": "",
+      "command": "sendKeys",
+      "target": "id=searchInput",
+      "targets": [
+        ["id=searchInput", "id"],
+        ["name=search", "name"],
+        ["css=#searchInput", "css:finder"],
+        ["xpath=//input[@id='searchInput']", "xpath:attributes"],
+        ["xpath=//div[@id='simpleSearch']/input", "xpath:idRelative"],
+        ["xpath=//div/input", "xpath:position"]
+      ],
+      "value": "${KEY_ENTER}"
+    }, {
+      "id": "50553bff-efa3-4efc-8a9b-4521c27ad0eb",
+      "comment": "",
+      "command": "runScript",
+      "target": "window.scrollTo(0,495)",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "d2b56257-bfc4-40f1-bd4b-fd16137aa00c",
+      "comment": "",
+      "command": "assertText",
+      "target": "linkText=Stan Lee",
+      "targets": [
+        ["linkText=Stan Lee", "linkText"],
+        ["css=tr:nth-child(8) li:nth-child(1) > a", "css:finder"],
+        ["xpath=//a[contains(text(),'Stan Lee')]", "xpath:link"],
+        ["xpath=//div[@id='mw-content-text']/div/table/tbody/tr[8]/td/ul/li/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/wiki/Stan_Lee')]", "xpath:href"],
+        ["xpath=//td/ul/li/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Stan Lee')]", "xpath:innerText"]
+      ],
+      "value": "Stan Lee"
+    }]
+  }],
+  "suites": [{
+    "id": "edfdfcdf-941c-40e9-9ad3-64e7b8238ae3",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["cff1a6ef-0702-4d42-a450-318f20f811c8"]
+  }],
+  "urls": ["https://it.wikipedia.org/"],
+  "plugins": []
+}

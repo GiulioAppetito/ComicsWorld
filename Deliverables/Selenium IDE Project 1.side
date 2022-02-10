@@ -1,0 +1,118 @@
+{
+  "id": "08722d40-d100-47e6-a520-bc6a9fc61b99",
+  "version": "2.0",
+  "name": "Selenium IDE Project 1",
+  "url": "https://www.lafeltrinelli.it/?gclid_Cj0KCQiAjJOQBhCkARIsAEKMtO1AoxvZ2i4qu3vNb3xUKQ2eNlqRtYA-DyX7zbfN6UTJ43VOOzWdkx0aAm-rEALw_wcB&awaid=9507&gclid=Cj0KCQiAjJOQBhCkARIsAEKMtO1AoxvZ2i4qu3vNb3xUKQ2eNlqRtYA-DyX7zbfN6UTJ43VOOzWdkx0aAm-rEALw_wcB",
+  "tests": [{
+    "id": "b9dd6304-4f07-4246-9070-2a029627df87",
+    "name": "Test1",
+    "commands": [{
+      "id": "1e32fce7-8deb-4cfa-8042-752498e9155a",
+      "comment": "",
+      "command": "open",
+      "target": "https://www.lafeltrinelli.it/?gclid_Cj0KCQiAjJOQBhCkARIsAEKMtO1AoxvZ2i4qu3vNb3xUKQ2eNlqRtYA-DyX7zbfN6UTJ43VOOzWdkx0aAm-rEALw_wcB&awaid=9507&gclid=Cj0KCQiAjJOQBhCkARIsAEKMtO1AoxvZ2i4qu3vNb3xUKQ2eNlqRtYA-DyX7zbfN6UTJ43VOOzWdkx0aAm-rEALw_wcB",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "dc56fce3-2569-4e4d-b6aa-8fae57829e1a",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "945x1012",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "396d6016-69c9-4c90-8c72-8fe4d6967274",
+      "comment": "",
+      "command": "click",
+      "target": "css=.cc-header-button--menu .cc-icon",
+      "targets": [
+        ["css=.cc-header-button--menu .cc-icon", "css:finder"],
+        ["xpath=//img[@alt='Menu']", "xpath:img"],
+        ["xpath=//header[@id='header']/div/div[2]/div/div/div/div/div/div/img", "xpath:idRelative"],
+        ["xpath=//div/div/div/div/div/div/img", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "67f6407b-53ee-4a9c-b06c-ec6a87148ca2",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Libri",
+      "targets": [
+        ["linkText=Libri", "linkText"],
+        ["css=.cc-content-menu-item--has-child:nth-child(1) > .cc-menu-link", "css:finder"],
+        ["xpath=//ul[@id='menuHeader']/li/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/libri')]", "xpath:href"],
+        ["xpath=//li/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Libri')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "9c22b85d-96d9-4ee7-a53e-aa5a95d951d5",
+      "comment": "",
+      "command": "click",
+      "target": "css=.cc-open:nth-child(1) .cc-content-menu-item:nth-child(1) .cc-link-text",
+      "targets": [
+        ["css=.cc-open:nth-child(1) .cc-content-menu-item:nth-child(1) .cc-link-text", "css:finder"],
+        ["xpath=//ul[@id='menuHeader']/li/div/div/div/div[2]/div/ul/li/a/span", "xpath:idRelative"],
+        ["xpath=//div[2]/div/ul/li/a/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Fumetti e manga')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "f27c6b56-8d5a-431e-81b6-ef5d9f807cbb",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Inuyasha. Wide edition. Vol. 3",
+      "targets": [
+        ["linkText=Inuyasha. Wide edition. Vol. 3", "linkText"],
+        ["css=#slick-slide20 .cc-title", "css:finder"],
+        ["xpath=//a[contains(text(),'Inuyasha. Wide edition. Vol. 3')]", "xpath:link"],
+        ["xpath=//div[@id='slick-slide20']/div/div[4]/div/a", "xpath:idRelative"],
+        ["xpath=(//a[contains(@href, '/inuyasha-wide-edition-vol-3-libro-rumiko-takahashi/e/9788822629173')])[2]", "xpath:href"],
+        ["xpath=//div[11]/div/section/div/div/div/div/div/div/div[4]/div/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Inuyasha. Wide edition. Vol. 3')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "3e818f86-7a4c-4a23-9ed7-4a925dd27cfa",
+      "comment": "",
+      "command": "mouseOver",
+      "target": "linkText=Rumiko Takahashi",
+      "targets": [
+        ["linkText=Rumiko Takahashi", "linkText"],
+        ["css=.cc-author:nth-child(1) > .cc-author-name", "css:finder"],
+        ["xpath=//a[contains(text(),'Rumiko Takahashi')]", "xpath:link"],
+        ["xpath=//div[@id='pdpMainRow']/div[2]/div/div[2]/div/div/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/libri/autori/rumiko-takahashi')]", "xpath:href"],
+        ["xpath=//div[2]/div/div[2]/div/div/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Rumiko Takahashi')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "b4a4a0e3-2270-4cc0-871a-0308fc0d940b",
+      "comment": "",
+      "command": "assertText",
+      "target": "linkText=Rumiko Takahashi",
+      "targets": [
+        ["linkText=Rumiko Takahashi", "linkText"],
+        ["css=.cc-author:nth-child(1) > .cc-author-name", "css:finder"],
+        ["xpath=//a[contains(text(),'Rumiko Takahashi')]", "xpath:link"],
+        ["xpath=//div[@id='pdpMainRow']/div[2]/div/div[2]/div/div/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/libri/autori/rumiko-takahashi')]", "xpath:href"],
+        ["xpath=//div[2]/div/div[2]/div/div/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Rumiko Takahashi')]", "xpath:innerText"]
+      ],
+      "value": "Rumiko Takahashi"
+    }]
+  }],
+  "suites": [{
+    "id": "9ed92ea2-4d3a-4670-851d-6625bfd320aa",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": []
+  }],
+  "urls": ["https://en.wikipedia.org/", "https://it.wikipedia.org/", "https://www.lafeltrinelli.it/?gclid_Cj0KCQiAjJOQBhCkARIsAEKMtO1AoxvZ2i4qu3vNb3xUKQ2eNlqRtYA-DyX7zbfN6UTJ43VOOzWdkx0aAm-rEALw_wcB&awaid=9507&gclid=Cj0KCQiAjJOQBhCkARIsAEKMtO1AoxvZ2i4qu3vNb3xUKQ2eNlqRtYA-DyX7zbfN6UTJ43VOOzWdkx0aAm-rEALw_wcB"],
+  "plugins": []
+}

@@ -88,12 +88,8 @@ public class Chapter extends ChapterSubject {
         this.averageRating = calculateAverageRating();
 
         new Thread(()-> {
-            ReviewDAO reviewDAO = new ReviewDAO();
-            try {
+                ReviewDAO reviewDAO = new ReviewDAO();
                 reviewDAO.saveReview(review,this, series);
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
         }).start();
 
         ReviewBundle reviewBundle = new ReviewBundle();
