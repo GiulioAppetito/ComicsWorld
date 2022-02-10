@@ -899,6 +899,7 @@ public class FeedControllerG2 implements ChapterObserver, AccountObserver, Reade
 
         btnReadChapter.setOnAction(event -> unmarkReadChapter(seriesBean, chapterBean));
         btnReadChapter.setStyle(BORDER_STYLE);
+        btnReadChapter.setText("Read");
     }
 
     public void unmarkReadChapter(SeriesBean seriesBean, ChapterBean chapterBean){
@@ -907,6 +908,7 @@ public class FeedControllerG2 implements ChapterObserver, AccountObserver, Reade
 
         btnReadChapter.setOnAction(event -> readChapter(seriesBean, chapterBean));
         btnReadChapter.setStyle(PLAIN_STYLE);
+        btnReadChapter.setText("Mark as read");
     }
 
     private void closeAll(){

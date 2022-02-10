@@ -36,6 +36,7 @@ public class ReviewControllerG {
     public void setData(ReviewBean review) {
         txtComment.setText(review.getComment());
         lblUsername.setText(review.getAccount().getUsername());
+        ivProPic.setImage(review.getAccount().getProPic());
         switch(String.valueOf(review.getRating())){
             case "1":
                 imgStar1.setVisible(true);
