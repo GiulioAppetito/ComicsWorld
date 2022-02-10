@@ -51,8 +51,6 @@ Z
 *Deliverables/ProcessControlChart/script.py,e\c\ec07e446f634f6e2c8075122a50e891c9ca0c31d
 U
 %trunk/src/logic/java/module-info.java,2\7\272c71f6316650e1d38c1f58dc8158dc777fa843
-s
-Ctrunk/src/logic/java/com/example/comics/view2/FeedControllerG2.java,2\e\2ec2b4557a350159074e3ddc688331681b1c9470
 ä
 Ztrunk/src/logic/java/com/example/comics/controller/boundaries/BuyComicsAuthorBoundary.java,d\2\d20c3134ebf0b7499d7c23ac476f0418c6ebb39c
 Å
@@ -61,14 +59,6 @@ Qtrunk/src/logic/java/com/example/comics/controller/boundaries/MailProperties.ja
 +Deliverables/ProcessControlChart/report.txt,0\e\0e9494c74bcf03ee4627fe002d1ebc636811dbaa
 g
 7trunk/src/logic/java/com/example/comics/view1/Main.java,f\1\f1698c002f379417be20bcbec0ea81bd6c8a454c
-v
-Ftrunk/src/logic/java/com/example/comics/fakepaypal/PayPalBoundary.java,0\f\0ff90c28de9dd26aed9e83312eff5bc68a87d161
-z
-Jtrunk/src/logic/java/com/example/comics/controller/BuyComicController.java,9\0\90e51ad918aad492c6ec0c6da27d032a978ff758
-Ç
-Rtrunk/src/logic/java/com/example/comics/controller/boundaries/PaymentBoundary.java,3\4\34eba65b12322305aeecf05ed4b0a8961a5a2750
-i
-9trunk/src/logic/java/com/example/comics/model/Reader.java,3\f\3f043bf16dcffa8423515237baf7b83c13d0591c
 h
 8trunk/src/logic/java/com/example/comics/model/Order.java,0\e\0e09775fac39c5d94391827fde00ce10769b56a7
 u
