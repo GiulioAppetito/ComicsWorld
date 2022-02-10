@@ -15,7 +15,6 @@ public class SeriesBundle implements SeriesBean {
     private String title;
     private Image cover;
     private AuthorBean authorBean;
-    private int averageRating;
     private List<ChapterBean> chapterBeans = new ArrayList<>();
     private Genres genre1;
     private Genres genre2;

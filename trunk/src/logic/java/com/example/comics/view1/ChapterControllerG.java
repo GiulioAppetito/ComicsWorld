@@ -8,7 +8,6 @@ import com.example.comics.model.*;
 import com.example.comics.model.exceptions.DiscountCodeException;
 import com.example.comics.model.exceptions.IncompleteReviewException;
 import com.example.comics.model.fagioli.*;
-import com.example.comics.view1.beans.AccountBean1;
 import com.example.comics.view1.beans.DiscountCodeBean1;
 import com.example.comics.view1.beans.ReviewBean1;
 import javafx.fxml.FXML;
@@ -658,11 +657,9 @@ public class ChapterControllerG implements ChapterObserver, ReaderObserver{
     }
     public void update(Boolean payment){
         if(Boolean.TRUE.equals(payment)){
-            System.out.println("controllerG tutto ok");
             orderPane.setVisible(true);
             initChoiceBoxCodes();
         }else {
-            System.out.println("controllerG fail");
             failedOrderPane.setVisible(true);
             initChoiceBoxCodes();
         }

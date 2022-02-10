@@ -15,7 +15,6 @@ public class SeriesBean1 implements SeriesBean {
     private Image cover;
     private AuthorBean authorBean;
     private List<ChapterBean> chapterBeans;
-    private int rating;
     private InputStream coverInputStream;
     private Genres genre1;
     private Genres genre2;
