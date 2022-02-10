@@ -15,6 +15,7 @@ import org.openqa.selenium.Keys;
 
 public class TestSpidermanAuthor {
     private WebDriver driver;
+    private final String SEARCH_INPUT = "searchInput";
     JavascriptExecutor js;
 
     @After
@@ -38,11 +39,11 @@ public class TestSpidermanAuthor {
         // 2 | setWindowSize | 945x1012 |  |
         driver.manage().window().setSize(new Dimension(945, 1012));
         // 3 | click | id=searchInput |  |
-        driver.findElement(By.id("searchInput")).click();
+        driver.findElement(By.id(SEARCH_INPUT)).click();
         // 4 | type | id=searchInput | uomo ragno |
-        driver.findElement(By.id("searchInput")).sendKeys("uomo ragno");
+        driver.findElement(By.id(SEARCH_INPUT)).sendKeys("uomo ragno");
         // 5 | sendKeys | id=searchInput | ${KEY_ENTER} |
-        driver.findElement(By.id("searchInput")).sendKeys(Keys.ENTER);
+        driver.findElement(By.id(SEARCH_INPUT)).sendKeys(Keys.ENTER);
         // 6 | runScript | window.scrollTo(0,495) |  |
         js.executeScript("window.scrollTo(0,495)");
         // 7 | assertText | linkText=Stan Lee | Stan Lee |
