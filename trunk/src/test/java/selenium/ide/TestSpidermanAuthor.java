@@ -15,7 +15,7 @@ import org.openqa.selenium.Keys;
 
 public class TestSpidermanAuthor {
     private WebDriver driver;
-    private final String SEARCH_INPUT = "searchInput";
+    private static final String SEARCH_INPUT = "searchInput";
     JavascriptExecutor js;
 
     @After

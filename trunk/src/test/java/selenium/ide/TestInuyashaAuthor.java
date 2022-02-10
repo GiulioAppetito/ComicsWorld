@@ -16,7 +16,7 @@ import org.openqa.selenium.JavascriptExecutor;
 
 public class TestInuyashaAuthor {
     private WebDriver driver;
-    private final static String AUTHOR = "Rumiko Takahashi";
+    private static final String AUTHOR = "Rumiko Takahashi";
     JavascriptExecutor js;
     @Before
     public void setUp() {
