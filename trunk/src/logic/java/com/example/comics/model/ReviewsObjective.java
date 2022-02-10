@@ -4,8 +4,9 @@ public class ReviewsObjective extends Objective{
 
     private Float requiredReviews;
 
-    public ReviewsObjective(){
-        //costruttore
+    public ReviewsObjective(Badge badge, Discount discount){
+        this.badge = badge;
+        this.discount = discount;
     }
 
     @Override

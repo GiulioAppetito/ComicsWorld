@@ -4,8 +4,9 @@ public class ChapterObjective extends Objective{
 
     private Float requiredChaptersPercentage;
 
-    public ChapterObjective(){
-        //costruttore
+    public ChapterObjective(Badge badge, Discount discount){
+        this.badge = badge;
+        this.discount = discount;
     }
 
     @Override

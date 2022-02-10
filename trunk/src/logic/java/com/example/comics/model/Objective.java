@@ -20,15 +20,8 @@ public abstract class Objective{
     public Badge getBadge() {
         return badge;
     }
-    public void setBadge(Badge badge) {
-        this.badge = badge;
-    }
-
     public Discount getDiscount() {
         return discount;
-    }
-    public void setDiscount(Discount discount) {
-        this.discount = discount;
     }
 
 }

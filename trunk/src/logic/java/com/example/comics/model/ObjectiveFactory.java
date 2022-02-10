@@ -8,16 +8,12 @@ public class ObjectiveFactory {
 
         switch (type) {
             case "reviews" -> {
-                objective = new ReviewsObjective();
-                objective.setBadge(badge);
-                objective.setDiscount(discount);
+                objective = new ReviewsObjective(badge, discount);
                 objective.setLevel(level);
                 objective.setRequirement(requirement);
             }
             case "chapters" -> {
-                objective = new ChapterObjective();
-                objective.setBadge(badge);
-                objective.setDiscount(discount);
+                objective = new ChapterObjective(badge, discount);
                 objective.setLevel(level);
                 objective.setRequirement(requirement);
             }
