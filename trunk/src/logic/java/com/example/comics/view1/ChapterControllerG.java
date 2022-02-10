@@ -412,7 +412,7 @@ public class ChapterControllerG implements ChapterObserver, ReaderObserver{
         AccountSubject.attach(this, "orders");
 
 
-        lblAuthor.setText("autore");
+        lblAuthor.setText(seriesBean.getAuthor().getUsername());
         lblChapterTitle.setText(chapterBean.getTitle());
         taDescription.setText(chapterBean.getDescription());
         taDescription.setEditable(false);
@@ -652,6 +652,7 @@ public class ChapterControllerG implements ChapterObserver, ReaderObserver{
     public void update(BadgeBean badgeBean) {
         newBadgeWonPane.setVisible(true);
         lblBadgeName.setText(badgeBean.getName());
+        lblBadgeSeries.setText(currentSeries.getTitle());
         badgeIconView.setImage(badgeBean.getIcon());
         initChoiceBoxCodes();
     }

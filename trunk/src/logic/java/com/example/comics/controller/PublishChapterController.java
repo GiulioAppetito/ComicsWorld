@@ -24,12 +24,13 @@ public class PublishChapterController {
         //cerca la serie dell'author relativa al capitolo e aggiungi capitolo
         for(Series series : UserLogin.getInstance().getAuthor().getPublishedSeries()){
             if(series.getTitle().equals(seriesTitle)){
+                ChapterDAO chapterDAO = new ChapterDAO();
+                chapterDAO.saveChapter(chapter,seriesTitle,chapterBean.getCoverInputStream());
                 chapter = series.addChapter(chapterBean.getTitle(),chapterBean.getCover(),chapterBean.getDescription(),chapterBean.getPrice());
             }
         }
 
-        ChapterDAO chapterDAO = new ChapterDAO();
-        chapterDAO.saveChapter(chapter,seriesTitle,chapterBean.getCoverInputStream());
+
 
 
         new Thread(()->{

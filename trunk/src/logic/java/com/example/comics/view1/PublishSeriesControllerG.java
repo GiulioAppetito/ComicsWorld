@@ -327,7 +327,7 @@ public class PublishSeriesControllerG {
     private void changeCover() {
         FileChooser fc = new FileChooser();
         InputStream inputStream = null;
-        fc.getExtensionFilters().add(new FileChooser.ExtensionFilter(PNG,"*.jpg","*.jpg",PNG));
+        fc.getExtensionFilters().add(new FileChooser.ExtensionFilter("*.jpg,*.png","*.jpg","*.png"));
         File file = fc.showOpenDialog(null);
         if(file!=null){
             imageCoverPath = file.getAbsolutePath();
