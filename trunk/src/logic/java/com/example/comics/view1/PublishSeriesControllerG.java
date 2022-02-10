@@ -284,6 +284,7 @@ public class PublishSeriesControllerG {
             seriesBean1.setCoverInputStream(new FileInputStream(imageCoverPath));
             seriesBean1.setTitle(seriesTitle);
             seriesBean1.setGenre1(genre1);
+            seriesBean1.setCover(ivComicCover.getImage());
             seriesBean1.setGenre2(genre2);
             seriesBean1.setGenre3(genre3);
             seriesBean1.setDescription(taDescription.getText());

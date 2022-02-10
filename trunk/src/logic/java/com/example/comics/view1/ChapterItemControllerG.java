@@ -1,5 +1,6 @@
 package com.example.comics.view1;
 
+import com.example.comics.model.UserLogin;
 import com.example.comics.model.fagioli.ChapterBean;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -21,6 +22,9 @@ public class ChapterItemControllerG {
     public void setData(ChapterBean chapterBean){
         lblName.setText(chapterBean.getTitle());
         ivCover.setImage(chapterBean.getCover());
-        btnCheckRead.setVisible(chapterBean.getRead());
+        if(UserLogin.getInstance().getAccount().getRole().equals("reader")){
+            btnCheckRead.setVisible(chapterBean.getRead());
+
+        }
     }
 }

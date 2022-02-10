@@ -29,6 +29,9 @@ public class AuthorProfileControllerG implements AccountObserver {
     private Label lblUsername;
 
     @FXML
+    private Label lblLastName;
+
+    @FXML
     private BorderPane mainPane;
 
     @FXML
@@ -38,7 +41,8 @@ public class AuthorProfileControllerG implements AccountObserver {
     @FXML
     public void initialize(){
         lblName.setText(UserLogin.getInstance().getAccount().getFirstName());
-        lblUsername.setText(UserLogin.getInstance().getAccount().getLastName());
+        lblUsername.setText(UserLogin.getInstance().getAccount().getUsername());
+        lblLastName.setText(UserLogin.getInstance().getAccount().getLastName());
         btnEdit.setOnAction(actionEvent -> edit());
         proPicProfile.setImage(UserLogin.getInstance().getAccount().getProPic());
         btnNewSeries.setOnAction(actionEvent -> publishNewSerie());

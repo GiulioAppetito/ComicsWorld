@@ -43,6 +43,9 @@ public class PublishChapterControllerG {
     private TextField tfChapterTitle;
 
     @FXML
+    private Button btnClosePublishPane;
+
+    @FXML
     private TextField tfPrice;
 
     @FXML
@@ -56,6 +59,7 @@ public class PublishChapterControllerG {
     public void initialize(){
         btnPublishChapter.setOnAction(event -> publishChapter());
         btnChangeCover.setOnAction(event -> changeCover());
+        btnClosePublishPane.setOnAction(event -> closePublishPane());
 
         List<Series> publishedSeries = UserLogin.getInstance().getAuthor().getPublishedSeries();
         List<String> seriesTitles = new ArrayList<>();
@@ -64,6 +68,12 @@ public class PublishChapterControllerG {
         }
         choiceBoxSeries.getItems().setAll(seriesTitles);
 
+        closePublishPane();
+
+    }
+
+    private void closePublishPane() {
+        publishPane.setVisible(false);
     }
 
     private void changeCover() {

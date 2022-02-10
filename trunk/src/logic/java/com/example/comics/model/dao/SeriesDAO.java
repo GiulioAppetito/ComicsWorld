@@ -154,10 +154,10 @@ public class SeriesDAO {
                 int id = bagdeID;
                 Queries.insertObjective(stmt36,objective,series,id);
 
-                all.add(series);
             }
+            all.add(series);
         } catch (SQLException throwables) {
-            throw new AlreadyExistingSeriesException("This title is already used for another series!");
+            throw new AlreadyExistingSeriesException("This title is already used!");
         } finally {
             try {
                 assert conn36 != null;
