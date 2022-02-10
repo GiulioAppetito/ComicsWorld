@@ -3,7 +3,6 @@ package com.example.comics.controller.boundaries;
 import com.example.comics.controller.BuyComicController;
 import com.example.comics.fakepaypal.PayPalBoundary;
 import com.example.comics.fakepaypal.PayPalInterface;
-import com.example.comics.model.exceptions.FailedPaymentException;
 import com.example.comics.model.fagioli.AccountBean;
 import com.example.comics.model.fagioli.ChapterBean;
 import com.example.comics.model.fagioli.DiscountCodeBean;
@@ -19,12 +18,17 @@ public class PaymentBoundary {
     public void convalidPayment(AccountBean accountBean, ChapterBean chapterBean, SeriesBean seriesBean, DiscountCodeBean discountCodeBean){
         //contattiamo la boundary di paypal, tipo set di api offerto
         PayPalInterface paypal = new PayPalBoundary();
+        float expense = chapterBean.getPrice();
 
-        Float expense = (chapterBean.getPrice()*discountCodeBean.getDiscountBean().getPercentage())/100;
+        if(discountCodeBean!=null){
+            expense = (chapterBean.getPrice()*discountCodeBean.getDiscountBean().getPercentage())/100;
+        }
+
         String payment = String.valueOf(expense);
         //magari non facciamo due stringhette
         paypal.startTransaction(accountBean.getFirstName(), accountBean.getLastName(), payment);
 
+        Thread current = Thread.currentThread();
         final int[] waiting = {0};
         Thread waitForPayment = new Thread(()->{
             //attendo pagamento
@@ -33,6 +37,7 @@ public class PaymentBoundary {
             }
 
             signalPayment(waiting[0], seriesBean , chapterBean, discountCodeBean);
+            Thread.currentThread().interrupt();
         });
         waitForPayment.start();
 
@@ -42,8 +47,10 @@ public class PaymentBoundary {
 
         BuyComicController buyComicController = new BuyComicController();
         if(b==1) {
+            System.out.println("completed payment");
             buyComicController.completedPayment(seriesBean, chapterBean, discountCodeBean);
         }else{
+            System.out.println("failed");
             buyComicController.failedPayment();
         }
     }

@@ -34,7 +34,7 @@ public class FakePayPalControllerG {
     private String lastname;
     private String expense;
 
-    private String result = null;
+    private static String result = null;
 
     public FakePayPalControllerG(String firstName, String lastName, String expense){
         firstname = firstName;
@@ -59,6 +59,7 @@ public class FakePayPalControllerG {
         if(fakePayPal.isCardValid(cardID)){
             result = "right";
             //magari prima fai tipo vedere che è andata bene bla bla
+            System.out.println("right");
             close(event);
         }else{
             result = "wrong";

@@ -10,11 +10,9 @@ import com.example.comics.model.dao.DiscountCodeDAO;
 import com.example.comics.model.dao.OrderDAO;
 import com.example.comics.model.dao.SeriesDAO;
 import com.example.comics.model.exceptions.DiscountCodeException;
-import com.example.comics.model.fagioli.AccountBean;
-import com.example.comics.model.fagioli.ChapterBean;
-import com.example.comics.model.fagioli.DiscountCodeBean;
-import com.example.comics.model.fagioli.SeriesBean;
+import com.example.comics.model.fagioli.*;
 import com.example.comics.model.fagioli.bundle.AccountBundle;
+import com.example.comics.model.fagioli.bundle.DiscountBundle;
 
 import java.time.LocalDate;
 
@@ -22,7 +20,7 @@ public class BuyComicController {
 
     public void buyComic(SeriesBean seriesBean, ChapterBean chapterBean, DiscountCodeBean discountCodeBean) throws DiscountCodeException {
 
-        DiscountCode discountCode;
+        DiscountCode discountCode = null;
         if(discountCodeBean != null){
             discountCode = UserLogin.getInstance().getReader().getDiscountCodeByCode(discountCodeBean.getCode());
             if(discountCode == null){
@@ -33,8 +31,15 @@ public class BuyComicController {
             }
 
         }
+        if(discountCodeBean!=null) {
+            DiscountBean discountBean = new DiscountBundle();
+            discountBean.setPercentage(discountCode.getDiscount().getPercentage());
+            discountBean.setLimitDays(discountCode.getDiscount().getLimitDays());
 
-            //nel caso vada tutto a buon fine ...
+            discountCodeBean.setDiscountBean(discountBean);
+        }
+
+        //nel caso vada tutto a buon fine ...
             AccountBean accountBean = new AccountBundle();
             accountBean.setFirstName(UserLogin.getInstance().getAccount().getFirstName());
             accountBean.setLastName(UserLogin.getInstance().getAccount().getLastName());

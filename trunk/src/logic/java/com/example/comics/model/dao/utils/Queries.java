@@ -295,7 +295,7 @@ public class Queries {
     }
 
     public static void insertOrder(Statement stmt, Order order, Reader reader) throws SQLException {
-        String insertStatement = String.format("INSERT INTO orders values ('%s', '%s', '%s', '%s', '%s')", order.getSeries().getTitle(), order.getChapterTitle(), order.getExpense(), order.getDate(), reader.getUsername());
+        String insertStatement = String.format("INSERT INTO orders (series, chapterTitle, expense, date, reader) values ('%s', '%s', '%s', '%s', '%s')", order.getSeries().getTitle(), order.getChapterTitle(), order.getExpense(), order.getDate(), reader.getUsername());
         stmt.executeUpdate(insertStatement);
     }
 
