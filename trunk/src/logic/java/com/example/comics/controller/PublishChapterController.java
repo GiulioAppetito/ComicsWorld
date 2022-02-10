@@ -6,6 +6,7 @@ import com.example.comics.model.Series;
 import com.example.comics.model.UserLogin;
 import com.example.comics.model.dao.AccountDAO;
 import com.example.comics.model.dao.ChapterDAO;
+import com.example.comics.model.dao.SeriesDAO;
 import com.example.comics.model.exceptions.AlreadyExistingChapterException;
 import com.example.comics.model.fagioli.AuthorBean;
 import com.example.comics.model.fagioli.ChapterBean;
@@ -22,15 +23,13 @@ public class PublishChapterController {
 
         Chapter chapter = null;
         //cerca la serie dell'author relativa al capitolo e aggiungi capitolo
-        for(Series series : UserLogin.getInstance().getAuthor().getPublishedSeries()){
-            if(series.getTitle().equals(seriesTitle)){
-                ChapterDAO chapterDAO = new ChapterDAO();
-                chapterDAO.saveChapter(chapter,seriesTitle,chapterBean.getCoverInputStream());
-                chapter = series.addChapter(chapterBean.getTitle(),chapterBean.getCover(),chapterBean.getDescription(),chapterBean.getPrice());
-            }
-        }
+        Series series = SeriesDAO.retrieveSeries(seriesTitle);
 
+        ChapterDAO chapterDAO = new ChapterDAO();
 
+        chapter = series.addChapter(chapterBean.getTitle(),chapterBean.getCover(),chapterBean.getDescription(),chapterBean.getPrice());
+
+        chapterDAO.saveChapter(chapter,seriesTitle,chapterBean.getCoverInputStream());
 
 
         new Thread(()->{
