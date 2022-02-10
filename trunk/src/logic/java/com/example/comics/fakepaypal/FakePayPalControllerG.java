@@ -63,6 +63,7 @@ public class FakePayPalControllerG {
             close(event);
         }else{
             result = "wrong";
+            close(event);
         }
     }
 

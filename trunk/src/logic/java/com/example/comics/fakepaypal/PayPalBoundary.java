@@ -47,7 +47,6 @@ public class PayPalBoundary implements PayPalInterface{
             return 0;
         }
         if(res.equals("right")){
-            System.out.println("right");
             return 1;
         }
         if(res.equals("wrong")){

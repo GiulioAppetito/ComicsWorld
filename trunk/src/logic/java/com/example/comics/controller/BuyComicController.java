@@ -85,6 +85,5 @@ public class BuyComicController {
 
     public void failedPayment() {
         UserLogin.getInstance().getReader().notifyFailedOrder();
-
     }
 }

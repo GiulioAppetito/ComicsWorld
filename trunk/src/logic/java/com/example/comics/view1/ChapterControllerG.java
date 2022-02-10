@@ -62,6 +62,12 @@ public class ChapterControllerG implements ChapterObserver, ReaderObserver{
     private Button btnPostReview;
 
     @FXML
+    private Button btnCloseFailedOrderPane;
+
+    @FXML
+    private Pane failedOrderPane;
+
+    @FXML
     private TextArea txtAreaComment;
 
     @FXML
@@ -398,6 +404,8 @@ public class ChapterControllerG implements ChapterObserver, ReaderObserver{
         orderPane.setVisible(false);
         btnCloseOrderPane.setOnAction(event -> orderPane.setVisible(false));
         currentSeries = seriesBean;
+        failedOrderPane.setVisible(false);
+        btnCloseFailedOrderPane.setOnAction(event -> failedOrderPane.setVisible(false));
 
         ChapterSubject.attach(this, "reviews");
         AccountSubject.attach(this, "badges");
@@ -649,12 +657,12 @@ public class ChapterControllerG implements ChapterObserver, ReaderObserver{
     }
     public void update(Boolean payment){
         if(Boolean.TRUE.equals(payment)){
+            System.out.println("controllerG tutto ok");
             orderPane.setVisible(true);
-            lblOrderResult.setText("Completed payment!");
             initChoiceBoxCodes();
         }else {
-            orderPane.setVisible(true);
-            lblOrderResult.setText("Failed payment!");
+            System.out.println("controllerG fail");
+            failedOrderPane.setVisible(true);
             initChoiceBoxCodes();
         }
     }

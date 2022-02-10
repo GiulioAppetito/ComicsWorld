@@ -195,7 +195,7 @@ public class Reader extends Account{
         return discountCodes;
     }
 
-    public void removeDiscountCode(DiscountCode codeToRemove) {
+    public synchronized void removeDiscountCode(DiscountCode codeToRemove) {
         for(DiscountCode discountCode : discountCodes.keySet()){
             if(discountCode.getCode().equals(codeToRemove.getCode())){
                 discountCodes.remove(discountCode);
