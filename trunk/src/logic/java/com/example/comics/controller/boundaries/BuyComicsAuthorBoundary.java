@@ -2,14 +2,6 @@ package com.example.comics.controller.boundaries;
 
 import com.example.comics.model.fagioli.SeriesBean;
 
-import javax.mail.MessagingException;
-import javax.mail.Session;
-import javax.mail.Transport;
-import javax.mail.internet.AddressException;
-import javax.mail.internet.InternetAddress;
-import javax.mail.internet.MimeMessage;
-
-
 public class BuyComicsAuthorBoundary extends MailProperties {
 
     public void sendEmailForSoldChapter(SeriesBean seriesBean) {

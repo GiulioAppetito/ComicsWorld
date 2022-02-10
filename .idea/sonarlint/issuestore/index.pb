@@ -51,16 +51,10 @@ Z
 *Deliverables/ProcessControlChart/script.py,e\c\ec07e446f634f6e2c8075122a50e891c9ca0c31d
 U
 %trunk/src/logic/java/module-info.java,2\7\272c71f6316650e1d38c1f58dc8158dc777fa843
-ä
-Ztrunk/src/logic/java/com/example/comics/controller/boundaries/BuyComicsAuthorBoundary.java,d\2\d20c3134ebf0b7499d7c23ac476f0418c6ebb39c
-Å
-Qtrunk/src/logic/java/com/example/comics/controller/boundaries/MailProperties.java,3\0\309af6b5f5afd986252896d6786ce161a8215805
 [
 +Deliverables/ProcessControlChart/report.txt,0\e\0e9494c74bcf03ee4627fe002d1ebc636811dbaa
 g
 7trunk/src/logic/java/com/example/comics/view1/Main.java,f\1\f1698c002f379417be20bcbec0ea81bd6c8a454c
-h
-8trunk/src/logic/java/com/example/comics/model/Order.java,0\e\0e09775fac39c5d94391827fde00ce10769b56a7
 u
 Etrunk/src/logic/java/com/example/comics/view1/beans/AccountBean1.java,9\5\95ede92e5f1ed5466d645dc1f67b7c5f98f5a267
 Ä

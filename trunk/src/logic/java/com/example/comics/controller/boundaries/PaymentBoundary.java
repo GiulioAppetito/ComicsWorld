@@ -47,10 +47,8 @@ public class PaymentBoundary {
 
         BuyComicController buyComicController = new BuyComicController();
         if(b==1) {
-            System.out.println("completed");
             buyComicController.completedPayment(seriesBean, chapterBean, discountCodeBean);
         }else{
-            System.out.println("failed");
             buyComicController.failedPayment();
         }
     }

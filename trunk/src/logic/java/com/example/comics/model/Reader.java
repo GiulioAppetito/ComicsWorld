@@ -27,6 +27,7 @@ public class Reader extends Account{
         this.followedAuthors = followedAuthors;
         this.discountCodes = discountCodes;
 
+        //solo per il code smell, in realtà aggregati
         OrderDAO orderDAO = new OrderDAO();
         this.ordersHistory = orderDAO.retrieveOrders(username);
 
