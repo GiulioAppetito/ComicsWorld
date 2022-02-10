@@ -43,8 +43,6 @@ g
 7trunk/src/test/java/junit/TestStatisticsController.java,5\2\5284168b90f53c4ff92c93b6ad97d48431f5e68b
 ;
 Coomics.iml,e\e\ee9c7419ca187f5eb005ec5f6bcb3934bb03ee34
-A
-comando batch.txt,e\c\ec904f9bcd6fb051ee00b231734dbc0e5d956b96
 [
 +Deliverables/ProcessControlChart/report.csv,3\a\3a7527770859781863d37c0e7908011bea46065e
 Z
