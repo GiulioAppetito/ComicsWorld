@@ -12,7 +12,7 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 class TestLoginController {
 
     private static final String GIULIO = "giulio";
-    private static final String correctPassword = "giulio";
+    private static final String CORRECT_PASSWORD = "giulio";
 
     @Test
     void testLoginCorrectCredentials() {
@@ -22,7 +22,7 @@ class TestLoginController {
 
         LoginBean loginBean = new LoginBean1();
         loginBean.setEmail(GIULIO);
-        loginBean.setPassword(correctPassword);
+        loginBean.setPassword(CORRECT_PASSWORD);
 
         try {
             controlLogin.login(loginBean);
