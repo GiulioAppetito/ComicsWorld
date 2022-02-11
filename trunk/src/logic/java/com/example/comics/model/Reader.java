@@ -2,7 +2,6 @@ package com.example.comics.model;
 
 import com.example.comics.model.dao.BadgeDAO;
 import com.example.comics.model.dao.OrderDAO;
-import com.example.comics.model.dao.ReaderDAO;
 import com.example.comics.model.fagioli.bundle.BadgeBundle;
 
 import java.util.List;

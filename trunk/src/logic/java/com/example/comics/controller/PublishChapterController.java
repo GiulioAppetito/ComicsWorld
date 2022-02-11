@@ -21,7 +21,7 @@ public class PublishChapterController {
     public void publishChapter(ChapterBean chapterBean, String seriesTitle)throws AlreadyExistingChapterException {
 
 
-        Chapter chapter = null;
+        Chapter chapter;
         //cerca la serie dell'author relativa al capitolo e aggiungi capitolo
         Series series = SeriesDAO.retrieveSeries(seriesTitle);
 

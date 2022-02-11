@@ -16,7 +16,7 @@ public class BadgeDAO {
     private static final String DB_URL = "jdbc:mysql://comics-world.ce9t0fxhansh.eu-west-2.rds.amazonaws.com:3306/ComicsWorld?autoReconnect=true&useSSL=false";
 
     public Badge retreiveAssociatedBadge(int badgeID) {
-        Statement stmt11 = null;
+        Statement stmt11 ;
         Connection conn11 = null;
         Badge associatedBadge = null;
 
@@ -59,7 +59,7 @@ public class BadgeDAO {
 
     public List<Badge> retrieveAchievedBadges(String username) {
 
-        Statement stmt12 = null;
+        Statement stmt12;
         Connection conn12 = null;
 
         List<Badge> achievedBadges = new ArrayList<>();
@@ -107,7 +107,7 @@ public class BadgeDAO {
 
     public void saveObtainedBadge(Badge badge, Reader reader) {
 
-        Statement stmt13 = null;
+        Statement stmt13;
         Connection conn13 = null;
 
         try {

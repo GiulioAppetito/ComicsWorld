@@ -4,8 +4,6 @@ import com.example.comics.model.fagioli.SeriesBean;
 
 public class PostReviewAuthorBoundary extends MailProperties{
 
-
-
     public void sendEmailForNewReviewPosted(SeriesBean seriesBean) {
 
         // Recipient's email ID needs to be mentioned.
@@ -18,6 +16,5 @@ public class PostReviewAuthorBoundary extends MailProperties{
         sendEmail(to, sbj, msg);
 
     }
-
 
 }
