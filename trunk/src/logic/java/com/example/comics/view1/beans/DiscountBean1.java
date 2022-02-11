@@ -17,6 +17,10 @@ public class DiscountBean1 implements DiscountBean {
         this.limitDays = limitDays;
     }
 
+    public void setLimitDays(String limitDays) {
+        this.limitDays = Integer.valueOf(limitDays);
+    }
+
     @Override
     public Float getPercentage() {
         return this.percentage;
@@ -25,5 +29,10 @@ public class DiscountBean1 implements DiscountBean {
     @Override
     public void setPercentage(Float percentage) {
         this.percentage = percentage;
+    }
+
+
+    public void setPercentage(String percentage) {
+        this.percentage = Float.valueOf(percentage);
     }
 }

@@ -23,8 +23,14 @@ public class ObjectiveBean1 implements ObjectiveBean {
         return level.toString();
     }
 
+    @Override
     public void setLevel(Levels level) {
         this.level = level;
+    }
+
+
+    public void setLevel(String level) {
+        this.level = Levels.valueOf(level);
     }
 
     @Override
@@ -70,6 +76,10 @@ public class ObjectiveBean1 implements ObjectiveBean {
     @Override
     public void setRequirement(Float requirement) {
         this.requirement = requirement;
+    }
+
+    public void setRequirement(String requirement) {
+        this.requirement = Float.valueOf(requirement);
     }
 
     @Override

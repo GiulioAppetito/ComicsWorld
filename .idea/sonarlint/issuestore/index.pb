@@ -67,8 +67,6 @@ j
 :trunk/src/logic/java/com/example/comics/model/Chapter.java,c\2\c250f9a3abd891d7234058d1c703f1322723f767
 z
 Jtrunk/src/logic/java/com/example/comics/view1/beans/DiscountCodeBean1.java,c\3\c3e19d21c2055257b5fff7db2cb0d37e59dcc89b
-v
-Ftrunk/src/logic/java/com/example/comics/view1/beans/DiscountBean1.java,0\b\0b1d83835b272aea51be1f7ba8292f3aabbc9e04
 k
 ;trunk/src/logic/java/com/example/comics/model/Discount.java,d\d\dd9b3081cdfff0a228cc87e4e642326dfd415d4f
 o
@@ -99,16 +97,12 @@ u
 Etrunk/src/logic/java/com/example/comics/model/fagioli/SeriesBean.java,f\6\f6192bb58562112b2bf46b80d28aca25b385a43c
 h
 8trunk/src/logic/java/com/example/comics/model/Order.java,0\e\0e09775fac39c5d94391827fde00ce10769b56a7
-z
-Jtrunk/src/logic/java/com/example/comics/controller/ResearchController.java,2\d\2d9d98663badd8585c57a6dd49f49080358fe691
 Å
 Qtrunk/src/logic/java/com/example/comics/controller/boundaries/MailProperties.java,3\0\309af6b5f5afd986252896d6786ce161a8215805
 ã
 [trunk/src/logic/java/com/example/comics/controller/boundaries/PostReviewReaderBoundary.java,3\a\3a9ff11e51bc4aa6f904d2c3d3d3309230f7826d
 é
 ^trunk/src/logic/java/com/example/comics/controller/boundaries/PublishSeriesReaderBoundary.java,a\c\aca2b15fbae02f2ca522fe278df95795cd3c1741
-|
-Ltrunk/src/logic/java/com/example/comics/controller/FavouritesController.java,d\4\d4a4cbb5fc44bb2024217d03917ba8375edd9e2c
 z
 Jtrunk/src/logic/java/com/example/comics/controller/BuyComicController.java,9\0\90e51ad918aad492c6ec0c6da27d032a978ff758
 r
@@ -129,8 +123,6 @@ s
 Ctrunk/src/logic/java/com/example/comics/model/ObjectiveFactory.java,a\3\a3bdd937afedbc43e52793bbd65cae26bff2e0b5
 v
 Ftrunk/src/logic/java/com/example/comics/view1/CategoryControllerG.java,4\c\4c2482b9185404271c5feae6cd6d1f5abe2d23e4
-t
-Dtrunk/src/logic/java/com/example/comics/view1/beans/SeriesBean1.java,7\2\7234a477271075f9cf1f38e3f60ce05b9286040a
 ~
 Ntrunk/src/logic/java/com/example/comics/model/fagioli/bundle/SeriesBundle.java,0\d\0d1aa808481185c8099bfee6ab0258ab2a3a2851
 u
