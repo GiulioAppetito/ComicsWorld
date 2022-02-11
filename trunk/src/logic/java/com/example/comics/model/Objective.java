@@ -6,6 +6,11 @@ public abstract class Objective{
     protected Discount discount;
     protected Badge badge;
 
+    protected Objective(Badge badge, Discount discount){
+        this.badge = badge;
+        this.discount = discount;
+    }
+
     public abstract void setRequirement(Float requirement);
     public abstract Float getRequirement();
     public abstract String getType();

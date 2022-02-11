@@ -42,7 +42,31 @@ public class FeedControllerG2 implements ChapterObserver, AccountObserver, Reade
     private ImageView badgeIcon;
 
     @FXML
+    private TextField badgeLimitDaysNewSeries1;
+
+    @FXML
+    private TextField badgeLimitDaysNewSeries2;
+
+    @FXML
     private Label badgeName;
+
+    @FXML
+    private TextField badgeNameNewSeries1;
+
+    @FXML
+    private TextField badgeNameNewSeries2;
+
+    @FXML
+    private TextField badgePercNewSeries1;
+
+    @FXML
+    private TextField badgePercNewSeries2;
+
+    @FXML
+    private TextField badgeReqNewSeries1;
+
+    @FXML
+    private TextField badgeReqNewSeries21;
 
     @FXML
     private VBox boxFeed;
@@ -70,6 +94,15 @@ public class FeedControllerG2 implements ChapterObserver, AccountObserver, Reade
 
     @FXML
     private Button btnBackFromChaptee1;
+
+    @FXML
+    private Button btnBackFromNewSeries;
+
+    @FXML
+    private Button btnBackFromNewSeries2;
+
+    @FXML
+    private Button btnBackFromNewSeries3;
 
     @FXML
     private Button btnBuy;
@@ -129,6 +162,18 @@ public class FeedControllerG2 implements ChapterObserver, AccountObserver, Reade
     private Button btnMySeries;
 
     @FXML
+    private Button btnNewSeriesNext1;
+
+    @FXML
+    private Button btnNewSeriesNext2;
+
+    @FXML
+    private Button btnNextNewSeries2;
+
+    @FXML
+    private Button btnPickCover;
+
+    @FXML
     private Button btnPostReview;
 
     @FXML
@@ -156,10 +201,37 @@ public class FeedControllerG2 implements ChapterObserver, AccountObserver, Reade
     private Button btnToReadSerie;
 
     @FXML
+    private Button btnpickBadge1NewSeriesCover;
+
+    @FXML
+    private Button btnpickBadge2NewSeriesCover;
+
+    @FXML
     private ImageView chapterCover;
 
     @FXML
     private Label chapterTitle;
+
+    @FXML
+    private ChoiceBox<String> choiceBoxGenre1;
+
+    @FXML
+    private ChoiceBox<String> choiceBoxGenre2;
+
+    @FXML
+    private ChoiceBox<?> choiceBoxGenre3;
+
+    @FXML
+    private ChoiceBox<String> choiceBoxLevel1;
+
+    @FXML
+    private ChoiceBox<String> choiceBoxLevel2;
+
+    @FXML
+    private ChoiceBox<String> choiceBoxType1;
+
+    @FXML
+    private ChoiceBox<String> choiceBoxType2;
 
     @FXML
     private ImageView cover;
@@ -180,6 +252,9 @@ public class FeedControllerG2 implements ChapterObserver, AccountObserver, Reade
     private Label lblLastName;
 
     @FXML
+    private ImageView newSeiresCover;
+
+    @FXML
     private Label notifMessage;
 
     @FXML
@@ -189,13 +264,13 @@ public class FeedControllerG2 implements ChapterObserver, AccountObserver, Reade
     private Pane paneBadgeWon;
 
     @FXML
-    private Pane paneNotifications;
-
-    @FXML
     private Pane paneFailure;
 
     @FXML
     private Pane paneMenu;
+
+    @FXML
+    private Pane paneNotifications;
 
     @FXML
     private Pane paneOrder;
@@ -222,6 +297,9 @@ public class FeedControllerG2 implements ChapterObserver, AccountObserver, Reade
     private TextArea taComment;
 
     @FXML
+    private TextArea taDescriptionNewSeries;
+
+    @FXML
     private TextField tfDiscountCode;
 
     @FXML
@@ -232,6 +310,9 @@ public class FeedControllerG2 implements ChapterObserver, AccountObserver, Reade
 
     @FXML
     private TextField tfLastName;
+
+    @FXML
+    private TextField tfTitleNewSieries;
 
     @FXML
     private TextField tfUsername;
@@ -283,6 +364,15 @@ public class FeedControllerG2 implements ChapterObserver, AccountObserver, Reade
 
     @FXML
     private VBox vBoxPostReview;
+
+    @FXML
+    private VBox vBoxPublishSeries1;
+
+    @FXML
+    private VBox vBoxPublishSeries2;
+
+    @FXML
+    private VBox vBoxPublishSeries3;
 
     @FXML
     private VBox vBoxReading;
@@ -958,6 +1048,9 @@ public class FeedControllerG2 implements ChapterObserver, AccountObserver, Reade
         paneFailure.setVisible(false);
         paneOrder.setVisible(false);
         paneBadgeWon.setVisible(false);
+        vBoxPublishSeries1.setVisible(false);
+        vBoxPublishSeries2.setVisible(false);
+        vBoxPublishSeries3.setVisible(false);
     }
 
     private ChapterBean currentChapter = null;

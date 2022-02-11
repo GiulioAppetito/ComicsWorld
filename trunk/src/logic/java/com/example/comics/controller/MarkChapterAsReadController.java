@@ -57,8 +57,7 @@ public class MarkChapterAsReadController {
                 DiscountCodeDAO discountCodeDAO = new DiscountCodeDAO();
                 discountCodeDAO.saveObtainedDiscountCode(discountCode,UserLogin.getInstance().getReader(), series,objective);
 
-                //invio mail al lettore del codice sconto
-                new Thread(()->{
+
 
                     DiscountBean discountBean = new DiscountBundle();
                     discountBean.setLimitDays(discountCode.getDiscount().getLimitDays());
@@ -77,6 +76,8 @@ public class MarkChapterAsReadController {
                     accountBean.setUsername(UserLogin.getInstance().getAccount().getUsername());
                     accountBean.setEmail(UserLogin.getInstance().getAccount().getEmail());
 
+                //invio mail al lettore del codice sconto
+                new Thread(()->{
                     PostReviewReaderBoundary postReviewReaderBoundary = new PostReviewReaderBoundary();
                     postReviewReaderBoundary.sendEmailForDiscountCode(accountBean, seriesBean, discountCodeBean);
                 }).start();
