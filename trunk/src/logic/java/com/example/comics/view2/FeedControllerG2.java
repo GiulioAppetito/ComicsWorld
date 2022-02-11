@@ -2,10 +2,15 @@ package com.example.comics.view2;
 
 import com.example.comics.controller.*;
 import com.example.comics.model.*;
+import com.example.comics.model.exceptions.AlreadyExistingSeriesException;
 import com.example.comics.model.exceptions.DiscountCodeException;
 import com.example.comics.model.exceptions.FailedProfileCustomizationException;
 import com.example.comics.model.exceptions.IncompleteReviewException;
 import com.example.comics.model.fagioli.*;
+import com.example.comics.view1.beans.BadgeBean1;
+import com.example.comics.view1.beans.DiscountBean1;
+import com.example.comics.view1.beans.ObjectiveBean1;
+import com.example.comics.view1.beans.SeriesBean1;
 import com.example.comics.view2.beans.AccountBean2;
 import com.example.comics.view2.beans.DiscountCodeBean2;
 import com.example.comics.view2.beans.ReviewBean2;
@@ -45,28 +50,16 @@ public class FeedControllerG2 implements ChapterObserver, AccountObserver, Reade
     private TextField badgeLimitDaysNewSeries1;
 
     @FXML
-    private TextField badgeLimitDaysNewSeries2;
-
-    @FXML
     private Label badgeName;
 
     @FXML
     private TextField badgeNameNewSeries1;
 
     @FXML
-    private TextField badgeNameNewSeries2;
-
-    @FXML
     private TextField badgePercNewSeries1;
 
     @FXML
-    private TextField badgePercNewSeries2;
-
-    @FXML
     private TextField badgeReqNewSeries1;
-
-    @FXML
-    private TextField badgeReqNewSeries21;
 
     @FXML
     private VBox boxFeed;
@@ -168,9 +161,6 @@ public class FeedControllerG2 implements ChapterObserver, AccountObserver, Reade
     private Button btnNewSeriesNext2;
 
     @FXML
-    private Button btnNextNewSeries2;
-
-    @FXML
     private Button btnPickCover;
 
     @FXML
@@ -180,6 +170,9 @@ public class FeedControllerG2 implements ChapterObserver, AccountObserver, Reade
     private Button btnProfile;
 
     @FXML
+    private Button btnPublishSeries;
+
+    @FXML
     private Button btnReadChapter;
 
     @FXML
@@ -187,6 +180,9 @@ public class FeedControllerG2 implements ChapterObserver, AccountObserver, Reade
 
     @FXML
     private Button btnSettings;
+
+    @FXML
+    private Button btnSkipNewSeries;
 
     @FXML
     private Button btnStatistics;
@@ -204,9 +200,6 @@ public class FeedControllerG2 implements ChapterObserver, AccountObserver, Reade
     private Button btnpickBadge1NewSeriesCover;
 
     @FXML
-    private Button btnpickBadge2NewSeriesCover;
-
-    @FXML
     private ImageView chapterCover;
 
     @FXML
@@ -219,19 +212,13 @@ public class FeedControllerG2 implements ChapterObserver, AccountObserver, Reade
     private ChoiceBox<String> choiceBoxGenre2;
 
     @FXML
-    private ChoiceBox<?> choiceBoxGenre3;
+    private ChoiceBox<String> choiceBoxGenre3;
 
     @FXML
     private ChoiceBox<String> choiceBoxLevel1;
 
     @FXML
-    private ChoiceBox<String> choiceBoxLevel2;
-
-    @FXML
     private ChoiceBox<String> choiceBoxType1;
-
-    @FXML
-    private ChoiceBox<String> choiceBoxType2;
 
     @FXML
     private ImageView cover;
@@ -402,7 +389,6 @@ public class FeedControllerG2 implements ChapterObserver, AccountObserver, Reade
     private VBox vBoxToReadSeries;
 
 
-
     private static final String READER = "reader";
     private static final String BORDER_STYLE = "-fx-border-color: #9b55dc; -fx-background-radius: 20";
     private static final String PLAIN_STYLE = "-fx-border-color: #ffffff;";
@@ -467,6 +453,87 @@ public class FeedControllerG2 implements ChapterObserver, AccountObserver, Reade
         //author menu
         btnStatistics.setOnAction(event -> openStats());
         btnMySeries.setOnAction(event -> openMySeries());
+        btnPublishSeries.setOnAction(event -> openPublishSeriesForm());
+
+    }
+
+    private void openPublishSeriesForm() {
+        vBoxPublishSeries1.setVisible(true);
+        //img
+        btnNewSeriesNext1.setOnAction(event -> nextStepPublishingSeries(tfTitleNewSieries.getText(), taDescriptionNewSeries.getText()));
+    }
+
+    private void nextStepPublishingSeries(String title, String description) {
+        vBoxPublishSeries2.setVisible(true);
+        btnNewSeriesNext2.setOnAction(event -> nextStepPublishingSeries2(title, description, choiceBoxGenre1.getValue(), choiceBoxGenre2.getValue(), choiceBoxGenre3.getValue()));
+    }
+
+    private void nextStepPublishingSeries2(String title, String description, String genre1, String genre2, String genre3) {
+
+        SeriesBean1 seriesBean1 = new SeriesBean1();
+        //seriesBean1.setCover();
+        //seriesBean1.setCoverInputStream(new FileInputStream(imageCoverPath));
+        seriesBean1.setDescription(description);
+        seriesBean1.setTitle(title);
+        seriesBean1.setGenre1(Genres.valueOf(genre1));
+        seriesBean1.setGenre2(Genres.valueOf(genre2));
+        seriesBean1.setGenre3(Genres.valueOf(genre3));
+
+        if(genre1.equals("") || genre2.equals("") || genre3.equals("")){
+            notifTitle.setText("ops!");
+            notifMessage.setText("sorry, there was a mistake!");
+            paneNotifications.setVisible(true);
+            openFeed();
+        }else{
+            vBoxPublishSeries2.setVisible(true);
+            btnSkipNewSeries.setOnAction(event -> publishSeries(seriesBean1));
+        }
+
+    }
+
+    private void publishSeries(SeriesBean1 seriesBean1) {
+
+
+        List<ObjectiveBean> list = new ArrayList<>();
+        ObjectiveBean1 objectiveBean1;
+        DiscountBean1 discountBean1;
+        BadgeBean1 badgeBean1;
+
+        if(choiceBoxLevel1.getValue()!=null && choiceBoxType1.getValue()!=null && badgeNameNewSeries1.getText()!=null && badgeLimitDaysNewSeries1.getText()!=null){
+
+                                objectiveBean1 = new ObjectiveBean1();
+                                objectiveBean1.setRequirement(badgeReqNewSeries1.getText());
+                                objectiveBean1.setLevel(choiceBoxLevel1.getValue());
+                                objectiveBean1.setType(choiceBoxType1.getValue());
+
+                                discountBean1 = new DiscountBean1();
+                                discountBean1.setLimitDays(badgeLimitDaysNewSeries1.getText());
+                                discountBean1.setPercentage(badgePercNewSeries1.getText());
+                                objectiveBean1.setDiscountBean(discountBean1);
+
+                                badgeBean1 = new BadgeBean1();
+                                badgeBean1.setName(badgeNameNewSeries1.getText());
+                                //badgeBean1.setIcon();
+                                objectiveBean1.setBadgeBean(badgeBean1);
+
+                                list.add(objectiveBean1);
+
+            PublishSeriesController publishSeriesController = new PublishSeriesController();
+            try {
+                publishSeriesController.publishSeries(seriesBean1, list);
+            } catch (AlreadyExistingSeriesException e) {
+                notifTitle.setText("ops!");
+                notifMessage.setText(e.getMessage());
+                paneNotifications.setVisible(true);
+            }
+
+        }else{
+            notifTitle.setText("ops!");
+            notifMessage.setText("sorry, there was a mistake!");
+            paneNotifications.setVisible(true);
+            closeAll();
+            openFeed();
+        }
 
     }
 
