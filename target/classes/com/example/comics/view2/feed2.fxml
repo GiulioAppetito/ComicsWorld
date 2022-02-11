@@ -72,310 +72,6 @@
                         <Insets />
                      </VBox.margin>
                      <children>
-                        <VBox fx:id="vBoxPublishSeries1" prefHeight="513.0" prefWidth="286.0">
-                           <styleClass>
-                              <String fx:value="header-background" />
-                              <String fx:value="keyboard" />
-                           </styleClass>
-                           <children>
-                              <Button fx:id="btnBackFromNewSeries" mnemonicParsing="false" prefHeight="40.0" prefWidth="78.0" styleClass="header-background" text="Back" textFill="WHITE">
-                                 <graphic>
-                                    <ImageView fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
-                                       <image>
-                                          <Image url="@../../../../img/img2/icons8-back-64.png" />
-                                       </image>
-                                    </ImageView>
-                                 </graphic>
-                              </Button>
-                              <Label alignment="CENTER" prefHeight="45.0" prefWidth="286.0" text="Insert your new Series:" textFill="WHITE" />
-                              <HBox prefHeight="26.0" prefWidth="286.0">
-                                 <children>
-                                    <Label alignment="CENTER" prefHeight="46.0" prefWidth="151.0" text="Title:" textFill="WHITE" />
-                                    <TextField fx:id="tfTitleNewSieries" prefHeight="26.0" prefWidth="153.0">
-                                       <HBox.margin>
-                                          <Insets right="10.0" />
-                                       </HBox.margin>
-                                    </TextField>
-                                 </children>
-                              </HBox>
-                              <HBox>
-                                 <VBox.margin>
-                                    <Insets left="10.0" />
-                                 </VBox.margin>
-                                 <children>
-                                    <ImageView fx:id="newSeiresCover" fitHeight="135.0" fitWidth="148.0" pickOnBounds="true" preserveRatio="true">
-                                       <image>
-                                          <Image url="@../../../../img/img2/copertina_ad.jpg" />
-                                       </image>
-                                    </ImageView>
-                                    <VBox alignment="CENTER" prefHeight="135.0" prefWidth="146.0">
-                                       <children>
-                                          <Button fx:id="btnPickCover" mnemonicParsing="false" prefHeight="54.0" prefWidth="301.0" styleClass="darkButton" text="pick cover" textFill="WHITE">
-                                             <VBox.margin>
-                                                <Insets />
-                                             </VBox.margin>
-                                          </Button>
-                                       </children>
-                                       <HBox.margin>
-                                          <Insets left="40.0" right="10.0" />
-                                       </HBox.margin>
-                                    </VBox>
-                                 </children>
-                              </HBox>
-                              <Label alignment="CENTER" prefHeight="30.0" prefWidth="286.0" text="description:" textFill="WHITE" />
-                              <TextArea fx:id="taDescriptionNewSeries" prefHeight="123.0" prefWidth="287.0">
-                                 <VBox.margin>
-                                    <Insets left="10.0" right="10.0" />
-                                 </VBox.margin>
-                              </TextArea>
-                              <Button fx:id="btnNewSeriesNext1" mnemonicParsing="false" prefHeight="54.0" prefWidth="301.0" styleClass="darkButton" text="Next" textFill="WHITE">
-                                 <VBox.margin>
-                                    <Insets left="10.0" right="10.0" top="10.0" />
-                                 </VBox.margin>
-                              </Button>
-                           </children>
-                        </VBox>
-                        <VBox fx:id="vBoxPublishSeries3" prefHeight="513.0" prefWidth="286.0">
-                           <styleClass>
-                              <String fx:value="header-background" />
-                              <String fx:value="keyboard" />
-                           </styleClass>
-                           <children>
-                              <HBox>
-                                 <children>
-                                    <Button fx:id="btnBackFromNewSeries3" mnemonicParsing="false" prefHeight="40.0" prefWidth="78.0" styleClass="header-background" text="Back" textFill="WHITE">
-                                       <graphic>
-                                          <ImageView fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
-                                             <image>
-                                                <Image url="@../../../../img/img2/icons8-back-64.png" />
-                                             </image>
-                                          </ImageView>
-                                       </graphic>
-                                    </Button>
-                                    <Button fx:id="btnNextNewSeries2" mnemonicParsing="false" prefHeight="38.0" prefWidth="138.0" styleClass="darkButton" text="Skip" textFill="WHITE">
-                                       <HBox.margin>
-                                          <Insets left="60.0" />
-                                       </HBox.margin>
-                                    </Button>
-                                 </children>
-                              </HBox>
-                              <Label alignment="CENTER" prefHeight="18.0" prefWidth="286.0" text="objectives:" textFill="WHITE" />
-                              <VBox prefHeight="125.0" prefWidth="286.0">
-                                 <children>
-                                    <HBox prefHeight="26.0" prefWidth="286.0">
-                                       <children>
-                                          <Label alignment="CENTER" prefHeight="26.0" prefWidth="157.0" text="Level" textFill="WHITE" />
-                                          <ChoiceBox fx:id="choiceBoxLevel1" prefWidth="150.0">
-                                             <HBox.margin>
-                                                <Insets right="10.0" />
-                                             </HBox.margin>
-                                          </ChoiceBox>
-                                       </children>
-                                    </HBox>
-                                    <VBox>
-                                       <children>
-                                          <HBox prefHeight="26.0" prefWidth="286.0">
-                                             <children>
-                                                <Label alignment="CENTER" prefHeight="26.0" prefWidth="157.0" text="Type" textFill="WHITE" />
-                                                <ChoiceBox fx:id="choiceBoxType1" prefWidth="150.0">
-                                                   <HBox.margin>
-                                                      <Insets right="10.0" />
-                                                   </HBox.margin>
-                                                </ChoiceBox>
-                                             </children>
-                                          </HBox>
-                                          <HBox prefHeight="23.0" prefWidth="286.0">
-                                             <children>
-                                                <Label alignment="CENTER" prefHeight="26.0" prefWidth="142.0" text="Name:" textFill="WHITE" />
-                                                <TextField fx:id="badgeNameNewSeries1" prefHeight="15.0" prefWidth="136.0" />
-                                             </children>
-                                             <VBox.margin>
-                                                <Insets bottom="10.0" top="10.0" />
-                                             </VBox.margin>
-                                          </HBox>
-                                          <HBox prefHeight="23.0" prefWidth="286.0">
-                                             <children>
-                                                <Label alignment="CENTER" prefHeight="27.0" prefWidth="142.0" text="Percentage" textFill="WHITE" />
-                                                <TextField fx:id="badgePercNewSeries1" prefHeight="16.0" prefWidth="136.0" />
-                                             </children>
-                                          </HBox>
-                                          <HBox prefHeight="23.0" prefWidth="286.0">
-                                             <children>
-                                                <Label alignment="CENTER" prefHeight="26.0" prefWidth="142.0" text="Requirement" textFill="WHITE" />
-                                                <TextField fx:id="badgeReqNewSeries1" prefHeight="26.0" prefWidth="136.0" />
-                                             </children>
-                                          </HBox>
-                                          <HBox prefHeight="23.0" prefWidth="286.0">
-                                             <children>
-                                                <Label alignment="CENTER" prefHeight="26.0" prefWidth="142.0" text="Limit Days:" textFill="WHITE" />
-                                                <TextField fx:id="badgeLimitDaysNewSeries1" prefHeight="26.0" prefWidth="136.0" />
-                                             </children>
-                                          </HBox>
-                                          <HBox prefHeight="38.0" prefWidth="286.0">
-                                             <children>
-                                                <ImageView fitHeight="38.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true">
-                                                   <image>
-                                                      <Image url="@../../../../img/img2/frankestein.png" />
-                                                   </image>
-                                                   <HBox.margin>
-                                                      <Insets left="50.0" />
-                                                   </HBox.margin>
-                                                </ImageView>
-                                                <VBox alignment="CENTER" prefHeight="79.0" prefWidth="135.0">
-                                                   <children>
-                                                      <Button fx:id="btnpickBadge1NewSeriesCover" mnemonicParsing="false" prefHeight="26.0" prefWidth="138.0" styleClass="darkButton" text="pick" textFill="WHITE" />
-                                                   </children>
-                                                   <HBox.margin>
-                                                      <Insets left="10.0" />
-                                                   </HBox.margin>
-                                                </VBox>
-                                             </children>
-                                          </HBox>
-                                       </children>
-                                    </VBox>
-                                 </children>
-                              </VBox>
-                              <HBox>
-                                 <VBox.margin>
-                                    <Insets left="10.0" />
-                                 </VBox.margin>
-                              </HBox>
-                              <VBox prefHeight="146.0" prefWidth="286.0">
-                                 <children>
-                                    <HBox prefHeight="26.0" prefWidth="286.0">
-                                       <children>
-                                          <Label alignment="CENTER" prefHeight="26.0" prefWidth="157.0" text="Level" textFill="WHITE" />
-                                          <ChoiceBox fx:id="choiceBoxLevel2" prefWidth="150.0">
-                                             <HBox.margin>
-                                                <Insets right="10.0" />
-                                             </HBox.margin>
-                                          </ChoiceBox>
-                                       </children>
-                                    </HBox>
-                                    <VBox>
-                                       <children>
-                                          <HBox prefHeight="26.0" prefWidth="286.0">
-                                             <children>
-                                                <Label alignment="CENTER" prefHeight="26.0" prefWidth="157.0" text="Type" textFill="WHITE" />
-                                                <ChoiceBox fx:id="choiceBoxType2" prefWidth="150.0">
-                                                   <HBox.margin>
-                                                      <Insets right="10.0" />
-                                                   </HBox.margin>
-                                                </ChoiceBox>
-                                             </children>
-                                          </HBox>
-                                          <HBox prefHeight="18.0" prefWidth="286.0">
-                                             <children>
-                                                <Label alignment="CENTER" prefHeight="26.0" prefWidth="142.0" text="Name:" textFill="WHITE" />
-                                                <TextField fx:id="badgeNameNewSeries2" prefHeight="14.0" prefWidth="136.0" />
-                                             </children>
-                                             <VBox.margin>
-                                                <Insets bottom="10.0" top="10.0" />
-                                             </VBox.margin>
-                                          </HBox>
-                                          <HBox prefHeight="23.0" prefWidth="286.0">
-                                             <children>
-                                                <Label alignment="CENTER" prefHeight="27.0" prefWidth="142.0" text="Percentage" textFill="WHITE" />
-                                                <TextField fx:id="badgePercNewSeries2" prefHeight="1.0" prefWidth="136.0" />
-                                             </children>
-                                          </HBox>
-                                          <HBox prefHeight="23.0" prefWidth="286.0">
-                                             <children>
-                                                <Label alignment="CENTER" prefHeight="26.0" prefWidth="142.0" text="Requirement" textFill="WHITE" />
-                                                <TextField fx:id="badgeReqNewSeries21" prefHeight="11.0" prefWidth="136.0" />
-                                             </children>
-                                          </HBox>
-                                          <HBox prefHeight="23.0" prefWidth="286.0">
-                                             <children>
-                                                <Label alignment="CENTER" prefHeight="26.0" prefWidth="142.0" text="Limit Days:" textFill="WHITE" />
-                                                <TextField fx:id="badgeLimitDaysNewSeries2" prefHeight="4.0" prefWidth="136.0" />
-                                             </children>
-                                          </HBox>
-                                          <HBox prefHeight="52.0" prefWidth="286.0">
-                                             <children>
-                                                <ImageView fitHeight="36.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
-                                                   <image>
-                                                      <Image url="@../../../../img/img2/frankestein.png" />
-                                                   </image>
-                                                   <HBox.margin>
-                                                      <Insets left="50.0" />
-                                                   </HBox.margin>
-                                                </ImageView>
-                                                <VBox alignment="CENTER" prefHeight="79.0" prefWidth="135.0">
-                                                   <children>
-                                                      <Button fx:id="btnpickBadge2NewSeriesCover" mnemonicParsing="false" prefHeight="26.0" prefWidth="138.0" styleClass="darkButton" text="pick" textFill="WHITE" />
-                                                   </children>
-                                                   <HBox.margin>
-                                                      <Insets left="10.0" />
-                                                   </HBox.margin>
-                                                </VBox>
-                                             </children>
-                                          </HBox>
-                                       </children>
-                                    </VBox>
-                                 </children>
-                              </VBox>
-                              <HBox alignment="CENTER" />
-                           </children>
-                        </VBox>
-                        <VBox fx:id="vBoxPublishSeries2" prefHeight="513.0" prefWidth="286.0">
-                           <styleClass>
-                              <String fx:value="header-background" />
-                              <String fx:value="keyboard" />
-                           </styleClass>
-                           <children>
-                              <Button fx:id="btnBackFromNewSeries2" mnemonicParsing="false" prefHeight="40.0" prefWidth="78.0" styleClass="header-background" text="Back" textFill="WHITE">
-                                 <graphic>
-                                    <ImageView fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
-                                       <image>
-                                          <Image url="@../../../../img/img2/icons8-back-64.png" />
-                                       </image>
-                                    </ImageView>
-                                 </graphic>
-                              </Button>
-                              <Label alignment="CENTER" prefHeight="45.0" prefWidth="286.0" text="Insert your new Series:" textFill="WHITE" />
-                              <HBox prefHeight="26.0" prefWidth="286.0">
-                                 <children>
-                                    <Label alignment="CENTER" prefHeight="46.0" prefWidth="151.0" text="Genre 1" textFill="WHITE" />
-                                    <ChoiceBox fx:id="choiceBoxGenre1" prefWidth="150.0">
-                                       <HBox.margin>
-                                          <Insets right="10.0" />
-                                       </HBox.margin>
-                                    </ChoiceBox>
-                                 </children>
-                              </HBox>
-                              <HBox>
-                                 <VBox.margin>
-                                    <Insets left="10.0" />
-                                 </VBox.margin>
-                              </HBox>
-                              <HBox prefHeight="26.0" prefWidth="286.0">
-                                 <children>
-                                    <Label alignment="CENTER" prefHeight="46.0" prefWidth="151.0" text="Genre 2" textFill="WHITE" />
-                                    <ChoiceBox fx:id="choiceBoxGenre2" prefWidth="150.0">
-                                       <HBox.margin>
-                                          <Insets right="10.0" />
-                                       </HBox.margin>
-                                    </ChoiceBox>
-                                 </children>
-                              </HBox>
-                              <HBox prefHeight="26.0" prefWidth="286.0">
-                                 <children>
-                                    <Label alignment="CENTER" prefHeight="46.0" prefWidth="151.0" text="Genre 3" textFill="WHITE" />
-                                    <ChoiceBox fx:id="choiceBoxGenre3" prefWidth="150.0">
-                                       <HBox.margin>
-                                          <Insets right="10.0" />
-                                       </HBox.margin>
-                                    </ChoiceBox>
-                                 </children>
-                              </HBox>
-                              <Button fx:id="btnNewSeriesNext2" mnemonicParsing="false" prefHeight="54.0" prefWidth="301.0" styleClass="darkButton" text="Next" textFill="WHITE">
-                                 <VBox.margin>
-                                    <Insets left="10.0" right="10.0" top="10.0" />
-                                 </VBox.margin>
-                              </Button>
-                           </children>
-                        </VBox>
                         <VBox fx:id="vBoxChapter" prefHeight="200.0" prefWidth="100.0">
                            <children>
                               <HBox alignment="CENTER" prefHeight="49.0" prefWidth="286.0">
@@ -1201,6 +897,260 @@
                               <Insets bottom="150.0" top="100.0" />
                            </StackPane.margin>
                         </Pane>
+                        <VBox fx:id="vBoxPublishSeries1" prefHeight="513.0" prefWidth="286.0">
+                           <styleClass>
+                              <String fx:value="header-background" />
+                              <String fx:value="keyboard" />
+                           </styleClass>
+                           <children>
+                              <Button fx:id="btnBackFromNewSeries" mnemonicParsing="false" prefHeight="40.0" prefWidth="78.0" styleClass="header-background" text="Back" textFill="WHITE">
+                                 <graphic>
+                                    <ImageView fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../../../img/img2/icons8-back-64.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                              <Label alignment="CENTER" prefHeight="45.0" prefWidth="286.0" text="Insert your new Series:" textFill="WHITE" />
+                              <HBox prefHeight="26.0" prefWidth="286.0">
+                                 <children>
+                                    <Label alignment="CENTER" prefHeight="46.0" prefWidth="151.0" text="Title:" textFill="WHITE" />
+                                    <TextField fx:id="tfTitleNewSieries" prefHeight="26.0" prefWidth="153.0">
+                                       <HBox.margin>
+                                          <Insets right="10.0" />
+                                       </HBox.margin>
+                                    </TextField>
+                                 </children>
+                              </HBox>
+                              <HBox>
+                                 <VBox.margin>
+                                    <Insets left="10.0" />
+                                 </VBox.margin>
+                                 <children>
+                                    <ImageView fx:id="newSeiresCover" fitHeight="135.0" fitWidth="148.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../../../img/img2/copertina_ad.jpg" />
+                                       </image>
+                                    </ImageView>
+                                    <VBox alignment="CENTER" prefHeight="135.0" prefWidth="146.0">
+                                       <children>
+                                          <Button fx:id="btnPickCover" mnemonicParsing="false" prefHeight="54.0" prefWidth="301.0" styleClass="darkButton" text="pick cover" textFill="WHITE">
+                                             <VBox.margin>
+                                                <Insets />
+                                             </VBox.margin>
+                                          </Button>
+                                       </children>
+                                       <HBox.margin>
+                                          <Insets left="40.0" right="10.0" />
+                                       </HBox.margin>
+                                    </VBox>
+                                 </children>
+                              </HBox>
+                              <Label alignment="CENTER" prefHeight="30.0" prefWidth="286.0" text="description:" textFill="WHITE" />
+                              <TextArea fx:id="taDescriptionNewSeries" prefHeight="123.0" prefWidth="287.0">
+                                 <VBox.margin>
+                                    <Insets left="10.0" right="10.0" />
+                                 </VBox.margin>
+                              </TextArea>
+                              <Button fx:id="btnNewSeriesNext1" mnemonicParsing="false" prefHeight="54.0" prefWidth="301.0" styleClass="darkButton" text="Next" textFill="WHITE">
+                                 <VBox.margin>
+                                    <Insets left="10.0" right="10.0" top="10.0" />
+                                 </VBox.margin>
+                              </Button>
+                           </children>
+                        </VBox>
+                        <VBox fx:id="vBoxPublishSeries2" prefHeight="513.0" prefWidth="286.0">
+                           <styleClass>
+                              <String fx:value="header-background" />
+                              <String fx:value="keyboard" />
+                           </styleClass>
+                           <children>
+                              <Button fx:id="btnBackFromNewSeries2" mnemonicParsing="false" prefHeight="40.0" prefWidth="78.0" styleClass="header-background" text="Back" textFill="WHITE">
+                                 <graphic>
+                                    <ImageView fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../../../img/img2/icons8-back-64.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                              <Label alignment="CENTER" prefHeight="45.0" prefWidth="286.0" text="Insert your new Series:" textFill="WHITE" />
+                              <HBox prefHeight="26.0" prefWidth="286.0">
+                                 <children>
+                                    <Label alignment="CENTER" prefHeight="46.0" prefWidth="151.0" text="Genre 1" textFill="WHITE" />
+                                    <ChoiceBox fx:id="choiceBoxGenre1" prefWidth="150.0">
+                                       <HBox.margin>
+                                          <Insets right="10.0" />
+                                       </HBox.margin>
+                                    </ChoiceBox>
+                                 </children>
+                              </HBox>
+                              <HBox>
+                                 <VBox.margin>
+                                    <Insets left="10.0" />
+                                 </VBox.margin>
+                              </HBox>
+                              <HBox prefHeight="26.0" prefWidth="286.0">
+                                 <children>
+                                    <Label alignment="CENTER" prefHeight="46.0" prefWidth="151.0" text="Genre 2" textFill="WHITE" />
+                                    <ChoiceBox fx:id="choiceBoxGenre2" prefWidth="150.0">
+                                       <HBox.margin>
+                                          <Insets right="10.0" />
+                                       </HBox.margin>
+                                    </ChoiceBox>
+                                 </children>
+                              </HBox>
+                              <HBox prefHeight="26.0" prefWidth="286.0">
+                                 <children>
+                                    <Label alignment="CENTER" prefHeight="46.0" prefWidth="151.0" text="Genre 3" textFill="WHITE" />
+                                    <ChoiceBox fx:id="choiceBoxGenre3" prefWidth="150.0">
+                                       <HBox.margin>
+                                          <Insets right="10.0" />
+                                       </HBox.margin>
+                                    </ChoiceBox>
+                                 </children>
+                              </HBox>
+                              <Button fx:id="btnNewSeriesNext2" mnemonicParsing="false" prefHeight="54.0" prefWidth="301.0" styleClass="darkButton" text="Next" textFill="WHITE">
+                                 <VBox.margin>
+                                    <Insets left="10.0" right="10.0" top="10.0" />
+                                 </VBox.margin>
+                              </Button>
+                           </children>
+                        </VBox>
+                        <VBox fx:id="vBoxPublishSeries3" prefHeight="513.0" prefWidth="286.0">
+                           <styleClass>
+                              <String fx:value="header-background" />
+                              <String fx:value="keyboard" />
+                           </styleClass>
+                           <children>
+                              <HBox>
+                                 <children>
+                                    <Button fx:id="btnBackFromNewSeries3" mnemonicParsing="false" prefHeight="40.0" prefWidth="78.0" styleClass="header-background" text="Back" textFill="WHITE">
+                                       <graphic>
+                                          <ImageView fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../../../../img/img2/icons8-back-64.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                    </Button>
+                                 </children>
+                              </HBox>
+                              <Label alignment="CENTER" prefHeight="43.0" prefWidth="286.0" text="objectives:" textFill="WHITE" />
+                              <VBox prefHeight="291.0" prefWidth="286.0">
+                                 <children>
+                                    <HBox prefHeight="43.0" prefWidth="286.0">
+                                       <children>
+                                          <Label alignment="CENTER" prefHeight="26.0" prefWidth="157.0" text="Level" textFill="WHITE" />
+                                          <ChoiceBox fx:id="choiceBoxLevel1" prefWidth="150.0">
+                                             <HBox.margin>
+                                                <Insets right="10.0" />
+                                             </HBox.margin>
+                                          </ChoiceBox>
+                                       </children>
+                                    </HBox>
+                                    <VBox prefHeight="262.0" prefWidth="286.0">
+                                       <children>
+                                          <HBox prefHeight="42.0" prefWidth="286.0">
+                                             <children>
+                                                <Label alignment="CENTER" prefHeight="26.0" prefWidth="157.0" text="Type" textFill="WHITE" />
+                                                <ChoiceBox fx:id="choiceBoxType1" prefWidth="150.0">
+                                                   <HBox.margin>
+                                                      <Insets right="10.0" />
+                                                   </HBox.margin>
+                                                </ChoiceBox>
+                                             </children>
+                                          </HBox>
+                                          <HBox prefHeight="43.0" prefWidth="286.0">
+                                             <children>
+                                                <Label alignment="CENTER" prefHeight="27.0" prefWidth="142.0" text="Percentage" textFill="WHITE" />
+                                                <TextField fx:id="badgePercNewSeries1" prefHeight="16.0" prefWidth="136.0" />
+                                             </children>
+                                          </HBox>
+                                          <HBox prefHeight="44.0" prefWidth="286.0">
+                                             <children>
+                                                <Label alignment="CENTER" prefHeight="26.0" prefWidth="142.0" text="Requirement" textFill="WHITE" />
+                                                <TextField fx:id="badgeReqNewSeries1" prefHeight="26.0" prefWidth="136.0" />
+                                             </children>
+                                          </HBox>
+                                          <HBox prefHeight="43.0" prefWidth="286.0">
+                                             <children>
+                                                <Label alignment="CENTER" prefHeight="26.0" prefWidth="142.0" text="Limit Days:" textFill="WHITE" />
+                                                <TextField fx:id="badgeLimitDaysNewSeries1" prefHeight="26.0" prefWidth="136.0" />
+                                             </children>
+                                          </HBox>
+                                          <HBox prefHeight="23.0" prefWidth="286.0">
+                                             <children>
+                                                <Label alignment="CENTER" prefHeight="26.0" prefWidth="142.0" text="Badge Name:" textFill="WHITE" />
+                                                <TextField fx:id="badgeNameNewSeries1" prefHeight="15.0" prefWidth="136.0" />
+                                             </children>
+                                             <VBox.margin>
+                                                <Insets bottom="10.0" top="10.0" />
+                                             </VBox.margin>
+                                          </HBox>
+                                          <HBox prefHeight="42.0" prefWidth="286.0">
+                                             <children>
+                                                <ImageView fitHeight="78.0" fitWidth="56.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@../../../../img/img2/frankestein.png" />
+                                                   </image>
+                                                   <HBox.margin>
+                                                      <Insets left="50.0" />
+                                                   </HBox.margin>
+                                                </ImageView>
+                                                <VBox alignment="CENTER" prefHeight="79.0" prefWidth="135.0">
+                                                   <children>
+                                                      <Button fx:id="btnpickBadge1NewSeriesCover" mnemonicParsing="false" prefHeight="26.0" prefWidth="138.0" styleClass="darkButton" text="pick" textFill="WHITE" />
+                                                   </children>
+                                                   <HBox.margin>
+                                                      <Insets left="10.0" />
+                                                   </HBox.margin>
+                                                </VBox>
+                                             </children>
+                                          </HBox>
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </VBox>
+                              <HBox>
+                                 <VBox.margin>
+                                    <Insets left="10.0" />
+                                 </VBox.margin>
+                              </HBox>
+                              <HBox alignment="CENTER" />
+                              <Button fx:id="btnSkipNewSeries" mnemonicParsing="false" prefHeight="57.0" prefWidth="296.0" styleClass="darkButton" text="Next" textFill="WHITE">
+                                 <VBox.margin>
+                                    <Insets top="30.0" />
+                                 </VBox.margin>
+                              </Button>
+                           </children>
+                        </VBox>
+                        <Pane fx:id="paneNotifications" prefHeight="343.0" prefWidth="286.0" styleClass="darkButton">
+                           <children>
+                              <HBox layoutY="51.0" prefHeight="150.0" prefWidth="266.0">
+                                 <children>
+                                    <VBox alignment="CENTER" prefHeight="130.0" prefWidth="245.0">
+                                       <children>
+                                          <Label fx:id="notifMessage" prefHeight="40.0" prefWidth="219.0" text="BadgeName" textFill="WHITE" />
+                                       </children>
+                                       <HBox.margin>
+                                          <Insets bottom="10.0" left="10.0" top="10.0" />
+                                       </HBox.margin>
+                                    </VBox>
+                                 </children>
+                              </HBox>
+                              <Button fx:id="btnCloseNotif" layoutX="203.0" layoutY="1.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="50.0" styleClass="darkButton" text="x" textFill="WHITE">
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font>
+                              </Button>
+                              <Label fx:id="notifTitle" layoutX="31.0" layoutY="1.0" prefHeight="54.0" prefWidth="182.0" text="New badge won!" textFill="WHITE" />
+                           </children>
+                           <StackPane.margin>
+                              <Insets bottom="150.0" top="100.0" />
+                           </StackPane.margin>
+                        </Pane>
                         <Pane fx:id="paneBadgeWon" prefHeight="343.0" prefWidth="286.0" styleClass="darkButton">
                            <children>
                               <HBox layoutY="51.0" prefHeight="150.0" prefWidth="266.0">
@@ -1222,31 +1172,6 @@
                                  </font>
                               </Button>
                               <Label layoutX="31.0" layoutY="1.0" prefHeight="54.0" prefWidth="182.0" text="New badge won!" textFill="WHITE" />
-                           </children>
-                           <StackPane.margin>
-                              <Insets bottom="150.0" top="100.0" />
-                           </StackPane.margin>
-                        </Pane>
-                        <Pane fx:id="paneNotifications" prefHeight="343.0" prefWidth="286.0" styleClass="darkButton">
-                           <children>
-                              <HBox layoutY="51.0" prefHeight="150.0" prefWidth="266.0">
-                                 <children>
-                                    <VBox alignment="CENTER" prefHeight="130.0" prefWidth="245.0">
-                                       <children>
-                                          <Label fx:id="notifMessage" prefHeight="40.0" prefWidth="219.0" text="BadgeName" textFill="WHITE" />
-                                       </children>
-                                       <HBox.margin>
-                                          <Insets bottom="10.0" left="10.0" top="10.0" />
-                                       </HBox.margin>
-                                    </VBox>
-                                 </children>
-                              </HBox>
-                              <Button fx:id="btnCloseNotif" layoutX="203.0" layoutY="1.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="50.0" styleClass="darkButton" text="x" textFill="WHITE">
-                                 <font>
-                                    <Font size="20.0" />
-                                 </font>
-                              </Button>
-                              <Label fx:id="notifTitle" layoutX="31.0" layoutY="1.0" prefHeight="54.0" prefWidth="182.0" text="New badge won!" textFill="WHITE" />
                            </children>
                            <StackPane.margin>
                               <Insets bottom="150.0" top="100.0" />

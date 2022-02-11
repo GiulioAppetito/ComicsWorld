@@ -206,16 +206,16 @@ public class FeedControllerG2 implements ChapterObserver, AccountObserver, Reade
     private Label chapterTitle;
 
     @FXML
-    private ChoiceBox<String> choiceBoxGenre1;
+    private ChoiceBox<Genres> choiceBoxGenre1;
 
     @FXML
-    private ChoiceBox<String> choiceBoxGenre2;
+    private ChoiceBox<Genres> choiceBoxGenre2;
 
     @FXML
-    private ChoiceBox<String> choiceBoxGenre3;
+    private ChoiceBox<Genres> choiceBoxGenre3;
 
     @FXML
-    private ChoiceBox<String> choiceBoxLevel1;
+    private ChoiceBox<Levels> choiceBoxLevel1;
 
     @FXML
     private ChoiceBox<String> choiceBoxType1;
@@ -424,6 +424,15 @@ public class FeedControllerG2 implements ChapterObserver, AccountObserver, Reade
         openNotifications();
         initProfile();
 
+        choiceBoxGenre1.getItems().setAll(Genres.values());
+        choiceBoxGenre2.getItems().setAll(Genres.values());
+        choiceBoxGenre3.getItems().setAll(Genres.values());
+
+        choiceBoxType1.getItems().setAll("REVIEWS","CHAPTERS");
+
+        choiceBoxLevel1.getItems().setAll(Levels.values());
+
+
         btnProfile.setOnAction(event -> openProfile());
         btnFeed.setOnAction(event -> openFeed());
         btnMenu.setOnAction(event -> openMenu());
@@ -449,6 +458,9 @@ public class FeedControllerG2 implements ChapterObserver, AccountObserver, Reade
         btnCloseorder.setOnAction(event -> paneOrder.setVisible(false));
         btnCloseNewBadgeWon.setOnAction(event -> paneBadgeWon.setVisible(false));
         btnCloseNotif.setOnAction(event -> openNotifications());
+        btnBackFromNewSeries.setOnAction(event -> openFeed());
+        btnBackFromNewSeries2.setOnAction(event -> openFeed());
+        btnBackFromNewSeries3.setOnAction(event -> openFeed());
 
         //author menu
         btnStatistics.setOnAction(event -> openStats());
@@ -465,11 +477,11 @@ public class FeedControllerG2 implements ChapterObserver, AccountObserver, Reade
 
     private void nextStepPublishingSeries(String title, String description) {
         vBoxPublishSeries2.setVisible(true);
-        btnNewSeriesNext2.setOnAction(event -> nextStepPublishingSeries2(title, description, choiceBoxGenre1.getValue(), choiceBoxGenre2.getValue(), choiceBoxGenre3.getValue()));
+        btnNewSeriesNext2.setOnAction(event -> nextStepPublishingSeries2(title, description, choiceBoxGenre1.getValue().toString(), choiceBoxGenre2.getValue().toString(), choiceBoxGenre3.getValue().toString()));
     }
 
     private void nextStepPublishingSeries2(String title, String description, String genre1, String genre2, String genre3) {
-
+        vBoxPublishSeries3.setVisible(true);
         SeriesBean1 seriesBean1 = new SeriesBean1();
         //seriesBean1.setCover();
         //seriesBean1.setCoverInputStream(new FileInputStream(imageCoverPath));
