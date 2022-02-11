@@ -31,14 +31,6 @@ j
 0.idea/libraries/Maven__javax_mail_mail_1_4_7.xml,a\a\aa8f1b2e02dcfdf1eb5ad25dc886cb7b381392f5
 7
 pom.xml,4\4\442292b8a7efeabbe4cc176709b833b1792140ec
-m
-=trunk/src/test/java/junit/TestCustomizeProfileController.java,5\f\5fe11eae88a9323187f12383f2d1b7b402c209e5
-i
-9trunk/src/test/java/junit/TestFollowAuthorController.java,0\d\0de1d51b7b1c1d7c22a033a4faaded9602e425cf
-i
-9trunk/src/test/java/junit/TestRegistrationController.java,2\e\2e23e9bb28420cb3f3af9794a63d8e6f8bfd80d2
-g
-7trunk/src/test/java/junit/TestStatisticsController.java,5\2\5284168b90f53c4ff92c93b6ad97d48431f5e68b
 ;
 Coomics.iml,e\e\ee9c7419ca187f5eb005ec5f6bcb3934bb03ee34
 [

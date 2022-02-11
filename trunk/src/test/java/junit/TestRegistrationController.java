@@ -40,7 +40,7 @@ class TestRegistrationController {
         registrationBean.setFirstName(GIULIOUP);
         registrationBean.setLastName(APPETITO);
         registrationBean.setEmail("giulio.appetito.gagmail.com");
-        registrationBean.setUsername("giuliauswdbiwbdfssdaafs");
+        registrationBean.setUsername("usernameRandom");
         registrationBean.setRole(AUTHOR);
         registrationBean.setPassword(GIULIO);
 
@@ -57,7 +57,7 @@ class TestRegistrationController {
         registrationBean.setFirstName(GIULIOUP);
         registrationBean.setLastName(APPETITO);
         registrationBean.setEmail("giulio.appetito.ga@gmail.com");
-        registrationBean.setUsername("randomUsername");
+        registrationBean.setUsername("casualUsername");
         registrationBean.setRole(AUTHOR);
         registrationBean.setPassword(GIULIO);
 

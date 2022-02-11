@@ -18,12 +18,12 @@ class TestStatisticsController {
     @Test
     void testSeriesAverageRating(){
 
-        String seriesToTestTitle = "Scarlet Witch";
+        String seriesToTestTitle = "Captain America";
 
         Float result;
         SeriesBean seriesToTestBean;
 
-        UserLogin.createAccount("stanlee","stanlee","author");
+        UserLogin.createAccount("Stan Lee","stanlee","author");
 
         Series series = SeriesDAO.retrieveSeries(seriesToTestTitle);
         List<Series> seriesList = new ArrayList<>();
@@ -35,7 +35,7 @@ class TestStatisticsController {
         StatisticsController statisticsController = new StatisticsController();
 
         result = statisticsController.seriesAverageRating(seriesToTestBean);
-        Float expected = 3.6f;
+        Float expected = 4.0f;
 
         assertEquals(expected,result);
 
