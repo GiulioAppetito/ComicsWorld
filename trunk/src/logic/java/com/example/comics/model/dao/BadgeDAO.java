@@ -105,7 +105,7 @@ public class BadgeDAO {
     }
 
 
-    public void addAchievedBadge(Badge badge, Reader reader) {
+    public void saveObtainedBadge(Badge badge, Reader reader) {
 
         Statement stmt13 = null;
         Connection conn13 = null;

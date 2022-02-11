@@ -2,6 +2,7 @@ package com.example.comics.controller;
 
 import com.example.comics.controller.boundaries.PostReviewAuthorBoundary;
 import com.example.comics.controller.boundaries.PostReviewReaderBoundary;
+import com.example.comics.model.dao.BadgeDAO;
 import com.example.comics.model.dao.DiscountCodeDAO;
 import com.example.comics.model.exceptions.IncompleteReviewException;
 import com.example.comics.model.fagioli.*;
@@ -72,10 +73,10 @@ public class PostReviewController{
         DiscountCodeDAO discountCodeDAO = new DiscountCodeDAO();
         discountCodeDAO.saveObtainedDiscountCode(discountCode,UserLogin.getInstance().getReader(), series,objective);
 
-
         //aggiungo badge alla lista e salvo sul DB + assegno badge
         UserLogin.getInstance().getReader().addAchievedBadge(objective.getBadge());
-
+        BadgeDAO badgeDAO = new BadgeDAO();
+        badgeDAO.saveObtainedBadge(objective.getBadge(),UserLogin.getInstance().getReader());
 
         //invio mail al lettore del codice sconto
         new Thread(()-> sendEmailToReader(discountCode,seriesBean)).start();

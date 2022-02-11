@@ -76,11 +76,6 @@ public class Reader extends Account{
     public void addAchievedBadge(Badge badge) {
         this.badges.add(badge);
 
-        new Thread(()->{
-            ReaderDAO readerDAO = new ReaderDAO();
-            readerDAO.saveAchievedBadge(badge, this);
-        }).start();
-
         BadgeBundle badgeBundle = new BadgeBundle();
         badgeBundle.setName(badge.getName());
         badgeBundle.setIcon(badge.getIcon());

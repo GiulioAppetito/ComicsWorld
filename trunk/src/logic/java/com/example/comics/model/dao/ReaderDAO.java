@@ -107,10 +107,6 @@ public class ReaderDAO {
         return reader;
     }
 
-    public void saveAchievedBadge(Badge badge, Reader reader) {
-        BadgeDAO badgeDAO = new BadgeDAO();
-        badgeDAO.addAchievedBadge(badge, reader);
-    }
 
     public void addSeriesToToRead(Series series,Reader reader) throws SQLException {
         Statement stmt25 = null;
