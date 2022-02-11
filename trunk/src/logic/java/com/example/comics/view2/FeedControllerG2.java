@@ -483,8 +483,6 @@ public class FeedControllerG2 implements ChapterObserver, AccountObserver, Reade
     private void nextStepPublishingSeries2(String title, String description, String genre1, String genre2, String genre3) {
         vBoxPublishSeries3.setVisible(true);
         SeriesBean1 seriesBean1 = new SeriesBean1();
-        //seriesBean1.setCover();
-        //seriesBean1.setCoverInputStream(new FileInputStream(imageCoverPath));
         seriesBean1.setDescription(description);
         seriesBean1.setTitle(title);
         seriesBean1.setGenre1(Genres.valueOf(genre1));
@@ -525,7 +523,7 @@ public class FeedControllerG2 implements ChapterObserver, AccountObserver, Reade
 
                                 badgeBean1 = new BadgeBean1();
                                 badgeBean1.setName(badgeNameNewSeries1.getText());
-                                //badgeBean1.setIcon();
+
                                 objectiveBean1.setBadgeBean(badgeBean1);
 
                                 list.add(objectiveBean1);

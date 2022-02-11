@@ -35,8 +35,6 @@ m
 =trunk/src/test/java/junit/TestCustomizeProfileController.java,5\f\5fe11eae88a9323187f12383f2d1b7b402c209e5
 i
 9trunk/src/test/java/junit/TestFollowAuthorController.java,0\d\0de1d51b7b1c1d7c22a033a4faaded9602e425cf
-b
-2trunk/src/test/java/junit/TestLoginController.java,1\c\1c8b1b0a51ac6376e2a296b9c811a41788c8c7cc
 i
 9trunk/src/test/java/junit/TestRegistrationController.java,2\e\2e23e9bb28420cb3f3af9794a63d8e6f8bfd80d2
 g
@@ -127,5 +125,3 @@ Ftrunk/src/logic/java/com/example/comics/view1/CategoryControllerG.java,4\c\4c2
 Ntrunk/src/logic/java/com/example/comics/model/fagioli/bundle/SeriesBundle.java,0\d\0d1aa808481185c8099bfee6ab0258ab2a3a2851
 u
 Etrunk/src/logic/java/com/example/comics/view1/ChapterControllerG.java,9\1\9173cef59751eabbffaf55545ceaac70629a20a4
-A
-comando batch.txt,e\c\ec904f9bcd6fb051ee00b231734dbc0e5d956b96
