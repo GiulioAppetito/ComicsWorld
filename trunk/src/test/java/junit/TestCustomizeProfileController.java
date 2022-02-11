@@ -13,11 +13,11 @@ class TestCustomizeProfileController {
 
     @Test
      void testChangeUsername(){
-        String newUsername = "giulio";
+        String newUsername = "giuliaus";
+        String actualUsername = "giulio";
+        String changedUsername;
 
-        String actual;
-
-        UserLogin.createAccount("giulietto","giulio","reader");
+        UserLogin.createAccount(actualUsername,"giulio","reader");
 
         AccountBean accountBean = new AccountBundle();
         accountBean.setUsername(newUsername);
@@ -28,15 +28,18 @@ class TestCustomizeProfileController {
         try {
             CustomizeProfileController customizeProfileController = new CustomizeProfileController();
             customizeProfileController.changeUsername(accountBean);
-            actual = UserLogin.getInstance().getAccount().getUsername();
+            changedUsername = UserLogin.getInstance().getAccount().getUsername();
+
+            //reset del cambiamento
+            accountBean.setUsername(actualUsername);
+            customizeProfileController.changeUsername(accountBean);
 
         } catch (FailedProfileCustomizationException e) {
-            actual = UserLogin.getInstance().getAccount().getUsername();
+            changedUsername = UserLogin.getInstance().getAccount().getUsername();
         }
 
         String expected = newUsername;
-
-        assertEquals(expected,actual);
+        assertEquals(expected,changedUsername);
 
     }
 }
