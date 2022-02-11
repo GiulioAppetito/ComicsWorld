@@ -20,7 +20,7 @@ public class TestDiscountCode {
 
         //test if discount code is expired by checking on RapidTables today's date
 
-        String codeToTest = "MFR458";
+        String codeToTest = "GQO064";
         String finalFormat = "yyyy-MM-dd";
         String oldFormatWeb = "MM/dd/yyyy";
 

@@ -28,14 +28,14 @@ public class TestObjective {
 
         System.setProperty("webdriver.chrome.driver","trunk/src/test/java/selenium/Driver/chromedriver.exe");
         WebDriver driver = new ChromeDriver();
-        driver.get("https://calcolatricegratis.it/risolutore-disequazioni-online-risolvi-disequazioni/#soluciones");
-        driver.findElement(By.xpath("//*[@id=\"source\"]")).sendKeys(achievement.toString());
-        driver.findElement(By.xpath("//*[@id=\"mayorigual\"]")).click();
-        driver.findElement(By.xpath("//*[@id=\"source\"]")).sendKeys(objective.getRequirement().toString());
-        WebElement result = driver.findElement(By.xpath("//*[@id=\"outintro\"]/div/fmath/mrow/mrow/mrow[2]/mn"));
+        driver.get("https://www.rapidtables.com/calc/math/subtraction-calculator.html");
+        driver.findElement(By.xpath("//*[@id=\"doc\"]/form/table/tbody/tr[1]/td[2]/input")).sendKeys(achievement.toString());
+        driver.findElement(By.xpath("//*[@id=\"doc\"]/form/table/tbody/tr[3]/td[2]/input")).sendKeys(objective.getRequirement().toString());
+        driver.findElement(By.xpath("//*[@id=\"doc\"]/form/table/tbody/tr[4]/td[2]/input[1]")).click();
+        WebElement result = driver.findElement(By.xpath("//*[@id=\"doc\"]/form/table/tbody/tr[5]/td[2]/input"));
 
         boolean expected;
-        expected = "1".equals(result.getText());
+        expected = Integer.parseInt(result.getAttribute("value")) >= 0;
 
         boolean actual = objective.isObjectiveAchieved(achievement);
 

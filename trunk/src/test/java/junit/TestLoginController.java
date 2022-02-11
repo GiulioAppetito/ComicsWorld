@@ -11,7 +11,8 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 
 class TestLoginController {
 
-    private static final String GIULIO = "giulio";
+    private final String correctUsername = "giulio";
+    private final String correctPassword = "giulio";
 
     @Test
     void testLoginCorrectCredentials() {
@@ -20,8 +21,8 @@ class TestLoginController {
         LoginController controlLogin = new LoginController();
 
         LoginBean loginBean = new LoginBean1();
-        loginBean.setEmail(GIULIO);
-        loginBean.setPassword(GIULIO);
+        loginBean.setEmail(correctUsername);
+        loginBean.setPassword(correctPassword);
 
         try {
             controlLogin.login(loginBean);
@@ -38,10 +39,12 @@ class TestLoginController {
     void testLoginIncorrectPassword(){
 
         LoginController controlLogin = new LoginController();
+        final String username = "giulio";
+        final String wrongPassword = "wrong";
 
         LoginBean loginBean = new LoginBean1();
-        loginBean.setEmail(GIULIO);
-        loginBean.setPassword("password");
+        loginBean.setEmail(username);
+        loginBean.setPassword(wrongPassword);
 
         assertThrows(FailedLoginException.class, ()->controlLogin.login(loginBean));
     }
@@ -50,11 +53,13 @@ class TestLoginController {
     void testLoginNotRegisteredUsername(){
         boolean result;
 
+        final String notRegisteredUsername = "notRegistered";
+
         LoginController controlLogin = new LoginController();
 
         LoginBean loginBean = new LoginBean1();
-        loginBean.setEmail("username");
-        loginBean.setPassword(GIULIO);
+        loginBean.setEmail(notRegisteredUsername);
+        loginBean.setPassword("password");
 
         try {
             controlLogin.login(loginBean);

@@ -57,7 +57,7 @@ class TestRegistrationController {
         registrationBean.setFirstName(GIULIOUP);
         registrationBean.setLastName(APPETITO);
         registrationBean.setEmail("giulio.appetito.ga@gmail.com");
-        registrationBean.setUsername("giuliauswdbiwbdsdsfssdaafs");
+        registrationBean.setUsername("randomUsername");
         registrationBean.setRole(AUTHOR);
         registrationBean.setPassword(GIULIO);
 

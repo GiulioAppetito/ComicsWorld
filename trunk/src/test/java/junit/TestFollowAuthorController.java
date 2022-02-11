@@ -15,7 +15,7 @@ class TestFollowAuthorController {
         UserLogin.createAccount("giulio","giulio","reader");
 
         AuthorBean authorBean = new AuthorBundle();
-        authorBean.setUsername("stanlee");
+        authorBean.setUsername("Stan Lee");
         authorBean.setFirstName("Stan");
         authorBean.setLastName("Lee");
 
