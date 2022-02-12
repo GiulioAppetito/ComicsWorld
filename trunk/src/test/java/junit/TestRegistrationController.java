@@ -5,10 +5,10 @@ import com.example.comics.model.exceptions.FailedRegistrationException;
 import com.example.comics.model.exceptions.MalformedEmailException;
 import com.example.comics.model.fagioli.RegistrationBean;
 import com.example.comics.view1.beans.RegistrationBean1;
-import com.sun.mail.iap.ByteArray;
 import org.junit.jupiter.api.Test;
 
 import java.nio.charset.Charset;
+import java.nio.charset.StandardCharsets;
 import java.util.Random;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -84,15 +84,15 @@ class TestRegistrationController {
     static String getRandomString(int i) {
         byte[] bytearray = new byte[256];
         String mystring;
-        StringBuffer thebuffer;
+        StringBuilder thebuffer;
         String theAlphaNumericS;
 
         new Random().nextBytes(bytearray);
 
         mystring
-                = new String(bytearray, Charset.forName("UTF-8"));
+                = new String(bytearray, StandardCharsets.UTF_8);
 
-        thebuffer = new StringBuffer();
+        thebuffer = new StringBuilder();
 
         //remove all spacial char
         theAlphaNumericS

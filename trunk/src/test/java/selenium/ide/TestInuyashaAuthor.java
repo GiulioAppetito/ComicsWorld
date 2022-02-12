@@ -28,14 +28,12 @@ import java.net.URL;
 */
 public class TestInuyashaAuthor {
   private WebDriver driver;
-  private Map<String, Object> vars;
   JavascriptExecutor js;
   @Before
   public void setUp() {
     System.setProperty("webdriver.chrome.driver","trunk/src/test/java/selenium/Driver/chromedriver.exe");
     driver = new ChromeDriver();
     js = (JavascriptExecutor) driver;
-    vars = new HashMap<String, Object>();
   }
   @After
   public void tearDown() {
