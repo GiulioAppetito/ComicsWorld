@@ -31,7 +31,7 @@ public class ObjectiveDAO {
             }
             rs.first();
             BadgeDAO badgeDAO = new BadgeDAO();
-            Objective objective;
+            Objective objective = null;
             ObjectiveFactory objectiveFactory = new ObjectiveFactory();
 
             do {
@@ -42,10 +42,10 @@ public class ObjectiveDAO {
 
                 try{
                     objective = objectiveFactory.createObjective(rs.getString("type"),badge,discount,Levels.valueOf(rs.getString("level")),rs.getFloat("number"));
-                    objectives.add(objective);
                 }catch (Exception e){
                     e.printStackTrace();
                 }
+                objectives.add(objective);
 
             } while (rs.next());
 
