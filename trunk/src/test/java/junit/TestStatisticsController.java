@@ -13,6 +13,10 @@ import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+/** @author Giulio Appetito
+ *          Matricola 0273291
+ */
+
 class TestStatisticsController {
 
     @Test

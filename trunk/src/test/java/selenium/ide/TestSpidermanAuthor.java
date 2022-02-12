@@ -13,6 +13,9 @@ import org.openqa.selenium.Dimension;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 
+/** @author Giulio Appetito
+            Matricola 0273291
+ */
 public class TestSpidermanAuthor {
     private WebDriver driver;
     private static final String SEARCH_INPUT = "searchInput";

@@ -14,7 +14,13 @@ import java.util.Date;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+/** @author Anastasia Brinati
+ *          Matricola 0266530
+ */
+
 public class TestDiscountCode {
+
+
     @Test
     public void testDiscountCodeIsExpired(){
 

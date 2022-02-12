@@ -9,6 +9,10 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
+/** @author Anastasia Brinati
+ *          Matricola 0266530
+ */
+
 class TestLoginController {
 
     private static final String GIULIO = "giulio";

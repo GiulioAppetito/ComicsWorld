@@ -8,6 +8,10 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+/** @author Anastasia Brinati
+ *          Matricola 0266530
+ */
+
 class TestFollowAuthorController {
 
     @Test

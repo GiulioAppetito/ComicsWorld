@@ -16,6 +16,10 @@ import java.util.HashMap;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+/** @author Giulio Appetito
+ *          Matricola 0273291
+ */
+
 public class TestObjective {
     @Test
     public void testObjectiveAchieved(){
