@@ -31,7 +31,7 @@ public class MarkChapterAsReadController {
     }
 
     private void checkObjectives(Series series) {
-        float readersReadings = 0f;
+        float readersReadings;
         float achievement;
 
         readersReadings = series.countReadersReadChapters();

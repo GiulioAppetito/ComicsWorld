@@ -18,6 +18,7 @@ public class MarkChapterAsReadReaderBoundary {
 
         // Recipient's email ID needs to be mentioned.
         String to = readerBean.getEmail();
+
         // Get the default Session object.
         Session session = initializeProperties();
 
@@ -28,7 +29,6 @@ public class MarkChapterAsReadReaderBoundary {
             // Set From: header field of the header.
             message.setFrom(new InternetAddress(FROM));
 
-
             // Set To: header field of the header.
             message.addRecipient(javax.mail.Message.RecipientType.TO, new InternetAddress(to));
 
@@ -36,7 +36,7 @@ public class MarkChapterAsReadReaderBoundary {
             message.setSubject("New discount code just received!");
 
             // Now set the actual message
-            message.setText("Hello from ComicsWorld! Your review just allowed you to receive a new badge! Check it out on your profile" +
+            message.setText("Hello from ComicsWorld! Your read chapters just allowed you to receive a new badge! Check it out on your profile" +
                     "Use the following code " + discountCodeBean.getCode() + " to purchase from " + seriesBean.getTitle() + ", with a " + discountCodeBean.getDiscountBean().getPercentage() +
                     "% off (up to " + discountCodeBean.getDiscountBean().getLimitDays() + " days)");
 
