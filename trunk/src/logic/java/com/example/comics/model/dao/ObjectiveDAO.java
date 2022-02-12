@@ -40,8 +40,13 @@ public class ObjectiveDAO {
                 Discount discount = new Discount(rs.getFloat("discountPercentage"));
                 discount.setLimitDays(rs.getInt("limitDays"));
 
-                objective = objectiveFactory.createObjective(rs.getString("type"),badge,discount,Levels.valueOf(rs.getString("level")),rs.getFloat("number"));
-                objectives.add(objective);
+                try{
+                    objective = objectiveFactory.createObjective(rs.getString("type"),badge,discount,Levels.valueOf(rs.getString("level")),rs.getFloat("number"));
+                    objectives.add(objective);
+                }catch (Exception e){
+                    e.printStackTrace();
+                }
+
             } while (rs.next());
 
         } catch (SQLException e) {

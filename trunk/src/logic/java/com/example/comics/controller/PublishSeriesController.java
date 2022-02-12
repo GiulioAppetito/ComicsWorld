@@ -33,8 +33,14 @@ public class PublishSeriesController {
             Discount discount = new Discount(objectiveBean.getDiscountBean().getPercentage());
             discount.setLimitDays(objectiveBean.getDiscountBean().getLimitDays());
 
-            ObjectiveFactory objectiveFactory = new ObjectiveFactory();
-            Objective objective = objectiveFactory.createObjective(objectiveBean.getType(),badge,discount,Levels.valueOf(objectiveBean.getLevel()),objectiveBean.getRequirement());
+            Objective objective;
+            try{
+                ObjectiveFactory objectiveFactory = new ObjectiveFactory();
+                objective = objectiveFactory.createObjective(objectiveBean.getType(),badge,discount,Levels.valueOf(objectiveBean.getLevel()),objectiveBean.getRequirement());
+            }catch (Exception e){
+                throw new AlreadyExistingSeriesException("Error while creating serie's objectives.");
+            }
+
 
             objectives.add(objective);
             objectiveBadgeHM.put(objective,objectiveBean.getBadgeIconInputStream());
