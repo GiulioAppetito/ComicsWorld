@@ -17,7 +17,7 @@ class TestCustomizeProfileController {
 
     @Test
      void testChangeUsername(){
-        String newUsername = "giuliaus";
+        String newUsername = "username";
         String actualUsername = "giulio";
         String changedUsername;
 
