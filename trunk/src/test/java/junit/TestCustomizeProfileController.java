@@ -9,6 +9,10 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+/** @author Anastasia Brinati & Giulio Appetito
+ *          Matricola 0266530
+ */
+
 class TestCustomizeProfileController {
 
     @Test
