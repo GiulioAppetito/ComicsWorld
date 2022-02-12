@@ -31,7 +31,7 @@ public class ObjectiveDAO {
             }
             rs.first();
             BadgeDAO badgeDAO = new BadgeDAO();
-            Objective objective = null;
+            Objective objective;
             ObjectiveFactory objectiveFactory = new ObjectiveFactory();
 
             do {
@@ -40,16 +40,11 @@ public class ObjectiveDAO {
                 Discount discount = new Discount(rs.getFloat("discountPercentage"));
                 discount.setLimitDays(rs.getInt("limitDays"));
 
-                try{
-                    objective = objectiveFactory.createObjective(rs.getString("type"),badge,discount,Levels.valueOf(rs.getString("level")),rs.getFloat("number"));
-                }catch (Exception e){
-                    e.printStackTrace();
-                }
+                objective = objectiveFactory.createObjective(rs.getString("type"),badge,discount,Levels.valueOf(rs.getString("level")),rs.getFloat("number"));
                 objectives.add(objective);
-
             } while (rs.next());
 
-        } catch (SQLException e) {
+        } catch (Exception e) {
             e.printStackTrace();
         } finally {
             assert conn21!=null;
