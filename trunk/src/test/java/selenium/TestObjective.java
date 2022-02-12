@@ -36,7 +36,7 @@ public class TestObjective {
         driver.get("https://www.rapidtables.com/calc/math/subtraction-calculator.html");
 
         driver.findElement(By.xpath("//*[@id=\"doc\"]/form/table/tbody/tr[1]/td[2]/input")).sendKeys(achievement.toString());
-        driver.findElement(By.xpath("//*[@id=\"doc\"]/form/table/tbody/tr[3]/td[2]/input")).sendKeys(objective.getRequirement().toString());
+        driver.findElement(By.xpath("//*[@id=\"doc\"]/form/table/tbody/tr[3]/td[2]/input")).sendKeys(Float.toString(objective.getRequirement()));
         driver.findElement(By.xpath("//*[@id=\"doc\"]/form/table/tbody/tr[4]/td[2]/input[1]")).click();
         WebElement result = driver.findElement(By.xpath("//*[@id=\"doc\"]/form/table/tbody/tr[5]/td[2]/input"));
 

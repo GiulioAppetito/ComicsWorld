@@ -9,12 +9,12 @@ public class ChapterObjective extends Objective{
     }
 
     @Override
-    public void setRequirement(Float requirement) {
+    public void setRequirement(float requirement) {
         this.requiredChaptersPercentage = requirement;
     }
 
     @Override
-    public Float getRequirement() {
+    public float getRequirement() {
         return this.requiredChaptersPercentage;
     }
 

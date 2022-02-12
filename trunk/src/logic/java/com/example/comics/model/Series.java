@@ -205,5 +205,26 @@ public class Series extends SeriesSubject{
 
 	}
 
+    public float countReviewsByReader(String readerUsername) {
+		float numOfReviews = 0;
+		for(Chapter chapter : this.chapters){
+			for(Review review : chapter.getReviews()){
+				if(review.getAccount().getUsername().equals(readerUsername)){
+					numOfReviews+=1;
+				}
+			}
+		}
+		return numOfReviews;
+    }
+
+	public float countReadersReadChapters() {
+		float readChapters = 0;
+		for(Chapter chapter : this.chapters){
+			if(chapter.getRead()){
+				readChapters++;
+			}
+		}
+		return readChapters;
+	}
 }
 

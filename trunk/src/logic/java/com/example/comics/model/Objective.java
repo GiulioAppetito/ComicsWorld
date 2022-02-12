@@ -11,8 +11,8 @@ public abstract class Objective{
         this.discount = discount;
     }
 
-    public abstract void setRequirement(Float requirement);
-    public abstract Float getRequirement();
+    public abstract void setRequirement(float requirement);
+    public abstract float getRequirement();
     public abstract String getType();
 
     public abstract boolean isObjectiveAchieved(Float achievement);

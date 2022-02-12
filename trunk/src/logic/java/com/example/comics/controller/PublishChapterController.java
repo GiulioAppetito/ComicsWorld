@@ -36,7 +36,7 @@ public class PublishChapterController {
             //invio mail ai lettori che seguono l'autore
             PublishChapterReaderBoundary boundary = new PublishChapterReaderBoundary();
             AccountDAO accountDAO = new AccountDAO();
-            List<String> followersMails = accountDAO.retreiveAuthorFollowersMails(UserLogin.getInstance().getAuthor());
+            List<String> followersMails = accountDAO.retreiveAuthorFollowersMails(UserLogin.getInstance().getAuthor().getUsername());
             ReaderBean readerBean;
             AuthorBean authorBean = new AuthorBundle();
             authorBean.setUsername(UserLogin.getInstance().getAccount().getUsername());

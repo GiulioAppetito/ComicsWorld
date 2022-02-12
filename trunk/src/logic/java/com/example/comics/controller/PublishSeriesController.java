@@ -52,7 +52,7 @@ public class PublishSeriesController {
             //invio mail ai lettori che seguono l'autore
             PublishSeriesReaderBoundary boundary = new PublishSeriesReaderBoundary();
             AccountDAO accountDAO = new AccountDAO();
-            List<String> followersMails = accountDAO.retreiveAuthorFollowersMails(UserLogin.getInstance().getAuthor());
+            List<String> followersMails = accountDAO.retreiveAuthorFollowersMails(UserLogin.getInstance().getAuthor().getUsername());
             ReaderBean readerBean;
             AuthorBean authorBean = new AuthorBundle();
 

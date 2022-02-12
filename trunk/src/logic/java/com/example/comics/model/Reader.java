@@ -221,4 +221,19 @@ public class Reader extends Account{
     public void notifyFailedOrder() {
         notifyObserversNewOrder(false);
     }
+
+    public Float countReadersReadChapters(String title) {
+        Float readersReadings = 0f;
+        for(Series readersSeries : this.reading){
+            if(readersSeries.getTitle().equals(title)){
+                for(Chapter chapter : readersSeries.getChapters()){
+                    if(Boolean.TRUE.equals(chapter.getRead())){
+                        readersReadings++;
+                    }
+                }
+            }
+
+        }
+        return readersReadings;
+    }
 }

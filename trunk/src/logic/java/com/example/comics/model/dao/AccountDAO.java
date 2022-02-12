@@ -229,7 +229,7 @@ public class AccountDAO {
         return author;
     }
 
-    public List<String> retreiveAuthorFollowersMails(Author author) {
+    public List<String> retreiveAuthorFollowersMails(String authorUsername) {
         Statement stmt7 = null;
         Connection conn7 = null;
         List<String> mails = new ArrayList<>();
@@ -239,7 +239,7 @@ public class AccountDAO {
 
             conn7 = DriverManager.getConnection(DB_URL, USER, PASS);
             stmt7 = conn7.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
-            ResultSet rs = Queries.retrieveFollowersMails(stmt7, author.getUsername());
+            ResultSet rs = Queries.retrieveFollowersMails(stmt7, authorUsername);
 
             if (!rs.first()) {
                 return mails;

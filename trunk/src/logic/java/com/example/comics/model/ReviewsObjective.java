@@ -9,12 +9,12 @@ public class ReviewsObjective extends Objective{
     }
 
     @Override
-    public void setRequirement(Float requirement) {
+    public void setRequirement(float requirement) {
         this.requiredReviews = requirement;
     }
 
     @Override
-    public Float getRequirement() {
+    public float getRequirement() {
         return requiredReviews;
     }
 
