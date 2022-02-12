@@ -7,9 +7,11 @@ import com.example.comics.model.fagioli.RegistrationBean;
 import com.example.comics.view1.beans.RegistrationBean1;
 import org.junit.jupiter.api.Test;
 
-import java.nio.charset.Charset;
+
 import java.nio.charset.StandardCharsets;
-import java.util.Random;
+import java.security.NoSuchAlgorithmException;
+import java.security.SecureRandom;
+
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
@@ -87,10 +89,13 @@ class TestRegistrationController {
         StringBuilder thebuffer;
         String theAlphaNumericS;
 
-        new Random().nextBytes(bytearray);
+        try {
+            SecureRandom.getInstanceStrong().nextBytes(bytearray);
+        } catch (NoSuchAlgorithmException e) {
+            e.printStackTrace();
+        }
 
-        mystring
-                = new String(bytearray, StandardCharsets.UTF_8);
+        mystring = new String(bytearray, StandardCharsets.UTF_8);
 
         thebuffer = new StringBuilder();
 
