@@ -4,38 +4,47 @@ import org.junit.Before;
 import org.junit.After;
 import static org.junit.Assert.*;
 import static org.hamcrest.CoreMatchers.is;
+import static org.hamcrest.core.IsNot.not;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.remote.RemoteWebDriver;
+import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.Dimension;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Alert;
+import org.openqa.selenium.Keys;
 import java.util.*;
+import java.net.MalformedURLException;
+import java.net.URL;
 
+/** @author Testing: Anastasia Brinati
+                     Matricola 0266530
+*/
 public class TestInuyashaAuthor {
-    private WebDriver driver;
-    JavascriptExecutor js;
-
-    @Before
-    public void setUp() {
-        System.setProperty("webdriver.chrome.driver","trunk/src/test/java/selenium/Driver/chromedriver.exe");
-
-        driver = new ChromeDriver();
-        js = (JavascriptExecutor) driver;
-    }
-    @After
-    public void tearDown() {
-        driver.quit();
-
-    }
-    @Test
-    public void testInuyashaAuthor() {
-        // Test name: TestInuyashaAuthor
-        // Step # | name | target | value | comment
-        // 1 | open | https://www.starcomics.com/fumetto/inuyasha-wide-edition-3 |  |
-        driver.get("https://www.starcomics.com/fumetto/inuyasha-wide-edition-3");
-        // 2 | setWindowSize | 945x1012 |  |
-        driver.manage().window().setSize(new Dimension(945, 1012));
-        // 3 | assertText | linkText=Rumiko Takahashi | Rumiko Takahashi |
-        assertThat(driver.findElement(By.linkText("Rumiko Takahashi")).getText(), is("Rumiko Takahashi"));
-    }
+  private WebDriver driver;
+  private Map<String, Object> vars;
+  JavascriptExecutor js;
+  @Before
+  public void setUp() {
+    System.setProperty("webdriver.chrome.driver","trunk/src/test/java/selenium/Driver/chromedriver.exe");
+    driver = new ChromeDriver();
+    js = (JavascriptExecutor) driver;
+    vars = new HashMap<String, Object>();
+  }
+  @After
+  public void tearDown() {
+    driver.quit();
+  }
+  @Test
+  public void testInuyashaAuthor() {
+    driver.get("https://www.starcomics.com/fumetto/inuyasha-wide-edition-1");
+    driver.manage().window().setSize(new Dimension(945, 1012));
+    assertThat(driver.findElement(By.linkText("Rumiko Takahashi")).getText(), is("Rumiko Takahashi"));
+  }
 }
