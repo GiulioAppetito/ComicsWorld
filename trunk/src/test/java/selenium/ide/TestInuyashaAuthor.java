@@ -14,6 +14,7 @@ import java.util.*;
 public class TestInuyashaAuthor {
     private WebDriver driver;
     JavascriptExecutor js;
+
     @Before
     public void setUp() {
         System.setProperty("webdriver.chrome.driver","trunk/src/test/java/selenium/Driver/chromedriver.exe");
