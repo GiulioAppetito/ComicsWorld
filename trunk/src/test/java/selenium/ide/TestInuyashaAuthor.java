@@ -25,6 +25,7 @@ public class TestInuyashaAuthor {
     @After
     public void tearDown() {
         driver.quit();
+
     }
     @Test
     public void testInuyashaAuthor() {
