@@ -38,9 +38,9 @@ public class PaymentBoundary {
             }
 
             signalPayment(waiting[0], seriesBean , chapterBean, discountCodeBean);
+
         });
         waitForPayment.start();
-
     }
 
     private synchronized void signalPayment(int b, SeriesBean seriesBean, ChapterBean chapterBean, DiscountCodeBean discountCodeBean){

@@ -6,7 +6,9 @@ import com.example.comics.model.dao.ReaderDAO;
 import com.example.comics.model.dao.SeriesDAO;
 import com.example.comics.model.exceptions.FailedRegistrationException;
 
-public class UserLogin{
+import java.io.Serializable;
+
+public class UserLogin {
 
     private static UserLogin instance = null;
     private static Account account;

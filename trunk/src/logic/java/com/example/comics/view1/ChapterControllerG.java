@@ -399,7 +399,6 @@ public class ChapterControllerG implements ChapterObserver, ReaderObserver{
 
     public void init(ChapterBean chapterBean, SeriesBean seriesBean){
 
-
         orderPane.setVisible(false);
         btnCloseOrderPane.setOnAction(event -> orderPane.setVisible(false));
         currentSeries = seriesBean;
@@ -655,13 +654,11 @@ public class ChapterControllerG implements ChapterObserver, ReaderObserver{
         badgeIconView.setImage(badgeBean.getIcon());
         initChoiceBoxCodes();
     }
-    public void update(Boolean payment){
+    public synchronized void update(Boolean payment){
         if(Boolean.TRUE.equals(payment)){
             orderPane.setVisible(true);
-            initChoiceBoxCodes();
         }else {
             failedOrderPane.setVisible(true);
-            initChoiceBoxCodes();
         }
     }
 }

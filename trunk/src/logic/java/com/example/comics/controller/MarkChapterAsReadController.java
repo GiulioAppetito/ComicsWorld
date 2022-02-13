@@ -3,6 +3,7 @@ package com.example.comics.controller;
 import com.example.comics.controller.boundaries.MarkChapterAsReadReaderBoundary;
 import com.example.comics.controller.boundaries.PostReviewReaderBoundary;
 import com.example.comics.model.*;
+import com.example.comics.model.dao.BadgeDAO;
 import com.example.comics.model.dao.DiscountCodeDAO;
 import com.example.comics.model.dao.ReaderDAO;
 import com.example.comics.model.dao.SeriesDAO;
@@ -43,6 +44,8 @@ public class MarkChapterAsReadController {
 
                 //aggiungo badge alla lista e salvo sul DB + assegno badge
                 UserLogin.getInstance().getReader().addAchievedBadge(objective.getBadge());
+                BadgeDAO badgeDAO = new BadgeDAO();
+                badgeDAO.saveObtainedBadge(objective.getBadge(),UserLogin.getInstance().getReader());
 
                 //genero discount code
                 DiscountCode discountCode = new DiscountCode(objective.getDiscount());

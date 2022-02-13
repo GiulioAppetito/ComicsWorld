@@ -56,17 +56,13 @@ public class BuyComicController {
         buyComicsAuthorBoundary.sendEmailForSoldChapter(seriesBean);
 
         if(discountCodeBean != null) {
-            for (DiscountCode discountCode : UserLogin.getInstance().getReader().getDiscountCodes().keySet()) {
-                if (discountCode.getCode().equals(discountCodeBean.getCode())) {
-                    UserLogin.getInstance().getReader().removeDiscountCode(discountCode);
+            DiscountCode discountCode = UserLogin.getInstance().getReader().getDiscountCodeByCode(discountCodeBean.getCode());
 
-                    new Thread(() -> {
-                        DiscountCodeDAO discountCodeDAO = new DiscountCodeDAO();
-                        discountCodeDAO.deleteDiscountCode(UserLogin.getInstance().getReader(), discountCode);
-                    }).start();
+            UserLogin.getInstance().getReader().removeDiscountCode(discountCode);
 
-                }
-            }
+            DiscountCodeDAO discountCodeDAO = new DiscountCodeDAO();
+            discountCodeDAO.deleteDiscountCode(UserLogin.getInstance().getReader(), discountCode);
+
         }
 
         Series orderedSeries = SeriesDAO.retrieveSeries(seriesBean.getTitle());

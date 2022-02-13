@@ -74,7 +74,7 @@ public class PostReviewController{
         new Thread(()-> sendEmailToReader(discountCode,seriesBean)).start();
     }
 
-    private void sendEmailToReader(DiscountCode discountCode,SeriesBean seriesBean){
+    private synchronized void sendEmailToReader(DiscountCode discountCode,SeriesBean seriesBean){
 
         AccountBean accountBean = new AccountBundle();
         accountBean.setLastName(UserLogin.getInstance().getAccount().getLastName());

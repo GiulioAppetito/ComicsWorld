@@ -109,8 +109,6 @@ public class ResearchController {
     public List<OrderBean> getUserOrders() {
 
         List<OrderBean> orderBeans = new ArrayList<>();
-
-        List<Series> series = new ArrayList<>();
         OrderBundle orderBundle;
 
         List<Order> orders = UserLogin.getInstance().getReader().getOrdersHistory();
@@ -122,6 +120,7 @@ public class ResearchController {
             orderBundle.setDate(order.getDate());
             orderBundle.setChapterTitle(order.getChapterTitle());
 
+            List<Series> series = new ArrayList<>();
             series.add(SeriesDAO.retrieveSeries(order.getSeries().getTitle()));
             SeriesBean seriesBean = getSeriesBeans(series).get(0);
             orderBundle.setSeries(seriesBean);

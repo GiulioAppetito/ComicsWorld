@@ -6,12 +6,13 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class PayPalBoundary implements PayPalInterface{
 
     private FakePayPalControllerG fakePayPalControllerG = null;
 
-    //magari per fare i fighetti mettiamo qualcosa di diverso da due stupide stringhe
     @Override
     public void startTransaction(String firstName, String lastName, String expense) {
         //facciamo partire la finta scene
@@ -43,6 +44,10 @@ public class PayPalBoundary implements PayPalInterface{
         String res = fakePayPalControllerG.getResult();
 
         if(res == null){
+
+            Logger.getGlobal().log(Level.FINEST, "thread waiting");
+            Logger.getAnonymousLogger().log(Level.FINE, "waiting");
+
             return 0;
         }
         if(res.equals("right")){

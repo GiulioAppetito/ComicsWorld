@@ -58,7 +58,6 @@ public class FakePayPalControllerG {
         FakePayPal fakePayPal = new FakePayPal();
         if(fakePayPal.isCardValid(cardID)){
             result = "right";
-            //magari prima fai tipo vedere che è andata bene bla bla
             close(event);
         }else{
             result = "wrong";
