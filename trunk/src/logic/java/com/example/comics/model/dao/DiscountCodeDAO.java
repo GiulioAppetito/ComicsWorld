@@ -16,12 +16,12 @@ public class DiscountCodeDAO {
 
         Statement stmt17 = null;
         Statement stmt18 = null;
-        Connection conn17 = null;
+        Connection conn17;
 
         Map<DiscountCode,Series> discountCodes = new HashMap<>();
         String code;
         LocalDate expiringDate;
-        Float percentage;
+        float percentage;
         LocalDate startingDate;
         int limitDays;
 
@@ -66,12 +66,9 @@ public class DiscountCodeDAO {
             } while (rs.next());
 
 
-        } catch (SQLException throwables) {
+        } catch (Exception throwables) {
             throwables.printStackTrace();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        finally {
+        } finally {
             try {
                 if (stmt18 != null)
                     stmt18.close();
@@ -90,7 +87,7 @@ public class DiscountCodeDAO {
 
     public void saveObtainedDiscountCode(DiscountCode discountCode, Reader reader, Series series, Objective objective) {
 
-        Connection conn19 = null;
+        Connection conn19;
         Statement stmt19 = null;
 
         try {
@@ -103,6 +100,7 @@ public class DiscountCodeDAO {
         }
         finally{
             try {
+                assert stmt19 != null;
                 stmt19.close();
             } catch (SQLException e) {
                 e.printStackTrace();
@@ -123,6 +121,7 @@ public class DiscountCodeDAO {
             throwables.printStackTrace();
         } finally {
             try {
+                assert stmt20 != null;
                 stmt20.close();
             } catch (SQLException e) {
                 e.printStackTrace();

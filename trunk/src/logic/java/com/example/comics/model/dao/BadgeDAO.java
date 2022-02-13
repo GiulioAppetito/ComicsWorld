@@ -44,6 +44,7 @@ public class BadgeDAO {
             throwables.printStackTrace();
         }finally{
             try {
+                assert stmt11 != null;
                 stmt11.close();
             } catch (SQLException e) {
                 e.printStackTrace();
@@ -86,6 +87,7 @@ public class BadgeDAO {
             e.printStackTrace();
         } finally {
             try {
+                assert stmt12 != null;
                 stmt12.close();
             } catch (SQLException e) {
                 e.printStackTrace();
@@ -116,6 +118,7 @@ public class BadgeDAO {
             e.printStackTrace();
         }finally {
             try {
+                assert stmt13 != null;
                 stmt13.close();
             } catch (SQLException e) {
                 e.printStackTrace();

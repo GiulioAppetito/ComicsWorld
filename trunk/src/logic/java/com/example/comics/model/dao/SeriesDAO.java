@@ -56,7 +56,7 @@ public class SeriesDAO {
         List<Author> allAuthors = AuthorDAO.retriveAllAuthors();
 
         Statement stmt35 = null;
-        Connection conn35 = null;
+        Connection conn35;
 
         List<Series> seriesList = new ArrayList<>();
 
@@ -122,8 +122,8 @@ public class SeriesDAO {
 
     public void savePublishedSeries(Series series, InputStream seriesCoverInputStream, Map<Objective,InputStream> hashMap) throws AlreadyExistingSeriesException {
         Statement stmt36 = null;
-        Connection conn36 = null;
-        int bagdeID = 0;
+        Connection conn36;
+        int bagdeID;
         try {
             // STEP 3: apertura connessione
             conn36 = Connector.getInstance().getConnection();
@@ -179,7 +179,7 @@ public class SeriesDAO {
 
     public List<String> retrieveFavouriteSeriesTitles(String user) {
         Statement stmt37 = null;
-        Connection conn37 = null;
+        Connection conn37;
 
         List<String> list = new ArrayList<>();
 
@@ -218,7 +218,7 @@ public class SeriesDAO {
 
     public List<String> retrieveToReadSeriesTitles(String user) {
         Statement stmt38 = null;
-        Connection conn38 = null;
+        Connection conn38;
 
         List<String> list2 = new ArrayList<>();
 
@@ -257,7 +257,7 @@ public class SeriesDAO {
 
     public List<String> retrieveReadingSeriesTitles(String user) {
         Statement stmt39 = null;
-        Connection conn39 = null;
+        Connection conn39;
 
         List<String> seriesList = new ArrayList<>();
 

@@ -190,6 +190,7 @@ public class AccountDAO {
             throwables.printStackTrace();
         } finally{
             try {
+                assert stmt6 != null;
                 stmt6.close();
             } catch (SQLException e) {
                 e.printStackTrace();

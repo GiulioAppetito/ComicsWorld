@@ -12,7 +12,7 @@ public class ReviewDAO {
 
     public List<Review> retrieveReviews(String chapter)  {
         Statement stmt33 = null;
-        Connection conn33 = null;
+        Connection conn33;
 
         List<Review> reviewsList = new ArrayList<>();
         Review reviewItem;
@@ -53,11 +53,10 @@ public class ReviewDAO {
     public void saveReview(Review review, Chapter chapter, Series series){
         // STEP 1: dichiarazioni
         Statement stmt34 = null;
-        Connection conn34 = null;
 
         try {
 
-            conn34 = Connector.getInstance().getConnection();
+            Connection conn34 = Connector.getInstance().getConnection();
 
             // STEP 4.2: creazione ed esecuzione della query
             stmt34 = conn34.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);

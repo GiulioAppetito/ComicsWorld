@@ -20,7 +20,7 @@ public class OrderDAO {
         List<Order> orders = new ArrayList<>();
 
         LocalDate date;
-        Float expense;
+        float expense;
         Series series;
         String chapterTitle = "unknown";
 
@@ -43,6 +43,7 @@ public class OrderDAO {
 
                 series = SeriesDAO.retrieveSeries(rs.getString("series"));
 
+                assert series != null;
                 for(Chapter c : series.getChapters()){
                     if(c.getTitle().equals(rs.getString("chapterTitle"))){
                         chapterTitle = c.getTitle();
@@ -61,12 +62,9 @@ public class OrderDAO {
             } while (rs.next());
 
 
-        } catch (SQLException throwables) {
+        } catch (Exception throwables) {
             throwables.printStackTrace();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        finally {
+        } finally {
             try {
                 if (stmt22 != null)
                     stmt22.close();
@@ -79,7 +77,7 @@ public class OrderDAO {
 
     public void insertOrder(Order order) {
         Statement stmt23 = null;
-        Connection conn23 = null;
+        Connection conn23;
 
 
         try {
@@ -88,12 +86,9 @@ public class OrderDAO {
             stmt23 = conn23.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
             Queries.insertOrder(stmt23, order, UserLogin.getInstance().getReader());
 
-        } catch (SQLException throwables) {
+        } catch (Exception throwables) {
             throwables.printStackTrace();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        finally {
+        } finally {
             try {
                 if (stmt23 != null)
                     stmt23.close();

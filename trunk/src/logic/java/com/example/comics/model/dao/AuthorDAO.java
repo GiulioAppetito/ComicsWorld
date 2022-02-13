@@ -58,6 +58,7 @@ public class AuthorDAO {
             e.printStackTrace();
         }finally{
             try {
+                assert stmt8 != null;
                 stmt8.close();
             } catch (SQLException e) {
                 e.printStackTrace();
@@ -110,6 +111,7 @@ public class AuthorDAO {
             throwables.printStackTrace();
         } finally{
             try {
+                assert stmt9 != null;
                 stmt9.close();
             } catch (SQLException e) {
                 e.printStackTrace();
