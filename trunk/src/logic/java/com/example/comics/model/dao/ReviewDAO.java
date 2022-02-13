@@ -67,6 +67,7 @@ public class ReviewDAO {
         } finally {
 
             try {
+                assert stmt34 != null;
                 stmt34.close();
             } catch (SQLException e) {
                 e.printStackTrace();

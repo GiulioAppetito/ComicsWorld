@@ -17,7 +17,7 @@ public class ReaderDAO {
     public Reader retrieveReader(String identifier, String password){
 
         Statement stmt24 = null;
-        Connection conn24 = null;
+        Connection conn24;
 
         Reader reader = null;
 
@@ -94,6 +94,7 @@ public class ReaderDAO {
 
         } finally{
             try {
+                assert stmt24 != null;
                 stmt24.close();
             } catch (SQLException e) {
                 e.printStackTrace();
@@ -106,7 +107,7 @@ public class ReaderDAO {
 
     public void addSeriesToToRead(Series series,Reader reader) throws SQLException {
         Statement stmt25 = null;
-        Connection conn25 = null;
+        Connection conn25;
 
         try {
             conn25 = Connector.getInstance().getConnection();
@@ -125,7 +126,7 @@ public class ReaderDAO {
     public void removeSeriesFromToRead(Series series,Reader reader){
         // STEP 1: dichiarazioni
         Statement stmt26 = null;
-        Connection conn26 = null;
+        Connection conn26;
 
         try {
             // STEP 3: apertura connessione
@@ -134,12 +135,11 @@ public class ReaderDAO {
             stmt26 = conn26.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
             Queries.removeSeriesFromToRead(stmt26,series,reader);
 
-        }catch (SQLException throwables) {
+        } catch (Exception throwables) {
             throwables.printStackTrace();
-        }catch (Exception e) {
-            e.printStackTrace();
         } finally {
             try {
+                assert stmt26 != null;
                 stmt26.close();
             } catch (SQLException e) {
                 e.printStackTrace();
@@ -150,7 +150,7 @@ public class ReaderDAO {
 
     public void addSeriesToFavourites(Series series, Reader reader) {
         Statement stmt27 = null;
-        Connection conn27 = null;
+        Connection conn27;
 
         String seriesTitle = series.getTitle();
         String username = reader.getUsername();
@@ -160,12 +160,11 @@ public class ReaderDAO {
             stmt27 = conn27.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
             Queries.addSeriesToFavourites(stmt27, seriesTitle, username);
 
-        } catch (SQLException throwables) {
+        } catch (Exception throwables) {
             throwables.printStackTrace();
-        }catch (Exception e) {
-            e.printStackTrace();
         } finally {
             try {
+                assert stmt27 != null;
                 stmt27.close();
             } catch (SQLException e) {
                 e.printStackTrace();
@@ -175,7 +174,7 @@ public class ReaderDAO {
 
     public void removeSeriesFromFavourites(Series series, Reader reader) {
         Statement stmt28 = null;
-        Connection conn28 = null;
+        Connection conn28;
 
         String seriesTitle = series.getTitle();
         String username = reader.getUsername();
@@ -185,10 +184,8 @@ public class ReaderDAO {
             stmt28 = conn28.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
             Queries.removeSeriesFromFavourites(stmt28, seriesTitle, username);
 
-        } catch (SQLException throwables) {
+        } catch (Exception throwables) {
             throwables.printStackTrace();
-        }catch (Exception e) {
-            e.printStackTrace();
         } finally {
             try {
                 assert stmt28 != null;
@@ -201,7 +198,7 @@ public class ReaderDAO {
 
     public void saveFollowedAuthor(Author author) {
         Statement stmt29 = null;
-        Connection conn29 = null;
+        Connection conn29;
 
         try {
             conn29 = Connector.getInstance().getConnection();
@@ -223,17 +220,15 @@ public class ReaderDAO {
 
     public void removeFollowedAuthor(Reader reader, Author author) {
         Statement stmt30 = null;
-        Connection conn30 = null;
+        Connection conn30;
 
         try {
             conn30 = Connector.getInstance().getConnection();
             stmt30 = conn30.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
             Queries.removeFollowedAuthor(stmt30,reader,author);
 
-        } catch (SQLException throwables) {
+        } catch (Exception throwables) {
             throwables.printStackTrace();
-        }catch (Exception e) {
-            e.printStackTrace();
         } finally {
             try {
                 assert stmt30 != null;
@@ -246,7 +241,7 @@ public class ReaderDAO {
 
     public void saveReadChapter(Series series, String chapterTitle) {
         Statement stmt31 = null;
-        Connection conn31 = null;
+        Connection conn31;
 
         try {
             conn31 = Connector.getInstance().getConnection();
@@ -269,7 +264,7 @@ public class ReaderDAO {
     public void removeReadChapter(Series series, String chapterTitle) {
         // STEP 1: dichiarazioni
         Statement stmt32 = null;
-        Connection conn32 = null;
+        Connection conn32;
 
         try {
 
@@ -277,10 +272,8 @@ public class ReaderDAO {
             stmt32 = conn32.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
             Queries.removeChapterFromRead(stmt32,series,chapterTitle,UserLogin.getInstance().getReader());
 
-        }catch (SQLException throwables) {
+        } catch (Exception throwables) {
             throwables.printStackTrace();
-        }catch (Exception e) {
-            e.printStackTrace();
         } finally {
 
             try {
