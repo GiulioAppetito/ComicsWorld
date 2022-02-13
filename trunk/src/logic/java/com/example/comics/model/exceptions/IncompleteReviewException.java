@@ -7,4 +7,8 @@ public class IncompleteReviewException extends Exception {
         super(message);
     }
 
+    public IncompleteReviewException (String message, Throwable cause) {
+        super(" +++ " + message + " +++ ", cause);
+    }
+
 }

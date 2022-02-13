@@ -6,4 +6,8 @@ public class MalformedEmailException extends Exception {
     public MalformedEmailException (String message){
         super(message);
     }
+
+    public MalformedEmailException (String message, Throwable cause) {
+        super(" +++ " + message + " +++ ", cause);
+    }
 }

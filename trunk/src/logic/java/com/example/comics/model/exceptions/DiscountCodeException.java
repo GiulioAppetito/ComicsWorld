@@ -7,4 +7,8 @@ public class DiscountCodeException extends Exception{
         super(message);
     }
 
+    public DiscountCodeException (String message, Throwable cause) {
+        super(" +++ " + message + " +++ ", cause);
+    }
+
 }

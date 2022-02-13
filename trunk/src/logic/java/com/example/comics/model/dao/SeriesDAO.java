@@ -147,7 +147,7 @@ public class SeriesDAO {
             }
             all.add(series);
         } catch (SQLException throwables) {
-            throw new AlreadyExistingSeriesException("This title is already used!");
+            throw new AlreadyExistingSeriesException("This title is already used!",throwables.getCause());
         } finally {
             try {
                 assert stmt36!=null;

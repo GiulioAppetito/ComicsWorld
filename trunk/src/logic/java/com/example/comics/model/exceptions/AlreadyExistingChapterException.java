@@ -7,4 +7,8 @@ public class AlreadyExistingChapterException extends Exception {
         super(message);
     }
 
+    public AlreadyExistingChapterException (String message, Throwable cause) {
+        super(" +++ " + message + " +++ ", cause);
+    }
+
 }

@@ -38,7 +38,7 @@ public class PublishSeriesController {
                 ObjectiveFactory objectiveFactory = new ObjectiveFactory();
                 objective = objectiveFactory.createObjective(objectiveBean.getType(),badge,discount,Levels.valueOf(objectiveBean.getLevel()),objectiveBean.getRequirement());
             }catch (Exception e){
-                throw new AlreadyExistingSeriesException("Error while creating serie's objectives.");
+                throw new AlreadyExistingSeriesException("Error while creating serie's objectives.",e.getCause());
             }
 
 

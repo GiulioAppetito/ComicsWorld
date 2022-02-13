@@ -95,8 +95,8 @@ public class ChapterDAO {
             Queries.insertChapter(conn16,chapter,seriesTitle,coverInputStream);
 
 
-        } catch (SQLException throwables) {
-            throw new AlreadyExistingChapterException("Unavailable title! Try another one.");
+        } catch (SQLException e) {
+            throw new AlreadyExistingChapterException("Unavailable title! Try another one.",e.getCause());
         }
     }
 }

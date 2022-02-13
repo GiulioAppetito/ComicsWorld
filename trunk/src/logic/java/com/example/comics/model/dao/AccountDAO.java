@@ -105,7 +105,7 @@ public class AccountDAO {
 
 
         } catch (SQLException e) {
-            throw new FailedProfileCustomizationException("This username is already used!");
+            throw new FailedProfileCustomizationException("This username is already used!",e.getCause());
         } finally {
             try {
                 if (stmt3 != null)
@@ -129,7 +129,7 @@ public class AccountDAO {
 
         }
         catch (SQLException se) {
-            throw new FailedRegistrationException("Username is already used.");
+            throw new FailedRegistrationException("Username is already used.",se.getCause());
         }
         finally {
             try {
