@@ -1,6 +1,7 @@
 package com.example.comics.model.dao;
 
 import com.example.comics.model.*;
+import com.example.comics.model.dao.utils.Connector;
 import com.example.comics.model.dao.utils.Queries;
 import javafx.scene.image.Image;
 
@@ -11,10 +12,6 @@ import java.util.List;
 import java.util.Map;
 
 public class ReaderDAO {
-
-    private static final String USER = "anastasia";
-    private static final String PASS = "passwordanastasia";
-    private static final String DB_URL = "jdbc:mysql://comics-world.ce9t0fxhansh.eu-west-2.rds.amazonaws.com:3306/ComicsWorld?autoReconnect=true&useSSL=false";
 
 
     public Reader retrieveReader(String identifier, String password){
@@ -36,7 +33,7 @@ public class ReaderDAO {
         List<String> followedAuthorsNames;
 
         try {
-            conn24 = DriverManager.getConnection(DB_URL, USER, PASS);
+            conn24 = Connector.getInstance().getConnection();
             stmt24 = conn24.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
             ResultSet rs = Queries.retrieveUser(stmt24, identifier, password);
 
@@ -97,8 +94,7 @@ public class ReaderDAO {
 
         } finally{
             try {
-                assert conn24 != null;
-                conn24.close();
+                stmt24.close();
             } catch (SQLException e) {
                 e.printStackTrace();
             }
@@ -113,7 +109,7 @@ public class ReaderDAO {
         Connection conn25 = null;
 
         try {
-            conn25 = DriverManager.getConnection(DB_URL, USER, PASS);
+            conn25 = Connector.getInstance().getConnection();
             stmt25 = conn25.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
             Queries.addSeriesToToRead(stmt25,series,reader);
 
@@ -121,8 +117,8 @@ public class ReaderDAO {
             e.printStackTrace();
         }
         finally{
-            assert conn25 != null;
-            conn25.close();
+            assert stmt25 != null;
+            stmt25.close();
         }
     }
 
@@ -132,11 +128,8 @@ public class ReaderDAO {
         Connection conn26 = null;
 
         try {
-            // STEP 2: loading dinamico del driver mysql
-
             // STEP 3: apertura connessione
-            conn26 = DriverManager.getConnection(DB_URL, USER, PASS);
-
+            conn26 = Connector.getInstance().getConnection();
             // STEP 4.1: creazione ed esecuzione della query
             stmt26 = conn26.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
             Queries.removeSeriesFromToRead(stmt26,series,reader);
@@ -147,8 +140,7 @@ public class ReaderDAO {
             e.printStackTrace();
         } finally {
             try {
-                assert conn26 != null;
-                conn26.close();
+                stmt26.close();
             } catch (SQLException e) {
                 e.printStackTrace();
             }
@@ -164,7 +156,7 @@ public class ReaderDAO {
         String username = reader.getUsername();
 
         try {
-            conn27 = DriverManager.getConnection(DB_URL, USER, PASS);
+            conn27 = Connector.getInstance().getConnection();
             stmt27 = conn27.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
             Queries.addSeriesToFavourites(stmt27, seriesTitle, username);
 
@@ -174,8 +166,7 @@ public class ReaderDAO {
             e.printStackTrace();
         } finally {
             try {
-                assert conn27 != null;
-                conn27.close();
+                stmt27.close();
             } catch (SQLException e) {
                 e.printStackTrace();
             }
@@ -190,7 +181,7 @@ public class ReaderDAO {
         String username = reader.getUsername();
 
         try {
-            conn28 = DriverManager.getConnection(DB_URL, USER, PASS);
+            conn28 = Connector.getInstance().getConnection();
             stmt28 = conn28.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
             Queries.removeSeriesFromFavourites(stmt28, seriesTitle, username);
 
@@ -200,8 +191,8 @@ public class ReaderDAO {
             e.printStackTrace();
         } finally {
             try {
-                assert conn28 != null;
-                conn28.close();
+                assert stmt28 != null;
+                stmt28.close();
             } catch (SQLException e) {
                 e.printStackTrace();
             }
@@ -213,7 +204,7 @@ public class ReaderDAO {
         Connection conn29 = null;
 
         try {
-            conn29 = DriverManager.getConnection(DB_URL, USER, PASS);
+            conn29 = Connector.getInstance().getConnection();
             stmt29 = conn29.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
             Queries.addFollowedAuthor(stmt29,author);
 
@@ -221,9 +212,9 @@ public class ReaderDAO {
             e.printStackTrace();
         }
         finally{
-            assert conn29 != null;
+            assert stmt29 != null;
             try {
-                conn29.close();
+                stmt29.close();
             } catch (SQLException e) {
                 e.printStackTrace();
             }
@@ -235,7 +226,7 @@ public class ReaderDAO {
         Connection conn30 = null;
 
         try {
-            conn30 = DriverManager.getConnection(DB_URL, USER, PASS);
+            conn30 = Connector.getInstance().getConnection();
             stmt30 = conn30.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
             Queries.removeFollowedAuthor(stmt30,reader,author);
 
@@ -245,8 +236,8 @@ public class ReaderDAO {
             e.printStackTrace();
         } finally {
             try {
-                assert conn30 != null;
-                conn30.close();
+                assert stmt30 != null;
+                stmt30.close();
             } catch (SQLException e) {
                 e.printStackTrace();
             }
@@ -258,7 +249,7 @@ public class ReaderDAO {
         Connection conn31 = null;
 
         try {
-            conn31 = DriverManager.getConnection(DB_URL, USER, PASS);
+            conn31 = Connector.getInstance().getConnection();
             stmt31 = conn31.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
             Queries.addReadChapter(stmt31,UserLogin.getInstance().getReader(),series, chapterTitle);
 
@@ -266,9 +257,9 @@ public class ReaderDAO {
             e.printStackTrace();
         }
         finally{
-            assert conn31 != null;
             try {
-                conn31.close();
+                assert stmt31 != null;
+                stmt31.close();
             } catch (SQLException e) {
                 e.printStackTrace();
             }
@@ -282,7 +273,7 @@ public class ReaderDAO {
 
         try {
 
-            conn32 = DriverManager.getConnection(DB_URL, USER, PASS);
+            conn32 = Connector.getInstance().getConnection();
             stmt32 = conn32.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
             Queries.removeChapterFromRead(stmt32,series,chapterTitle,UserLogin.getInstance().getReader());
 
@@ -291,12 +282,7 @@ public class ReaderDAO {
         }catch (Exception e) {
             e.printStackTrace();
         } finally {
-            try {
-                assert conn32 != null;
-                conn32.close();
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
+
             try {
                 assert stmt32 != null;
                 stmt32.close();

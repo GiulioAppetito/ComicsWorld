@@ -1,6 +1,7 @@
 package com.example.comics.model.dao;
 
 import com.example.comics.model.*;
+import com.example.comics.model.dao.utils.Connector;
 import com.example.comics.model.dao.utils.DatesConverter;
 import com.example.comics.model.dao.utils.Queries;
 
@@ -11,14 +12,10 @@ import java.util.List;
 
 public class OrderDAO {
 
-    private static final String USER = "anastasia";
-    private static final String PASS = "passwordanastasia";
-    private static final String DB_URL = "jdbc:mysql://comics-world.ce9t0fxhansh.eu-west-2.rds.amazonaws.com:3306/ComicsWorld?autoReconnect=true&useSSL=false";
-
     public List<Order> retrieveOrders(String username) {
 
         Statement stmt22 = null;
-        Connection conn22 = null;
+        Connection conn22;
 
         List<Order> orders = new ArrayList<>();
 
@@ -29,7 +26,7 @@ public class OrderDAO {
 
 
         try {
-            conn22 = DriverManager.getConnection(DB_URL, USER, PASS);
+            conn22 = Connector.getInstance().getConnection();
 
             stmt22 = conn22.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
             ResultSet rs = Queries.retreiveOrdersByReader(stmt22, username);
@@ -76,13 +73,6 @@ public class OrderDAO {
             } catch (SQLException se2) {
                 //TO-DO
             }
-            try {
-                if (conn22 != null)
-                    conn22.close();
-            } catch (SQLException se) {
-                se.printStackTrace();
-            }
-
         }
         return orders;
     }
@@ -93,7 +83,7 @@ public class OrderDAO {
 
 
         try {
-            conn23 = DriverManager.getConnection(DB_URL, USER, PASS);
+            conn23 = Connector.getInstance().getConnection();
 
             stmt23 = conn23.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
             Queries.insertOrder(stmt23, order, UserLogin.getInstance().getReader());
@@ -110,13 +100,6 @@ public class OrderDAO {
             } catch (SQLException se2) {
                 //TO-DO
             }
-            try {
-                if (conn23 != null)
-                    conn23.close();
-            } catch (SQLException se) {
-                se.printStackTrace();
-            }
-
         }
     }
 }

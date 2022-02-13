@@ -1,6 +1,7 @@
 package com.example.comics.model.dao;
 
 import com.example.comics.model.*;
+import com.example.comics.model.dao.utils.Connector;
 import com.example.comics.model.dao.utils.Queries;
 import com.example.comics.model.exceptions.AlreadyExistingSeriesException;
 import javafx.scene.image.Image;
@@ -13,10 +14,6 @@ import java.util.List;
 import java.util.Map;
 
 public class SeriesDAO {
-
-    private static final String USER = "anastasia";
-    private static final String PASS = "passwordanastasia";
-    private static final String DB_URL = "jdbc:mysql://comics-world.ce9t0fxhansh.eu-west-2.rds.amazonaws.com:3306/ComicsWorld?autoReconnect=true&useSSL=false";
 
     private static final String SERIES = "series";
     private static final String TITLE = "title";
@@ -65,7 +62,7 @@ public class SeriesDAO {
 
 
         try {
-            conn35 = DriverManager.getConnection(DB_URL, USER, PASS);
+            conn35 = Connector.getInstance().getConnection();
 
             stmt35 = conn35.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
             ResultSet rs = Queries.retriveLatestSeries(stmt35);
@@ -113,13 +110,6 @@ public class SeriesDAO {
             } catch (SQLException se2) {
                 //TO-DO
             }
-            try {
-                if (conn35 != null)
-                    conn35.close();
-            } catch (SQLException se) {
-                se.printStackTrace();
-            }
-
         }
         all = seriesList;
     }
@@ -136,7 +126,7 @@ public class SeriesDAO {
         int bagdeID = 0;
         try {
             // STEP 3: apertura connessione
-            conn36 = DriverManager.getConnection(DB_URL, USER, PASS);
+            conn36 = Connector.getInstance().getConnection();
             stmt36 = conn36.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
             // STEP 4.2: creazione ed esecuzione della query
             Queries.insertSeries(conn36,series,seriesCoverInputStream);
@@ -159,12 +149,6 @@ public class SeriesDAO {
         } catch (SQLException throwables) {
             throw new AlreadyExistingSeriesException("This title is already used!");
         } finally {
-            try {
-                assert conn36 != null;
-                conn36.close();
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
             try {
                 assert stmt36!=null;
                 stmt36.close();
@@ -202,7 +186,7 @@ public class SeriesDAO {
         String title;
 
         try {
-            conn37 = DriverManager.getConnection(DB_URL, USER, PASS);
+            conn37 = Connector.getInstance().getConnection();
 
             stmt37 = conn37.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
             ResultSet rs = Queries.retriveFavouriteSeries(stmt37, user);
@@ -227,12 +211,6 @@ public class SeriesDAO {
             } catch (SQLException se2) {
                 //TO-DO
             }
-            try {
-                if (conn37 != null)
-                    conn37.close();
-            } catch (SQLException se) {
-                se.printStackTrace();
-            }
 
         }
         return list;
@@ -247,7 +225,7 @@ public class SeriesDAO {
         String title;
 
         try {
-            conn38 = DriverManager.getConnection(DB_URL, USER, PASS);
+            conn38 = Connector.getInstance().getConnection();
 
             stmt38 = conn38.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
             ResultSet rs = Queries.retriveToReadSeries(stmt38, user);
@@ -272,12 +250,6 @@ public class SeriesDAO {
             } catch (SQLException se2) {
                 //TO-DO
             }
-            try {
-                if (conn38 != null)
-                    conn38.close();
-            } catch (SQLException se) {
-                se.printStackTrace();
-            }
 
         }
         return list2;
@@ -292,7 +264,7 @@ public class SeriesDAO {
         String title;
 
         try {
-            conn39 = DriverManager.getConnection(DB_URL, USER, PASS);
+            conn39 = Connector.getInstance().getConnection();
 
             stmt39 = conn39.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
             ResultSet rs = Queries.retriveReadingSeries(stmt39, user);
@@ -316,12 +288,6 @@ public class SeriesDAO {
                     stmt39.close();
             } catch (SQLException se2) {
                 //TO-DO
-            }
-            try {
-                if (conn39 != null)
-                    conn39.close();
-            } catch (SQLException se) {
-                se.printStackTrace();
             }
 
         }

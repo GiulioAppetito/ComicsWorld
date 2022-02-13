@@ -3,6 +3,7 @@ package com.example.comics.model.dao;
 import com.example.comics.model.Account;
 import com.example.comics.model.Author;
 import com.example.comics.model.Reader;
+import com.example.comics.model.dao.utils.Connector;
 import com.example.comics.model.dao.utils.Queries;
 import com.example.comics.model.exceptions.FailedLoginException;
 import com.example.comics.model.exceptions.FailedProfileCustomizationException;
@@ -15,11 +16,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class AccountDAO {
-    private static final String USER = "anastasia";
-    private static final String PASS = "passwordanastasia";
-    private static final String DB_URL = "jdbc:mysql://comics-world.ce9t0fxhansh.eu-west-2.rds.amazonaws.com:3306/ComicsWorld?autoReconnect=true&useSSL=false";
-
-
     public String verifyCredentials(String credential,String password) throws FailedLoginException {
 
         //dichiarazioni
@@ -28,7 +24,7 @@ public class AccountDAO {
         String role=null;
 
         try {
-            conn1= DriverManager.getConnection(DB_URL,USER,PASS);
+            conn1= Connector.getInstance().getConnection();
 
             stmt1 = conn1.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE,ResultSet.CONCUR_READ_ONLY);
             ResultSet rs = Queries.checkSignedUserByEmail(stmt1, credential);
@@ -59,13 +55,6 @@ public class AccountDAO {
             } catch (SQLException se2) {
                 //TO-DO
             }
-            try {
-                if (conn1 != null)
-                    conn1.close();
-            } catch (SQLException se) {
-                se.printStackTrace();
-            }
-
         }
         return role;
 
@@ -79,7 +68,7 @@ public class AccountDAO {
 
 
         try {
-            conn2= DriverManager.getConnection(DB_URL,USER,PASS);
+            conn2= Connector.getInstance().getConnection();
 
             stmt2 = conn2.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE,ResultSet.CONCUR_READ_ONLY);
             Queries.updateCredentials(stmt2, newName, newSurname, email, newUsername);
@@ -97,12 +86,6 @@ public class AccountDAO {
             } catch (SQLException se2) {
                 //TO-DO
             }
-            try {
-                if (conn2 != null)
-                    conn2.close();
-            } catch (SQLException se) {
-                se.printStackTrace();
-            }
 
         }
 
@@ -115,7 +98,7 @@ public class AccountDAO {
 
 
         try {
-            conn3= DriverManager.getConnection(DB_URL,USER,PASS);
+            conn3= Connector.getInstance().getConnection();
 
             stmt3 = conn3.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE,ResultSet.CONCUR_READ_ONLY);
             Queries.updateUsername(stmt3, newUsername, oldUsername);
@@ -130,12 +113,6 @@ public class AccountDAO {
             } catch (SQLException se2) {
                 //TO-DO
             }
-            try {
-                if (conn3 != null)
-                    conn3.close();
-            } catch (SQLException se) {
-                se.printStackTrace();
-            }
 
         }
 
@@ -146,7 +123,7 @@ public class AccountDAO {
         Connection conn4=null;
 
         try {
-            conn4=DriverManager.getConnection(DB_URL,USER,PASS);
+            conn4=Connector.getInstance().getConnection();
             stmt4 = conn4.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE,ResultSet.CONCUR_READ_ONLY);
             Queries.addProfile(stmt4, firstName, lastName, username, email, password,role);
 
@@ -161,12 +138,6 @@ public class AccountDAO {
             } catch (SQLException se2) {
                 //TO-DO
             }
-            try {
-                if (conn4 != null)
-                    conn4.close();
-            } catch (SQLException se) {
-                se.printStackTrace();
-            }
 
         }
     }
@@ -175,7 +146,7 @@ public class AccountDAO {
         Connection conn5 = null;
 
         try {
-            conn5 = DriverManager.getConnection(DB_URL, USER, PASS);
+            conn5 = Connector.getInstance().getConnection();
             Queries.updateUserProPic(conn5,inputStream,reader);
 
         } catch (SQLException throwables) {
@@ -191,7 +162,7 @@ public class AccountDAO {
 
         try {
 
-            conn6 = DriverManager.getConnection(DB_URL, USER, PASS);
+            conn6 = Connector.getInstance().getConnection();
             stmt6 = conn6.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
             ResultSet rs = Queries.retreiveAuthor(stmt6, username);
 
@@ -219,9 +190,8 @@ public class AccountDAO {
             throwables.printStackTrace();
         } finally{
             try {
-                assert conn6 != null;
-                conn6.close();
-            } catch (SQLException | NullPointerException e) {
+                stmt6.close();
+            } catch (SQLException e) {
                 e.printStackTrace();
             }
         }
@@ -237,7 +207,7 @@ public class AccountDAO {
 
         try {
 
-            conn7 = DriverManager.getConnection(DB_URL, USER, PASS);
+            conn7 = Connector.getInstance().getConnection();
             stmt7 = conn7.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
             ResultSet rs = Queries.retrieveFollowersMails(stmt7, authorUsername);
 
@@ -257,14 +227,6 @@ public class AccountDAO {
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         } finally{
-            try {
-                assert conn7 != null;
-                conn7.close();
-
-            } catch (SQLException | NullPointerException e) {
-                e.printStackTrace();
-            }
-
             try{
                 assert stmt7!= null;
                 stmt7.close();

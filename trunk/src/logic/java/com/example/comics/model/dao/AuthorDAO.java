@@ -2,6 +2,7 @@ package com.example.comics.model.dao;
 
 import com.example.comics.model.Author;
 import com.example.comics.model.Series;
+import com.example.comics.model.dao.utils.Connector;
 import com.example.comics.model.dao.utils.Queries;
 import javafx.scene.image.Image;
 
@@ -12,24 +13,19 @@ import java.util.List;
 
 public class AuthorDAO {
 
-
-    private static final String USER = "anastasia";
-    private static final String PASS = "passwordanastasia";
-    private static final String DB_URL = "jdbc:mysql://comics-world.ce9t0fxhansh.eu-west-2.rds.amazonaws.com:3306/ComicsWorld?autoReconnect=true&useSSL=false";
-
     private static List<Author> all = new ArrayList<>();
 
     private static final String USERNAME = "username";
 
     public static List<Author> retriveAllAuthors(){
-        Statement stmt8;
+        Statement stmt8 = null;
         Connection conn8 = null;
 
         List<Author> authors = new ArrayList<>();
         Author author;
 
         try {
-            conn8 = DriverManager.getConnection(DB_URL, USER, PASS);
+            conn8 = Connector.getInstance().getConnection();
             stmt8 = conn8.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
 
             ResultSet rs = Queries.retreiveAllAuthors(stmt8);
@@ -61,9 +57,8 @@ public class AuthorDAO {
         } catch (SQLException e) {
             e.printStackTrace();
         }finally{
-            assert conn8 != null;
             try {
-                conn8.close();
+                stmt8.close();
             } catch (SQLException e) {
                 e.printStackTrace();
             }
@@ -74,14 +69,14 @@ public class AuthorDAO {
 
     public Author retrieveAuthor(String identifier, String password) {
 
-        Statement stmt9;
+        Statement stmt9 = null;
         Connection conn9 = null;
 
         Author author = null;
 
         try {
 
-            conn9 = DriverManager.getConnection(DB_URL, USER, PASS);
+            conn9 = Connector.getInstance().getConnection();
             stmt9 = conn9.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
             ResultSet rs = Queries.retrieveUser(stmt9, identifier, password);
 
@@ -115,9 +110,8 @@ public class AuthorDAO {
             throwables.printStackTrace();
         } finally{
             try {
-                assert conn9 != null;
-                conn9.close();
-            } catch (SQLException | NullPointerException e) {
+                stmt9.close();
+            } catch (SQLException e) {
                 e.printStackTrace();
             }
         }
@@ -144,7 +138,7 @@ public class AuthorDAO {
         String name;
 
         try {
-            conn10 = DriverManager.getConnection(DB_URL, USER, PASS);
+            conn10 = Connector.getInstance().getConnection();
 
             stmt10 = conn10.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
             ResultSet rs = Queries.retreiveFollowedAuthors(stmt10, username);
@@ -168,12 +162,6 @@ public class AuthorDAO {
                     stmt10.close();
             } catch (SQLException se2) {
                 //TO-DO
-            }
-            try {
-                if (conn10 != null)
-                    conn10.close();
-            } catch (SQLException se) {
-                se.printStackTrace();
             }
 
         }

@@ -1,6 +1,7 @@
 package com.example.comics.model.dao;
 
 import com.example.comics.model.*;
+import com.example.comics.model.dao.utils.Connector;
 import com.example.comics.model.dao.utils.Queries;
 
 import java.sql.*;
@@ -9,19 +10,15 @@ import java.util.List;
 
 public class ReviewDAO {
 
-    private static final String USER = "anastasia";
-    private static final String PASS = "passwordanastasia";
-    private static final String DB_URL = "jdbc:mysql://comics-world.ce9t0fxhansh.eu-west-2.rds.amazonaws.com:3306/ComicsWorld?autoReconnect=true&useSSL=false";
-
     public List<Review> retrieveReviews(String chapter)  {
-        Statement stmt33;
+        Statement stmt33 = null;
         Connection conn33 = null;
 
         List<Review> reviewsList = new ArrayList<>();
         Review reviewItem;
 
         try {
-            conn33 = DriverManager.getConnection(DB_URL, USER, PASS);
+            conn33 = Connector.getInstance().getConnection();
             stmt33 = conn33.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
             ResultSet rs = Queries.retreiveReviewsByChapter(stmt33, chapter);
 
@@ -41,10 +38,9 @@ public class ReviewDAO {
         } catch (SQLException throwables) {
            return reviewsList;
         }finally{
-            assert conn33!=null;
+            assert stmt33!=null;
             try {
-                assert conn33!=null;
-                conn33.close();
+                stmt33.close();
             } catch (SQLException e) {
                 e.printStackTrace();
             }
@@ -56,14 +52,12 @@ public class ReviewDAO {
 
     public void saveReview(Review review, Chapter chapter, Series series){
         // STEP 1: dichiarazioni
-        Statement stmt34;
+        Statement stmt34 = null;
         Connection conn34 = null;
 
         try {
-            // STEP 2: loading dinamico del driver mysql
 
-            // STEP 3: apertura connessione
-            conn34 = DriverManager.getConnection(DB_URL, USER, PASS);
+            conn34 = Connector.getInstance().getConnection();
 
             // STEP 4.2: creazione ed esecuzione della query
             stmt34 = conn34.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
@@ -72,9 +66,9 @@ public class ReviewDAO {
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         } finally {
-            assert conn34!=null;
+
             try {
-                conn34.close();
+                stmt34.close();
             } catch (SQLException e) {
                 e.printStackTrace();
             }

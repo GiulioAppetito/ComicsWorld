@@ -1,6 +1,7 @@
 package com.example.comics.model.dao;
 
 import com.example.comics.model.*;
+import com.example.comics.model.dao.utils.Connector;
 import com.example.comics.model.dao.utils.Queries;
 import javafx.scene.image.Image;
 
@@ -11,17 +12,13 @@ import java.util.List;
 
 public class BadgeDAO {
 
-    private static final String USER = "anastasia";
-    private static final String PASS = "passwordanastasia";
-    private static final String DB_URL = "jdbc:mysql://comics-world.ce9t0fxhansh.eu-west-2.rds.amazonaws.com:3306/ComicsWorld?autoReconnect=true&useSSL=false";
-
     public Badge retreiveAssociatedBadge(int badgeID) {
-        Statement stmt11 ;
+        Statement stmt11 = null;
         Connection conn11 = null;
         Badge associatedBadge = null;
 
         try {
-            conn11 = DriverManager.getConnection(DB_URL, USER, PASS);
+            conn11 = Connector.getInstance().getConnection();
             stmt11 = conn11.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
             ResultSet rs = Queries.retreiveBadgeByID(stmt11, badgeID);
             if(!rs.first()){
@@ -47,8 +44,7 @@ public class BadgeDAO {
             throwables.printStackTrace();
         }finally{
             try {
-                assert conn11 != null;
-                conn11.close();
+                stmt11.close();
             } catch (SQLException e) {
                 e.printStackTrace();
             }
@@ -59,14 +55,14 @@ public class BadgeDAO {
 
     public List<Badge> retrieveAchievedBadges(String username) {
 
-        Statement stmt12;
+        Statement stmt12 = null;
         Connection conn12 = null;
 
         List<Badge> achievedBadges = new ArrayList<>();
         Badge badge;
 
         try {
-            conn12 = DriverManager.getConnection(DB_URL, USER, PASS);
+            conn12 = Connector.getInstance().getConnection();
             stmt12 = conn12.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
             ResultSet rs = Queries.retrieveBadgesByReader(stmt12, username);
             if(!rs.first()){
@@ -86,16 +82,11 @@ public class BadgeDAO {
                 achievedBadges.add(badge);
 
             } while(rs.next());
-
-
-
-
         } catch (SQLException e) {
             e.printStackTrace();
         } finally {
             try {
-                assert conn12!=null;
-                conn12.close();
+                stmt12.close();
             } catch (SQLException e) {
                 e.printStackTrace();
             }
@@ -107,12 +98,12 @@ public class BadgeDAO {
 
     public void saveObtainedBadge(Badge badge, Reader reader) {
 
-        Statement stmt13;
+        Statement stmt13 = null;
         Connection conn13 = null;
 
         try {
 
-            conn13 = DriverManager.getConnection(DB_URL, USER, PASS);
+            conn13 = Connector.getInstance().getConnection();
             stmt13 = conn13.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
 
             int achievedbadgeID = badge.getId();
@@ -125,8 +116,7 @@ public class BadgeDAO {
             e.printStackTrace();
         }finally {
             try {
-                assert conn13 != null;
-                conn13.close();
+                stmt13.close();
             } catch (SQLException e) {
                 e.printStackTrace();
             }

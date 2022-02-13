@@ -1,6 +1,7 @@
 package com.example.comics.model.dao;
 
 import com.example.comics.model.*;
+import com.example.comics.model.dao.utils.Connector;
 import com.example.comics.model.dao.utils.DatesConverter;
 import com.example.comics.model.dao.utils.Queries;
 
@@ -10,10 +11,6 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class DiscountCodeDAO {
-
-    private static final String USER = "anastasia";
-    private static final String PASS = "passwordanastasia";
-    private static final String DB_URL = "jdbc:mysql://comics-world.ce9t0fxhansh.eu-west-2.rds.amazonaws.com:3306/ComicsWorld?autoReconnect=true&useSSL=false";
 
     public Map<DiscountCode, Series> retreiveDiscountCodesByReader(String username) {
 
@@ -28,10 +25,8 @@ public class DiscountCodeDAO {
         LocalDate startingDate;
         int limitDays;
 
-
-
         try {
-            conn17 = DriverManager.getConnection(DB_URL, USER, PASS);
+            conn17 = Connector.getInstance().getConnection();
 
             stmt17 = conn17.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
             ResultSet rs = Queries.retreiveDiscountCodesByReader(stmt17, username);
@@ -89,13 +84,6 @@ public class DiscountCodeDAO {
             } catch (SQLException se2) {
                 //TO-DO
             }
-            try {
-                if (conn17 != null)
-                    conn17.close();
-            } catch (SQLException se) {
-                se.printStackTrace();
-            }
-
         }
         return discountCodes;
     }
@@ -106,7 +94,7 @@ public class DiscountCodeDAO {
         Statement stmt19 = null;
 
         try {
-            conn19 = DriverManager.getConnection(DB_URL, USER, PASS);
+            conn19 = Connector.getInstance().getConnection();
             stmt19 = conn19.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
             Queries.saveReadersDiscountCode(stmt19,discountCode,reader,series,objective);
 
@@ -114,9 +102,8 @@ public class DiscountCodeDAO {
             e.printStackTrace();
         }
         finally{
-            assert conn19 != null;
             try {
-                conn19.close();
+                stmt19.close();
             } catch (SQLException e) {
                 e.printStackTrace();
             }
@@ -125,19 +112,18 @@ public class DiscountCodeDAO {
 
     public void deleteDiscountCode(Reader reader,DiscountCode discountCode) {
         Statement stmt20 = null;
-        Connection conn20 = null;
+        Connection conn20;
 
         try {
-            conn20 = DriverManager.getConnection(DB_URL, USER, PASS);
+            conn20 = Connector.getInstance().getConnection();
             stmt20 = conn20.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
             Queries.deleteDiscountCode(stmt20,reader,discountCode);
 
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         } finally {
-            assert conn20!=null;
             try {
-                conn20.close();
+                stmt20.close();
             } catch (SQLException e) {
                 e.printStackTrace();
             }
